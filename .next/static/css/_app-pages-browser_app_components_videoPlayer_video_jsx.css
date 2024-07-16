@@ -1,0 +1,20 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./app/components/videoPlayer/VideoPlayer.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+.VideoPlayer_playerWrapper__3aFUO {
+  position: relative;
+  overflow: hidden; /* Ensures border-radius applies to internal video */
+}
+
+.VideoPlayer_reactPlayer__lTGRR  {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.VideoPlayer_reactPlayer__lTGRR > div {
+  border-radius: 35px !important; 
+  border: 4px solid #FFF5F6;
+  box-shadow: 2px 2px 10px 0px rgba(255, 95, 162, 0.12), 4px 4px 20px 0px rgba(255, 95, 162, 0.20);
+  overflow: hidden;
+}

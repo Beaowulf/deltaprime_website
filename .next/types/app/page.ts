@@ -1,4 +1,4 @@
-// File: C:\Users\beodez\Desktop\DeltaPrime\delta-prime\app\page.js
+// File: C:\Users\beao-\OneDrive\Desktop\DeltaPrimeMainWebApp\deltaprime_website\app\page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

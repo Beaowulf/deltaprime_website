@@ -273,6 +273,12 @@
   padding-top: 20px;
 }
 
+ /* Intergrations Section Styling */
+ .intergrationBoxGradient{
+  position: relative;
+  background: linear-gradient(180deg, #FFBB9B 10%, #FF8FB8 50%, #AFAFFF 100%);
+  padding: 2px;
+ }
 /*!****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./node_modules/swiper/swiper.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************/

@@ -1,4 +1,4 @@
-// File: C:\Users\beodez\Desktop\DeltaPrime\delta-prime\app\layout.js
+// File: C:\Users\beao-\OneDrive\Desktop\DeltaPrimeMainWebApp\deltaprime_website\app\layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

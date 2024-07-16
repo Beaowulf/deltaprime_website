@@ -184,3 +184,10 @@
 .swiper-wrapper {
   padding-top: 20px;
 }
+
+ /* Intergrations Section Styling */
+ .intergrationBoxGradient{
+  position: relative;
+  background: linear-gradient(180deg, #FFBB9B 10%, #FF8FB8 50%, #AFAFFF 100%);
+  padding: 2px;
+ }

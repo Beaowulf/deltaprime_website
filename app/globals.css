@@ -203,7 +203,6 @@ body {
   font-size: 18px;
   font-weight: 700;
   line-height: 23.5px;
-  color: #2b203f;
 }
 
 .carouselHeader {
@@ -232,7 +231,7 @@ body {
 }
 
 .featureCardTitle {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 500;
   line-height: 22px;
 }
@@ -258,5 +257,8 @@ body {
   /* Helpers */
   .ignore_global_spacing {
     width: 95vw !important;
+  }
+  .featureCardTitle {
+    font-size: 14px;
   }
 }

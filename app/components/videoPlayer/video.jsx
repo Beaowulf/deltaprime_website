@@ -1,21 +1,38 @@
 import React from "react";
+import Image from "next/image";
 import ReactPlayer from "react-player";
+import playIconSVG from "@/public/assets/icons/play.svg";
+import styles from "./VideoPlayer.module.css"; // Import CSS module
+
+const PlayButton = () => {
+  return (
+    <>
+      <button className="">
+        <Image
+          width={110}
+          height={110}
+          src={playIconSVG}
+          alt="play_Button_White_Icon"
+          priority={true}
+        />
+      </button>
+    </>
+  );
+};
 
 const VideoPlayer = () => {
-  //video path
-  const videoSrc = "https://youtu.be/FaU8BkqmXzo";
-
   return (
-    <div className="md:w-1/2 w-full md:h-[30rem] h-[180px]">
+    <div
+      className={`md:w-1/2 w-full md:h-[25rem] h-[180px] cursor-pointer ${styles.playerWrapper}`}
+    >
       <ReactPlayer
-        width="100%"
-        height="100%"
-        url={videoSrc}
+        height={"100%"}
+        width={"100%"}
+        className={styles.reactPlayer}
+        url="/videos/video.mp4"
         controls={true}
-        // light is usefull incase of dark mode
-        light={false}
-        // picture in picture
-        pip={true}
+        light="/assets/img/thumbnail.png"
+        playIcon={<PlayButton />}
       />
     </div>
   );
