@@ -1,0 +1,262 @@
+/* in index.css or global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Ensure your tailwind utilities are included */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Background Blends for Dark and Light Mode */
+/* 
+This is used for the main background at the first level of the landing page 
+blending 2 of the images.
+*/
+.background_1-darkTheme,
+.background_1-lightTheme {
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.background_1-darkTheme::before,
+.background_1-lightTheme::before {
+  transition: opacity 0.5s ease;
+}
+
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.background_1-darkTheme {
+  position: relative;
+  background: rgb(27, 21, 59);
+  background: linear-gradient(
+    90deg,
+    rgba(27, 21, 59, 1) 0%,
+    rgba(28, 39, 66, 1) 100%
+  );
+  overflow: hidden;
+}
+
+.background_1-darkTheme::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  width: 100%;
+  background-image: url("../public/assets/img/bg_img_1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+  background-blend-mode: overlay;
+}
+
+.background_1-lightTheme {
+  position: relative;
+  background: rgb(27, 21, 59);
+  background: linear-gradient(
+    160deg,
+    rgba(244, 244, 255, 1) 15%,
+    rgba(255, 245, 240, 1) 50%,
+    rgba(232, 232, 242, 1) 70%
+  );
+  overflow: hidden;
+}
+
+.background_1-lightTheme::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  width: 100%;
+  background-image: url("../public/assets/img/bg_img_1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+  background-blend-mode: overlay;
+}
+/* End of Background Blends  */
+
+/* Custom CSS Classes */
+/* Text/Typography */
+.largeText {
+  font-size: 41px;
+  font-weight: 600;
+  line-height: 53.5px;
+  letter-spacing: -0.03em;
+  color: white;
+}
+
+.linearColoredText {
+  background: -webkit-linear-gradient(#ffbb9b, #ff8fb8, #afafff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+}
+
+.buttonLightModeText {
+  color: #feeef4;
+  font-size: 12px;
+}
+
+.brightText {
+  font-size: 44px;
+  text-shadow: 0px -1px 16px #feeef4;
+  font-weight: 700;
+  line-height: 54px;
+  letter-spacing: -2%;
+}
+
+.slightBrightText {
+  line-height: 24px;
+  text-align: center;
+  text-shadow: 3px 3px 13.5px rgba(191, 188, 255, 0.5);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.whiteMainText {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 25.5px;
+}
+
+.blueText {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #6b70ed;
+}
+
+.costText {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.5px;
+  color: #2b203f;
+}
+
+.carouselHeader {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+/* Feature Typography */
+.featureTitle {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.featureSubtitle {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 40px;
+}
+.featureParagraph {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 25.5px;
+}
+
+.featureCardTitle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.topPartLightThemeShadow {
+  position: relative;
+  box-shadow: 2px 6px 11px 0px rgba(191, 188, 255, 0.26);
+}
+
+/* Helpers */
+.ignore_global_spacing {
+  width: 100vw !important;
+}
+
+/* Responsivness */
+@media (max-width: 640px) {
+  .blueText {
+    font-size: 12px;
+  }
+  .costText {
+    font-size: 14px;
+  }
+  /* Helpers */
+  .ignore_global_spacing {
+    width: 95vw !important;
+  }
+}

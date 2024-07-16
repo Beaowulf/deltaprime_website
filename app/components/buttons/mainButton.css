@@ -1,0 +1,81 @@
+.mainButtonWithBorderBG {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 54px;
+  background: linear-gradient(
+    130deg,
+    rgba(255, 187, 155, 1) 25%,
+    rgba(255, 143, 184, 1) 35%,
+    rgba(175, 175, 255, 1) 45%
+  );
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+  background-size: 100% 200%;
+  transition: all 0.5s ease;
+}
+
+.mainButtonBG:hover {
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.6),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.9);
+  background-size: 200% 100%;
+}
+
+.mainButtonBGwithoutBorder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 54px;
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+}
+
+.mainButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background: rgb(175, 175, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 178, 161, 1) 10%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(211, 160, 223, 1) 100%
+  );
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+/* Dark Mode Button */
+.mainButtonDarkBG {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background: rgb(27, 21, 60);
+  background: linear-gradient(
+    15deg,
+    rgba(27, 21, 60, 1) 0%,
+    rgba(28, 41, 67, 1) 50%,
+    rgba(48, 30, 62, 1) 100%
+  );
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+/* responsivness */

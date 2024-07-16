@@ -1,0 +1,43 @@
+.toggle_wrapper {
+  width: 60px;
+  height: 32px;
+  background-color: #e0e1ff;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.4s ease;
+  margin-right: 10px;
+}
+
+.toggle_wrapper.night {
+  background-color: #383780;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 2px;
+  left: 0; /* Start from the left */
+  background-size: cover;
+  transition: left 0.4s ease, opacity 0.4s ease;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.sun {
+  background-color: white;
+  border-radius: 50px;
+  background-image: url("../../../public/assets/icons/sun.svg");
+  opacity: 1;
+}
+
+.moon {
+  border-radius: 50px;
+  background-color: #9a89fb;
+  background-image: url("../../../public/assets/icons/moon.svg");
+  opacity: 0;
+  left: -100%; /* Start from the right, out of view */
+  background-position-y: 1.2px;
+  background-position-x: 1px;
+}

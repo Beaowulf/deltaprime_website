@@ -1,0 +1,186 @@
+/* This is for the container below the video player and text with pill */
+.parentColoredBorderWrapper {
+  width: 100%;
+  height: 125px;
+  /* Border Radius */
+  padding: 2px;
+  /* Border Radius */
+  border-radius: 20px;
+  box-shadow: 0 0 14.8px rgba(93, 71, 255, 0.56);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
+}
+
+.introTextBtnContainer {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(45deg, #48427b 20%, #3236978f 80%),
+    url("../../public/assets/img/images/bg_image_introTextBtn.png") no-repeat
+      center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  border-radius: 20px;
+}
+
+/* Responsivness */
+@media (max-width: 640px) {
+  .fullWidthButtonChildren,
+  .fullWidthButtonChildren button,
+  .fullWidthButtonChildren div {
+    width: 100% !important;
+  }
+
+  /* Todo delte responsive version of left right side shadow / fade effect */
+  /* .fadedSides {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fadedSides::before,
+  .fadedSides::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px; 
+    pointer-events: none;
+    z-index: 100;
+    height: 100%;
+  }
+
+  .fadedSides::before {
+    z-index: 10;
+    left: 0;
+    border-radius: 0 20px 20px 0;
+    box-shadow: inset 10px 0 8px -8px rgba(0, 0, 0, 0.5); 
+  }
+
+  .fadedSides::after {
+    right: 0;
+    border-radius: 0 20px 20px 0;
+    box-shadow: inset -10px 0 8px -8px rgba(0, 0, 0, 0.5); 
+  } */
+}
+
+/* Feature Section Styling */
+.featureBorderWrapDarkTheme {
+  position: relative;
+  background: linear-gradient(140deg, #3a2d8c 10%, #571e4b 55%, #163d59 100%);
+  padding: 2px;
+}
+
+.featureBorderWrapLightTheme {
+  position: relative;
+  background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
+  padding: 2px;
+}
+
+.graphBackground {
+  background-image: url("../../public/assets/img/images/features/graph.png");
+}
+
+/* Carousel Section Styling */
+
+.carouselItemsDarkTheme,
+.carouseItemsWhiteTheme {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px 0px rgba(255, 95, 162, 0.15);
+}
+.carouselItemsDarkTheme {
+  box-shadow: 5px 5px 20px 0px rgba(255, 95, 162, 0.15);
+}
+.carouseItemsWhiteTheme {
+  box-shadow: 5px 5px 20px 0px rgba(255, 95, 162, 0.15);
+}
+
+.carouselItemsDarkTheme::before,
+.carouseItemsWhiteTheme::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: background 0.25s ease-in-out;
+}
+
+.carouselItemsDarkTheme::before {
+  background: rgba(28, 33, 64, 0.1);
+}
+
+..carouseItemsWhiteTheme::before {
+  background: rgba(28, 33, 64, 0.1);
+}
+
+.carouselItemsDarkTheme:hover::before,
+.carouselItemsWhiteTheme:hover::before {
+  background: rgba(28, 33, 64, 0);
+}
+
+/* 
+.carouselItemsDarkTheme::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
+  transition: background 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.carouselItemsDarkTheme:hover::before {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  opacity: 0;
+}
+
+.carouselItemsDarkTheme img {
+  transition: filter 0.3s ease;
+}
+
+.carouselItemsDarkTheme:hover img {
+  filter: brightness(1.2);
+}
+.carouseItemsWhiteTheme {
+  box-shadow: 5px 5px 20px 0px rgba(255, 95, 162, 0.15);
+} */
+
+.swiper-container-free-mode > .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+.swiper-slide {
+  transition: transform 2s ease;
+}
+
+.swiper-wrapper {
+  padding-top: 20px;
+}
