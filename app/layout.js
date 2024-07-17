@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-          <div className="px-4 sm:px-6 md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
+          <div className="px-4 sm:px-6 md:px-[4%] lg:px-[8%] 2xl:px-[13%]">
             <Header />
             {children}
           </div>

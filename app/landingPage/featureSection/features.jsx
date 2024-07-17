@@ -5,6 +5,7 @@ import FeaturePrimeAccount from "./featurePrimeAccount";
 import DepositorSection from "./depositorSection";
 import Strategies from "./strategiesSection";
 import Intergrations from "./Intergrations";
+import BlogsPage from "@/app/blogs/page";
 
 const Features = () => {
   return (
@@ -13,6 +14,7 @@ const Features = () => {
       <DepositorSection />
       <Strategies />
       <Intergrations />
+      <BlogsPage />
     </>
   );
 };

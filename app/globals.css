@@ -241,6 +241,14 @@ body {
   box-shadow: 2px 6px 11px 0px rgba(191, 188, 255, 0.26);
 }
 
+/* Line Clamp */
+.lineClampThree {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Helpers */
 .ignore_global_spacing {
   width: 100vw !important;
