@@ -1,17 +1,20 @@
-import client from "@/lib/contentful";
-import { BlogHeader, BlogCard } from "@/components/BlogCard";
+import client from "@/app/lib/getBlogs";
+import { BlogHeader, BlogCard } from "@/app/landingPage/blogs/blogCards";
 import previewBlogImage from "@/public/assets/img/blogImages/blogPreviewImageGuides.png";
 
-export const revalidate = 60; // Revalidate data every 60 seconds
-
-const fetchBlogs = async () => {
+export const getStaticProps = async () => {
   const res = await client.getEntries({ content_type: "blogTest" });
-  return res.items;
+  const blogs = res.items;
+
+  return {
+    props: {
+      blogs,
+    },
+    revalidate: 60, // Revalidate data every 60 seconds
+  };
 };
 
-const BlogsPage = async () => {
-  const blogs = await fetchBlogs();
-
+const BlogsPage = ({ blogs }) => {
   return (
     <section className="pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px] flex justify-center">
       <div className="container">

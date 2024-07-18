@@ -7,6 +7,11 @@ import "./landingPage.css";
 import Carousel from "./carouselSection/carousel";
 // Feature Sections
 import Features from "./featureSection/features";
+// Feature children
+import FeaturePrimeAccount from "@/app/landingPage/featureSection/featurePrimeAccount";
+import DepositorSection from "@/app/landingPage/featureSection/depositorSection";
+import Strategies from "@/app/landingPage/featureSection/strategiesSection";
+import Intergrations from "@/app/landingPage/featureSection/Intergrations";
 
 const VideoPlayer = dynamic(
   () => import("@/app/components/videoPlayer/video"),
@@ -95,7 +100,12 @@ const LandingPage = () => {
       {/* Carousel Section */}
       <Carousel />
       {/* Features Section */}
-      <Features />
+      <Features>
+        <FeaturePrimeAccount />
+        <DepositorSection />
+        <Strategies />
+        <Intergrations />
+      </Features>
     </div>
   );
 };
