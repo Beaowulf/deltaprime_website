@@ -1,16 +1,10 @@
-import client from "@/app/lib/getBlogs";
-
-// TODO see how much revalidate should be TODO
-export const revalidate = 60;
-
-const fetchBlogs = async () => {
-  const res = await client.getEntries({ content_type: "blogTest" });
-  return res.items;
-};
+import { fetchBlogs } from "@/lib/getBlogs";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import RichTextRenderer from "./richTextEntries";
+import Image from "next/image";
+import InlineImage from "@/public/assets/img/thumbnail.png";
 
 // Utility function to format ISO date string
-// getting date like this updatedAt: '2024-07-17T20:21:45.895Z',
-// formatting to 14-6-2024 (day-month-year)
 function formatDateString(isoString, locale = "en-GB") {
   const date = new Date(isoString);
   return date.toLocaleDateString(locale, {
@@ -25,21 +19,38 @@ function countWords(str) {
   return str.split(/\s+/).filter((word) => word !== "").length;
 }
 
+// Replace placeholders with React components
+const replacePlaceholders = (text, replacements) => {
+  let newText = text;
+
+  Object.keys(replacements).forEach((placeholder) => {
+    newText = newText.split(placeholder).join(replacements[placeholder]);
+  });
+
+  return newText;
+};
+
 const Blogs = async () => {
   const blogs = await fetchBlogs();
 
-  // Get all paragraphs and calculate word counts
   const blogData = blogs.map((blog) => {
     const paragraphs = blog.fields.blogParagraph;
     const wordCount = countWords(paragraphs);
+    const minsToRead = Math.ceil(wordCount / 210);
+
+    // Assuming the image is stored in blog.fields.blogImage.fields.file.url
+    const blogImage = `https:${blog.fields.blogImage.fields.file.url}`;
+
+    // Get richParagraph and replace it with the inlineElement
+
     return {
       ...blog.fields,
       paragraphs,
-      wordCount,
+      minsToRead,
+      blogImage,
     };
   });
 
-  // Get the latest blog by updatedAt date
   const latestBlog = blogs.sort(
     (a, b) => new Date(b.sys.updatedAt) - new Date(a.sys.updatedAt)
   )[0];
@@ -53,17 +64,18 @@ const Blogs = async () => {
       <div>
         <h1>Blogs</h1>
         {blogData.map((blog, index) => (
-          <div key={index}>
+          <div className="my-2 border-blue-400 border-2" key={index}>
             <h2>{blog.blogTitle}</h2>
             <p>{blog.blogDescription}</p>
-            <p>Word Count: {blog.wordCount}</p>
+            <p>Minutes to read: {blog.minsToRead}</p>
+            <RichTextRenderer richTextDocument={blog.blogRichTextParagraph} />
+            <div className="mt-20"></div>
           </div>
         ))}
       </div>
 
       <div className="mt-20 flex flex-col gap-8">
         <p>LATEST BLOG title WAS {latestBlog.fields.blogTitle}</p>
-        <p>LATEST BLOG paragraph WAS {latestBlog.fields.blogParagraph}</p>
         <p>Created at {formattedDate}</p>
       </div>
     </>

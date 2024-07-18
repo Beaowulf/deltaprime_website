@@ -6,7 +6,7 @@ import FeaturePrimeAccount from "./featurePrimeAccount";
 import DepositorSection from "./depositorSection";
 import Strategies from "./strategiesSection";
 import Intergrations from "./Intergrations";
-// import BlogsPage from "@/app/blogs/page";
+import BlogsPage from "@/app/blogs/page";
 
 export default function Features({ children }) {
   return <>{children}</>;
