@@ -12,7 +12,8 @@ import FeaturePrimeAccount from "@/app/landingPage/featureSection/featurePrimeAc
 import DepositorSection from "@/app/landingPage/featureSection/depositorSection";
 import Strategies from "@/app/landingPage/featureSection/strategiesSection";
 import Intergrations from "@/app/landingPage/featureSection/Intergrations";
-import RichTextRenderer from "@/app/blogs/richTextEntries";
+// import RichTextRenderer from "@/app/blogs/richTextEntries";
+import BlogPreviewCards from "@/app/landingPage/blogs/blogPreview";
 
 const VideoPlayer = dynamic(
   () => import("@/app/components/videoPlayer/video"),
@@ -83,7 +84,6 @@ const IntroTextBtnContainer = () => {
 };
 
 const LandingPage = ({ blogData }) => {
-  console.log("INLANDINGPAGE", blogData);
   return (
     <div className="mx-auto">
       {/* Top Intro Part (Text and video) */}
@@ -109,8 +109,7 @@ const LandingPage = ({ blogData }) => {
         <Intergrations />
       </Features>
 
-      {/* test the preview */}
-      {blogData.map((blog, index) => (
+      {/* {blogData.map((blog, index) => (
         <div className="my-2 border-blue-400 border-2" key={index}>
           <h2>{blog.blogTitle}</h2>
           <p>{blog.blogDescription}</p>
@@ -118,7 +117,10 @@ const LandingPage = ({ blogData }) => {
           <RichTextRenderer richTextDocument={blog.blogRichTextParagraph} />
           <div className="mt-20"></div>
         </div>
-      ))}
+      ))} */}
+
+      {/* blogPreview */}
+      <BlogPreviewCards blogProp={blogData} />
     </div>
   );
 };

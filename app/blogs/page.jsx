@@ -19,17 +19,6 @@ function countWords(str) {
   return str.split(/\s+/).filter((word) => word !== "").length;
 }
 
-// Replace placeholders with React components
-const replacePlaceholders = (text, replacements) => {
-  let newText = text;
-
-  Object.keys(replacements).forEach((placeholder) => {
-    newText = newText.split(placeholder).join(replacements[placeholder]);
-  });
-
-  return newText;
-};
-
 const Blogs = async () => {
   const blogs = await fetchBlogs();
 

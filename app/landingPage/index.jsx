@@ -20,18 +20,10 @@ function countWords(str) {
   return str.split(/\s+/).filter((word) => word !== "").length;
 }
 
-// Replace placeholders with React components
-const replacePlaceholders = (text, replacements) => {
-  let newText = text;
-
-  Object.keys(replacements).forEach((placeholder) => {
-    newText = newText.split(placeholder).join(replacements[placeholder]);
-  });
-
-  return newText;
-};
-
 const HomePage = async () => {
+  // Here is where we get the data and we can manipulate some of it before sending it to the client
+  // example the dynamic "minsToRead".
+
   const blogs = await fetchBlogs();
 
   const blogData = blogs.map((blog) => {
@@ -51,14 +43,6 @@ const HomePage = async () => {
       blogImage,
     };
   });
-
-  const latestBlog = blogs.sort(
-    (a, b) => new Date(b.sys.updatedAt) - new Date(a.sys.updatedAt)
-  )[0];
-
-  const formattedDate = latestBlog
-    ? formatDateString(latestBlog.sys.updatedAt, "en-GB")
-    : "";
 
   return (
     <>
