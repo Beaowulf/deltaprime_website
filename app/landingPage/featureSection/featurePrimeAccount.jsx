@@ -2,6 +2,7 @@ import React from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { MainButton } from "@/app/components/buttons/mainButton";
+import Header from "@/app/components/header/header";
 
 // Dark themed assets
 import RoundedOneDarkThemed from "@/public/assets/icons/RoundedOneDarkThemed.svg";
@@ -17,16 +18,6 @@ import RoundedOneLightThemed from "@/public/assets/icons/RoundedOneLightThemed.s
 import RoundedTwoLightThemed from "@/public/assets/icons/RoundedTwoLightThemed.svg";
 import RoundedThreeLightThemed from "@/public/assets/icons/RoundedThreeLightThemed.svg";
 import circleLightTheme from "@/public/assets/icons/circleLightTheme.svg";
-
-const FeatureHeader = ({ title, subTitle, paragraph }) => {
-  return (
-    <div className="flex flex-col items-center dark:text-white text-[#252948] mb-14">
-      <h4 className="uppercase mb-3 featureTitle text-center">{title}</h4>
-      <h1 className="mb-8 featureSubtitle text-center">{subTitle}</h1>
-      <p className="featureParagraph max-w-xl text-center">{paragraph}</p>
-    </div>
-  );
-};
 
 const TopPartDarkTheme = () => {
   return (
@@ -56,16 +47,16 @@ const FeaturePrimeAccount = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="md:mt-40 mt-0">
-      <FeatureHeader
+    <div className="lg:mt-40 mt-0">
+      <Header
         title={"Our Features"}
         subTitle={"Prime Account"}
         paragraph={
-          "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
+          "Our unique escrow smart contracts allow you for truly trustless borrowing. Leverage up to 6x on a wide range of flexible investment strategies."
         }
       />
       <div className="flex items-center justify-cente md:mb-20 mb-6 flex-wrap">
-        <div className="flex flex-wrap lg:flex-nowrap space-y-4 lg:space-y-0 lg:space-x-4 w-full md:h-[700px] h-full">
+        <div className="flex flex-wrap sm:flex-nowrap gap-4 w-full h-full">
           {/* Large box on the left */}
           <div
             className={`rounded-[20px] sm:w-1/2 w-full ${
@@ -189,7 +180,7 @@ const FeaturePrimeAccount = () => {
         </div>
       </div>
       {/* Show this button only on mobile */}
-      <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
+      <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
         <MainButton
           className="mx-auto"
           label="LAUNCH APP"

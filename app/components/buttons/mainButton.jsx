@@ -22,24 +22,22 @@ export function MainButton({
             : `${className} mainButtonBGwithoutBorder`
         }
       >
-        <div className="mainButton w-full h-[50px] md:h-full">
+        <div className="mainButton w-full h-[45px] md:h-full">
           <p
             className={
               typographyClass
                 ? typographyClass
-                : "text-[12px] sm:text-[18px] dark:text-black text-white"
+                : "text-[14px] md:text-[16px] lg:text-[18px] dark:text-black text-white text-nowrap"
             }
           >
             {label}
           </p>
-          {hasArrowRight ? (
+          {hasArrowRight && (
             <Image
               className={"size-5"}
               src={ArrowRightBlack}
               alt={"Arrow Right"}
             />
-          ) : (
-            ""
           )}
         </div>
       </button>
@@ -53,14 +51,12 @@ export function MainButtonDarkBG({ label, onClick, hasArrowRight = false }) {
       <button onClick={onClick}>
         <div className="mainButtonDarkBG">
           <p className="buttonLightModeText">{label}</p>
-          {hasArrowRight ? (
+          {hasArrowRight && (
             <Image
               className={"size-5"}
               src={ArrowRightBlack}
               alt={"Arrow Right"}
             />
-          ) : (
-            ""
           )}
         </div>
       </button>

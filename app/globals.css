@@ -27,7 +27,9 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: var(--font-montserrat), sans-serif;
 }
+
 /*
   5. Improve media defaults
 */
@@ -148,8 +150,17 @@ body {
 
 /* Custom CSS Classes */
 /* Text/Typography */
+/* #region Typography */
+.unlockPotentialTypography {
+  color: #fff;
+  leading-trim: both;
+  text-edge: cap;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 53.3px */
+}
+
 .largeText {
-  font-size: 41px;
   font-weight: 600;
   line-height: 53.5px;
   letter-spacing: -0.03em;
@@ -187,9 +198,7 @@ body {
 }
 
 .whiteMainText {
-  font-size: 17px;
   font-weight: 500;
-  line-height: 25.5px;
 }
 
 .blueText {
@@ -213,21 +222,17 @@ body {
 
 /* Feature Typography */
 .featureTitle {
-  font-size: 15px;
   font-weight: 700;
   line-height: 18px;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .featureSubtitle {
-  font-size: 34px;
   font-weight: 700;
-  line-height: 40px;
 }
+
 .featureParagraph {
-  font-size: 17px;
   font-weight: 500;
-  line-height: 25.5px;
 }
 
 .featureCardTitle {
@@ -272,7 +277,7 @@ body {
   display: flex;
   width: 223px;
   height: 95px;
-  padding: 31px 41px 30px 40px;
+  padding: 30px 40px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -301,7 +306,31 @@ body {
     font-size: 14px;
   }
   .securitySection {
-    width: 185px;
-    height: 65px;
+    width: 120px;
+    height: 45px;
+    padding: 15px;
+  }
+}
+
+/* TODO Maybe move this to another file */
+.spin-shrink-grow {
+  display: inline-block;
+  animation: spinShrinkGrow 4s ease-in-out forwards;
+}
+@keyframes spinShrinkGrow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(180deg) scale(0.8);
+  }
+  50% {
+    transform: rotate(360deg) scale(1);
+  }
+  75% {
+    transform: rotate(540deg) scale(0.8);
+  }
+  100% {
+    transform: rotate(720deg) scale(1);
   }
 }

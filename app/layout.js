@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
 
@@ -7,7 +7,11 @@ import Header from "@/app/ui/header/navbar";
 // Footer
 import Footer from "@/app/ui/footer/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700"], // Correct property is 'weight' not 'weights'
+});
 
 export const metadata = {
   title: "Delta Prime",
@@ -17,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={montserrat.className}>
         <Providers>
           <Header />
           {children}

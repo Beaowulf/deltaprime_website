@@ -9,6 +9,10 @@ module.exports = {
   theme: {
     typography: (theme) => ({}),
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)"],
+        mono: ["var(--font-roboto-mono)"],
+      },
       boxShadow: {
         deltaRed:
           "2px 2px 10px 0px rgba(255, 95, 162, 0.12), 7px 7px 30px 0px rgba(255, 95, 162, 0.20);",
