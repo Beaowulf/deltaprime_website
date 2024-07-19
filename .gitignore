@@ -3,13 +3,16 @@ node_modules/
 
 # Next.js
 .next/
+.next
 out/
+.swc/
 
 # Ignore .env files
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.*.env
 
 # Ignore the .next/cache directory
 .next/cache/
