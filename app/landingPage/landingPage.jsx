@@ -93,7 +93,7 @@ const LandingPage = () => {
             <VideoPlayer />
           </div>
 
-          {/* Bottom Intro Part (Unlock the full potential of your capital Launch app) */}
+          {/* Bottom Intro Part ( full potential of your capital Launch app) */}
 
           <IntroTextBtnContainer />
         </div>

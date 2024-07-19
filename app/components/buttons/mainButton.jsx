@@ -27,7 +27,7 @@ export function MainButton({
             className={
               typographyClass
                 ? typographyClass
-                : "text-[15px] sm:text-[18px] dark:text-black text-white"
+                : "text-[12px] sm:text-[18px] dark:text-black text-white"
             }
           >
             {label}

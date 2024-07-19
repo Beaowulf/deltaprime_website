@@ -1,5 +1,6 @@
 .mainButtonWithBorderBG {
   padding: 2px;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,3 +97,10 @@
 }
 
 /* responsivness */
+@media (max-width: 640px) {
+  /* Your CSS for larger screens goes here */
+  .mainButtonWithBorderBG {
+    width: 100%;
+    font-size: 12px;
+  }
+}

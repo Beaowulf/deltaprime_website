@@ -33,7 +33,7 @@ function OurTokenSection() {
                 nisi ut aliquip ex ea commodo consequat.
               </p>
               <MainButton
-                typographyClass="mx-auto px-[20px] text-[#1B153C]"
+                typographyClass="text-[12px] md:text-[18px] px-[20px] text-[#1B153C] m-0 md:mx-auto"
                 hasArrowRight={true}
                 label={"LEARN MORE"}
               />
@@ -54,7 +54,7 @@ function OurTokenSection() {
                 nisi ut aliquip ex ea commodo consequat.
               </p>
               <MainButton
-                typographyClass="mx-auto px-[20px] text-[#1B153C]"
+                typographyClass="text-[12px] md:text-[18px] px-[20px] text-[#1B153C] m-0 md:mx-auto"
                 hasArrowRight={true}
                 label={"LEARN MORE"}
               />
