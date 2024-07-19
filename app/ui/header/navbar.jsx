@@ -9,7 +9,7 @@ import { MainButton } from "@/app/components/buttons/mainButton";
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
+    <div className="px-4 sm:px-6 md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
       <nav className="md:mb-40 mb-10 mt-4">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">

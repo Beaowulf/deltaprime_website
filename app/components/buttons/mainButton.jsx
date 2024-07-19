@@ -1,6 +1,7 @@
 import "./mainButton.css";
 import Image from "next/image";
-import ArrowRight from "../../../public/assets/img/arrow-right.svg";
+import ArrowRight from "../../../public/assets/icons/arrow-right-white.svg";
+import ArrowRightBlack from "../../../public/assets/img/arrow-right.svg";
 // import { ColoredRighticon } from "../icons/icons";
 
 export function MainButton({
@@ -32,7 +33,11 @@ export function MainButton({
             {label}
           </p>
           {hasArrowRight ? (
-            <Image className={"size-5"} src={ArrowRight} alt={"Arrow Right"} />
+            <Image
+              className={"size-5"}
+              src={ArrowRightBlack}
+              alt={"Arrow Right"}
+            />
           ) : (
             ""
           )}
@@ -49,7 +54,32 @@ export function MainButtonDarkBG({ label, onClick, hasArrowRight = false }) {
         <div className="mainButtonDarkBG">
           <p className="buttonLightModeText">{label}</p>
           {hasArrowRight ? (
-            <Image className={"size-5"} src={ArrowRight} alt={"Arrow Right"} />
+            <Image
+              className={"size-5"}
+              src={ArrowRightBlack}
+              alt={"Arrow Right"}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+      </button>
+    </>
+  );
+}
+
+export function AboutButtonDarkBG({ label, onClick, hasArrowRight = false }) {
+  return (
+    <>
+      <button onClick={onClick}>
+        <div className="aboutButtonDarkBG">
+          <p className="buttonLightModeText">{label}</p>
+          {hasArrowRight ? (
+            <Image
+              className={"!fill-white size-5"}
+              src={ArrowRight}
+              alt={"Arrow Right"}
+            />
           ) : (
             ""
           )}
