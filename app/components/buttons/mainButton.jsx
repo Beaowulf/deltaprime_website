@@ -1,6 +1,7 @@
 import "./mainButton.css";
 import Image from "next/image";
-import ArrowRight from "../../../public/assets/img/arrow-right.svg";
+import ArrowRight from "../../../public/assets/icons/arrow-right-white.svg";
+import ArrowRightBlack from "../../../public/assets/img/arrow-right.svg";
 // import { ColoredRighticon } from "../icons/icons";
 
 export function MainButton({
@@ -26,13 +27,17 @@ export function MainButton({
             className={
               typographyClass
                 ? typographyClass
-                : "text-[15px] sm:text-[18px] dark:text-black text-white"
+                : "text-[12px] sm:text-[18px] dark:text-black text-white"
             }
           >
             {label}
           </p>
           {hasArrowRight ? (
-            <Image className={"size-5"} src={ArrowRight} alt={"Arrow Right"} />
+            <Image
+              className={"size-5"}
+              src={ArrowRightBlack}
+              alt={"Arrow Right"}
+            />
           ) : (
             ""
           )}
@@ -49,7 +54,37 @@ export function MainButtonDarkBG({ label, onClick, hasArrowRight = false }) {
         <div className="mainButtonDarkBG">
           <p className="buttonLightModeText">{label}</p>
           {hasArrowRight ? (
-            <Image className={"size-5"} src={ArrowRight} alt={"Arrow Right"} />
+            <Image
+              className={"size-5"}
+              src={ArrowRightBlack}
+              alt={"Arrow Right"}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+      </button>
+    </>
+  );
+}
+
+export function AboutButtonDarkBG({
+  customClass,
+  label,
+  onClick,
+  hasArrowRight = false,
+}) {
+  return (
+    <>
+      <button className={customClass} onClick={onClick}>
+        <div className="aboutButtonDarkBG">
+          <p className="buttonLightModeText">{label}</p>
+          {hasArrowRight ? (
+            <Image
+              className={"!fill-white size-5"}
+              src={ArrowRight}
+              alt={"Arrow Right"}
+            />
           ) : (
             ""
           )}

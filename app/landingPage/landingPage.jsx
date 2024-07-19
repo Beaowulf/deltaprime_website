@@ -78,20 +78,26 @@ const IntroTextBtnContainer = () => {
 
 const LandingPage = () => {
   return (
-    <div className="mx-auto">
-      {/* Top Intro Part (Text and video) */}
-      <div className="flex flex-col md:flex-row justify-between gap-8 p-4 ">
-        {/* Left side (text with pill) */}
-        <TextWithPill />
-        {/* Show this button only on mobile */}
-        <div className="fullWidthButtonChildren block sm:hidden">
-          <MainButton label="LAUNCH APP" hasArrowRight={true} />
+    <div>
+      <div className="px-4 sm:px-6 md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
+        <div className="mx-auto">
+          {/* Top Intro Part (Text and video) */}
+          <div className="flex flex-col md:flex-row justify-between gap-8 p-4 ">
+            {/* Left side (text with pill) */}
+            <TextWithPill />
+            {/* Show this button only on mobile */}
+            <div className="fullWidthButtonChildren block sm:hidden">
+              <MainButton label="LAUNCH APP" hasArrowRight={true} />
+            </div>
+            {/* Right side (video player) */}
+            <VideoPlayer />
+          </div>
+
+          {/* Bottom Intro Part ( full potential of your capital Launch app) */}
+
+          <IntroTextBtnContainer />
         </div>
-        {/* Right side (video player) */}
-        <VideoPlayer />
       </div>
-      {/* Bottom Intro Part (Unlock the full potential of your capital Launch app) */}
-      <IntroTextBtnContainer />
       {/* Carousel Section */}
       <Carousel />
       {/* Features Section */}
