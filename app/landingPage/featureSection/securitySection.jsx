@@ -25,34 +25,44 @@ function SecuritySection() {
         subTitle="Security"
         paragraph="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
       />
-      <div className="items-center   pb-16 flex flex-wrap justify-center gap-5">
-        <div className="securitySection rounded-[20px]">
-          <div className="rounded-[20px] h-full w-full">
-            <Image src={svgg} alt="" />
+      <div className="items-center pb-16 flex flex-wrap justify-center gap-5">
+        <div className="rounded-[20px] p-4 parentColoredBorderWrapper">
+          <div className="securitySection bg-[#1B153C] rounded-[20px] ">
+            <div className="rounded-[20px] h-full w-full flex place-items-center">
+              <Image src={svgg} alt="" />
+            </div>
           </div>
         </div>
 
-        <div className="securitySection rounded-[20px]">
-          <div className="rounded-[20px]  h-full w-full">
-            <Image src={Group} alt="" />
+        <div className="rounded-[20px] p-4 parentColoredBorderWrapper h-fit">
+          <div className="securitySection bg-[#1B153C] rounded-[20px] ">
+            <div className="rounded-[20px] h-full w-full flex place-items-center">
+              <Image src={Group} alt="" />
+            </div>
           </div>
         </div>
 
-        <div className="securitySection rounded-[20px]">
-          <div className="rounded-[20px]  h-full w-full">
-            <Image src={Group5853} alt="" />
+        <div className="rounded-[20px] p-4 parentColoredBorderWrapper h-fit">
+          <div className="securitySection bg-[#1B153C] rounded-[20px]  ">
+            <div className="rounded-[20px] h-full w-full flex place-items-center">
+              <Image src={Group5853} alt="" />
+            </div>
           </div>
         </div>
 
-        <div className="securitySection rounded-[20px]">
-          <div className="rounded-[20px]  h-full w-full">
-            <Image src={Group5854} alt="" />
+        <div className="rounded-[20px] p-4 parentColoredBorderWrapper h-fit">
+          <div className="securitySection bg-[#1B153C] rounded-[20px] ">
+            <div className="rounded-[20px] h-full w-full flex place-items-center">
+              <Image src={Group5854} alt="" />
+            </div>
           </div>
         </div>
 
-        <div className="securitySection rounded-[20px]">
-          <div className="rounded-[20px]  h-full w-full">
-            <Image src={Logo_atomica} alt="" />
+        <div className="rounded-[20px] p-4 parentColoredBorderWrapper h-fit">
+          <div className="securitySection bg-[#1B153C] rounded-[20px] ">
+            <div className="rounded-[20px] h-full w-full flex place-items-center">
+              <Image src={Logo_atomica} alt="" />
+            </div>
           </div>
         </div>
       </div>

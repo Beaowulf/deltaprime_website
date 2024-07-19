@@ -21,8 +21,8 @@ function OurTokenSection() {
       />
       <div className="flex flex-wrap justify-center flex-col md:flex-row gap-4">
         {/* Left Card */}
-        <div className="rounded-[20px] flex-1 p-4 featureBorderWrapDarkTheme">
-          <div className="rounded-[20px] px-8 md:px-20 lg:px-24 z-20 pb-12 bg-[#252948]">
+        <div className="rounded-[20px] flex-1 p-4 featureBorderWrapDarkTheme h-full">
+          <div className="rounded-[20px] px-8 md:px-10 lg:px-24 z-20 pb-12 bg-[#252948]">
             <div className="">
               <h4 className="featureTitle pt-24">OUR TOKENS</h4>
               <h1 className="featureSubtitle">$sPRIME</h1>
@@ -42,8 +42,8 @@ function OurTokenSection() {
         </div>
 
         {/* Right Card */}
-        <div className="rounded-[20px] flex-1 p-4 featureBorderWrapDarkTheme">
-          <div className="rounded-[20px] px-8 md:px-20 lg:px-24 z-20 pb-12 bg-[#252948]">
+        <div className="rounded-[20px] flex-1 p-4 featureBorderWrapDarkTheme h-full">
+          <div className="rounded-[20px] px-8 md:px-10 lg:px-24 z-20 pb-12 bg-[#252948]">
             <div className="">
               <h4 className="featureTitle pt-24">OUR TOKENS</h4>
               <h1 className="featureSubtitle">$sPRIME</h1>

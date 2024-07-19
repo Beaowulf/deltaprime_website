@@ -278,7 +278,6 @@ body {
   flex-shrink: 0;
   border-radius: 20px;
   border: 2px solid var(#afafff 100% #ff8fb8 100% #ffbb9b 100%, #afafff);
-  box-shadow: 0px 0px 7.9px 0px #5d47ff;
 }
 
 /* Helpers */
@@ -300,5 +299,9 @@ body {
   }
   .featureCardTitle {
     font-size: 14px;
+  }
+  .securitySection {
+    width: 185px;
+    height: 65px;
   }
 }

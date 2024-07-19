@@ -68,10 +68,15 @@ export function MainButtonDarkBG({ label, onClick, hasArrowRight = false }) {
   );
 }
 
-export function AboutButtonDarkBG({ label, onClick, hasArrowRight = false }) {
+export function AboutButtonDarkBG({
+  customClass,
+  label,
+  onClick,
+  hasArrowRight = false,
+}) {
   return (
     <>
-      <button onClick={onClick}>
+      <button className={customClass} onClick={onClick}>
         <div className="aboutButtonDarkBG">
           <p className="buttonLightModeText">{label}</p>
           {hasArrowRight ? (

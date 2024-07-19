@@ -16,11 +16,13 @@ function AboutSection() {
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </p>
-        <AboutButtonDarkBG
-          className="sm:w-full"
-          hasArrowRight={true}
-          label={"LEARN MORE"}
-        />
+        <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
+          <AboutButtonDarkBG
+            customClass="w-full"
+            hasArrowRight={true}
+            label={"LEARN MORE"}
+          />
+        </div>
       </div>
       {/* Right Side */}
       <div className="px-10 pt-10 w-full md:w-1/2">
