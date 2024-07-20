@@ -1,0 +1,36 @@
+.contactFormBG {
+  position: relative;
+}
+.contactFormBG::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 40px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: url(/_next/static/media/contactBGImg.14db8b46.png);
+  background-repeat: no-repeat;
+  background-position: 31% 25%;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .contactFormBG {
+    position: relative;
+  }
+  .contactFormBG::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: -20%;
+    top: -30%;
+    width: 150%;
+    height: 150%;
+    opacity: 0.1;
+    background-image: url(/_next/static/media/contactBGImg.14db8b46.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

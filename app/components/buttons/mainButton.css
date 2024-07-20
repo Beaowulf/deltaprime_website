@@ -135,4 +135,24 @@
   background-color: #1b153c;
 }
 
+.contactUsButtonBG {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  background-color: #feeef4;
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+  width: 100%;
+}
+
 /* responsivness */

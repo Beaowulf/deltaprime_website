@@ -47,7 +47,7 @@ const FeaturePrimeAccount = () => {
                 {theme === "dark" ? (
                   <Image src={RoundedOneDarkThemed} alt="Rounded_Number_One" />
                 ) : (
-                  <Image src={RoundedOneDarkThemed} alt="Rounded_Number_One" />
+                  <Image src={RoundedOneLightThemed} alt="Rounded_Number_One" />
                 )}
                 <p className="featureCardTitle mt-2 dark:text-white text-[#252948] max-w-[13rem]">
                   Deposit your tokens in one of the pools

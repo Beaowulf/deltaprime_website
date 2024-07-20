@@ -1,6 +1,6 @@
 {
-  "app\\landingPage\\landingPage.jsx -> @/app/components/videoPlayer/video": {
-    "id": "app\\landingPage\\landingPage.jsx -> @/app/components/videoPlayer/video",
+  "app\\landingPage\\featureSection\\introSection.jsx -> @/app/components/videoPlayer/video": {
+    "id": "app\\landingPage\\featureSection\\introSection.jsx -> @/app/components/videoPlayer/video",
     "files": [
       "static/css/_app-pages-browser_app_components_videoPlayer_video_jsx.css",
       "static/chunks/_app-pages-browser_app_components_videoPlayer_video_jsx.js"

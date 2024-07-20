@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useTheme } from "next-themes";
-import "@/app/landingPage/landingPage";
 import "swiper/css";
 import "swiper/css/autoplay";
 

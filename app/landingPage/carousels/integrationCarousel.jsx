@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useTheme } from "next-themes";
-import "@/app/landingPage/landingPage";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { integrationData } from "@/app/components/carouselImages/getCarouselData";
@@ -24,13 +23,8 @@ const DarkBoxWrapper = ({ srcImg }) => {
   );
 };
 
-function logData() {
-  console.log(integrationData);
-}
-
 const CarouselComponent = () => {
   const { theme } = useTheme();
-  logData();
 
   return (
     <div className="pt-4">

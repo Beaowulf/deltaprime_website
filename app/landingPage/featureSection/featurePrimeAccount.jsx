@@ -43,7 +43,7 @@ const TopPartLightTheme = () => {
   );
 };
 
-const FeaturePrimeAccount = () => {
+const FeaturePrimeAccountSection = () => {
   const { theme } = useTheme();
 
   return (
@@ -191,4 +191,4 @@ const FeaturePrimeAccount = () => {
   );
 };
 
-export default FeaturePrimeAccount;
+export default FeaturePrimeAccountSection;

@@ -63,7 +63,7 @@ export function FooterTextLinks() {
           <Link href="/use-cases" className="block hover:text-gray-400 text-sm">
             Use Cases / Case Studies
           </Link>
-          <Link href="/blog" className="block hover:text-gray-400 text-sm">
+          <Link href="/blogs" className="block hover:text-gray-400 text-sm">
             Blog
           </Link>
           <Link
@@ -133,7 +133,7 @@ export function footer() {
   return (
     <>
       {/* Footer Wrapper */}
-      <div className="footerWrapper relative pt-20 pb-4 bg-[#1b153c] z-[100] w-screen sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
+      <div className="footerWrapper pt-20 pb-4 bg-[#1b153c] relative z-[100] w-screen sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
         <div className="flex justify-between flex-wrap md:flex-row flex-col">
           {/* Logo with Button */}
           <LogoButton />
