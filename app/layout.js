@@ -1,16 +1,13 @@
 import { Montserrat } from "next/font/google";
 import { Providers } from "./providers";
-import "./globals.css";
-
-// Header
 import Header from "@/app/ui/header/navbar";
-// Footer
 import Footer from "@/app/ui/footer/footer";
+import "./globals.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  weight: ["300", "400", "500", "600", "700"], // Correct property is 'weight' not 'weights'
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata = {
@@ -23,14 +20,13 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <Providers>
-          <div className="px-4 sm:px-6 md:px-[4%] lg:px-[8%] 2xl:px-[13%]">
+          <div>
             <Header />
             {children}
           </div>
-          <Header />
-          {children}
-
-          {/* Footer is outside of the div with the styling because we need it to be full width always */}
+          {/* might put these 2 together
+          or contact into Footer
+          */}
           <Footer />
         </Providers>
       </body>

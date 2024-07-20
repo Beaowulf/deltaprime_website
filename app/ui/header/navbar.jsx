@@ -60,12 +60,6 @@ function Nav() {
                 label={"Launch app"}
                 className="sm:block hidden dark:text-black text-white"
               />
-              <MainButtonDarkBG
-                hasBorder={false}
-                typographyClass="text-[12px]"
-                label={"Launch app"}
-                className="sm:block hidden dark:text-black text-white"
-              />
             </div>
 
             <div className="-mr-2 flex md:hidden items-center gap-4">

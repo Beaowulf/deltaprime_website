@@ -118,3 +118,20 @@ export function ArrowButton({ darkBG, onClick }) {
     </>
   );
 }
+
+export function ContactUsButton({ label, onClick }) {
+  return (
+    <>
+      <button onClick={onClick} className="arrowButtonBG w-full h-fit">
+        <div className="contactUsButtonBG">
+          <p className="text-[#1B153C]">{label}</p>
+          <Image
+            className={"size-6 mb-[1px]"}
+            src={ArrowRightBlack}
+            alt={"Arrow Right"}
+          />
+        </div>
+      </button>
+    </>
+  );
+}

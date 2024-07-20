@@ -20,33 +20,64 @@ function countWords(str) {
   return str.split(/\s+/).filter((word) => word !== "").length;
 }
 
-const HomePage = async () => {
-  // Here is where we get the data and we can manipulate some of it before sending it to the client
-  // example the dynamic "minsToRead".
+// This is to get a random blog of each category (so that landing page is populated with different blogs each time etc)
+function getRandomItem(array) {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
 
+// HomePage component
+const HomePage = async () => {
+  // Fetch blogs data
   const blogs = await fetchBlogs();
 
-  const blogData = blogs.map((blog) => {
-    const paragraphs = blog.fields.blogParagraph;
-    const wordCount = countWords(paragraphs);
-    const minsToRead = Math.ceil(wordCount / 210);
+  // Get and Process blog data to match what we need for the previewCards on the landing page
+  const blogsByCategory = blogs.reduce((acc, blog) => {
+    const blogCategory = blog.blogCategory;
+    if (!acc[blogCategory]) {
+      acc[blogCategory] = [];
+    }
+    acc[blogCategory].push(blog);
+    return acc;
+  }, {});
 
-    // Assuming the image is stored in blog.fields.blogImage.fields.file.url
-    const blogImage = `https:${blog.fields.blogImage.fields.file.url}`;
+  // function logData(data) {
+  //   console.log(data);
+  // }
 
-    // Get richParagraph and replace it with the inlineElement
+  const blogPreviewCardData = Object.keys(blogsByCategory).map((category) => {
+    const categoryBlogs = blogsByCategory[category];
+    const randomBlog = getRandomItem(categoryBlogs);
+
+    // console.log(randomBlog);
+    const processBlog = (blog) => {
+      const description = blog.blogDescription;
+      const paragraphs = blog.blogParagraph;
+      const wordCount = countWords(paragraphs);
+      const minsToRead = Math.ceil(wordCount / 210);
+      const blogID = blog.blogID;
+
+      return {
+        ...blog,
+        description,
+        minsToRead,
+        blogID: blogID, // Ensure we have a blog ID for linking
+      };
+    };
 
     return {
-      ...blog.fields,
-      paragraphs,
-      minsToRead,
-      blogImage,
+      category,
+      blog: processBlog(randomBlog),
     };
   });
 
+  // Convert preview card data to array
+  const previewDataArray = Object.values(blogPreviewCardData);
+  // console.log("🚀 ~ HomePage ~ previewDataArray:", previewDataArray);
+
   return (
     <>
-      <LandingPage blogData={blogData} />
+      <LandingPage blogPreviewCardData={previewDataArray} />
     </>
   );
 };

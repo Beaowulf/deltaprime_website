@@ -2,7 +2,7 @@ import React from "react";
 import IntegrationCarousel from "../carousels/integrationCarousel";
 import Header from "@/app/components/header/header";
 
-const Intergrations = () => {
+const IntergrationsSection = () => {
   return (
     <div className="md:mt-32 md:mb-28 mt-20 mb-0">
       <Header
@@ -16,4 +16,4 @@ for these integrations."
   );
 };
 
-export default Intergrations;
+export default IntergrationsSection;
