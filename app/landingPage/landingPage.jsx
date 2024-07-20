@@ -5,7 +5,15 @@ import "./landingPage.css";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import Carousel from "./carousels/logoCarousel";
 import Features from "./featureSection/features";
+// Feature children
+import FeaturePrimeAccount from "@/app/landingPage/featureSection/featurePrimeAccount";
+import DepositorSection from "@/app/landingPage/featureSection/depositorSection";
+import Strategies from "@/app/landingPage/featureSection/strategiesSection";
+import Intergrations from "@/app/landingPage/featureSection/Intergrations";
+// import RichTextRenderer from "@/app/blogs/richTextEntries";
+import BlogPreviewCards from "@/app/landingPage/blogs/blogPreview";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
+
 
 const VideoPlayer = dynamic(
   () => import("@/app/components/videoPlayer/video"),
@@ -59,7 +67,9 @@ const TextWithPill = () => {
   );
 };
 
-const LandingPage = () => {
+
+
+const LandingPage = ({ blogData }) => {
   return (
     <div>
       <div className="px-4 sm:px-6 md:px-[4%] lg:px-[10%] 2xl:px-[15%]">
@@ -82,7 +92,25 @@ const LandingPage = () => {
       {/* Carousel Section */}
       <Carousel />
       {/* Features Section */}
-      <Features />
+      <Features>
+        <FeaturePrimeAccount />
+        <DepositorSection />
+        <Strategies />
+        <Intergrations />
+      </Features>
+
+      {/* {blogData.map((blog, index) => (
+        <div className="my-2 border-blue-400 border-2" key={index}>
+          <h2>{blog.blogTitle}</h2>
+          <p>{blog.blogDescription}</p>
+          <p>Minutes to read: {blog.minsToRead}</p>
+          <RichTextRenderer richTextDocument={blog.blogRichTextParagraph} />
+          <div className="mt-20"></div>
+        </div>
+      ))} */}
+
+      {/* blogPreview */}
+      <BlogPreviewCards blogProp={blogData} />
     </div>
   );
 };

@@ -17,6 +17,22 @@
   transition: all 0.5s ease;
 }
 
+.arrowButtonBG {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    130deg,
+    rgba(255, 187, 155, 1) 25%,
+    rgba(255, 143, 184, 1) 35%,
+    rgba(175, 175, 255, 1) 45%
+  );
+  background-size: 100% 200%;
+  transition: all 0.5s ease;
+  border-radius: 65px;
+}
+
 .mainButtonBG:hover {
   box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.6),
     0 2.13px 6.39px rgba(51, 0, 255, 0.9);

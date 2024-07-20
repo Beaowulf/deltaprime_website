@@ -1,7 +1,8 @@
 import "./mainButton.css";
 import Image from "next/image";
-import ArrowRight from "../../../public/assets/icons/arrow-right-white.svg";
 import ArrowRightBlack from "../../../public/assets/img/arrow-right.svg";
+import ArrowRightWhite from "../../../public/assets/img/arrow-right-white.svg";
+
 // import { ColoredRighticon } from "../icons/icons";
 
 export function MainButton({
@@ -77,12 +78,40 @@ export function AboutButtonDarkBG({
           <p className="buttonLightModeText">{label}</p>
           {hasArrowRight ? (
             <Image
-              className={"!fill-white size-5"}
-              src={ArrowRight}
+              className={"size-5"}
+              src={ArrowRightBlack}
               alt={"Arrow Right"}
             />
           ) : (
             ""
+          )}
+        </div>
+      </button>
+    </>
+  );
+}
+
+export function ArrowButton({ darkBG, onClick }) {
+  return (
+    <>
+      <button onClick={onClick} className="arrowButtonBG w-fit h-fit ">
+        <div
+          className={`rounded-[65px] w-[70px] h-[40px] flex justify-center items-center ${
+            darkBG ? "bg-arrowButtonDarkGradient" : "bg-[#F4F4FF]"
+          }`}
+        >
+          {darkBG ? (
+            <Image
+              className={"size-5 fill-white"}
+              src={ArrowRightWhite}
+              alt={"Arrow Right"}
+            />
+          ) : (
+            <Image
+              className={"size-5 fill-white"}
+              src={ArrowRightBlack}
+              alt={"Arrow Right"}
+            />
           )}
         </div>
       </button>

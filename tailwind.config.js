@@ -9,6 +9,10 @@ module.exports = {
   theme: {
     typography: (theme) => ({}),
     extend: {
+      backgroundImage: {
+        arrowButtonDarkGradient:
+          "linear-gradient(137deg, #1B153C 10%, #1C2943 50%, #301E3E 90%)",
+      },
       fontFamily: {
         sans: ["var(--font-inter)"],
         mono: ["var(--font-roboto-mono)"],

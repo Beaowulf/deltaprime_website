@@ -4,7 +4,10 @@ import Link from "next/link";
 import { Transition } from "@headlessui/react";
 import { Logo } from "@/app/components/logo/logo";
 import ThemeSwitch from "@/app/components/themeToggler/themeToggler";
-import { MainButton } from "@/app/components/buttons/mainButton";
+import {
+  MainButton,
+  MainButtonDarkBG,
+} from "@/app/components/buttons/mainButton";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,6 +55,12 @@ function Nav() {
               <ThemeSwitch />
               {}
               <MainButton
+                hasBorder={false}
+                typographyClass="text-[12px]"
+                label={"Launch app"}
+                className="sm:block hidden dark:text-black text-white"
+              />
+              <MainButtonDarkBG
                 hasBorder={false}
                 typographyClass="text-[12px]"
                 label={"Launch app"}
