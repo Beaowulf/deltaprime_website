@@ -1,5 +1,6 @@
 .mainButtonWithBorderBG {
   padding: 2px;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +57,30 @@
   font-size: 18px;
   font-weight: bold;
   background: rgb(175, 175, 255);
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(255, 178, 161, 1) 10%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(211, 160, 223, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(255, 178, 161, 1) 10%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(211, 160, 223, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    180deg,
+    rgba(255, 178, 161, 1) 10%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(211, 160, 223, 1) 100%
+  );
+  background: -o-linear-gradient(
+    180deg,
+    rgba(255, 178, 161, 1) 10%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(211, 160, 223, 1) 100%
+  );
   background: linear-gradient(
     180deg,
     rgba(255, 178, 161, 1) 10%,
@@ -69,7 +94,6 @@
   text-transform: uppercase;
   z-index: 1;
 }
-
 /* Dark Mode Button */
 .mainButtonDarkBG {
   display: flex;
@@ -92,6 +116,23 @@
   overflow: hidden;
   text-transform: uppercase;
   z-index: 1;
+}
+
+.aboutButtonDarkBG {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  background-color: #1b153c;
 }
 
 /* responsivness */

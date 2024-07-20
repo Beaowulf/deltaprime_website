@@ -7,6 +7,7 @@ import groupImages from "@/public/assets/img/groupImages.png";
 import large3DLogo from "@/public/assets/img/logo_3D_large.png";
 import piggyBank3DLarge from "@/public/assets/img/piggyBankLarge3D.png";
 import dollarSign3D from "@/public/assets/img/dollarSign3D.png";
+import Header from "@/app/components/header/header";
 
 // Dark themed assets
 import RoundedOneDarkThemed from "@/public/assets/icons/RoundedOneDarkThemed.svg";
@@ -18,26 +19,16 @@ import RoundedOneLightThemed from "@/public/assets/icons/RoundedOneLightThemed.s
 import RoundedTwoLightThemed from "@/public/assets/icons/RoundedTwoLightThemed.svg";
 import RoundedThreeLightThemed from "@/public/assets/icons/RoundedThreeLightThemed.svg";
 
-const FeatureHeader = ({ title, subTitle, paragraph }) => {
-  return (
-    <div className="flex flex-col items-center dark:text-white text-[#252948] mb-14">
-      <h4 className="uppercase mb-3 featureTitle text-center">{title}</h4>
-      <h1 className="mb-8 featureSubtitle text-center">{subTitle}</h1>
-      <p className="featureParagraph max-w-xl text-center">{paragraph}</p>
-    </div>
-  );
-};
-
 const FeaturePrimeAccount = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="md:mt-40 mt-0">
-      <FeatureHeader
-        title={"Our Features"}
-        subTitle={"Depositor"}
+    <div className="lg:mt-40 mt-28">
+      <Header
+        title={"Deposit & earn"}
+        subTitle={"Savings"}
         paragraph={
-          "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
+          "Let your capital work for you. Deposit into a savings pool within seconds. Receive upwards of 12% APY on interest from borrowed funds."
         }
       />
       <div className="flex flex-col flex-wrap gap-5 md:mb-20 mb-6">
@@ -51,7 +42,7 @@ const FeaturePrimeAccount = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-8/12 w-full`}
           >
-            <div className="flex md:flex-row flex-col justify-between items-end rounded-[20px] h-full pl-10 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden">
+            <div className="flex md:flex-row flex-col justify-between items-end rounded-[20px] h-full pl-4 md:pl-10 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden">
               <div className="w-full md:w-1/2 flex flex-col items-start mb-0 md:mb-11">
                 {theme === "dark" ? (
                   <Image src={RoundedOneDarkThemed} alt="Rounded_Number_One" />
@@ -102,12 +93,12 @@ const FeaturePrimeAccount = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-1/2 w-full`}
           >
-            <div className="flex items-end rounded-[20px] md:px-10 px-2 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden h-[300px]">
+            <div className="flex md:items-end items-center rounded-[20px] md:px-10 pl-4 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden md:h-[300px] h-[220px]">
               <div className="mb-11">
                 {theme === "dark" ? (
-                  <Image src={RoundedOneDarkThemed} alt="Rounded_Number_One" />
+                  <Image src={RoundedTwoDarkThemed} alt="Rounded_Number_One" />
                 ) : (
-                  <Image src={RoundedOneDarkThemed} alt="Rounded_Number_One" />
+                  <Image src={RoundedTwoLightThemed} alt="Rounded_Number_One" />
                 )}
                 <p className="featureCardTitle mt-2 dark:text-white text-[#252948] ">
                   Borrowers pay interest, which is autocompounded
@@ -130,12 +121,18 @@ const FeaturePrimeAccount = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-1/2 w-full`}
           >
-            <div className="flex items-end justify-between rounded-[20px] md:px-10 px-2 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden h-[300px]">
+            <div className="flex md:items-end items-center justify-between rounded-[20px] md:px-10 pl-4 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden md:h-[300px] h-[220px]">
               <div className="mb-11">
                 {theme === "dark" ? (
-                  <Image src={RoundedOneDarkThemed} alt="Rounded_Number_One" />
+                  <Image
+                    src={RoundedThreeDarkThemed}
+                    alt="Rounded_Number_One"
+                  />
                 ) : (
-                  <Image src={RoundedOneDarkThemed} alt="Rounded_Number_One" />
+                  <Image
+                    src={RoundedThreeLightThemed}
+                    alt="Rounded_Number_One"
+                  />
                 )}
                 <p className="featureCardTitle mt-2 dark:text-white text-[#252948] ">
                   Withdraw whenever you want
@@ -152,6 +149,14 @@ const FeaturePrimeAccount = () => {
       </div>
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
+        <MainButton
+          className="mx-auto"
+          label="LAUNCH APP"
+          hasArrowRight={true}
+        />
+      </div>
+      {/* Show this button only on mobile */}
+      <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
         <MainButton
           className="mx-auto"
           label="LAUNCH APP"

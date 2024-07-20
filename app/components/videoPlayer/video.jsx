@@ -2,15 +2,14 @@ import React from "react";
 import Image from "next/image";
 import ReactPlayer from "react-player";
 import playIconSVG from "@/public/assets/icons/play.svg";
-import styles from "./VideoPlayer.module.css"; // Import CSS module
+import styles from "./VideoPlayer.css";
 
 const PlayButton = () => {
   return (
     <>
-      <button className="">
+      <button>
         <Image
-          width={110}
-          height={110}
+          className="w-[50px] h-[50px] md:w-[100px] md:h-[50px]"
           src={playIconSVG}
           alt="play_Button_White_Icon"
           priority={true}
@@ -23,12 +22,14 @@ const PlayButton = () => {
 const VideoPlayer = () => {
   return (
     <div
-      className={`md:w-1/2 w-full md:h-[25rem] h-[180px] cursor-pointer ${styles.playerWrapper}`}
+      className={
+        "md:w-1/2 md:h-[25rem] h-[240px] w-full cursor-pointerplayerWrapper"
+      }
     >
       <ReactPlayer
         height={"100%"}
         width={"100%"}
-        className={styles.reactPlayer}
+        className="reactPlayer"
         url="/videos/video.mp4"
         controls={true}
         light="/assets/img/thumbnail.png"

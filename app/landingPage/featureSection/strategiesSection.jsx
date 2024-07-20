@@ -14,25 +14,27 @@ const Strategies = () => {
         theme === "dark"
           ? "featureBorderWrapDarkTheme"
           : "featureBorderWrapLightTheme"
-      } z-10 mt-52`}
+      } z-10 mt-24  md:mt-52`}
     >
-      <div className="flex items-end justify-between rounded-[20px] pl-20 py-6 pr-6  z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden">
+      <div className="flex items-center md:flex-row flex-col justify-between rounded-[20px] md:pl-20 pl-10 py-6 pr-6 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden ">
         {/* Left */}
-        <div className="flex flex-col items-start dark:text-white text-[#252948] mb-14 md:w-1/3 w-full">
-          <h4 className="uppercase mb-3 featureTitle">STRATEGIES</h4>
-          <h1 className="mb-8 featureSubtitle">
+        <div className="flex flex-col items-start dark:text-white text-[#252948] mb-14">
+          <h4 className="uppercase mb-2v featureTitle md:text-[15px] text-[12 px] text-center">
+            STRATEGIES
+          </h4>
+          <h1 className="mb-6 featureSubtitle text-[24px]">
             Strategies For Any Risk Appetite
           </h1>
-          <p className="featureParagraph max-w-xl">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur.
+          <p className="featureParagraph max-w-xl text-[13px] sm:leading-4 sm:text-[17px] leading-6">
+            Join Burd and discover strategies to boost your earnings. From
+            simple to advanced, find the perfect fit for your style.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 md:w-fit w-full">
             <MainButton hasArrowRight={true} label={"EXPLORE STRATEGIES"} />
           </div>
         </div>
         {/* Right */}
-        <div>
+        <div className="mr-8 md:mr-0">
           <Image src={strategies_burd} alt="burd_mascot_with_bubbles" />
         </div>
       </div>

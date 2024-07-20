@@ -1,12 +1,10 @@
 /* This is for the container below the video player and text with pill */
 .parentColoredBorderWrapper {
-  width: 100%;
-  height: 125px;
   /* Border Radius */
   padding: 2px;
   /* Border Radius */
   border-radius: 20px;
-  box-shadow: 0 0 14.8px rgba(93, 71, 255, 0.56);
+  box-shadow: 0 0 8px rgba(93, 71, 255, 0.56);
   background: -moz-linear-gradient(
     0deg,
     rgba(175, 175, 255, 1) 0%,
@@ -48,37 +46,6 @@
   .fullWidthButtonChildren div {
     width: 100% !important;
   }
-
-  /* Todo delte responsive version of left right side shadow / fade effect */
-  /* .fadedSides {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .fadedSides::before,
-  .fadedSides::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 20px; 
-    pointer-events: none;
-    z-index: 100;
-    height: 100%;
-  }
-
-  .fadedSides::before {
-    z-index: 10;
-    left: 0;
-    border-radius: 0 20px 20px 0;
-    box-shadow: inset 10px 0 8px -8px rgba(0, 0, 0, 0.5); 
-  }
-
-  .fadedSides::after {
-    right: 0;
-    border-radius: 0 20px 20px 0;
-    box-shadow: inset -10px 0 8px -8px rgba(0, 0, 0, 0.5); 
-  } */
 }
 
 /* Feature Section Styling */
@@ -129,7 +96,7 @@
   background: rgba(28, 33, 64, 0.1);
 }
 
-..carouseItemsWhiteTheme::before {
+.carouseItemsWhiteTheme::before {
   background: rgba(28, 33, 64, 0.1);
 }
 
@@ -173,7 +140,7 @@
   box-shadow: 5px 5px 20px 0px rgba(255, 95, 162, 0.15);
 } */
 
-.swiper-container-free-mode > .swiper-wrapper {
+.swiper > .swiper-wrapper {
   transition-timing-function: linear;
 }
 
@@ -185,9 +152,43 @@
   padding-top: 20px;
 }
 
- /* Intergrations Section Styling */
- .intergrationBoxGradient{
+/* Intergrations Section Styling */
+.intergrationBoxGradient {
   position: relative;
-  background: linear-gradient(180deg, #FFBB9B 10%, #FF8FB8 50%, #AFAFFF 100%);
+  background: linear-gradient(180deg, #ffbb9b 10%, #ff8fb8 50%, #afafff 100%);
   padding: 2px;
- }
+}
+
+.aboutSectionBG {
+  background-image: url("../../public/assets/img/aboutSectionBG.png");
+}
+
+.securitySection {
+  position: relative;
+  border: 2px solid (#afafff, #ff8fb8, #ffbb9b);
+}
+
+.featureBorderWrapLightTheme {
+  position: relative;
+  background: linear-gradient(0deg, #afafff 10%, #ff8fb8 55%, #ffbb9b 100%);
+  padding: 2px;
+}
+
+/*.securitySection::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(#afafff 100% #ff8fb8 100% #ffbb9b 100%);
+  border-radius: inherit;
+  border: double 1em transparent;
+  border-radius: 30px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, green, gold);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+*/

@@ -13,6 +13,7 @@
     "@contentful/rich-text-types": "^16.8.1",
     "@headlessui/react": "^2.1.2",
     "contentful": "^10.12.11",
+    "framer-motion": "^11.3.8",
     "next": "14.2.5",
     "next-themes": "^0.3.0",
     "react": "^18",
