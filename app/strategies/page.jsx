@@ -2,18 +2,12 @@ import React from "react";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import Image from "next/image";
 import strategiesIntroImg from "@/public/assets/img/strategiesIntroImg.png";
+import FlipCard from "@/app/components/flipCard/flipCard";
 
 // need 2 layouts for the cards
 // Dektop will have the 6 cards displayed
 // mobile will have the carousel that the user can flip
 // Both have the flip card so that will be its own component
-const FlipCard = ({ textFront, dificultyLevel, textBack }) => {
-  return (
-    <div>
-      <p>card</p>
-    </div>
-  );
-};
 
 const StrategiesPage = () => {
   return (
@@ -44,6 +38,9 @@ const StrategiesPage = () => {
         </div>
       </div>
 
+      <div>
+        <FlipCard />
+      </div>
       {/* cards */}
       <div>
         <div className="hidden md:block mx-auto p-4">
