@@ -1,8 +1,10 @@
 import React from "react";
+import { useTheme } from "next-themes";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
 
 function OurTokenSection() {
+  const { theme } = useTheme;
   return (
     <div className="mb-10 mt-20">
       <Header
@@ -12,16 +14,22 @@ function OurTokenSection() {
       />
       <div className="flex flex-wrap justify-center flex-col md:flex-row gap-4">
         {/* Left Card */}
-        <div className="rounded-[20px] flex-1 p-4 featureBorderWrapDarkTheme h-full">
-          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 bg-[#252948]">
+        <div
+          className={`rounded-[20px] flex-1 p-4 h-full ${
+            theme === "dark"
+              ? "featureBorderWrapDarkTheme"
+              : "featureBorderWrapLightTheme"
+          }`}
+        >
+          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2]">
             <div>
-              <h4 className="featureTitle pt-10 md:pt-24 text-[12px] sm:text-[15px]">
+              <h4 className="featureTitle pt-10 md:pt-24 text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
                 OUR TOKENS
               </h4>
-              <h1 className="featureSubtitle text-[17px] sm:text-[34px]">
+              <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#252948]">
                 $sPRIME
               </h1>
-              <p className="mt-3 featureParagraph text-[#FFF5F0] mb-8 text-[12px] sm:text-[17px]">
+              <p className="mt-8 featureParagraph mb-20 text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                 Store of value, tradeable ERC20 token.
                 <br />
                 - Primed with adaptive emissions.
@@ -38,16 +46,22 @@ function OurTokenSection() {
           </div>
         </div>
         {/* Right Card */}
-        <div className="rounded-[20px] flex-1 p-4 featureBorderWrapDarkTheme h-full">
-          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 bg-[#252948]">
+        <div
+          className={`rounded-[20px] flex-1 p-4 h-full ${
+            theme === "dark"
+              ? "featureBorderWrapDarkTheme"
+              : "featureBorderWrapLightTheme"
+          }`}
+        >
+          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2]">
             <div>
-              <h4 className="featureTitle pt-10 md:pt-24 text-[12px] sm:text-[15px]">
+              <h4 className="featureTitle pt-10 md:pt-24 text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
                 OUR TOKENS
               </h4>
-              <h1 className="featureSubtitle text-[17px] sm:text-[34px]">
+              <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#252948]">
                 $sPRIME
               </h1>
-              <p className="mt-3 featureParagraph text-[#FFF5F0] mb-8 text-[12px] sm:text-[17px]">
+              <p className="mt-8 featureParagraph mb-20 text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                 Utility token for Liquidity Providers and Active Users.
                 <br />
                 - Pay with for PRIME features

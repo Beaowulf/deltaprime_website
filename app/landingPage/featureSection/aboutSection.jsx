@@ -20,7 +20,7 @@ function AboutSection() {
         <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
           <AboutButtonDarkBG
             customClass="w-full"
-            hasArrowRight={true}
+            hasWhiteArrowRight={true}
             label={"LEARN MORE"}
           />
         </div>

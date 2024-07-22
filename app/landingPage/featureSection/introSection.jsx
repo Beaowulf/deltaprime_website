@@ -30,7 +30,7 @@ const TextWithPill = () => {
           </p>
         </div>
         {/* Price pill Wrapper */}
-        <div className="shadow-deltaRed dark:shadow-none rounded-[100px] bg-white flex justify-between w-full md:w-fit md:py-4 sm:px-6 py-1 px-4 gap-5 items-center mt-8 md:mt-0 z-10">
+        <div className="shadow-deltaRed dark:shadow-none rounded-[100px] bg-white flex justify-between w-full md:w-fit md:py-4 sm:px-6 py-1 px-10 gap-5 items-center mt-8 md:mt-0 z-10">
           <div className="flex flex-col items-center sm:items-start">
             <p className="blueText text-center sm:text-left">
               Protocol Deposits

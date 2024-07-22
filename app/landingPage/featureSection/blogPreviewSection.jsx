@@ -9,7 +9,9 @@ import circleThree from "@/public/assets/icons/circleThree.svg";
 const BlogHeader = ({ title, subTitle, paragraph }) => {
   return (
     <div className="flex flex-col items-center dark:text-white text-[#252948] mb-14 text-center">
-      <h4 className="uppercase mb-3 featureTitle">{title}</h4>
+      <h4 className="uppercase mb-3 md:text-[15px] font-bold text-[12px] text-center dark:text-gray-400 text-[#252948]">
+        {title}
+      </h4>
       <h1 className="mb-8 featureSubtitle">{subTitle}</h1>
       <p className="featureParagraph max-w-xl">{paragraph}</p>
     </div>
@@ -26,7 +28,7 @@ const BlogCard = ({
   blogID,
 }) => {
   return (
-    <div className="px-5 pt-5 bg-[#F4F4FF] rounded-[20px] w-[400px] h-[350px]">
+    <div className="px-5 pt-5 bg-[#F4F4FF] rounded-[20px] w-[400px] h-[350px] shadow-lg dark:shadow-none shadow-[#ff5fa240]">
       <div className="flex flex-col gap-4 justify-between h-full">
         <div className="flex justify-between">
           <div className="flex gap-2 text-black">
@@ -51,7 +53,7 @@ const BlogCard = ({
             {blogDescription}
           </p>
           <Link href={`/blogs/${blogID}`}>
-            <ArrowButton darkBG />
+            <ArrowButton />
           </Link>
         </div>
 
@@ -120,13 +122,7 @@ const Circles = (randomNumber) => {
   }
 };
 
-function logData(data) {
-  console.log(data);
-}
 const BlogPreviewSection = ({ blogPreviewCardData }) => {
-  console.log(blogPreviewCardData);
-  logData(blogPreviewCardData);
-
   return (
     <>
       <div className="pt-20">

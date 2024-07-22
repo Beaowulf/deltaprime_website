@@ -65,7 +65,7 @@ const CarouselComponent = () => {
           return (
             <SwiperSlide key={index}>
               <div
-                className={`bg-white p-1 md:p-4 rounded-[20px] flex justify-center  ${
+                className={`bg-[white] p-1 md:p-4 rounded-[20px] flex justify-center  ${
                   theme === "dark"
                     ? `carouselItemsDarkTheme`
                     : `carouseItemsWhiteTheme`

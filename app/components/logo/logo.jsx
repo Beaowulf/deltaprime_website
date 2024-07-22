@@ -27,7 +27,7 @@ export const FooterLogo = () => {
       className="flex title-font font-medium items-center text-gray-900 dark:text-white"
     >
       <Image className="h-[54px] w-[53px]" src={DarkMode_logo} alt="logo_img" />
-      <p className="ml-3 font-extrabold text-3xl dark:text-white text-dp_purple">
+      <p className="ml-3 font-extrabold text-3xl text-white">
         Delta
         <span className="font-normal">Prime</span>
       </p>

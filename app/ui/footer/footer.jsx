@@ -107,7 +107,7 @@ export function RoundButtonLinks() {
 
 const TermsOfUseFooter = () => {
   return (
-    <div className="w-full py-6 md:mt-32 mt-11 md:px-0 px-7">
+    <div className="w-full py-6 md:mt-32 mt-11 md:px-0 px-7 relative">
       <div className="termsOfUseGradient mb-4"></div>
       <div className="container flex flex-col-reverse sm:flex-row justify-between items-center text-white">
         <p className="text-sm text-center sm:text-left mt-6 md:mt-0">
@@ -133,14 +133,17 @@ export function footer() {
   return (
     <>
       {/* Footer Wrapper */}
-      <div className="footerWrapper pt-20 pb-4 bg-[#1b153c] relative z-[100] w-screen sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
-        <div className="flex justify-between flex-wrap md:flex-row flex-col">
-          {/* Logo with Button */}
-          <LogoButton />
-          <FooterTextLinks />
-          <RoundButtonLinks />
+      <div>
+        <div className="w-full h-1 bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%" />
+        <div className="footerWrapper pt-20 pb-4 bg-[#1b153c] relative z-[100] w-screen sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
+          <div className="flex justify-between flex-wrap md:flex-row flex-col">
+            {/* Logo with Button */}
+            <LogoButton />
+            <FooterTextLinks />
+            <RoundButtonLinks />
+          </div>
+          <TermsOfUseFooter />
         </div>
-        <TermsOfUseFooter />
       </div>
     </>
   );

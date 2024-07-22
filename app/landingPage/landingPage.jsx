@@ -13,14 +13,17 @@ import AboutSection from "@/app/landingPage/featureSection/aboutSection";
 import SecuritySection from "@/app/landingPage/featureSection/securitySection";
 import BlogPreviewSection from "@/app/landingPage/featureSection/blogPreviewSection";
 import ContactForm from "@/app/ui/contactForm/contactForm";
+import { useTheme } from "next-themes";
 
-// todo: cleanup the 2 divs with the same styling
+// todo: cleanup the 2 divs with the same padding styling
 const LandingPage = ({ blogPreviewCardData }) => {
+  const { theme } = useTheme();
+
   return (
     <div>
       <IntroSection />
       <Carousel />
-      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
+      <div className="px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
         <Features>
           <FeaturePrimeAccountSection />
           <DepositorSection />
@@ -30,7 +33,14 @@ const LandingPage = ({ blogPreviewCardData }) => {
         <OurTokenSection />
       </div>
       <AboutSection />
-      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%] bg-gradient-to-r from-[#1b153c] from-10% via-[#1c2943] via-50% to-[#301e3e] to-80%">
+      <div
+        className={`sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%] 
+        ${
+          theme === "dark"
+            ? "bg-gradient-to-r from-[#1b153c] from-10% via-[#1c2943] via-50% to-[#301e3e] to-80%"
+            : "bg-gradient-to-r from-[#F4F4FF] from-10% via-[#FFF5F0] via-30% to-[#E8E8F2] to-50%"
+        }`}
+      >
         <BlogPreviewSection blogPreviewCardData={blogPreviewCardData} />
         <SecuritySection />
         <ContactForm />

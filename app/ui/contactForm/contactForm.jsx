@@ -12,9 +12,9 @@ const ContactForm = () => {
   return (
     <div className="flex flex-col md:flex-row mt-24 pb-36 relative">
       {/* Left Side */}
-      <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center p-8 contactFormBG">
+      <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center p-10 contactFormBG">
         {/* Add your background image in the above style */}
-        <div className="flex flex-col items-start dark:text-white text-[#252948] mb-14 max-w-72">
+        <div className="flex flex-col items-start dark:text-white text-black mb-14 max-w-72">
           <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-center">
             Contact us
           </h4>
@@ -34,7 +34,7 @@ const ContactForm = () => {
           <div className="flex gap-5">
             <div className="mb-4 flex-1">
               <label
-                className="block text-white font-bold mb-2 text-[12px] md:text-[17px]"
+                className="block dark:text-white text-[#252948] font-bold mb-2 text-[12px] md:text-[17px]"
                 htmlFor="name"
               >
                 Name
@@ -48,7 +48,7 @@ const ContactForm = () => {
             </div>
             <div className="mb-4 flex-1">
               <label
-                className="block text-white font-bold mb-2 text-[12px] md:text-[17px]"
+                className="block dark:text-white text-[#252948] font-bold mb-2 text-[12px] md:text-[17px]"
                 htmlFor="email"
               >
                 Email
@@ -64,7 +64,7 @@ const ContactForm = () => {
 
           <div className="mb-6">
             <label
-              className="block text-white font-bold mb-2 text-[12px] md:text-[17px]"
+              className="block dark:text-white text-[#252948] font-bold mb-2 text-[12px] md:text-[17px]"
               htmlFor="message"
             >
               Message

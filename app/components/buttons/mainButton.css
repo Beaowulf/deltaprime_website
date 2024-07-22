@@ -17,6 +17,63 @@
   transition: all 0.5s ease;
 }
 
+.mainButtonBGwithoutBorder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 54px;
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+}
+
+.navBarButtonBGDark {
+  padding: 2px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 54px;
+  background: linear-gradient(
+    130deg,
+    rgba(255, 187, 155, 1) 25%,
+    rgba(255, 143, 184, 1) 35%,
+    rgba(175, 175, 255, 1) 45%
+  );
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+  background-size: 100% 200%;
+  transition: all 0.5s ease;
+}
+.navBarButtonBGLight {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 54px;
+  /* background: linear-gradient(145deg, #3a2d8c 10%, #571e4b 50%, #163d59 100%); */
+  box-shadow: 0px 1.447px 4.342px 0px rgba(255, 95, 162, 0.7),
+    0px 5.79px 18.816px 0px rgba(255, 95, 162, 0.41);
+  background-size: 100% 200%;
+  transition: all 0.5s ease;
+}
+
+.navbarButtonLightGradient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  background: linear-gradient(145deg, #3a2d8c 10%, #571e4b 50%, #163d59 100%);
+}
+
 .arrowButtonBG {
   padding: 2px;
   display: flex;
@@ -39,15 +96,6 @@
   background-size: 200% 100%;
 }
 
-.mainButtonBGwithoutBorder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 54px;
-  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
-    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
-}
-
 .mainButton {
   display: flex;
   justify-content: center;
@@ -56,6 +104,12 @@
   padding: 10px 20px;
   font-size: 18px;
   font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
   background: rgb(175, 175, 255);
   background: -webkit-linear-gradient(
     180deg,
@@ -87,12 +141,6 @@
     rgba(255, 143, 184, 1) 60%,
     rgba(211, 160, 223, 1) 100%
   );
-  border-radius: 50px;
-  outline: none;
-  cursor: pointer;
-  overflow: hidden;
-  text-transform: uppercase;
-  z-index: 1;
 }
 /* Dark Mode Button */
 .mainButtonDarkBG {
@@ -135,7 +183,7 @@
   background-color: #1b153c;
 }
 
-.contactUsButtonBG {
+.contactUsButtonBGDark {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,6 +200,25 @@
   background-color: #feeef4;
   box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
     0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+  width: 100%;
+}
+.contactUsButtonBGLight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  background-color: #feeef4;
+  box-shadow: 5px 5px 20px 0px rgba(255, 95, 162, 0.25);
+  background: linear-gradient(140deg, #1b153c 10%, #1c2943 50%, #301e3e 90%);
   width: 100%;
 }
 
