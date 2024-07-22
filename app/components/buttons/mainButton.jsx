@@ -64,11 +64,11 @@ export function NavBarButton({ label, onClick }) {
             resolvedTheme === "dark"
               ? "mainButton"
               : "navbarButtonLightGradient"
-          } w-full h-[45px] md:h-full`}
+          } w-full h-[25px] md:h-[40px]`}
         >
           <p
             className={
-              "text-[14px] md:text-[16px] lg:text-[18px] dark:text-black text-white text-nowrap"
+              "text-[12px] md:text-[14px] lg:text-[16px] dark:text-black text-white text-nowrap"
             }
           >
             {label}

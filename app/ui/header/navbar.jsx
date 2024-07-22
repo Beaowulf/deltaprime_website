@@ -56,24 +56,23 @@ function Nav() {
                   <div className={getLinkClass("/blogs")} />
                 </div>
 
+                <Link
+                  href="/strategies"
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
+                >
+                  Strategies
+                </Link>
                 {/*
                 <Link
                   href="/"
-                  className="text-gray-[#808080] hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Projects
-                </Link>
-
-                <Link
-                  href="/"
-                  className="text-gray-[#808080] hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium"
+ className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
                 >
                   Calendar
                 </Link>
 
                 <Link
                   href="/"
-                  className="text-gray-[#808080] hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium"
+ className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
                 >
                   Reports
                 </Link> */}
@@ -84,11 +83,11 @@ function Nav() {
             </div>
 
             <div className="-mr-2 flex md:hidden items-center gap-4">
-              <MainButton
+              <NavBarButton
                 hasBorder={false}
                 typographyClass="text-[12px]"
                 label={"Launch app"}
-                className="sm:hidden block w-fit h-[24px] whitespace-nowrap dark:text-black text-white"
+                className="sm:hidden block w-fit h-[25px] md:h-[35px] whitespace-nowrap dark:text-black text-white"
               />
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -149,7 +148,7 @@ function Nav() {
               </Link>
 
               <Link
-                href="/"
+                href="/strategies"
                 className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-medium"
                 onClick={() => setIsOpen(false)}
               >
