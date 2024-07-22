@@ -1,0 +1,65 @@
+/* Custom styles for Swiper carousel */
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.custom-pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.custom-arrow {
+  cursor: pointer;
+  font-size: 24px;
+  color: #333; /* Change color as needed */
+}
+
+.swiper-pagination {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #ddd; /* Inactive bullet color */
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #333; /* Active bullet color */
+}
+
+.custom-bullet {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 4px;
+  background: #ddd; /* Inactive bullet color */
+  opacity: 1;
+}
+
+.custom-bullet-active {
+  background: #333; /* Active bullet color */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination {
+  display: block;
+  position: absolute;
+  text-align: center;
+  transition: 300ms opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}

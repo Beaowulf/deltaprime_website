@@ -1,12 +1,26 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import "./flipCard.css";
 import filledStar from "@/public/assets/icons/filledStar.svg";
 import unFilledStar from "@/public/assets/icons/unFilledStar.svg";
 
-const FlipCard = ({ titleFront, descriptionFront, difficultyLevel }) => {
+const FlipCard = ({
+  titleFront,
+  descriptionFront,
+  difficultyLevel,
+  titleBack,
+  descriptionBack,
+  listTextBack,
+  isFirstCard, // Prop to identify the first card
+}) => {
   const [isFlipped, setIsFlipped] = useState(false);
+
+  useEffect(() => {
+    if (isFirstCard) {
+      setIsFlipped(true); // Flip the first card on mount
+    }
+  }, [isFirstCard]);
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
@@ -31,24 +45,39 @@ const FlipCard = ({ titleFront, descriptionFront, difficultyLevel }) => {
 
   return (
     <div
-      className={`flip-card h-[450px] w-[350px]  ${isFlipped ? "flipped" : ""}`}
+      className={`flip-card lg:h-[450px] lg:w-[350px] md:h-[420px] md:w-[320px] h-[420px] w-[320px] ${
+        isFlipped ? "flipped" : ""
+      }`}
       onClick={handleClick}
     >
       <div className="flip-card-inner">
-        <div className="flip-card-front rounded-[20px] shadow-lg shadow-[#0015ffb7] ">
-          <p className="text-white pb-3">{titleFront}</p>
-          <p className="pb-6">{descriptionFront}</p>
+        <div className="flip-card-front p-6 flex flex-col rounded-[20px] shadow-lg shadow-[#0015ffb7]">
+          <h4 className="text-white pb-3 font-extrabold text-[20px] leading-7">
+            {titleFront}
+          </h4>
+          <p className="pb-6 font-bold text-[14px] leading-5">
+            {descriptionFront}
+          </p>
           <div>
-            <p className="text-[14px] font-semibold leading-4">
-              Difficulty Level:
-            </p>
-            <div className="flex flex-row">
+            <div className="flex flex-row justify-center items-center gap-4">
+              <p className="text-[14px] font-bold leading-4">
+                Difficulty Level:
+              </p>
               {<DifficultyStars difficultyLevel={difficultyLevel} />}
             </div>
           </div>
         </div>
-        <div className="flip-card-back rounded-[20px]">
-          This is the back of the card.
+        <div className="flip-card-back p-8 rounded-[20px] flex flex-col justify-center items-center">
+          <h4 className="text-white pb-3 font-extrabold text-[20px] leading-7">
+            {titleBack}Delta Neutral
+          </h4>
+          <p className="pb-6 font-bold text-[14px] leading-5">
+            {descriptionBack}Delta neutral portfolios are optimized for
+            loss-prevention. A delta neutral portfolio is not affected by price
+            changes of individual assets.
+          </p>
+          <span className="border-t-2 border-t-[#FFBB9B] w-full mb-4 " />
+          <div>{listTextBack}</div>
         </div>
       </div>
     </div>
