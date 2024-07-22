@@ -29,7 +29,7 @@ export function MainButton({
             className={
               typographyClass
                 ? typographyClass
-                : "text-[16px] md:text-[18px] lg:text-[20px] dark:text-black text-white text-nowrap font-extrabold"
+                : "text-[12px] md:text-[14px] lg:text-[16px] dark:text-black text-white text-nowrap font-extrabold"
             }
           >
             {label}

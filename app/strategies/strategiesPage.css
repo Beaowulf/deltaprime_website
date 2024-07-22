@@ -7,7 +7,7 @@
 
 .custom-pagination-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 10;
@@ -15,8 +15,8 @@
 
 .custom-arrow {
   cursor: pointer;
-  font-size: 24px;
-  color: #333; /* Change color as needed */
+  height: 50px;
+  width: 60px;
 }
 
 .swiper-pagination {
@@ -25,20 +25,28 @@
 }
 
 .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #ddd; /* Inactive bullet color */
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  background-image: url("../../public/assets//icons/emptyCircle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
   opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #333; /* Active bullet color */
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  background-image: url("../../public/assets//icons/filledCircle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .custom-bullet {
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   margin: 0 4px;
   background: #ddd; /* Inactive bullet color */
@@ -57,7 +65,6 @@
 
 .swiper-pagination {
   display: block;
-  position: absolute;
   text-align: center;
   transition: 300ms opacity;
   transform: translate3d(0, 0, 0);

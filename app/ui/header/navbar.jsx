@@ -37,7 +37,7 @@ function Nav() {
   return (
     <div className="px-4 sm:px-6 md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
       <nav className="md:mb-20 mb-10 mt-4">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex justify-center items-center gap-8">
@@ -57,25 +57,25 @@ function Nav() {
                 </div>
 
                 <Link
+                  href="/ourStory"
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
+                >
+                  Our Story
+                </Link>
+
+                <Link
                   href="/strategies"
                   className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
                 >
                   Strategies
                 </Link>
-                {/*
-                <Link
-                  href="/"
- className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
-                >
-                  Calendar
-                </Link>
 
                 <Link
                   href="/"
- className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
                 >
-                  Reports
-                </Link> */}
+                  Contact Us
+                </Link>
               </div>
             </div>
             <div className="hidden md:flex items-center">
@@ -140,7 +140,15 @@ function Nav() {
             </button>
             <div className="text-center ">
               <Link
-                href="/"
+                href="/blogs"
+                className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Burd Log
+              </Link>
+
+              <Link
+                href="/ourStory"
                 className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-medium"
                 onClick={() => setIsOpen(false)}
               >
@@ -156,19 +164,11 @@ function Nav() {
               </Link>
 
               <Link
-                href="/blogs"
+                href="/contactUs"
                 className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-medium"
                 onClick={() => setIsOpen(false)}
               >
-                Burd Log
-              </Link>
-
-              <Link
-                href="/"
-                className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Docs
+                Contact Us
               </Link>
             </div>
           </div>
