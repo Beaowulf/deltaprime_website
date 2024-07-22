@@ -1,22 +1,57 @@
 "use client";
 import React, { useState } from "react";
-import ReactCardFlip from "react-card-flip";
+import Image from "next/image";
+import "./flipCard.css";
+import filledStar from "@/public/assets/icons/filledStar.svg";
+import unFilledStar from "@/public/assets/icons/unFilledStar.svg";
 
-const FlipCard = () => {
+const FlipCard = ({ titleFront, descriptionFront, difficultyLevel }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-      <div>
-        This is the front of the card.
-        <button onClick={setIsFlipped(!isFlipped)}>Click to flip</button>
-      </div>
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  };
 
-      <div>
-        This is the back of the card.
-        <button onClick={setIsFlipped(!isFlipped)}>Click to flip</button>
+  const DifficultyStars = ({ difficultyLevel }) => {
+    const totalStars = 3;
+    const stars = Array(totalStars)
+      .fill()
+      .map((_, index) => (
+        <Image
+          key={index}
+          src={index < difficultyLevel ? filledStar : unFilledStar}
+          alt={index < difficultyLevel ? "filled_star" : "unfilled_star"}
+          width={25}
+          height={80}
+        />
+      ));
+
+    return <>{stars}</>;
+  };
+
+  return (
+    <div
+      className={`flip-card h-[450px] w-[350px]  ${isFlipped ? "flipped" : ""}`}
+      onClick={handleClick}
+    >
+      <div className="flip-card-inner">
+        <div className="flip-card-front rounded-[20px] shadow-lg shadow-[#0015ffb7] ">
+          <p className="text-white pb-3">{titleFront}</p>
+          <p className="pb-6">{descriptionFront}</p>
+          <div>
+            <p className="text-[14px] font-semibold leading-4">
+              Difficulty Level:
+            </p>
+            <div className="flex flex-row">
+              {<DifficultyStars difficultyLevel={difficultyLevel} />}
+            </div>
+          </div>
+        </div>
+        <div className="flip-card-back rounded-[20px]">
+          This is the back of the card.
+        </div>
       </div>
-    </ReactCardFlip>
+    </div>
   );
 };
 
