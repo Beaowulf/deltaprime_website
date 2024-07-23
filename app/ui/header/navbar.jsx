@@ -56,26 +56,35 @@ function Nav() {
                   <div className={getLinkClass("/blogs")} />
                 </div>
 
-                <Link
-                  href="/ourStory"
-                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
-                >
-                  Our Story
-                </Link>
+                <div>
+                  <Link
+                    href="/ourStory"
+                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
+                  >
+                    Our Story
+                  </Link>
+                  <div className={getLinkClass("/ourStory")} />
+                </div>
 
-                <Link
-                  href="/strategies"
-                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
-                >
-                  Strategies
-                </Link>
+                <div>
+                  <Link
+                    href="/strategies"
+                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
+                  >
+                    Strategies
+                  </Link>
+                  <div className={getLinkClass("/strategies")} />
+                </div>
 
-                <Link
-                  href="/"
-                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
-                >
-                  Contact Us
-                </Link>
+                <div>
+                  <Link
+                    href="/contactUs"
+                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
+                  >
+                    Contact Us
+                  </Link>
+                  <div className={getLinkClass("/contactUs")} />
+                </div>
               </div>
             </div>
             <div className="hidden md:flex items-center">

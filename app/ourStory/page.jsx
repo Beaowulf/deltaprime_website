@@ -24,9 +24,9 @@ const OurStory = () => {
   const { theme } = useTheme();
   return (
     <div>
-      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%] px-4">
+      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] px-4">
         {/* intro */}
-        <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 my-10 md:my-40">
+        <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8 dark:text-white text-[#6B70ED]">
@@ -385,7 +385,7 @@ const OurStory = () => {
 
       {/* join our team */}
       <div className="bg-[#F4F4FF] w-screen h-fit md:h-[40vh] mt-40">
-        <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%] px-4 py-[75px]">
+        <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]] px-4 py-[75px]">
           <div className="flex justify-around flex-wrap px-4 md:px-0">
             <div className="flex flex-col items-start dark:text-white text-[#252948] mb-14 max-w-96">
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-black leading-6">
@@ -405,7 +405,7 @@ const OurStory = () => {
             <div className="flex flex-col gap-8">
               <div className="featureBorderWrapLightTheme rounded-[30px]">
                 <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[30px]">
-                  <p className="pl-6 mr-[150px] text-[18px] text-[#29233B]">
+                  <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
                     DevOps Engineer
                   </p>
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
@@ -419,7 +419,7 @@ const OurStory = () => {
               </div>
               <div className="featureBorderWrapLightTheme rounded-[30px]">
                 <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[30px]">
-                  <p className="pl-6 mr-[150px] text-[18px] text-[#29233B]">
+                  <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
                     QA Tester
                   </p>
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
@@ -433,7 +433,7 @@ const OurStory = () => {
               </div>
               <div className="featureBorderWrapLightTheme rounded-[30px]">
                 <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[30px]">
-                  <p className="pl-6 mr-[150px] text-[18px] text-[#29233B]">
+                  <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
                     QA Tester
                   </p>
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
@@ -450,7 +450,7 @@ const OurStory = () => {
         </div>
       </div>
 
-      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%] px-4">
+      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] px-4">
         <ContactForm />
       </div>
     </div>

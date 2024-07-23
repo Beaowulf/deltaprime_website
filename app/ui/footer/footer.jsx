@@ -135,7 +135,7 @@ export function footer() {
       {/* Footer Wrapper */}
       <div>
         <div className="w-full h-1 bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%" />
-        <div className="footerWrapper pt-20 pb-4 bg-[#1b153c] relative z-[100] w-screen sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
+        <div className="footerWrapper pt-20 pb-4 bg-[#1b153c] relative z-[100] w-screen sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
           <div className="flex justify-between flex-wrap md:flex-row flex-col">
             {/* Logo with Button */}
             <LogoButton />

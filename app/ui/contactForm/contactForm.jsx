@@ -12,7 +12,7 @@ const ContactForm = () => {
   return (
     <div className="flex flex-col md:flex-row mt-24 pb-36 relative">
       {/* Left Side */}
-      <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center px-10 py-2 md:py-28 contactFormBG">
+      <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center px-10 py-2 md:py-28 2xl:py-40 contactFormBG">
         {/* Add your background image in the above style */}
         <div className="flex flex-col items-start dark:text-white text-black mb-14 max-w-[30rem]">
           <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-center">

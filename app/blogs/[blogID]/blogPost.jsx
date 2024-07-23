@@ -233,7 +233,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
             </div>
 
             {/* rich paragraph */}
-            <div className="blogPostWrapper mt">
+            <div className="blogPostWrapper mt-10">
               <RichTextRenderer
                 blogTakeaways={blogData.blogTakeaways}
                 hasTakeaways={blogData?.blogTakeaways?.length > 0}

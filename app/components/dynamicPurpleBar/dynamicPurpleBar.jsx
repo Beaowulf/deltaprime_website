@@ -6,8 +6,8 @@ const DynamicPurpleBar = ({ blogTitle, inBlogPost = false }) => {
     <div
       className={`${
         !inBlogPost
-          ? "px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%]"
-          : "px-4 sm:px-[5%] md:px-[5%] lg:px-[5%] 2xl:px-[10%]"
+          ? "px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]"
+          : "px-4 sm:px-[5%] md:px-[5%] lg:px-[5%] xl:px-[8%] 2xl:px-[10%]"
       }`}
     >
       <div className="flex items-center gap-3 rounded-[20px] bg-[#565AC2] relative px-5 md:px-16 py-4 text-white ">

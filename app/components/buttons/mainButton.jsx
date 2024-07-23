@@ -84,7 +84,7 @@ export function MainButtonDarkBG({ label, onClick, hasArrowRight = false }) {
     <>
       <button onClick={onClick}>
         <div className="mainButtonDarkBG">
-          <p className="buttonLightModeText">{label}</p>
+          <p className="buttonLightModeText min-w-fit pl-3">{label}</p>
           {hasArrowRight && (
             <Image
               className={"size-5"}
@@ -109,7 +109,7 @@ export function AboutButtonDarkBG({
     <>
       <button className={customClass} onClick={onClick}>
         <div className="aboutButtonDarkBG">
-          <p className="buttonLightModeText">{label}</p>
+          <p className="buttonLightModeText min-w-fit">{label}</p>
           {hasArrowRight && (
             <Image
               className={"size-5"}
