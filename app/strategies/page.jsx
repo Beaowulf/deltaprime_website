@@ -12,8 +12,8 @@ import { MainButton } from "@/app/components/buttons/mainButton";
 import FlipCard from "@/app/components/flipCard/flipCard";
 import strategiesIntroImg from "@/public/assets/img/strategiesIntroImg.png";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
-import arrowLeftColored from "@/public/assets/icons/arrowLeftColored.svg";
-import arrowRightColored from "@/public/assets/icons/arrowRightColored.svg";
+import arrowLeftColored from "@/public/assets/icons/arrowBtnLeftColored.svg";
+import arrowRightColored from "@/public/assets/icons/arrowBtnRightColored.svg";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import ContactForm from "@/app/ui/contactForm/contactForm";
 
