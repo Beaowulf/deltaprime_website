@@ -105,9 +105,10 @@ body {
   position: relative;
   background: rgb(27, 21, 59);
   background: linear-gradient(
-    90deg,
-    rgba(27, 21, 59, 1) 0%,
-    rgba(28, 39, 66, 1) 100%
+    137deg,
+    #1b153c 11.09%,
+    #1c2943 49.48%,
+    #301e3e 88.79%
   );
   overflow: hidden;
 }
@@ -321,6 +322,14 @@ body {
     width: 150px;
     height: 50px;
     padding: 15px;
+  }
+}
+/* Responsivness */
+@media (max-width: 640px) {
+  .fullWidthButtonChildren,
+  .fullWidthButtonChildren button,
+  .fullWidthButtonChildren div {
+    width: 100% !important;
   }
 }
 
