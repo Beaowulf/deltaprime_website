@@ -18,8 +18,8 @@ const DynamicPurpleBar = ({ blogTitle, inBlogPost = false }) => {
         <Link href={"/blogs"}>Burd Log</Link>
         {blogTitle && (
           <>
-            <span className="w-3 h-1 bg-white rounded-[40px]" />
-            <p>{blogTitle}</p>
+            <span className="w-3 h-1 bg-white rounded-[40px] font-extrabold" />
+            <p className="font-extrabold">{blogTitle}</p>
           </>
         )}
       </div>

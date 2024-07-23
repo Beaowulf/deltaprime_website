@@ -175,13 +175,6 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 alt="blog_Post_Image"
                 className="w-auto max-h-450px rounded-[20px]"
               />
-              {/* TODO: The below is correct, but the image compression makes the image suck.. until we find a solution im adding an image locally */}
-              {/* <Image
-              src={`https:${blogData.blogImage.fields.file.url}`}
-              className="w-auto h-450px"
-              width={825}
-              height={450}
-            /> */}
             </div>
             <div className="md:hidden w-full flex justify-center mt-6 gap-4">
               <p className="text-nowrap text-[#252948] dark:text-[#F6F6F6]">
@@ -193,13 +186,9 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 url={blogUrl}
               />
             </div>
-
-            {/* Unlock Potential block / hide on ipads and smaller screens */}
             <div className="hidden lg:block">
               <UnlockPotentialContainer />
             </div>
-
-            {/* table content */}
             <div className="md:hidden block bg-white mt-6 p-10 rounded-[20px]">
               <p className="font-bold leading-6 uppercase text-[18px] text-[#252948]">
                 Table of contents
@@ -232,7 +221,6 @@ const BlogPost = ({ blog, blogPreviewData }) => {
               </ul>
             </div>
 
-            {/* rich paragraph */}
             <div className="blogPostWrapper mt-10">
               <RichTextRenderer
                 blogTakeaways={blogData.blogTakeaways}
@@ -240,7 +228,6 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 richTextDocument={blogData.blogRichTextParagraph}
               />
             </div>
-            {/* full width "launch button" / show on ipads and smaller screens */}
             <div className="fullWidthButtonChildren h-[60px] mt-12 md:h-full block md:hidden w-full text-center">
               <MainButton
                 className="mx-auto w-full p-4"
@@ -251,10 +238,8 @@ const BlogPost = ({ blog, blogPreviewData }) => {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="hidden md:block md:w-3/12">
           <div className="flex flex-col gap-10">
-            {/* table content */}
             <div className="bg-white p-4 md:p-10 rounded-[20px]">
               <p className="font-bold leading-6 uppercase text-[18px] text-[#252948]">
                 Table of contents
@@ -286,17 +271,16 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 </li>
               </ul>
             </div>
-
-            {/* avalanche */}
             <div>
               <Image src={avalancheImg} alt="avalanche_img" />
             </div>
-            {/* arbitrum */}
             <div>
-              <Image src={arbitrumImg} alt="avalanche_img" />
+              <Image
+                className="w-full h-auto"
+                src={arbitrumImg}
+                alt="avalanche_img"
+              />
             </div>
-
-            {/* ad? */}
             <div className="flex flex-col gap-10 px-5 pt-8 rounded-[20px] bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%">
               <h3 className="text-[24px] text-[#1B153C] font-extrabold leading-9 tracking-[-0.72px]">
                 This can be anything you want an ad, a new product anything
@@ -313,11 +297,8 @@ const BlogPost = ({ blog, blogPreviewData }) => {
           </div>
         </div>
       </div>
-
-      {/* Bottom independed part */}
       <div>
         <div className="hidden md:block bg-[#A79DFF] w-screen mt-28 h-1" />
-        {/* related articles */}
         <div className="px-8">
           <Header
             title={"Blog"}
@@ -330,7 +311,6 @@ const BlogPost = ({ blog, blogPreviewData }) => {
 
         <div className="flex flex-wrap gap-6 items-center justify-center">
           {blogPreviewData.map((blogPreviewData) => (
-            // Added the encodeURIComponent to be utf-8 compatible
             <BlogCard
               key={blogPreviewData.blog.blogID}
               blogID={blogPreviewData.blog.blogID}
@@ -339,6 +319,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
               blogDescription={blogPreviewData.blog.blogDescription}
               minsToRead={blogPreviewData.blog.minsToRead}
               previewBlogImage={`https:${blogPreviewData.blog.previewImageBlog.fields.file.url}`}
+              roundedImage={Circles(getRandomNumber())}
             />
           ))}
         </div>

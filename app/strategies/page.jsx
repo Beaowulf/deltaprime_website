@@ -180,7 +180,7 @@ const FlipCardMobileCarousel = () => {
 
 const StrategiesPage = () => {
   return (
-    <div className="px-4 md:px-[6%] lg:px-[8%] 2xl:px-[12%]">
+    <div className="px-4 md:px-[6%] lg:px-[8%] xl:px-[16%] 2xl:px-[20%]">
       {/* intro */}
       <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-40">
         {/* Text Wrapper */}

@@ -52,7 +52,7 @@ const FlipCard = ({
         onClick={handleClick}
       >
         <div className="flip-card-inner">
-          <div className="flip-card-front p-6 flex flex-col rounded-[20px] shadow-lg shadow-[#0015ffb7]">
+          <div className="flip-card-front p-6 flex flex-col rounded-[20px] shadow-lg shadow-[#26283db7]">
             <h4 className="text-white pb-3 font-extrabold text-[20px] leading-7">
               {titleFront}
             </h4>

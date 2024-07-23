@@ -49,7 +49,7 @@ function Nav() {
                 <div>
                   <Link
                     href="/blogs"
-                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
+                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium"
                   >
                     Burd Blogs
                   </Link>
@@ -59,7 +59,7 @@ function Nav() {
                 <div>
                   <Link
                     href="/ourStory"
-                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
+                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium"
                   >
                     Our Story
                   </Link>
@@ -69,7 +69,7 @@ function Nav() {
                 <div>
                   <Link
                     href="/strategies"
-                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
+                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium"
                   >
                     Strategies
                   </Link>
@@ -79,7 +79,7 @@ function Nav() {
                 <div>
                   <Link
                     href="/contactUs"
-                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md text-sm font-medium"
+                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium"
                   >
                     Contact Us
                   </Link>

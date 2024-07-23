@@ -52,9 +52,13 @@ const BlogCard = ({
           <p className="text-[8px] md:text-[12px] leading-[inherit] dark:text-[#878C91] lineClampThree">
             {blogDescription}
           </p>
-          <Link href={`/blogs/${blogID}`}>
-            <ArrowButton />
-          </Link>
+          {blogID ? (
+            <Link href={`/blogs/${blogID}`}>
+              <ArrowButton />
+            </Link>
+          ) : (
+            ""
+          )}
         </div>
 
         <div className="overflow-hidden rounded w-fit self-center">
