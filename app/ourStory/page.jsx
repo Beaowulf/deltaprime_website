@@ -402,21 +402,49 @@ const OurStory = () => {
               </p>
             </div>
             {/* three rows */}
-            <div className="">
+            <div className="flex flex-col gap-8">
               <div className="featureBorderWrapLightTheme rounded-[30px]">
                 <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[30px]">
                   <p className="pl-6 mr-[150px] text-[18px] text-[#29233B]">
-                    hello
+                    DevOps Engineer
                   </p>
-                  <AboutButtonDarkBG
-                    label={"Learn More"}
-                    hasArrowRight={true}
-                    hasWhiteArrowRight={true}
-                  />
+                  <div className="featureBorderWrapLightTheme rounded-[50px]">
+                    <AboutButtonDarkBG
+                      label={"Learn More"}
+                      hasArrowRight={true}
+                      hasWhiteArrowRight={true}
+                    />
+                  </div>
                 </div>
               </div>
-              <div></div>
-              <div></div>
+              <div className="featureBorderWrapLightTheme rounded-[30px]">
+                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[30px]">
+                  <p className="pl-6 mr-[150px] text-[18px] text-[#29233B]">
+                    QA Tester
+                  </p>
+                  <div className="featureBorderWrapLightTheme rounded-[50px]">
+                    <AboutButtonDarkBG
+                      label={"Learn More"}
+                      hasArrowRight={true}
+                      hasWhiteArrowRight={true}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="featureBorderWrapLightTheme rounded-[30px]">
+                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[30px]">
+                  <p className="pl-6 mr-[150px] text-[18px] text-[#29233B]">
+                    QA Tester
+                  </p>
+                  <div className="featureBorderWrapLightTheme rounded-[50px]">
+                    <AboutButtonDarkBG
+                      label={"Learn More"}
+                      hasArrowRight={true}
+                      hasWhiteArrowRight={true}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
