@@ -26,20 +26,20 @@ const OurStory = () => {
     <div>
       <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%] px-4">
         {/* intro */}
-        <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 my-40">
+        <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8 dark:text-white text-[#6B70ED]">
               <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
                 Our Story
               </p>
-              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-10 ">
+              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 md:mb-10 ">
                 Our story begins on the foothills of Mount Etna, Europe’s
                 largest volcano. It was here that the idea of DeltaPrime was
                 born. A brand on a mission to not only reshape the future of
                 DeFI, but forge it in the fires of innovation and resilience.
               </p>
-              <div className="fullWidthButtonChildren h-[60px] md:h-full hidden md:block my-10 w-full text-left">
+              <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden  w-full text-left">
                 <MainButton
                   className="w-[100%] md:w-fit"
                   label="LAUNCH APP"
@@ -51,14 +51,14 @@ const OurStory = () => {
           {/* Image */}
           <div className="w-fit mb-10">
             <Image
-              className="h-[490px] w-[430px]"
+              className="md:h-[490px] md:w-[430px] h-[360px] w-[320px]"
               src={ourStoryIntroImg}
               alt="deltaprime_mascot_img"
             />
           </div>
         </div>
         {/* other text */}
-        <div className="flex md:flex-row flex-col justify-center items-center w-full md:gap-20 gap-5 my-10 md:my-40">
+        <div className="flex md:flex-row flex-col-reverse justify-center items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Image */}
           <div className="max-w-[600px]">
             <Image
@@ -148,7 +148,7 @@ const OurStory = () => {
           <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px]">
             Unlocking Trapped Liquidity
           </h1>
-          <p className="eatureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 max-w-[55rem] text-center mb-6">
+          <p className="featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 max-w-[55rem] text-center mb-6">
             DeltaPrime ensures the safety of user funds through multiple
             security audits, insurance pools, and the unique Withdrawal Guard.
             This no-oracle solution only allows withdrawals if all borrowed
@@ -240,7 +240,7 @@ const OurStory = () => {
                     alt="founder_image"
                   />
                   <h3 className="featureSubtitle text-[17px] sm:text-[20px] dark:text-[#FFF5F0] text-[#252948]">
-                    Piotr Duda
+                    Kamil Muca
                   </h3>
                   <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                     Tech Wolf
@@ -384,9 +384,9 @@ const OurStory = () => {
       </div>
 
       {/* join our team */}
-      <div className="bg-[#F4F4FF] w-screen h-[40vh] mt-40">
+      <div className="bg-[#F4F4FF] w-screen h-fit md:h-[40vh] mt-40">
         <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%] px-4 py-[75px]">
-          <div className="flex justify-around">
+          <div className="flex justify-around flex-wrap px-4 md:px-0">
             <div className="flex flex-col items-start dark:text-white text-[#252948] mb-14 max-w-96">
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-black leading-6">
                 STRATEGIES
