@@ -118,12 +118,6 @@
   border: 2px solid (#afafff, #ff8fb8, #ffbb9b);
 }
 
-.featureBorderWrapLightTheme {
-  position: relative;
-  background: linear-gradient(0deg, #afafff 10%, #ff8fb8 55%, #ffbb9b 100%);
-  padding: 2px;
-}
-
 /*.securitySection::before {
   content: "";
   position: absolute;
