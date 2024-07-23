@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import "./blogPost.css";
 import RichTextRenderer from "@/app/components/richTetxtRenderer/richTextRenderer";
-import ShareButton from "@/app/components/ShareButton/shareButton";
+import ShareButton from "@/app/components/shareButton/shareButton";
 import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar";
 import clockIcon from "@/public/assets/icons/clockIcon.svg";
 import hashtagIcon from "@/public/assets/icons/hashtagIcon.svg";

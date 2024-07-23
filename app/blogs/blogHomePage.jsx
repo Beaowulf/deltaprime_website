@@ -4,7 +4,6 @@ import homePageImage from "@/public/assets/img/blogPostBG.jpg";
 import { MainButton } from "@/app/components/buttons/mainButton";
 
 const BlogHomePage = ({ latestBlogData, latestBlogs }) => {
-  console.log(latestBlogData);
   return (
     <div className="flex flex-col">
       <Image
