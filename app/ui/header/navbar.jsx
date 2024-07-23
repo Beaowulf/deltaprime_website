@@ -35,7 +35,7 @@ function Nav() {
   };
 
   return (
-    <div className="px-4 sm:px-6 md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
+    <div className="px-4 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
       <nav className="md:mb-20 mb-10 mt-4">
         <div className="">
           <div className="flex items-center justify-between h-16">

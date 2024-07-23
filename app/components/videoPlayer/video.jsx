@@ -23,7 +23,7 @@ const VideoPlayer = () => {
   return (
     <div
       className={
-        "md:w-1/2 md:h-[25rem] h-[240px] w-full cursor-pointerplayerWrapper"
+        "md:w-1/2 md:h-[30rem] h-[240px] w-full cursor-pointerplayerWrapper"
       }
     >
       <ReactPlayer

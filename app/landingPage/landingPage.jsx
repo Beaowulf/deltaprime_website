@@ -23,7 +23,7 @@ const LandingPage = ({ blogPreviewCardData }) => {
     <div>
       <IntroSection />
       <Carousel />
-      <div className="px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
+      <div className="px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
         <Features>
           <FeaturePrimeAccountSection />
           <DepositorSection />
@@ -34,7 +34,7 @@ const LandingPage = ({ blogPreviewCardData }) => {
       </div>
       <AboutSection />
       <div
-        className={`sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%] 
+        className={`sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] 
         ${
           theme === "dark"
             ? "bg-gradient-to-r from-[#1b153c] from-10% via-[#1c2943] via-50% to-[#301e3e] to-80%"

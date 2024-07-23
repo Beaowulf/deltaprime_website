@@ -58,7 +58,7 @@ const TextWithPill = () => {
 
 const IntroSection = () => {
   return (
-    <div className="px-4 sm:px-6 md:px-[4%] lg:px-[10%] 2xl:px-[15%]">
+    <div className="px-4 sm:px-6 md:px-[4%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
       <div className="mx-auto">
         {/* Top Intro Part (Text and video) */}
         <div className="flex flex-col md:flex-row justify-between gap-8 p-4 ">

@@ -6,7 +6,7 @@ import { AboutButtonDarkBG } from "@/app/components/buttons/mainButton";
 
 function AboutSection() {
   return (
-    <div className="aboutSectionBG flex flex-wrap items-center justify-center bg-cover bg-no-repeat px-4 pb-10 sm:px-6 md:px-[8%] lg:px-[10%] 2xl:px-[15%]">
+    <div className="aboutSectionBG flex flex-wrap items-center justify-between bg-cover bg-no-repeat px-4 pb-10 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
       {/* Left Side */}
       <div className="w-full md:w-1/2">
         <h4 className="pt-24  aboutTypographytitle">OUR STORY</h4>
@@ -26,7 +26,7 @@ function AboutSection() {
         </div>
       </div>
       {/* Right Side */}
-      <div className="px-10 pt-10 w-full md:w-1/2">
+      <div className="px-10 pt-10 w-full md:w-1/2 flex justify-center">
         <div className="w-fit">
           <Image className="" src={aboutSectionIMG} alt="about_section_img" />
         </div>
