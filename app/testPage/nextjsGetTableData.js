@@ -133,12 +133,17 @@ const AprsComponent = () => {
 
       <div className="flex flex-col">
         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8 rounded-[30px] bg-white">
-            <div className="overflow-hidden">
+          <div className="inline-block w-[400px] py-2 sm:px-6 lg:px-8 rounded-[30px] bg-white">
+            <div className="overflow-hidden roundedTableHheads">
               <table className="min-w-full text-center text-sm font-light text-surface dark:text-white">
-                <thead className="border-b border-neutral-200 font-medium border-white/10">
-                  <tr className="text-black">
-                    <th scope="col" className="px-6 py-4">
+                <thead className="headerTable font-medium">
+                  <tr className="text-black headerTable">
+                    <div className="flex w-full flex-row justify-between">
+                      <div>hello 1</div>
+                      <div>hello 2</div>
+                      <div>hello 3</div>
+                    </div>
+                    {/* <th scope="col" className="px-6 py-4">
                       Asset
                     </th>
                     <th scope="col" className="px-6 py-4">
@@ -146,7 +151,7 @@ const AprsComponent = () => {
                     </th>
                     <th scope="col" className="px-6 py-4">
                       APY
-                    </th>
+                    </th> */}
                   </tr>
                 </thead>
                 <tbody>
@@ -175,7 +180,31 @@ const AprsComponent = () => {
         </div>
       </div>
 
-      <table className="table-auto mb-40">
+      <div className="bg-white rounded-[30px] p-8 max-w-[340px]">
+        <div>
+          <h4 className="text-black">Header</h4>
+        </div>
+        {/* Headers */}
+        <div className="rounded-[80px] bg-[#FBFAFF] border-[2px] border-[#EAEBFF] flex flex-row py-4 px-4 justify-between">
+          <p className="text-[#3d3a3a] font-semibold text-nowrap">Asset</p>
+          <p className="text-[#696969] font-semibold text-nowrap">Pool Size</p>
+          <p className="text-[#696969] font-semibold text-nowrap">APY</p>
+        </div>
+        {/* custom table */}
+        <div className="flex flex-row justify-between">
+          <div>
+            <p className="text-black">Hello Data 1</p>
+          </div>
+          <div>
+            <p className="text-black">Hello Data 1</p>
+          </div>
+          <div>
+            <p className="text-black">Hello Data 1</p>
+          </div>
+        </div>
+      </div>
+
+      {/* <table className="table-auto mb-40">
         <thead>
           <tr>
             <th>Asset</th>
@@ -194,11 +223,11 @@ const AprsComponent = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
 
       <h1>Avalanche Pools</h1>
 
-      <table className="table-auto mb-40">
+      {/* <table className="table-auto mb-40">
         <thead>
           <tr>
             <th>Asset</th>
@@ -217,7 +246,7 @@ const AprsComponent = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 };

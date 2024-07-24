@@ -1,5 +1,5 @@
 import React from "react";
-import AprsComponent from "@/lib/nextjsGetTableData";
+import AprsComponent from "@/app/testPage/nextjsGetTableData";
 
 const TestPage = () => {
   return (
