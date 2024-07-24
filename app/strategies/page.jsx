@@ -53,7 +53,9 @@ function ArrowButtonCarousel({ onClick, left }) {
       <button onClick={onClick} className="arrowButtonBG w-fit h-fit">
         <div
           className={`rounded-[65px] w-[70px] h-[40px] flex justify-center items-center ${
-            theme === "dark" ? "bg-arrowButtonDarkGradient" : "bg-[#F4F4FF]"
+            theme === "dark"
+              ? "bg-arrowButtonDarkGradient hover:bg-transparent transition-all ease-linear"
+              : "bg-[#F4F4FF]"
           }`}
         >
           {left ? (

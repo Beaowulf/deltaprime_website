@@ -34,8 +34,7 @@ const LandingPage = ({ blogPreviewCardData }) => {
       </div>
       <AboutSection />
       <div
-        className={`sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] 
-        ${
+        className={`${
           theme === "dark"
             ? "bg-gradient-to-r from-[#1b153c] from-10% via-[#1c2943] via-50% to-[#301e3e] to-80%"
             : "bg-gradient-to-r from-[#F4F4FF] from-10% via-[#FFF5F0] via-30% to-[#E8E8F2] to-50%"
@@ -43,7 +42,12 @@ const LandingPage = ({ blogPreviewCardData }) => {
       >
         <BlogPreviewSection blogPreviewCardData={blogPreviewCardData} />
         <SecuritySection />
-        <ContactForm />
+        <div
+          className={`sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] 
+       `}
+        >
+          <ContactForm />
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,26 @@
+.tableAPYData {
+  color: #00bf68;
+  font-weight: 700;
+}
+
+/* tableStyling.css */
+.loader {
+  border: 14px solid #f3f3f3; /* Light grey */
+  border-top: 14px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -53,7 +53,7 @@ const BlogCard = ({
             {blogDescription}
           </p>
           {blogID ? (
-            <Link href={`/blogs/${blogID}`}>
+            <Link className="arrowButtonParent" href={`/blogs/${blogID}`}>
               <ArrowButton />
             </Link>
           ) : (
@@ -129,7 +129,7 @@ const Circles = (randomNumber) => {
 const BlogPreviewSection = ({ blogPreviewCardData }) => {
   return (
     <>
-      <div className="pt-20">
+      <div className="pt-20 md:pt-40">
         <BlogHeader
           title={"The Burd Blog"}
           subTitle={"Blog"}

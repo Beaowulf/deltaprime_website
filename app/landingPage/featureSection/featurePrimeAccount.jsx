@@ -65,7 +65,7 @@ const FeaturePrimeAccountSection = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 w-1/2`}
           >
-            <div className="rounded-[20px] h-full px-4 pt-16 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden flex flex-col items-start md:items-start">
+            <div className="rounded-[20px] h-full px-4 pt-12 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden flex flex-col items-start md:items-start">
               {/* number and text */}
               <div className="mb-12">
                 {theme === "dark" ? (

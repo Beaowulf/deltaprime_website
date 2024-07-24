@@ -36,9 +36,6 @@ function SecuritySection() {
         <DarkBoxWrapper aboutimg={Group5854} />
         <DarkBoxWrapper aboutimg={Logo_atomica} />
       </div>
-      <div className="lg:block hidden">
-        <UnlockPotentialContainer />
-      </div>
     </div>
   );
 }

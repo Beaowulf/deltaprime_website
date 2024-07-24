@@ -16,8 +16,7 @@ import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
 import BlogCard from "@/app/components/blogCard/blogCard";
-import avalancheImg from "@/public/assets/img/avalancheImg.png";
-import arbitrumImg from "@/public/assets/img/arbitrumImg.png";
+import CryptoPreviewTables from "@/app/components/cryptoTables/cryptoTables";
 import adImg from "@/public/assets/img/adImg.png";
 import {
   AboutButtonDarkBG,
@@ -115,7 +114,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
       <DynamicPurpleBar inBlogPost={true} blogTitle={blogData.blogTitle} />
       {/* BIG TWO SECTION WRAPPER */}
 
-      <div className="flex flex-col lg:flex-row gap-10 mt-20 px-4 sm:px-[5%] md:px-[5%] lg:px-[5%] 2xl:px-[10%]">
+      <div className="flex flex-col lg:flex-row gap-10 mt-20 px-4 sm:px-[5%] md:px-[10%] lg:px-[15%] 2xl:px-[18%]">
         {/* LEFT SIDE */}
         <div className="w-full lg:w-9/12">
           <div className="px-4 ">
@@ -271,16 +270,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 </li>
               </ul>
             </div>
-            <div>
-              <Image src={avalancheImg} alt="avalanche_img" />
-            </div>
-            <div>
-              <Image
-                className="w-full h-auto"
-                src={arbitrumImg}
-                alt="avalanche_img"
-              />
-            </div>
+            <CryptoPreviewTables />
             <div className="flex flex-col gap-10 px-5 pt-8 rounded-[20px] bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%">
               <h3 className="text-[24px] text-[#1B153C] font-extrabold leading-9 tracking-[-0.72px]">
                 This can be anything you want an ad, a new product anything
