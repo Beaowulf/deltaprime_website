@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { Transition } from "@headlessui/react";
 import { Logo } from "@/app/components/logo/logo";
 import ThemeSwitch from "@/app/components/themeToggler/themeToggler";
-import { MainButton, NavBarButton } from "@/app/components/buttons/mainButton";
+import { NavBarButton } from "@/app/components/buttons/mainButton";
 import hamburgerIconWhite from "@/public/assets/icons/hamburgerIconWhite.svg";
 import closeIconBlack from "@/public/assets/icons/closeIconBlack.svg";
 
@@ -39,7 +39,6 @@ function Nav() {
       <nav className="md:mb-20 mb-10 mt-4">
         <div className="">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <div className="flex justify-center items-center gap-8">
               <Logo />
               <ThemeSwitch />

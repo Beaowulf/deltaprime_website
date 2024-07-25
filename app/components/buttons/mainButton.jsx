@@ -3,8 +3,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import ArrowRightBlack from "../../../public/assets/img/arrow-right.svg";
 import ArrowRightWhite from "../../../public/assets/img/arrow-right-white.svg";
-
-// import { ColoredRighticon } from "../icons/icons";
+import ArrowRight from "@/app/components/icons/arrowRight";
 
 export function MainButton({
   label,
@@ -84,7 +83,7 @@ export function MainButtonDarkBG({ label, onClick, hasArrowRight = false }) {
     <>
       <button onClick={onClick}>
         <div className="mainButtonDarkBG">
-          <p className="buttonLightModeText min-w-fit pl-3">{label}</p>
+          <p className="buttonLightModeText min-w-fit text-nowrap">{label}</p>
           {hasArrowRight && (
             <Image
               className={"size-5"}
@@ -142,19 +141,7 @@ export function ArrowButton({ onClick }) {
               : "bg-[#F4F4FF]"
           }`}
         >
-          {theme === "dark" ? (
-            <Image
-              className={"size-5 "}
-              src={ArrowRightWhite}
-              alt={"Arrow Right"}
-            />
-          ) : (
-            <Image
-              className={"size-5 "}
-              src={ArrowRightBlack}
-              alt={"Arrow Right"}
-            />
-          )}
+          <ArrowRight src={ArrowRightWhite} alt={"Arrow Right"} />
         </div>
       </button>
     </>

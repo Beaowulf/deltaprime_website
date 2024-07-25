@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <Providers>
-          <div>
+          <div id="__next">
             <Header />
             {children}
           </div>

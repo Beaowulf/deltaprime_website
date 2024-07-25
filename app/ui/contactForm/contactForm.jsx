@@ -1,20 +1,16 @@
-"use client";
 import React from "react";
 import "./contactForm.css";
 import { ContactUsButton } from "@/app/components/buttons/mainButton";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 
-const ContactForm = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Form submitted");
-  };
-
+const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
   return (
     <div>
-      <div className="lg:block hidden">
-        <UnlockPotentialContainer />
-      </div>
+      {hasUnlockPotentialContainer && (
+        <div className="lg:block hidden">
+          <UnlockPotentialContainer />
+        </div>
+      )}
       <div className="flex flex-col md:flex-row mt-20 md:mt-40 pb-36 relative">
         {/* Left Side */}
         <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center px-10 py-2 md:py-28 2xl:py-40 contactFormBG">
@@ -35,7 +31,7 @@ const ContactForm = () => {
         </div>
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
-          <form className="w-full max-w-lg mx-auto" onSubmit={handleSubmit}>
+          <form className="w-full max-w-lg mx-auto">
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label

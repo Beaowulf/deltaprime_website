@@ -357,7 +357,10 @@ body {
 }
 
 /* hovers */
-.blackStroke:hover {
-  stroke: black;
-  fill: black;
+.arrowButtonBG:hover .arrowButtonChild{
+background: #F4F4FF;
+}
+
+.arrowButtonBG:hover .pathArrowChild{
+stroke: black;
 }
