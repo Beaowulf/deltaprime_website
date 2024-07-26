@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { Transition } from "@headlessui/react";
-import { Logo } from "@/app/components/logo/logo";
+import { Logo, MobileMenuLogo } from "@/app/components/logo/logo";
 import ThemeSwitch from "@/app/components/themeToggler/themeToggler";
 import { NavBarButton } from "@/app/components/buttons/mainButton";
 import hamburgerIconWhite from "@/public/assets/icons/hamburgerIconWhite.svg";
@@ -35,8 +35,8 @@ function Nav() {
   };
 
   return (
-    <div className="px-4 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
-      <nav className="md:mb-20 mb-10 mt-4">
+    <div className="pagePaddingLarge">
+      <nav className="md:mb-40 mb-10 mt-4">
         <div className="">
           <div className="flex items-center justify-between h-16">
             <div className="flex justify-center items-center gap-8">
@@ -87,7 +87,9 @@ function Nav() {
               </div>
             </div>
             <div className="hidden md:flex items-center">
-              <NavBarButton label={"Launch app"} />
+              <Link href="?modal=true">
+                <NavBarButton label={"Launch app"} />
+              </Link>
             </div>
 
             <div className="-mr-2 flex md:hidden items-center gap-4">
@@ -130,54 +132,59 @@ function Nav() {
           <div
             className={`fullscreen-menu ${
               isOpen
-                ? "show absolute top-0 left-0 w-full bg-gradient-to-r from-[#F4F4FF] from-10% via-[#F4F4FF] via-60% to-[#E8E8F2] to-80% z-[1000] h-fit flex justify-center py-20 rounded-[20px]"
+                ? "show absolute top-0 left-0 w-full bg-gradient-to-r from-[#F4F4FF] from-10% via-[#F4F4FF] via-60% to-[#E8E8F2] to-80% z-[1000] h-screen flex justify-center rounded-[20px]"
                 : ""
             }`}
             id="mobile-menu"
           >
-            <button
-              onClick={() => setIsOpen(false)}
-              className="close-button absolute right-[1.5rem] top-[1.5rem]"
-            >
-              <Image
-                src={closeIconBlack}
-                alt="close_menu_icon"
-                width={30}
-                height={30}
-              />
-            </button>
-            <div className="text-center ">
-              <Link
-                href="/blogs"
-                className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Burd Log
-              </Link>
+            <div className="w-full flex flex-col">
+              <div className="p-4 flex justify-between items-center">
+                <div className="flex justify-center items-center gap-8">
+                  <MobileMenuLogo />
+                </div>
+                <button onClick={() => setIsOpen(false)}>
+                  <Image
+                    src={closeIconBlack}
+                    alt="close_menu_icon"
+                    width={20}
+                    height={20}
+                  />
+                </button>
+              </div>
 
-              <Link
-                href="/ourStory"
-                className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Our Story
-              </Link>
+              <div className="flex flex-col justify-center items-center gap-10 h-full">
+                <Link
+                  href="/blogs"
+                  className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-semibold"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Burd Log
+                </Link>
 
-              <Link
-                href="/strategies"
-                className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Strategies
-              </Link>
+                <Link
+                  href="/ourStory"
+                  className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-semibold"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Our Story
+                </Link>
 
-              <Link
-                href="/contactUs"
-                className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact Us
-              </Link>
+                <Link
+                  href="/strategies"
+                  className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-semibold"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Strategies
+                </Link>
+
+                <Link
+                  href="/contactUs"
+                  className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-semibold"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
         </Transition>

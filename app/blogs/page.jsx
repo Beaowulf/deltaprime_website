@@ -35,10 +35,6 @@ const BlogsPage = async () => {
         {/* Pass the latest blog to BlogHomePage */}
         <BlogHomePage latestBlogs={latestBlogs} latestBlogData={latestBlog} />
         {/* Unlock Potential block / hide on ipads and smaller screens */}
-
-        <div className="hidden lg:block">
-          <UnlockPotentialContainer />
-        </div>
         <ContactForm className="relative" />
       </div>
     </div>

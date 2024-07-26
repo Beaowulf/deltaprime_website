@@ -136,3 +136,42 @@
   background-clip: content-box, border-box;
 }
 */
+
+@media (max-width: 768px) {
+  .featureBorderWrapLightTheme {
+    width: fit-content;
+  }
+}
+
+/* Animated text */
+@keyframes slide {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.number {
+  display: inline-block;
+  opacity: 0;
+  animation: slide 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.full-text {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}

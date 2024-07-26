@@ -1,41 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import ReactPlayer from "react-player";
 import playIconSVG from "@/public/assets/icons/play.svg";
+import VideoPlayerModal from "./VideoPlayerModal";
 import "./videoPlayer.css";
 
-const PlayButton = () => {
-  return (
-    <>
-      <button>
-        <Image
-          className="w-[50px] h-[50px] md:w-[100px] md:h-[50px]"
-          src={playIconSVG}
-          alt="play_Button_White_Icon"
-          priority={true}
-        />
-      </button>
-    </>
-  );
-};
+const PlayButton = () => (
+  <button>
+    <Image
+      className="w-[50px] h-[50px] md:w-[100px] md:h-[50px]"
+      src={playIconSVG}
+      alt="play_Button_White_Icon"
+      priority={true}
+    />
+  </button>
+);
 
 const VideoPlayer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [light, setLight] = useState(true); // Add light state
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    setPlaying(true);
+    setLight(false);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setPlaying(false);
+    setLight(true);
+  };
+
   return (
-    <div
-      className={
-        "md:w-1/2 md:h-[30rem] h-[240px] w-full cursor-pointerplayerWrapper"
-      }
-    >
-      <ReactPlayer
-        height={"100%"}
-        width={"100%"}
-        className="reactPlayer"
-        url="/videos/video.mp4"
-        controls={true}
-        light="/assets/img/thumbnail.png"
-        playIcon={<PlayButton />}
-      />
-    </div>
+    <>
+      <div
+        className="md:w-1/2 md:h-[30rem] h-[240px] w-full cursor-pointer playerWrapper"
+        onClick={openModal}
+      >
+        <ReactPlayer
+          height={"100%"}
+          width={"100%"}
+          className="reactPlayer"
+          url="/videos/video.mp4"
+          light={light ? "/assets/img/thumbnail.png" : false}
+          playIcon={<PlayButton />}
+          playing={playing && !isModalOpen}
+          controls={false}
+        />
+      </div>
+
+      <VideoPlayerModal isOpen={isModalOpen} onClose={closeModal}>
+        <div className="playerWrapper">
+          <ReactPlayer
+            height={"100%"}
+            width={"100%"}
+            className="reactPlayer"
+            url="/videos/video.mp4"
+            controls={true}
+            playing={isModalOpen}
+          />
+        </div>
+      </VideoPlayerModal>
+    </>
   );
 };
 

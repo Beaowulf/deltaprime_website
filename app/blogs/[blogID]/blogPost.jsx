@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import "./blogPost.css";
 import RichTextRenderer from "@/app/components/richTetxtRenderer/richTextRenderer";
 import ShareButton from "@/app/components/shareButton/shareButton";
@@ -12,7 +13,6 @@ import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
 import blogPostBG from "@/public/assets/img/blogPostBG.jpg";
-import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
 import BlogCard from "@/app/components/blogCard/blogCard";
@@ -114,7 +114,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
       <DynamicPurpleBar inBlogPost={true} blogTitle={blogData.blogTitle} />
       {/* BIG TWO SECTION WRAPPER */}
 
-      <div className="flex flex-col lg:flex-row gap-10 mt-20 px-4 sm:px-[5%] md:px-[10%] lg:px-[15%] 2xl:px-[18%]">
+      <div className="flex flex-col lg:flex-row gap-10 mt-20 pagePaddingLarge">
         {/* LEFT SIDE */}
         <div className="w-full lg:w-9/12">
           <div className="px-4 ">
@@ -185,9 +185,6 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 url={blogUrl}
               />
             </div>
-            <div className="hidden lg:block">
-              <UnlockPotentialContainer />
-            </div>
             <div className="md:hidden block bg-white mt-6 p-10 rounded-[20px]">
               <p className="font-bold leading-6 uppercase text-[18px] text-[#252948]">
                 Table of contents
@@ -228,11 +225,13 @@ const BlogPost = ({ blog, blogPreviewData }) => {
               />
             </div>
             <div className="fullWidthButtonChildren h-[60px] mt-12 md:h-full block md:hidden w-full text-center">
-              <MainButton
-                className="mx-auto w-full p-4"
-                label="LAUNCH APP"
-                hasArrowRight={true}
-              />
+              <Link href="?modal=true">
+                <MainButton
+                  className="mx-auto w-full p-4"
+                  label="LAUNCH APP"
+                  hasArrowRight={true}
+                />
+              </Link>
             </div>
           </div>
         </div>

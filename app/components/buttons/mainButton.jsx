@@ -28,7 +28,7 @@ export function MainButton({
             className={
               typographyClass
                 ? typographyClass
-                : "text-[12px] md:text-[14px] lg:text-[16px] dark:text-black text-white text-nowrap font-extrabold"
+                : " text-[12px] md:text-[14px] lg:text-[16px] dark:text-black text-white text-nowrap font-extrabold"
             }
           >
             {label}
@@ -78,10 +78,15 @@ export function NavBarButton({ label, onClick }) {
   );
 }
 
-export function MainButtonDarkBG({ label, onClick, hasArrowRight = false }) {
+export function MainButtonDarkBG({
+  label,
+  onClick,
+  hasArrowRight = false,
+  className,
+}) {
   return (
     <>
-      <button onClick={onClick}>
+      <button className={className} onClick={onClick}>
         <div className="mainButtonDarkBG">
           <p className="buttonLightModeText min-w-fit text-nowrap">{label}</p>
           {hasArrowRight && (
@@ -155,7 +160,7 @@ export function ContactUsButton({ label, onClick }) {
       <button onClick={onClick} className="arrowButtonBG w-full h-fit">
         <div
           className={` ${
-            resolvedTheme === "dark"
+            theme === "dark"
               ? "contactUsButtonBGDark"
               : "contactUsButtonBGLight"
           }`}

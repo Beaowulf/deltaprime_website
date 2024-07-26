@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import FlipCard from "@/app/components/flipCard/flipCard";
 import strategiesIntroImg from "@/public/assets/img/strategiesIntroImg.png";
@@ -196,11 +197,13 @@ const StrategiesPage = () => {
               strategy is accompanied by a practical example, getting deeper
               into the risk and rewards of the specific strategy.
             </p>
-            <MainButton
-              className="w-[100%] md:w-fit"
-              label="LAUNCH APP"
-              hasArrowRight={true}
-            />
+            <Link href="?modal=true">
+              <MainButton
+                className="w-[100%] md:w-fit"
+                label="LAUNCH APP"
+                hasArrowRight={true}
+              />
+            </Link>
           </div>
         </div>
         {/* Image burd */}
@@ -274,11 +277,13 @@ const StrategiesPage = () => {
           <UnlockPotentialContainer hasMarginTop={false} />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
-            <MainButton
-              className="mx-auto"
-              label="LAUNCH APP"
-              hasArrowRight={true}
-            />
+            <Link href="?modal=true">
+              <MainButton
+                className="mx-auto"
+                label="LAUNCH APP"
+                hasArrowRight={true}
+              />
+            </Link>
           </div>
         </div>
 

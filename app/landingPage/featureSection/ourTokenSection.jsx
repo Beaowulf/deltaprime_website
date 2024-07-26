@@ -15,15 +15,15 @@ function OurTokenSection() {
       <div className="flex flex-wrap justify-center flex-col md:flex-row gap-4">
         {/* Left Card */}
         <div
-          className={`rounded-[20px] flex-1 p-4 h-full ${
+          className={`rounded-[20px] flex-1 p-4 ${
             theme === "dark"
               ? "featureBorderWrapDarkTheme"
               : "featureBorderWrapLightTheme"
           }`}
         >
-          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2]">
-            <div>
-              <h4 className="featureTitle pt-10 md:pt-24 text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
+          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full">
+            <div className="flex flex-col h-full">
+              <h4 className="featureTitle  pt-10 md:pt-24 text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
                 OUR TOKENS
               </h4>
               <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#252948]">
@@ -37,24 +37,26 @@ function OurTokenSection() {
                 - Community-centered tokenomics
                 <br />- Aimed at reducing high volatility and inflation
               </p>
-              <MainButton
-                typographyClass="text-[12px] md:text-[18px] px-[20px] text-[#1B153C] m-0 md:mx-auto"
-                hasArrowRight={true}
-                label={"LEARN MORE"}
-              />
+              <div className="mt-auto">
+                <MainButton
+                  typographyClass="text-[12px] md:text-[18px] px-[20px] text-[#1B153C] md:mx-auto"
+                  hasArrowRight={true}
+                  label={"LEARN MORE"}
+                />
+              </div>
             </div>
           </div>
         </div>
         {/* Right Card */}
         <div
-          className={`rounded-[20px] flex-1 p-4 h-full ${
+          className={`rounded-[20px] flex-1 p-4 ${
             theme === "dark"
               ? "featureBorderWrapDarkTheme"
               : "featureBorderWrapLightTheme"
           }`}
         >
-          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2]">
-            <div>
+          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full">
+            <div className="flex flex-col h-full">
               <h4 className="featureTitle pt-10 md:pt-24 text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
                 OUR TOKENS
               </h4>
@@ -69,11 +71,13 @@ function OurTokenSection() {
                 - Earn 33% of protocol revenue.
                 <br />- Earn governance power points.
               </p>
-              <MainButton
-                typographyClass="text-[12px] md:text-[18px] px-[20px] text-[#1B153C] m-0 md:mx-auto"
-                hasArrowRight={true}
-                label={"LEARN MORE"}
-              />
+              <div className="mt-auto">
+                <MainButton
+                  typographyClass="text-[12px] md:text-[18px] px-[20px] text-[#1B153C] md:mx-auto"
+                  hasArrowRight={true}
+                  label={"LEARN MORE"}
+                />
+              </div>
             </div>
           </div>
         </div>

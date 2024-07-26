@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import "./ourStory.css";
+import Link from "next/link";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import ourStoryIntroImg from "@/public/assets/img/introOurStoryImage.png";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
@@ -40,11 +41,13 @@ const OurStory = () => {
                 DeFI, but forge it in the fires of innovation and resilience.
               </p>
               <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden  w-full text-left">
-                <MainButton
-                  className="w-[100%] md:w-fit"
-                  label="LAUNCH APP"
-                  hasArrowRight={true}
-                />
+                <Link href="?modal=true">
+                  <MainButton
+                    className="w-[100%] md:w-fit"
+                    label="LAUNCH APP"
+                    hasArrowRight={true}
+                  />
+                </Link>
               </div>
             </div>
           </div>
@@ -97,11 +100,13 @@ const OurStory = () => {
           <UnlockPotentialContainer />
         </div>
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
-          <MainButton
-            className="mx-auto"
-            label="LAUNCH APP"
-            hasArrowRight={true}
-          />
+          <Link href="?modal=true">
+            <MainButton
+              className="mx-auto"
+              label="LAUNCH APP"
+              hasArrowRight={true}
+            />
+          </Link>
         </div>
         {/* other text */}
         <div className="flex md:flex-row flex-col justify-center items-center w-full md:gap-20 gap-5 my-10 md:my-40">
@@ -184,11 +189,13 @@ const OurStory = () => {
           <UnlockPotentialContainer />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
-            <MainButton
-              className="mx-auto"
-              label="LAUNCH APP"
-              hasArrowRight={true}
-            />
+            <Link href="?modal=true">
+              <MainButton
+                className="mx-auto"
+                label="LAUNCH APP"
+                hasArrowRight={true}
+              />
+            </Link>
           </div>
         </div>
 
@@ -287,11 +294,13 @@ const OurStory = () => {
           <UnlockPotentialContainer />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
-            <MainButton
-              className="mx-auto"
-              label="LAUNCH APP"
-              hasArrowRight={true}
-            />
+            <Link href="?modal=true">
+              <MainButton
+                className="mx-auto"
+                label="LAUNCH APP"
+                hasArrowRight={true}
+              />
+            </Link>
           </div>
         </div>
         {/* advisors */}

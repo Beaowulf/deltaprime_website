@@ -20,7 +20,6 @@
     "react": "^18",
     "react-card-flip": "^1.2.3",
     "react-dom": "^18",
-    "react-modal": "^3.16.1",
     "react-player": "^2.16.0",
     "react-youtube": "^10.1.0",
     "sharp": "^0.33.4",

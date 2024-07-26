@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./contactForm.css";
 import { ContactUsButton } from "@/app/components/buttons/mainButton";

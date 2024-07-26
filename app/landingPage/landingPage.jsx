@@ -23,7 +23,7 @@ const LandingPage = ({ blogPreviewCardData }) => {
     <div>
       <IntroSection />
       <Carousel />
-      <div className="px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
+      <div className="px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[18%]">
         <Features>
           <FeaturePrimeAccountSection />
           <DepositorSection />

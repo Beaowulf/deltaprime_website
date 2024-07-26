@@ -3,6 +3,7 @@ import { Providers } from "./providers";
 import Header from "@/app/ui/header/navbar";
 import Footer from "@/app/ui/footer/footer";
 import "./globals.css";
+import LaunchAppModal from "@/app/components/modals/launchAppModal";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -20,13 +21,12 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <Providers>
-          <div id="__next">
-            <Header />
-            {children}
-          </div>
+          <Header />
+          {children}
           {/* might put these 2 together
           or contact into Footer
           */}
+          <LaunchAppModal />
           <Footer />
         </Providers>
       </body>

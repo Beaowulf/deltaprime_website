@@ -1,6 +1,7 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
 
@@ -181,11 +182,13 @@ const FeaturePrimeAccountSection = () => {
       </div>
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
-        <MainButton
-          className="mx-auto"
-          label="LAUNCH APP"
-          hasArrowRight={true}
-        />
+        <Link href="?modal=true">
+          <MainButton
+            className="mx-auto"
+            label="LAUNCH APP"
+            hasArrowRight={true}
+          />
+        </Link>
       </div>
     </div>
   );

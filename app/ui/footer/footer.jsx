@@ -16,12 +16,14 @@ const LogoButton = () => {
     <div className="flex flex-col gap-6 px-6 md:px-0 items-center md:items-start">
       <FooterLogo />
       <div className="w-full">
-        <MainButton
-          className="md:!w-fit !w-full"
-          typographyClass="text-[15px] text-[#1B153C]"
-          label="LAUNCH APP"
-          hasArrowRight={true}
-        />
+        <Link href="?modal=true">
+          <MainButton
+            className="md:!w-fit !w-full"
+            typographyClass="text-[15px] text-[#1B153C]"
+            label="LAUNCH APP"
+            hasArrowRight={true}
+          />
+        </Link>
       </div>
     </div>
   );

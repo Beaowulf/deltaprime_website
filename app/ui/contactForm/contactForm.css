@@ -20,6 +20,22 @@
   background-color: rgba(0, 0, 0, 0.4) !important;
 }
 
+.featureBorderWrapLightTheme {
+  position: relative;
+  background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
+  padding: 2px;
+  border-radius: 20px;
+}
+
+.modalParent {
+  position: relative;
+  background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
+  box-shadow: 2px 2px 10px 0px rgba(255, 95, 162, 0.12),
+    7px 7px 30px 0px rgba(255, 95, 162, 0.2);
+  padding: 2px;
+  border-radius: 20px;
+}
+
 @media (max-width: 768px) {
   .contactFormBG {
     position: relative;
@@ -37,20 +53,4 @@
     background-repeat: no-repeat;
     background-size: contain;
   }
-}
-
-.featureBorderWrapLightTheme {
-  position: relative;
-  background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
-  padding: 2px;
-  border-radius: 20px;
-}
-
-.modalParent {
-  position: relative;
-  background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
-  box-shadow: 2px 2px 10px 0px rgba(255, 95, 162, 0.12),
-    7px 7px 30px 0px rgba(255, 95, 162, 0.2);
-  padding: 2px;
-  border-radius: 20px;
 }
