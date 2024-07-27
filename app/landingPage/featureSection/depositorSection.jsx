@@ -43,7 +43,7 @@ const FeaturePrimeAccount = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-8/12 w-full`}
           >
-            <div className="flex md:flex-row flex-col justify-between items-end rounded-[20px] h-full pl-4 md:pl-10 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden">
+            <div className="flex md:flex-row flex-col justify-between items-end rounded-[20px] h-full px-4 md:pt-8 md:pl-10 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden">
               <div className="w-full md:w-1/2 flex flex-col items-start mb-0 md:mb-11 md:mr-4">
                 {theme === "dark" ? (
                   <Image src={RoundedOneDarkThemed} alt="Rounded_Number_One" />
@@ -55,7 +55,7 @@ const FeaturePrimeAccount = () => {
                 </p>
               </div>
               {/* Stacked Images */}
-              <div className="w-full flex justify-end relative h-fit">
+              <div className="w-full flex justify-end relative h-fit mt-10 md:mt-0">
                 <div className="relative w-full flex items-end h-full">
                   {/* The 2 live data */}
                   <CryptoLandingPageTables />

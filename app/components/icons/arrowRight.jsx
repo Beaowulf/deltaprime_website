@@ -1,4 +1,3 @@
-import "./icons.css";
 export default function ArrowRight() {
   return (
     <svg

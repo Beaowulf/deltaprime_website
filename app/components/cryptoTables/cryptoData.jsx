@@ -1,7 +1,7 @@
 // todo: move this to lib folder
 
 import { ethers } from "ethers";
-import POOL from "./WrappedNativeTokenPool.json"; // Adjust the path to POOL ABI file
+import POOL from "./WrappedNativeTokenPool.json";
 import { formatUnits } from "ethers/lib/utils";
 
 const pools = {
@@ -85,7 +85,7 @@ export const fetchCryptoData = async () => {
         );
         const price = prices[symbol]?.[0].dataPoints[0].value;
         if (!price) {
-          return null; // Skip this pool if price is not available
+          return null;
         }
         const apy = ethers.utils.formatUnits(poolInfo.depositRate, 18) * 100;
         const tvl = formatUnits(poolInfo.totalSupply, 18);

@@ -5,10 +5,10 @@
 
 /* custom classes */
 .pagePaddingLarge {
-  @apply px-4 sm:px-6 md:px-[8%] lg:px-[12%] xl:px-[15%] 2xl:px-[18%];
+  @apply px-4 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[12%] 2xl:px-[15%];
 }
 .myCustomPadding {
-  @apply px-4 sm:px-6 md:px-[8%] lg:px-[12%] xl:px-[15%] 2xl:px-[18%];
+  @apply px-4 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[12%] 2xl:px-[15%];
 }
 
 /*
@@ -162,6 +162,60 @@ body {
   pointer-events: none;
   background-blend-mode: overlay;
 }
+
+.parentColoredBorderWrapper {
+  /* Border Radius */
+  padding: 2px;
+  /* Border Radius */
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgba(93, 71, 255, 0.56);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
+}
+
+.glossaryButtonsWrapper {
+  /* Border Radius */
+  padding: 2px;
+  /* Border Radius */
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(93, 71, 255, 0.56);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
+}
 /* End of Background Blends  */
 
 /* Custom CSS Classes */
@@ -201,6 +255,9 @@ body {
   font-weight: 700;
   line-height: 54px;
   letter-spacing: -2%;
+}
+.selectedLetter {
+  text-shadow: 0px 0px 13px #feeef4;
 }
 
 .slightBrightText {

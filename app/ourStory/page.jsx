@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import React from "react";
 import Image from "next/image";
 import "./ourStory.css";
@@ -10,8 +10,9 @@ import whyDeltaPrimeImg from "@/public/assets/img/whyDeltaPrimeImg.jpg";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 import { AboutButtonDarkBG } from "@/app/components/buttons/mainButton";
+import LinkedInIconWrapper from "./linkedInIconsWrapper";
 
 // roundImagesOfPeople
 import JakubImage from "@/public/assets/img/JakubImage.png";
@@ -22,7 +23,7 @@ import gavinImage from "@/public/assets/img/gavinImage.png";
 import avaxImage from "@/public/assets/img/avaxImage.png";
 
 const OurStory = () => {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
   return (
     <div>
       <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] px-4">
@@ -233,6 +234,9 @@ const OurStory = () => {
                     worked at InsurTech. A FinTech company providing insurance
                     for Lloyd’s applications.
                   </p>
+                  <div>
+                    <LinkedInIconWrapper className="w-4 h-4" />
+                  </div>
                 </div>
               </div>
             </div>

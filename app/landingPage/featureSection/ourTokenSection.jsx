@@ -6,7 +6,7 @@ import Header from "@/app/components/header/header";
 function OurTokenSection() {
   const { theme } = useTheme;
   return (
-    <div className="mb-10 mt-20">
+    <div className="mb-32 mt-20">
       <Header
         title="Our Features"
         subTitle="Our Tokens"

@@ -179,10 +179,10 @@ export const CryptoLandingPageTables = () => {
 
   return (
     <div className="w-full h-full">
-      <div className="relative h-[250px] w-full">
-        <div className="absolute -top-[30px] left-0 min-w-[250px]">
+      <div className="flex justify-end items-end w-full">
+        <div className="w-1/2">
           <div className="coloredBoxBorder">
-            <div className="bg-white rounded-[30px] px-4 py-5 max-w-[340px]">
+            <div className="bg-white rounded-[30px] px-4 py-5 ">
               <div className="flex flex-row items-center justify-start gap-3">
                 <h4 className="text-black mb-[10px] font-bold">Arbitrum</h4>
                 <Image
@@ -246,9 +246,9 @@ export const CryptoLandingPageTables = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 right-0 min-w-[250px]">
+        <div className="w-1/2 -ml-6">
           <div className="coloredBoxBorder">
-            <div className="bg-white rounded-[30px] px-4 py-5 max-w-[340px]">
+            <div className="bg-white rounded-[30px] px-4 py-5 ">
               <div className="flex flex-row items-center justify-start gap-3">
                 <h4 className="text-black mb-[10px] font-bold">Avalanche</h4>
                 <Image

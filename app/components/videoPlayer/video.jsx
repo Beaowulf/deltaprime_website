@@ -19,7 +19,7 @@ const PlayButton = () => (
 const VideoPlayer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [light, setLight] = useState(true); // Add light state
+  const [light, setLight] = useState(true);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -36,12 +36,12 @@ const VideoPlayer = () => {
   return (
     <>
       <div
-        className="md:w-1/2 md:h-[30rem] h-[240px] w-full cursor-pointer playerWrapper"
+        className="cursor-pointer playerWrapper fixedSize"
         onClick={openModal}
       >
         <ReactPlayer
-          height={"100%"}
-          width={"100%"}
+          height="100%"
+          width="100%"
           className="reactPlayer"
           url="/videos/video.mp4"
           light={light ? "/assets/img/thumbnail.png" : false}
@@ -54,8 +54,8 @@ const VideoPlayer = () => {
       <VideoPlayerModal isOpen={isModalOpen} onClose={closeModal}>
         <div className="playerWrapper">
           <ReactPlayer
-            height={"100%"}
-            width={"100%"}
+            height="100%"
+            width="100%"
             className="reactPlayer"
             url="/videos/video.mp4"
             controls={true}

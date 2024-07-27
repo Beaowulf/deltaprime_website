@@ -16,7 +16,7 @@ const TextWithPill = () => {
   return (
     <>
       {/* Left side (text with pill) */}
-      <div className="flex flex-col md:mb-8 mb-0 justify-between md:w-1/2 w-full items-center md:items-start">
+      <div className="flex flex-col md:mb-8 mb-0 justify-between gap-20 items-center md:items-start flex-1">
         {/* Text Wrapper */}
         <div className="text-left flex flex-col gap-8 dark:text-white text-[#6B70ED]">
           <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
@@ -46,7 +46,7 @@ const TextWithPill = () => {
               Liquidity Unlocked
             </p>
             {/* Maybe a small animation of costs also API call? todo: API CALL? */}
-            <AnimatedText targetNumber={20950943.39} duration={2} />
+            <AnimatedText targetNumber={20950943.39} />
           </div>
         </div>
       </div>
@@ -56,10 +56,10 @@ const TextWithPill = () => {
 
 const IntroSection = () => {
   return (
-    <div className="px-4 sm:px-6 md:px-[4%] lg:px-[10%] xl:px-[16%] 2xl:px-[18%]">
+    <div className="pagePaddingLarge">
       <div className="mx-auto">
         {/* Top Intro Part (Text and video) */}
-        <div className="flex flex-col md:flex-row justify-between gap-8 p-4 ">
+        <div className="flex flex-col md:flex-row justify-between gap-20 p-4 items-center">
           {/* Left side (text with pill) */}
           <TextWithPill />
           {/* Show this button only on mobile */}
@@ -69,7 +69,9 @@ const IntroSection = () => {
             </Link>
           </div>
           {/* Right side (video player) */}
-          <VideoPlayer />
+          <div className="flex-shrink-0">
+            <VideoPlayer />
+          </div>
         </div>
         {/* Bottom Intro Part ( full potential of your capital Launch app) */}
         <UnlockPotentialContainer />
