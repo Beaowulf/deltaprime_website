@@ -11,7 +11,30 @@
   padding: 2px;
   transition: all 0.5s ease;
 }
+
 .storyCard:hover {
   background: #3d4481;
   transition: all 0.5s ease-in-out;
+}
+
+.storyCard:hover .coloredLinkedInIcon {
+  background: #3d4481;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.storyCard:hover .grayLinkedInCon {
+  background: #3d4481;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.grayLinkedInCon {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.coloredLinkedInIcon {
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }

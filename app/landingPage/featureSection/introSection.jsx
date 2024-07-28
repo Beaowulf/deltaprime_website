@@ -18,7 +18,7 @@ const TextWithPill = () => {
       {/* Left side (text with pill) */}
       <div className="flex flex-col md:mb-8 mb-0 justify-between gap-20 items-center md:items-start flex-1">
         {/* Text Wrapper */}
-        <div className="text-left flex flex-col gap-8 dark:text-white text-[#6B70ED]">
+        <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
           <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
             Be The Whale.
           </p>

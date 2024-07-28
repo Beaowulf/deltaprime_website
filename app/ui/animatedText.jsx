@@ -24,7 +24,7 @@ export const AnimatedText = ({ targetNumber }) => {
   }, [targetNumber]);
 
   return (
-    <motion.h1 className="dark:text-[#252948] text-[#A79DFF] costText">
+    <motion.h1 className="dark:text-[#252948] costText">
       ${formattedCount}
     </motion.h1>
   );

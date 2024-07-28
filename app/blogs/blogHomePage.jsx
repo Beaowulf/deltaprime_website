@@ -110,8 +110,7 @@ const BlogHomePage = ({ latestBlogData, latestBlogs }) => {
             }
           />
           <div className="flex flex-wrap gap-6 items-center justify-center">
-            {latestBlogs.map((blogPreviewCardData) => (
-              // Added the encodeURIComponent to be utf-8 compatible
+            {latestBlogs.slice(0, 3).map((blogPreviewCardData) => (
               <BlogCard
                 key={blogPreviewCardData.blogID}
                 blogID={blogPreviewCardData.blogID}

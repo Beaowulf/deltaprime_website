@@ -1,7 +1,10 @@
 import React from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
+import primePurpleLogo from "@/public/assets/icons/purpleTokenPrime.svg";
+import whiteTokenPrime from "@/public/assets/icons/whiteTokenPrime.svg";
 
 function OurTokenSection() {
   const { theme } = useTheme;
@@ -23,12 +26,25 @@ function OurTokenSection() {
         >
           <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full">
             <div className="flex flex-col h-full">
-              <h4 className="featureTitle  pt-10 md:pt-24 text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
-                OUR TOKENS
-              </h4>
-              <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#252948]">
-                $sPRIME
-              </h1>
+              <div className="flex flex-row pt-10 md:pt-24 justify-start gap-4 items-center">
+                <div>
+                  <Image
+                    src={primePurpleLogo}
+                    alt="prime_Token_Logo"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+                <div>
+                  {" "}
+                  <h4 className="featureTitle text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
+                    OUR TOKENS
+                  </h4>
+                  <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#252948]">
+                    $sPRIME
+                  </h1>
+                </div>
+              </div>
               <p className="mt-8 featureParagraph mb-20 text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                 Store of value, tradeable ERC20 token.
                 <br />
@@ -57,12 +73,24 @@ function OurTokenSection() {
         >
           <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full">
             <div className="flex flex-col h-full">
-              <h4 className="featureTitle pt-10 md:pt-24 text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
-                OUR TOKENS
-              </h4>
-              <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#252948]">
-                $sPRIME
-              </h1>
+              <div className="flex flex-row pt-10 md:pt-24 justify-start gap-4 items-center">
+                <div>
+                  <Image
+                    src={whiteTokenPrime}
+                    alt="prime_Token_Logo"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+                <div>
+                  <h4 className="featureTitle text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
+                    OUR TOKENS
+                  </h4>
+                  <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#252948]">
+                    $sPRIME
+                  </h1>
+                </div>
+              </div>
               <p className="mt-8 featureParagraph mb-20 text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                 Utility token for Liquidity Providers and Active Users.
                 <br />

@@ -139,13 +139,7 @@ export function ArrowButton({ onClick }) {
   return (
     <>
       <button onClick={onClick} className="arrowButtonBG w-fit h-fit">
-        <div
-          className={`rounded-[65px] w-[70px] h-[40px] flex justify-center items-center ${
-            theme === "dark"
-              ? "bg-arrowButtonDarkGradient arrowButtonChild"
-              : "bg-[#F4F4FF]"
-          }`}
-        >
+        <div className="rounded-[65px] w-[70px] h-[40px] flex justify-center items-center bg-arrowButtonDarkGradient arrowButtonChild">
           <ArrowRight src={ArrowRightWhite} alt={"Arrow Right"} />
         </div>
       </button>

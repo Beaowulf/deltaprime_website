@@ -72,7 +72,7 @@ export function FooterTextLinks() {
             href="/media-library"
             className="block hover:text-gray-400 text-sm"
           >
-            Media Library
+            Glossary
           </Link>
         </div>
         <div className="block md:hidden my-10 footerTextLinksVerticalLine"></div>
@@ -120,7 +120,7 @@ const TermsOfUseFooter = () => {
             Terms of use
           </Link>
           <Link href="/legal-documents" className="hover:text-gray-400 ">
-            <span className="mr-4">•</span>Legal documents
+            <span className="mr-4">•</span>Privacy Policy
           </Link>
 
           <Link href="/cookie-policy" className="hover:text-gray-400 ">

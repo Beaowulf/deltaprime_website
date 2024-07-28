@@ -31,7 +31,7 @@ const OurStory = () => {
         <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
-            <div className="text-left flex flex-col gap-8 dark:text-white text-[#6B70ED]">
+            <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
               <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
                 Our Story
               </p>
@@ -73,7 +73,7 @@ const OurStory = () => {
           </div>
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
-            <div className="text-left flex flex-col gap-8 dark:text-white text-[#6B70ED]">
+            <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
               <div className="flex flex-col items-start dark:text-white text-[#252948] mt-20 mb-10">
                 <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-left">
                   Unlocking Trapped Liquidity
@@ -113,7 +113,7 @@ const OurStory = () => {
         <div className="flex md:flex-row flex-col justify-center items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
-            <div className="text-left flex flex-col gap-8 dark:text-white text-[#6B70ED]">
+            <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
               <div className="flex flex-col items-start dark:text-white text-[#252948] mt-20 mb-10">
                 <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-left">
                   Mission & Vision

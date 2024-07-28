@@ -138,7 +138,7 @@ const BlogPreviewSection = ({ blogPreviewCardData }) => {
           }
         />
         <div className="flex flex-wrap gap-6 items-center justify-center">
-          {blogPreviewCardData.map((blogPreviewCardData) => (
+          {blogPreviewCardData.slice(0, 3).map((blogPreviewCardData) => (
             // Added the encodeURIComponent to be utf-8 compatible
             <BlogCard
               key={blogPreviewCardData.blog.blogID}

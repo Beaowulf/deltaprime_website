@@ -109,6 +109,12 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+.landscapeImage {
+  background-image: url("../public/assets/img/images/landscape.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .background_1-darkTheme {
   position: relative;
   background: rgb(27, 21, 59);

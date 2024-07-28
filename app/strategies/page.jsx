@@ -188,7 +188,7 @@ const StrategiesPage = () => {
       <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-40">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
-          <div className="text-left flex flex-col gap-8 dark:text-white text-[#6B70ED]">
+          <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
             <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
               Strategies
             </p>
@@ -316,12 +316,6 @@ const StrategiesPage = () => {
             />
           </div>
         </div>
-
-        {/* Unlock full potential button reponsive component */}
-        <div className="mb-40">
-          <UnlockPotentialContainer hasMarginTop={false} />
-        </div>
-
         <ContactForm />
       </div>
     </div>
