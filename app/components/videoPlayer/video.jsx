@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import ReactPlayer from "react-player";
 import playIconSVG from "@/public/assets/icons/play.svg";
-import VideoPlayerModal from "./VideoPlayerModal";
+import VideoPlayerModal from "@/app/components/videoPlayer/videoPlayerModal";
 import "./videoPlayer.css";
 
 const PlayButton = () => (
