@@ -59,7 +59,10 @@ const LaunchAppModal = () => {
                   />
                   <div className="p-4 bg-white shadow-md shadow-gray-300 rounded-[20px]">
                     <div className="featureBorderWrapLightTheme">
-                      <Link href="https://app.deltaprime.io/#/pools">
+                      <Link
+                        target="_blank"
+                        href="https://app.deltaprime.io/#/pools"
+                      >
                         <MainButtonDarkBG label="Depositor" />
                       </Link>
                     </div>
@@ -108,7 +111,10 @@ const LaunchAppModal = () => {
                   />
                   <div className="p-4 bg-white shadow-md shadow-gray-300 rounded-[20px]">
                     <div className="featureBorderWrapLightTheme">
-                      <Link href="https://app.deltaprime.io/#/prime-account/zaps">
+                      <Link
+                        target="_blank"
+                        href="https://app.deltaprime.io/#/prime-account/zaps"
+                      >
                         <MainButtonDarkBG
                           className="w-full"
                           label="Prime Account"

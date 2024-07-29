@@ -12,7 +12,7 @@ import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
 // import { useTheme } from "next-themes";
 import { AboutButtonDarkBG } from "@/app/components/buttons/mainButton";
-import LinkedInIconWrapper from "./linkedInIconsWrapper";
+import SocialMediaIconWrapper from "./linkedInIconsWrapper";
 
 // roundImagesOfPeople
 import JakubImage from "@/public/assets/img/JakubImage.png";
@@ -26,7 +26,7 @@ const OurStory = () => {
   // const { theme } = useTheme();
   return (
     <div>
-      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] px-4">
+      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[15%] px-4">
         {/* intro */}
         <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 my-10 md:my-40">
           {/* Text Wrapper */}
@@ -62,7 +62,7 @@ const OurStory = () => {
           </div>
         </div>
         {/* other text */}
-        <div className="flex md:flex-row flex-col-reverse justify-center items-center w-full md:gap-20 gap-5 my-10 md:my-40">
+        <div className="flex md:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Image */}
           <div className="max-w-[600px]">
             <Image
@@ -110,7 +110,7 @@ const OurStory = () => {
           </Link>
         </div>
         {/* other text */}
-        <div className="flex md:flex-row flex-col justify-center items-center w-full md:gap-20 gap-5 my-10 md:my-40">
+        <div className="flex md:flex-row flex-col justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
@@ -211,11 +211,11 @@ const OurStory = () => {
           />
 
           {/* todo fix the alts, some images are not cropped correctly */}
-          <div className="flex flex-wrap gap-12 items-center justify-center">
+          <div className="flex flex-wrap gap-8 items-center justify-center">
             {/* Correct card */}
             <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center">
-              <div className="rounded-[20px] z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard">
-                <div className="flex justify-center items-center flex-col pt-10 px-4">
+              <div className="rounded-[20px] z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard ">
+                <div className="flex justify-center items-center flex-col pt-10 px-2">
                   <Image
                     src={PiotrImage}
                     width={240}
@@ -228,14 +228,17 @@ const OurStory = () => {
                   <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                     Pack Lead
                   </p>
-                  <p className="mt-8 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+                  <p className="my-8 featureParagraph max-w-[320px] text-[12px] sm:text-[14px] dark:text-[#FFF5F0] text-[#252948]">
                     With a combination of programming/business experience, this
                     wolf leads the pack. Previously he led teams at Faurecia and
                     worked at InsurTech. A FinTech company providing insurance
                     for Lloyd’s applications.
                   </p>
-                  <div>
-                    <LinkedInIconWrapper className="w-4 h-4" />
+                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+                    <SocialMediaIconWrapper
+                      socialMediaLink="https://www.linkedin.com/in/piotr-duda-62b66b63/?originalSubdomain=pl"
+                      className="w-4 h-4"
+                    />
                   </div>
                 </div>
               </div>
@@ -256,13 +259,19 @@ const OurStory = () => {
                   <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                     Tech Wolf
                   </p>
-                  <p className="mt-8 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+                  <p className="my-8 featureParagraph max-w-[320px] text-[12px] sm:text-[14px] dark:text-[#FFF5F0] text-[#252948]">
                     Wolf Muca wrote his first line of code at the age of 7.
                     Since then he developed his way up, to eventually leading a
                     20-headed IT team at HSBC. As a true coding wizard he now
                     creates the security and efficiency in DeltaPrime’s
                     architecture.
                   </p>
+                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+                    <SocialMediaIconWrapper
+                      socialMediaLink="https://www.linkedin.com/in/mucakamil/?originalSubdomain=pl"
+                      className="w-4 h-4"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -282,12 +291,18 @@ const OurStory = () => {
                   <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                     Biz Wolf
                   </p>
-                  <p className="mt-8 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+                  <p className="my-8 featureParagraph max-w-[320px] text-[12px] sm:text-[14px] dark:text-[#FFF5F0] text-[#252948]">
                     This one is the business wolf. With a communication/trading
                     background, he’ll help you exactly understand how to best
                     use DeltaPrime. Additionally he’ll see to it you have access
                     to the best strategies that DeFi offers.
                   </p>
+                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+                    <SocialMediaIconWrapper
+                      socialMediaLink="https://www.linkedin.com/in/gavinhasselbaink/?originalSubdomain=nl"
+                      className="w-4 h-4"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -319,9 +334,9 @@ const OurStory = () => {
           {/* todo fix the alts */}
           <div className="flex flex-wrap gap-12 items-center justify-center">
             {/* Correct card */}
-            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center ">
-              <div className="rounded-[20px] z-20 pb-12 px-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard h-[450px]">
-                <div className="flex justify-center items-center flex-col pt-10 px-4">
+            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center relative">
+              <div className="rounded-[20px] z-20 pb-12 px-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard h-[470px]">
+                <div className="flex justify-center items-center flex-col pt-5 px-4">
                   <Image
                     src={avaxImage}
                     width={240}
@@ -339,13 +354,20 @@ const OurStory = () => {
                     Head of Strategy{" "}
                     <span className="font-extrabold">Benqi Finance</span>
                   </p>
+                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+                    <SocialMediaIconWrapper
+                      socialMediaLink="https://x.com/hn_avax"
+                      usesTwitter={true}
+                      className="w-4 h-4"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
             {/* card */}
-            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center ">
-              <div className="rounded-[20px] z-20 pb-12 px-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard h-[450px]">
-                <div className="flex justify-center items-center flex-col pt-10 px-4">
+            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center relative">
+              <div className="rounded-[20px] z-20 pb-12 px-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard h-[470px]">
+                <div className="flex justify-center items-center flex-col pt-5 px-4">
                   <Image
                     src={JakubImage}
                     width={240}
@@ -359,17 +381,23 @@ const OurStory = () => {
                     Founder <span className="font-extrabold">Redstone</span>
                     Finance
                   </p>
-                  <p className="mt-2 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+                  <p className="my-4 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                     Former auditor
-                    <span className="font-extrabold">OpenZeppelin</span>
+                    <span className="font-extrabold"> OpenZeppelin</span>
                   </p>
+                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+                    <SocialMediaIconWrapper
+                      socialMediaLink="https://www.linkedin.com/in/jakub-wojciechowski-5901b68/?originalSubdomain=pl"
+                      className="w-4 h-4"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
             {/* card */}
-            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center ">
-              <div className="rounded-[20px] z-20 pb-12 px-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard h-[450px]">
-                <div className="flex justify-center items-center flex-col pt-10 px-4">
+            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center relative">
+              <div className="rounded-[20px] z-20 pb-12 px-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard h-[470px]">
+                <div className="flex justify-center items-center flex-col py-5 px-4">
                   <Image
                     src={WojciechImage}
                     width={240}
@@ -383,12 +411,17 @@ const OurStory = () => {
                     Managing Partner{" "}
                     <span className="font-extrabold">Lawarton</span>
                   </p>
-                  <p className="mt-2 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+                  <p className="my-4 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                     Co-founder & Head of legal
-                  </p>
-                  <p className="font-extrabold mt-2 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+                    <br />
                     CobinAngels
                   </p>
+                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+                    <SocialMediaIconWrapper
+                      socialMediaLink="https://www.linkedin.com/in/wojciech-lugowski/?originalSubdomain=pl"
+                      className="w-4 h-4"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -417,7 +450,7 @@ const OurStory = () => {
             {/* three rows */}
             <div className="flex flex-col gap-8">
               <div className="featureBorderWrapLightTheme rounded-[30px]">
-                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[30px]">
+                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[20px]">
                   <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
                     DevOps Engineer
                   </p>
@@ -431,7 +464,7 @@ const OurStory = () => {
                 </div>
               </div>
               <div className="featureBorderWrapLightTheme rounded-[30px]">
-                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[30px]">
+                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[20px]">
                   <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
                     QA Tester
                   </p>
@@ -445,7 +478,7 @@ const OurStory = () => {
                 </div>
               </div>
               <div className="featureBorderWrapLightTheme rounded-[30px]">
-                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[30px]">
+                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[20px]">
                   <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
                     QA Tester
                   </p>

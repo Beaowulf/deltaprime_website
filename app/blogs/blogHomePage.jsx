@@ -1,5 +1,6 @@
+// components/blogHomePage.jsx
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import homePageImage from "@/public/assets/img/blogPostBG.jpg";
 import { MainButton } from "@/app/components/buttons/mainButton";
@@ -73,8 +74,27 @@ const Circles = (randomNumber) => {
   }
 };
 
-const BlogHomePage = ({ latestBlogData, latestBlogs }) => {
-  console.log("🚀 ~ BlogHomePage ~ latestBlogs:", latestBlogs);
+const BlogHomePage = ({ latestBlogData, latestBlogs, categories, blogs }) => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const postsPerPage = 6;
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+
+  const filteredBlogs =
+    selectedCategory === "All"
+      ? blogs
+      : blogs.filter((blog) => blog.blogCategory === selectedCategory);
+
+  const currentPosts = filteredBlogs.slice(indexOfFirstPost, indexOfLastPost);
+  const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
+
   return (
     <div className="flex flex-col">
       <Image
@@ -109,8 +129,23 @@ const BlogHomePage = ({ latestBlogData, latestBlogs }) => {
               "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
             }
           />
+          <div className="flex flex-wrap gap-2 justify-center mb-8">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => handleCategoryChange(category)}
+                className={`px-4 py-2 rounded-full ${
+                  selectedCategory === category
+                    ? "bg-blue-500 text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
           <div className="flex flex-wrap gap-6 items-center justify-center">
-            {latestBlogs.slice(0, 3).map((blogPreviewCardData) => (
+            {currentPosts.map((blogPreviewCardData) => (
               <BlogCard
                 key={blogPreviewCardData.blogID}
                 blogID={blogPreviewCardData.blogID}
@@ -121,6 +156,21 @@ const BlogHomePage = ({ latestBlogData, latestBlogs }) => {
                 previewBlogImage={`https:${blogPreviewCardData.previewImageBlog.fields.file.url}`}
                 roundedImage={Circles(getRandomNumber())}
               />
+            ))}
+          </div>
+          <div className="flex justify-center mt-8">
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index + 1}
+                onClick={() => setCurrentPage(index + 1)}
+                className={`mx-1 px-3 py-1 rounded ${
+                  currentPage === index + 1
+                    ? "bg-blue-500 text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}
+              >
+                {index + 1}
+              </button>
             ))}
           </div>
         </div>

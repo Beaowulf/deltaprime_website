@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import "./flipCard.css";
 import filledStar from "@/public/assets/icons/filledStar.svg";
@@ -12,15 +12,8 @@ const FlipCard = ({
   titleBack,
   descriptionBack,
   listTextBack,
-  isFirstCard, // Prop to identify the first card
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-
-  useEffect(() => {
-    if (isFirstCard) {
-      setIsFlipped(true); // Flip the first card on mount
-    }
-  }, [isFirstCard]);
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
@@ -64,7 +57,7 @@ const FlipCard = ({
                 <p className="text-[14px] font-bold leading-4 text-white">
                   Difficulty Level:
                 </p>
-                {<DifficultyStars difficultyLevel={difficultyLevel} />}
+                <DifficultyStars difficultyLevel={difficultyLevel} />
               </div>
             </div>
           </div>

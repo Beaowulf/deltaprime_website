@@ -1,3 +1,4 @@
+// pages/blogs/page.jsx
 import { fetchBlogs } from "@/lib/getBlogs";
 import SearchBar from "@/app/components/searchBar/searchBar";
 import Header from "@/app/components/header/header";
@@ -13,6 +14,12 @@ const BlogsPage = async () => {
   const sortedBlogs = blogs.sort(
     (a, b) => new Date(b.blogDate) - new Date(a.blogDate)
   );
+
+  // Extract unique categories
+  const categories = [
+    "All",
+    ...new Set(blogs.map((blog) => blog.blogCategory)),
+  ];
 
   // Get the latest blog as an array with one element
   const latestBlog = sortedBlogs.slice(0, 1);
@@ -32,9 +39,12 @@ const BlogsPage = async () => {
           }
         />
         <SearchBar blogs={blogs} />
-        {/* Pass the latest blog to BlogHomePage */}
-        <BlogHomePage latestBlogs={latestBlogs} latestBlogData={latestBlog} />
-        {/* Unlock Potential block / hide on ipads and smaller screens */}
+        <BlogHomePage
+          latestBlogs={latestBlogs}
+          latestBlogData={latestBlog}
+          categories={categories}
+          blogs={blogs}
+        />
         <ContactForm className="relative" />
       </div>
     </div>

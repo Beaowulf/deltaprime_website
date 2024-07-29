@@ -6,7 +6,7 @@ import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/
 import { AnimatedText } from "@/app/ui/animatedText";
 
 const VideoPlayer = dynamic(
-  () => import("@/app/components/videoPlayer/video"),
+  () => import("@/app/components/videoPlayer/videoPlayerModal"),
   {
     ssr: false,
   }
