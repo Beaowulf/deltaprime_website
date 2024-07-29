@@ -34,7 +34,7 @@ const AppContent = ({ children }) => {
       }`}
     >
       {children}
-      <HorizontalPage isOpen={isHorizontalPage} />
+      <HorizontalPage isOpen={false} />
     </div>
   );
 };
