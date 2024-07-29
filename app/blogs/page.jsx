@@ -30,7 +30,7 @@ const BlogsPage = async () => {
   return (
     <div>
       <DynamicPurpleBar blogs={blogs} />
-      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] px-4">
+      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[15%] px-4">
         <Header
           title={"Our blog"}
           subTitle={"Burd Log"}
@@ -38,7 +38,6 @@ const BlogsPage = async () => {
             "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
           }
         />
-        <SearchBar blogs={blogs} />
         <BlogHomePage
           latestBlogs={latestBlogs}
           latestBlogData={latestBlog}

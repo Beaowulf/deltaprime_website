@@ -350,7 +350,7 @@ const OurStory = () => {
                     Cofounder <span className="font-extrabold">Benqi</span>
                     Finance
                   </p>
-                  <p className="mt-2 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+                  <p className="mt-2 featureParagraph max-w-[30rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                     Head of Strategy{" "}
                     <span className="font-extrabold">Benqi Finance</span>
                   </p>
@@ -381,7 +381,7 @@ const OurStory = () => {
                     Founder <span className="font-extrabold">Redstone</span>
                     Finance
                   </p>
-                  <p className="my-4 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+                  <p className="my-4 featureParagraph max-w-[30rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                     Former auditor
                     <span className="font-extrabold"> OpenZeppelin</span>
                   </p>
@@ -411,7 +411,7 @@ const OurStory = () => {
                     Managing Partner{" "}
                     <span className="font-extrabold">Lawarton</span>
                   </p>
-                  <p className="my-4 featureParagraph max-w-[25rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+                  <p className="my-4 featureParagraph max-w-[30rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
                     Co-founder & Head of legal
                     <br />
                     CobinAngels

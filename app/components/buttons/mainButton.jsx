@@ -23,12 +23,12 @@ export function MainButton({
             : `${className} mainButtonBGwithoutBorder`
         }
       >
-        <div className="mainButton w-full h-[45px] md:h-full p-4">
+        <div className="mainButton w-full h-[45px] md:h-full p-4 ">
           <h6
             className={
               typographyClass
-                ? typographyClass
-                : " text-[12px] md:text-[14px] lg:text-[16px] dark:text-black text-white text-nowrap font-extrabold"
+                ? `${typographyClass}`
+                : " text-[12px] md:text-[14px] lg:text-[16px]  text-nowrap font-extrabold mainButtonText"
             }
           >
             {label}
@@ -50,30 +50,32 @@ export function NavBarButton({ label, onClick }) {
   const { resolvedTheme } = useTheme();
   return (
     <>
-      <button
-        onClick={onClick}
-        className={
-          resolvedTheme === "dark"
-            ? `navBarButtonBGDark`
-            : `navBarButtonBGLight`
-        }
-      >
-        <div
-          className={`${
+      <div className="navButtonWrapper">
+        <button
+          onClick={onClick}
+          className={
             resolvedTheme === "dark"
-              ? "mainButton"
-              : "navbarButtonLightGradient"
-          } w-full h-[35px] md:h-[45px]`}
+              ? `navBarButtonBGDark`
+              : `navBarButtonBGLight`
+          }
         >
-          <p
-            className={
-              "text-[12px] md:text-[14px] lg:text-[16px] dark:text-black text-white text-nowrap"
-            }
+          <div
+            className={`${
+              resolvedTheme === "dark"
+                ? "mainButton"
+                : "navbarButtonLightGradient"
+            } w-full h-[35px] md:h-[45px]`}
           >
-            {label}
-          </p>
-        </div>
-      </button>
+            <p
+              className={
+                "text-[12px] md:text-[14px] lg:text-[16px] dark:text-black text-white text-nowrap mainButtonText"
+              }
+            >
+              {label}
+            </p>
+          </div>
+        </button>
+      </div>
     </>
   );
 }

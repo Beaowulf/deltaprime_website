@@ -1,7 +1,7 @@
-// components/blogHomePage.jsx
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import SearchBar from "@/app/components/searchBar/searchBar";
 import homePageImage from "@/public/assets/img/blogPostBG.jpg";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import BlogCard from "@/app/components/blogCard/blogCard";
@@ -77,105 +77,97 @@ const Circles = (randomNumber) => {
 const BlogHomePage = ({ latestBlogData, latestBlogs, categories, blogs }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredBlogs, setFilteredBlogs] = useState(blogs);
 
   const postsPerPage = 6;
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
 
-  const filteredBlogs =
-    selectedCategory === "All"
-      ? blogs
-      : blogs.filter((blog) => blog.blogCategory === selectedCategory);
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+    filterBlogs(category, searchTerm);
+  };
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    filterBlogs(selectedCategory, term);
+  };
+
+  const filterBlogs = (category, term) => {
+    let filtered = blogs;
+
+    if (category !== "All") {
+      filtered = filtered.filter((blog) => blog.blogCategory === category);
+    }
+
+    if (term) {
+      filtered = filtered.filter((blog) =>
+        blog.blogTitle.toLowerCase().includes(term.toLowerCase())
+      );
+    }
+
+    setFilteredBlogs(filtered);
+  };
 
   const currentPosts = filteredBlogs.slice(indexOfFirstPost, indexOfLastPost);
   const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
 
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
-  };
-
   return (
-    <div className="flex flex-col">
-      <Image
-        src={homePageImage}
-        className="w-full max-h-[450px] object-cover rounded-[20px] md:mb-24 md:mt-32 my-10"
-      />
-      <div className="flex flex-col gap-6 items-start dark:text-white text-[#252948] ">
-        <h1 className="featureSubtitle text-[25px] md:text-[35px]">
-          Strategies For Any Risk Appetite
-        </h1>
-        <p className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-center text-[#8c8a8a] leading-6">
-          Written by Joe Smith
-        </p>
-        <p className="featureParagraph max-w-xl text-[13px] md:leading-6 sm:text-[17px] leading-4">
-          Join Burd and discover strategies to boost your earnings. From simple
-          to advanced, find the perfect fit for your style.
-          <br />
-          <br />
-          Join Burd and discover strategies to boost your earnings. From simple
-          to advanced, find the perfect fit for your style.
-        </p>
-
-        <div className="hidden md:block mt-10 md:w-fit w-full">
-          <MainButton hasArrowRight={true} label={"Read More"} />
-        </div>
-
-        <div className="pt-20">
-          <BlogHeader
-            title={"Blog"}
-            subTitle={"Latest Posts"}
-            paragraph={
-              "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
-            }
-          />
-          <div className="flex flex-wrap gap-2 justify-center mb-8">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => handleCategoryChange(category)}
-                className={`px-4 py-2 rounded-full ${
-                  selectedCategory === category
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-200 text-gray-700"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-6 items-center justify-center">
-            {currentPosts.map((blogPreviewCardData) => (
-              <BlogCard
-                key={blogPreviewCardData.blogID}
-                blogID={blogPreviewCardData.blogID}
-                blogCategory={blogPreviewCardData.blogCategory}
-                blogTitle={blogPreviewCardData.blogTitle}
-                blogDescription={blogPreviewCardData.blogDescription}
-                minsToRead={blogPreviewCardData.minsToRead}
-                previewBlogImage={`https:${blogPreviewCardData.previewImageBlog.fields.file.url}`}
-                roundedImage={Circles(getRandomNumber())}
-              />
-            ))}
-          </div>
-          <div className="flex justify-center mt-8">
-            {Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index + 1}
-                onClick={() => setCurrentPage(index + 1)}
-                className={`mx-1 px-3 py-1 rounded ${
-                  currentPage === index + 1
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-200 text-gray-700"
-                }`}
-              >
-                {index + 1}
-              </button>
-            ))}
+    <>
+      <div className="flex flex-wrap gap-2 justify-center mb-8">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => handleCategoryChange(category)}
+            className={`px-4 py-2 rounded-full ${
+              selectedCategory === category
+                ? "bg-blue-500 text-white"
+                : "bg-gray-200 text-gray-700"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+      <SearchBar onSearch={handleSearch} />
+      <div className="flex flex-col">
+        <div className="flex flex-col gap-6 items-start dark:text-white text-[#252948] ">
+          <div className="py-20 w-full relative">
+            <div className="flex flex-wrap gap-6 items-center justify-center">
+              {currentPosts.map((blogPreviewCardData) => (
+                <BlogCard
+                  key={blogPreviewCardData.blogID}
+                  blogID={blogPreviewCardData.blogID}
+                  blogCategory={blogPreviewCardData.blogCategory}
+                  blogTitle={blogPreviewCardData.blogTitle}
+                  blogDescription={blogPreviewCardData.blogDescription}
+                  minsToRead={blogPreviewCardData.minsToRead}
+                  previewBlogImage={`https:${blogPreviewCardData.previewImageBlog.fields.file.url}`}
+                  roundedImage={Circles(getRandomNumber())}
+                />
+              ))}
+            </div>
+            <div className="flex justify-center mt-8 absolute bottom-0  left-1/2 transform -translate-x-1/2">
+              {Array.from({ length: totalPages }, (_, index) => (
+                <button
+                  key={index + 1}
+                  onClick={() => setCurrentPage(index + 1)}
+                  className={`mx-1 px-3 py-1 rounded ${
+                    currentPage === index + 1
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-200 text-gray-700"
+                  }`}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
