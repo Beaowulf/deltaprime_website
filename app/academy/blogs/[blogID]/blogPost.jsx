@@ -22,6 +22,8 @@ import {
   AboutButtonDarkBG,
   MainButton,
 } from "@/app/components/buttons/mainButton";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 
 const BlogPost = ({ blog, blogPreviewData }) => {
   const [blogData, setBlogData] = useState(blog);
@@ -106,7 +108,10 @@ const BlogPost = ({ blog, blogPreviewData }) => {
   function countWords(str) {
     return str.split(/\s+/).filter((word) => word !== "").length;
   }
-  const wordCount = countWords(blogData.blogParagraph);
+
+  // Extract plain text from rich text document
+  const plainText = documentToPlainTextString(blogData.blogRichTextParagraph);
+  const wordCount = countWords(plainText);
   const minsToRead = Math.ceil(wordCount / 210);
 
   return (
@@ -299,7 +304,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         </div>
 
         <div className="flex flex-wrap gap-6 items-center justify-center">
-          {blogPreviewData.map((blogPreviewData) => (
+          {blogPreviewData.slice(0, 3).map((blogPreviewData) => (
             <BlogCard
               key={blogPreviewData.blog.blogID}
               blogID={blogPreviewData.blog.blogID}

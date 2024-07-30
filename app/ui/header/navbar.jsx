@@ -47,12 +47,12 @@ function Nav() {
               <div className="ml-10 flex items-baseline space-x-4">
                 <div>
                   <Link
-                    href="/blogs"
+                    href="/academy/blogs"
                     className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium"
                   >
                     Burd Log
                   </Link>
-                  <div className={getLinkClass("/blogs")} />
+                  <div className={getLinkClass("/academy/blogs")} />
                 </div>
 
                 <div>
@@ -154,7 +154,7 @@ function Nav() {
 
               <div className="flex flex-col justify-center items-center gap-10 h-full">
                 <Link
-                  href="/blogs"
+                  href="/academy/blogs"
                   className="text-gray-800 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-semibold"
                   onClick={() => setIsOpen(false)}
                 >

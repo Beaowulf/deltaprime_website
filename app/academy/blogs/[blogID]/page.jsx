@@ -1,6 +1,6 @@
 import { fetchBlogs } from "@/lib/getBlogs";
 import BlogPost from "@/app/blogs/[blogID]/blogPost";
-
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 // Utility function to get a random item from an array
 function getRandomItem(array) {
   const randomIndex = Math.floor(Math.random() * array.length);
@@ -40,7 +40,7 @@ const BlogPage = async ({ params }) => {
 
     const processBlog = (blog) => {
       const description = blog.blogDescription;
-      const paragraphs = blog.blogParagraph;
+      const paragraphs = documentToPlainTextString(blog.blogRichTextParagraph);
       const wordCount = countWords(paragraphs);
       const minsToRead = Math.ceil(wordCount / 210);
       const blogID = blog.blogID;

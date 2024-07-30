@@ -30,7 +30,7 @@ const BlogsPage = async () => {
   return (
     <div>
       <DynamicPurpleBar blogs={blogs} />
-      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[15%] px-4">
+      <div className="pagePaddingLarge">
         <Header
           title={"Our blog"}
           subTitle={"Burd Log"}

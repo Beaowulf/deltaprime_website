@@ -5,12 +5,7 @@ import "./index.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
-
-// Custom components for replacements
-const CustomInlineTakeaways = () => (
-  <p>This is a replacement for inline_Takeaways</p>
-);
-const CustomInlineBlock = () => <p>This is a replacement for inlineBlock</p>;
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 
 const CustomButton = ({ buttonText, url }) => (
   <a href={url} className="custom-button">
@@ -78,7 +73,7 @@ const RichTextRenderer = ({
           return null;
         }
 
-        if (text.includes("{{inline_Block}}")) {
+        if (text.includes("{{inline_CTA}}")) {
           return (
             <div className="mb-20">
               <UnlockPotentialContainer />

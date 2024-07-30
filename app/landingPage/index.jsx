@@ -1,9 +1,6 @@
 import { fetchBlogs } from "@/lib/getBlogs";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import RichTextRenderer from "@/app/components/richTetxtRenderer/richTextRenderer";
-import Image from "next/image";
-import InlineImage from "@/public/assets/img/thumbnail.png";
 import LandingPage from "./landingPage";
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 
 // Utility function to format ISO date string
 function formatDateString(isoString, locale = "en-GB") {
@@ -41,10 +38,6 @@ const HomePage = async () => {
     return acc;
   }, {});
 
-  // function logData(data) {
-  //   console.log(data);
-  // }
-
   const blogPreviewCardData = Object.keys(blogsByCategory).map((category) => {
     const categoryBlogs = blogsByCategory[category];
     const randomBlog = getRandomItem(categoryBlogs);
@@ -52,7 +45,7 @@ const HomePage = async () => {
     // console.log(randomBlog);
     const processBlog = (blog) => {
       const description = blog.blogDescription;
-      const paragraphs = blog.blogParagraph;
+      const paragraphs = documentToPlainTextString(blog.blogRichTextParagraph);
       const wordCount = countWords(paragraphs);
       const minsToRead = Math.ceil(wordCount / 210);
       const blogID = blog.blogID;

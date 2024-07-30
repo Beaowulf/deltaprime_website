@@ -11,7 +11,7 @@ const BlogCard = ({
   blogID,
 }) => {
   return (
-    <div className="px-5 pt-5 bg-[#F4F4FF] rounded-[20px] w-[400px] h-[350px] shadow-lg dark:shadow-none shadow-[#ff5fa240]">
+    <div className="px-5 pt-5 bg-[#F4F4FF] rounded-[20px] w-[360px] h-[330px] shadow-lg dark:shadow-none shadow-[#ff5fa240]">
       <div className="flex flex-col gap-4 justify-between h-full">
         <div className="flex justify-between">
           <div className="flex gap-2 text-black">
