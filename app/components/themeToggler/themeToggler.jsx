@@ -21,7 +21,7 @@ export default function ThemeSwitch() {
 
   return (
     <div
-      className={`toggle_wrapper md:block hidden ${isDay ? "day" : "night"}`}
+      className={`toggle_wrapper ${isDay ? "day" : "night"}`}
       onClick={toggleTheme}
     >
       <div

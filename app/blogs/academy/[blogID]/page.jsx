@@ -1,5 +1,5 @@
 import { fetchBlogs } from "@/lib/getBlogs";
-import BlogPost from "@/app/blogs/[blogID]/blogPost";
+import BlogPost from "@/app/blogs/academy/[blogID]/blogPost";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 // Utility function to get a random item from an array
 function getRandomItem(array) {

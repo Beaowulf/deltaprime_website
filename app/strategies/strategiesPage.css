@@ -70,3 +70,16 @@
   transform: translate3d(0, 0, 0);
   z-index: 10;
 }
+
+/* responsivness */
+@media (max-width: 640px) {
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 20px;
+    height: 20px;
+  }
+}

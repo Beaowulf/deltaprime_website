@@ -35,7 +35,7 @@ const BlogCard = ({
           <p className="text-[8px] md:text-[12px] leading-[inherit] dark:text-[#878C91] lineClampThree">
             {blogDescription}
           </p>
-          <Link href={`/blogs/${blogID}`}>
+          <Link href={`/blogs/academy/${blogID}`}>
             <ArrowButton />
           </Link>
         </div>

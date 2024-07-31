@@ -23,6 +23,20 @@ const RichTextRenderer = ({
       [BLOCKS.PARAGRAPH]: (node, children) => {
         return <p className="my-4">{children}</p>; // Adjust spacing with custom class
       },
+      [BLOCKS.UL_LIST]: (node, children) => {
+        return (
+          <ul className="list-disc list-inside list_inline">{children}</ul>
+        );
+      },
+      [BLOCKS.OL_LIST]: (node, children) => {
+        return (
+          <ol className="list-decimal list-inside list_inline">{children}</ol>
+        );
+      },
+      [BLOCKS.LIST_ITEM]: (node, children) => {
+        return <li className="my-2 list_inline">{children}</li>;
+      },
+
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { file, title } = node.data.target.fields;
         const { url, details } = file;
@@ -41,6 +55,7 @@ const RichTextRenderer = ({
         const { buttonText, url } = node.data.target.fields;
         return <CustomButton buttonText={buttonText} url={url} />;
       },
+
       [INLINES.HYPERLINK]: (node) => {
         return <p>Link</p>;
       },

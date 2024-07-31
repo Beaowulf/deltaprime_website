@@ -48,3 +48,7 @@
   border: 2px solid #ff8fb8;
   border-radius: 20px;
 }
+
+.custom-arrow {
+  z-index: 100 !important;
+}

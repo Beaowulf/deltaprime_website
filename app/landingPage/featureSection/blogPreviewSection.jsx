@@ -53,7 +53,10 @@ const BlogCard = ({
             {blogDescription}
           </p>
           {blogID ? (
-            <Link className="arrowButtonParent" href={`/blogs/${blogID}`}>
+            <Link
+              className="arrowButtonParent"
+              href={`/academy/blogs/${blogID}`}
+            >
               <ArrowButton />
             </Link>
           ) : (

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/live-preview": "^4.5.0",
     "@contentful/rich-text-plain-text-renderer": "^16.2.8",
     "@contentful/rich-text-react-renderer": "^15.22.7",
     "@contentful/rich-text-types": "^16.8.1",

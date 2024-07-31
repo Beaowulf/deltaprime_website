@@ -5,10 +5,7 @@
 
 /* custom classes */
 .pagePaddingLarge {
-  @apply px-4 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[12%] 2xl:px-[15%];
-}
-.myCustomPadding {
-  @apply px-4 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[12%] 2xl:px-[15%];
+  @apply px-4 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[11%] 2xl:px-[13%];
 }
 
 /*
@@ -308,10 +305,6 @@ body {
   font-weight: 700;
 }
 
-.featureParagraph {
-  font-weight: 500;
-}
-
 .featureCardTitle {
   font-size: 19px;
   font-weight: 500;
@@ -456,4 +449,27 @@ body {
 
 .arrowButtonBG:hover .pathArrowChild {
   stroke: black;
+}
+
+.list-disc {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.list-decimal {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.my-2 {
+  margin: 0.5rem 0;
+}
+
+/* Ensure list items and their contents align correctly */
+.list_inline > div {
+  display: inline;
 }

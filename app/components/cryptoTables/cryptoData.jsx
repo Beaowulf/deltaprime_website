@@ -57,7 +57,7 @@ export const fetchCryptoData = async () => {
         };
       })
     );
-    console.log("🚀 ~ fetchCryptoData ~ poolsInfo:", poolsInfo);
+    // console.log("🚀 ~ fetchCryptoData ~ poolsInfo:", poolsInfo);
 
     const fetchPricesWithRetry = async (retries, delay) => {
       for (let i = 0; i < retries; i++) {

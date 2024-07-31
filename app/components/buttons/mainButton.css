@@ -1,6 +1,5 @@
 .mainButtonWithBorderBG {
   padding: 2px;
-  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;

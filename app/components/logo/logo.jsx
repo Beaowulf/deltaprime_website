@@ -24,7 +24,7 @@ export const MobileMenuLogo = () => {
   return (
     <a
       href="/#"
-      className="title-font flex items-center font-medium text-[#A79DFF]"
+      className="title-font flex items-center font-medium text-[#A79DFF] dark:text-white"
     >
       <Image
         className="md:h-[42px] md:w-[39px] h-[25px] w-[23px]"

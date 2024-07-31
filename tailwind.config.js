@@ -12,6 +12,8 @@ module.exports = {
       backgroundImage: {
         arrowButtonDarkGradient:
           "linear-gradient(137deg, #1B153C 10%, #1C2943 50%, #301E3E 90%)",
+        "gradient-to-45-dark-BG":
+          "linear-gradient(137deg, #1B153C, #1C2943, #301E3E)",
       },
       fontFamily: {
         sans: ["var(--font-inter)"],

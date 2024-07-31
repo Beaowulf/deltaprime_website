@@ -17,7 +17,7 @@ const UnlockPotentialContainer = ({ hasMarginTop = true }) => {
 
   return (
     <div
-      className={`hidden sm:block parentColoredBorderWrapper ${
+      className={`hidden md:block parentColoredBorderWrapper ${
         hasMarginTop ? "mt-40" : "mt-0"
       }`}
     >
