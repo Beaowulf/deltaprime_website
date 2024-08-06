@@ -111,7 +111,6 @@ function Nav() {
                 aria-controls="mobile-menu"
                 aria-expanded={isOpen}
               >
-                <span className="sr-only">Open main menu</span>
                 <Image
                   src={hamburgerIconWhite}
                   alt="menu_icon"
