@@ -16,12 +16,12 @@ import ContactForm from "@/app/ui/contactForm/contactForm";
 import { useTheme } from "next-themes";
 
 // todo: cleanup the 2 divs with the same padding styling
-const LandingPage = ({ blogPreviewCardData }) => {
+const LandingPage = ({ blogPreviewCardData, totalTvl }) => {
   const { theme } = useTheme();
 
   return (
     <div>
-      <IntroSection />
+      <IntroSection totalTvl={totalTvl} />
       <Carousel />
       <div className="px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[18%]">
         <Features>

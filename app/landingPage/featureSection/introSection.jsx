@@ -1,3 +1,5 @@
+// pages/playground.js (or wherever your component is located)
+
 import React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -7,12 +9,10 @@ import { AnimatedText } from "@/app/ui/animatedText";
 
 const VideoPlayer = dynamic(
   () => import("@/app/components/videoPlayer/video"),
-  {
-    ssr: false,
-  }
+  { ssr: false }
 );
 
-const TextWithPill = () => {
+const TextWithPill = ({ totalTvl }) => {
   return (
     <>
       {/* Left side (text with pill) */}
@@ -37,15 +37,13 @@ const TextWithPill = () => {
             <p className="blueText text-center sm:text-left text-nowrap">
               Protocol Deposits
             </p>
-            {/* Maybe a small animation of costs also API call? todo: API CALL? */}
-            <AnimatedText targetNumber={42302325.39} duration={2} />
+            <AnimatedText targetNumber={totalTvl} duration={2} />
           </div>
           <div className="dark:bg-[#2b203f] bg-[#CED0FF] w-[2px] h-[35px]" />
           <div className="flex flex-col items-center sm:items-start">
             <p className="blueText text-center sm:text-left text-nowrap">
               Liquidity Unlocked
             </p>
-            {/* Maybe a small animation of costs also API call? todo: API CALL? */}
             <AnimatedText targetNumber={20950943.39} />
           </div>
         </div>
@@ -54,14 +52,14 @@ const TextWithPill = () => {
   );
 };
 
-const IntroSection = () => {
+const IntroSection = ({ totalTvl }) => {
   return (
     <div className="pagePaddingLarge">
       <div className="mx-auto">
         {/* Top Intro Part (Text and video) */}
         <div className="flex flex-col md:flex-row justify-between gap-20 p-4 items-center">
           {/* Left side (text with pill) */}
-          <TextWithPill />
+          <TextWithPill totalTvl={totalTvl} />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren block sm:hidden">
             <Link href="?modal=true">

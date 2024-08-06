@@ -1,94 +1,93 @@
 {
   "app\\landingPage\\featureSection\\introSection.jsx -> @/app/components/videoPlayer/video": {
-    "id": 72798,
+    "id": "app\\landingPage\\featureSection\\introSection.jsx -> @/app/components/videoPlayer/video",
     "files": [
-      "static/css/ec9738db00ce37a4.css",
-      "static/chunks/8492.99c5a96f309bbc19.js",
-      "static/chunks/2798.5193026a742d249a.js"
+      "static/css/_app-pages-browser_app_components_videoPlayer_video_jsx.css",
+      "static/chunks/_app-pages-browser_app_components_videoPlayer_video_jsx.js"
     ]
   },
   "node_modules\\react-player\\lib\\ReactPlayer.js -> ./Preview": {
-    "id": 56147,
+    "id": "node_modules\\react-player\\lib\\ReactPlayer.js -> ./Preview",
     "files": [
-      "static/chunks/reactPlayerPreview.bf92c2d478ff3c8c.js"
+      "static/chunks/reactPlayerPreview.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./DailyMotion": {
-    "id": 8816,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./DailyMotion",
     "files": [
-      "static/chunks/reactPlayerDailyMotion.2d2a96cf93df6928.js"
+      "static/chunks/reactPlayerDailyMotion.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./Facebook": {
-    "id": 73574,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./Facebook",
     "files": [
-      "static/chunks/reactPlayerFacebook.5e29a6aa92480d07.js"
+      "static/chunks/reactPlayerFacebook.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./FilePlayer": {
-    "id": 16776,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./FilePlayer",
     "files": [
-      "static/chunks/reactPlayerFilePlayer.7a88508ebfe931ba.js"
+      "static/chunks/reactPlayerFilePlayer.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./Kaltura": {
-    "id": 54100,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./Kaltura",
     "files": [
-      "static/chunks/reactPlayerKaltura.d541e7ebd0134de6.js"
+      "static/chunks/reactPlayerKaltura.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./Mixcloud": {
-    "id": 21664,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./Mixcloud",
     "files": [
-      "static/chunks/reactPlayerMixcloud.ca909513754688a9.js"
+      "static/chunks/reactPlayerMixcloud.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./Mux": {
-    "id": 12936,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./Mux",
     "files": [
-      "static/chunks/reactPlayerMux.56c6576e9c4cc183.js"
+      "static/chunks/reactPlayerMux.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./SoundCloud": {
-    "id": 61637,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./SoundCloud",
     "files": [
-      "static/chunks/reactPlayerSoundCloud.fa4e8bd9418388db.js"
+      "static/chunks/reactPlayerSoundCloud.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./Streamable": {
-    "id": 79243,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./Streamable",
     "files": [
-      "static/chunks/reactPlayerStreamable.68f702377b023f54.js"
+      "static/chunks/reactPlayerStreamable.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./Twitch": {
-    "id": 96663,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./Twitch",
     "files": [
-      "static/chunks/reactPlayerTwitch.2b13d1904c1efe94.js"
+      "static/chunks/reactPlayerTwitch.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./Vidyard": {
-    "id": 24812,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./Vidyard",
     "files": [
-      "static/chunks/reactPlayerVidyard.e7ba3a906618af5f.js"
+      "static/chunks/reactPlayerVidyard.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./Vimeo": {
-    "id": 14781,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./Vimeo",
     "files": [
-      "static/chunks/reactPlayerVimeo.b6fbb3210792e76a.js"
+      "static/chunks/reactPlayerVimeo.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./Wistia": {
-    "id": 12842,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./Wistia",
     "files": [
-      "static/chunks/reactPlayerWistia.5a2d6fc3f2f652be.js"
+      "static/chunks/reactPlayerWistia.js"
     ]
   },
   "node_modules\\react-player\\lib\\players\\index.js -> ./YouTube": {
-    "id": 24665,
+    "id": "node_modules\\react-player\\lib\\players\\index.js -> ./YouTube",
     "files": [
-      "static/chunks/reactPlayerYouTube.1e56c8eba27369d5.js"
+      "static/chunks/reactPlayerYouTube.js"
     ]
   }
 }
