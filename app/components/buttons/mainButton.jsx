@@ -1,47 +1,57 @@
+"use client";
+
 import "./mainButton.css";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import ArrowRightBlack from "../../../public/assets/img/arrow-right.svg";
 import ArrowRightWhite from "../../../public/assets/img/arrow-right-white.svg";
+import ArrowRight from "@/app/components/icons/arrowRight";
+import { useRouter } from "next/navigation";
 
 export function MainButton({
   label,
-  onClick,
+  href,
   hasArrowRight = false,
   typographyClass,
   hasBorder = true,
   className,
 }) {
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (href) {
+      router.push(href);
+    }
+  };
+
   return (
-    <>
-      <button
-        onClick={onClick}
-        className={
-          hasBorder
-            ? `${className} mainButtonWithBorderBG`
-            : `${className} mainButtonBGwithoutBorder`
-        }
-      >
-        <div className="mainButton w-full h-[45px] md:h-full p-4 ">
-          <h6
-            className={
-              typographyClass
-                ? `${typographyClass}`
-                : " text-[12px] md:text-[14px] lg:text-[16px] text-nowrap font-extrabold mainButtonText"
-            }
-          >
-            {label}
-          </h6>
-          {hasArrowRight && (
-            <Image
-              className={"size-5 arrowOnButton"}
-              src={ArrowRightBlack}
-              alt={"Arrow Right"}
-            />
-          )}
-        </div>
-      </button>
-    </>
+    <button
+      onClick={handleClick}
+      className={
+        hasBorder
+          ? `${className} mainButtonWithBorderBG`
+          : `${className} mainButtonBGwithoutBorder`
+      }
+    >
+      <div className="mainButton w-full h-[45px] md:h-full p-4 ">
+        <h6
+          className={
+            typographyClass
+              ? `${typographyClass}`
+              : " text-[12px] md:text-[14px] lg:text-[16px]  text-nowrap font-extrabold mainButtonText"
+          }
+        >
+          {label}
+        </h6>
+        {hasArrowRight && (
+          <Image
+            className={"size-5"}
+            src={ArrowRightBlack}
+            alt={"Arrow Right"}
+          />
+        )}
+      </div>
+    </button>
   );
 }
 
