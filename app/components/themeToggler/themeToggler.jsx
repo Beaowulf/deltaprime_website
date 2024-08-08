@@ -12,7 +12,6 @@ export default function ThemeSwitch() {
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
-    console.log(theme);
   };
 
   const isDay = theme === "light";

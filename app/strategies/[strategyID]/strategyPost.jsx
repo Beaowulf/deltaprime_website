@@ -6,7 +6,6 @@ import RichTextRenderer from "@/app/components/richTetxtRenderer/richTextRendere
 const StrategyDetail = ({ strategy }) => {
   const paragraph = documentToPlainTextString(strategy.strategyRichText);
 
-  console.log(strategy);
   return (
     <div>
       <h1>{strategy.strategyTitle}</h1>
