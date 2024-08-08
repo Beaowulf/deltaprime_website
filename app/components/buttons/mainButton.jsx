@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import ArrowRightBlack from "../../../public/assets/img/arrow-right.svg";
 import ArrowRightWhite from "../../../public/assets/img/arrow-right-white.svg";
-import ArrowRight from "@/app/components/icons/arrowRight";
 
 export function MainButton({
   label,
@@ -28,14 +27,14 @@ export function MainButton({
             className={
               typographyClass
                 ? `${typographyClass}`
-                : " text-[12px] md:text-[14px] lg:text-[16px]  text-nowrap font-extrabold mainButtonText"
+                : " text-[12px] md:text-[14px] lg:text-[16px] text-nowrap font-extrabold mainButtonText"
             }
           >
             {label}
           </h6>
           {hasArrowRight && (
             <Image
-              className={"size-5"}
+              className={"size-5 arrowOnButton"}
               src={ArrowRightBlack}
               alt={"Arrow Right"}
             />
@@ -67,9 +66,11 @@ export function NavBarButton({ label, onClick }) {
             } w-full h-[35px] md:h-[45px]`}
           >
             <p
-              className={
-                "text-[12px] md:text-[14px] lg:text-[16px] dark:text-black text-white text-nowrap mainButtonText"
-              }
+              className={`${
+                resolvedTheme === "dark"
+                  ? "navButtonDarkText"
+                  : "navButtonLightText"
+              } text-[12px] md:text-[14px] dark:text-[black] text-white lg:text-[16px] text-nowrap`}
             >
               {label}
             </p>
