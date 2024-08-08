@@ -46,7 +46,7 @@ const StrategyDetail = ({ strategy }) => {
           />
         </div>
         {/*  Right side */}
-        <div className="boxWrapper hidden md:block w-full ">
+        <div className="boxStrategyWrapper hidden md:block w-full ">
           <div className="flex flex-col gap-10">
             <CryptoPreviewTables />
             <div className="flex flex-col gap-10 px-5 pt-8 rounded-[20px] bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%">

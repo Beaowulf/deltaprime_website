@@ -43,7 +43,7 @@ const RichTextRenderer = ({
       },
 
       [BLOCKS.TABLE]: (node, children) => (
-        <table className="styled-table">
+        <table className="styled-table ">
           <tbody>{children}</tbody>
         </table>
       ),
