@@ -33,19 +33,19 @@ export function MainButton({
           : `${className} mainButtonBGwithoutBorder`
       }
     >
-      <div className="mainButton w-full h-[45px] md:h-full p-4 ">
+      <div className="mainButton w-full h-[45px] md:h-full p-4">
         <h6
           className={
             typographyClass
-              ? `${typographyClass}`
-              : " text-[12px] md:text-[14px] lg:text-[16px]  text-nowrap font-extrabold mainButtonText"
+              ? `${typographyClass} mainButtonText text-[10px] md:text-[12px] lg:text-[14px] text-nowrap font-extrabold`
+              : " text-[10px] md:text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText"
           }
         >
           {label}
         </h6>
         {hasArrowRight && (
           <Image
-            className={"size-5"}
+            className={"size-5 arrowRightImageBtn"}
             src={ArrowRightBlack}
             alt={"Arrow Right"}
           />
@@ -123,27 +123,25 @@ export function AboutButtonDarkBG({
   hasWhiteArrowRight = false,
 }) {
   return (
-    <>
-      <button className={customClass} onClick={onClick}>
-        <div className="aboutButtonDarkBG">
-          <p className="buttonLightModeText min-w-fit">{label}</p>
-          {hasArrowRight && (
-            <Image
-              className={"size-5"}
-              src={ArrowRightBlack}
-              alt={"Arrow Right"}
-            />
-          )}
-          {hasWhiteArrowRight && (
-            <Image
-              className={"size-5"}
-              src={ArrowRightWhite}
-              alt={"Arrow Right"}
-            />
-          )}
-        </div>
-      </button>
-    </>
+    <button className={`${customClass} aboutButtonDarkBG`} onClick={onClick}>
+      <div className="flex items-center">
+        <p className="buttonLightModeText min-w-fit">{label}</p>
+        {hasArrowRight && (
+          <Image
+            className="size-5 rightArrowAboutBtn"
+            src={ArrowRightBlack}
+            alt="Arrow Right"
+          />
+        )}
+        {hasWhiteArrowRight && (
+          <Image
+            className="size-5 rightArrowAboutBtn"
+            src={ArrowRightWhite}
+            alt="Arrow Right"
+          />
+        )}
+      </div>
+    </button>
   );
 }
 

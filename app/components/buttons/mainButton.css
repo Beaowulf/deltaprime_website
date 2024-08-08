@@ -154,12 +154,22 @@
   );
 }
 
+.mainButtonText {
+  color: black;
+}
 .mainButton:hover .mainButtonText {
   color: white;
 }
 .mainButton:hover .navButtonLightText {
   color: black;
 }
+.mainButton:hover .navButtonDarkText {
+  color: white;
+}
+.mainButton:hover .arrowRightImageBtn {
+  filter: brightness(0) invert(1);
+}
+
 .mainButton:hover .mainButtonBG {
   background: transparent;
 }
@@ -217,8 +227,17 @@
   text-transform: uppercase;
   z-index: 1;
   background-color: #1b153c;
+  transiton: all 0.3s ease;
 }
-
+.aboutButtonDarkBG:hover {
+  background-color: white;
+}
+.aboutButtonDarkBG:hover .buttonLightModeText {
+  color: black;
+}
+.aboutButtonDarkBG:hover .rightArrowAboutBtn {
+  filter: brightness(0) invert(1);
+}
 .contactUsButtonBGDark {
   display: flex;
   justify-content: center;

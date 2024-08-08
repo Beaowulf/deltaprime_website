@@ -63,7 +63,7 @@ const DropdownMenu = ({ strategies }) => {
             <Link
               onClick={closeDropdown}
               href={`/strategies/${strategy.strategySYS.id}`}
-              className="font-semibold pt-4  !z-50"
+              className="font-semibold pt-4 text-white  !z-50"
             >
               <p className="w-fit font-bold text-[12px] mb-2">
                 {strategy.strategyTitle}

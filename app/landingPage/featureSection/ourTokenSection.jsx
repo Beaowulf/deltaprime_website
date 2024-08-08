@@ -55,7 +55,7 @@ function OurTokenSection() {
               </p>
               <div className="mt-auto">
                 <MainButton
-                  typographyClass="text-[12px] md:text-[18px] px-[20px] text-[#1B153C] md:mx-auto"
+                  typographyClass="md:mx-auto"
                   hasArrowRight={true}
                   label={"LEARN MORE"}
                   href={"/tokenomics"}
@@ -102,7 +102,7 @@ function OurTokenSection() {
               </p>
               <div className="mt-auto">
                 <MainButton
-                  typographyClass="text-[12px] md:text-[18px] px-[20px] text-[#1B153C] md:mx-auto"
+                  typographyClass="md:mx-auto"
                   hasArrowRight={true}
                   label={"LEARN MORE"}
                   href={"/tokenomics"}
