@@ -3,3 +3,45 @@
   font-weight: 700;
   letter-spacing: -2%;
 }
+
+.boxWrapper {
+  position: relative;
+  border-radius: 25px;
+  padding: 1px;
+  overflow: hidden;
+  width: 15rem;
+}
+
+.boxWrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+  border-radius: 25px;
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  -webkit-mask: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+  scale: 1.02;
+}
+
+.boxContainer {
+  border-radius: 26px;
+  position: relative;
+  z-index: 1;
+}

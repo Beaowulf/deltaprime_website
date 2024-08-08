@@ -42,7 +42,7 @@ const BlogCard = ({
 
         <div>
           <h3>
-            <p className="mb-4 line-clamp-2 truncate inline-block text-xl font-semibold text-dark hover:text-primary dark:text-[#010205] sm:text-2xl lg:text-xl xl:text-2xl">
+            <p className="mb-4 whitespace-nowrap overflow-hidden text-ellipsis w-full inline-block text-xl font-semibold text-dark hover:text-primary dark:text-[#010205] sm:text-2xl lg:text-xl xl:text-2xl">
               {blogTitle}
             </p>
           </h3>

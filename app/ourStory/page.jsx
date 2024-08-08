@@ -26,7 +26,7 @@ import avaxImage from "@/public/assets/img/avaxImage.png";
 const tvlData = await fetchTvlData();
 const tvtDataFormated = tvlData.totalTvl.slice(0, 2);
 
-console.log(tvlData);
+// console.log(tvlData);
 
 const OurStory = () => {
   // const { theme } = useTheme();

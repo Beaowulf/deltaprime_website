@@ -69,7 +69,7 @@ export function FooterTextLinks() {
             Blog
           </Link>
           <Link
-            href="/media-library"
+            href="/blogs/academy/glossary"
             className="block hover:text-gray-400 text-sm"
           >
             Glossary

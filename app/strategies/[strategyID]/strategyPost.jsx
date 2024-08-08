@@ -19,7 +19,7 @@ const StrategyDetail = ({ strategy }) => {
     <div className="pagePaddingMedium">
       <div>
         <div className="topsidestrategies">
-          <div className="flex flex-col px-[200px] pt-[150px] pb-[100px] box-border gap-8">
+          <div className="flex flex-col md:px-[200px] md:pt-[150px] p-10 pb-5 md:pb-[100px] box-border gap-8">
             {" "}
             <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
               {strategy.strategyTitle}

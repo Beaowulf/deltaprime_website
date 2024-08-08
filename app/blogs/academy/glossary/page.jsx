@@ -3,11 +3,15 @@
 import { fetchGlossaryEntries } from "@/lib/getBlogs";
 import React, { useState, useEffect } from "react";
 import "./glossary.css";
+import { useTheme } from "next-themes";
 
 const Glossary = () => {
   const [glossaryEntries, setGlossaryEntries] = useState([]);
   const [selectedLetter, setSelectedLetter] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [placeholder, setPlaceholder] = useState("Search Term Here");
+
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     async function getGlossaryEntries() {
@@ -23,25 +27,29 @@ const Glossary = () => {
     setSearchTerm("");
   }
 
-  const filteredEntries = glossaryEntries
-    .filter((entry) =>
-      selectedLetter ? entry.glossaryTitle.startsWith(selectedLetter) : true
-    )
-    .filter((entry) => {
-      if (searchTerm === "") return true;
-      const searchWords = searchTerm.toLowerCase().split(" ");
-      const paragraphWords = entry.glossaryText
-        .split(" ")
-        .slice(3)
-        .join(" ")
-        .toLowerCase();
-      return searchWords.every((word) => paragraphWords.includes(word));
-    });
+  const filteredEntries = glossaryEntries.filter((entry) => {
+    if (selectedLetter && !entry.glossaryTitle.startsWith(selectedLetter)) {
+      return false;
+    }
+
+    if (searchTerm.length < 2) {
+      return true;
+    }
+
+    const searchWords = searchTerm.toLowerCase().split(" ");
+    const combinedText = (
+      entry.glossaryTitle +
+      " " +
+      entry.glossaryText
+    ).toLowerCase();
+
+    return searchWords.every((word) => combinedText.includes(word));
+  });
 
   return (
     <div className="sm:px-[5%] md:px-[8%] lg:px-[15%] xl:px-[20%] 2xl:px-[25%] px-4">
       <div className="text-center w-full">
-        <h4 className="brightText ">Glossary</h4>
+        <h4 className="brightText">Glossary</h4>
         <p className="dark:text-white text-black text-[16px] max-w-[30rem] mx-auto mt-4">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
           dolore eu fugiat nulla pariatur.
@@ -49,14 +57,17 @@ const Glossary = () => {
       </div>
 
       <div className="flex flex-wrap mx-auto mt-10 justify-center mb-4">
-        <button
-          onClick={clearSelect}
-          className={"m-2 parentColoredBorderWrapper"}
-        >
+        <button onClick={clearSelect} className={"m-2 glossaryItemWrapper"}>
           <p
-            className={`md:size-[65px] size-[45px] shadow rounded-[18px] flex justify-center items-center text-2xl dark:text-white text-black font-bold text-center bg-[#1C2943]
+            className={`glossaryContent md:size-[65px] size-[45px] shadow rounded-[15px] flex justify-center items-center text-2xl dark:text-white text-black font-bold text-center bg-[#1C2943]
             ${
-              selectedLetter === "" && searchTerm === "" ? "selectedLetter" : ""
+              selectedLetter === "" && searchTerm === ""
+                ? `${
+                    resolvedTheme == "dark"
+                      ? "selectedLetterDark"
+                      : "selectedLetterLight"
+                  }`
+                : ""
             }
             `}
           >
@@ -68,11 +79,19 @@ const Glossary = () => {
             <button
               key={letter}
               onClick={() => setSelectedLetter(letter)}
-              className={"m-2 parentColoredBorderWrapper"}
+              className={"m-2 glossaryItemWrapper"}
             >
               <p
-                className={`md:size-[65px] size-[45px] shadow rounded-[18px] flex justify-center items-center text-2xl dark:text-white text-black font-bold text-center bg-[#1C2943]
-                ${selectedLetter === letter ? "selectedLetter" : ""}
+                className={`glossaryContent md:size-[65px] size-[45px] shadow rounded-[15px] flex justify-center items-center text-2xl dark:text-white text-black font-bold text-center bg-[#1C2943]
+                ${
+                  selectedLetter === letter
+                    ? `${
+                        resolvedTheme == "dark"
+                          ? "selectedLetterDark"
+                          : "selectedLetterLight"
+                      }`
+                    : ""
+                }
                 `}
               >
                 {letter}
@@ -84,9 +103,11 @@ const Glossary = () => {
       <div className="my-14 !p-[1px] glossaryItemWrapper">
         <input
           type="text"
-          placeholder="Search Term Here"
+          placeholder={placeholder}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onFocus={() => setPlaceholder("")}
+          onBlur={() => setPlaceholder("Search Term Here")}
           className="w-full border rounded-[20px] placeholder:text-gray-100 glossaryContent p-4 text-center focus:outline-none"
         />
       </div>

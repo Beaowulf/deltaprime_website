@@ -42,6 +42,15 @@ const RichTextRenderer = ({
         return <h3 className="text-xl font-bold my-4">{children}</h3>;
       },
 
+      [BLOCKS.TABLE]: (node, children) => (
+        <table className="styled-table">
+          <tbody>{children}</tbody>
+        </table>
+      ),
+      [BLOCKS.TABLE_ROW]: (node, children) => <tr>{children}</tr>,
+      [BLOCKS.TABLE_CELL]: (node, children) => (
+        <td className="p-4 border">{children}</td>
+      ),
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { file, title } = node.data.target.fields;
         const { url, details } = file;
