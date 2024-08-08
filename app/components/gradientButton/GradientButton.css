@@ -1,0 +1,17 @@
+.gradient-border-viewmore {
+    display: inline-block;
+    padding: 1px; /* Padding to show the gradient border */
+    border-radius: 20px;
+    background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
+}
+
+.gradient-button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px; /* Reduced to ensure the border radius is consistent */
+    background-color: #E8E8F2;
+    color: #252948;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+

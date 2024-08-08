@@ -58,6 +58,7 @@ function OurTokenSection() {
                   typographyClass="text-[12px] md:text-[18px] px-[20px] text-[#1B153C] md:mx-auto"
                   hasArrowRight={true}
                   label={"LEARN MORE"}
+                  href={"/tokenomics"}
                 />
               </div>
             </div>
@@ -104,6 +105,7 @@ function OurTokenSection() {
                   typographyClass="text-[12px] md:text-[18px] px-[20px] text-[#1B153C] md:mx-auto"
                   hasArrowRight={true}
                   label={"LEARN MORE"}
+                  href={"/tokenomics"}
                 />
               </div>
             </div>
