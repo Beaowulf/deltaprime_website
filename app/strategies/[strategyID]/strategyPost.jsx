@@ -65,6 +65,8 @@ const StrategyDetail = ({ strategy }) => {
           </div>
         </div>
       </div>
+
+      {/* here are the swiper components */}
     </div>
   );
 };

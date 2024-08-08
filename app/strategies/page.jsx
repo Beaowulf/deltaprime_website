@@ -15,8 +15,7 @@ import {
 } from "@/app/strategies/strategyFlipCards";
 
 const strategies = await fetchStrategies();
-
-console.log(strategies);
+console.log("🚀 ~ strategies:", strategies);
 
 const StrategiesPage = () => {
   // get strat data here since its server component

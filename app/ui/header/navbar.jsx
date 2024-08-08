@@ -11,6 +11,7 @@ import { NavBarButton } from "@/app/components/buttons/mainButton";
 import hamburgerIconWhite from "@/public/assets/icons/hamburgerIconWhite.svg";
 import closeIconBlack from "@/public/assets/icons/closeIconBlack.svg";
 import closeIconWhite from "@/public/assets/icons/closeIconWhite.svg";
+import DropdownMenu from "./dropdown/index";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,6 +76,10 @@ function Nav() {
                     Strategies
                   </Link>
                   <div className={getLinkClass("/strategies")} />
+                </div>
+
+                <div className="text-center">
+                  <DropdownMenu />
                 </div>
 
                 <div className="text-center">
