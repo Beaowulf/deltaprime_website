@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import "./ourStory.css";
 import Link from "next/link";
+import { fetchTvlData } from "@/lib/getCryptoData";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import ourStoryIntroImg from "@/public/assets/img/introOurStoryImage.png";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
@@ -22,11 +23,16 @@ import WojciechImage from "@/public/assets/img/WojciechImage.png";
 import gavinImage from "@/public/assets/img/gavinImage.png";
 import avaxImage from "@/public/assets/img/avaxImage.png";
 
+const tvlData = await fetchTvlData();
+const tvtDataFormated = tvlData.totalTvl.slice(0, 2);
+
+console.log(tvlData);
+
 const OurStory = () => {
   // const { theme } = useTheme();
   return (
     <div>
-      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[15%] px-4">
+      <div className="pagePaddingMedium">
         {/* intro */}
         <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 my-10 md:my-40">
           {/* Text Wrapper */}
@@ -169,10 +175,11 @@ const OurStory = () => {
             market conditions.
           </p>
           <p className="featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 max-w-[50rem] text-center mb-6">
-            Since launching on the Avalanche network in January 2023, DeltaPrime
-            has attracted over $42 million in Total Value Locked (TVL) and
-            unlocked more than $20 million in liquidity. Our platform serves two
-            main user groups:
+            {`Since launching on the Avalanche network in January 2023, DeltaPrime
+            has attracted over`}{" "}
+            <span className="font-semibold underline">{`$${tvtDataFormated} million`}</span>{" "}
+            {`  in Total Value Locked (TVL) and unlocked more than $20 million in
+            liquidity. Our platform serves two main user groups:`}{" "}
           </p>
           <p className="featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 max-w-[50rem] text-center mb-6">
             <span className="font-extrabold">Depositors:</span> Enjoy simplicity
@@ -457,7 +464,6 @@ const OurStory = () => {
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
                     <AboutButtonDarkBG
                       label={"Learn More"}
-                      hasArrowRight={true}
                       hasWhiteArrowRight={true}
                     />
                   </div>
@@ -471,7 +477,6 @@ const OurStory = () => {
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
                     <AboutButtonDarkBG
                       label={"Learn More"}
-                      hasArrowRight={true}
                       hasWhiteArrowRight={true}
                     />
                   </div>
@@ -485,7 +490,6 @@ const OurStory = () => {
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
                     <AboutButtonDarkBG
                       label={"Learn More"}
-                      hasArrowRight={true}
                       hasWhiteArrowRight={true}
                     />
                   </div>

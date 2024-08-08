@@ -117,7 +117,7 @@ const CryptoPreviewTables = () => {
         {/* custom table */}
         {/* row */}
         {loading ? (
-          <div className="loader">Loading...</div>
+          <div className="loader"></div>
         ) : (
           <div>
             {poolsData.arbitrum.map((pool) => (
@@ -208,7 +208,7 @@ export const CryptoLandingPageTables = () => {
               {/* custom table */}
               {/* row */}
               {loading ? (
-                <div className="loader">Loading...</div>
+                <div className="loader"></div>
               ) : (
                 <div>
                   {poolsData.arbitrum.map((pool) => (

@@ -16,6 +16,8 @@ import {
 
 const strategies = await fetchStrategies();
 
+console.log(strategies);
+
 const StrategiesPage = () => {
   // get strat data here since its server component
   return (

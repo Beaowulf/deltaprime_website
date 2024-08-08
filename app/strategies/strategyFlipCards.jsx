@@ -57,11 +57,12 @@ export const StratDesktopFlipCards = ({ strategies }) => {
         {strategies.map((strategy, index) => (
           <div key={strategy.strategyID} className="card p-4">
             <FlipCard
-              titleFront={strategy.title}
-              descriptionFront={strategy.description}
+              titleFront={strategy.strategyTitle}
+              descriptionFront={strategy.strategyDescription}
               difficultyLevel={strategy.difficultyLevel}
               isFirstCard={index === 0}
               listTextBack={<ListText strategyID={strategy.strategyID} />}
+              titleBack={strategy.strategyTitle}
             />
           </div>
         ))}
@@ -145,8 +146,9 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
           {strategies.map((strategy) => (
             <SwiperSlide key={strategy.strategyID}>
               <FlipCard
-                titleFront={strategy.title}
-                descriptionFront={strategy.description}
+                titleFront={strategy.strategyTitle}
+                titleBack={strategy.strategyTitle}
+                descriptionFront={strategy.strategyDescription}
                 difficultyLevel={strategy.difficultyLevel}
                 listTextBack={<ListText strategyID={strategy.strategyID} />}
               />

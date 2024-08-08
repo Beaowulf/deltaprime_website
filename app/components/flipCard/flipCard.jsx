@@ -45,25 +45,27 @@ const FlipCard = ({
         onClick={handleClick}
       >
         <div className="flip-card-inner">
-          <div className="flip-card-front p-6 flex flex-col rounded-[20px] shadow-lg shadow-[#26283db7]">
-            <h4 className="text-white pb-3 font-extrabold text-[20px] leading-7">
-              {titleFront}
-            </h4>
-            <p className="pb-6 font-bold text-[14px] leading-5 text-white">
-              {descriptionFront}
-            </p>
-            <div>
-              <div className="flex flex-row justify-center items-center gap-4">
-                <p className="text-[14px] font-bold leading-4 text-white">
-                  Difficulty Level:
-                </p>
-                <DifficultyStars difficultyLevel={difficultyLevel} />
+          <div className="flip-card-front rounded-[20px] shadow-lg shadow-[#26283db7]">
+            <div className="innerCardWrapper p-6 flex flex-col justify-end w-full h-full">
+              <h4 className="text-white pb-3 font-extrabold text-[20px] leading-7">
+                {titleFront ? titleBack : "Delta Neutral"}
+              </h4>
+              <p className="pb-6 font-bold text-[14px] leading-5 text-white">
+                {descriptionFront}
+              </p>
+              <div>
+                <div className="flex flex-row justify-center items-center gap-4">
+                  <p className="text-[14px] font-bold leading-4 text-white">
+                    Difficulty Level:
+                  </p>
+                  <DifficultyStars difficultyLevel={difficultyLevel} />
+                </div>
               </div>
             </div>
           </div>
           <div className="flip-card-back p-8 rounded-[20px] flex flex-col justify-center items-center">
             <h4 className="text-white pb-3 font-extrabold text-[20px] leading-7">
-              {titleBack}Delta Neutral
+              {titleBack ? titleBack : "Delta Neutral"}
             </h4>
             <p className="pb-6 font-bold text-[14px] leading-5 text-white">
               {descriptionBack}Delta neutral portfolios are optimized for

@@ -42,7 +42,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
   }, [blogData, blog.blogID]);
 
   if (!blogData) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 
   function getRandomNumber() {

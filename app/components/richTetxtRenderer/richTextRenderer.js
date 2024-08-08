@@ -1,7 +1,6 @@
-// This file is basically used to style the blogs/blogPosts/blogPreviews
+// RichTextRenderer.js
 import Image from "next/image";
 import React from "react";
-import "./index.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
@@ -24,17 +23,23 @@ const RichTextRenderer = ({
         return <p className="my-4">{children}</p>; // Adjust spacing with custom class
       },
       [BLOCKS.UL_LIST]: (node, children) => {
-        return (
-          <ul className="list-disc list-inside list_inline">{children}</ul>
-        );
+        return <ul className="ml-10 list-disc list-inside">{children}</ul>;
       },
       [BLOCKS.OL_LIST]: (node, children) => {
-        return (
-          <ol className="list-decimal list-inside list_inline">{children}</ol>
-        );
+        return <ol className="ml-10 list-decimal list-inside">{children}</ol>;
       },
       [BLOCKS.LIST_ITEM]: (node, children) => {
-        return <li className="my-2 list_inline">{children}</li>;
+        return <li className="my-2">{children}</li>;
+      },
+
+      [BLOCKS.HEADING_1]: (node, children) => {
+        return <h1 className="text-3xl font-bold my-4">{children}</h1>;
+      },
+      [BLOCKS.HEADING_2]: (node, children) => {
+        return <h2 className="text-2xl font-bold my-4">{children}</h2>;
+      },
+      [BLOCKS.HEADING_3]: (node, children) => {
+        return <h3 className="text-xl font-bold my-4">{children}</h3>;
       },
 
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
@@ -44,6 +49,7 @@ const RichTextRenderer = ({
 
         return (
           <Image
+            className="inlineImage"
             src={`https:${url}`}
             alt={title || ""}
             width={width}
