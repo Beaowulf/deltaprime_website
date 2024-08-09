@@ -22,7 +22,6 @@ import {
   AboutButtonDarkBG,
   MainButton,
 } from "@/app/components/buttons/mainButton";
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 
 const BlogPost = ({ blog, blogPreviewData }) => {

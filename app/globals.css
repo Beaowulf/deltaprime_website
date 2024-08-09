@@ -5,7 +5,7 @@
 
 /* custom classes */
 .pagePaddingLarge {
-  @apply px-4 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[11%] 2xl:px-[13%];
+  @apply px-4 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[11%] 2xl:px-[15%];
 }
 
 .pagePaddingMedium {
@@ -195,9 +195,6 @@ body {
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
 }
-
-
-
 
 .parentColoredBorderWrapperIcon {
   /* Border Radius */

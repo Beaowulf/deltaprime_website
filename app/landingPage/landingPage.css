@@ -118,29 +118,17 @@
   border: 2px solid (#afafff, #ff8fb8, #ffbb9b);
 }
 
-/*.securitySection::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  z-index: -1;
-  background: linear-gradient(#afafff 100% #ff8fb8 100% #ffbb9b 100%);
-  border-radius: inherit;
-  border: double 1em transparent;
-  border-radius: 30px;
-  background-image: linear-gradient(white, white),
-    linear-gradient(to right, green, gold);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-}
-*/
-
 @media (max-width: 768px) {
   .featureBorderWrapLightTheme {
-    width: fit-content;
+    width: 100%;
   }
+}
+.logoWrapper {
+  transition: background 0.3s ease-in-out;
+}
+
+.logoWrapper:hover {
+  background: #f0f0f0; /* or any desired hover background */
 }
 
 /* Animated text */

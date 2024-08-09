@@ -34,7 +34,7 @@ export function FooterTextLinks() {
     <div className="flex justify-center items-center">
       <div className="flex text-white text-lg flex-col md:flex-row">
         <div className="space-y-4 text-center md:text-start mt-10 md:mt-0">
-          <Link href="/our-story" className="block hover:text-gray-400 text-sm">
+          <Link href="/ourStory" className="block hover:text-gray-400 text-sm">
             Our Story
           </Link>
           <Link
@@ -43,25 +43,25 @@ export function FooterTextLinks() {
           >
             Strategies
           </Link>
-          <Link href="/burd-log" className="block hover:text-gray-400 text-sm">
+          <Link href="/burdLog" className="block hover:text-gray-400 text-sm">
             Burd Log
           </Link>
-          <Link href="/docs" className="block hover:text-gray-400 text-sm">
+          <Link href="/" className="block hover:text-gray-400 text-sm">
             Docs
           </Link>
-          <Link href="/careers" className="block hover:text-gray-400 text-sm">
+          <Link href="/" className="block hover:text-gray-400 text-sm">
             Careers
           </Link>
         </div>
         <div className="block md:hidden my-10 footerTextLinksVerticalLine"></div>
         <div className="hidden md:block mx-0  md:mx-16 footerTextLinksLine"></div>
-        <div className="space-y-4 md:text-start text-center">
-          <Link href="/academy" className="block hover:text-gray-400 text-sm">
+        <div className="space-y-4 md:text-start flex flex-col justify-center items-center md:items-start">
+          {/* <Link href="/academy" className="block hover:text-gray-400 text-sm">
             Academy
           </Link>
           <Link href="/faq" className="block hover:text-gray-400 text-sm">
             FAQ
-          </Link>
+          </Link> */}
           <Link href="/use-cases" className="block hover:text-gray-400 text-sm">
             Use Cases / Case Studies
           </Link>
@@ -87,11 +87,11 @@ export function RoundButtonLinks() {
       <p className="hover:text-gray-400">Follow us</p>
       <div className="flex flex-row gap-4">
         {/* todo get discord link */}
-        <Link href="/discord/link">
+        <Link href="https://discord.com/invite/9bwsnsHEzD">
           <Image src={discordIcon} alt="discord-round_logo" />
         </Link>
         {/* todo get x or twitter link */}
-        <Link href="/x/link">
+        <Link href="https://x.com/DeltaPrimeDefi">
           <Image src={xIcon} alt="x-round_logo" />
         </Link>
         {/* todo get vector link */}
@@ -99,7 +99,7 @@ export function RoundButtonLinks() {
           <Image src={vectorIcon} alt="vector-round_logo" />
         </Link>
         {/* todo get github link */}
-        <Link href="/github/link">
+        <Link href="https://github.com/DeltaPrimeLabs">
           <Image src={githubIcon} alt="github-round_logo" />
         </Link>
       </div>
@@ -116,10 +116,13 @@ const TermsOfUseFooter = () => {
           All rights reserved © DeltaPrime 2023
         </p>
         <div className="flex space-x-4 mt-4 sm:mt-0 text-sm justify-center sm:justify-end flex-wrap md:gap-0 gap-4 ">
-          <Link href="/terms" className="hover:text-gray-400 ">
+          <Link
+            href="https://deltaprime.io/documents/DeltaPrime_Terms_of_Use.pdf"
+            className="hover:text-gray-400 "
+          >
             Terms of use
           </Link>
-          <Link href="/legal-documents" className="hover:text-gray-400 ">
+          <Link href="/privacyAndPolicy" className="hover:text-gray-400 ">
             <span className="mr-4">•</span>Privacy Policy
           </Link>
 

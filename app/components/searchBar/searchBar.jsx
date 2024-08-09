@@ -35,6 +35,7 @@ const SearchBar = ({ onSearch }) => {
             width={22}
             height={22}
             className="text-gray-500"
+            alt="search_Icon"
           />
         )}
         {searchTerm && (
@@ -44,6 +45,7 @@ const SearchBar = ({ onSearch }) => {
               width={22}
               height={22}
               className="text-gray-500"
+              alt="sclearSearch_Icon"
             />
           </button>
         )}

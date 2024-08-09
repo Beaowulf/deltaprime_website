@@ -38,3 +38,7 @@
   opacity: 0;
   transition: opacity 0.5s ease;
 }
+
+.customBoxShadow {
+  box-shadow: 0 0 1px 1px gray;
+}

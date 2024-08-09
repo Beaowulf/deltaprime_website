@@ -1,3 +1,18 @@
+/* shared transitions */
+.mainButtonWithBorderBG,
+.mainButtonBGwithoutBorder,
+.navBarButtonBGDark,
+.navBarButtonBGLight,
+.navbarButtonLightGradient,
+.arrowButtonBG,
+.mainButton,
+.navButtonDarkText,
+.mainButtonText,
+.mainButtonDarkBG,
+.contactUsButtonBGLight,
+.contactUsButtonBGDark {
+  transition: all 0.5s ease;
+}
 .mainButtonWithBorderBG {
   padding: 2px;
   display: flex;
@@ -13,7 +28,6 @@
   box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
     0 2.13px 6.39px rgba(51, 0, 255, 0.7);
   background-size: 100% 200%;
-  transition: all 0.5s ease;
 }
 
 .mainButtonBGwithoutBorder {
@@ -41,7 +55,6 @@
   box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
     0 2.13px 6.39px rgba(51, 0, 255, 0.7);
   background-size: 100% 200%;
-  transition: all 0.5s ease;
 }
 
 .navBarButtonBGLight {
@@ -54,7 +67,6 @@
   box-shadow: 0px 1.447px 4.342px 0px rgba(255, 95, 162, 0.7),
     0px 5.79px 18.816px 0px rgba(255, 95, 162, 0.41);
   background-size: 100% 200%;
-  transition: all 0.5s ease;
 }
 
 .navbarButtonLightGradient {
@@ -86,7 +98,6 @@
     rgba(175, 175, 255, 1) 45%
   );
   background-size: 100% 200%;
-  transition: all 0.5s ease;
   border-radius: 65px;
 }
 
@@ -141,7 +152,6 @@
     rgba(255, 143, 184, 1) 60%,
     rgba(211, 160, 223, 1) 100%
   );
-  transition: all 0.2s ease;
 }
 
 .mainButton:hover {
@@ -212,6 +222,16 @@
   z-index: 1;
 }
 
+.mainButtonDarkBG:hover {
+  background: rgb(27, 21, 60);
+  background: linear-gradient(
+    15deg,
+    rgba(27, 21, 60, 1) 0%,
+    rgba(28, 41, 67, 1) 50%,
+    rgba(48, 30, 62, 1) 100%
+  );
+}
+
 .aboutButtonDarkBG {
   display: flex;
   justify-content: center;
@@ -227,17 +247,21 @@
   text-transform: uppercase;
   z-index: 1;
   background-color: #1b153c;
-  transiton: all 0.3s ease;
+  transition: all 0.3s ease;
 }
+
 .aboutButtonDarkBG:hover {
   background-color: white;
 }
+
 .aboutButtonDarkBG:hover .buttonLightModeText {
   color: black;
 }
-.aboutButtonDarkBG:hover .rightArrowAboutBtn {
-  filter: brightness(0) invert(1);
+
+.aboutButtonDarkBG:hover .pathArrowWhiteChild {
+  stroke: black;
 }
+
 .contactUsButtonBGDark {
   display: flex;
   justify-content: center;

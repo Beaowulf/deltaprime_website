@@ -48,7 +48,7 @@ const BlogCard = ({
           </h3>
         </div>
 
-        <div className="flex justify-between gap-5 w-fit">
+        <div className="flex justify-between gap-5 w-full">
           <p className="text-[8px] md:text-[12px] leading-[inherit] dark:text-[#878C91] lineClampThree">
             {blogDescription}
           </p>

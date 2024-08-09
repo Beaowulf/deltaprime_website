@@ -37,7 +37,7 @@ const FlipCard = ({
   };
 
   return (
-    <div className="w-fit h-fit p-4">
+    <div className="w-fit h-fit p-4 mx-auto md:mx-0">
       <div
         className={`flip-card 2xl:h-[450px] 2xl:w-[350px] lg:h-[450px] lg:w-[310px] h-[450px] w-[300px] ${
           isFlipped ? "flipped" : ""

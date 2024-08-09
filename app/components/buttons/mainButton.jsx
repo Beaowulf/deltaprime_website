@@ -4,7 +4,7 @@ import "./mainButton.css";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import ArrowRightBlack from "../../../public/assets/img/arrow-right.svg";
-import ArrowRightWhite from "../../../public/assets/img/arrow-right-white.svg";
+import { ArrowRightWhite } from "@/app/components/icons/arrowRight";
 import ArrowRight from "@/app/components/icons/arrowRight";
 import { useRouter } from "next/navigation";
 
@@ -37,8 +37,8 @@ export function MainButton({
         <h6
           className={
             typographyClass
-              ? `${typographyClass} mainButtonText text-[10px] md:text-[12px] lg:text-[14px] text-nowrap font-extrabold`
-              : " text-[10px] md:text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText"
+              ? `${typographyClass} mainButtonText text-[12px] lg:text-[14px] text-nowrap font-extrabold`
+              : " text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText"
           }
         >
           {label}
@@ -134,11 +134,7 @@ export function AboutButtonDarkBG({
           />
         )}
         {hasWhiteArrowRight && (
-          <Image
-            className="size-5 rightArrowAboutBtn"
-            src={ArrowRightWhite}
-            alt="Arrow Right"
-          />
+          <ArrowRightWhite className="size-5 rightArrowAboutBtn" />
         )}
       </div>
     </button>

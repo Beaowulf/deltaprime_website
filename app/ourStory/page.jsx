@@ -11,43 +11,41 @@ import whyDeltaPrimeImg from "@/public/assets/img/whyDeltaPrimeImg.jpg";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
-// import { useTheme } from "next-themes";
+import FounderCard from "./cards/founderCard";
+import AdvisorCard from "./cards/advisorCard";
 import { AboutButtonDarkBG } from "@/app/components/buttons/mainButton";
-import SocialMediaIconWrapper from "./linkedInIconsWrapper";
-
-// roundImagesOfPeople
-import JakubImage from "@/public/assets/img/JakubImage.png";
-import KamilImage from "@/public/assets/img/KamilImage.png";
-import PiotrImage from "@/public/assets/img/PiotrImage.png";
-import WojciechImage from "@/public/assets/img/WojciechImage.png";
-import gavinImage from "@/public/assets/img/gavinImage.png";
-import avaxImage from "@/public/assets/img/avaxImage.png";
+import JakubImage from "@/public/assets/img/images/avatars/Jakub.png";
+import KamilImage from "@/public/assets/img/images/avatars/Kamil.jpeg";
+import PiotrImage from "@/public/assets/img/images/avatars/Piotr.png";
+import WojciechImage from "@/public/assets/img/images/avatars/Wojciech.png";
+import gavinImage from "@/public/assets/img/images/avatars/Gavin.png";
+import avaxImage from "@/public/assets/img/images/avatars/hn_avax.png";
+import AdvisorCardCarousel from "./carouselsForCards/advisorCardCarousel";
+import FounderCardCarousel from "./carouselsForCards/founderCardCarousel";
 
 const tvlData = await fetchTvlData();
 const tvtDataFormated = tvlData.totalTvl.slice(0, 2);
-
-// console.log(tvlData);
 
 const OurStory = () => {
   // const { theme } = useTheme();
   return (
     <div>
-      <div className="pagePaddingMedium">
+      <div className="pagePaddingLarge">
         {/* intro */}
         <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 my-10 md:my-40">
           {/* Text Wrapper */}
-          <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
+          <div className="flex flex-col md:flex-row md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
               <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
                 Our Story
               </p>
-              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 md:mb-10 ">
+              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 md:mb-10">
                 Our story begins on the foothills of Mount Etna, Europe’s
                 largest volcano. It was here that the idea of DeltaPrime was
                 born. A brand on a mission to not only reshape the future of
                 DeFI, but forge it in the fires of innovation and resilience.
               </p>
-              <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden  w-full text-left">
+              <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden w-full text-left">
                 <Link href="?modal=true">
                   <MainButton
                     className="w-[100%] md:w-fit"
@@ -61,7 +59,7 @@ const OurStory = () => {
           {/* Image */}
           <div className="w-fit mb-10">
             <Image
-              className="md:h-[490px] md:w-[430px] h-[360px] w-[320px]"
+              className="md:h-[490px] md:w-[430px] h-[360px] w-[320px] object-contain"
               src={ourStoryIntroImg}
               alt="deltaprime_mascot_img"
             />
@@ -70,21 +68,21 @@ const OurStory = () => {
         {/* other text */}
         <div className="flex md:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Image */}
-          <div className="max-w-[600px]">
+          <div className="w-full md:w-1/2 max-w-[600px]">
             <Image
-              className="rounded-[20px]"
+              className="rounded-[20px] w-full h-auto md:h-full object-cover"
               src={rectangleImg}
               alt="cyberpunk_box_images"
             />
           </div>
           {/* Text Wrapper */}
-          <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
+          <div className="flex flex-col md:w-1/2 w-full md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
               <div className="flex flex-col items-start dark:text-white text-[#252948] mt-20 mb-10">
-                <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-left">
+                <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left">
                   Unlocking Trapped Liquidity
                 </h1>
-                <p className="mb-4 featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 height max-w-xl text-left">
+                <p className="mb-4 featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 max-w-xl text-left">
                   On that fateful evening, our founders discussed the
                   inefficiencies of overcollateralized lending in DeFi. Much
                   like diamonds remain unscathed in the heart of liquid lava,
@@ -92,7 +90,7 @@ const OurStory = () => {
                   liquidity, unlocking cash flows throughout the ecosystem and
                   bringing to surface a range of new investment strategies.
                 </p>
-                <p className="featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 height max-w-xl text-left">
+                <p className="featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 max-w-xl text-left">
                   This powerful analogy became the cornerstone of DeltaPrime's
                   revolutionary Diamond-Beacon Proxy (DBP) pattern, a robust and
                   scalable architecture that ensures our platform remains
@@ -216,103 +214,31 @@ const OurStory = () => {
               "DeltaPrime was born from the minds of three visionaries, each bringing their own unique set of skills and experiences:"
             }
           />
-
-          {/* todo fix the alts, some images are not cropped correctly */}
-          <div className="flex flex-wrap gap-8 items-center justify-center">
-            {/* Correct card */}
-            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center">
-              <div className="rounded-[20px] z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard ">
-                <div className="flex justify-center items-center flex-col pt-10 px-2">
-                  <Image
-                    src={PiotrImage}
-                    width={240}
-                    height={230}
-                    alt="founder_image"
-                  />
-                  <h3 className="featureSubtitle text-[17px] sm:text-[20px] dark:text-[#FFF5F0] text-[#252948]">
-                    Piotr Duda
-                  </h3>
-                  <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
-                    Pack Lead
-                  </p>
-                  <p className="my-8 featureParagraph max-w-[320px] text-[12px] sm:text-[14px] dark:text-[#FFF5F0] text-[#252948]">
-                    With a combination of programming/business experience, this
-                    wolf leads the pack. Previously he led teams at Faurecia and
-                    worked at InsurTech. A FinTech company providing insurance
-                    for Lloyd’s applications.
-                  </p>
-                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
-                    <SocialMediaIconWrapper
-                      socialMediaLink="https://www.linkedin.com/in/piotr-duda-62b66b63/?originalSubdomain=pl"
-                      className="w-4 h-4"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* card */}
-            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center">
-              <div className="rounded-[20px] z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard">
-                <div className="flex justify-center items-center flex-col pt-10 px-4">
-                  <Image
-                    src={KamilImage}
-                    width={240}
-                    height={230}
-                    alt="founder_image"
-                  />
-                  <h3 className="featureSubtitle text-[17px] sm:text-[20px] dark:text-[#FFF5F0] text-[#252948]">
-                    Kamil Muca
-                  </h3>
-                  <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
-                    Tech Wolf
-                  </p>
-                  <p className="my-8 featureParagraph max-w-[320px] text-[12px] sm:text-[14px] dark:text-[#FFF5F0] text-[#252948]">
-                    Wolf Muca wrote his first line of code at the age of 7.
-                    Since then he developed his way up, to eventually leading a
-                    20-headed IT team at HSBC. As a true coding wizard he now
-                    creates the security and efficiency in DeltaPrime’s
-                    architecture.
-                  </p>
-                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
-                    <SocialMediaIconWrapper
-                      socialMediaLink="https://www.linkedin.com/in/mucakamil/?originalSubdomain=pl"
-                      className="w-4 h-4"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* card */}
-            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center">
-              <div className="rounded-[20px] z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard">
-                <div className="flex justify-center items-center flex-col pt-10 px-4">
-                  <Image
-                    src={gavinImage}
-                    width={240}
-                    height={230}
-                    alt="founder_image"
-                  />
-                  <h3 className="featureSubtitle text-[17px] sm:text-[20px] dark:text-[#FFF5F0] text-[#252948]">
-                    Gavin Hasselbaink
-                  </h3>
-                  <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
-                    Biz Wolf
-                  </p>
-                  <p className="my-8 featureParagraph max-w-[320px] text-[12px] sm:text-[14px] dark:text-[#FFF5F0] text-[#252948]">
-                    This one is the business wolf. With a communication/trading
-                    background, he’ll help you exactly understand how to best
-                    use DeltaPrime. Additionally he’ll see to it you have access
-                    to the best strategies that DeFi offers.
-                  </p>
-                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
-                    <SocialMediaIconWrapper
-                      socialMediaLink="https://www.linkedin.com/in/gavinhasselbaink/?originalSubdomain=nl"
-                      className="w-4 h-4"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Carousel for mobile view */}
+          <FounderCardCarousel />
+          {/* Only for Desktop view */}
+          <div className="md:flex hidden flex-wrap gap-8 items-center justify-center">
+            <FounderCard
+              imageSrc={PiotrImage}
+              name="Piotr Duda"
+              title="Pack Lead"
+              description="With a combination of programming/business experience, this wolf leads the pack. Previously he led teams at Faurecia and worked at InsurTech. A FinTech company providing insurance for Lloyd’s applications."
+              socialMediaLink="https://www.linkedin.com/in/piotr-duda-62b66b63/?originalSubdomain=pl"
+            />
+            <FounderCard
+              imageSrc={KamilImage}
+              name="Kamil Muca"
+              title="Tech Wolf"
+              description="Wolf Muca wrote his first line of code at the age of 7. Since then he developed his way up, to eventually leading a 20-headed IT team at HSBC. As a true coding wizard he now creates the security and efficiency in DeltaPrime’s architecture."
+              socialMediaLink="https://www.linkedin.com/in/mucakamil/?originalSubdomain=pl"
+            />
+            <FounderCard
+              imageSrc={gavinImage}
+              name="Gavin Hasselbaink"
+              title="Biz Wolf"
+              description="This one is the business wolf. With a communication/trading background, he’ll help you exactly understand how to best use DeltaPrime. Additionally he’ll see to it you have access to the best strategies that DeFi offers."
+              socialMediaLink="https://www.linkedin.com/in/gavinhasselbaink/?originalSubdomain=nl"
+            />
           </div>
         </div>
         {/* Unlock full potential button reponsive component */}
@@ -338,109 +264,44 @@ const OurStory = () => {
               "DeltaPrime's advisors are DeFi veterans and help ensure the platform's strategic development and success"
             }
           />
-          {/* todo fix the alts */}
-          <div className="flex flex-wrap gap-12 items-center justify-center">
-            {/* Correct card */}
-            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center relative">
-              <div className="rounded-[20px] z-20 pb-12 px-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard h-[470px]">
-                <div className="flex justify-center items-center flex-col pt-5 px-4">
-                  <Image
-                    src={avaxImage}
-                    width={240}
-                    height={230}
-                    alt="founder_image"
-                  />
-                  <h3 className="featureSubtitle mb-4 text-[17px] sm:text-[20px] dark:text-[#FFF5F0] text-[#252948]">
-                    hn_avax
-                  </h3>
-                  <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
-                    Cofounder <span className="font-extrabold">Benqi</span>
-                    Finance
-                  </p>
-                  <p className="mt-2 featureParagraph max-w-[30rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
-                    Head of Strategy{" "}
-                    <span className="font-extrabold">Benqi Finance</span>
-                  </p>
-                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
-                    <SocialMediaIconWrapper
-                      socialMediaLink="https://x.com/hn_avax"
-                      usesTwitter={true}
-                      className="w-4 h-4"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* card */}
-            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center relative">
-              <div className="rounded-[20px] z-20 pb-12 px-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard h-[470px]">
-                <div className="flex justify-center items-center flex-col pt-5 px-4">
-                  <Image
-                    src={JakubImage}
-                    width={240}
-                    height={230}
-                    alt="founder_image"
-                  />
-                  <h3 className="featureSubtitle mb-4 text-[17px] sm:text-[20px] dark:text-[#FFF5F0] text-[#252948]">
-                    Jakub Wojciechowski
-                  </h3>
-                  <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
-                    Founder <span className="font-extrabold">Redstone</span>
-                    Finance
-                  </p>
-                  <p className="my-4 featureParagraph max-w-[30rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
-                    Former auditor
-                    <span className="font-extrabold"> OpenZeppelin</span>
-                  </p>
-                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
-                    <SocialMediaIconWrapper
-                      socialMediaLink="https://www.linkedin.com/in/jakub-wojciechowski-5901b68/?originalSubdomain=pl"
-                      className="w-4 h-4"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* card */}
-            <div className="rounded-[20px] p-4 h-full featureBorderWrapLightTheme text-center relative">
-              <div className="rounded-[20px] z-20 pb-12 px-12 dark:bg-[#252948] bg-[#E8E8F2] storyCard h-[470px]">
-                <div className="flex justify-center items-center flex-col py-5 px-4">
-                  <Image
-                    src={WojciechImage}
-                    width={240}
-                    height={230}
-                    alt="founder_image"
-                  />
-                  <h3 className="featureSubtitle mb-4 text-[17px] sm:text-[20px] dark:text-[#FFF5F0] text-[#252948]">
-                    Wojciech Lugowski
-                  </h3>
-                  <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
-                    Managing Partner{" "}
-                    <span className="font-extrabold">Lawarton</span>
-                  </p>
-                  <p className="my-4 featureParagraph max-w-[30rem] text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
-                    Co-founder & Head of legal
-                    <br />
-                    CobinAngels
-                  </p>
-                  <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">
-                    <SocialMediaIconWrapper
-                      socialMediaLink="https://www.linkedin.com/in/wojciech-lugowski/?originalSubdomain=pl"
-                      className="w-4 h-4"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Carousel for mobile view */}
+          <AdvisorCardCarousel />
+          {/* Only for Desktop view */}
+          <div className="md:flex hidden flex-wrap gap-12 items-center justify-center">
+            <AdvisorCard
+              imageSrc={avaxImage}
+              name="hn_avax"
+              position="Cofounder"
+              subPosition="Benqi Finance"
+              additionalInfo="Head of Strategy Benqi Finance"
+              socialMediaLink="https://x.com/hn_avax"
+              usesTwitter={true}
+            />
+            <AdvisorCard
+              imageSrc={JakubImage}
+              name="Jakub Wojciechowski"
+              position="Founder"
+              subPosition="Redstone Finance"
+              additionalInfo="Former auditor OpenZeppelin"
+              socialMediaLink="https://www.linkedin.com/in/jakub-wojciechowski-5901b68/?originalSubdomain=pl"
+            />
+            <AdvisorCard
+              imageSrc={WojciechImage}
+              name="Wojciech Lugowski"
+              position="Managing Partner"
+              subPosition="Lawarton"
+              additionalInfo="Co-founder & Head of legal at CobinAngels"
+              socialMediaLink="https://www.linkedin.com/in/wojciech-lugowski/?originalSubdomain=pl"
+            />
           </div>
         </div>
       </div>
 
       {/* join our team */}
-      <div className="bg-[#F4F4FF] w-screen h-fit md:h-[40vh] mt-40">
-        <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]] px-4 py-[75px]">
-          <div className="flex justify-around flex-wrap px-4 md:px-0">
-            <div className="flex flex-col items-start dark:text-white text-[#252948] mb-14 max-w-96">
+      <div className="bg-[#F4F4FF] w-screen mt-40">
+        <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]] px-4 py-10">
+          <div className="flex justify-around flex-wrap px-4 md:px-0 ">
+            <div className="flex flex-col items-start dark:text-white text-[#252948] max-w-96 mb-8 md:mb-0">
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-black leading-6">
                 STRATEGIES
               </h4>
@@ -455,37 +316,12 @@ const OurStory = () => {
               </p>
             </div>
             {/* three rows */}
-            <div className="flex flex-col gap-8">
-              <div className="featureBorderWrapLightTheme rounded-[30px]">
+            <div className="flex flex-col items-center my-auto gap-8">
+              {/* Make this into its own component todo */}
+              <div className="md:ml-10 featureBorderWrapLightTheme rounded-[30px]">
                 <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[20px]">
                   <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
                     DevOps Engineer
-                  </p>
-                  <div className="featureBorderWrapLightTheme rounded-[50px]">
-                    <AboutButtonDarkBG
-                      label={"Learn More"}
-                      hasWhiteArrowRight={true}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="featureBorderWrapLightTheme rounded-[30px]">
-                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[20px]">
-                  <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
-                    QA Tester
-                  </p>
-                  <div className="featureBorderWrapLightTheme rounded-[50px]">
-                    <AboutButtonDarkBG
-                      label={"Learn More"}
-                      hasWhiteArrowRight={true}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="featureBorderWrapLightTheme rounded-[30px]">
-                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[20px]">
-                  <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
-                    QA Tester
                   </p>
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
                     <AboutButtonDarkBG

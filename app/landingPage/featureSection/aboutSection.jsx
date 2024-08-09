@@ -16,7 +16,7 @@ const ImageComponent = () => {
       // Set an interval to continue spinning every 5 seconds
       const interval = setInterval(() => {
         setShowFirstImage((prev) => !prev);
-      }, 6000);
+      }, 5800);
 
       return () => clearInterval(interval);
     }, 1200); // Initial spin for 1500ms

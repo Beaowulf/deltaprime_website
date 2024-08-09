@@ -1,16 +1,37 @@
-// Import images for "Backed By" section
-import carousel_Image_1 from "@/public/assets/img/images/carouselImages/Item_1.png";
-import carousel_Image_2 from "@/public/assets/img/images/carouselImages/Item_2.png";
-import carousel_Image_3 from "@/public/assets/img/images/carouselImages/Item_3.png";
-import carousel_Image_4 from "@/public/assets/img/images/carouselImages/Item_4.png";
-import carousel_Image_5 from "@/public/assets/img/images/carouselImages/Item_5.png";
-import carousel_Image_6 from "@/public/assets/img/images/carouselImages/Item_6.png";
-import carousel_Image_7 from "@/public/assets/img/images/carouselImages/Item_7.png";
-import carousel_Image_8 from "@/public/assets/img/images/carouselImages/Item_8.png";
-import carousel_Image_9 from "@/public/assets/img/images/carouselImages/Item_9.png";
-import carousel_Image_10 from "@/public/assets/img/images/carouselImages/Item_10.png";
-import carousel_Image_11 from "@/public/assets/img/images/carouselImages/Item_11.png";
-import carousel_Image_12 from "@/public/assets/img/images/carouselImages/Item_12.png";
+// Import black and white images
+import bw_4sv from "@/public/assets/img/images/backers/4sv.png";
+import bw_absoluta_digital from "@/public/assets/img/images/backers/absoluta-digital.png";
+import bw_angel_block from "@/public/assets/img/images/backers/angel-block.png";
+import bw_avalanche from "@/public/assets/img/images/backers/avalanche.png";
+import bw_aventures_dao from "@/public/assets/img/images/backers/aventures-dao.png";
+import bw_bbs_finance from "@/public/assets/img/images/backers/bbs-finance.png";
+import bw_blizzard from "@/public/assets/img/images/backers/blizzard.png";
+import bw_coinflipcanada from "@/public/assets/img/images/backers/coinflipcanada.png";
+import bw_gsr from "@/public/assets/img/images/backers/gsr.png";
+import bw_moonhill_capital from "@/public/assets/img/images/backers/moonhill-capital.png";
+import bw_nayt_technologies from "@/public/assets/img/images/backers/nayt-technologies.png";
+import bw_nonce_classic from "@/public/assets/img/images/backers/nonce-classic.png";
+import bw_psalion_vc from "@/public/assets/img/images/backers/psalion-vc.png";
+import bw_uplift from "@/public/assets/img/images/backers/uplift.png";
+import bw_yield_yak from "@/public/assets/img/images/backers/yield-yak.png";
+
+// Import colored images
+import color_4sv from "@/public/assets/img/images/backers/4sv--color.png";
+import color_absoluta_digital from "@/public/assets/img/images/backers/absoluta-digital--color.png";
+import color_angel_block from "@/public/assets/img/images/backers/angel-block--color.png";
+import color_avalanche from "@/public/assets/img/images/backers/avalanche--color.png";
+import color_aventures_dao from "@/public/assets/img/images/backers/aventures-dao--color.png";
+import color_bbs_finance from "@/public/assets/img/images/backers/bbs-finance--color.png";
+import color_blizzard from "@/public/assets/img/images/backers/blizzard--color.png";
+import color_coinflipcanada from "@/public/assets/img/images/backers/coinflipcanada--color.png";
+import color_gsr from "@/public/assets/img/images/backers/gsr--color.png";
+import color_moonhill_capital from "@/public/assets/img/images/backers/moonhill-capital--color.png";
+import color_nayt_technologies from "@/public/assets/img/images/backers/nayt-technologies--color.png";
+import color_nonce_classic from "@/public/assets/img/images/backers/nonce-classic--color.png";
+import color_psalion_vc from "@/public/assets/img/images/backers/psalion-vc--color.png";
+import color_uplift from "@/public/assets/img/images/backers/uplift--color.png";
+import color_yield_yak from "@/public/assets/img/images/backers/yield-yak--color.png";
+
 // Import images for "Integration" section
 import BalancerLogo from "@/public/assets/img/intergrations/balancerLogo.svg";
 import ColonyLogo from "@/public/assets/img/intergrations/colonyLogo.svg";
@@ -32,18 +53,44 @@ export const integrationData = [
   { imageUrl: YakLogo, alt: "Yak_Logo_Icon" },
 ];
 
-// Carousel object for "Backed By" section
 export const logoCarouselItems = [
-  { imageUrl: carousel_Image_1, alt: "AngelBlock_logo" },
-  { imageUrl: carousel_Image_2, alt: "GSR_Logo" },
-  { imageUrl: carousel_Image_3, alt: "Avalance_Logo" },
-  { imageUrl: carousel_Image_4, alt: "CoinFlipCanada_Logo" },
-  { imageUrl: carousel_Image_5, alt: "BlizzardAvalanceEcoSystemFund_Logo" },
-  { imageUrl: carousel_Image_6, alt: "PSA_LION_VC_Logo" },
-  { imageUrl: carousel_Image_7, alt: "Nonce_Classic_Logo" },
-  { imageUrl: carousel_Image_8, alt: "Absolute_Digital_Logo" },
-  { imageUrl: carousel_Image_9, alt: "Aventures_DAO_Logo" },
-  { imageUrl: carousel_Image_10, alt: "4SV_Logo" },
-  { imageUrl: carousel_Image_11, alt: "Moonhill_Capital_Logo" },
-  { imageUrl: carousel_Image_12, alt: "Nayt_Technologies_Logo" },
+  { bw: bw_4sv, color: color_4sv, alt: "4SV Logo" },
+  {
+    bw: bw_absoluta_digital,
+    color: color_absoluta_digital,
+    alt: "Absoluta Digital Logo",
+  },
+  { bw: bw_angel_block, color: color_angel_block, alt: "Angel Block Logo" },
+  { bw: bw_avalanche, color: color_avalanche, alt: "Avalanche Logo" },
+  {
+    bw: bw_aventures_dao,
+    color: color_aventures_dao,
+    alt: "Aventures DAO Logo",
+  },
+  { bw: bw_bbs_finance, color: color_bbs_finance, alt: "BBS Finance Logo" },
+  { bw: bw_blizzard, color: color_blizzard, alt: "Blizzard Logo" },
+  {
+    bw: bw_coinflipcanada,
+    color: color_coinflipcanada,
+    alt: "CoinFlipCanada Logo",
+  },
+  { bw: bw_gsr, color: color_gsr, alt: "GSR Logo" },
+  {
+    bw: bw_moonhill_capital,
+    color: color_moonhill_capital,
+    alt: "Moonhill Capital Logo",
+  },
+  {
+    bw: bw_nayt_technologies,
+    color: color_nayt_technologies,
+    alt: "Nayt Technologies Logo",
+  },
+  {
+    bw: bw_nonce_classic,
+    color: color_nonce_classic,
+    alt: "Nonce Classic Logo",
+  },
+  { bw: bw_psalion_vc, color: color_psalion_vc, alt: "PSA Lion VC Logo" },
+  { bw: bw_uplift, color: color_uplift, alt: "Uplift Logo" },
+  { bw: bw_yield_yak, color: color_yield_yak, alt: "Yield Yak Logo" },
 ];

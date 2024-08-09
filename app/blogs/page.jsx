@@ -29,7 +29,7 @@ const BlogsPage = async () => {
 
   return (
     <div>
-      <DynamicPurpleBar blogs={blogs} />
+      <DynamicPurpleBar title={"Blogs"} blogs={blogs} />
       <div className="pagePaddingLarge">
         <Header
           title={"Our blog"}

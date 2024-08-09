@@ -11,7 +11,9 @@ import { NavBarButton } from "@/app/components/buttons/mainButton";
 import hamburgerIconWhite from "@/public/assets/icons/hamburgerIconWhite.svg";
 import closeIconBlack from "@/public/assets/icons/closeIconBlack.svg";
 import closeIconWhite from "@/public/assets/icons/closeIconWhite.svg";
-import DropDownMain from "./dropdown/index";
+import { getLinkClass } from "@/lib/getLinkClass";
+import DropDownStrategyLoader from "@/app/ui/strategyLoader";
+import DropDownBlogLoader from "@/app/ui/burdLogLoader";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,15 +28,6 @@ function Nav() {
     }
   }, [isOpen]);
 
-  const getLinkClass = (path) => {
-    if (pathname.startsWith(path) && resolvedTheme === "dark") {
-      return "w-full h-[2px] mt-1 bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%";
-    } else if (pathname.startsWith(path) && resolvedTheme === "light") {
-      return "w-full h-1 mt-1 bg-[#1F3C75]";
-    } else {
-      return null;
-    }
-  };
   return (
     <div className="pagePaddingLarge">
       <nav className="md:mb-40 mb-10 mt-4">
@@ -50,46 +43,45 @@ function Nav() {
               <div className="ml-8 flex items-baseline space-x-4">
                 <div className="text-center">
                   <Link
-                    href="/blogs"
-                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium"
-                  >
-                    Burd Log
-                  </Link>
-                  <div className={getLinkClass("/blogs")} />
-                </div>
-
-                <div className="text-center">
-                  <Link
                     href="/ourStory"
                     className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium"
                   >
                     Our Story
                   </Link>
-                  <div className={getLinkClass("/ourStory")} />
+                  <div
+                    className={getLinkClass(
+                      "/ourStory",
+                      pathname,
+                      resolvedTheme
+                    )}
+                  />
                 </div>
+                <DropDownStrategyLoader
+                  pathname={pathname}
+                  resolvedTheme={resolvedTheme}
+                  getLinkClass={getLinkClass}
+                />
 
-                <div className="text-center">
-                  <Link
-                    href="/strategies"
-                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium"
-                  >
-                    Strategies
-                  </Link>
-                  <div className={getLinkClass("/strategies")} />
-                </div>
-
-                <div className="text-center">
-                  <DropDownMain />
-                </div>
+                <DropDownBlogLoader
+                  pathname={pathname}
+                  resolvedTheme={resolvedTheme}
+                  getLinkClass={getLinkClass}
+                />
 
                 <div className="text-center">
                   <Link
                     href="/contactUs"
-                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium"
+                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium md:hidden lg:block"
                   >
                     Contact Us
                   </Link>
-                  <div className={getLinkClass("/contactUs")} />
+                  <div
+                    className={getLinkClass(
+                      "/contactUs",
+                      pathname,
+                      resolvedTheme
+                    )}
+                  />
                 </div>
               </div>
             </div>
@@ -169,7 +161,7 @@ function Nav() {
 
               <div className="flex flex-col justify-center items-center gap-10 h-full">
                 <Link
-                  href="/academy/blogs"
+                  href="/blogs"
                   className="text-gray-800 dark:text-white dark:hover:text-gray-400 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-semibold"
                   onClick={() => setIsOpen(false)}
                 >

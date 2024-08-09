@@ -3,7 +3,7 @@
   background-color: transparent;
   perspective: 1000px;
   cursor: pointer;
-  z-index: 100;
+  z-index: 50;
 }
 
 .flip-card-inner {
@@ -84,4 +84,11 @@
 
 .custom-arrow {
   z-index: 100 !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  z-index: 100 !important;
+  width: 60px !important;
+  height: 60px !important;
 }

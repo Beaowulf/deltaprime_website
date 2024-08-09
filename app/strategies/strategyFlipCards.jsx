@@ -66,46 +66,6 @@ export const StratDesktopFlipCards = ({ strategies }) => {
             />
           </div>
         ))}
-        {/* <div className="card p-4">
-          <FlipCard
-            titleFront="The Fee Collector"
-            descriptionFront="Maximizes yield with limited price exposure"
-            difficultyLevel={1}
-            listTextBack={<ListText />}
-          />
-        </div>
-        <div className="card p-4">
-          <FlipCard
-            titleFront="The Carry Trader"
-            descriptionFront="Earns yield by depositing in higher-interest pools"
-            difficultyLevel={1}
-            listTextBack={<ListText />}
-          />
-        </div>
-        <div className="card p-4">
-          <FlipCard
-            titleFront="The Yielding Bull"
-            descriptionFront="Goes long on assets while accumulating yield"
-            difficultyLevel={3}
-            listTextBack={<ListText />}
-          />
-        </div>
-        <div className="card p-4">
-          <FlipCard
-            titleFront="The Fee Collector"
-            descriptionFront="Maximizes yield with limited price exposure"
-            difficultyLevel={1}
-            listTextBack={<ListText />}
-          />
-        </div>
-        <div className="card p-4">
-          <FlipCard
-            titleFront="The Carry Trader"
-            descriptionFront="Earns yield by depositing in higher-interest pools"
-            difficultyLevel={1}
-            listTextBack={<ListText />}
-          />
-        </div> */}
       </div>
     </div>
   );
@@ -135,11 +95,8 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
           slidesPerView={1}
           loop={true}
           pagination={{
-            el: ".swiper-pagination",
+            el: ".custom-swiper-pagination", // Target your custom pagination container
             clickable: true,
-            renderBullet: (index, className) => {
-              return `<div class="${className}"></div>`;
-            },
           }}
           className="swiper-container"
         >
@@ -154,60 +111,21 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
               />
             </SwiperSlide>
           ))}
-          {/* <SwiperSlide>
-            <FlipCard
-              titleFront="The Fee Collector"
-              descriptionFront="Maximizes yield with limited price exposure"
-              difficultyLevel={1}
-              listTextBack={<ListText />}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FlipCard
-              titleFront="The Carry Trader"
-              descriptionFront="Earns yield by depositing in higher-interest pools"
-              difficultyLevel={1}
-              listTextBack={<ListText />}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FlipCard
-              titleFront="The Yielding Bull"
-              descriptionFront="Goes long on assets while accumulating yield"
-              difficultyLevel={3}
-              listTextBack={<ListText />}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FlipCard
-              titleFront="The Fee Collector"
-              descriptionFront="Maximizes yield with limited price exposure"
-              difficultyLevel={1}
-              listTextBack={<ListText />}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FlipCard
-              titleFront="The Carry Trader"
-              descriptionFront="Earns yield by depositing in higher-interest pools"
-              difficultyLevel={1}
-              listTextBack={<ListText />}
-            />
-          </SwiperSlide> */}
         </Swiper>
 
         {/* Custom navigation and pagination */}
         <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[4rem]">
           <Image
             onClick={handlePrev}
-            className="size-5 swiper-button-prev custom-arrow"
+            className="swiper-button-prev custom-arrow"
             src={arrowLeftColored}
-            alt={"Arrow Right"}
+            alt={"Arrow Left"}
           />
-          <div className="swiper-pagination"></div>
+          <div className="custom-swiper-pagination swiper-pagination"></div>{" "}
+          {/* Custom pagination element */}
           <Image
             onClick={handleNext}
-            className="size-5 swiper-button-next custom-arrow"
+            className="swiper-button-next custom-arrow"
             src={arrowRightColored}
             alt={"Arrow Right"}
           />

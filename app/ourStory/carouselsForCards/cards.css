@@ -1,0 +1,91 @@
+/* For Advisor Card Carousel */
+.advisor-swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.custom-swiper-pagination-advisor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-swiper-pagination-advisor .swiper-pagination-bullet {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../../public/assets/icons/emptyCircle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-swiper-pagination-advisor .swiper-pagination-bullet-active {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../../public/assets/icons/filledCircle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-pagination-container-advisor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.custom-arrow-advisor {
+  cursor: pointer;
+  height: 50px;
+  width: 60px;
+}
+
+/* For Founder Card Carousel */
+.founder-swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.custom-swiper-pagination-founder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-swiper-pagination-founder .swiper-pagination-bullet {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../../public/assets/icons/emptyCircle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-swiper-pagination-founder .swiper-pagination-bullet-active {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../../public/assets/icons/filledCircle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-pagination-container-founder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.custom-arrow-founder {
+  cursor: pointer;
+  height: 50px;
+  width: 60px;
+}

@@ -18,15 +18,15 @@ function OurTokenSection() {
       <div className="flex flex-wrap justify-center flex-col md:flex-row gap-4">
         {/* Left Card */}
         <div
-          className={`rounded-[20px] flex-1 p-4 ${
+          className={`rounded-[20px] flex-1 p-4 w-full ${
             theme === "dark"
               ? "featureBorderWrapDarkTheme"
               : "featureBorderWrapLightTheme"
           }`}
         >
-          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full">
+          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full w-full">
             <div className="flex flex-col h-full">
-              <div className="flex flex-row pt-10 md:pt-24 justify-start gap-4 items-center">
+              <div className="flex flex-row pt-2 md:pt-24 justify-start gap-4 items-center">
                 <div>
                   <Image
                     src={primePurpleLogo}
@@ -55,6 +55,7 @@ function OurTokenSection() {
               </p>
               <div className="mt-auto">
                 <MainButton
+                  className="w-full sm:w-fit"
                   typographyClass="md:mx-auto"
                   hasArrowRight={true}
                   label={"LEARN MORE"}
@@ -66,15 +67,15 @@ function OurTokenSection() {
         </div>
         {/* Right Card */}
         <div
-          className={`rounded-[20px] flex-1 p-4 ${
+          className={`rounded-[20px] flex-1 p-4 w-full ${
             theme === "dark"
               ? "featureBorderWrapDarkTheme"
               : "featureBorderWrapLightTheme"
           }`}
         >
-          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full">
+          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full ">
             <div className="flex flex-col h-full">
-              <div className="flex flex-row pt-10 md:pt-24 justify-start gap-4 items-center">
+              <div className="flex flex-row pt-2 md:pt-24 justify-start gap-4 items-center">
                 <div>
                   <Image
                     src={whiteTokenPrime}
@@ -102,6 +103,7 @@ function OurTokenSection() {
               </p>
               <div className="mt-auto">
                 <MainButton
+                  className="w-full sm:w-fit"
                   typographyClass="md:mx-auto"
                   hasArrowRight={true}
                   label={"LEARN MORE"}

@@ -27,7 +27,7 @@ const CarouselComponent = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="pt-4">
+    <div className="pt-4 relative">
       <Swiper
         loop={true}
         grabCursor={false}
@@ -61,12 +61,14 @@ const CarouselComponent = () => {
         {integrationData.map((data, index) => {
           return (
             <SwiperSlide className="w-fit h-fit" key={index}>
-              {/* <Image className="h-10 w-44" src={data.imageUrl} /> */}
               <DarkBoxWrapper srcImg={data.imageUrl} alt={data.alt} />
             </SwiperSlide>
           );
         })}
       </Swiper>
+      {/* Gradient overlays */}
+      <div className="absolute top-0 left-0 w-28 h-full bg-gradient-to-r from-[#1D2943] to-transparent pointer-events-none z-10"></div>
+      <div className="absolute top-0 right-0 w-28 h-full bg-gradient-to-l from-[#1D2943] to-transparent pointer-events-none z-10"></div>
     </div>
   );
 };

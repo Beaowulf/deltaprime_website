@@ -76,7 +76,7 @@ const CryptoPreviewTables = () => {
                     </p>
                   </div>
                 </div>
-                <div className="w-full h-1 mt-[12px] bg-gradient-to-r from-[#dfe0ff] from-40% via-[#ffe1c2] via-60% to-[#ffd3e0] to-70% "></div>
+                <div className="w-full h-1 mt-[12px] bg-gradient-to-r from-[#dfe0ff] from-40% via-[#ffe1c2] via-60% to-[#ffd3e0] to-70%"></div>
               </React.Fragment>
             ))}
             <div className="text-end mt-2">
