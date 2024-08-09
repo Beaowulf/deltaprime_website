@@ -142,7 +142,6 @@ export function AboutButtonDarkBG({
 }
 
 export function ArrowButton({ onClick }) {
-  const { theme } = useTheme();
   return (
     <>
       <button onClick={onClick} className="arrowButtonBG w-fit h-fit">
@@ -155,33 +154,29 @@ export function ArrowButton({ onClick }) {
 }
 
 export function ContactUsButton({ label, onClick }) {
-  const { theme, resolvedTheme } = useTheme();
+  const { theme } = useTheme();
   return (
-    <>
-      <button onClick={onClick} className="arrowButtonBG w-full h-fit">
-        <div
-          className={` ${
-            theme === "dark"
-              ? "contactUsButtonBGDark"
-              : "contactUsButtonBGLight"
-          }`}
-        >
-          <p className="dark:text-[#1B153C] text-[#FEEEF4]">{label}</p>
-          {theme === "dark" ? (
-            <Image
-              className={"size-6 mb-[1px]"}
-              src={ArrowRightBlack}
-              alt={"Arrow Right"}
-            />
-          ) : (
-            <Image
-              className={"size-6 mb-[1px]"}
-              src={ArrowRightWhite}
-              alt={"Arrow Right"}
-            />
-          )}
-        </div>
-      </button>
-    </>
+    <button onClick={onClick} className="arrowButtonBG w-full h-fit">
+      <div
+        className={`${
+          theme === "dark" ? "contactUsButtonBGDark" : "contactUsButtonBGLight"
+        }`}
+      >
+        <p className="contactUsLabel dark:text-[#1b153c] text-[#FEEEF4]">
+          {label}
+        </p>
+        {theme === "dark" ? (
+          <ArrowRightWhite
+            className="size-6 mb-[1px] arrowButton"
+            alt="Arrow Right"
+          />
+        ) : (
+          <ArrowRight
+            className="size-6 mb-[1px] arrowButton"
+            alt="Arrow Right"
+          />
+        )}
+      </div>
+    </button>
   );
 }

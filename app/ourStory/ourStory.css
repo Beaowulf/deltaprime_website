@@ -12,31 +12,51 @@
   transition: all 0.5s ease;
 }
 
+.storyCard {
+  transition: background 0.5s ease-in-out;
+}
+.featureSubtitle,
+.featureParagraph {
+  transition: color 0.5s ease-in-out;
+}
+
 .storyCard:hover {
   background: #3d4481;
-  transition: all 0.5s ease-in-out;
+}
+.storyCard:hover .featureSubtitle {
+  color: white;
+}
+.storyCard:hover .featureParagraph {
+  color: white;
+}
+
+.storyCard:hover > div > p {
+  color: white;
+}
+.storyCard:hover > div > h3 {
+  color: white;
+}
+.storyCard .coloredLinkedInIcon,
+.storyCard .grayLinkedInCon {
+  transition: background 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.storyCard .coloredLinkedInIcon {
+  opacity: 0;
+}
+
+.storyCard .grayLinkedInCon {
+  opacity: 1;
 }
 
 .storyCard:hover .coloredLinkedInIcon {
   background: #3d4481;
-  transition: all 0.5s ease-in-out;
   opacity: 1;
 }
 
 .storyCard:hover .grayLinkedInCon {
   background: #3d4481;
-  transition: all 0.5s ease-in-out;
   opacity: 0;
-}
-
-.grayLinkedInCon {
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-.coloredLinkedInIcon {
-  opacity: 0;
-  transition: opacity 0.5s ease;
 }
 
 .customBoxShadow {

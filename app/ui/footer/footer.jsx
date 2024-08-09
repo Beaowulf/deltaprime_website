@@ -81,10 +81,10 @@ export function FooterTextLinks() {
   );
 }
 
-export function RoundButtonLinks() {
+export function RoundButtonLinks({ hasText = true }) {
   return (
-    <div className="flex flex-col gap-4 text-white items-center md:items-start">
-      <p className="hover:text-gray-400">Follow us</p>
+    <div className="flex flex-col gap-4 text-white items-center md:items-start z-50">
+      {hasText && <p className="hover:text-gray-400">Follow us</p>}
       <div className="flex flex-row gap-4">
         {/* todo get discord link */}
         <Link href="https://discord.com/invite/9bwsnsHEzD">

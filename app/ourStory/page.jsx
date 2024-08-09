@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import "./ourStory.css";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import ourStoryIntroImg from "@/public/assets/img/introOurStoryImage.png";
@@ -27,7 +28,6 @@ const tvlData = await fetchTvlData();
 const tvtDataFormated = tvlData.totalTvl.slice(0, 2);
 
 const OurStory = () => {
-  // const { theme } = useTheme();
   return (
     <div>
       <div className="pagePaddingLarge">
@@ -324,10 +324,12 @@ const OurStory = () => {
                     DevOps Engineer
                   </p>
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
-                    <AboutButtonDarkBG
-                      label={"Learn More"}
-                      hasWhiteArrowRight={true}
-                    />
+                    <Link href={"/jobDescription"}>
+                      <AboutButtonDarkBG
+                        label={"Learn More"}
+                        hasWhiteArrowRight={true}
+                      />
+                    </Link>
                   </div>
                 </div>
               </div>

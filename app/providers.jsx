@@ -7,7 +7,7 @@ import "./globals.css";
 import AppContent from "./_app";
 
 export function Providers({ children }) {
-  const { setTheme, resolvedTheme } = useTheme();
+  const { setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -15,12 +15,12 @@ export function Providers({ children }) {
     if (!localStorage.getItem("theme")) {
       setTheme("dark");
     }
-  }, [setTheme, resolvedTheme]);
+  }, [setTheme]);
 
   if (!mounted) return null;
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-      <AppContent>{children}</AppContent>
+      <AppContent>{...children}</AppContent>
     </ThemeProvider>
   );
 }

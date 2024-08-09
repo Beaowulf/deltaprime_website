@@ -6,7 +6,7 @@ import useScreenOrientation from "@/utils/orientationCheck";
 
 const AppContent = ({ children }) => {
   const [isHorizontalPage, setIsHorizontalPage] = useState(false);
-  const { theme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const orientation = useScreenOrientation();
 
   const isMobileDevice = () => {
@@ -27,7 +27,7 @@ const AppContent = ({ children }) => {
 
   return (
     <div
-      className={` ${
+      className={`${
         resolvedTheme === "dark"
           ? "background_1-darkTheme"
           : "background_1-lightTheme"

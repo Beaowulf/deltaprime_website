@@ -1,13 +1,11 @@
-"use client";
-import React from "react";
 import Image from "next/image";
 import shareIcon from "@/public/assets/icons/shareIcon.svg";
 import shareIconBlack from "@/public/assets/icons/shareIconBlack.svg";
-
 import { useTheme } from "next-themes";
 
 const ShareButton = ({ title, text, url }) => {
   const { theme } = useTheme();
+
   const handleShare = async () => {
     if (!title || !text || !url) {
       console.error("Missing title, text, or url for sharing");
@@ -26,7 +24,15 @@ const ShareButton = ({ title, text, url }) => {
         console.error("Error sharing the article", error);
       }
     } else {
-      alert("Web Share API is not supported in your browser.");
+      try {
+        await navigator.clipboard.writeText(url);
+        alert("URL copied to clipboard. You can now share it manually.");
+      } catch (error) {
+        console.error("Error copying URL to clipboard", error);
+        alert(
+          "Web Share API is not supported in your browser. Failed to copy URL to clipboard."
+        );
+      }
     }
   };
 
