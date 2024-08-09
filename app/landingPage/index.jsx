@@ -2,6 +2,7 @@ import { fetchBlogs } from "@/lib/getBlogs";
 import LandingPage from "./landingPage";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 import { fetchTvlData } from "@/lib/getCryptoData";
+// import { fetchUnlockedData } from "@/lib/getUnlockedData";
 
 // Utility function to format ISO date string
 function formatDateString(isoString, locale = "en-GB") {
