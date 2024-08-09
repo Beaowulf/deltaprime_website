@@ -21,7 +21,7 @@ const StrategyPage = async ({ params }) => {
 
   return (
     <div>
-      <StrategyPost strategy={strategy} />
+      <StrategyPost strategy={strategy} strategies={strategies}/>
     </div>
   );
 };

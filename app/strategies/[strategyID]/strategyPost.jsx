@@ -9,9 +9,14 @@ import {
   MainButton,
   AboutButtonDarkBG,
 } from "@/app/components/buttons/mainButton";
+import Header from "@/app/components/header/header";
 import CryptoPreviewTables from "@/app/components/cryptoTables/cryptoTables";
+import {
+  DesktopCardCarousel,
+  FlipCardMobileCarousel,
+} from "@/app/strategies/strategyFlipCards";
 
-const StrategyDetail = ({ strategy }) => {
+const StrategyDetail = ({ strategy, strategies }) => {
   const paragraph = documentToPlainTextString(strategy.strategyRichText);
 
   return (
@@ -67,6 +72,23 @@ const StrategyDetail = ({ strategy }) => {
       </div>
 
       {/* here are the swiper components */}
+
+      <div>
+        <Header
+          title={"STRATEGIES"}
+          subTitle={"Choose Your Strategy"}
+          paragraph={
+            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
+          }
+        />
+        {/* Dektop Cards */}
+        <DesktopCardCarousel strategies={strategies} />
+        {/* Mobile Cards */}
+        <FlipCardMobileCarousel strategies={strategies} />
+        
+
+      </div>
+
     </div>
   );
 };
