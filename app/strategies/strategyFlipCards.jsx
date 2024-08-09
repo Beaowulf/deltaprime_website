@@ -134,3 +134,71 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
     </>
   );
 };
+
+export const DesktopCardCarousel = ({ strategies }) => {
+  const sliderRef = useRef(null);
+
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
+
+  return (
+    <>
+      {/* Swiper carousel for mobile view */}
+      <div className="flex flex-col gap-5 hidden md:block">
+        <Swiper
+          ref={sliderRef}
+          modules={[Pagination]}
+          spaceBetween={10}
+          slidesPerView={3}
+          slidesPerGroup={3}
+          loop={true}
+          pagination={{
+            el: ".swiper-pagination-desktop",
+            clickable: true,
+            renderBullet: (index, className) => {
+              return `<div class="${className}"></div>`;
+            },
+          }}
+          className="swiper-container"
+        >
+          {strategies.map((strategy) => (
+            <SwiperSlide key={strategy.strategyID}>
+              <FlipCard
+                titleFront={strategy.strategyTitle}
+                titleBack={strategy.strategyTitle}
+                descriptionFront={strategy.strategyDescription}
+                difficultyLevel={strategy.difficultyLevel}
+                listTextBack={<ListText strategyID={strategy.strategyID} />}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Custom navigation and pagination */}
+        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[4rem]">
+          <Image
+            onClick={handlePrev}
+            className="size-5 swiper-button-prev custom-arrow"
+            src={arrowLeftColored}
+            alt={"Arrow Left"}
+          />
+          <div className="swiper-pagination-desktop"></div>
+
+          <Image
+            onClick={handleNext}
+            className="size-5 swiper-button-next custom-arrow"
+            src={arrowRightColored}
+            alt={"Arrow Right"}
+          />
+        </div>
+      </div>
+    </>
+  );
+};
