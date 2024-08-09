@@ -57,7 +57,7 @@ const IntroSection = ({ totalTvl }) => {
     <div className="pagePaddingLarge">
       <div className="mx-auto">
         {/* Top Intro Part (Text and video) */}
-        <div className="flex flex-col md:flex-row justify-between gap-20 p-4 items-center">
+        <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-20 p-4 items-center">
           {/* Left side (text with pill) */}
           <TextWithPill totalTvl={totalTvl} />
           {/* Show this button only on mobile */}

@@ -43,7 +43,7 @@ const VideoPlayer = () => {
           height="100%"
           width="100%"
           className="reactPlayer"
-          url="/videos/video.mp4"
+          url="https://youtu.be/26CylrvB5UQ?list=PLIoOWv16PEo9aUctyn3XyWlMIIHi4GUBi"
           light={light ? "/assets/img/thumbnail.png" : false}
           playIcon={<PlayButton />}
           playing={playing && !isModalOpen}
@@ -57,7 +57,7 @@ const VideoPlayer = () => {
             height="100%"
             width="100%"
             className="reactPlayer"
-            url="/videos/video.mp4"
+            url="https://youtu.be/26CylrvB5UQ?list=PLIoOWv16PEo9aUctyn3XyWlMIIHi4GUBi"
             controls={true}
             playing={isModalOpen}
           />

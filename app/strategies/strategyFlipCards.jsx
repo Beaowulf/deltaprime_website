@@ -53,7 +53,7 @@ export const StratDesktopFlipCards = ({ strategies }) => {
   return (
     <div className="hidden md:block mx-auto p-4">
       {/* This component is hidden until the desired breakpoint */}
-      <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+      <div className="grid gap-4 grid-rows-6 md:grid-cols-2 grid-cols-1">
         {strategies.map((strategy, index) => (
           <div key={strategy.strategyID} className="card p-4">
             <FlipCard
