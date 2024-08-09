@@ -112,6 +112,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
   const plainText = documentToPlainTextString(blogData.blogRichTextParagraph);
   const wordCount = countWords(plainText);
   const minsToRead = Math.ceil(wordCount / 210);
+  const heroImage = blogData.blogImage.fields.file.url;
 
   return (
     <div>
@@ -173,8 +174,8 @@ const BlogPost = ({ blog, blogPreviewData }) => {
 
             {/* blog Image  */}
             <div className="mt-6">
-              <Image
-                src={blogPostBG}
+              <img
+                src={`https:${heroImage}`}
                 alt="blog_Post_Image"
                 className="w-auto max-h-450px rounded-[20px]"
               />
