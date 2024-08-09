@@ -1,9 +1,7 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import SearchBar from "@/app/components/searchBar/searchBar";
-import homePageImage from "@/public/assets/img/blogPostBG.jpg";
-import { MainButton } from "@/app/components/buttons/mainButton";
 import BlogCard from "@/app/components/blogCard/blogCard";
 import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
@@ -74,7 +72,7 @@ const Circles = (randomNumber) => {
   }
 };
 
-const BlogHomePage = ({ latestBlogData, latestBlogs, categories, blogs }) => {
+const BlogHomePage = ({ categories, blogs }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
@@ -112,18 +110,16 @@ const BlogHomePage = ({ latestBlogData, latestBlogs, categories, blogs }) => {
   };
 
   const currentPosts = filteredBlogs.slice(indexOfFirstPost, indexOfLastPost);
+  console.log("🚀 ~ BlogHomePage ~ currentPosts:", currentPosts);
   const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
 
   return (
     <>
       <div className="flex flex-wrap gap-2 justify-center mb-8">
         {categories.map((category) => (
-          <MainButton
-            key={category}
-            onClick={() => handleCategoryChange(category)}
-          >
+          <button key={category} onClick={() => handleCategoryChange(category)}>
             {category}
-          </MainButton>
+          </button>
         ))}
       </div>
       <SearchBar onSearch={handleSearch} />
@@ -134,7 +130,7 @@ const BlogHomePage = ({ latestBlogData, latestBlogs, categories, blogs }) => {
               {currentPosts.map((blogPreviewCardData) => (
                 <BlogCard
                   key={blogPreviewCardData.blogID}
-                  blogID={blogPreviewCardData.blogID}
+                  blogSlug={blogPreviewCardData.slug}
                   blogCategory={blogPreviewCardData.blogCategory}
                   blogTitle={blogPreviewCardData.blogTitle}
                   blogDescription={blogPreviewCardData.blogDescription}

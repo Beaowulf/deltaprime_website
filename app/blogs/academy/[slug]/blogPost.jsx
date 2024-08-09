@@ -31,14 +31,14 @@ const BlogPost = ({ blog, blogPreviewData }) => {
   useEffect(() => {
     if (!blogData) {
       const fetchData = async () => {
-        const response = await fetch(`/api/blog/${blog.id}`);
+        const response = await fetch(`/api/blog/${blog.slug}`);
         const data = await response.json();
 
         setBlogData(data);
       };
       fetchData();
     }
-  }, [blogData, blog.blogID]);
+  }, [blogData, blog.slug]);
 
   if (!blogData) {
     return <div></div>;
@@ -116,7 +116,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
 
   return (
     <div>
-      <DynamicPurpleBar inBlogPost={true} blogTitle={blogData.blogTitle} />
+      <DynamicPurpleBar inBlogPost={true} title={blogData.blogTitle} />
       {/* BIG TWO SECTION WRAPPER */}
 
       <div className="flex flex-col lg:flex-row gap-10 mt-20 pagePaddingLarge">
@@ -306,8 +306,8 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         <div className="flex flex-wrap gap-6 items-center justify-center">
           {blogPreviewData.slice(0, 3).map((blogPreviewData) => (
             <BlogCard
-              key={blogPreviewData.blog.blogID}
-              blogID={blogPreviewData.blog.blogID}
+              key={blogPreviewData.blog.slug}
+              blogSlug={blogPreviewData.blog.slug}
               blogCategory={blogPreviewData.blog.blogCategory}
               blogTitle={blogPreviewData.blog.blogTitle}
               blogDescription={blogPreviewData.blog.blogDescription}

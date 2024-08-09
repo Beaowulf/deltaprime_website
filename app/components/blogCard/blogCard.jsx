@@ -9,7 +9,7 @@ const BlogCard = ({
   blogCategory,
   roundedImage,
   minsToRead,
-  blogID,
+  blogSlug,
 }) => {
   return (
     <div className="px-5 pt-5 bg-[#F4F4FF] rounded-[20px] w-[360px] h-[330px] shadow-lg dark:shadow-none shadow-[#ff5fa240]">
@@ -33,10 +33,10 @@ const BlogCard = ({
         </div>
 
         <div className="flex justify-between gap-5 w-fit">
-          <p className="text-[8px] md:text-[12px] leading-[inherit] dark:text-[#878C91] lineClampThree">
+          <p className="text-[10px] md:text-[12px] leading-[inherit] dark:text-[#878C91] lineClampThree">
             {blogDescription}
           </p>
-          <Link href={`/blogs/academy/${blogID}`}>
+          <Link href={`/blogs/academy/${blogSlug}`}>
             <ArrowButton />
           </Link>
         </div>
@@ -62,7 +62,7 @@ export const SmallBlogCard = ({
   blogCategory,
   roundedImage,
   minsToRead,
-  blogID,
+  blogSlug,
   onClick,
 }) => {
   return (
@@ -87,10 +87,10 @@ export const SmallBlogCard = ({
         </div>
 
         <div className="flex justify-between gap-5 w-full">
-          <p className="text-[8px] md:text-[12px] leading-[inherit] dark:text-[#878C91] lineClampThree">
+          <p className="text-[10px] md:text-[12px] leading-[inherit] dark:text-[#878C91] lineClampThree">
             {blogDescription}
           </p>
-          <Link href={`/blogs/academy/${blogID}`}>
+          <Link href={`/blogs/academy/${blogSlug}`}>
             <ArrowButton onClick={onClick} />
           </Link>
         </div>

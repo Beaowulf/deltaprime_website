@@ -60,27 +60,12 @@ export function NavBarButton({ label, onClick }) {
   return (
     <>
       <div className="navButtonWrapper">
-        <button
-          onClick={onClick}
-          className={
-            resolvedTheme === "dark"
-              ? `navBarButtonBGDark`
-              : `navBarButtonBGLight`
-          }
-        >
-          <div
-            className={`${
-              resolvedTheme === "dark"
-                ? "mainButton"
-                : "navbarButtonLightGradient"
-            } w-full h-[35px] md:h-[45px]`}
-          >
+        <button onClick={onClick} className={"navBarButtonBGDark"}>
+          <div className={"mainButton w-full h-[35px] md:h-[45px]"}>
             <p
-              className={`${
-                resolvedTheme === "dark"
-                  ? "navButtonDarkText"
-                  : "navButtonLightText"
-              } text-[12px] md:text-[14px] dark:text-[black] text-white lg:text-[16px] text-nowrap`}
+              className={
+                "navButtonDarkText text-[12px] md:text-[14px] dark:text-[black] text-white lg:text-[16px] text-nowrap"
+              }
             >
               {label}
             </p>

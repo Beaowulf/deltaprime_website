@@ -1,22 +1,16 @@
 import { fetchBlogs } from "@/lib/getBlogs";
-import BlogPost from "@/app/blogs/academy/[blogID]/blogPost";
+import BlogPost from "@/app/blogs/academy/[slug]/blogPost";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
+
 // Utility function to get a random item from an array
 function getRandomItem(array) {
   const randomIndex = Math.floor(Math.random() * array.length);
   return array[randomIndex];
 }
 
-export async function generateStaticParams() {
-  const blogs = await fetchBlogs();
-  return blogs.map((blog) => ({
-    blogID: blog.blogID,
-  }));
-}
-
 const BlogPage = async ({ params }) => {
   const blogs = await fetchBlogs();
-  const blog = blogs.find((blog) => blog.blogID === params.blogID) || null;
+  const blog = blogs.find((blog) => blog.slug === params.slug) || null;
 
   // Organize blogs by category
   const blogsByCategory = blogs.reduce((acc, blog) => {
@@ -43,13 +37,13 @@ const BlogPage = async ({ params }) => {
       const paragraphs = documentToPlainTextString(blog.blogRichTextParagraph);
       const wordCount = countWords(paragraphs);
       const minsToRead = Math.ceil(wordCount / 210);
-      const blogID = blog.blogID;
+      const slug = blog.slug;
 
       return {
         ...blog,
         description,
         minsToRead,
-        blogID,
+        slug,
       };
     };
 

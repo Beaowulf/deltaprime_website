@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useTheme } from "next-themes";
@@ -28,10 +29,7 @@ const CarouselComponent = () => {
       <Swiper
         loop={true}
         spaceBetween={10}
-        grabCursor={true}
         a11y={false}
-        freeMode={true}
-        allowTouchMove={true}
         speed={3000}
         autoplay={{
           delay: 0.5,
@@ -46,24 +44,26 @@ const CarouselComponent = () => {
         modules={[Autoplay]}
         className="w-full h-[150px] z-0 pt-4"
       >
-        {logoCarouselItems.map((image, index) => {
+        {logoCarouselItems.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <div
-                className={`bg-[white] p-1 md:p-4 rounded-[20px] flex justify-center logoWrapper ${
-                  theme === "dark"
-                    ? `carouselItemsDarkTheme`
-                    : `carouseItemsWhiteTheme`
-                }`}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <Image
-                  className="sm:w-[220px] sm:h-[70px] w-[120px] h-[75px] object-contain"
-                  src={hoveredIndex === index ? image.color : image.bw}
-                  alt={image.alt}
-                />
-              </div>
+              <Link href={`${item.link}`}>
+                <div
+                  className={`bg-[white] p-1 md:p-4 rounded-[20px] flex justify-center logoWrapper ${
+                    theme === "dark"
+                      ? `carouselItemsDarkTheme`
+                      : `carouseItemsWhiteTheme`
+                  }`}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <Image
+                    className="sm:w-[220px] sm:h-[70px] w-[120px] h-[75px] object-contain"
+                    src={hoveredIndex === index ? item.color : item.bw}
+                    alt={item.alt}
+                  />
+                </div>
+              </Link>
             </SwiperSlide>
           );
         })}

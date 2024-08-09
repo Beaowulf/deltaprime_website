@@ -25,10 +25,10 @@ const BlogCard = ({
   blogCategory,
   roundedImage,
   minsToRead,
-  blogID,
+  blogSlug,
 }) => {
   return (
-    <div className="px-5 pt-5 bg-[#F4F4FF] rounded-[20px] w-[400px] h-[350px] shadow-lg dark:shadow-none shadow-[#ff5fa240]">
+    <div className="px-5 pt-5 bg-[#F4F4FF] rounded-[20px] w-[90%] md:w-[400px] h-[350px] shadow-lg dark:shadow-none shadow-[#ff5fa240]">
       <div className="flex flex-col gap-4 justify-between h-full">
         <div className="flex justify-between">
           <div className="flex gap-2 text-black">
@@ -49,13 +49,13 @@ const BlogCard = ({
         </div>
 
         <div className="flex justify-between gap-5 w-full">
-          <p className="text-[8px] md:text-[12px] leading-[inherit] dark:text-[#878C91] lineClampThree">
+          <p className="text-[10px] md:text-[12px] leading-[inherit] dark:text-[#878C91] lineClampThree">
             {blogDescription}
           </p>
-          {blogID ? (
+          {blogSlug ? (
             <Link
               className="arrowButtonParent"
-              href={`/academy/blogs/${blogID}`}
+              href={`/academy/blogs/${blogSlug}`}
             >
               <ArrowButton />
             </Link>
@@ -132,7 +132,7 @@ const Circles = (randomNumber) => {
 const BlogPreviewSection = ({ blogPreviewCardData }) => {
   return (
     <>
-      <div className="pt-20 md:pt-40">
+      <div className="pt-20 md:pt-40 pagePaddingMedium">
         <BlogHeader
           title={"The Burd Blog"}
           subTitle={"Blog"}
@@ -145,7 +145,7 @@ const BlogPreviewSection = ({ blogPreviewCardData }) => {
             // Added the encodeURIComponent to be utf-8 compatible
             <BlogCard
               key={blogPreviewCardData.blog.blogID}
-              blogID={blogPreviewCardData.blog.blogID}
+              blogSlug={blogPreviewCardData.blog.slug}
               blogCategory={blogPreviewCardData.blog.blogCategory}
               blogTitle={blogPreviewCardData.blog.blogTitle}
               blogDescription={blogPreviewCardData.blog.blogDescription}

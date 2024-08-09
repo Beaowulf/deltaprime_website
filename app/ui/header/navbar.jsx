@@ -9,6 +9,7 @@ import { Logo, MobileMenuLogo } from "@/app/components/logo/logo";
 import ThemeSwitch from "@/app/components/themeToggler/themeToggler";
 import { NavBarButton } from "@/app/components/buttons/mainButton";
 import hamburgerIconWhite from "@/public/assets/icons/hamburgerIconWhite.svg";
+import hamburgerIconBlack from "@/public/assets/icons/hamburgerIconBlack.svg";
 import closeIconBlack from "@/public/assets/icons/closeIconBlack.svg";
 import closeIconWhite from "@/public/assets/icons/closeIconWhite.svg";
 import { getLinkClass } from "@/lib/getLinkClass";
@@ -17,6 +18,7 @@ import DropDownBlogLoader from "@/app/ui/burdLogLoader";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const { resolvedTheme } = useTheme();
 
@@ -28,8 +30,27 @@ function Nav() {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="pagePaddingLarge">
+    <div
+      className={`pagePaddingLarge ${
+        isScrolled ? "sticky top-0 bg-white dark:bg-gray-900 shadow-md" : ""
+      }`}
+    >
       <nav className="md:mb-40 mb-10 mt-4">
         <div className="">
           <div className="flex items-center justify-between h-16">
@@ -107,12 +128,21 @@ function Nav() {
                 aria-controls="mobile-menu"
                 aria-expanded={isOpen}
               >
-                <Image
-                  src={hamburgerIconWhite}
-                  alt="menu_icon"
-                  width={30}
-                  height={30}
-                />
+                {resolvedTheme === "dark" ? (
+                  <Image
+                    src={hamburgerIconWhite}
+                    alt="menu_icon"
+                    width={30}
+                    height={30}
+                  />
+                ) : (
+                  <Image
+                    src={hamburgerIconBlack}
+                    alt="menu_icon"
+                    width={30}
+                    height={30}
+                  />
+                )}
               </button>
             </div>
           </div>

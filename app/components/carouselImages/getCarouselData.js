@@ -54,43 +54,93 @@ export const integrationData = [
 ];
 
 export const logoCarouselItems = [
-  { bw: bw_4sv, color: color_4sv, alt: "4SV Logo" },
+  {
+    bw: bw_4sv,
+    color: color_4sv,
+    alt: "4SV Logo",
+    link: "https://www.4sv.io/",
+  },
   {
     bw: bw_absoluta_digital,
     color: color_absoluta_digital,
     alt: "Absoluta Digital Logo",
+    link: "https://absoluta.digital/#about",
   },
-  { bw: bw_angel_block, color: color_angel_block, alt: "Angel Block Logo" },
-  { bw: bw_avalanche, color: color_avalanche, alt: "Avalanche Logo" },
+  {
+    bw: bw_angel_block,
+    color: color_angel_block,
+    alt: "Angel Block Logo",
+    link: "https://angelblock.io/blog/june24-roundup/",
+  },
+  {
+    bw: bw_avalanche,
+    color: color_avalanche,
+    alt: "Avalanche Logo",
+    link: "https://www.avax.network/",
+  },
   {
     bw: bw_aventures_dao,
     color: color_aventures_dao,
     alt: "Aventures DAO Logo",
+    link: "https://aventures-site.webflow.io/",
   },
-  { bw: bw_bbs_finance, color: color_bbs_finance, alt: "BBS Finance Logo" },
-  { bw: bw_blizzard, color: color_blizzard, alt: "Blizzard Logo" },
+  {
+    bw: bw_bbs_finance,
+    color: color_bbs_finance,
+    alt: "BBS Finance Logo",
+  },
+  {
+    bw: bw_blizzard,
+    color: color_blizzard,
+    alt: "Blizzard Logo",
+    link: "https://www.linkedin.com/company/blizzardfund/about/",
+  },
   {
     bw: bw_coinflipcanada,
     color: color_coinflipcanada,
     alt: "CoinFlipCanada Logo",
+    link: "https://gmx.io/#/",
   },
-  { bw: bw_gsr, color: color_gsr, alt: "GSR Logo" },
+  {
+    bw: bw_gsr,
+    color: color_gsr,
+    alt: "GSR Logo",
+    link: "https://www.gsr.io/",
+  },
   {
     bw: bw_moonhill_capital,
     color: color_moonhill_capital,
     alt: "Moonhill Capital Logo",
+    link: "https://www.moonhill.capital/",
   },
   {
     bw: bw_nayt_technologies,
     color: color_nayt_technologies,
     alt: "Nayt Technologies Logo",
+    link: "https://nayt.io/",
   },
   {
     bw: bw_nonce_classic,
     color: color_nonce_classic,
     alt: "Nonce Classic Logo",
+    link: "https://nonceclassic.org/main",
   },
-  { bw: bw_psalion_vc, color: color_psalion_vc, alt: "PSA Lion VC Logo" },
-  { bw: bw_uplift, color: color_uplift, alt: "Uplift Logo" },
-  { bw: bw_yield_yak, color: color_yield_yak, alt: "Yield Yak Logo" },
+  {
+    bw: bw_psalion_vc,
+    color: color_psalion_vc,
+    alt: "PSA Lion VC Logo",
+    link: "https://psalion.vc/",
+  },
+  {
+    bw: bw_uplift,
+    color: color_uplift,
+    alt: "Uplift Logo",
+    link: "https://www.uplift.io/",
+  },
+  {
+    bw: bw_yield_yak,
+    color: color_yield_yak,
+    alt: "Yield Yak Logo",
+    link: "https://yieldyak.com/avalanche/",
+  },
 ];

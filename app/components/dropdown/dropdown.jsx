@@ -286,7 +286,7 @@ const DropdownMenu = ({
                           blogCategory={blog.blogCategory}
                           previewBlogImage={`https:${blog.previewImageBlog.fields.file.url}`}
                           roundedImage={Circles(getRandomNumber())}
-                          blogID={blog.blogID}
+                          blogSlug={blog.slug}
                           onClick={closeDropdown}
                           blogDescription={blog.blogDescription}
                         />
