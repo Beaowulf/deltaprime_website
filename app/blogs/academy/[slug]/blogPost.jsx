@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "./blogPost.css";
@@ -12,7 +12,6 @@ import calendarIcon from "@/public/assets/icons/calendarIcon.svg";
 import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
-import blogPostBG from "@/public/assets/img/blogPostBG.jpg";
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
 import BlogCard from "@/app/components/blogCard/blogCard";
@@ -23,8 +22,38 @@ import {
   CTAButton,
 } from "@/app/components/buttons/mainButton";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
+
+// Updated extractTextFromChildren function
+const extractTextFromChildren = (children) => {
+  if (!Array.isArray(children)) {
+    children = [children];
+  }
+
+  return children
+    .map((child) => {
+      if (typeof child === "string") {
+        return child;
+      } else if (React.isValidElement(child)) {
+        return extractTextFromChildren(child.props.children);
+      }
+      return "";
+    })
+    .join("");
+};
+
+const sanitizeId = (text) => {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "") // Remove all non-word, non-space, non-hyphen characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-") // Replace multiple hyphens with a single one
+    .trim(); // Trim any leading or trailing hyphens or spaces
+};
 
 const BlogPost = ({ blog, blogPreviewData }) => {
+  const [headings, setHeadings] = useState([]);
   const [blogData, setBlogData] = useState(blog);
   const blogUrl = typeof window !== "undefined" ? window.location.href : "";
 
@@ -39,6 +68,36 @@ const BlogPost = ({ blog, blogPreviewData }) => {
       fetchData();
     }
   }, [blogData, blogData.slug]);
+
+  useEffect(() => {
+    const extractedHeadings = [];
+    const options = {
+      renderNode: {
+        [BLOCKS.HEADING_4]: (node, children) => {
+          const text = extractTextFromChildren(children);
+          const id = sanitizeId(text);
+          console.log("Generated ID:", id); // Log the ID for debugging
+          if (text) {
+            extractedHeadings.push({ id, title: text });
+          }
+        },
+      },
+    };
+
+    documentToReactComponents(blog.blogRichTextParagraph, options);
+    setHeadings(extractedHeadings);
+  }, [blog]);
+
+  const handleScrollTo = (id) => (e) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -100; // Adjust this value to change the scroll offset
+      const yPosition =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: yPosition, behavior: "smooth" });
+    }
+  };
 
   if (!blogData) {
     return <div></div>;
@@ -112,11 +171,14 @@ const BlogPost = ({ blog, blogPreviewData }) => {
   const plainText = documentToPlainTextString(blogData.blogRichTextParagraph);
   const wordCount = countWords(plainText);
   const minsToRead = Math.ceil(wordCount / 210);
-const heroImage = blogData.blogImage.fields.file.url;
+  const heroImage = blogData.blogImage.fields.file.url;
 
   return (
     <div key={blogData.slug}>
-      <DynamicPurpleBar  title={blogData.blogTitle} link={ <Link href={"/blogs"}>Burd Log</Link>} />
+      <DynamicPurpleBar
+        title={blogData.blogTitle}
+        link={<Link href={"/blogs"}>Burd Log</Link>}
+      />
       {/* BIG TWO SECTION WRAPPER */}
 
       <div className="flex flex-col lg:flex-row gap-10 mt-20 pagePaddingLarge">
@@ -196,29 +258,17 @@ const heroImage = blogData.blogImage.fields.file.url;
               </p>
               <div className="w-full bg-black h-[2px] my-5" />
               <ul className="flex flex-col gap-10">
-                <li>
-                  <p className="text-[#252948] text-[15px]">
-                    <span className="text-[8px]">●</span> Duis aute irure dolor
-                  </p>
-                </li>
-                <li>
-                  <p className="text-[#252948] text-[15px]">
-                    <span className="text-[8px]">●</span> Lorem ipsum this and
-                    that goes here
-                  </p>
-                </li>
-                <li>
-                  <p className="text-[#252948] text-[15px]">
-                    <span className="text-[8px]">●</span> But no more than two
-                    lines of content this is enough for a table of contents
-                  </p>
-                </li>
-                <li>
-                  <p className="text-[#252948] text-[15px]">
-                    <span className="text-[8px]">●</span> Duis aute irure dolor
-                    in reprehenderit in voluptate
-                  </p>
-                </li>
+                {headings.map((heading) => (
+                  <li key={heading.id}>
+                    <a
+                      href={`#${heading.id}`}
+                      onClick={handleScrollTo(heading.id)}
+                      className="text-[#252948] text-[15px]"
+                    >
+                      <span className="text-[8px]">●</span> {heading.title}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -250,29 +300,17 @@ const heroImage = blogData.blogImage.fields.file.url;
               </p>
               <div className="w-full bg-black h-[2px] my-5" />
               <ul className="flex flex-col gap-10">
-                <li>
-                  <p className="text-[#252948] text-[15px]">
-                    <span className="text-[8px]">●</span> Duis aute irure dolor
-                  </p>
-                </li>
-                <li>
-                  <p className="text-[#252948] text-[15px]">
-                    <span className="text-[8px]">●</span> Lorem ipsum this and
-                    that goes here
-                  </p>
-                </li>
-                <li>
-                  <p className="text-[#252948] text-[15px]">
-                    <span className="text-[8px]">●</span> But no more than two
-                    lines of content this is enough for a table of contents
-                  </p>
-                </li>
-                <li>
-                  <p className="text-[#252948] text-[15px]">
-                    <span className="text-[8px]">●</span> Duis aute irure dolor
-                    in reprehenderit in voluptate
-                  </p>
-                </li>
+                {headings.map((heading) => (
+                  <li key={heading.id}>
+                    <a
+                      href={`#${heading.id}`}
+                      onClick={handleScrollTo(heading.id)}
+                      className="text-[#252948] text-[15px]"
+                    >
+                      <span className="text-[8px]">●</span> {heading.title}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
             <CryptoPreviewTables />
@@ -301,7 +339,7 @@ const heroImage = blogData.blogImage.fields.file.url;
           />
         </div>
 
-        <div className="flex flex-wrap gap-6 items-center justify-center">
+        <div className="flex flex-wrap gap-6 items-center justify-center mb-20 md:mb-0">
           {blogPreviewData.slice(0, 3).map((blogPreviewData) => (
             <BlogCard
               key={blogPreviewData.blog.slug}

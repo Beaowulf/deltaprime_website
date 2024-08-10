@@ -15,7 +15,7 @@ const Strategies = () => {
         theme === "dark"
           ? "featureBorderWrapDarkTheme"
           : "featureBorderWrapLightTheme"
-      } z-10 mt-24  md:mt-52`}
+      } z-10 mt-16 md:mt-52`}
     >
       <div className="flex items-center md:flex-row flex-col justify-between rounded-[20px] md:pl-20 pl-10 py-6 pr-6 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden ">
         {/* Left */}

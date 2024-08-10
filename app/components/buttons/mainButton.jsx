@@ -205,3 +205,26 @@ export function BlogButton({ onClick, label }) {
     </button>
   );
 }
+
+export function BlogCardButton({ onClick, label, isSmallbtn }) {
+  return (
+    <button
+      onClick={onClick}
+      className="blogButtonWrapper dark:hover:shadow-deltaPurple hover:bg-[#3f4183] hover:shadow-deltaRed w-fit"
+    >
+      <div
+        className={`blogButtonContent md:h-full ${
+          isSmallbtn ? "px-3 py-2" : "px-4 py-3"
+        }`}
+      >
+        <h6
+          className={`${
+            isSmallbtn ? "text-[12px]" : "text-[12px] lg:text-[14px]"
+          } text-nowrap font-extrabold blogCardText`}
+        >
+          {label}
+        </h6>
+      </div>
+    </button>
+  );
+}

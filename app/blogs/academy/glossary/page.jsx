@@ -1,5 +1,4 @@
 "use client";
-// pages/glossary.js
 import { fetchGlossaryEntries } from "@/lib/getBlogs";
 import React, { useState, useEffect } from "react";
 import "./glossary.css";
@@ -7,7 +6,7 @@ import { useTheme } from "next-themes";
 
 const Glossary = () => {
   const [glossaryEntries, setGlossaryEntries] = useState([]);
-  const [selectedLetter, setSelectedLetter] = useState("#"); // Default to "#"
+  const [selectedLetter, setSelectedLetter] = useState(null); // Default to null to show all
   const [searchTerm, setSearchTerm] = useState("");
   const [placeholder, setPlaceholder] = useState("Search Term Here");
 
@@ -23,27 +22,29 @@ const Glossary = () => {
   }, []);
 
   function clearSelect() {
-    setSelectedLetter("#"); // Reset to "#" when clearing selection
+    setSelectedLetter(null); // Reset to null to show all entries
     setSearchTerm("");
   }
 
   const filteredEntries = glossaryEntries.filter((entry) => {
+    // Filter by letter only if a letter is selected
     if (selectedLetter && !entry.glossaryTitle.startsWith(selectedLetter)) {
       return false;
     }
 
-    if (searchTerm.length < 2) {
-      return true;
+    // Filter by search term if provided
+    if (searchTerm.length >= 2) {
+      const searchWords = searchTerm.toLowerCase().split(" ");
+      const combinedText = (
+        entry.glossaryTitle +
+        " " +
+        entry.glossaryText
+      ).toLowerCase();
+
+      return searchWords.every((word) => combinedText.includes(word));
     }
 
-    const searchWords = searchTerm.toLowerCase().split(" ");
-    const combinedText = (
-      entry.glossaryTitle +
-      " " +
-      entry.glossaryText
-    ).toLowerCase();
-
-    return searchWords.every((word) => combinedText.includes(word));
+    return true; // Show entry if no filters are applied
   });
 
   return (
@@ -60,7 +61,7 @@ const Glossary = () => {
         <button onClick={clearSelect} className="m-2 glossaryItemWrapper">
           <p
             className={`glossaryContent md:size-[65px] size-[45px] shadow rounded-[15px] flex justify-center items-center text-2xl font-bold text-center ${
-              selectedLetter === "#" &&
+              selectedLetter === null &&
               (resolvedTheme === "dark"
                 ? "bg-[#f6f6f6] text-[#1C2943]"
                 : "bg-[#1C2943] text-white")

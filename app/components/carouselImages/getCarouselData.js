@@ -88,6 +88,7 @@ export const logoCarouselItems = [
     bw: bw_bbs_finance,
     color: color_bbs_finance,
     alt: "BBS Finance Logo",
+    link: "https://www.crunchbase.com/organization/bbs-finance",
   },
   {
     bw: bw_blizzard,
@@ -129,7 +130,7 @@ export const logoCarouselItems = [
     bw: bw_psalion_vc,
     color: color_psalion_vc,
     alt: "PSA Lion VC Logo",
-    link: "https://psalion.vc/",
+    link: "https://www.psalion.com/",
   },
   {
     bw: bw_uplift,

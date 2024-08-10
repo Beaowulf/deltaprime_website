@@ -25,11 +25,10 @@ const StrategyDetail = ({ strategy, strategies }) => {
       <div>
         <div className="topsidestrategies">
           <div className="flex flex-col px-[200px] pt-[150px] pb-[100px] box-border gap-8">
-            {" "}
             <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
               {strategy.strategyTitle}
             </p>
-            <p className="whiteMainText text-wrap max-w-[25rem] text-[13px] sm:text-lg sm:leading-6 leading-5 ">
+            <p className="whiteMainText text-wrap max-w-[25rem] text-[13px] sm:text-lg sm:leading-6 leading-5">
               {strategy.strategyDescription}
             </p>
             <MainButton
@@ -41,18 +40,20 @@ const StrategyDetail = ({ strategy, strategies }) => {
         </div>
       </div>
 
-      {/*  Parent  */}
+      {/* Parent */}
       <div className="postAndTablesWrapper flex flex-row gap-10 mt-10">
         {/* left side */}
-        <div className="strategyPostWrapper ">
+        <div className="strategyPostWrapper">
           <RichTextRenderer
             richTextDocument={strategy.strategyRichText}
             hasTakeaways={strategy?.strategyTakeaways?.length > 0}
           />
         </div>
-        {/*  Right side */}
-        <div className="boxWrapper hidden md:block w-full ">
-          <div className="flex flex-col gap-10">
+        {/* Right side */}
+        <div className="rightSideBoxWrapper hidden md:block w-full">
+          <div className="flex flex-col gap-10 sticky top-40">
+            {" "}
+            {/* Sticky class added */}
             <CryptoPreviewTables />
             <div className="flex flex-col gap-10 px-5 pt-8 rounded-[20px] bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%">
               <h3 className="text-[24px] text-[#1B153C] font-extrabold leading-9 tracking-[-0.72px]">
@@ -72,7 +73,6 @@ const StrategyDetail = ({ strategy, strategies }) => {
       </div>
 
       {/* here are the swiper components */}
-
       <div>
         <Header
           title={"STRATEGIES"}
@@ -81,14 +81,11 @@ const StrategyDetail = ({ strategy, strategies }) => {
             "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
           }
         />
-        {/* Dektop Cards */}
+        {/* Desktop Cards */}
         <DesktopCardCarousel strategies={strategies} />
         {/* Mobile Cards */}
         <FlipCardMobileCarousel strategies={strategies} />
-        
-
       </div>
-
     </div>
   );
 };

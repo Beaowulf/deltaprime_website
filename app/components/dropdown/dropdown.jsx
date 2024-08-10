@@ -165,7 +165,7 @@ const DropdownMenu = ({
               <p className="w-fit font-bold text-[12px] mb-2 dark:text-[#fff] text-[#252948]">
                 {strategy.strategyTitle}
               </p>
-              <p className="whitespace-nowrap overflow-hidden text-ellipsis max-w-[100px] font-semibold text-[10px] mb-2 dark:text-[#fff] text-[#252948]">
+              <p className="overflow-hidden text-ellipsis line-clamp-2 text-wrap font-semibold text-[10px] mb-2 dark:text-[#fff] text-[#252948]">
                 {strategy.strategyDescription}
               </p>
             </Link>
@@ -254,13 +254,13 @@ const DropdownMenu = ({
                     exit="exit"
                     className="mb-2 text-[15px] dark:text-[#fff] text-[#252948]"
                   >
-                    <Link
+                    <a
                       className="mb-2 text-[15px] underline hover:text-gray-400"
                       href={boxLink}
                       onClick={closeDropdown}
                     >
                       View All
-                    </Link>
+                    </a>
                   </motion.div>
                 </div>
                 {isStrategy && (

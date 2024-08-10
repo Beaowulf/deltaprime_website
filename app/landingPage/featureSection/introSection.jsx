@@ -16,7 +16,7 @@ const TextWithPill = ({ totalTvl }) => {
   return (
     <>
       {/* Left side (text with pill) */}
-      <div className="flex flex-col md:mb-8 mb-0 justify-between gap-20 items-center md:items-start flex-1">
+      <div className="flex flex-col md:mb-8 mb-0 justify-between gap-2 md:gap-20 items-center md:items-start flex-1">
         {/* Text Wrapper */}
         <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
           <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
@@ -57,7 +57,7 @@ const IntroSection = ({ totalTvl }) => {
     <div className="pagePaddingLarge">
       <div className="mx-auto">
         {/* Top Intro Part (Text and video) */}
-        <div className="flex flex-col lg:flex-row justify-between gap-20 p-4 items-center">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-20 p-4 items-center">
           {/* Left side (text with pill) */}
           <TextWithPill totalTvl={totalTvl} />
           {/* Show this button only on mobile */}
@@ -73,7 +73,7 @@ const IntroSection = ({ totalTvl }) => {
           </div>
           {/* Right side (video player) */}
           <div className="">
-            <VideoPlayer url={"https://youtu.be/2nJLhZ33lno"}/>
+            <VideoPlayer url={"https://youtu.be/2nJLhZ33lno"} />
           </div>
         </div>
         {/* Bottom Intro Part ( full potential of your capital Launch app) */}

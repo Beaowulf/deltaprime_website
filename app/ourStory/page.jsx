@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
 import { CTAButton, MainButton } from "@/app/components/buttons/mainButton";
-import ourStoryIntroImg from "@/public/assets/img/introOurStoryImage.png";
+import ourStoryIntroImg from "@/public/assets/img/images/strategies/burdChess.jpg";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
 import whyDeltaPrimeImg from "@/public/assets/img/whyDeltaPrimeImg.jpg";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
@@ -32,7 +32,7 @@ const OurStory = () => {
     <div>
       <div className="pagePaddingLarge">
         {/* intro */}
-        <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 my-10 md:my-40">
+        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:flex-row md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
@@ -58,18 +58,18 @@ const OurStory = () => {
             </div>
           </div>
           {/* Image */}
-          <div className="w-fit mb-10">
+          <div className="w-full lg:w-1/2 max-w-[600px]">
             <Image
-              className="md:h-[490px] md:w-[430px] h-[360px] w-[320px] object-contain"
+              className="rounded-[25px]"
               src={ourStoryIntroImg}
               alt="deltaprime_mascot_img"
             />
           </div>
         </div>
         {/* other text */}
-        <div className="flex md:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
+        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Image */}
-          <div className="w-full md:w-1/2 max-w-[600px]">
+          <div className="w-full lg:w-1/2 max-w-[600px]">
             <Image
               className="rounded-[20px] w-full h-auto md:h-full object-cover"
               src={rectangleImg}
@@ -77,26 +77,31 @@ const OurStory = () => {
             />
           </div>
           {/* Text Wrapper */}
-          <div className="flex flex-col md:w-1/2 w-full md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
+          <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-end h-fit">
             <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
               <div className="flex flex-col items-start dark:text-white text-[#252948] mt-20 mb-10">
                 <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left">
                   Unlocking Trapped Liquidity
                 </h1>
                 <p className="mb-4 featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 max-w-xl text-left">
-                  On that fateful evening, our founders discussed the
-                  inefficiencies of overcollateralized lending in DeFi. Much
-                  like diamonds remain unscathed in the heart of liquid lava,
-                  they envisioned a platform that interacts with trapped
-                  liquidity, unlocking cash flows throughout the ecosystem and
-                  bringing to surface a range of new investment strategies.
+                  That evening, chance brought three guys together. United by
+                  their love for DeFi, they started talking about one of the
+                  major issues in crypto; overcollateralized lending.
+                  <br />
+                  <span className="font-bold">
+                    ”There must be a better way”, they pondered.
+                  </span>
+                  <br />
+                  That’s when they envisioned a platform that interacts with
+                  trapped liquidity, unlocking cash flows throughout the
+                  ecosystem and bringing to surface a range of new investment
+                  strategies.
                 </p>
                 <p className="featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 max-w-xl text-left">
-                  This powerful analogy became the cornerstone of DeltaPrime's
+                  This later became the cornerstone of DeltaPrime's
                   revolutionary Diamond-Beacon Proxy (DBP) pattern, a robust and
-                  scalable architecture that ensures our platform remains
-                  infinitely scalable, resilient and secure, no matter the
-                  market conditions.
+                  flexible architecture that is infinitely scalable, resilient
+                  and secure, no matter the market conditions.
                 </p>
               </div>
             </div>

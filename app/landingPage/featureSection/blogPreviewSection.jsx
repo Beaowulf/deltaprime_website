@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowButton, CTAButton } from "@/app/components/buttons/mainButton";
+import { ArrowButton, MainButton } from "@/app/components/buttons/mainButton";
 import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
 
 const BlogHeader = ({ title, subTitle, paragraph }) => {
   return (
-    <div className="flex flex-col items-center dark:text-white text-[#252948] mb-14 text-center">
+    <div className="flex flex-col items-center dark:text-white text-[#252948] md:mb-14 mb-1 text-center">
       <h4 className="uppercase mb-3 font-bold featureSubtitle md:text-[34px] text-[24px] text text-center">
         {title}
       </h4>
@@ -134,7 +134,7 @@ const Circles = (randomNumber) => {
 const BlogPreviewSection = ({ blogPreviewCardData }) => {
   return (
     <>
-      <div className="pt-20 md:pt-40 pagePaddingMedium">
+      <div className="pt-12 md:pt-40 pagePaddingMedium">
         <BlogHeader
           title={"The Burd Log"}
           paragraph={
@@ -156,27 +156,12 @@ const BlogPreviewSection = ({ blogPreviewCardData }) => {
             />
           ))}
         </div>
-        {/* Show this button only on mobile */}
-        <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
-          <Link href="?modal=true">
-            <CTAButton
-              className="mx-auto px-8 py-4"
-              label="LAUNCH APP"
-              hasArrowRight={true}
-              typographyClass="text-[15px]"
-            />
-          </Link>
-        </div>
-        {/* Show this button only on mobile */}
-        <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
-          <Link href="?modal=true">
-            <CTAButton
-              className="mx-auto px-8 py-4"
-              label="LAUNCH APP"
-              hasArrowRight={true}
-              typographyClass="text-[15px]"
-            />
-          </Link>
+        <div className="flex justify-center items-center">
+          <MainButton
+            hasArrowRight={true}
+            label={"LAUNCH BURD LOG"}
+            href={"/blogs"}
+          />
         </div>
       </div>
     </>

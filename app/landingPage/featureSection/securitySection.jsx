@@ -24,7 +24,6 @@ function SecuritySection() {
   return (
     <div className="mt-14">
       <Header
-        title="Our Features"
         subTitle="Security"
         paragraph="Smart contracts with protocol-level security and 7 audits, help protect what we value most, our community’s investments, "
       />

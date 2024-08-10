@@ -24,9 +24,8 @@ const FeaturePrimeAccount = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="lg:mt-40 mt-28">
+    <div className="lg:mt-40 mt-14">
       <Header
-        title={"Deposit & earn"}
         subTitle={"Savings"}
         paragraph={
           "Let your capital work for you. Deposit into a savings pool within seconds. Receive upwards of 12% APY on interest from borrowed funds."

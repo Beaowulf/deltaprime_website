@@ -180,6 +180,18 @@ const FeaturePrimeAccountSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Show this button only on mobile */}
+      <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
+        <Link href="?modal=true">
+          <CTAButton
+            className="mx-auto px-8 py-4"
+            label="LAUNCH APP"
+            hasArrowRight={true}
+            typographyClass="text-[15px]"
+          />
+        </Link>
+      </div>
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
         <Link href="?modal=true">

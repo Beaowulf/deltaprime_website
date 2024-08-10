@@ -1,4 +1,3 @@
-// RichTextRenderer.js
 import Image from "next/image";
 import React from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -11,6 +10,34 @@ const CustomButton = ({ buttonText, url }) => (
     {buttonText}
   </a>
 );
+
+const sanitizeId = (text) => {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "") // Remove all non-word, non-space, non-hyphen characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-") // Replace multiple hyphens with a single one
+    .trim(); // Trim any leading or trailing hyphens or spaces
+};
+
+const extractTextFromChildren = (children) => {
+  // Ensure children is an array
+  if (!Array.isArray(children)) {
+    children = [children];
+  }
+
+  return children
+    .map((child) => {
+      if (typeof child === "string") {
+        return child;
+      } else if (React.isValidElement(child)) {
+        // Recursively extract text if the child has its own children
+        return extractTextFromChildren(child.props.children);
+      }
+      return "";
+    })
+    .join("");
+};
 
 const RichTextRenderer = ({
   richTextDocument,
@@ -36,12 +63,26 @@ const RichTextRenderer = ({
         return <h1 className="text-3xl font-bold my-4">{children}</h1>;
       },
       [BLOCKS.HEADING_2]: (node, children) => {
-        return <h2 className="text-2xl font-bold my-4">{children}</h2>;
+        const text = extractTextFromChildren(children);
+        const id = sanitizeId(text); // Or use text directly as ID if preferred
+        return (
+          <h2 id={id} className="text-2xl font-bold my-4">
+            {children}
+          </h2>
+        );
       },
       [BLOCKS.HEADING_3]: (node, children) => {
         return <h3 className="text-xl font-bold my-4">{children}</h3>;
       },
-
+      [BLOCKS.HEADING_4]: (node, children) => {
+        const text = extractTextFromChildren(children);
+        const id = sanitizeId(text); // Use text or sanitizeId(text) based on your preference
+        return (
+          <h4 id={id} className="text-lg font-bold my-4">
+            {children}
+          </h4>
+        );
+      },
       [BLOCKS.TABLE]: (node, children) => (
         <table className="styled-table ">
           <tbody>{children}</tbody>

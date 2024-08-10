@@ -41,7 +41,7 @@ const Tokenomics = () => {
             <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
               Deep Dive into $PRIME Tokenomics
             </p>
-            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 ">
+            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 float-text">
               DeltaPrime is a decentralized Prime Brokerage solution that offers
               undercollateralized crypto loans without relying on trust. The
               native tokens $PRIME and $sPRIME feature advanced tokenomics on
@@ -87,7 +87,7 @@ const Tokenomics = () => {
         {/* Image */}
         <div className="w-fit">
           <Image
-            className={`rounded-[20px] border-4 border-[#fff56]  ${
+            className={`rounded-[20px] border-4 border-[#fff56] float-image  ${
               resolvedTheme === "dark"
                 ? "shadow-custom-dark"
                 : "shadow-custom-light"
@@ -101,13 +101,13 @@ const Tokenomics = () => {
       </div>
 
       {/* Tokenomics Section */}
-      <div className="flex flex-col items-center md:items-center mb-8 mt-28 h-fit flex-grow mx-auto">
+      <div className="flex flex-col items-center md:items-center mb-8 md:mt-28 mt-5 h-fit flex-grow mx-auto">
         <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948]">
           <p className="brightText text-center max-w-xl text-3xl md:text-[44px]">
             Tokenomics
           </p>
         </div>
-        <div className="flex flex-col items-center md:flex-row justify-center gap-10 mt-10">
+        <div className="flex flex-col items-center md:flex-row justify-center md:gap-10 gap-0 mt-10">
           <div className="flex flex-col items-center">
             <p className="text-center text-3xl font-bold mt-4">$PRIME</p>
             <p className="text-center text-2xl font-normal mt-1">
