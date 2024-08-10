@@ -112,11 +112,11 @@ const BlogPost = ({ blog, blogPreviewData }) => {
   const plainText = documentToPlainTextString(blogData.blogRichTextParagraph);
   const wordCount = countWords(plainText);
   const minsToRead = Math.ceil(wordCount / 210);
-  const heroImage = blogData.blogImage.fields.file.url;
+const heroImage = blogData.blogImage.fields.file.url;
 
   return (
     <div key={blogData.slug}>
-      <DynamicPurpleBar inBlogPost={true} title={blogData.blogTitle} />
+      <DynamicPurpleBar  title={blogData.blogTitle} link={ <Link href={"/blogs"}>Burd Log</Link>} />
       {/* BIG TWO SECTION WRAPPER */}
 
       <div className="flex flex-col lg:flex-row gap-10 mt-20 pagePaddingLarge">

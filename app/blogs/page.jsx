@@ -6,6 +6,7 @@ import ContactForm from "@/app/ui/contactForm/contactForm";
 import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import BlogHomePage from "./blogHomePage";
+import Link from "next/link";
 
 const BlogsPage = async () => {
   const blogs = await fetchBlogs();
@@ -29,7 +30,7 @@ const BlogsPage = async () => {
 
   return (
     <div>
-      <DynamicPurpleBar title={"Blogs"} blogs={blogs} />
+      <DynamicPurpleBar title={"Blogs"}/>
       <div className="pagePaddingLarge">
         <Header
           title={"Our blog"}

@@ -5,7 +5,7 @@ import playIconSVG from "@/public/assets/icons/play.svg";
 import VideoPlayerModal from "@/app/components/videoPlayer/videoPlayerModal";
 import "./videoPlayer.css";
 
-const PlayButton = () => (
+export const PlayButton = () => (
   <button>
     <Image
       className="w-[50px] h-[50px] md:w-[100px] md:h-[50px]"
@@ -16,7 +16,7 @@ const PlayButton = () => (
   </button>
 );
 
-const VideoPlayer = () => {
+const VideoPlayer = ({url}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [light, setLight] = useState(true);
@@ -43,7 +43,8 @@ const VideoPlayer = () => {
           height="100%"
           width="100%"
           className="reactPlayer"
-          url=" https://youtu.be/2nJLhZ33lno "
+          // url="https://youtu.be/2nJLhZ33lno"
+          url={url}
           light={light ? "/assets/img/thumbnail.png" : false}
           playIcon={<PlayButton />}
           playing={playing && !isModalOpen}
@@ -57,7 +58,7 @@ const VideoPlayer = () => {
             height="100%"
             width="100%"
             className="reactPlayer"
-            url=" https://youtu.be/2nJLhZ33lno "
+            url={url}
             controls={true}
             playing={isModalOpen}
           />

@@ -73,7 +73,7 @@ const IntroSection = ({ totalTvl }) => {
           </div>
           {/* Right side (video player) */}
           <div className="">
-            <VideoPlayer />
+            <VideoPlayer url={"https://youtu.be/2nJLhZ33lno"}/>
           </div>
         </div>
         {/* Bottom Intro Part ( full potential of your capital Launch app) */}
