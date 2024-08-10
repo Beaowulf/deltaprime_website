@@ -6,12 +6,17 @@ import { documentToPlainTextString } from "@contentful/rich-text-plain-text-rend
 import RichTextRenderer from "@/app/components/richTetxtRenderer/richTextRenderer";
 import adImg from "@/public/assets/img/adImg.png";
 import {
+  MainButton,
   AboutButtonDarkBG,
-  CTAButton,
 } from "@/app/components/buttons/mainButton";
+import Header from "@/app/components/header/header";
 import CryptoPreviewTables from "@/app/components/cryptoTables/cryptoTables";
+import {
+  DesktopCardCarousel,
+  FlipCardMobileCarousel,
+} from "@/app/strategies/strategyFlipCards";
 
-const StrategyDetail = ({ strategy }) => {
+const StrategyDetail = ({ strategy, strategies }) => {
   const paragraph = documentToPlainTextString(strategy.strategyRichText);
 
   return (
@@ -19,15 +24,16 @@ const StrategyDetail = ({ strategy }) => {
     <div className="pagePaddingMedium">
       <div>
         <div className="topsidestrategies">
-          <div className="flex flex-col md:px-[200px] md:pt-[150px] p-10 pb-5 md:pb-[100px] box-border gap-8">
+          <div className="flex flex-col px-[200px] pt-[150px] pb-[100px] box-border gap-8">
+            {" "}
             <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
               {strategy.strategyTitle}
             </p>
-            <p className="whiteMainText text-wrap max-w-[25rem] text-[13px] sm:text-lg sm:leading-6 leading-5">
+            <p className="whiteMainText text-wrap max-w-[25rem] text-[13px] sm:text-lg sm:leading-6 leading-5 ">
               {strategy.strategyDescription}
             </p>
-            <CTAButton
-              className="px-8 py-4"
+            <MainButton
+              className="w-fit"
               label={"Launch App!"}
               hasArrowRight={true}
             />
@@ -35,18 +41,18 @@ const StrategyDetail = ({ strategy }) => {
         </div>
       </div>
 
-      {/* Parent */}
-      <div className="postAndTablesWrapper flex flex-row gap-10 mt-10 mb-10">
-        {/* Left side */}
+      {/*  Parent  */}
+      <div className="postAndTablesWrapper flex flex-row gap-10 mt-10">
+        {/* left side */}
         <div className="strategyPostWrapper ">
           <RichTextRenderer
             richTextDocument={strategy.strategyRichText}
             hasTakeaways={strategy?.strategyTakeaways?.length > 0}
           />
         </div>
-        {/* Right side */}
-        <div className="boxStrategyWrapper hidden md:block w-full">
-          <div className="flex flex-col gap-10 sticky top-32">
+        {/*  Right side */}
+        <div className="boxWrapper hidden md:block w-full ">
+          <div className="flex flex-col gap-10">
             <CryptoPreviewTables />
             <div className="flex flex-col gap-10 px-5 pt-8 rounded-[20px] bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%">
               <h3 className="text-[24px] text-[#1B153C] font-extrabold leading-9 tracking-[-0.72px]">
@@ -65,7 +71,24 @@ const StrategyDetail = ({ strategy }) => {
         </div>
       </div>
 
-      {/* Here are the swiper components */}
+      {/* here are the swiper components */}
+
+      <div>
+        <Header
+          title={"STRATEGIES"}
+          subTitle={"Choose Your Strategy"}
+          paragraph={
+            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
+          }
+        />
+        {/* Dektop Cards */}
+        <DesktopCardCarousel strategies={strategies} />
+        {/* Mobile Cards */}
+        <FlipCardMobileCarousel strategies={strategies} />
+        
+
+      </div>
+
     </div>
   );
 };
