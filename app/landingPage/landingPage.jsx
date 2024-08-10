@@ -17,7 +17,7 @@ import { useTheme } from "next-themes";
 
 // todo: cleanup the 2 divs with the same padding styling
 const LandingPage = ({ blogPreviewCardData, totalTvl }) => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
     <div>
@@ -35,7 +35,7 @@ const LandingPage = ({ blogPreviewCardData, totalTvl }) => {
       <AboutSection />
       <div
         className={`${
-          theme === "dark"
+          resolvedTheme === "dark"
             ? "bg-gradient-to-r from-[#1b153c] from-10% via-[#1c2943] via-50% to-[#301e3e] to-80%"
             : "bg-gradient-to-r from-[#F4F4FF] from-10% via-[#FFF5F0] via-30% to-[#E8E8F2] to-50%"
         }`}

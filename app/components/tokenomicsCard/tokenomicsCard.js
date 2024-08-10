@@ -1,9 +1,9 @@
 // TokenomicsCards.js
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 import unlockedIcon from "@/public/assets/icons/unlockedIcon.svg";
 import lockedIcon from "@/public/assets/icons/lockedIcon.svg";
-import { MainButton } from '../buttons/mainButton';
+import { MainButton } from "../buttons/mainButton";
 
 const Card = ({ icon, title, description, href }) => (
   <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16 flex flex-col">
@@ -39,7 +39,7 @@ const TokenomicsCards = () => (
     <Card
       icon={lockedIcon}
       title="Locked $sPRIME"
-      description="Is airdropped to users who fulfill certain criteria and reach specific achievements set by DeltaPrime. It also generates rewards from the 33% share of total protocol revenue. It can be used to pay for platform functionalities, but it cannot be used to retrieve assets from the liquidity pool."
+      description="Is airdropped to users who fulfill certain criteria and reach specific achievements set by DeltaPrime. It also generates rewards from the liquidation fees. It can be used to pay for platform functionalities, but it cannot be used to retrieve assets from the liquidity pool."
       href="/blogs"
     />
   </div>

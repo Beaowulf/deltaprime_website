@@ -71,7 +71,7 @@ const CryptoPreviewTables = () => {
                     </p>
                   </div>
                   <div>
-                    <p className="text-black text-[11px] pt-3 font-medium">
+                    <p className="text-[#00BF68] text-[11px] pt-3 font-medium">
                       {pool.apy.toFixed(1)}%
                     </p>
                   </div>
@@ -134,7 +134,7 @@ const CryptoPreviewTables = () => {
                     </p>
                   </div>
                   <div>
-                    <p className="text-black text-[11px] pt-3 font-medium">
+                    <p className="text-[#00BF68] text-[11px] pt-3 font-medium">
                       {pool.apy.toFixed(1)}%
                     </p>
                   </div>
@@ -225,7 +225,7 @@ export const CryptoLandingPageTables = () => {
                           </p>
                         </div>
                         <div>
-                          <p className="text-black text-[11px] pt-3 font-medium">
+                          <p className="text-[#00BF68] text-[11px] pt-3 font-medium">
                             {pool.apy.toFixed(1)}%
                           </p>
                         </div>
@@ -291,7 +291,7 @@ export const CryptoLandingPageTables = () => {
                           </p>
                         </div>
                         <div>
-                          <p className="text-black text-[11px] pt-3 font-medium">
+                          <p className="text-[#00BF68] text-[11px] pt-3 font-medium">
                             {pool.apy.toFixed(1)}%
                           </p>
                         </div>

@@ -11,9 +11,8 @@ function OurTokenSection() {
   return (
     <div className="mb-32 mt-20">
       <Header
-        title="Our Features"
         subTitle="Our Tokens"
-        paragraph="Our tradeable and utility tokens feature majority ownership for the community as well as access to advanced platform features & revenue sharing.  "
+        paragraph="Our tradeable and utility tokens feature majority ownership for the community as well as access to advanced platform features.  "
       />
       <div className="flex flex-wrap justify-center flex-col md:flex-row gap-4">
         {/* Left Card */}
@@ -97,8 +96,6 @@ function OurTokenSection() {
                 Utility token for Liquidity Providers and Active Users.
                 <br />
                 - Pay with for PRIME features
-                <br />
-                - Earn 33% of protocol revenue.
                 <br />- Earn governance power points.
               </p>
               <div className="mt-auto">

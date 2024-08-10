@@ -47,7 +47,6 @@ const DropDownBlogLoader = ({ pathname, resolvedTheme, getLinkClass }) => {
     const minsToRead = Math.ceil(wordCount / 210);
     return { ...blog, minsToRead };
   });
-  console.log("🚀 ~ blogsWithReadTime ~ blogsWithReadTime:", blogsWithReadTime);
 
   return (
     <div className="text-center">

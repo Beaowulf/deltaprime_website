@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 
 const Glossary = () => {
   const [glossaryEntries, setGlossaryEntries] = useState([]);
-  const [selectedLetter, setSelectedLetter] = useState("");
+  const [selectedLetter, setSelectedLetter] = useState("#"); // Default to "#"
   const [searchTerm, setSearchTerm] = useState("");
   const [placeholder, setPlaceholder] = useState("Search Term Here");
 
@@ -23,7 +23,7 @@ const Glossary = () => {
   }, []);
 
   function clearSelect() {
-    setSelectedLetter("");
+    setSelectedLetter("#"); // Reset to "#" when clearing selection
     setSearchTerm("");
   }
 
@@ -57,19 +57,14 @@ const Glossary = () => {
       </div>
 
       <div className="flex flex-wrap mx-auto mt-10 justify-center mb-4">
-        <button onClick={clearSelect} className={"m-2 glossaryItemWrapper"}>
+        <button onClick={clearSelect} className="m-2 glossaryItemWrapper">
           <p
-            className={`glossaryContent md:size-[65px] size-[45px] shadow rounded-[15px] flex justify-center items-center text-2xl dark:text-white text-black font-bold text-center bg-[#1C2943]
-            ${
-              selectedLetter === "" && searchTerm === ""
-                ? `${
-                    resolvedTheme == "dark"
-                      ? "selectedLetterDark"
-                      : "selectedLetterLight"
-                  }`
-                : ""
-            }
-            `}
+            className={`glossaryContent md:size-[65px] size-[45px] shadow rounded-[15px] flex justify-center items-center text-2xl font-bold text-center ${
+              selectedLetter === "#" &&
+              (resolvedTheme === "dark"
+                ? "bg-[#f6f6f6] text-[#1C2943]"
+                : "bg-[#1C2943] text-white")
+            }`}
           >
             #
           </p>
@@ -79,20 +74,15 @@ const Glossary = () => {
             <button
               key={letter}
               onClick={() => setSelectedLetter(letter)}
-              className={"m-2 glossaryItemWrapper"}
+              className="m-2 glossaryItemWrapper"
             >
               <p
-                className={`glossaryContent md:size-[65px] size-[45px] shadow rounded-[15px] flex justify-center items-center text-2xl dark:text-white text-black font-bold text-center bg-[#1C2943]
-                ${
-                  selectedLetter === letter
-                    ? `${
-                        resolvedTheme == "dark"
-                          ? "selectedLetterDark"
-                          : "selectedLetterLight"
-                      }`
-                    : ""
-                }
-                `}
+                className={`glossaryContent md:size-[65px] size-[45px] shadow rounded-[15px] flex justify-center items-center text-2xl font-bold text-center ${
+                  selectedLetter === letter &&
+                  (resolvedTheme === "dark"
+                    ? "bg-[#f6f6f6] text-[#1C2943]"
+                    : "bg-[#1C2943] text-white")
+                }`}
               >
                 {letter}
               </p>
@@ -108,7 +98,7 @@ const Glossary = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => setPlaceholder("")}
           onBlur={() => setPlaceholder("Search Term Here")}
-          className="w-full border rounded-[20px] placeholder:text-gray-100 glossaryContent p-4 text-center focus:outline-none"
+          className="w-full border rounded-[20px] dark:placeholder:text-[#f6f6f6] placeholder:text-[#1C2943] glossaryContent p-4 text-center focus:outline-none bg-transparent"
         />
       </div>
       <div className="glossary-entries ">

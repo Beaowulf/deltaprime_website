@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FooterLogo } from "@/app/components/logo/logo";
-import { MainButton } from "@/app/components/buttons/mainButton";
+import { CTAButton } from "@/app/components/buttons/mainButton";
 import "./footer.css";
 
 // Social Media Round Images
@@ -15,15 +15,29 @@ const LogoButton = () => {
   return (
     <div className="flex flex-col gap-6 px-6 md:px-0 items-center md:items-start">
       <FooterLogo />
-      <div className="w-full">
-        <Link href="?modal=true">
-          <MainButton
-            className="md:!w-fit !w-full"
-            typographyClass="text-[15px] text-[#1B153C]"
-            label="LAUNCH APP"
-            hasArrowRight={true}
-          />
-        </Link>
+      <div className="w-full flex justify-center">
+        {/* Show this button only on mobile */}
+        <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
+          <Link href="?modal=true">
+            <CTAButton
+              className="mx-auto px-8 py-4"
+              label="LAUNCH APP"
+              hasArrowRight={true}
+              typographyClass="text-[15px]"
+            />
+          </Link>
+        </div>
+        {/* Show this button only on mobile */}
+        <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
+          <Link href="?modal=true">
+            <CTAButton
+              className="mx-auto px-8 py-4"
+              label="LAUNCH APP"
+              hasArrowRight={true}
+              typographyClass="text-[15px]"
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -62,11 +76,17 @@ export function FooterTextLinks() {
           <Link href="/faq" className="block hover:text-gray-400 text-sm">
             FAQ
           </Link> */}
-          <Link href="/use-cases" className="block hover:text-gray-400 text-sm">
-            Use Cases / Case Studies
+          <Link href="/" className="block hover:text-gray-400 text-sm">
+            Careers
           </Link>
-          <Link href="/blogs" className="block hover:text-gray-400 text-sm">
-            Blog
+          <Link href="/use-cases" className="block hover:text-gray-400 text-sm">
+            How To guides
+          </Link>
+          <Link
+            href="/tokenomics"
+            className="block hover:text-gray-400 text-sm"
+          >
+            Tokenomics
           </Link>
           <Link
             href="/blogs/academy/glossary"
@@ -113,7 +133,7 @@ const TermsOfUseFooter = () => {
       <div className="termsOfUseGradient mb-4"></div>
       <div className="container flex flex-col-reverse sm:flex-row justify-between items-center text-white">
         <p className="text-sm text-center sm:text-left mt-6 md:mt-0">
-          All rights reserved © DeltaPrime 2023
+          All rights reserved © DeltaPrime 2024
         </p>
         <div className="flex space-x-4 mt-4 sm:mt-0 text-sm justify-center sm:justify-end flex-wrap md:gap-0 gap-4 ">
           <Link

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowButton } from "@/app/components/buttons/mainButton";
+import { ArrowButton, CTAButton } from "@/app/components/buttons/mainButton";
 import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
@@ -9,11 +9,13 @@ import circleThree from "@/public/assets/icons/circleThree.svg";
 const BlogHeader = ({ title, subTitle, paragraph }) => {
   return (
     <div className="flex flex-col items-center dark:text-white text-[#252948] mb-14 text-center">
-      <h4 className="uppercase mb-3 md:text-[15px] font-bold text-[12px] text-center dark:text-gray-400 text-[#252948]">
+      <h4 className="uppercase mb-3 font-bold featureSubtitle md:text-[34px] text-[24px] text text-center">
         {title}
       </h4>
       <h1 className="mb-8 featureSubtitle">{subTitle}</h1>
-      <p className="featureParagraph max-w-xl">{paragraph}</p>
+      <p className="featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 height max-w-xl text-center">
+        {paragraph}
+      </p>
     </div>
   );
 };
@@ -134,13 +136,12 @@ const BlogPreviewSection = ({ blogPreviewCardData }) => {
     <>
       <div className="pt-20 md:pt-40 pagePaddingMedium">
         <BlogHeader
-          title={"The Burd Blog"}
-          subTitle={"Blog"}
+          title={"The Burd Log"}
           paragraph={
             "Tireless Burd talks about all things DeFi. News, Guides, Infographics and more help you deepen your knowledge and stay up-to-date."
           }
         />
-        <div className="flex flex-wrap gap-6 items-center justify-center">
+        <div className="flex flex-wrap gap-6 items-center justify-center md:mb-20 mb-6">
           {blogPreviewCardData.slice(0, 3).map((blogPreviewCardData) => (
             // Added the encodeURIComponent to be utf-8 compatible
             <BlogCard
@@ -154,6 +155,28 @@ const BlogPreviewSection = ({ blogPreviewCardData }) => {
               roundedImage={Circles(getRandomNumber())}
             />
           ))}
+        </div>
+        {/* Show this button only on mobile */}
+        <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
+          <Link href="?modal=true">
+            <CTAButton
+              className="mx-auto px-8 py-4"
+              label="LAUNCH APP"
+              hasArrowRight={true}
+              typographyClass="text-[15px]"
+            />
+          </Link>
+        </div>
+        {/* Show this button only on mobile */}
+        <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
+          <Link href="?modal=true">
+            <CTAButton
+              className="mx-auto px-8 py-4"
+              label="LAUNCH APP"
+              hasArrowRight={true}
+              typographyClass="text-[15px]"
+            />
+          </Link>
         </div>
       </div>
     </>

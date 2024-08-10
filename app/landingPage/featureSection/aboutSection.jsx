@@ -46,7 +46,7 @@ const ImageComponent = () => {
 
 function AboutSection() {
   return (
-    <div className="aboutSectionBG flex flex-wrap items-center justify-between bg-cover bg-no-repeat px-4 pb-10 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[15%] ">
+    <div className="aboutSectionBG flex md:flex-row flex-col items-center justify-between bg-cover bg-no-repeat px-4 pb-10 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[15%] ">
       {/* Left Side */}
       <div className="w-full md:w-1/2">
         <h4 className="pt-24  aboutTypographytitle">OUR STORY</h4>
@@ -60,7 +60,7 @@ function AboutSection() {
         <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
           <AboutButtonDarkBG
             customClass="w-full"
-            hasWhiteArrowRight={true}
+            hasArrowRight={true}
             label={"LEARN MORE"}
           />
         </div>

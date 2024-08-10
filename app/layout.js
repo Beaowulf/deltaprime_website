@@ -1,6 +1,5 @@
 import { Montserrat } from "next/font/google";
 import { Providers } from "./providers";
-import { useTheme } from "next-themes";
 import Header from "@/app/ui/header/navbar";
 import Footer from "@/app/ui/footer/footer";
 import LaunchAppModal from "@/app/components/modals/launchAppModal";

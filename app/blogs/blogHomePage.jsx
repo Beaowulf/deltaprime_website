@@ -1,64 +1,45 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
+import "./academy.css";
 import SearchBar from "@/app/components/searchBar/searchBar";
 import BlogCard from "@/app/components/blogCard/blogCard";
 import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
 
-const BlogHeader = ({ title, subTitle, paragraph }) => {
-  return (
-    <div className="flex flex-col items-center dark:text-white text-[#252948] mb-14 text-center">
-      <h4 className="uppercase mb-3 md:text-[15px] font-bold text-[12px] text-center dark:text-gray-400 text-[#252948]">
-        {title}
-      </h4>
-      <h1 className="mb-8 featureSubtitle md:text-[34px] text-[25px] ">
-        {subTitle}
-      </h1>
-      <p className="featureParagraph max-w-xl">{paragraph}</p>
-    </div>
-  );
-};
-
 function getRandomNumber() {
-  const randomIndex = Math.floor(Math.random() * 3) + 1;
-  return randomIndex;
+  return Math.floor(Math.random() * 3) + 1;
 }
 
 const Circles = (randomNumber) => {
-  const CircleOne = () => {
-    return (
-      <Image
-        src={circleOne}
-        alt="circle_with_gradient_color"
-        width={15}
-        height={15}
-      />
-    );
-  };
+  const CircleOne = () => (
+    <Image
+      src={circleOne}
+      alt="circle_with_gradient_color"
+      width={15}
+      height={15}
+    />
+  );
 
-  const CircleTwo = () => {
-    return (
-      <Image
-        src={circleTwo}
-        alt="circle_with_gradient_color"
-        width={15}
-        height={15}
-      />
-    );
-  };
+  const CircleTwo = () => (
+    <Image
+      src={circleTwo}
+      alt="circle_with_gradient_color"
+      width={15}
+      height={15}
+    />
+  );
 
-  const CircleThree = () => {
-    return (
-      <Image
-        src={circleThree}
-        alt="circle_with_gradient_color"
-        width={15}
-        height={15}
-      />
-    );
-  };
+  const CircleThree = () => (
+    <Image
+      src={circleThree}
+      alt="circle_with_gradient_color"
+      width={15}
+      height={15}
+    />
+  );
 
   switch (randomNumber) {
     case 1:
@@ -77,8 +58,9 @@ const BlogHomePage = ({ categories, blogs }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredBlogs, setFilteredBlogs] = useState(blogs);
+  const { resolvedTheme } = useTheme();
 
-  const postsPerPage = 6;
+  const postsPerPage = 3; // Display 3 items per page
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
 
@@ -110,24 +92,64 @@ const BlogHomePage = ({ categories, blogs }) => {
   };
 
   const currentPosts = filteredBlogs.slice(indexOfFirstPost, indexOfLastPost);
-  console.log("🚀 ~ BlogHomePage ~ currentPosts:", currentPosts);
   const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    const blogPostsContainer = document.querySelector(".blog-posts-container");
+    blogPostsContainer.classList.add("fade-out");
+
+    setTimeout(() => {
+      setCurrentPage(pageNumber);
+      blogPostsContainer.classList.remove("fade-out");
+      blogPostsContainer.classList.add("fade-in");
+    }, 500);
+
+    setTimeout(() => {
+      blogPostsContainer.classList.remove("fade-in");
+    }, 1000);
+  };
+
+  function BlogButton({ onClick, label, isActive }) {
+    return (
+      <button
+        onClick={onClick}
+        className={`blogButtonWrapper ${isActive ? "active" : ""}`}
+      >
+        <div className="blogButtonContent w-[140px] h-[45px] md:h-full p-4">
+          <h6
+            className={`text-[12px] lg:text-[14px] text-nowrap font-extrabold  ${
+              resolvedTheme === "dark"
+                ? isActive
+                  ? "text-black"
+                  : "text-white"
+                : "text-black"
+            }`}
+          >
+            {label}
+          </h6>
+        </div>
+      </button>
+    );
+  }
 
   return (
     <>
       <div className="flex flex-wrap gap-2 justify-center mb-8">
         {categories.map((category) => (
-          <button key={category} onClick={() => handleCategoryChange(category)}>
-            {category}
-          </button>
+          <BlogButton
+            key={category}
+            label={category}
+            onClick={() => handleCategoryChange(category)}
+            isActive={selectedCategory === category}
+          />
         ))}
       </div>
       <SearchBar onSearch={handleSearch} />
       <div className="flex flex-col">
         <div className="flex flex-col gap-6 items-start dark:text-white text-[#252948] ">
           <div className="py-20 w-full relative">
-            <div className="flex flex-wrap gap-6 items-center justify-center">
-              {currentPosts.map((blogPreviewCardData) => (
+            <div className="blog-posts-container transition-all duration-500 ease-in-out transform translate-x-0 opacity-100 flex flex-wrap gap-6 items-center justify-center">
+              {currentPosts.map((blogPreviewCardData, index) => (
                 <BlogCard
                   key={blogPreviewCardData.blogID}
                   blogSlug={blogPreviewCardData.slug}
@@ -144,11 +166,11 @@ const BlogHomePage = ({ categories, blogs }) => {
               {Array.from({ length: totalPages }, (_, index) => (
                 <button
                   key={index + 1}
-                  onClick={() => setCurrentPage(index + 1)}
-                  className={`mx-1 px-3 py-1 rounded ${
+                  onClick={() => handlePageChange(index + 1)}
+                  className={`mx-1 px-5 py-2 blogNumberWrapper ${
                     currentPage === index + 1
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 text-gray-700"
+                      ? "active bg-gradient-to-b from-pink-400 to-yellow-300"
+                      : "bg-transparent"
                   }`}
                 >
                   {index + 1}

@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useTheme } from "next-themes";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { integrationData } from "@/app/components/carouselImages/getCarouselData";
@@ -24,8 +23,6 @@ const DarkBoxWrapper = ({ srcImg }) => {
 };
 
 const CarouselComponent = () => {
-  const { theme } = useTheme();
-
   return (
     <div className="pt-4 relative">
       <Swiper
@@ -67,8 +64,8 @@ const CarouselComponent = () => {
         })}
       </Swiper>
       {/* Gradient overlays */}
-      <div className="absolute top-0 left-0 w-28 h-full bg-gradient-to-r from-[#1D2943] to-transparent pointer-events-none z-10"></div>
-      <div className="absolute top-0 right-0 w-28 h-full bg-gradient-to-l from-[#1D2943] to-transparent pointer-events-none z-10"></div>
+      <div className="absolute top-0 left-0 w-28 h-full bg-gradient-to-r dark:from-[#1D2943] from-[#f6f6f6] to-transparent pointer-events-none z-10"></div>
+      <div className="absolute top-0 right-0 w-28 h-full bg-gradient-to-l dark:from-[#1D2943] from-[#f6f6f6] to-transparent pointer-events-none z-10"></div>
     </div>
   );
 };

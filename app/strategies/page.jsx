@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "./strategiesPage.css";
-import { MainButton } from "@/app/components/buttons/mainButton";
-import strategiesIntroImg from "@/public/assets/img/strategiesIntroImg.png";
+import { CTAButton, MainButton } from "@/app/components/buttons/mainButton";
+import strategiesIntroImg from "@/public/assets/img/images/strategieHeroImage.jpg";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
 
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
@@ -34,10 +34,11 @@ const StrategiesPage = () => {
               into the risk and rewards of the specific strategy.
             </p>
             <Link href="?modal=true">
-              <MainButton
-                className="w-[100%] md:w-fit"
+              <CTAButton
+                className="w-[100%] md:w-fit px-8 py-4"
                 label="LAUNCH APP"
                 hasArrowRight={true}
+                typographyClass="text-[15px]"
               />
             </Link>
           </div>
@@ -60,10 +61,11 @@ const StrategiesPage = () => {
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true">
-              <MainButton
-                className="mx-auto"
+              <CTAButton
+                className="mx-auto px-8 py-4"
                 label="LAUNCH APP"
                 hasArrowRight={true}
+                typographyClass="text-[15px]"
               />
             </Link>
           </div>
@@ -80,17 +82,23 @@ const StrategiesPage = () => {
               Do you want to learn more about strategies?
             </h1>
             <p className="max-w-2xl text-[13px] md:leading-6 sm:text-[17px] leading-4 md:text-left text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Our vibrant community is on a mission to discuss and explore a
+              breadth of mainstream and unique strategic approaches through
+              DeltaPrime. Join our community discussions on Discord and discover
+              new approaches, learn from seasoned traders as well as share your
+              own experiences.
             </p>
             <div className="mt-10 md:w-fit w-full">
-              <MainButton
-                className={"md:w-fit w-full"}
-                hasArrowRight={true}
-                label={"lEARN MORE"}
-              />
+              <Link
+                href={"https://discord.com/invite/9bwsnsHEzD"}
+                target="_blank"
+              >
+                <MainButton
+                  className={"md:w-fit w-full"}
+                  hasArrowRight={true}
+                  label={"Join the discussion"}
+                />
+              </Link>
             </div>
           </div>
           {/* Image burd */}

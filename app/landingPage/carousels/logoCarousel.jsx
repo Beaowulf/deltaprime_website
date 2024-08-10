@@ -38,8 +38,8 @@ const CarouselComponent = () => {
         breakpoints={{
           150: { slidesPerView: 2, spaceBetween: 10 },
           640: { slidesPerView: 3, spaceBetween: 10 },
-          840: { slidesPerView: 6, spaceBetween: 20 },
-          1024: { slidesPerView: 8, spaceBetween: 20 },
+          840: { slidesPerView: 5, spaceBetween: 20 },
+          1125: { slidesPerView: 6, spaceBetween: 20 },
         }}
         modules={[Autoplay]}
         className="w-full h-[150px] z-0 pt-4"
@@ -47,7 +47,7 @@ const CarouselComponent = () => {
         {logoCarouselItems.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <Link href={`${item.link}`}>
+              <Link target="_blank" href={`${item.link}`}>
                 <div
                   className={`bg-[white] p-1 md:p-4 rounded-[20px] flex justify-center logoWrapper ${
                     theme === "dark"

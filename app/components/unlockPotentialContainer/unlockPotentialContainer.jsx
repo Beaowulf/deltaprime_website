@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { MainButton } from "@/app/components/buttons/mainButton";
+import { CTAButton } from "@/app/components/buttons/mainButton";
 import "./unlockPotentialContainer.css";
 
 const UnlockPotentialContainer = ({ hasMarginTop = true }) => {
@@ -27,10 +27,12 @@ const UnlockPotentialContainer = ({ hasMarginTop = true }) => {
             Unlock the full potential of your capital
           </h5>
           <Link href="?modal=true">
-            <MainButton
+            <CTAButton
               onClick={openModal}
               label="LAUNCH APP"
               hasArrowRight={true}
+              className="px-8 py-4"
+              typographyClass="text-[15px]"
             />
           </Link>
         </div>

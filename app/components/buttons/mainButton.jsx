@@ -8,6 +8,8 @@ import { ArrowRightWhite } from "@/app/components/icons/arrowRight";
 import ArrowRight from "@/app/components/icons/arrowRight";
 import { useRouter } from "next/navigation";
 
+// Who ever works on this file, I am sorry :D this is bad code, but I am not going to refactor it :D
+
 export function MainButton({
   label,
   href,
@@ -105,21 +107,13 @@ export function AboutButtonDarkBG({
   label,
   onClick,
   hasArrowRight = false,
-  hasWhiteArrowRight = false,
 }) {
   return (
     <button className={`${customClass} aboutButtonDarkBG`} onClick={onClick}>
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         <p className="buttonLightModeText min-w-fit">{label}</p>
         {hasArrowRight && (
-          <Image
-            className="size-5 rightArrowAboutBtn"
-            src={ArrowRightBlack}
-            alt="Arrow Right"
-          />
-        )}
-        {hasWhiteArrowRight && (
-          <ArrowRightWhite className="size-5 rightArrowAboutBtn" />
+          <ArrowRight className="size-5 rightArrowAboutBtn" alt="Arrow Right" />
         )}
       </div>
     </button>
@@ -161,6 +155,52 @@ export function ContactUsButton({ label, onClick }) {
             alt="Arrow Right"
           />
         )}
+      </div>
+    </button>
+  );
+}
+
+// I dont know why there are so many buttons, but I am not going to refactor this file :D read line 11
+// I am sorry :D
+export function CTAButton({
+  typographyClass,
+  className,
+  label,
+  hasArrowRight = true,
+}) {
+  return (
+    <button className="ctaButtonBorder">
+      <div
+        className={`${
+          className
+            ? `${className} ctaButtonWrapper`
+            : "ctaButtonWrapper md:py-[10px] md:px-5 py-[18px] px-[20px] h-[30px] md:h-full"
+        }`}
+      >
+        <h6
+          className={`${
+            typographyClass
+              ? `${typographyClass} ctaButtonText font-bold uppercase text-white text-nowrap`
+              : "ctaButtonText text-[13px] font-bold uppercase text-white text-nowrap"
+          }`}
+        >
+          {label}
+        </h6>
+        {hasArrowRight && (
+          <ArrowRight className="w-4 h-4 md:w-5 md:h-5" alt={"Arrow Right"} />
+        )}
+      </div>
+    </button>
+  );
+}
+
+export function BlogButton({ onClick, label }) {
+  return (
+    <button onClick={onClick} className="blogButtonWrapper">
+      <div className="blogButtonContent w-full h-[45px] md:h-full p-4">
+        <h6 className="text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText">
+          {label}
+        </h6>
       </div>
     </button>
   );

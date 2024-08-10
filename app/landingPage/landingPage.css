@@ -178,7 +178,7 @@
   opacity: 1;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 770px) {
   .content-image {
     width: 72vw;
     margin-bottom: 40px;

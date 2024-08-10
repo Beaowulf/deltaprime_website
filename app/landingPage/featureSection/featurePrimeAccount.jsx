@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { MainButton } from "@/app/components/buttons/mainButton";
+import { CTAButton } from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
 
 // Dark themed assets
@@ -22,7 +22,7 @@ import circleLightTheme from "@/public/assets/icons/circleLightTheme.svg";
 
 const TopPartDarkTheme = () => {
   return (
-    <div className="w-full rounded-t-[25px] bg-[rgba(255,255,255,0.25)] flex items-center justify-start">
+    <div className="pl-2 w-full rounded-t-[25px] bg-[#EFEFF6] flex items-center justify-start">
       <div className="flex flex-row gap-1 ml-4 my-2">
         <Image src={circleDarkTheme} alt="colored_circle_dark_theme" />
         <Image src={circleDarkTheme} alt="colored_circle_dark_theme" />
@@ -34,7 +34,7 @@ const TopPartDarkTheme = () => {
 
 const TopPartLightTheme = () => {
   return (
-    <div className="w-full rounded-t-[25px] bg-[#EFEFF6] topPartLightThemeShadow flex items-center justify-start">
+    <div className="pl-2 w-full rounded-t-[25px] bg-[#EFEFF6] topPartLightThemeShadow flex items-center justify-start">
       <div className="flex flex-row gap-1 ml-4 my-2">
         <Image src={circleLightTheme} alt="colored_circle_dark_theme" />
         <Image src={circleLightTheme} alt="colored_circle_dark_theme" />
@@ -89,7 +89,7 @@ const FeaturePrimeAccountSection = () => {
                   Deposit collateral
                 </p>
               </div>
-              <div>
+              <div className="mt-auto bg-[#EFEFF6] rounded-t-[25px]">
                 {theme === "dark" ? (
                   <TopPartDarkTheme />
                 ) : (
@@ -183,10 +183,11 @@ const FeaturePrimeAccountSection = () => {
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
         <Link href="?modal=true">
-          <MainButton
-            className="mx-auto"
+          <CTAButton
+            className="mx-auto px-8 py-4"
             label="LAUNCH APP"
             hasArrowRight={true}
+            typographyClass="text-[15px]"
           />
         </Link>
       </div>

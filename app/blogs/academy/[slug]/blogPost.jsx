@@ -20,7 +20,7 @@ import CryptoPreviewTables from "@/app/components/cryptoTables/cryptoTables";
 import adImg from "@/public/assets/img/adImg.png";
 import {
   AboutButtonDarkBG,
-  MainButton,
+  CTAButton,
 } from "@/app/components/buttons/mainButton";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 
@@ -38,7 +38,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
       };
       fetchData();
     }
-  }, [blogData, blog.slug]);
+  }, [blogData, blogData.slug]);
 
   if (!blogData) {
     return <div></div>;
@@ -115,7 +115,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
   const heroImage = blogData.blogImage.fields.file.url;
 
   return (
-    <div>
+    <div key={blogData.slug}>
       <DynamicPurpleBar inBlogPost={true} title={blogData.blogTitle} />
       {/* BIG TWO SECTION WRAPPER */}
 
@@ -231,10 +231,11 @@ const BlogPost = ({ blog, blogPreviewData }) => {
             </div>
             <div className="fullWidthButtonChildren h-[60px] mt-12 md:h-full block md:hidden w-full text-center">
               <Link href="?modal=true">
-                <MainButton
+                <CTAButton
                   className="mx-auto w-full p-4"
                   label="LAUNCH APP"
                   hasArrowRight={true}
+                  typographyClass="text-[15px]"
                 />
               </Link>
             </div>
@@ -242,7 +243,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         </div>
 
         <div className="hidden md:block md:w-3/12">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 sticky top-32">
             <div className="bg-white p-4 md:p-10 rounded-[20px]">
               <p className="font-bold leading-6 uppercase text-[18px] text-[#252948]">
                 Table of contents
@@ -295,11 +296,8 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         <div className="hidden md:block bg-[#A79DFF] w-screen mt-28 h-1" />
         <div className="px-8">
           <Header
-            title={"Blog"}
             subTitle={"Related Articles"}
-            paragraph={
-              "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
-            }
+            paragraph={"Follow Burd on a journey of knowledge and discovery."}
           />
         </div>
 

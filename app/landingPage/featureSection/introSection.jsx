@@ -3,7 +3,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { MainButton } from "@/app/components/buttons/mainButton";
+import { CTAButton } from "@/app/components/buttons/mainButton";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import { AnimatedText } from "@/app/ui/animatedText";
 
@@ -57,17 +57,22 @@ const IntroSection = ({ totalTvl }) => {
     <div className="pagePaddingLarge">
       <div className="mx-auto">
         {/* Top Intro Part (Text and video) */}
-        <div className="flex flex-col md:flex-row justify-between gap-20 p-4 items-center">
+        <div className="flex flex-col lg:flex-row justify-between gap-20 p-4 items-center">
           {/* Left side (text with pill) */}
           <TextWithPill totalTvl={totalTvl} />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren block sm:hidden">
             <Link href="?modal=true">
-              <MainButton label="LAUNCH APP" hasArrowRight={true} />
+              <CTAButton
+                label="LAUNCH APP"
+                hasArrowRight={true}
+                className="py-5"
+                typographyClass="text-[15px]"
+              />
             </Link>
           </div>
           {/* Right side (video player) */}
-          <div className="flex-shrink-0">
+          <div className="">
             <VideoPlayer />
           </div>
         </div>

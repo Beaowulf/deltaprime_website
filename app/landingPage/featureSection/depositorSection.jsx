@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import "../landingPage.css";
 import Link from "next/link";
-import { MainButton } from "@/app/components/buttons/mainButton";
+import { CTAButton } from "@/app/components/buttons/mainButton";
 import { CryptoLandingPageTables } from "@/app/components/cryptoTables/cryptoTables";
 import large3DLogo from "@/public/assets/img/logo_3D_large.png";
 import piggyBank3DLarge from "@/public/assets/img/piggyBankLarge3D.png";
@@ -71,9 +71,9 @@ const FeaturePrimeAccount = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-4/12 w-full md:block hidden`}
           >
-            <div className="place-items-center rounded-[20px] h-full z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden flex">
+            <div className="justify-center p-2 rounded-[20px] h-full z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden flex">
               <Image
-                className="m-auto w-full h-full"
+                className="m-auto object-contain"
                 src={large3DLogo}
                 alt="3d_purple_DeltaPrime_logo"
               />
@@ -89,7 +89,7 @@ const FeaturePrimeAccount = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-1/2 w-full`}
           >
-            <div className="flex md:items-end items-center rounded-[20px] md:px-10 pl-4 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden md:h-[300px] h-[220px]">
+            <div className="flex md:items-end items-center rounded-[20px] md:pl-10 md:pr-4 pl-4 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden md:h-[300px] h-[220px]">
               <div className="mb-11">
                 {theme === "dark" ? (
                   <Image src={RoundedTwoDarkThemed} alt="Rounded_Number_One" />
@@ -100,9 +100,9 @@ const FeaturePrimeAccount = () => {
                   Borrowers pay interest, which is autocompounded
                 </p>
               </div>
-              <div className="h-full w-full">
+              <div className="h-full w-full flex justify-center">
                 <Image
-                  className="h-full w-auto object-contain"
+                  className="object-contain"
                   src={piggyBank3DLarge}
                   alt="large_3D_purple_piggybank"
                 />
@@ -130,14 +130,16 @@ const FeaturePrimeAccount = () => {
                     alt="Rounded_Number_One"
                   />
                 )}
-                <p className="featureCardTitle mt-2 dark:text-white text-[#252948] ">
+                <p className="featureCardTitle mt-2 dark:text-white text-[#252948] max-w-[15rem]">
                   Withdraw whenever you want
                 </p>
               </div>
-              <div className="">
-                <div>
-                  <Image src={dollarSign3D} alt="dollar_Sign_3D" />
-                </div>
+              <div className="h-full w-full flex justify-center">
+                <Image
+                  className="object-contain"
+                  src={dollarSign3D}
+                  alt="dollar_Sign_3D"
+                />
               </div>
             </div>
           </div>
@@ -146,20 +148,22 @@ const FeaturePrimeAccount = () => {
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
         <Link href="?modal=true">
-          <MainButton
-            className="mx-auto"
+          <CTAButton
+            className="mx-auto px-8 py-4"
             label="LAUNCH APP"
             hasArrowRight={true}
+            typographyClass="text-[15px]"
           />
         </Link>
       </div>
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
         <Link href="?modal=true">
-          <MainButton
-            className="mx-auto"
+          <CTAButton
+            className="mx-auto px-8 py-4"
             label="LAUNCH APP"
             hasArrowRight={true}
+            typographyClass="text-[15px]"
           />
         </Link>
       </div>

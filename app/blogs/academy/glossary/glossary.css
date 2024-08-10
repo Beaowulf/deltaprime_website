@@ -34,8 +34,7 @@
 }
 
 .glossaryContent {
-  border-radius: 23px;
-  background: transparent;
+  border-radius: 25px;
   position: relative;
   z-index: 1;
 }

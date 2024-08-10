@@ -5,7 +5,7 @@ import "./ourStory.css";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
-import { MainButton } from "@/app/components/buttons/mainButton";
+import { CTAButton, MainButton } from "@/app/components/buttons/mainButton";
 import ourStoryIntroImg from "@/public/assets/img/introOurStoryImage.png";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
 import whyDeltaPrimeImg from "@/public/assets/img/whyDeltaPrimeImg.jpg";
@@ -47,10 +47,11 @@ const OurStory = () => {
               </p>
               <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden w-full text-left">
                 <Link href="?modal=true">
-                  <MainButton
-                    className="w-[100%] md:w-fit"
+                  <CTAButton
+                    className="w-[100%] md:w-fit px-8 py-4"
                     label="LAUNCH APP"
                     hasArrowRight={true}
+                    typographyClass="text-[15px]"
                   />
                 </Link>
               </div>
@@ -106,10 +107,11 @@ const OurStory = () => {
         </div>
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
           <Link href="?modal=true">
-            <MainButton
-              className="mx-auto"
+            <CTAButton
+              className="mx-auto px-8 py-4"
               label="LAUNCH APP"
               hasArrowRight={true}
+              typographyClass="text-[15px]"
             />
           </Link>
         </div>
@@ -196,10 +198,11 @@ const OurStory = () => {
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true">
-              <MainButton
-                className="mx-auto"
+              <CTAButton
+                className="mx-auto px-8 py-4"
                 label="LAUNCH APP"
                 hasArrowRight={true}
+                typographyClass="text-[15px]"
               />
             </Link>
           </div>
@@ -247,10 +250,11 @@ const OurStory = () => {
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true">
-              <MainButton
-                className="mx-auto"
+              <CTAButton
+                className="mx-auto px-8 py-4"
                 label="LAUNCH APP"
                 hasArrowRight={true}
+                typographyClass="text-[15px]"
               />
             </Link>
           </div>
@@ -327,7 +331,7 @@ const OurStory = () => {
                     <Link href={"/jobDescription"}>
                       <AboutButtonDarkBG
                         label={"Learn More"}
-                        hasWhiteArrowRight={true}
+                        hasArrowRight={true}
                       />
                     </Link>
                   </div>

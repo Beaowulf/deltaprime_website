@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { Transition } from "@headlessui/react";
 import { Logo, MobileMenuLogo } from "@/app/components/logo/logo";
 import ThemeSwitch from "@/app/components/themeToggler/themeToggler";
-import { NavBarButton } from "@/app/components/buttons/mainButton";
+import { NavBarButton, CTAButton } from "@/app/components/buttons/mainButton";
 import hamburgerIconWhite from "@/public/assets/icons/hamburgerIconWhite.svg";
 import hamburgerIconBlack from "@/public/assets/icons/hamburgerIconBlack.svg";
 import closeIconBlack from "@/public/assets/icons/closeIconBlack.svg";
@@ -48,103 +48,100 @@ function Nav() {
   return (
     <div
       className={`pagePaddingLarge ${
-        isScrolled ? "sticky top-0 bg-white dark:bg-gray-900 shadow-md" : ""
+        isScrolled &&
+        "sticky top-0 bg-white dark:bg-[#252948] shadow-md z-[1000] transition-all duration-300"
       }`}
     >
-      <nav className="md:mb-40 mb-10 mt-4">
-        <div className="">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex justify-center items-center gap-8">
-              <Logo />
-              <div className="ml-4 hidden md:block">
-                <ThemeSwitch />
-              </div>
+      <nav
+        className={`md:mb-40 mb-10 pt-4 transition-all duration-300 ${
+          isScrolled && "py-4"
+        }`}
+      >
+        <div className="flex items-center justify-between h-16">
+          <div className="flex justify-center items-center gap-8">
+            <Logo />
+            <div className="ml-4 hidden md:block">
+              <ThemeSwitch />
             </div>
-            <div className="hidden md:block">
-              <div className="ml-8 flex items-baseline space-x-4">
-                <div className="text-center">
-                  <Link
-                    href="/ourStory"
-                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium"
-                  >
-                    Our Story
-                  </Link>
-                  <div
-                    className={getLinkClass(
-                      "/ourStory",
-                      pathname,
-                      resolvedTheme
-                    )}
-                  />
-                </div>
-                <DropDownStrategyLoader
-                  pathname={pathname}
-                  resolvedTheme={resolvedTheme}
-                  getLinkClass={getLinkClass}
+          </div>
+          <div className="hidden md:block">
+            <div className="lg:ml-8 flex items-baseline space-x-4">
+              <div className="text-center">
+                <Link
+                  href="/ourStory"
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium text-nowrap"
+                >
+                  Our Story
+                </Link>
+                <div
+                  className={getLinkClass("/ourStory", pathname, resolvedTheme)}
                 />
-
-                <DropDownBlogLoader
-                  pathname={pathname}
-                  resolvedTheme={resolvedTheme}
-                  getLinkClass={getLinkClass}
-                />
-
-                <div className="text-center">
-                  <Link
-                    href="/contactUs"
-                    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium md:hidden lg:block"
-                  >
-                    Contact Us
-                  </Link>
-                  <div
-                    className={getLinkClass(
-                      "/contactUs",
-                      pathname,
-                      resolvedTheme
-                    )}
-                  />
-                </div>
               </div>
-            </div>
-            <div className="hidden md:flex items-center">
-              <Link href="?modal=true">
-                <NavBarButton label={"Launch app"} />
-              </Link>
-            </div>
-
-            <div className="-mr-2 flex md:hidden items-center gap-4">
-              <NavBarButton
-                hasBorder={false}
-                typographyClass="text-[12px]"
-                label={"Launch app"}
-                className="sm:hidden block w-fit h-[25px] md:h-[35px] whitespace-nowrap dark:text-black text-white"
+              <DropDownStrategyLoader
+                pathname={pathname}
+                resolvedTheme={resolvedTheme}
+                getLinkClass={getLinkClass}
               />
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                type="button"
-                className={`bg-transparent inline-flex items-center justify-center rounded-md text-gray-400 hover:text-white menu-icon ${
-                  isOpen ? "open" : ""
-                }`}
-                aria-controls="mobile-menu"
-                aria-expanded={isOpen}
-              >
-                {resolvedTheme === "dark" ? (
-                  <Image
-                    src={hamburgerIconWhite}
-                    alt="menu_icon"
-                    width={30}
-                    height={30}
-                  />
-                ) : (
-                  <Image
-                    src={hamburgerIconBlack}
-                    alt="menu_icon"
-                    width={30}
-                    height={30}
-                  />
-                )}
-              </button>
+
+              <DropDownBlogLoader
+                pathname={pathname}
+                resolvedTheme={resolvedTheme}
+                getLinkClass={getLinkClass}
+              />
+
+              <div className="text-center">
+                <Link
+                  href="/contactUs"
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium md:hidden lg:block"
+                >
+                  Contact Us
+                </Link>
+                <div
+                  className={getLinkClass(
+                    "/contactUs",
+                    pathname,
+                    resolvedTheme
+                  )}
+                />
+              </div>
             </div>
+          </div>
+          <div className="hidden md:flex items-center">
+            <Link href="?modal=true">
+              <CTAButton label={"Launch app"} />
+            </Link>
+          </div>
+
+          <div className="-mr-2 flex md:hidden items-center gap-4">
+            <CTAButton
+              label={"Launch app"}
+              className="sm:hidden block whitespace-nowrap px-5 py-3"
+            />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              type="button"
+              className={`bg-transparent inline-flex items-center justify-center rounded-md text-gray-400 hover:text-white menu-icon ${
+                isOpen ? "open" : ""
+              }`}
+              aria-controls="mobile-menu"
+              aria-expanded={isOpen}
+            >
+              {resolvedTheme === "dark" ? (
+                <Image
+                  src={hamburgerIconWhite}
+                  alt="menu_icon"
+                  width={30}
+                  height={30}
+                />
+              ) : (
+                <Image
+                  src={hamburgerIconBlack}
+                  alt="menu_icon"
+                  width={30}
+                  height={30}
+                />
+              )}
+            </button>
           </div>
         </div>
 

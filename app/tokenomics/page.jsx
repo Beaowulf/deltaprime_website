@@ -187,7 +187,7 @@ const Tokenomics = () => {
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
               <Image
-                src={primeFeatures}
+                src={protocolRevenue}
                 alt="Access PRIME Features"
                 className="h-auto w-auto"
               />
@@ -197,12 +197,12 @@ const Tokenomics = () => {
             </div>
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
               <Image
-                src={protocolRevenue}
+                src={primeFeatures}
                 alt="Claim a share of 33% of protocol revenue"
                 className="h-auto w-auto"
               />
               <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px]">
-                Claim a share of 33% of protocol revenue
+                Claim a share of the liquidation fees
               </p>
             </div>
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
@@ -254,7 +254,7 @@ const Tokenomics = () => {
               </li>
               <li>
                 An incentive to provide to the $PRIME liquidity pool and be
-                rewarded with a share from 33% of the protocol total revenue.
+                rewarded with a share of the protocol’s liquidation fees.
               </li>
               <li>A token to gain governance power.</li>
             </ul>
@@ -291,7 +291,7 @@ const Tokenomics = () => {
                 When the provided liquidity is within the concentrated liquidity
                 price range at which the token is traded, the $sPRIME is
                 considered active. Active $sPRIME holders are eligible to
-                receive a share from 33% of the protocol’s total revenue. This
+                receive a share of the protocol’s liquidation fees. This
                 incentivizes liquidity provision and ensures its depth. Having a
                 deep liquidity pool means that large buys and sells do not have
                 a big impact on the price. At the same time, $sPRIME can be used
@@ -301,12 +301,12 @@ const Tokenomics = () => {
                 <br />
                 Idle $sPRIME is the share in the pool that does not fall within
                 the price range at which the token is traded within a period of
-                time. Idle $sPRIME does not receive a share from the protocol
-                revenue. This incentivises liquidity providers to rebalance
-                their assets to an active price range position. Doing this means
-                that impermanent loss may be realized. However, their $sPRIME
-                becomes active again and thus the LP is granted the
-                aforementioned rewards, countering realized loss.
+                time. Idle $sPRIME does not receive a share Of the liquidation
+                fees. This incentivises liquidity providers to rebalance their
+                assets to an active price range position. Doing this means that
+                impermanent loss may be realized. However, their $sPRIME becomes
+                active again and thus the LP is granted the aforementioned
+                rewards, countering realized loss.
                 <br />
                 <br />
                 Not only liquidity providers can gain rewards though. Eligible
@@ -330,7 +330,7 @@ const Tokenomics = () => {
           The Difference Between Unlocked <br />
           and Locked $sPRIME
         </p>
-        <p className="whiteMainText text-wrap max-w-[60rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
+        <p className="whiteMainText text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
           $sPRIME is designed to counter impermanent loss that liquidity
           providers often suffer from but also reward the community members who
           are most active on the platform. To incentivize and reward the most
@@ -342,7 +342,7 @@ const Tokenomics = () => {
       <TokenomicsCards />
 
       <div>
-        <p className="whiteMainText text-wrap max-w-[60rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
+        <p className="whiteMainText text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
           The way locked $sPRIME is created acts as a way to incentivize users
           to use the protocol, but also as means to reduce idle COL capital.
           Idle COL capital is the COL-derived capital providing liquidity for

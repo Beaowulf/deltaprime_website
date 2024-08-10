@@ -144,7 +144,13 @@ const DropdownMenu = ({
         exit="exit"
         className={className}
       >
-        <div className="p-5 pl-1 flex flex-row gap-4 w-full h-full bg-gradient-to-b from-[#1b153c] from-10% via-[#1c2943] via-50% to-[#301e3e] to-80% rounded boxContainer">
+        <div
+          className={`p-5 pl-1 flex flex-row gap-4 w-full h-full rounded boxContainer ${
+            resolvedTheme === "dark"
+              ? "bg-gradient-to-b from-[#1b153c] from-10% via-[#1c2943] via-50% to-[#301e3e] to-80%"
+              : "bg-gradient-to-b from-[#F4F4FF] to-[#E8E8F2] shadow-lg dark:shadow-none shadow-[#ff5fa240]"
+          }`}
+        >
           <Image
             src={boxImage}
             alt="bird_carrying_book_img"
@@ -156,10 +162,10 @@ const DropdownMenu = ({
               href={`/strategies/${strategy.strategySYS.id}`}
               className="font-semibold pt-4 text-white  !z-50"
             >
-              <p className="w-fit font-bold text-[12px] mb-2">
+              <p className="w-fit font-bold text-[12px] mb-2 dark:text-[#fff] text-[#252948]">
                 {strategy.strategyTitle}
               </p>
-              <p className="whitespace-nowrap overflow-hidden text-ellipsis max-w-[100px] font-semibold text-[10px] mb-2">
+              <p className="whitespace-nowrap overflow-hidden text-ellipsis max-w-[100px] font-semibold text-[10px] mb-2 dark:text-[#fff] text-[#252948]">
                 {strategy.strategyDescription}
               </p>
             </Link>
@@ -217,7 +223,9 @@ const DropdownMenu = ({
               exit="hidden"
               className={`dropdown-menu absolute 2xl:left-[-35rem] lg:left-[-35rem] ${
                 isStrategy ? "left-[-19rem]" : "left-[-25rem]"
-              } top-[5rem] lg:top-[2.5rem] mt-2 lg:w-[65rem] w-[35rem] bg-[#000F38] border-[2px] scale-[1.01] box-border p-2 border-[#fff] rounded-2xl shadow-lg z-[1000]`}
+              } top-[5rem] lg:top-[2.5rem] mt-2 lg:w-[65rem] w-[35rem] ${
+                resolvedTheme === "dark" ? "bg-[#000F38]" : "bg-[#F6F6F6]"
+              } border-[3px] scale-[1.01] box-border p-2 dark:border-[#fff] border-[#000F38] rounded-2xl shadow-lg z-[1000]`}
             >
               <div className="p-4 flex items-center justify-between flex-wrap  ">
                 <div className="flex flex-col justify-center items-center mb-4 lg:mb-0 lg:items-start gap-5 text-white lg:pr-[5rem] max-w-[25rem] mx-auto lg:mx-0 ">
@@ -226,7 +234,7 @@ const DropdownMenu = ({
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="mb-2 brightTitle text-[25px]"
+                    className="mb-2 brightTitle text-[25px] dark:text-[#fff] text-[#252948]"
                   >
                     {boxTitle}
                   </motion.p>
@@ -235,7 +243,7 @@ const DropdownMenu = ({
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="mb-2 text-[15px]"
+                    className="mb-2 text-[15px] dark:text-[#fff] text-[#252948]"
                   >
                     {boxText}
                   </motion.p>
@@ -244,7 +252,7 @@ const DropdownMenu = ({
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="mb-2 text-[15px]"
+                    className="mb-2 text-[15px] dark:text-[#fff] text-[#252948]"
                   >
                     <Link
                       className="mb-2 text-[15px] underline hover:text-gray-400"
