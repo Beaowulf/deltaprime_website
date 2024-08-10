@@ -60,12 +60,6 @@ export function FooterTextLinks() {
           <Link href="/burdLog" className="block hover:text-gray-400 text-sm">
             Burd Log
           </Link>
-          <Link href="/" className="block hover:text-gray-400 text-sm">
-            Docs
-          </Link>
-          <Link href="/" className="block hover:text-gray-400 text-sm">
-            Careers
-          </Link>
         </div>
         <div className="block md:hidden my-10 footerTextLinksVerticalLine"></div>
         <div className="hidden md:block mx-0  md:mx-16 footerTextLinksLine"></div>
@@ -80,7 +74,7 @@ export function FooterTextLinks() {
             Careers
           </Link>
           <Link href="/use-cases" className="block hover:text-gray-400 text-sm">
-            How To guides
+            How To Guides
           </Link>
           <Link
             href="/tokenomics"

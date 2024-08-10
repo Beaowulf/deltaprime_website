@@ -197,7 +197,7 @@ const Tokenomics = () => {
             </div>
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
               <Image
-                src={primeFeatures}
+                src={governancePower}
                 alt="Claim a share of 33% of protocol revenue"
                 className="h-auto w-auto"
               />
@@ -207,7 +207,7 @@ const Tokenomics = () => {
             </div>
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
               <Image
-                src={governancePower}
+                src={primeFeatures}
                 alt="Accrue Governance Power points"
                 className="h-auto w-auto"
               />
@@ -291,17 +291,17 @@ const Tokenomics = () => {
                 When the provided liquidity is within the concentrated liquidity
                 price range at which the token is traded, the $sPRIME is
                 considered active. Active $sPRIME holders are eligible to
-                receive a share of the protocol’s liquidation fees. This
-                incentivizes liquidity provision and ensures its depth. Having a
-                deep liquidity pool means that large buys and sells do not have
-                a big impact on the price. At the same time, $sPRIME can be used
-                to pay for any current and future features of the DeltaPrime
-                ecosystem, regardless of being active or idle.
+                receive a share from 33% of the protocol's liquidation fees.
+                This incentivizes liquidity provision and ensures its depth.
+                Having a deep liquidity pool means that large buys and sells do
+                not have a big impact on the price. At the same time, $sPRIME
+                can be used to pay for any current and future features of the
+                DeltaPrime ecosystem, regardless of being active or idle.
                 <br />
                 <br />
                 Idle $sPRIME is the share in the pool that does not fall within
                 the price range at which the token is traded within a period of
-                time. Idle $sPRIME does not receive a share Of the liquidation
+                time. Idle $sPRIME does not receive a share of the liquidation
                 fees. This incentivises liquidity providers to rebalance their
                 assets to an active price range position. Doing this means that
                 impermanent loss may be realized. However, their $sPRIME becomes
