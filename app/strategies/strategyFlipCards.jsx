@@ -55,7 +55,7 @@ export const StratDesktopFlipCards = ({ strategies }) => {
       {/* This component is hidden until the desired breakpoint */}
       <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {strategies.map((strategy, index) => (
-          <div key={strategy.strategyID} className="card p-4">
+          <div key={strategy.strategyID} className="card w-full">
             <FlipCard
               titleFront={strategy.strategyTitle}
               descriptionFront={strategy.strategyDescription}
