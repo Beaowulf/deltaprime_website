@@ -107,7 +107,6 @@ blending 2 of the images.
 .background_1-darkTheme,
 .background_1-lightTheme {
   transition: background 0.5s ease, color 0.5s ease;
-  overflow-x: hidden;
 }
 
 .background_1-darkTheme::before,

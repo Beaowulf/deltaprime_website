@@ -35,10 +35,6 @@ function OurTokenSection() {
                   />
                 </div>
                 <div>
-                  {" "}
-                  <h4 className="featureTitle text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
-                    OUR TOKENS
-                  </h4>
                   <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#252948]">
                     $sPRIME
                   </h1>
@@ -84,9 +80,6 @@ function OurTokenSection() {
                   />
                 </div>
                 <div>
-                  <h4 className="featureTitle text-[12px] sm:text-[15px] dark:text-[#FFF5F0] font-bold text-[#252948]">
-                    OUR TOKENS
-                  </h4>
                   <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#252948]">
                     $sPRIME
                   </h1>

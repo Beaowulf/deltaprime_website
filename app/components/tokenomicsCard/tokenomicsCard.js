@@ -39,7 +39,7 @@ const TokenomicsCards = () => (
     <Card
       icon={lockedIcon}
       title="Locked $sPRIME"
-      description="Is airdropped to users who fulfill certain criteria and reach specific achievements set by DeltaPrime. It also generates rewards from the liquidation fees. It can be used to pay for platform functionalities, but it cannot be used to retrieve assets from the liquidity pool."
+      description="Is airdropped to users who fulfill certain criteria and reach specific achievements set by DeltaPrime. It also generates rewards from the 33% share of the liquidation fees. It can be used to pay for platform functionalities, but it cannot be used to retrieve assets from the liquidity pool."
       href="/blogs"
     />
   </div>

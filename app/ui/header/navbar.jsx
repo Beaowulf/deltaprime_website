@@ -119,9 +119,11 @@ function Nav() {
             <CTAButton
               label={"Launch app"}
               hasArrowRight={false}
-
+            <Link href="?modal=true">
+              <CTAButton label={"Launch app"} />
               className="sm:hidden block whitespace-nowrap px-5 py-3"
-            />
+            </Link>
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
