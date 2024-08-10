@@ -5,7 +5,7 @@
 }
  */
 
-.topsidestrategies {
+ .topsidestrategies {
   position: relative;
   border-radius: 20px;
   display: flex;
@@ -33,6 +33,6 @@
   flex: 6;
 }
 
-.boxStrategyWrapper {
+.boxWrapper {
   flex: 2;
 }

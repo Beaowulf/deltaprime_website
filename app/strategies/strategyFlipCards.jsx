@@ -8,12 +8,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./strategiesPage.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import { useTheme } from "next-themes";
 import arrowLeftColored from "@/public/assets/icons/arrowBtnLeftColored.svg";
 import arrowRightColored from "@/public/assets/icons/arrowBtnRightColored.svg";
 
-export const ListText = ({ strategyID }) => {
+const ListText = ({ strategyID }) => {
   return (
     <div>
       <h4 className="text-[16px] leading-5 mb-6 font-bold">
@@ -63,9 +63,51 @@ export const StratDesktopFlipCards = ({ strategies }) => {
               isFirstCard={index === 0}
               listTextBack={<ListText strategyID={strategy.strategyID} />}
               titleBack={strategy.strategyTitle}
+              strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
+
             />
           </div>
         ))}
+        {/* <div className="card p-4">
+          <FlipCard
+            titleFront="The Fee Collector"
+            descriptionFront="Maximizes yield with limited price exposure"
+            difficultyLevel={1}
+            listTextBack={<ListText />}
+          />
+        </div>
+        <div className="card p-4">
+          <FlipCard
+            titleFront="The Carry Trader"
+            descriptionFront="Earns yield by depositing in higher-interest pools"
+            difficultyLevel={1}
+            listTextBack={<ListText />}
+          />
+        </div>
+        <div className="card p-4">
+          <FlipCard
+            titleFront="The Yielding Bull"
+            descriptionFront="Goes long on assets while accumulating yield"
+            difficultyLevel={3}
+            listTextBack={<ListText />}
+          />
+        </div>
+        <div className="card p-4">
+          <FlipCard
+            titleFront="The Fee Collector"
+            descriptionFront="Maximizes yield with limited price exposure"
+            difficultyLevel={1}
+            listTextBack={<ListText />}
+          />
+        </div>
+        <div className="card p-4">
+          <FlipCard
+            titleFront="The Carry Trader"
+            descriptionFront="Earns yield by depositing in higher-interest pools"
+            difficultyLevel={1}
+            listTextBack={<ListText />}
+          />
+        </div> */}
       </div>
     </div>
   );
@@ -95,8 +137,11 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
           slidesPerView={1}
           loop={true}
           pagination={{
-            el: ".custom-swiper-pagination", // Target your custom pagination container
+            el: ".swiper-pagination",
             clickable: true,
+            renderBullet: (index, className) => {
+              return `<div class="${className}"></div>`;
+            },
           }}
           className="swiper-container"
         >
@@ -108,24 +153,64 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
                 descriptionFront={strategy.strategyDescription}
                 difficultyLevel={strategy.difficultyLevel}
                 listTextBack={<ListText strategyID={strategy.strategyID} />}
+                strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
               />
             </SwiperSlide>
           ))}
+          {/* <SwiperSlide>
+            <FlipCard
+              titleFront="The Fee Collector"
+              descriptionFront="Maximizes yield with limited price exposure"
+              difficultyLevel={1}
+              listTextBack={<ListText />}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <FlipCard
+              titleFront="The Carry Trader"
+              descriptionFront="Earns yield by depositing in higher-interest pools"
+              difficultyLevel={1}
+              listTextBack={<ListText />}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <FlipCard
+              titleFront="The Yielding Bull"
+              descriptionFront="Goes long on assets while accumulating yield"
+              difficultyLevel={3}
+              listTextBack={<ListText />}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <FlipCard
+              titleFront="The Fee Collector"
+              descriptionFront="Maximizes yield with limited price exposure"
+              difficultyLevel={1}
+              listTextBack={<ListText />}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <FlipCard
+              titleFront="The Carry Trader"
+              descriptionFront="Earns yield by depositing in higher-interest pools"
+              difficultyLevel={1}
+              listTextBack={<ListText />}
+            />
+          </SwiperSlide> */}
         </Swiper>
 
         {/* Custom navigation and pagination */}
         <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[4rem]">
           <Image
             onClick={handlePrev}
-            className="swiper-button-prev custom-arrow"
+            className="size-5 swiper-button-prev custom-arrow"
             src={arrowLeftColored}
-            alt={"Arrow Left"}
+            alt={"Arrow Right"}
           />
-          <div className="custom-swiper-pagination swiper-pagination"></div>{" "}
-          {/* Custom pagination element */}
+          <div className="swiper-pagination"></div>
           <Image
             onClick={handleNext}
-            className="swiper-button-next custom-arrow"
+            className="size-5 swiper-button-next custom-arrow"
             src={arrowRightColored}
             alt={"Arrow Right"}
           />
@@ -135,7 +220,7 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
   );
 };
 
-export const FlipDesktopCarousel = ({ strategies }) => {
+export const DesktopCardCarousel = ({ strategies }) => {
   const sliderRef = useRef(null);
 
   const handlePrev = useCallback(() => {
@@ -149,26 +234,22 @@ export const FlipDesktopCarousel = ({ strategies }) => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-10 w-full mb-10 justify-center items-center">
-      <div className="w-full xl:w-[40rem]">
+    <>
+      {/* Swiper carousel for mobile view */}
+      <div className="flex flex-col gap-5 hidden md:block">
         <Swiper
           ref={sliderRef}
-          modules={[Pagination, Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          loop={false} // Set loop to false to avoid unexpected behaviors
-          breakpoints={{
-            640: { slidesPerView: 1 }, // 1 slide for mobile devices
-            768: { slidesPerView: 2 }, // 2 slides for tablets
-            1024: { slidesPerView: 1 }, // 3 slides for desktops
-          }}
+          modules={[Pagination]}
+          spaceBetween={10}
+          slidesPerView={3}
+          slidesPerGroup={3}
+          loop={true}
           pagination={{
-            el: ".custom-swiper-pagination",
+            el: ".swiper-pagination-desktop",
             clickable: true,
-          }}
-          navigation={{
-            prevEl: ".swiper-button-prev",
-            nextEl: ".swiper-button-next",
+            renderBullet: (index, className) => {
+              return `<div class="${className}"></div>`;
+            },
           }}
           className="swiper-container"
         >
@@ -180,28 +261,30 @@ export const FlipDesktopCarousel = ({ strategies }) => {
                 descriptionFront={strategy.strategyDescription}
                 difficultyLevel={strategy.difficultyLevel}
                 listTextBack={<ListText strategyID={strategy.strategyID} />}
+                strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
               />
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* Custom navigation and pagination */}
-        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[4rem] w-full">
+        <div className="custom-pagination-container-desktop flex justify-between items-center py-[30px] px-[4rem]">
           <Image
             onClick={handlePrev}
-            className="swiper-button-prev custom-arrow"
+            className="size-5 swiper-button-prev-desktop custom-arrow"
             src={arrowLeftColored}
             alt={"Arrow Left"}
           />
-          <div className="custom-swiper-pagination swiper-pagination"></div>
+          <div className="swiper-pagination-desktop"></div>
+
           <Image
             onClick={handleNext}
-            className="swiper-button-next custom-arrow"
+            className="size-5 swiper-button-next-desktop custom-arrow"
             src={arrowRightColored}
             alt={"Arrow Right"}
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };
