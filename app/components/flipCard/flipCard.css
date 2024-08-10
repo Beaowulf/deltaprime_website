@@ -38,10 +38,27 @@
   justify-content: end;
   align-items: center;
 }
+.background-image-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover; /* Ensure the image covers the full area */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center; /* Center the image */
+  opacity: 0.45; /* Apply the desired opacity */
+  width: 100%; /* Ensure full width */
+  height: 100%; /* Ensure full height */
+  border-radius: 20px;
+  z-index: -1; /* Ensure it is behind the content */
+}
+
+
 
 .innerCardWrapper::before {
   content: "";
-  background-image: url("../../../public/assets/img/flipCardBG.png");
+  /* background-image: url("../../../public/assets/img/flipCardBG.png"); */
   background-size: cover;
   position: absolute;
   top: 0px;

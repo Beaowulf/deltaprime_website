@@ -108,13 +108,18 @@ function Nav() {
           </div>
           <div className="hidden md:flex items-center">
             <Link href="?modal=true">
-              <CTAButton label={"Launch app"} />
+            <CTAButton
+              label="LAUNCH APP"
+              hasArrowRight={false}
+            />
             </Link>
           </div>
 
           <div className="-mr-2 flex md:hidden items-center gap-4">
             <CTAButton
               label={"Launch app"}
+              hasArrowRight={false}
+
               className="sm:hidden block whitespace-nowrap px-5 py-3"
             />
             <button

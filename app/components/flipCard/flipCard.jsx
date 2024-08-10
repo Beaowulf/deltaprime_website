@@ -12,6 +12,7 @@ const FlipCard = ({
   titleBack,
   descriptionBack,
   listTextBack,
+  strategyImage,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -45,6 +46,14 @@ const FlipCard = ({
         onClick={handleClick}
       >
         <div className="flip-card-inner">
+          <div
+            className="background-image-overlay"
+            style={{
+              backgroundImage: `url(${
+                strategyImage ? strategyImage : "/assets/img/flipCardBG.png"
+              })`,
+            }}
+          ></div>
           <div className="flip-card-front rounded-[20px] shadow-lg shadow-[#26283db7]">
             <div className="innerCardWrapper p-6 flex flex-col justify-end w-full h-full">
               <h4 className="text-white pb-3 font-extrabold text-[20px] leading-7">
@@ -68,9 +77,7 @@ const FlipCard = ({
               {titleBack ? titleBack : "Delta Neutral"}
             </h4>
             <p className="pb-6 font-bold text-[14px] leading-5 text-white">
-              {descriptionBack}Delta neutral portfolios are optimized for
-              loss-prevention. A delta neutral portfolio is not affected by
-              price changes of individual assets.
+              {descriptionBack}
             </p>
             <span className="border-t-2 border-t-[#FFBB9B] w-full mb-4 " />
             <div>{listTextBack}</div>
