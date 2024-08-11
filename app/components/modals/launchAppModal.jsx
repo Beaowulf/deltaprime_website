@@ -1,12 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import "./modals.css";
 import { fetchCryptoData } from "@/app/components/cryptoTables/cryptoData";
 import { useSearchParams, usePathname } from "next/navigation";
-import { MainButtonDarkBG } from "@/app/components/buttons/mainButton";
-import curvedArrowLeft from "@/public/assets/icons/curve_left.svg";
-import curvedArrowRight from "@/public/assets/icons/curve_right.svg";
-import closeIconBlack from "@/public/assets/icons/closeIconBlack.svg";
+import { CTAButton } from "@/app/components/buttons/mainButton";
+import closeIconColored from "@/public/assets/icons/closeIconColored.svg";
 import Link from "next/link";
 
 const LaunchAppModal = () => {
@@ -34,105 +33,118 @@ const LaunchAppModal = () => {
     <>
       {modal && (
         <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
-          <div className="modalParent">
-            <div className="absolute top-2 right-4 w-fit h-fit text-black cursor-pointer">
-              <Link href={pathname}>
+          <div className="modalParent relative z-10">
+            <div className="absolute top-2 right-4 w-fit h-fit text-black cursor-pointer z-50">
+              <Link className="z-100 cursor-pointer" href={pathname}>
                 <Image
-                  src={closeIconBlack}
+                  src={closeIconColored}
                   width={13}
                   height={13}
                   alt="close_X_Button"
                 />
               </Link>
             </div>
-            <div className="w-screen h-screen md:h-auto justify-center md:w-[650px] bg-[#f4f4ff] flex flex-col py-12 px-4 md:px-16 rounded-[20px] shadowModal">
-              <h4 className="leading-5 text-[32px] text-black text-center font-semibold">
+            <div className="w-screen h-screen md:h-auto md:w-fit justify-center bg-[#f4f4ff] flex flex-col py-20 px-4 md:px-14 rounded-[25px] shadowModal">
+              <h4 className="leading-5 text-[32px] text-[#252948] text-center font-medium mb-5">
                 Launch your App
               </h4>
-              <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-32 mt-8">
+              <div className="flex flex-col md:flex-row justify-center gap-4 mt-8">
                 {/* Left side */}
-                <div className="flex justify-center flex-col gap-1 items-center flex-1">
-                  <Image
-                    src={curvedArrowLeft}
-                    alt="curved_arrow_left"
-                    className="h-10 w-auto hidden md:block"
-                  />
-                  <div className="p-4 bg-white shadow-md shadow-gray-300 rounded-[20px]">
-                    <div className="featureBorderWrapLightTheme">
-                      <Link
-                        target="_blank"
-                        href="https://app.deltaprime.io/#/pools"
-                      >
-                        <MainButtonDarkBG label="Depositor" />
-                      </Link>
+                <div className="flex justify-center flex-col gap-1 items-center modalWrapper">
+                  <div className="modalContent">
+                    <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px]">
+                      <p className="mx-auto w-fit text-white font-bold">
+                        Depositor
+                      </p>
                     </div>
-                    <div className="flex flex-col justify-center pl-2">
-                      <div className="my-5">
-                        <p className="text-gray-800 font-bold">Arbitrum:</p>
-                        {loading ? (
-                          <div className="loader"></div>
-                        ) : (
-                          poolsData.arbitrum.map((pool, index) => (
-                            <p
-                              className="text-gray-800 font-medium text-[14px]"
-                              key={index}
-                            >
-                              {pool.symbol} {pool.apy.toFixed(1)}%
-                            </p>
-                          ))
-                        )}
+                    <div className="px-4 py-7 rounded-[20px]">
+                      <div className="flex gap-4 items-start justify-center mx-4">
+                        <div>
+                          <p className="text-[#6B70ED] font-bold">Arbitrum:</p>
+                          {loading ? (
+                            <div className="loader"></div>
+                          ) : (
+                            poolsData.arbitrum.map((pool, index) => (
+                              <p
+                                className="text-gray-800 font-medium text-[14px]"
+                                key={index}
+                              >
+                                {pool.symbol} {pool.apy.toFixed(1)}%
+                              </p>
+                            ))
+                          )}
+                        </div>
+                        <div>
+                          <p className="text-[#6B70ED] font-bold text-[16px]">
+                            Avalanche:
+                          </p>
+                          {loading ? (
+                            <div className="loader"></div>
+                          ) : (
+                            poolsData.avalanche.map((pool, index) => (
+                              <p
+                                className="text-gray-800 font-medium text-[14px]"
+                                key={index}
+                              >
+                                {pool.symbol} {pool.apy.toFixed(1)}%
+                              </p>
+                            ))
+                          )}
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-gray-800 font-bold text-[16px]">
-                          Avalanche:
-                        </p>
-                        {loading ? (
-                          <div className="loader"></div>
-                        ) : (
-                          poolsData.avalanche.map((pool, index) => (
-                            <p
-                              className="text-gray-800 font-medium text-[14px]"
-                              key={index}
-                            >
-                              {pool.symbol} {pool.apy.toFixed(1)}%
-                            </p>
-                          ))
-                        )}
+                    </div>
+                    <div className="featureBorderWrapLightTheme">
+                      <div className="flex justify-center items-center pb-4">
+                        <Link
+                          className="mx-auto"
+                          target="_blank"
+                          href="https://app.deltaprime.io/#/pools"
+                        >
+                          <CTAButton label="Launch App" />
+                        </Link>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className="w-fit flex place-items-center">
+                  <p className="text-[#252948] font-medium text-[32px]">OR</p>
+                </div>
+
                 {/* Right side */}
-                <div className="flex justify-start flex-col gap-1 items-center flex-1">
-                  <Image
-                    src={curvedArrowRight}
-                    alt="curved_arrow_right"
-                    className="h-10 w-auto hidden md:block"
-                  />
-                  <div className="p-4 bg-white shadow-md shadow-gray-300 rounded-[20px]">
-                    <div className="featureBorderWrapLightTheme">
-                      <Link
-                        target="_blank"
-                        href="https://app.deltaprime.io/#/prime-account/zaps"
-                      >
-                        <MainButtonDarkBG
-                          className="w-full"
-                          label="Prime Account"
-                        />
-                      </Link>
+                <div className="flex justify-center flex-col gap-1 items-center modalWrapper">
+                  <div className="modalContent">
+                    <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px]">
+                      <p className="mx-auto w-fit text-white font-bold">
+                        Borrower
+                      </p>
                     </div>
-                    <div className="mt-4 max-w-[200px]">
-                      <ul>
-                        <li className="text-gray-800 font-medium text-[14px]">
-                          <span>•</span> Borrow up to 5x
-                        </li>
-                        <li className="text-gray-800 font-medium text-[14px]">
-                          <span>•</span> Create your strategy{" "}
-                        </li>
-                        <li className="text-gray-800 font-medium text-[14px]">
-                          <span>•</span> With the best of DeFi
-                        </li>
-                      </ul>
+                    <div className="px-4 py-7 rounded-[20px]">
+                      <div className="flex gap-4 items-start justify-center mx-4">
+                        <div className="mt-4 max-w-[200px]">
+                          <ul>
+                            <li className="text-gray-800 font-medium text-[14px]">
+                              <span>•</span> Borrow up to 5x
+                            </li>
+                            <li className="text-gray-800 font-medium text-[14px]">
+                              <span>•</span> Create your strategy
+                            </li>
+                            <li className="text-gray-800 font-medium text-[14px]">
+                              <span>•</span> With the best of DeFi
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="featureBorderWrapLightTheme">
+                      <div className="flex justify-center items-center pb-4">
+                        <Link
+                          className="mx-auto"
+                          target="_blank"
+                          href="https://app.deltaprime.io/#/prime-account/zaps"
+                        >
+                          <CTAButton label="Launch App" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
