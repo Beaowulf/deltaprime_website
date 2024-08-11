@@ -487,6 +487,14 @@
 }
 
 .blogCardText {
+  transition: all 0.5s ease;
+}
+.blogButtonWrapper:hover .blogCardText {
+  background: linear-gradient(#fff, #fff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.blogCardText {
   background: -webkit-linear-gradient(#ffbb9b, #ff8fb8, #afafff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
