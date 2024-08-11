@@ -127,7 +127,7 @@ export const FlipCardMobileCarousel = ({ videos }) => {
         </Swiper>
 
         {/* Custom navigation and pagination */}
-        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[4rem]">
+        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[5rem]">
           <Image
             onClick={handlePrev}
             className="swiper-button-prev custom-arrow"

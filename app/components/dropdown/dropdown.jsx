@@ -151,9 +151,9 @@ const DropdownMenu = ({
         <a
           onClick={closeDropdown}
           href={`/strategies/${strategy.strategySYS.id}`}
-          className="font-semibold pt-4 text-white !z-50 menuStrategyBoxWrapper"
+          className="font-semibold pt-4 text-white !z-50 menuStrategyBoxWrapper rounded-[25px]"
         >
-          <div className="p-5 pl-1 flex flex-row gap-4 w-full h-full rounded boxContainer">
+          <div className="p-5 pl-1 flex flex-row gap-4 w-full h-full boxContainer rounded-[26px]">
             <Image
               src={boxImage}
               alt="bird_carrying_book_img"
@@ -179,7 +179,7 @@ const DropdownMenu = ({
         className="flex items-center cursor-pointer"
         onClick={toggleDropdown}
       >
-        <div className="mr-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium text-nowrap">
+        <div className="mr-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium">
           {menuText}
         </div>
         {isOpen ? (
@@ -268,7 +268,7 @@ const DropdownMenu = ({
                         key={i}
                         custom={i}
                         boxVariants={boxVariants}
-                        className="rounded boxWrapper"
+                        className="rounded-[25px] boxWrapper"
                         strategy={strategy}
                       />
                     ))}
