@@ -13,7 +13,7 @@ const BlogCard = ({
   blogSlug,
 }) => {
   return (
-    <div className="flex flex-col justify-start w-[380px] flex-shrink-0 gap-2">
+    <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
       <div className="w-full h-[270px] ">
         <img
           src={previewBlogImage}

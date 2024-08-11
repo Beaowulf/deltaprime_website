@@ -181,7 +181,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
       />
       {/* BIG TWO SECTION WRAPPER */}
 
-      <div className="flex flex-col lg:flex-row gap-10 mt-20 pagePaddingLarge">
+      <div className="flex flex-col lg:flex-row gap-10 mt-10 md:mt-20 pagePaddingLarge">
         {/* LEFT SIDE */}
         <div className="w-full lg:w-9/12">
           <div className="px-4 ">
