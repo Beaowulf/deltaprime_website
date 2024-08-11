@@ -16,7 +16,7 @@ export const PlayButton = () => (
   </button>
 );
 
-const VideoPlayer = ({url}) => {
+const VideoPlayer = ({ url }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [light, setLight] = useState(true);
@@ -35,10 +35,7 @@ const VideoPlayer = ({url}) => {
 
   return (
     <>
-      <div
-        className="cursor-pointer playerWrapper fixedSize"
-        onClick={openModal}
-      >
+      <div className="playerWrapper" onClick={openModal}>
         <ReactPlayer
           height="100%"
           width="100%"

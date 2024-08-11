@@ -119,7 +119,7 @@ function Nav() {
               <CTAButton
                 hasArrowRight={false}
                 label={"Launch app"}
-                className="sm:hidden block whitespace-nowrap px-5 py-3"
+                className="whitespace-nowrap px-5 py-3"
               />
             </Link>
             <button
