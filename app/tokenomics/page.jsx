@@ -40,6 +40,7 @@ const Tokenomics = () => {
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
           <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
             <div className="clearfix">
+              {/* image that shows on desktop only */}
               <Image
                 className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
                   resolvedTheme === "dark"
@@ -61,7 +62,7 @@ const Tokenomics = () => {
                 src={ourStoryIntroImg}
                 alt="deltaprime_mascot_img"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 min-w-full mb-4">
                 DeltaPrime is a decentralized Prime Brokerage solution that
                 offers undercollateralized crypto loans without relying on
                 trust. The native tokens $PRIME and $sPRIME feature advanced
@@ -95,7 +96,7 @@ const Tokenomics = () => {
                   </>
                 )}
               </p>
-              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
+              <div className="h-[50px] md:h-full block w-fit text-left">
                 <GradientButton
                   label={expandedSections[0] ? "view less" : "read more"}
                   onClick={() => toggleText(0)}
@@ -227,109 +228,132 @@ const Tokenomics = () => {
       </div>
 
       {/* Second Section */}
+      {/* 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222 */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
-          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948]">
-            <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
-              Deep Dive into $PRIME Tokenomics
-            </p>
-            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
-              How $PRIME and $sPRIME work <br />
-              $PRIME serves as the main tradable token on Decentralized
-              Exchanges (DEXs). The demand for $PRIME will come from the demand
-              to hold $sPRIME, a Liquidity Provider(LP)-token that will serve
-              as:
-            </p>
-            <ul className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 list-disc pl-5">
-              <li>
-                A utility token for the DeltaPrime platform, allowing payment
-                for various PRIME features.
-              </li>
-              <li>
-                An incentive to provide to the $PRIME liquidity pool and be
-                rewarded with a share of the protocol’s liquidation fees.
-              </li>
-              <li>A token to gain governance power.</li>
-            </ul>
-            {expandedSections[1] && (
-              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
-                Traditionally, holding assets has been incentivized through
-                staking, i.e. locking tokens in a smart contract for a certain
-                period of time in order to earn staking rewards. It is the go-to
-                approach to keep holders from selling. Despite this effort, the
-                price of an asset often comes crashing down because of high
-                rewards in the native token of a project. In addition, the
-                expiration of vesting schedules often contribute to high selling
-                pressures, while liquidity pools are often shallow, which
-                results in high selling price-impacts. Instead of following this
-                trend, $sPRIME combines the idea of staking with contributing to
-                the $PRIME liquidity pool.
-                <br />
-                <br />
-                The rewards come from protocol revenue instead of causing
-                inflation by handing out native tokens. This creates effective
-                incentives for holding $PRIME and contributing to its liquidity
-                pool.
-                <br />
-                When a user provides liquidity for $PRIME through the DeltaPrime
-                app, they receive $sPRIME, which represents their share of the
-                pool. $PRIME can be paired with tokens such as AVAX or ETH.
-                LP-tokens with paired $PRIME that were acquired from a DEX
-                directly can also be used to get $sPRIME on the DeltaPrime app.
-                Note that this move will exit the current position of the
-                LP-tokens and rebalance to the default price range set on the
-                app.
-                <br />
-                <br />
-                When the provided liquidity is within the concentrated liquidity
-                price range at which the token is traded, the $sPRIME is
-                considered active. Active $sPRIME holders are eligible to
-                receive a share from 33% of the protocol's liquidation fees.
-                This incentivizes liquidity provision and ensures its depth.
-                Having a deep liquidity pool means that large buys and sells do
-                not have a big impact on the price. At the same time, $sPRIME
-                can be used to pay for any current and future features of the
-                DeltaPrime ecosystem, regardless of being active or idle.
-                <br />
-                <br />
-                Idle $sPRIME is the share in the pool that does not fall within
-                the price range at which the token is traded within a period of
-                time. Idle $sPRIME does not receive a share of the liquidation
-                fees. This incentivises liquidity providers to rebalance their
-                assets to an active price range position. Doing this means that
-                impermanent loss may be realized. However, their $sPRIME becomes
-                active again and thus the LP is granted the aforementioned
-                rewards, countering realized loss.
-                <br />
-                <br />
-                Not only liquidity providers can gain rewards though. Eligible
-                users who are actively using the platform can be rewarded in the
-                form of locked $sPRIME regardless of whether they provide
-                liquidity or not.
-              </p>
-            )}
-            <div className="h-[50px] md:h-full block w-full text-left">
-              <GradientButton
-                label={expandedSections[1] ? "view less" : "read more"}
-                onClick={() => toggleText(1)}
+          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
+            <div className="clearfix">
+              {/* image that shows on desktop only */}
+              <Image
+                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={ourStoryIntroImg}
+                alt="deltaprime_mascot_img"
               />
+              <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
+                Deep Dive into $PRIME Tokenomics
+              </p>
+              <Image
+                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={ourStoryIntroImg}
+                alt="deltaprime_mascot_img"
+              />
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full">
+                How $PRIME and $sPRIME work <br />
+                $PRIME serves as the main tradable token on Decentralized
+                Exchanges (DEXs). The demand for $PRIME will come from the
+                demand to hold $sPRIME, a Liquidity Provider(LP)-token that will
+                serve as:
+                <br />
+                <br />
+                <div className="max-w-[25rem]">
+                  <span className="pl-2">
+                    • A utility token for the DeltaPrime platform, allowing
+                    payment for various PRIME features.
+                  </span>
+                  <br />
+                  <span className="pl-2">
+                    • An incentive to provide to the $PRIME liquidity pool and
+                    be rewarded with a share of the protocol’s liquidation fees.
+                  </span>
+                  <br />
+                  <span className="pl-2">
+                    • A token to gain governance power.
+                  </span>
+                </div>
+                <br />
+                {expandedSections[1] && (
+                  <>
+                    <br />
+                    Traditionally, holding assets has been incentivized through
+                    staking, i.e. locking tokens in a smart contract for a
+                    certain period of time in order to earn staking rewards. It
+                    is the go-to approach to keep holders from selling. Despite
+                    this effort, the price of an asset often comes crashing down
+                    because of high rewards in the native token of a project. In
+                    addition, the expiration of vesting schedules often
+                    contribute to high selling pressures, while liquidity pools
+                    are often shallow, which results in high selling
+                    price-impacts. Instead of following this trend, $sPRIME
+                    combines the idea of staking with contributing to the $PRIME
+                    liquidity pool.
+                    <br />
+                    <br />
+                    The rewards come from protocol revenue instead of causing
+                    inflation by handing out native tokens. This creates
+                    effective incentives for holding $PRIME and contributing to
+                    its liquidity pool.
+                    <br />
+                    When a user provides liquidity for $PRIME through the
+                    DeltaPrime app, they receive $sPRIME, which represents their
+                    share of the pool. $PRIME can be paired with tokens such as
+                    AVAX or ETH. LP-tokens with paired $PRIME that were acquired
+                    from a DEX directly can also be used to get $sPRIME on the
+                    DeltaPrime app. Note that this move will exit the current
+                    position of the LP-tokens and rebalance to the default price
+                    range set on the app.
+                    <br />
+                    <br />
+                    When the provided liquidity is within the concentrated
+                    liquidity price range at which the token is traded, the
+                    $sPRIME is considered active. Active $sPRIME holders are
+                    eligible to receive a share from 33% of the protocol's
+                    liquidation fees. This incentivizes liquidity provision and
+                    ensures its depth. Having a deep liquidity pool means that
+                    large buys and sells do not have a big impact on the price.
+                    At the same time, $sPRIME can be used to pay for any current
+                    and future features of the DeltaPrime ecosystem, regardless
+                    of being active or idle.
+                    <br />
+                    <br />
+                    Idle $sPRIME is the share in the pool that does not fall
+                    within the price range at which the token is traded within a
+                    period of time. Idle $sPRIME does not receive a share of the
+                    liquidation fees. This incentivises liquidity providers to
+                    rebalance their assets to an active price range position.
+                    Doing this means that impermanent loss may be realized.
+                    However, their $sPRIME becomes active again and thus the LP
+                    is granted the aforementioned rewards, countering realized
+                    loss.
+                    <br />
+                    <br />
+                    Not only liquidity providers can gain rewards though.
+                    Eligible users who are actively using the platform can be
+                    rewarded in the form of locked $sPRIME regardless of whether
+                    they provide liquidity or not.
+                  </>
+                )}
+              </p>
+              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
+                <GradientButton
+                  label={expandedSections[1] ? "view less" : "read more"}
+                  onClick={() => toggleText(1)}
+                  style={{ padding: "28px !important" }} // Override padding here
+                />
+              </div>
             </div>
           </div>
         </div>
-        {/* Image */}
-        <div className="w-full lg:w-1/2">
-          <Image
-            className={`rounded-[20px] border-4 border-[#fff56] w-full ${
-              resolvedTheme === "dark"
-                ? "shadow-custom-dark"
-                : "shadow-custom-light"
-            }`}
-            src={ourStoryIntroImg}
-            alt="deltaprime_mascot_img"
-          />
-        </div>
       </div>
+      {/* 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222 */}
 
       <div className="mb-16">
         <p className="brightText text-wrap mb-4 text-3xl md:text-[44px]">
@@ -393,220 +417,250 @@ const Tokenomics = () => {
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
-          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948]">
-            <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
-              Governance Power and Voting Rights: A Road to DAO
-            </p>
-            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 ">
-              The perks of owning $sPRIME extend to governance power; $sPRIME
-              ownership is required to gain governance points. Points are
-              assigned at a 10:1 ratio of a deposited or borrowed token (e.g.
-              USDC) to $sPRIME. It is the underlying mechanism of the
-              community-centered approach of our tokenomics, which paves the way
-              towards making DeltaPrime a Decentralized Autonomous Organisation
-              (DAO). The ultimate goal is to have the DeltaPrime community
-              support and govern the platform, reaping the benefits of its
-              operation while deciding on its position in the DeFi industry. 
-              <br />
-              {expandedSections[3] && (
-                <>
-                  <br />
-                  <strong>
-                    Governance Power points are handled as follows:
-                  </strong>
-                   <br />
-                  <br />
-                  For borrowers: 10 points for every 10:1 ratio of tokens held.
-                  When borrowing $10 and owning $1 $sPRIME (10:1 ratio), the
-                  borrower receives 10 points per year, with a cap at 3 years.
-                  That means that after 3 years, the borrower will have acquired
-                  30 governance points. If they borrowed $20 and owned $2
-                  $sPRIME, their governance power at 3 years would be 60. Points
-                  are acquired only with the 10:1 ratio. That means that if $25
-                  was borrowed and $4 $sPRIME was held, the governance power
-                  would still be 60 at 3 years, and would continue to be so
-                  until the user acquired more or sold. 
-                  <br />
-                  <br />
-                  For depositors: When depositing $10 of a token and owning $1
-                  $sPRIME, the depositor receives 50 points per year, with a cap
-                  at 3 years as the borrower. Therefore, if they deposited $10
-                  and held $1 $sPRIME they would receive 50 points per year,
-                  capped at 150 at year 3. If they deposited $20 and owned $2
-                  $sPRIME, their capped governance points would be 300 at 3
-                  years.
-                  <br />
-                  <br />
-                  Locked $sPRIME Governance Power: The governance power of the
-                  users holding locked $sPRIME will be determined as mentioned
-                  above. However, if they lose their locked $sPRIME for not
-                  making the required achievements, they will also lose the
-                  matching proportionate amount of governance power. As stated
-                  before, any other rewards remain with the user. 
-                  <br />
-                  <br />
-                  Governance Power Reduction: When a borrower or depositor
-                  returns or retrieves their funds, their governance points are
-                  reduced over a period of 7 days based on their current cap.
-                  Therefore, if from an initial $20:$2 ratio of token:$sPRIME
-                  funds at 2 years there is a reduction of 50%, their total
-                  capped power will reduce by 50%. So from a cap of 60
-                  governance points (if they were a borrower) their cap will go
-                  down to 30 points and they will not accumulate more until they
-                  increase their funds (borrowed funds and owned $sPRIME). The
-                  governance points from lost locked $sPRIME will also be
-                  reduced accordingly.
-                </>
-              )}
-            </p>
-            <div className="h-[50px] md:h-full block w-full text-left">
-              <GradientButton
-                label={expandedSections[3] ? "view less" : "read more"}
-                onClick={() => toggleText(3)}
+          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
+            <div className="clearfix">
+              {/* image that shows on desktop only */}
+              <Image
+                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={ourStoryIntroImg}
+                alt="deltaprime_mascot_img"
               />
-            </div>
-          </div>
-        </div>
-        {/* Image */}
-        <div className="w-full lg:w-1/2">
-          <Image
-            className={`rounded-[20px] border-4 border-[#fff56] w-full ${
-              resolvedTheme === "dark"
-                ? "shadow-custom-dark"
-                : "shadow-custom-light"
-            }`}
-            src={ourStoryIntroImg}
-            alt="deltaprime_mascot_img"
-          />
-        </div>
-      </div>
-
-      <div className="flex mb:flex-col-reverse  md:flex-row flex-col justify-between items-start w-full gap-10 my-10 md:my-20">
-        {/* Image */}
-        <div className="w-full lg:w-1/2">
-          <Image
-            className={`rounded-[20px] border-4 border-[#fff56] w-full ${
-              resolvedTheme === "dark"
-                ? "shadow-custom-dark"
-                : "shadow-custom-light"
-            }`}
-            src={ourStoryIntroImg}
-            alt="deltaprime_mascot_img"
-          />
-        </div>
-        {/* Text Wrapper */}
-        <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
-          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948]">
-            <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
-              Other $PRIME Allocations Explained
-            </p>
-            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
-              The team receives 16% of the tokens for the work they have put in
-              for 3 years, while advisors are allocated a 5% for their
-              invaluable contribution in developing the project. The allocations
-              to private seed (1.75%), pre-seed(4.67%), launchpads(1.11%), and
-              community seed (1.67%) represent the price at which the project
-              was funded at the time. 
-            </p>
-            {expandedSections[4] && (
-              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
-                IEO allocation of 1.43% is used to bootstrap DEX liquidity pools
-                at launch. This is matched with 100% of the launchpad and 50% of
-                the Community Seed raises.
-                <br />
-                <br />
-                Grant from the Avalanche Foundation in the early stages of the
-                development receives a 0.57% allocation. This can be bought at a
-                discount up to the grant amount of $300,000 at a future date.{" "}
-                <br />
-                <br />
-                Bounties amount to 2% of the tokens and are to reward
-                individuals or organizations that manage to find any critical
-                bugs on the protocol and report them to DeltaPrime.
-                Informational and up to high severity bugs will be rewarded in
-                FIAT. Though no bug has been found so far, it is not guaranteed
-                that it will not be discovered in the future. This is why
-                DeltaPrime has added this to their suite of security provisions
-                of the platform. <br />
-                <br />
-                Bridge, which came from early private and community adopters in
-                late 2023, is allocated 2.31% of the total tokens. <br />
-                <br />
-                Lastly, 12% of $PRIME is allocated for Ecosystem Growth, which
-                can be utilized either for Market Making on possible CEX
-                listings in order to stabilize price, or to provide grants to
-                future partners and contributing community members.
-                <br />
+              <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
+                Governance Power and Voting Rights: A Road to DAO
               </p>
-            )}
-            <div className="h-[50px] md:h-full block w-full text-left">
-              <GradientButton
-                label={expandedSections[4] ? "view less" : "read more"}
-                onClick={() => toggleText(4)}
+              <Image
+                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={ourStoryIntroImg}
+                alt="deltaprime_mascot_img"
               />
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full ">
+                The perks of owning $sPRIME extend to governance power; $sPRIME
+                ownership is required to gain governance points. Points are
+                assigned at a 10:1 ratio of a deposited or borrowed token (e.g.
+                USDC) to $sPRIME. It is the underlying mechanism of the
+                community-centered approach of our tokenomics, which paves the
+                way towards making DeltaPrime a Decentralized Autonomous
+                Organisation (DAO). The ultimate goal is to have the DeltaPrime
+                community support and govern the platform, reaping the benefits
+                of its operation while deciding on its position in the DeFi
+                industry. 
+                <br />
+                {expandedSections[3] && (
+                  <>
+                    <br />
+                    <strong>
+                      Governance Power points are handled as follows:
+                    </strong>
+                     <br />
+                    <br />
+                    For borrowers: 10 points for every 10:1 ratio of tokens
+                    held. When borrowing $10 and owning $1 $sPRIME (10:1 ratio),
+                    the borrower receives 10 points per year, with a cap at 3
+                    years. That means that after 3 years, the borrower will have
+                    acquired 30 governance points. If they borrowed $20 and
+                    owned $2 $sPRIME, their governance power at 3 years would be
+                    60. Points are acquired only with the 10:1 ratio. That means
+                    that if $25 was borrowed and $4 $sPRIME was held, the
+                    governance power would still be 60 at 3 years, and would
+                    continue to be so until the user acquired more or sold. 
+                    <br />
+                    <br />
+                    For depositors: When depositing $10 of a token and owning $1
+                    $sPRIME, the depositor receives 50 points per year, with a
+                    cap at 3 years as the borrower. Therefore, if they deposited
+                    $10 and held $1 $sPRIME they would receive 50 points per
+                    year, capped at 150 at year 3. If they deposited $20 and
+                    owned $2 $sPRIME, their capped governance points would be
+                    300 at 3 years.
+                    <br />
+                    <br />
+                    Locked $sPRIME Governance Power: The governance power of the
+                    users holding locked $sPRIME will be determined as mentioned
+                    above. However, if they lose their locked $sPRIME for not
+                    making the required achievements, they will also lose the
+                    matching proportionate amount of governance power. As stated
+                    before, any other rewards remain with the user. 
+                    <br />
+                    <br />
+                    Governance Power Reduction: When a borrower or depositor
+                    returns or retrieves their funds, their governance points
+                    are reduced over a period of 7 days based on their current
+                    cap. Therefore, if from an initial $20:$2 ratio of
+                    token:$sPRIME funds at 2 years there is a reduction of 50%,
+                    their total capped power will reduce by 50%. So from a cap
+                    of 60 governance points (if they were a borrower) their cap
+                    will go down to 30 points and they will not accumulate more
+                    until they increase their funds (borrowed funds and owned
+                    $sPRIME). The governance points from lost locked $sPRIME
+                    will also be reduced accordingly.
+                  </>
+                )}
+              </p>
+              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
+                <GradientButton
+                  label={expandedSections[3] ? "view less" : "read more"}
+                  onClick={() => toggleText(3)}
+                  style={{ padding: "28px !important" }} // Override padding here
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Fourth Section */}
+      {/* Third Section */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
-          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948]">
-            <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
-              DeltaPrime Tokenomics Summed Up
-            </p>
-            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 ">
-              At DeltaPrime, we first implemented a protocol with high security
-              considerations, and are now positioned to organically transition
-              to a community governed platform, setting checkpoints for
-              stability and community rewards through our native tokens $PRIME
-              and $sPRIME.&nbsp;
-              {expandedSections[5] && (
-                <>
-                  The aforementioned tokenomics work in a way to incentivize
-                  usage of the platform, reduce price volatility as much as
-                  possible, ensure a healthy liquidity pool with a reduced
-                  price-impact due to large buys or sells, and mitigate possible
-                  selling pressure from early adopters due to release of tokens
-                  based on vesting schedules.
-                  <br />
-                  <br />
-                  Meanwhile, development continues with more protocol
-                  integrations, allowing for even more curated choices for
-                  utilizing crypto capital. Features aiming to elevate the user
-                  experience are also in the works and coming soon.
-                  <br />
-                  <br />A more detailed explanation of the protocol is given in
-                  DeltaPrime’s documents available online.
-                </>
-              )}
-              <br />
-            </p>
-            <div className="h-[50px] md:h-full block w-full text-left ">
-              <GradientButton
-                label={expandedSections[5] ? "view less" : "read more"}
-                onClick={() => toggleText(5)}
-                style={{ padding: "28px !important" }} // Override padding here
+          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
+            <div className="clearfix">
+              {/* image that shows on desktop only */}
+              <Image
+                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={ourStoryIntroImg}
+                alt="deltaprime_mascot_img"
               />
+              <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
+                Other $PRIME Allocations Explained
+              </p>
+              <Image
+                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={ourStoryIntroImg}
+                alt="deltaprime_mascot_img"
+              />
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full ">
+                The team receives 16% of the tokens for the work they have put
+                in for 3 years, while advisors are allocated a 5% for their
+                invaluable contribution in developing the project. The
+                allocations to private seed (1.75%), pre-seed(4.67%),
+                launchpads(1.11%), and community seed (1.67%) represent the
+                price at which the project was funded at the time. 
+                <br />
+                {expandedSections[4] && (
+                  <>
+                    IEO allocation of 1.43% is used to bootstrap DEX liquidity
+                    pools at launch. This is matched with 100% of the launchpad
+                    and 50% of the Community Seed raises.
+                    <br />
+                    <br />
+                    Grant from the Avalanche Foundation in the early stages of
+                    the development receives a 0.57% allocation. This can be
+                    bought at a discount up to the grant amount of $300,000 at a
+                    future date. <br />
+                    <br />
+                    Bounties amount to 2% of the tokens and are to reward
+                    individuals or organizations that manage to find any
+                    critical bugs on the protocol and report them to DeltaPrime.
+                    Informational and up to high severity bugs will be rewarded
+                    in FIAT. Though no bug has been found so far, it is not
+                    guaranteed that it will not be discovered in the future.
+                    This is why DeltaPrime has added this to their suite of
+                    security provisions of the platform. <br />
+                    <br />
+                    Bridge, which came from early private and community adopters
+                    in late 2023, is allocated 2.31% of the total tokens. <br />
+                    <br />
+                    Lastly, 12% of $PRIME is allocated for Ecosystem Growth,
+                    which can be utilized either for Market Making on possible
+                    CEX listings in order to stabilize price, or to provide
+                    grants to future partners and contributing community
+                    members.
+                  </>
+                )}
+              </p>
+              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
+                <GradientButton
+                  label={expandedSections[4] ? "view less" : "read more"}
+                  onClick={() => toggleText(4)}
+                  style={{ padding: "28px !important" }} // Override padding here
+                />
+              </div>
             </div>
           </div>
         </div>
-        {/* Image */}
-        <div className="w-full lg:w-1/2">
-          <Image
-            className={`rounded-[20px] border-4 border-[#fff56] w-full ${
-              resolvedTheme === "dark"
-                ? "shadow-custom-dark"
-                : "shadow-custom-light"
-            }`}
-            src={ourStoryIntroImg}
-            alt="deltaprime_mascot_img"
-          />
-        </div>
       </div>
 
+      {/* Third Section */}
+      <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
+        {/* Text Wrapper */}
+        <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
+          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
+            <div className="clearfix">
+              {/* image that shows on desktop only */}
+              <Image
+                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={ourStoryIntroImg}
+                alt="deltaprime_mascot_img"
+              />
+              <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
+                DeltaPrime Tokenomics Summed Up
+              </p>
+              <Image
+                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={ourStoryIntroImg}
+                alt="deltaprime_mascot_img"
+              />
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full ">
+                At DeltaPrime, we first implemented a protocol with high
+                security considerations, and are now positioned to organically
+                transition to a community governed platform, setting checkpoints
+                for stability and community rewards through our native tokens
+                $PRIME and $sPRIME.&nbsp;
+                {expandedSections[5] && (
+                  <>
+                    The aforementioned tokenomics work in a way to incentivize
+                    usage of the platform, reduce price volatility as much as
+                    possible, ensure a healthy liquidity pool with a reduced
+                    price-impact due to large buys or sells, and mitigate
+                    possible selling pressure from early adopters due to release
+                    of tokens based on vesting schedules.
+                    <br />
+                    <br />
+                    Meanwhile, development continues with more protocol
+                    integrations, allowing for even more curated choices for
+                    utilizing crypto capital. Features aiming to elevate the
+                    user experience are also in the works and coming soon.
+                    <br />
+                    <br />A more detailed explanation of the protocol is given
+                    in DeltaPrime’s documents available online.
+                  </>
+                )}
+              </p>
+              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
+                <GradientButton
+                  label={expandedSections[5] ? "view less" : "read more"}
+                  onClick={() => toggleText(5)}
+                  style={{ padding: "28px !important" }} // Override padding here
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <SecuritySection />
       <ContactForm />
     </div>

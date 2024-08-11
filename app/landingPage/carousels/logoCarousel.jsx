@@ -74,7 +74,7 @@ const CarouselComponent = () => {
 
 const Carousel = () => {
   return (
-    <div className="flex flex-col justify-between items-center md:mt-40 mt-10 w-full">
+    <div className="flex flex-col justify-between items-center md:mt-40 mt-10">
       <CarouselHeader />
       <CarouselComponent />
     </div>

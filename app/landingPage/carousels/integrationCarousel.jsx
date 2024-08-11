@@ -12,21 +12,13 @@ const DarkBoxWrapper = ({ srcImg, scrURL }) => {
     <div className="rounded-[20px] p-4 parentColoredBorderWrapper cursor-pointer">
       <div className="bg-[#1D2943] rounded-[20px]">
         <div className="rounded-[20px] flex justify-center items-center md:px-4 md:py-2">
-          {scrURL ? (
-            <Link href={scrURL} target="_blank">
-              <Image
-                className="md:w-[195px] md:h-[75px] w-[175px] h-[60px] sm:p-0 p-4 object-contain filter grayscale hover:filter-none transition duration-300 ease-in-out"
-                src={srcImg}
-                alt="aboutimg"
-              />
-            </Link>
-          ) : (
+          <Link href={`${scrURL}`} target="_blank" className="z-50">
             <Image
               className="md:w-[195px] md:h-[75px] w-[175px] h-[60px] sm:p-0 p-4 object-contain filter grayscale hover:filter-none transition duration-300 ease-in-out"
               src={srcImg}
               alt="aboutimg"
             />
-          )}
+          </Link>
         </div>
       </div>
     </div>
@@ -69,7 +61,11 @@ const CarouselComponent = () => {
         {integrationData.map((data, index) => {
           return (
             <SwiperSlide className="w-fit h-fit" key={index}>
-              <DarkBoxWrapper srcImg={data.imageUrl} alt={data.alt} />
+              <DarkBoxWrapper
+                srcImg={data.imageUrl}
+                scrURL={data.link}
+                alt={data.alt}
+              />
             </SwiperSlide>
           );
         })}

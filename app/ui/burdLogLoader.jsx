@@ -56,7 +56,7 @@ const DropDownBlogLoader = ({ pathname, resolvedTheme, getLinkClass }) => {
           "Duis aute irure dolor in reprehenderit  in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
         }
         burdLogData={blogsWithReadTime}
-        menuText={"Burd Blog"}
+        menuText={"Burd Log"}
         className={getLinkClass("/blogs", pathname, resolvedTheme)}
         isBlog={true}
         boxLink={"/blogs"}

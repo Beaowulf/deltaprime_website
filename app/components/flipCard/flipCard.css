@@ -47,7 +47,7 @@
   background-size: cover; /* Ensure the image covers the full area */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   background-position: center; /* Center the image */
-  opacity: 0.45; /* Apply the desired opacity */
+  opacity: 0.35; /* Apply the desired opacity */
   width: 100%; /* Ensure full width */
   height: 100%; /* Ensure full height */
   border-radius: 20px;

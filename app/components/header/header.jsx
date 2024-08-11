@@ -1,6 +1,10 @@
-const Header = ({ title, subTitle, paragraph }) => {
+const Header = ({ title, subTitle, paragraph, hasMassiveSpacing }) => {
   return (
-    <div className="flex flex-col items-center dark:text-white text-[#252948] lg:mt-40 mt-5 lg:mb-10 mb-2">
+    <div
+      className={`flex flex-col items-center dark:text-white text-[#252948] mt-5 lg:mb-10 mb-2 ${
+        hasMassiveSpacing ? " lg:mt-40 lg:mb-10" : "lg:mt-10"
+      } `}
+    >
       {title && (
         <p className="text-[#252948] dark:text-gray-400 text-[18px] font-bold">
           {title}

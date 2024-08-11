@@ -40,12 +40,12 @@ const FlipCard = ({
   return (
     <div className="h-fit p-2 mx-auto md:mx-0 w-full flex justify-center">
       <div
-        className={`flip-card 2xl:h-[450px] w-full 2xl:max-w-[350px] lg:h-[450px] lg:max-w-[310px] h-[450px] max-w-[300px] ${
+        className={`flip-card 2xl:h-[470px] 2xl:w-[370px] lg:h-[470px] lg:w-[330px] h-[470px] w-[320px] ${
           isFlipped ? "flipped" : ""
         }`}
         onClick={handleClick}
       >
-        <div className="flip-card-inner bg-[#0e101c] rounded-[20px]">
+        <div className="flip-card-inner bg-[#080d18] rounded-[20px]">
           <div
             className="background-image-overlay"
             style={{
@@ -59,7 +59,7 @@ const FlipCard = ({
               <h4 className="text-white pb-3 font-extrabold text-[20px] leading-7">
                 {titleFront ? titleBack : "Delta Neutral"}
               </h4>
-              <p className="pb-6 font-bold text-[14px] leading-5 text-white">
+              <p className="pb-6 font-medium text-[16px] leading-6 text-white tracking-normal">
                 {descriptionFront}
               </p>
               <div>

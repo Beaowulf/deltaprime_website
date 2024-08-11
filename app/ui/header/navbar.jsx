@@ -58,7 +58,7 @@ function Nav() {
           isScrolled && "py-4"
         }`}
       >
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex justify-center items-center gap-8">
             <Logo />
             <div className="ml-4 hidden md:block">
@@ -119,7 +119,7 @@ function Nav() {
               <CTAButton
                 hasArrowRight={false}
                 label={"Launch app"}
-                className="whitespace-nowrap px-5 py-3"
+                className="sm:hidden block whitespace-nowrap px-5 py-3"
               />
             </Link>
             <button

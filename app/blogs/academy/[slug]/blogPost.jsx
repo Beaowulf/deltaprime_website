@@ -101,7 +101,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         const element = document.getElementById(heading.id);
         if (element) {
           const rect = element.getBoundingClientRect();
-          const offset = 300; // Adjust this value to change when the heading becomes active
+          const offset = 100; // Adjust this value to change when the heading becomes active
           const distance = rect.top - offset;
 
           if (distance >= 0 && distance < closestDistance) {
@@ -216,7 +216,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
             <div className="w-full flex md:flex-row flex-col justify-between items-center gap-4 text-[#252948] dark:text-[#F6F6F6]">
               <div>
                 <p className="text-[#252948] dark:text-[#F6F6F6]">
-                  Written By Joe Smith
+                  Written By {blogData.blogAuthor}
                 </p>
               </div>
               <div className="flex justify-center items-center gap-4">

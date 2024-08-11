@@ -12,6 +12,7 @@ import { Pagination } from "swiper/modules";
 import { useTheme } from "next-themes";
 import arrowLeftColored from "@/public/assets/icons/arrowBtnLeftColored.svg";
 import arrowRightColored from "@/public/assets/icons/arrowBtnRightColored.svg";
+import Header from "@/app/components/header/header";
 
 const ListText = ({ strategyID }) => {
   return (
@@ -51,8 +52,16 @@ const ListText = ({ strategyID }) => {
 
 export const StratDesktopFlipCards = ({ strategies }) => {
   return (
-    <div className="hidden md:block mx-auto p-4">
+    <div className="hidden md:block mx-auto p-5 lg:p-10">
       {/* This component is hidden until the desired breakpoint */}
+      <div>
+        <Header
+          subTitle={"Choose Your Strategy"}
+          paragraph={
+            "We invite you to explore a broad range of strategies. Keep an eye on this space as more strategies are added as they are discovered and tested by our community"
+          }
+        />
+      </div>
       <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {strategies.map((strategy, index) => (
           <div key={strategy.strategyID} className="card w-full">
@@ -64,7 +73,6 @@ export const StratDesktopFlipCards = ({ strategies }) => {
               listTextBack={<ListText strategyID={strategy.strategyID} />}
               titleBack={strategy.strategyTitle}
               strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
-
             />
           </div>
         ))}

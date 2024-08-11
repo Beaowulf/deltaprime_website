@@ -245,6 +245,23 @@ const DropdownMenu = ({
                   >
                     {boxText}
                   </motion.p>
+                  {isBlog && (
+                    <motion.div
+                      variants={textVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      className="mb-2 text-[15px] dark:text-[#fff] text-[#252948]"
+                    >
+                      <a
+                        className="mb-2 text-[15px] underline hover:text-gray-400"
+                        href={"/howToVideos"}
+                        onClick={closeDropdown}
+                      >
+                        How To Videos
+                      </a>
+                    </motion.div>
+                  )}
                   <motion.div
                     variants={textVariants}
                     initial="hidden"
