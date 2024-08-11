@@ -95,7 +95,7 @@ export const FlipCardMobileCarousel = ({ videos }) => {
   return (
     <>
       {/* Swiper carousel for mobile view */}
-      <div className="flex flex-col gap-10 md:hidden ">
+      <div className="flex flex-col gap-10 md:hidden my-10 md:my-0">
         <Swiper
           ref={sliderRef}
           modules={[Pagination]}
