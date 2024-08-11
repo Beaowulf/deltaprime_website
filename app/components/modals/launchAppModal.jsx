@@ -38,19 +38,19 @@ const LaunchAppModal = () => {
               <Link className="z-100 cursor-pointer" href={pathname}>
                 <Image
                   src={closeIconColored}
-                  width={13}
-                  height={13}
+                  width={15}
+                  height={15}
                   alt="close_X_Button"
                 />
               </Link>
             </div>
             <div className="w-screen h-screen md:h-auto md:w-fit justify-center bg-[#f4f4ff] flex flex-col py-20 px-4 md:px-14 rounded-[25px] shadowModal">
-              <h4 className="leading-5 text-[32px] text-[#252948] text-center font-medium mb-5">
+              <h4 className="leading-5 text-[32px] text-[#252948] text-center font-medium mb-20">
                 Launch your App
               </h4>
-              <div className="flex flex-col md:flex-row justify-center gap-4 mt-8">
+              <div className="flex flex-col md:flex-row justify-center gap-4 md:mt-8 mx-0 items-center">
                 {/* Left side */}
-                <div className="flex justify-center flex-col gap-1 items-center modalWrapper">
+                <div className="flex justify-center flex-col gap-1 items-center modalWrapper w-fit">
                   <div className="modalContent">
                     <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px]">
                       <p className="mx-auto w-fit text-white font-bold">
@@ -93,7 +93,7 @@ const LaunchAppModal = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="featureBorderWrapLightTheme">
+                    <div className="">
                       <div className="flex justify-center items-center pb-4">
                         <Link
                           className="mx-auto"
@@ -106,12 +106,14 @@ const LaunchAppModal = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-fit flex place-items-center">
-                  <p className="text-[#252948] font-medium text-[32px]">OR</p>
+                <div className="w-full md:w-fit flex place-items-center">
+                  <p className="text-[#252948] font-medium text-[32px] mx-auto md:m-0">
+                    OR
+                  </p>
                 </div>
 
                 {/* Right side */}
-                <div className="flex justify-center flex-col gap-1 items-center modalWrapper">
+                <div className="flex justify-center flex-col gap-1 items-center modalWrapper w-fit">
                   <div className="modalContent">
                     <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px]">
                       <p className="mx-auto w-fit text-white font-bold">
@@ -135,7 +137,7 @@ const LaunchAppModal = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="featureBorderWrapLightTheme">
+                    <div className="">
                       <div className="flex justify-center items-center pb-4">
                         <Link
                           className="mx-auto"
