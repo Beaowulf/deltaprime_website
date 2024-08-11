@@ -17,13 +17,6 @@ const Card = ({ icon, title, description, href }) => (
         <h2 className="text-3xl font-bold mb-4">{title}</h2>
         <p className="text-base md:text-lg mb-4">{description}</p>
       </div>
-      <MainButton
-        label="LEARN MORE"
-        href={href}
-        hasArrowRight={true}
-        typographyClass="text-[12px] md:text-[14px] lg:text-[16px] text-nowrap font-extrabold mainButtonText"
-        hasBorder={false}
-      />
     </div>
   </div>
 );

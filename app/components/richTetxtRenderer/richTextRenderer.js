@@ -3,7 +3,6 @@ import React from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
-import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 
 const CustomButton = ({ buttonText, url }) => (
   <a href={url} className="custom-button">
@@ -21,7 +20,6 @@ const sanitizeId = (text) => {
 };
 
 const extractTextFromChildren = (children) => {
-  // Ensure children is an array
   if (!Array.isArray(children)) {
     children = [children];
   }
@@ -31,7 +29,6 @@ const extractTextFromChildren = (children) => {
       if (typeof child === "string") {
         return child;
       } else if (React.isValidElement(child)) {
-        // Recursively extract text if the child has its own children
         return extractTextFromChildren(child.props.children);
       }
       return "";
@@ -43,48 +40,34 @@ const RichTextRenderer = ({
   richTextDocument,
   hasTakeaways,
   blogTakeaways,
+  onHeadingRender,
 }) => {
   const options = {
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => {
-        return <p className="my-4">{children}</p>; // Adjust spacing with custom class
-      },
-      [BLOCKS.UL_LIST]: (node, children) => {
-        return <ul className="ml-10 list-disc list-inside">{children}</ul>;
-      },
-      [BLOCKS.OL_LIST]: (node, children) => {
-        return <ol className="ml-10 list-decimal list-inside">{children}</ol>;
-      },
-      [BLOCKS.LIST_ITEM]: (node, children) => {
-        return <li className="my-2">{children}</li>;
-      },
-
-      [BLOCKS.HEADING_1]: (node, children) => {
-        return <h1 className="text-3xl font-bold my-4">{children}</h1>;
-      },
-      [BLOCKS.HEADING_2]: (node, children) => {
-        const text = extractTextFromChildren(children);
-        const id = sanitizeId(text); // Or use text directly as ID if preferred
-        return (
-          <h2 id={id} className="text-2xl font-bold my-4">
-            {children}
-          </h2>
-        );
-      },
-      [BLOCKS.HEADING_3]: (node, children) => {
-        return <h3 className="text-xl font-bold my-4">{children}</h3>;
-      },
       [BLOCKS.HEADING_4]: (node, children) => {
         const text = extractTextFromChildren(children);
-        const id = sanitizeId(text); // Use text or sanitizeId(text) based on your preference
+        const id = sanitizeId(text);
+        if (onHeadingRender) onHeadingRender(id, text);
         return (
           <h4 id={id} className="text-lg font-bold my-4">
             {children}
           </h4>
         );
       },
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <p className="my-4">{children}</p>
+      ),
+      [BLOCKS.UL_LIST]: (node, children) => (
+        <ul className="ml-10 list-disc list-inside">{children}</ul>
+      ),
+      [BLOCKS.OL_LIST]: (node, children) => (
+        <ol className="ml-10 list-decimal list-inside">{children}</ol>
+      ),
+      [BLOCKS.LIST_ITEM]: (node, children) => (
+        <li className="my-2">{children}</li>
+      ),
       [BLOCKS.TABLE]: (node, children) => (
-        <table className="styled-table ">
+        <table className="styled-table">
           <tbody>{children}</tbody>
         </table>
       ),
@@ -111,7 +94,6 @@ const RichTextRenderer = ({
         const { buttonText, url } = node.data.target.fields;
         return <CustomButton buttonText={buttonText} url={url} />;
       },
-
       [INLINES.HYPERLINK]: (node) => {
         return <p>Link</p>;
       },
@@ -119,7 +101,7 @@ const RichTextRenderer = ({
         const text = node.content[0]?.value;
         if (text.includes("{{inline_Takeaways}}") && hasTakeaways) {
           return (
-            <div className="my-10 p-2 ">
+            <div className="my-10 p-2">
               <div className="gradient-border p-3 sm:p-12">
                 <div>
                   <h4 className="text-[24px] font-bold mb-10 text-[#FFBB9B]">
@@ -131,7 +113,6 @@ const RichTextRenderer = ({
                         key={index}
                         className="mb-8 text-[18px] dark:text-[#F6F6F6] text-[#252948]"
                       >
-                        {" "}
                         <span>•</span> {takeaway}
                       </li>
                     ))}

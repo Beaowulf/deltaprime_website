@@ -9,7 +9,7 @@ const Header = ({ title, subTitle, paragraph }) => {
       <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center">
         {subTitle}
       </h1>
-      <p className="featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1">
+      <p className="aboutTypographyparagraphWhite font-medium md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1">
         {paragraph}
       </p>
     </div>

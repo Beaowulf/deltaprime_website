@@ -44,7 +44,7 @@ const LaunchAppModal = () => {
                 />
               </Link>
             </div>
-            <div className="w-screen h-screen md:h-auto md:w-fit justify-center bg-[#f4f4ff] flex flex-col py-20 px-4 md:px-14 rounded-[25px] shadowModal">
+            <div className="w-full h-screen md:h-auto md:w-fit justify-center bg-[#f4f4ff] flex flex-col py-20 px-4 md:px-14 rounded-[25px] shadowModal">
               <h4 className="leading-5 text-[32px] text-[#252948] text-center font-medium mb-20">
                 Launch your App
               </h4>

@@ -78,7 +78,7 @@ const Strategies = () => {
           <h1 className="mb-6 featureSubtitle text-[24px]">
             Strategies For Any Risk Appetite
           </h1>
-          <p className="featureParagraph max-w-xl text-[13px] md:leading-6 sm:text-[17px] leading-4">
+          <p className="aboutTypographyparagraphWhite max-w-xl md:leading-6 leading-4">
             Join Burd and discover strategies to boost your earnings. From
             simple to advanced, find the perfect fit for your style.
           </p>

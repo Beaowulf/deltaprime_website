@@ -3,6 +3,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import "../landingPage.css";
 import Link from "next/link";
+import "@/app/globals.css";
 import { CTAButton } from "@/app/components/buttons/mainButton";
 import { CryptoLandingPageTables } from "@/app/components/cryptoTables/cryptoTables";
 import large3DLogo from "@/public/assets/img/logo_3D_large.png";
@@ -49,7 +50,7 @@ const FeaturePrimeAccount = () => {
                 ) : (
                   <Image src={RoundedOneLightThemed} alt="Rounded_Number_One" />
                 )}
-                <p className="featureCardTitle mt-2 dark:text-white text-[#252948] max-w-[13rem]">
+                <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#252948] max-w-[13rem]">
                   Deposit your tokens in one of the pools
                 </p>
               </div>
@@ -95,7 +96,7 @@ const FeaturePrimeAccount = () => {
                 ) : (
                   <Image src={RoundedTwoLightThemed} alt="Rounded_Number_One" />
                 )}
-                <p className="featureCardTitle mt-2 dark:text-white text-[#252948] ">
+                <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#252948] ">
                   Borrowers pay interest, which is autocompounded
                 </p>
               </div>
@@ -129,7 +130,7 @@ const FeaturePrimeAccount = () => {
                     alt="Rounded_Number_One"
                   />
                 )}
-                <p className="featureCardTitle mt-2 dark:text-white text-[#252948] max-w-[15rem]">
+                <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#252948] max-w-[15rem]">
                   Withdraw whenever you want
                 </p>
               </div>

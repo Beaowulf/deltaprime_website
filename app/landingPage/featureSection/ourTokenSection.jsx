@@ -40,7 +40,7 @@ function OurTokenSection() {
                   </h1>
                 </div>
               </div>
-              <p className="mt-8 featureParagraph mb-20 text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+              <p className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#252948]">
                 Store of value, tradeable ERC20 token.
                 <br />
                 - Primed with adaptive emissions.
@@ -85,7 +85,7 @@ function OurTokenSection() {
                   </h1>
                 </div>
               </div>
-              <p className="mt-8 featureParagraph mb-20 text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+              <p className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#252948]">
                 Utility token for Liquidity Providers and Active Users.
                 <br />
                 - Pay with for PRIME features

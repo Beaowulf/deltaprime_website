@@ -22,13 +22,14 @@ const TextWithPill = ({ totalTvl }) => {
           <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
             Be The Whale.
           </p>
-          <p className="whiteMainText text-wrap max-w-[25rem] text-[13px] sm:text-lg sm:leading-6 leading-5 ">
-            Your trustless & transparent prime brokerage on Avalanche and
+          <p className="aboutTypographyparagraphWhite text-wrap max-w-[25rem] text-white">
+            Your trustless, transparent, prime brokerage on Avalanche and
             Arbitrum.
             <br />
             <br />
-            Deposit, lend, and securely earn high APYs. Borrow up to 5x your
-            collateral. Action a wide variety of investment strategies.
+            Deposit and securely earn high APYs. Borrow up to 5x your
+            collateral, explore intuitive investment strategies and unlock your
+            full potential.
           </p>
         </div>
         {/* Price pill Wrapper */}

@@ -47,7 +47,7 @@ const FounderCardCarousel = () => {
             <FounderCard
               imageSrc={PiotrImage}
               name="Piotr Duda"
-              title="Pack Lead"
+              title="CEO"
               description="With a combination of programming/business experience, this wolf leads the pack. Previously he led teams at Faurecia and worked at InsurTech. A FinTech company providing insurance for Lloyd’s applications."
               socialMediaLink="https://www.linkedin.com/in/piotr-duda-62b66b63/?originalSubdomain=pl"
             />
@@ -56,7 +56,7 @@ const FounderCardCarousel = () => {
             <FounderCard
               imageSrc={KamilImage}
               name="Kamil Muca"
-              title="Tech Wolf"
+              title="CTO"
               description="Wolf Muca wrote his first line of code at the age of 7. Since then he developed his way up, to eventually leading a 20-headed IT team at HSBC. As a true coding wizard he now creates the security and efficiency in DeltaPrime’s architecture."
               socialMediaLink="https://www.linkedin.com/in/mucakamil/?originalSubdomain=pl"
             />
@@ -65,7 +65,7 @@ const FounderCardCarousel = () => {
             <FounderCard
               imageSrc={gavinImage}
               name="Gavin Hasselbaink"
-              title="Biz Wolf"
+              title="CBDO"
               description="This one is the business wolf. With a communication/trading background, he’ll help you exactly understand how to best use DeltaPrime. Additionally he’ll see to it you have access to the best strategies that DeFi offers."
               socialMediaLink="https://www.linkedin.com/in/gavinhasselbaink/?originalSubdomain=nl"
             />
