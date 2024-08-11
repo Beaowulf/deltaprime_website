@@ -84,13 +84,27 @@
 
 /* Responsiveness */
 @media (max-width: 640px) {
-  .swiper-pagination-bullet {
+  .custom-swiper-pagination .swiper-pagination-bullet {
     width: 20px;
     height: 20px;
+    background-image: url("../../public/assets/icons/emptyCircle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  .swiper-pagination-bullet-active {
+  .custom-swiper-pagination .swiper-pagination-bullet-active {
     width: 20px;
     height: 20px;
+    background-image: url("../../public/assets/icons/filledCircle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
+}
+
+.swiper-pagination {
+  position: relative;
 }

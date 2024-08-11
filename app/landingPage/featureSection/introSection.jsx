@@ -16,19 +16,20 @@ const TextWithPill = ({ totalTvl }) => {
   return (
     <>
       {/* Left side (text with pill) */}
-      <div className="flex flex-col md:mb-8 mb-0 justify-between gap-20 items-center md:items-start flex-1">
+      <div className="flex flex-col md:mb-8 mb-0 justify-between gap-2 md:gap-20 items-center md:items-start flex-1">
         {/* Text Wrapper */}
         <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
           <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
             Be The Whale.
           </p>
-          <p className="whiteMainText text-wrap max-w-[25rem] text-[13px] sm:text-lg sm:leading-6 leading-5 ">
-            Your trustless & transparent prime brokerage on Avalanche and
+          <p className="aboutTypographyparagraphWhite text-wrap max-w-[25rem] dark:text-white text-[#252948]">
+            Your trustless, transparent, prime brokerage on Avalanche and
             Arbitrum.
             <br />
             <br />
-            Deposit, lend, and securely earn high APYs. Borrow up to 5x your
-            collateral. Action a wide variety of investment strategies.
+            Deposit and securely earn high APYs. Borrow up to 5x your
+            collateral, explore intuitive investment strategies and unlock your
+            full potential.
           </p>
         </div>
         {/* Price pill Wrapper */}
@@ -57,7 +58,7 @@ const IntroSection = ({ totalTvl }) => {
     <div className="pagePaddingLarge">
       <div className="mx-auto">
         {/* Top Intro Part (Text and video) */}
-        <div className="flex flex-col lg:flex-row justify-between gap-20 p-4 items-center">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-20 p-4 items-center">
           {/* Left side (text with pill) */}
           <TextWithPill totalTvl={totalTvl} />
           {/* Show this button only on mobile */}
@@ -73,7 +74,7 @@ const IntroSection = ({ totalTvl }) => {
           </div>
           {/* Right side (video player) */}
           <div className="">
-            <VideoPlayer url={"https://youtu.be/2nJLhZ33lno"}/>
+            <VideoPlayer url={"https://youtu.be/2nJLhZ33lno"} />
           </div>
         </div>
         {/* Bottom Intro Part ( full potential of your capital Launch app) */}

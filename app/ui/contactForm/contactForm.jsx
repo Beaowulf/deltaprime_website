@@ -12,9 +12,9 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
           <UnlockPotentialContainer />
         </div>
       )}
-      <div className="flex flex-col md:flex-row mt-20 md:mt-40 pb-36 relative">
+      <div className="flex flex-col md:flex-row mt-5 md:mt-40 md:pb-36 pb-5 relative overflow-hidden">
         {/* Left Side */}
-        <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center px-10 py-2 md:py-28 2xl:py-40 contactFormBG">
+        <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center px-10 py-2 md:py-28 2xl:py-40 contactFormBG ">
           {/* Add your background image in the above style */}
           <div className="flex flex-col items-start dark:text-white text-black mb-14 max-w-[30rem]">
             <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-center">
@@ -23,7 +23,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
             <h1 className="mb-6 featureSubtitle text-[25px] md:text-[34px]">
               Wanna chat? Message us.
             </h1>
-            <p className="featureParagraph max-w-xl text-[13px] md:leading-8 sm:text-[17px] leading-6">
+            <p className="aboutTypographyparagraphWhite max-w-xl md:leading-8 leading-6">
               Looking for answers that you can’t find in our documentation or
               our community conversations on Discord? Drop us a line. We’ll be
               happy to assist.

@@ -60,7 +60,36 @@
 }
 
 .boxContainer {
-  border-radius: 26px;
+  border-radius: 25px;
   position: relative;
   z-index: 1;
+}
+
+/* Default styles for the box container */
+.strategy-nav-box .boxContainer {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode initial styles */
+.strategy-nav-box.dark .boxContainer {
+  background: linear-gradient(to bottom, #1b153c 10%, #1c2943 50%, #301e3e 80%);
+  color: #fff;
+}
+
+/* Light mode initial styles */
+.strategy-nav-box .boxContainer {
+  background: linear-gradient(to bottom, #f4f4ff, #e8e8f2);
+  color: #252948;
+}
+
+/* Hover effect in dark mode: change to light background and dark text */
+.strategy-nav-box.dark:hover .boxContainer {
+  background: linear-gradient(to bottom, #f4f4ff, #e8e8f2);
+  color: #252948;
+}
+
+/* Hover effect in light mode: change to dark background and light text */
+.strategy-nav-box:hover .boxContainer {
+  background: linear-gradient(to bottom, #1b153c 10%, #1c2943 50%, #301e3e 80%);
+  color: #fff;
 }

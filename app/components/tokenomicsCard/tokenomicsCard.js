@@ -6,7 +6,7 @@ import lockedIcon from "@/public/assets/icons/lockedIcon.svg";
 import { MainButton } from "../buttons/mainButton";
 
 const Card = ({ icon, title, description, href }) => (
-  <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16 flex flex-col">
+  <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper md:mt-12 mt-4 md:mb-16 mb-6 flex flex-col">
     <div className="relative flex flex-col items-center rounded-[20px] p-8 md:p-10 lg:p-12 shadow-lg flex-grow dark:bg-[#252948] bg-[#E8E8F2]">
       <div className="rounded-full absolute -top-16 w-32 h-32 parentColoredBorderWrapperIcon flex items-center justify-center">
         <div className="rounded-full w-full h-full flex items-center justify-center dark:bg-[#252948] bg-[#E8E8F2]">
@@ -17,13 +17,6 @@ const Card = ({ icon, title, description, href }) => (
         <h2 className="text-3xl font-bold mb-4">{title}</h2>
         <p className="text-base md:text-lg mb-4">{description}</p>
       </div>
-      <MainButton
-        label="LEARN MORE"
-        href={href}
-        hasArrowRight={true}
-        typographyClass="text-[12px] md:text-[14px] lg:text-[16px] text-nowrap font-extrabold mainButtonText"
-        hasBorder={false}
-      />
     </div>
   </div>
 );

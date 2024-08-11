@@ -85,7 +85,7 @@ const FeaturePrimeAccountSection = () => {
                   />
                 )}
 
-                <p className="featureCardTitle mt-2 dark:text-white text-[#252948]">
+                <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#252948]">
                   Deposit collateral
                 </p>
               </div>
@@ -128,7 +128,7 @@ const FeaturePrimeAccountSection = () => {
                     />
                   )}
 
-                  <p className="featureCardTitle mt-2 dark:text-white text-[#252948]">
+                  <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#252948]">
                     Borrow up to 5x
                   </p>
                 </div>
@@ -163,7 +163,7 @@ const FeaturePrimeAccountSection = () => {
                       alt="Rounded_Number_Three"
                     />
                   )}
-                  <p className="featureCardTitle mt-2 dark:text-white text-[#252948] max-w-[15rem]">
+                  <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#252948] max-w-[15rem]">
                     Invest in whitelisted, blue-chip protocols
                   </p>
                 </div>
@@ -179,6 +179,18 @@ const FeaturePrimeAccountSection = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Show this button only on mobile */}
+      <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
+        <Link href="?modal=true">
+          <CTAButton
+            className="mx-auto px-8 py-4"
+            label="LAUNCH APP"
+            hasArrowRight={true}
+            typographyClass="text-[15px]"
+          />
+        </Link>
       </div>
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">

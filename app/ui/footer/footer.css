@@ -30,8 +30,8 @@
 }
 
 .footerTextLinksLine {
-  width: 3px;
-  height: auto;
+  width: 2px;
+  height: 8rem;
   background: -moz-linear-gradient(
     0deg,
     rgba(175, 175, 255, 1) 0%,
@@ -54,8 +54,8 @@
 }
 
 .footerTextLinksVerticalLine {
-  width: auto;
-  height: 3px;
+  width: 8rem;
+  height: 2px;
   background: -moz-linear-gradient(
     0deg,
     rgba(175, 175, 255, 1) 0%,

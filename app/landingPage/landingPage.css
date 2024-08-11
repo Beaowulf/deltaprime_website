@@ -238,3 +238,33 @@
     scale: 1;
   }
 }
+
+/* BubbleAnimations */
+
+.strategiesIntroImgParent {
+  position: relative;
+  z-index: 50;
+}
+
+.purple_bubble {
+  position: absolute;
+}
+
+.bubble-1 {
+  top: 30%;
+  left: -7%;
+  z-index: -10;
+}
+.bubble-2 {
+  bottom: 15%;
+  left: 0;
+}
+.bubble-3 {
+  top: 35%;
+  right: 10%;
+}
+.bubble-4 {
+  bottom: 23%;
+  right: -10%;
+  z-index: -10;
+}

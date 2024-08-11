@@ -15,6 +15,7 @@ import closeIconWhite from "@/public/assets/icons/closeIconWhite.svg";
 import { getLinkClass } from "@/lib/getLinkClass";
 import DropDownStrategyLoader from "@/app/ui/strategyLoader";
 import DropDownBlogLoader from "@/app/ui/burdLogLoader";
+import Dropdown from "@/app/ui/header/dropdown";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +54,7 @@ function Nav() {
       }`}
     >
       <nav
-        className={`md:mb-40 mb-10 pt-4 transition-all duration-300 ${
+        className={`md:mb-32 mb-10 pt-4 transition-all duration-300 ${
           isScrolled && "py-4"
         }`}
       >
@@ -66,7 +67,7 @@ function Nav() {
           </div>
           <div className="hidden md:block">
             <div className="lg:ml-8 flex items-baseline space-x-4">
-              <div className="text-center">
+              {/* <div className="text-center">
                 <Link
                   href="/ourStory"
                   className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium text-nowrap"
@@ -76,7 +77,8 @@ function Nav() {
                 <div
                   className={getLinkClass("/ourStory", pathname, resolvedTheme)}
                 />
-              </div>
+              </div> */}
+              <Dropdown />
               <DropDownStrategyLoader
                 pathname={pathname}
                 resolvedTheme={resolvedTheme}
@@ -92,7 +94,7 @@ function Nav() {
               <div className="text-center">
                 <Link
                   href="/contactUs"
-                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium md:hidden lg:block"
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium md:hidden lg:block text-nowrap"
                 >
                   Contact Us
                 </Link>
@@ -108,15 +110,18 @@ function Nav() {
           </div>
           <div className="hidden md:flex items-center">
             <Link href="?modal=true">
-              <CTAButton label={"Launch app"} />
+              <CTAButton hasArrowRight={false} label={"Launch app"} />
             </Link>
           </div>
 
           <div className="-mr-2 flex md:hidden items-center gap-4">
-            <CTAButton
-              label={"Launch app"}
-              className="sm:hidden block whitespace-nowrap px-5 py-3"
-            />
+            <Link href="?modal=true">
+              <CTAButton
+                hasArrowRight={false}
+                label={"Launch app"}
+                className="sm:hidden block whitespace-nowrap px-5 py-3"
+              />
+            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"

@@ -1,19 +1,22 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowButton, CTAButton } from "@/app/components/buttons/mainButton";
+import {
+  BlogCardButton,
+  MainButton,
+} from "@/app/components/buttons/mainButton";
 import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
 
 const BlogHeader = ({ title, subTitle, paragraph }) => {
   return (
-    <div className="flex flex-col items-center dark:text-white text-[#252948] mb-14 text-center">
+    <div className="flex flex-col items-center dark:text-white text-[#252948] md:mb-14 mb-1 text-center">
       <h4 className="uppercase mb-3 font-bold featureSubtitle md:text-[34px] text-[24px] text text-center">
         {title}
       </h4>
       <h1 className="mb-8 featureSubtitle">{subTitle}</h1>
-      <p className="featureParagraph font-medium text-[13px] leading-5 md:text-[17px] md:leading-6 height max-w-xl text-center">
+      <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-center">
         {paragraph}
       </p>
     </div>
@@ -30,52 +33,20 @@ const BlogCard = ({
   blogSlug,
 }) => {
   return (
-    <div className="px-5 pt-5 bg-[#F4F4FF] rounded-[20px] w-[90%] md:w-[400px] h-[350px] shadow-lg dark:shadow-none shadow-[#ff5fa240]">
-      <div className="flex flex-col gap-4 justify-between h-full">
-        <div className="flex justify-between">
-          <div className="flex gap-2 text-black">
-            {roundedImage}
-            <p className="text-xs text-[#878C91]">{blogCategory}</p>
-          </div>
-          <div>
-            <p className="text-xs text-[#878C91]">{minsToRead} min read</p>
-          </div>
-        </div>
-
-        <div>
-          <h3>
-            <p className="mb-4 whitespace-nowrap overflow-hidden text-ellipsis w-full inline-block text-xl font-semibold text-dark hover:text-primary dark:text-[#010205] sm:text-2xl lg:text-xl xl:text-2xl">
-              {blogTitle}
-            </p>
-          </h3>
-        </div>
-
-        <div className="flex justify-between gap-5 w-full">
-          <p className="text-[10px] md:text-[12px] leading-[inherit] dark:text-[#878C91] lineClampThree">
-            {blogDescription}
-          </p>
-          {blogSlug ? (
-            <Link
-              className="arrowButtonParent"
-              href={`/academy/blogs/${blogSlug}`}
-            >
-              <ArrowButton />
-            </Link>
-          ) : (
-            ""
-          )}
-        </div>
-
-        <div className="overflow-hidden rounded w-fit self-center">
-          <Image
-            width={320}
-            height={145}
-            src={previewBlogImage}
-            alt="previewBlogImage"
-            className=""
-          />
-        </div>
+    <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
+      <div className="w-full h-[270px] ">
+        <img
+          src={previewBlogImage}
+          alt="Blog Preview"
+          className="object-cover w-full h-full rounded-[15px]"
+        />
       </div>
+      <p className="text-[16px] leading-6 font-medium line-clamp-2 ml-1">
+        {blogDescription}
+      </p>
+      <Link prefetch={true} href={`/blogs/academy/${blogSlug}`}>
+        <BlogCardButton label={"Read More"} />
+      </Link>
     </div>
   );
 };
@@ -134,7 +105,7 @@ const Circles = (randomNumber) => {
 const BlogPreviewSection = ({ blogPreviewCardData }) => {
   return (
     <>
-      <div className="pt-20 md:pt-40 pagePaddingMedium">
+      <div className="pt-12 md:pt-40 pagePaddingMedium">
         <BlogHeader
           title={"The Burd Log"}
           paragraph={
@@ -156,27 +127,12 @@ const BlogPreviewSection = ({ blogPreviewCardData }) => {
             />
           ))}
         </div>
-        {/* Show this button only on mobile */}
-        <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
-          <Link href="?modal=true">
-            <CTAButton
-              className="mx-auto px-8 py-4"
-              label="LAUNCH APP"
-              hasArrowRight={true}
-              typographyClass="text-[15px]"
-            />
-          </Link>
-        </div>
-        {/* Show this button only on mobile */}
-        <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
-          <Link href="?modal=true">
-            <CTAButton
-              className="mx-auto px-8 py-4"
-              label="LAUNCH APP"
-              hasArrowRight={true}
-              typographyClass="text-[15px]"
-            />
-          </Link>
+        <div className="flex justify-center items-center">
+          <MainButton
+            hasArrowRight={true}
+            label={"LAUNCH BURD LOG"}
+            href={"/blogs"}
+          />
         </div>
       </div>
     </>

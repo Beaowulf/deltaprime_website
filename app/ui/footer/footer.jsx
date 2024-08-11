@@ -46,7 +46,7 @@ const LogoButton = () => {
 export function FooterTextLinks() {
   return (
     <div className="flex justify-center items-center">
-      <div className="flex text-white text-lg flex-col md:flex-row">
+      <div className="flex text-white items-center text-lg flex-col md:flex-row">
         <div className="space-y-4 text-center md:text-start mt-10 md:mt-0">
           <Link href="/ourStory" className="block hover:text-gray-400 text-sm">
             Our Story
@@ -62,7 +62,7 @@ export function FooterTextLinks() {
           </Link>
         </div>
         <div className="block md:hidden my-10 footerTextLinksVerticalLine"></div>
-        <div className="hidden md:block mx-0  md:mx-16 footerTextLinksLine"></div>
+        <div className="hidden md:block mx-0 md:mx-16 footerTextLinksLine"></div>
         <div className="space-y-4 md:text-start flex flex-col justify-center items-center md:items-start">
           {/* <Link href="/academy" className="block hover:text-gray-400 text-sm">
             Academy
@@ -73,7 +73,10 @@ export function FooterTextLinks() {
           <Link href="/" className="block hover:text-gray-400 text-sm">
             Careers
           </Link>
-          <Link href="/use-cases" className="block hover:text-gray-400 text-sm">
+          <Link
+            href="/howToVideos"
+            className="block hover:text-gray-400 text-sm"
+          >
             How To Guides
           </Link>
           <Link
@@ -154,7 +157,7 @@ export function footer() {
       {/* Footer Wrapper */}
       <div>
         <div className="w-full h-1 bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%" />
-        <div className="footerWrapper pt-20 pb-4 bg-[#1b153c] relative z-[100] w-screen sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
+        <div className="footerWrapper pt-10 pb-4 bg-[#1b153c] relative z-[100] overflow-hidden sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
           <div className="flex justify-between flex-wrap md:flex-row flex-col">
             {/* Logo with Button */}
             <LogoButton />

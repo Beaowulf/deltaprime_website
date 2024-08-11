@@ -1,11 +1,4 @@
-/* .topsidestrategies {
-  background-image: url("../../../public/assets/img/images/strategieHeroImage.jpg");
-  background-position: center top;
-  background-size: 100% 100%;
-}
- */
-
- .topsidestrategies {
+.topsidestrategies {
   position: relative;
   border-radius: 20px;
   display: flex;
@@ -33,6 +26,6 @@
   flex: 6;
 }
 
-.boxWrapper {
+.rightSideBoxWrapper {
   flex: 2;
 }

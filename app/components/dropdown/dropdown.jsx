@@ -135,6 +135,8 @@ const DropdownMenu = ({
   };
 
   const StrategyNavBox = ({ custom, boxVariants, className, strategy }) => {
+    const { resolvedTheme } = useTheme();
+
     return (
       <motion.div
         custom={custom}
@@ -142,35 +144,31 @@ const DropdownMenu = ({
         initial="hidden"
         animate="visible"
         exit="exit"
-        className={className}
+        className={`${className} strategy-nav-box ${
+          resolvedTheme === "dark" ? "dark" : ""
+        }`}
       >
-        <div
-          className={`p-5 pl-1 flex flex-row gap-4 w-full h-full rounded boxContainer ${
-            resolvedTheme === "dark"
-              ? "bg-gradient-to-b from-[#1b153c] from-10% via-[#1c2943] via-50% to-[#301e3e] to-80%"
-              : "bg-gradient-to-b from-[#F4F4FF] to-[#E8E8F2] shadow-lg dark:shadow-none shadow-[#ff5fa240]"
-          }`}
+        <a
+          onClick={closeDropdown}
+          href={`/strategies/${strategy.strategySYS.id}`}
+          className="font-semibold pt-4 text-white !z-50 menuStrategyBoxWrapper rounded-[25px]"
         >
-          <Image
-            src={boxImage}
-            alt="bird_carrying_book_img"
-            className="object-cover w-[80px] h-[90px]"
-          />
-          <div className="flex flex-col gap-2">
-            <Link
-              onClick={closeDropdown}
-              href={`/strategies/${strategy.strategySYS.id}`}
-              className="font-semibold pt-4 text-white  !z-50"
-            >
-              <p className="w-fit font-bold text-[12px] mb-2 dark:text-[#fff] text-[#252948]">
+          <div className="p-5 pl-1 flex flex-row gap-4 w-full h-full boxContainer rounded-[26px]">
+            <Image
+              src={boxImage}
+              alt="bird_carrying_book_img"
+              className="object-cover w-[80px] h-[90px]"
+            />
+            <div className="flex flex-col gap-2">
+              <p className="w-fit font-bold text-[12px] mb-2 ">
                 {strategy.strategyTitle}
               </p>
-              <p className="whitespace-nowrap overflow-hidden text-ellipsis max-w-[100px] font-semibold text-[10px] mb-2 dark:text-[#fff] text-[#252948]">
+              <p className="overflow-hidden text-ellipsis line-clamp-2 text-wrap font-semibold text-[10px] mb-2 ">
                 {strategy.strategyDescription}
               </p>
-            </Link>
+            </div>
           </div>
-        </div>
+        </a>
       </motion.div>
     );
   };
@@ -254,13 +252,13 @@ const DropdownMenu = ({
                     exit="exit"
                     className="mb-2 text-[15px] dark:text-[#fff] text-[#252948]"
                   >
-                    <Link
+                    <a
                       className="mb-2 text-[15px] underline hover:text-gray-400"
                       href={boxLink}
                       onClick={closeDropdown}
                     >
                       View All
-                    </Link>
+                    </a>
                   </motion.div>
                 </div>
                 {isStrategy && (
@@ -270,7 +268,7 @@ const DropdownMenu = ({
                         key={i}
                         custom={i}
                         boxVariants={boxVariants}
-                        className="rounded boxWrapper"
+                        className="rounded-[25px] boxWrapper"
                         strategy={strategy}
                       />
                     ))}

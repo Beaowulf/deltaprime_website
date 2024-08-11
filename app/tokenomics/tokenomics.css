@@ -1,40 +1,52 @@
 .featureBorderWrapLightTheme {
-    position: relative;
-    background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
-    padding: 2px;
-    transition: all 0.5s ease;
-  }
-  
+  position: relative;
+  background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
+  padding: 2px;
+  transition: all 0.5s ease;
+}
 
-  .image-container {
-    position: relative;
-    display: inline-block;
+.image-container {
+  position: relative;
+  display: inline-block;
 }
 
 .image-wrapper {
-    position: relative;
-    display: inline-block;
-    padding: 10px; /* Space for the inner border */
-    background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
-    border-radius: 10px; /* Adjust the border radius if needed */
+  position: relative;
+  display: inline-block;
+  padding: 10px; /* Space for the inner border */
+  background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
+  border-radius: 10px; /* Adjust the border radius if needed */
 }
 
 .image-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* border: 2px solid white; Inner border color */
-    border-radius: 10px; /* Adjust the border radius if needed */
-    box-sizing: border-box;
-    pointer-events: none; /* Ensure the inner border doesn't interfere with clicks */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* border: 2px solid white; Inner border color */
+  border-radius: 10px; /* Adjust the border radius if needed */
+  box-sizing: border-box;
+  pointer-events: none; /* Ensure the inner border doesn't interfere with clicks */
 }
-.shadow-custom-light{
-    box-shadow: 0px 1.447px 4.342px 0px rgba(255, 95, 162, 0.7), 0px 5.79px 18.816px 0px rgba(255, 95, 162, 0.41);
+.shadow-custom-light {
+  box-shadow: 0px 1.447px 4.342px 0px rgba(255, 95, 162, 0.7),
+    0px 5.79px 18.816px 0px rgba(255, 95, 162, 0.41);
 }
-.shadow-custom-dark{
-    box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4), 0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+.shadow-custom-dark {
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+}
+/* CSS for float-based layout */
+@media (min-width: 768px) {
+  .float-image {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
 
+  .float-text {
+    overflow: hidden;
+  }
 }

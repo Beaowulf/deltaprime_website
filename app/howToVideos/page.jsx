@@ -9,28 +9,30 @@ import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import { fetchHowToVideos, fetchStrategies } from "@/lib/getBlogs";
 import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar";
-import { FlipCardMobileCarousel, VideosDesktopFlipCards } from "./howToVideosFlipCards";
+import {
+  FlipCardMobileCarousel,
+  VideosDesktopFlipCards,
+} from "./howToVideosFlipCards";
 
 const videos = await fetchHowToVideos();
 
 const StrategiesPage = () => {
   // get strat data here since its server component
   return (
-
     <div>
-      <DynamicPurpleBar title={"How To Videos"}/>
-      <div className="pagePaddingLarge">
-            {/* <HowToVideosHomePage /> */}
-         
+      <DynamicPurpleBar mediumPadding={true} title={"How To Videos"} />
+
+      <div className="pagePaddingMedium">
         {/* Dektop  */}
         <VideosDesktopFlipCards videos={videos} />
-        {/* Mobile  */}
+      </div>
+      {/* Mobile  */}
+      <div className="pagePaddingLarge">
+        {/* <HowToVideosHomePage /> */}
         <FlipCardMobileCarousel videos={videos} />
         {/* Unlock full potential button reponsive component */}
-
-    </div>
       </div>
-
+    </div>
   );
 };
 

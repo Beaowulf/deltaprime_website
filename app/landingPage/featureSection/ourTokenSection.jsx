@@ -9,7 +9,7 @@ import whiteTokenPrime from "@/public/assets/icons/whiteTokenPrime.svg";
 function OurTokenSection() {
   const { theme } = useTheme;
   return (
-    <div className="mb-32 mt-20">
+    <div className="lg:mb-32 mb-10 mt-14">
       <Header
         subTitle="Our Tokens"
         paragraph="Our tradeable and utility tokens feature majority ownership for the community as well as access to advanced platform features.  "
@@ -36,11 +36,11 @@ function OurTokenSection() {
                 </div>
                 <div>
                   <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#252948]">
-                    $sPRIME
+                    $PRIME
                   </h1>
                 </div>
               </div>
-              <p className="mt-8 featureParagraph mb-20 text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+              <p className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#252948]">
                 Store of value, tradeable ERC20 token.
                 <br />
                 - Primed with adaptive emissions.
@@ -85,7 +85,7 @@ function OurTokenSection() {
                   </h1>
                 </div>
               </div>
-              <p className="mt-8 featureParagraph mb-20 text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+              <p className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#252948]">
                 Utility token for Liquidity Providers and Active Users.
                 <br />
                 - Pay with for PRIME features

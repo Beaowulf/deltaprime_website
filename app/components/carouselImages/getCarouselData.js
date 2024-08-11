@@ -34,25 +34,52 @@ import color_yield_yak from "@/public/assets/img/images/backers/yield-yak--color
 
 // Import images for "Integration" section
 import BalancerLogo from "@/public/assets/img/intergrations/balancerLogo.svg";
-import ColonyLogo from "@/public/assets/img/intergrations/colonyLogo.svg";
-import GMXLogo from "@/public/assets/img/intergrations/GMXLogo.svg";
+import ColonyLogo from "@/public/assets/img/intergrations/colonyLogo.png";
+import GMXLogo from "@/public/assets/img/intergrations/GMXLogo.png";
 import PangolinLogo from "@/public/assets/img/intergrations/pangolinLogo.svg";
 import ParaswapLogo from "@/public/assets/img/intergrations/paraswapLogo.svg";
-import TraderJoeLogo from "@/public/assets/img/intergrations/traderJoeLogo.svg";
-import YakLogo from "@/public/assets/img/intergrations/yakLogo.svg";
+import TraderJoeLogo from "@/public/assets/img/intergrations/traderJoeLogo.png";
+import YakLogo from "@/public/assets/img/intergrations/yakLogo.png";
 
 // Carousel object for "Integration" section
-// Carousel object for "Backed By" section
 export const integrationData = [
-  { imageUrl: BalancerLogo, alt: "Balancer_Logo_Icon" },
-  { imageUrl: ColonyLogo, alt: "Colony_Logo_Icon" },
-  { imageUrl: GMXLogo, alt: "GMX_Logo_Icon" },
-  { imageUrl: PangolinLogo, alt: "Pangolin_Logo_Icon" },
-  { imageUrl: ParaswapLogo, alt: "Paraswap_Logo_Icon" },
-  { imageUrl: TraderJoeLogo, alt: "TraderJoe_Logo_Icon" },
-  { imageUrl: YakLogo, alt: "Yak_Logo_Icon" },
+  {
+    imageUrl: BalancerLogo,
+    alt: "Balancer_Logo_Icon",
+    link: "https://balancer.fi/",
+  },
+  {
+    imageUrl: ColonyLogo,
+    alt: "Colony_Logo_Icon",
+    link: "https://www.colonylab.io/",
+  },
+  {
+    imageUrl: GMXLogo,
+    alt: "GMX_Logo_Icon",
+    link: "https://gmx.io",
+  },
+  {
+    imageUrl: PangolinLogo,
+    alt: "Pangolin_Logo_Icon",
+    link: "https://www.pangolin.exchange/",
+  },
+  {
+    imageUrl: ParaswapLogo,
+    alt: "Paraswap_Logo_Icon",
+    link: "https://www.paraswap.io/",
+  },
+  {
+    imageUrl: TraderJoeLogo,
+    alt: "TraderJoe_Logo_Icon",
+    link: "https://traderjoexyz.com/",
+  },
+  {
+    imageUrl: YakLogo,
+    alt: "Yak_Logo_Icon",
+    link: "https://yieldyak.com/avalanche/",
+  },
 ];
-
+// Carousel object for "Backed By" section
 export const logoCarouselItems = [
   {
     bw: bw_4sv,
@@ -88,6 +115,7 @@ export const logoCarouselItems = [
     bw: bw_bbs_finance,
     color: color_bbs_finance,
     alt: "BBS Finance Logo",
+    link: "https://www.crunchbase.com/organization/bbs-finance",
   },
   {
     bw: bw_blizzard,
@@ -129,7 +157,7 @@ export const logoCarouselItems = [
     bw: bw_psalion_vc,
     color: color_psalion_vc,
     alt: "PSA Lion VC Logo",
-    link: "https://psalion.vc/",
+    link: "https://www.psalion.com/",
   },
   {
     bw: bw_uplift,

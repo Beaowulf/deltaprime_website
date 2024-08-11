@@ -38,14 +38,14 @@ const FlipCard = ({
   };
 
   return (
-    <div className="w-fit h-fit p-2 mx-auto md:mx-0 w-full flex justify-center">
+    <div className="h-fit p-2 mx-auto md:mx-0 w-full flex justify-center">
       <div
         className={`flip-card 2xl:h-[450px] w-full 2xl:max-w-[350px] lg:h-[450px] lg:max-w-[310px] h-[450px] max-w-[300px] ${
           isFlipped ? "flipped" : ""
         }`}
         onClick={handleClick}
       >
-        <div className="flip-card-inner">
+        <div className="flip-card-inner bg-[#0e101c] rounded-[20px]">
           <div
             className="background-image-overlay"
             style={{

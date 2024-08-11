@@ -54,8 +54,6 @@
   z-index: -1; /* Ensure it is behind the content */
 }
 
-
-
 .innerCardWrapper::before {
   content: "";
   /* background-image: url("../../../public/assets/img/flipCardBG.png"); */

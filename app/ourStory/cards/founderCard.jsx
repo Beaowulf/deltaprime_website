@@ -26,10 +26,10 @@ const FounderCard = ({
           <h3 className="featureSubtitle text-[17px] sm:text-[20px] dark:text-[#FFF5F0] text-[#252948] mt-5">
             {name}
           </h3>
-          <p className="featureParagraph text-[12px] sm:text-[17px] dark:text-[#FFF5F0] text-[#252948]">
+          <p className="aboutTypographyparagraphWhite dark:text-[#FFF5F0] text-[#252948]">
             {title}
           </p>
-          <p className="my-8 featureParagraph max-w-[320px] text-[12px] sm:text-[14px] dark:text-[#FFF5F0] text-[#252948]">
+          <p className="my-8 aboutTypographyparagraphWhite max-w-[320px] dark:text-[#FFF5F0] text-[#252948]">
             {description}
           </p>
           <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">

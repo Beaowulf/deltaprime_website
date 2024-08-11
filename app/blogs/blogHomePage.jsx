@@ -109,6 +109,7 @@ const BlogHomePage = ({ categories, blogs }) => {
     }, 1000);
   };
 
+  // todo go into button folder
   function BlogButton({ onClick, label, isActive }) {
     return (
       <button
@@ -145,10 +146,10 @@ const BlogHomePage = ({ categories, blogs }) => {
         ))}
       </div>
       <SearchBar onSearch={handleSearch} />
-      <div className="flex flex-col">
-        <div className="flex flex-col gap-6 items-start dark:text-white text-[#252948] ">
+      <div className="flex flex-col mb-20 md:mb-0">
+        <div className="flex flex-col gap-6 items-start">
           <div className="py-20 w-full relative">
-            <div className="blog-posts-container transition-all duration-500 ease-in-out transform translate-x-0 opacity-100 flex flex-wrap gap-6 items-center justify-center">
+            <div className="blog-posts-container transition-all duration-500 ease-in-out transform translate-x-0 opacity-100 flex flex-col xl:flex-row gap-6 items-center justify-center">
               {currentPosts.map((blogPreviewCardData, index) => (
                 <BlogCard
                   key={blogPreviewCardData.blogID}

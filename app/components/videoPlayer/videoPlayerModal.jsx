@@ -8,7 +8,10 @@ const VideoPlayerModal = ({ isOpen, onClose, children }) => {
   return (
     <div className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
       <div className="relative bg-transparent p-4 md:p-8 rounded-lg shadow-md w-full max-w-6xl">
-        <button onClick={onClose} className="absolute top-2 right-2">
+        <button
+          onClick={onClose}
+          className="absolute -top-[0.65rem] right-[.85rem]"
+        >
           <Image src={closeIconWhite} alt="close_icon" width={20} height={20} />
         </button>
         {children}

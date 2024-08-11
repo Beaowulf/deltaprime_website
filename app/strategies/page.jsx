@@ -1,4 +1,3 @@
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -22,31 +21,53 @@ const StrategiesPage = () => {
   return (
     <div className="px-4 md:px-[6%] lg:px-[8%] xl:px-[12%] 2xl:px-[15%]">
       {/* intro */}
-      <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-20 md:mb-40">
+      <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2 md:mb-40">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
           <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
             <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
               Strategies
             </p>
-            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-10 ">
+            <div className="w-full md:hidden block rounded-[25px]">
+              <Image
+                src={strategiesIntroImg}
+                alt="deltaprime_mascot_img rounded-[25px]"
+              />
+            </div>
+            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-5">
               DeltaPrime allows for a range of new and unique strategies. Every
               strategy is accompanied by a practical example, getting deeper
               into the risk and rewards of the specific strategy.
             </p>
-            <Link href="?modal=true">
-              <CTAButton
-                className="w-[100%] md:w-fit px-8 py-4"
-                label="LAUNCH APP"
-                hasArrowRight={true}
-                typographyClass="text-[15px]"
-              />
-            </Link>
+            <div className="w-full md:block hidden">
+              <Link href="?modal=true">
+                <CTAButton
+                  className="w-[100%] md:w-fit px-8 py-4"
+                  label="LAUNCH APP"
+                  hasArrowRight={true}
+                  typographyClass="text-[15px]"
+                />
+              </Link>
+            </div>
+            {/* Show this button only on mobile */}
+            <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
+              <Link href="?modal=true">
+                <CTAButton
+                  className="mx-auto px-8 py-4"
+                  label="LAUNCH APP"
+                  hasArrowRight={true}
+                  typographyClass="text-[15px]"
+                />
+              </Link>
+            </div>
           </div>
         </div>
         {/* Image burd */}
-        <div className="w-fit">
-          <Image src={strategiesIntroImg} alt="deltaprime_mascot_img" />
+        <div className="w-fit md:block hidden rounded-[25px]">
+          <Image
+            src={strategiesIntroImg}
+            alt="deltaprime_mascot_img rounded-[25px]"
+          />
         </div>
       </div>
 
@@ -73,7 +94,7 @@ const StrategiesPage = () => {
         </div>
 
         {/* other text */}
-        <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 my-10 md:my-40">
+        <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 mt-10 mb-16 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col items-center md:items-start dark:text-white text-[#252948] md:mb-14 max-w-96">
             <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-gray-400 leading-6 md:text-left text-center">
