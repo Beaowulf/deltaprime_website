@@ -112,7 +112,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
   const plainText = documentToPlainTextString(blogData.blogRichTextParagraph);
   const wordCount = countWords(plainText);
   const minsToRead = Math.ceil(wordCount / 210);
-const heroImage = blogData.blogImage.fields.file.url;
+  const heroImage = blogData.blogImage.fields.file.url;
 
   return (
     <div key={blogData.slug}>

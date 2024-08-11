@@ -63,4 +63,46 @@ const BlogPage = async ({ params }) => {
   );
 };
 
+// // or Dynamic metadata
+export async function generateMetadata({ params, searchParams }, parent) {
+  // read route params
+  const slug = params.slug;
+
+  const blogs = await fetchBlogs();
+  const blog = blogs.find((blog) => blog.slug === slug) || null;
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+  const blogUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  return {
+    title: blog.blogTitle,
+    description: blog.blogDescription,
+    url: blogUrl,
+    type: "article",
+    image: `https:${blog.previewImageBlog.fields.file.url}`,
+    openGraph: {
+      title: blog.blogTitle,
+      description:blog.blogDescription,
+      url: blogUrl,
+      type: "article",
+      images: [
+        {
+          url: `https:${blog.previewImageBlog.fields.file.url}`,
+          width: 800,
+          height: 600,
+          alt: blog.previewImageBlog.fields.title
+        },
+      ],
+    },
+    card: 'summary_large_image',
+    title:  blog.blogTitle,
+    description: blog.blogDescription,
+    // siteId: '1467726470533754880',
+    // creator: '@nextjs',
+    // creatorId: '1467726470533754880',
+    images: [`https:${blog.previewImageBlog.fields.file.url}`], // Must be an absolute URL
+  };
+}
+
 export default BlogPage;

@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import HorizontalPage from "@/app/ui/horizontalPage";
 import useScreenOrientation from "@/utils/orientationCheck";
+import HorizontalPage from "@/app/ui/horizontalPage";
 
 const AppContent = ({ children }) => {
   const [isHorizontalPage, setIsHorizontalPage] = useState(false);
