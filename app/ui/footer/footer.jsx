@@ -73,7 +73,10 @@ export function FooterTextLinks() {
           <Link href="/" className="block hover:text-gray-400 text-sm">
             Careers
           </Link>
-          <Link href="/use-cases" className="block hover:text-gray-400 text-sm">
+          <Link
+            href="/howToVideos"
+            className="block hover:text-gray-400 text-sm"
+          >
             How To Guides
           </Link>
           <Link
