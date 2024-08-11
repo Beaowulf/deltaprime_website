@@ -2,20 +2,31 @@ import React from "react";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { integrationData } from "@/app/components/carouselImages/getCarouselData";
 
-const DarkBoxWrapper = ({ srcImg }) => {
+const DarkBoxWrapper = ({ srcImg, scrURL }) => {
   return (
-    <div className="rounded-[20px] p-4 parentColoredBorderWrapper ">
-      <div className="bg-[#1D2943] rounded-[20px] ">
-        <div className="rounded-[20px] flex justify-center items-center md:px-4 md:py-2 ">
-          <Image
-            className="md:w-[195px] md:h-[75px] w-[175px] h-[60px] sm:p-0 p-4"
-            src={srcImg}
-            alt="aboutimg"
-          />
+    <div className="rounded-[20px] p-4 parentColoredBorderWrapper cursor-pointer">
+      <div className="bg-[#1D2943] rounded-[20px]">
+        <div className="rounded-[20px] flex justify-center items-center md:px-4 md:py-2">
+          {scrURL ? (
+            <Link href={scrURL} target="_blank">
+              <Image
+                className="md:w-[195px] md:h-[75px] w-[175px] h-[60px] sm:p-0 p-4 object-contain filter grayscale hover:filter-none transition duration-300 ease-in-out"
+                src={srcImg}
+                alt="aboutimg"
+              />
+            </Link>
+          ) : (
+            <Image
+              className="md:w-[195px] md:h-[75px] w-[175px] h-[60px] sm:p-0 p-4 object-contain filter grayscale hover:filter-none transition duration-300 ease-in-out"
+              src={srcImg}
+              alt="aboutimg"
+            />
+          )}
         </div>
       </div>
     </div>
