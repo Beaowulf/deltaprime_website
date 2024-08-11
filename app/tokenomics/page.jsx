@@ -33,70 +33,77 @@ const Tokenomics = () => {
   };
 
   return (
-    <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[15%] px-4">
+    <div className="pagePaddingLarge">
+      {/* First Section */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
-          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948]">
-            <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
-              Deep Dive into $PRIME Tokenomics
-            </p>
-            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 float-text">
-              DeltaPrime is a decentralized Prime Brokerage solution that offers
-              undercollateralized crypto loans without relying on trust. The
-              native tokens $PRIME and $sPRIME feature advanced tokenomics on
-              the Arbitrum and Avalanche networks and can be acquired from
-              Trader Joe and Uniswap. Their design and distribution are in line
-              with DeltaPrime’s commitment towards a sustainable,
-              community-governed ecosystem.
-              <br />
-              {expandedSections[0] && (
-                <>
-                  <br />
-                  More than 50% of the total 40mil minted $PRIME tokens go to
-                  the Community Owned Liquidity (COL) and the DAO treasury.
-                  31.49% of the total $PRIME tokens are allocated to COL, while
-                  20% are going to the DAO treasury. The DAO treasury will be
-                  governed by eligible community members and used for future
-                  developments when at least 40% of $PRIME is in public hands.
-                  10% of the total supply, coming from the COL, will be used to
-                  bootstrap liquidity pools paired with AVAX and ETH on Trader
-                  Joe and Uniswap.
-                  <br />
-                  <br />
-                  The emissions of $PRIME, i.e. getting the token into public
-                  hands, will be executed in such a way that the liquidity pool
-                  deepens with time. The COL that is not initially used in the
-                  liquidity pool will be automatically used to buy and sell
-                  $PRIME according to demand, so as to avoid a price crash or
-                  overinflation. Enter stage: $sPRIME, which facilitates a
-                  healthy liquidity pool, rewards our community, and assigns
-                  governance power to the users.
-                </>
-              )}
-            </p>
-            <div className="h-[50px] md:h-full block w-full text-left ">
-              <GradientButton
-                label={expandedSections[0] ? "view less" : "read more"}
-                onClick={() => toggleText(0)}
-                style={{ padding: "28px !important" }} // Override padding here
+          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
+            <div className="clearfix">
+              <Image
+                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={ourStoryIntroImg}
+                alt="deltaprime_mascot_img"
               />
+              <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
+                Deep Dive into $PRIME Tokenomics
+              </p>
+              <Image
+                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={ourStoryIntroImg}
+                alt="deltaprime_mascot_img"
+              />
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full">
+                DeltaPrime is a decentralized Prime Brokerage solution that
+                offers undercollateralized crypto loans without relying on
+                trust. The native tokens $PRIME and $sPRIME feature advanced
+                tokenomics on the Arbitrum and Avalanche networks and can be
+                acquired from Trader Joe and Uniswap. Their design and
+                distribution are in line with DeltaPrime’s commitment towards a
+                sustainable, community-governed ecosystem.
+                <br />
+                {expandedSections[0] && (
+                  <>
+                    <br />
+                    More than 50% of the total 40mil minted $PRIME tokens go to
+                    the Community Owned Liquidity (COL) and the DAO treasury.
+                    31.49% of the total $PRIME tokens are allocated to COL,
+                    while 20% are going to the DAO treasury. The DAO treasury
+                    will be governed by eligible community members and used for
+                    future developments when at least 40% of $PRIME is in public
+                    hands. 10% of the total supply, coming from the COL, will be
+                    used to bootstrap liquidity pools paired with AVAX and ETH
+                    on Trader Joe and Uniswap.
+                    <br />
+                    <br />
+                    The emissions of $PRIME, i.e. getting the token into public
+                    hands, will be executed in such a way that the liquidity
+                    pool deepens with time. The COL that is not initially used
+                    in the liquidity pool will be automatically used to buy and
+                    sell $PRIME according to demand, so as to avoid a price
+                    crash or overinflation. Enter stage: $sPRIME, which
+                    facilitates a healthy liquidity pool, rewards our community,
+                    and assigns governance power to the users.
+                  </>
+                )}
+              </p>
+              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
+                <GradientButton
+                  label={expandedSections[0] ? "view less" : "read more"}
+                  onClick={() => toggleText(0)}
+                  style={{ padding: "28px !important" }} // Override padding here
+                />
+              </div>
             </div>
           </div>
-        </div>
-        {/* Image */}
-        <div className="w-fit">
-          <Image
-            className={`rounded-[20px] border-4 border-[#fff56] float-image  ${
-              resolvedTheme === "dark"
-                ? "shadow-custom-dark"
-                : "shadow-custom-light"
-            }`}
-            src={ourStoryIntroImg}
-            alt="deltaprime_mascot_img"
-            width={650}
-            height={450}
-          />
         </div>
       </div>
 
@@ -219,21 +226,8 @@ const Tokenomics = () => {
         </div>
       </div>
 
-      <div className="flex md:flex-row flex-col justify-between items-start w-full gap-10 my-10 md:my-20">
-        {/* Image */}
-        <div className="w-fit">
-          <Image
-            className={`rounded-[20px] border-4 border-[#fff56]  ${
-              resolvedTheme === "dark"
-                ? "shadow-custom-dark"
-                : "shadow-custom-light"
-            }`}
-            src={ourStoryIntroImg}
-            alt="deltaprime_mascot_img"
-            width={650}
-            height={450}
-          />
-        </div>
+      {/* Second Section */}
+      <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
           <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948]">
@@ -323,6 +317,18 @@ const Tokenomics = () => {
             </div>
           </div>
         </div>
+        {/* Image */}
+        <div className="w-full lg:w-1/2">
+          <Image
+            className={`rounded-[20px] border-4 border-[#fff56] w-full ${
+              resolvedTheme === "dark"
+                ? "shadow-custom-dark"
+                : "shadow-custom-light"
+            }`}
+            src={ourStoryIntroImg}
+            alt="deltaprime_mascot_img"
+          />
+        </div>
       </div>
 
       <div className="mb-16">
@@ -383,6 +389,7 @@ const Tokenomics = () => {
         </div>
       </div>
 
+      {/* Third Section */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
@@ -461,34 +468,30 @@ const Tokenomics = () => {
           </div>
         </div>
         {/* Image */}
-        <div className="w-fit">
+        <div className="w-full lg:w-1/2">
           <Image
-            className={`rounded-[20px] border-4 border-[#fff56]  ${
+            className={`rounded-[20px] border-4 border-[#fff56] w-full ${
               resolvedTheme === "dark"
                 ? "shadow-custom-dark"
                 : "shadow-custom-light"
             }`}
             src={ourStoryIntroImg}
             alt="deltaprime_mascot_img"
-            width={650}
-            height={450}
           />
         </div>
       </div>
 
       <div className="flex mb:flex-col-reverse  md:flex-row flex-col justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Image */}
-        <div className="w-fit">
+        <div className="w-full lg:w-1/2">
           <Image
-            className={`rounded-[20px] border-4 border-[#fff56]  ${
+            className={`rounded-[20px] border-4 border-[#fff56] w-full ${
               resolvedTheme === "dark"
                 ? "shadow-custom-dark"
                 : "shadow-custom-light"
             }`}
             src={ourStoryIntroImg}
             alt="deltaprime_mascot_img"
-            width={650}
-            height={450}
           />
         </div>
         {/* Text Wrapper */}
@@ -546,6 +549,7 @@ const Tokenomics = () => {
         </div>
       </div>
 
+      {/* Fourth Section */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
@@ -590,17 +594,15 @@ const Tokenomics = () => {
           </div>
         </div>
         {/* Image */}
-        <div className="w-fit">
+        <div className="w-full lg:w-1/2">
           <Image
-            className={`rounded-[20px] border-4 border-[#fff56]  ${
+            className={`rounded-[20px] border-4 border-[#fff56] w-full ${
               resolvedTheme === "dark"
                 ? "shadow-custom-dark"
                 : "shadow-custom-light"
             }`}
             src={ourStoryIntroImg}
             alt="deltaprime_mascot_img"
-            width={650}
-            height={450}
           />
         </div>
       </div>

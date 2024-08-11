@@ -12,7 +12,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
           <UnlockPotentialContainer />
         </div>
       )}
-      <div className="flex flex-col md:flex-row mt-5 md:mt-40 md:pb-36 pb-5 relative">
+      <div className="flex flex-col md:flex-row mt-5 md:mt-40 md:pb-36 pb-5 relative overflow-hidden">
         {/* Left Side */}
         <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center px-10 py-2 md:py-28 2xl:py-40 contactFormBG ">
           {/* Add your background image in the above style */}

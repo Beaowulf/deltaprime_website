@@ -312,7 +312,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         </div>
         <div className="hidden md:block md:w-3/12">
           <div className="flex flex-col gap-10 sticky top-32">
-            <div className="bg-white p-4 md:p-10 rounded-[20px]">
+            <div className="bg-white p-4 md:p-6 rounded-[20px]">
               <p className="font-bold leading-6 uppercase text-[18px] text-[#252948]">
                 Table of contents
               </p>

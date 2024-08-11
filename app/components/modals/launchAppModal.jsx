@@ -33,7 +33,7 @@ const LaunchAppModal = () => {
     <>
       {modal && (
         <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
-          <div className="modalParent relative z-10 w-full">
+          <div className="modalParent relative z-10 w-full md:w-fit">
             <div className="absolute top-2 right-4 w-fit h-fit text-black cursor-pointer z-50">
               <Link className="z-100 cursor-pointer" href={pathname}>
                 <Image
