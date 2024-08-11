@@ -76,7 +76,7 @@ const FounderCardCarousel = () => {
         <div className="custom-pagination-container-founder flex justify-between items-center py-[30px] px-[4rem]">
           <Image
             onClick={handlePrev}
-            className="swiper-button-prev custom-arrow-founder" // Use founder-specific class
+            className="swiper-button-prev custom-arrow-founder z-50" // Use founder-specific class
             src={arrowLeftColored}
             alt={"Arrow Left"}
           />
@@ -84,7 +84,7 @@ const FounderCardCarousel = () => {
           {/* Founder pagination */}
           <Image
             onClick={handleNext}
-            className="swiper-button-next custom-arrow-founder" // Use founder-specific class
+            className="swiper-button-next custom-arrow-founder z-50" // Use founder-specific class
             src={arrowRightColored}
             alt={"Arrow Right"}
           />

@@ -108,6 +108,7 @@ function Nav() {
               </div>
             </div>
           </div>
+
           <div className="hidden md:flex items-center">
             <Link href="?modal=true">
               <CTAButton hasArrowRight={false} label={"Launch app"} />
@@ -119,9 +120,10 @@ function Nav() {
               <CTAButton
                 hasArrowRight={false}
                 label={"Launch app"}
-                className="sm:hidden block whitespace-nowrap px-5 py-3"
+                className="whitespace-nowrap px-5 py-3"
               />
             </Link>
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"

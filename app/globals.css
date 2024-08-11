@@ -617,6 +617,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  z-index: -10 !important;
 }
 
 .custom-swiper-pagination-advisor .swiper-pagination-bullet {
@@ -663,6 +664,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  z-index: -100;
 }
 
 .custom-swiper-pagination-founder .swiper-pagination-bullet {
@@ -697,4 +699,13 @@ body {
   cursor: pointer;
   height: 50px;
   width: 60px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  z-index: 10000;
+}
+
+.swiper-pagination {
+  z-index: -100 !important;
 }
