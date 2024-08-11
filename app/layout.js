@@ -21,12 +21,12 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <Providers>
+          <LaunchAppModal />
           <Header />
           {children}
           {/* might put these 2 together
           or contact into Footer
           */}
-          <LaunchAppModal />
           <Footer />
         </Providers>
       </body>

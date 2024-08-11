@@ -1,9 +1,9 @@
 .flip-card {
   position: relative;
-  background-color: transparent;
   perspective: 1000px;
   cursor: pointer;
   z-index: 50;
+  border-radius: 25px;
 }
 
 .flip-card-inner {
@@ -18,7 +18,9 @@
 .flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
-
+.flip-card-front {
+  background: #252948;
+}
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -53,43 +55,6 @@
   border-radius: 20px;
   z-index: -1; /* Ensure it is behind the content */
 }
-
-
-
-.innerCardWrapper::before {
-  content: "";
-  /* background-image: url("../../../public/assets/img/flipCardBG.png"); */
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.45;
-  border-radius: 20px;
-  z-index: -11;
-}
-
-/* .hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero::before {
-  content: "";
-  background-image: url("https://placekitten.com/1200/800");
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.75;
-} */
 
 .flip-card-back {
   background-color: #3d4481;

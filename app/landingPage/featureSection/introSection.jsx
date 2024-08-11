@@ -22,7 +22,7 @@ const TextWithPill = ({ totalTvl }) => {
           <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
             Be The Whale.
           </p>
-          <p className="aboutTypographyparagraphWhite text-wrap max-w-[25rem] text-white">
+          <p className="aboutTypographyparagraphWhite text-wrap max-w-[25rem] dark:text-white text-[#252948]">
             Your trustless, transparent, prime brokerage on Avalanche and
             Arbitrum.
             <br />

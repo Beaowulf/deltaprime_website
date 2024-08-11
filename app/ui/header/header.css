@@ -29,14 +29,14 @@
 .sun {
   background-color: white;
   border-radius: 50px;
-  background-image: url("../../../public/assets/img/sun.svg");
+  background-image: url("../../../public/assets/icons/sun.svg");
   opacity: 1;
 }
 
 .moon {
   border-radius: 50px;
   background-color: #9a89fb;
-  background-image: url("../../../public/assets/img/moon.svg");
+  background-image: url("../../../public/assets/icons/moon.svg");
   opacity: 0;
   left: -100%; /* Start from the right, out of view */
   background-position-y: 1.2px;

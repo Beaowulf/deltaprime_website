@@ -46,15 +46,15 @@ const FlipCard = ({
         onClick={handleClick}
       >
         <div className="flip-card-inner">
-          <div
-            className="background-image-overlay"
-            style={{
-              backgroundImage: `url(${
-                strategyImage ? strategyImage : "/assets/img/flipCardBG.png"
-              })`,
-            }}
-          ></div>
           <div className="flip-card-front rounded-[20px] shadow-lg shadow-[#26283db7]">
+            <div
+              className="background-image-overlay"
+              style={{
+                backgroundImage: `url(${
+                  strategyImage ? strategyImage : "/assets/img/flipCardBG.png"
+                })`,
+              }}
+            ></div>
             <div className="innerCardWrapper p-6 flex flex-col justify-end w-full h-full">
               <h4 className="text-white pb-3 font-extrabold text-[20px] leading-7">
                 {titleFront ? titleBack : "Delta Neutral"}
