@@ -5,7 +5,7 @@ import "./ourStory.css";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
-import { CTAButton, MainButton } from "@/app/components/buttons/mainButton";
+import { CTAButton } from "@/app/components/buttons/mainButton";
 import ourStoryIntroImg from "@/public/assets/img/images/strategies/burdChess.jpg";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
 import whyDeltaPrimeImg from "@/public/assets/img/whyDeltaPrimeImg.jpg";
@@ -83,46 +83,26 @@ const OurStory = () => {
                 <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left">
                   Unlocking Trapped Liquidity
                 </h1>
-                <div className="clearfix">
-                  <Image
-                    className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
-                      resolvedTheme === "dark"
-                        ? "shadow-custom-dark"
-                        : "shadow-custom-light"
-                    }`}
-                    src={yourImageSrc} // replace with your actual image source
-                    alt="description of the image"
-                  />
-                  <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left">
-                    That evening, chance brought three guys together. United by
-                    their love for DeFi, they started talking about one of the
-                    major issues in crypto; overcollateralized lending.
-                    <br />
-                    <span className="font-bold">
-                      ”There must be a better way”, they pondered.
-                    </span>
-                    <br />
-                    That’s when they envisioned a platform that interacts with
-                    trapped liquidity, unlocking cash flows throughout the
-                    ecosystem and bringing to surface a range of new investment
-                    strategies.
-                  </p>
-                  <Image
-                    className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
-                      resolvedTheme === "dark"
-                        ? "shadow-custom-dark"
-                        : "shadow-custom-light"
-                    }`}
-                    src={yourImageSrc} // replace with your actual image source
-                    alt="description of the image"
-                  />
-                  <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left">
-                    This later became the cornerstone of DeltaPrime's
-                    revolutionary Diamond-Beacon Proxy (DBP) pattern, a robust
-                    and flexible architecture that is infinitely scalable,
-                    resilient and secure, no matter the market conditions.
-                  </p>
-                </div>
+                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left">
+                  That evening, chance brought three guys together. United by
+                  their love for DeFi, they started talking about one of the
+                  major issues in crypto; overcollateralized lending.
+                  <br />
+                  <span className="font-bold">
+                    ”There must be a better way”, they pondered.
+                  </span>
+                  <br />
+                  That’s when they envisioned a platform that interacts with
+                  trapped liquidity, unlocking cash flows throughout the
+                  ecosystem and bringing to surface a range of new investment
+                  strategies.
+                </p>
+                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left">
+                  This later became the cornerstone of DeltaPrime's
+                  revolutionary Diamond-Beacon Proxy (DBP) pattern, a robust and
+                  flexible architecture that is infinitely scalable, resilient
+                  and secure, no matter the market conditions.
+                </p>
               </div>
             </div>
           </div>

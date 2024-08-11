@@ -94,7 +94,7 @@ function Nav() {
               <div className="text-center">
                 <Link
                   href="/contactUs"
-                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium md:hidden lg:block text-nowrap"
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[14px] text-[12px] font-medium md:hidden lg:block text-nowrap"
                 >
                   Contact Us
                 </Link>

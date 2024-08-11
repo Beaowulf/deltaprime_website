@@ -73,7 +73,7 @@ const IntroSection = ({ totalTvl }) => {
             </Link>
           </div>
           {/* Right side (video player) */}
-          <div className="w-full ">
+          <div className="w-full max-w-[50rem]">
             <VideoPlayer url={"https://youtu.be/2nJLhZ33lno"} />
           </div>
         </div>
