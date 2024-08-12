@@ -36,9 +36,3 @@
 .boxStrategyWrapper {
   flex: 2;
 }
-
-@media (min-width: 1024px) {
-  .topsidestrategies {
-    display: none;
-  }
-}
