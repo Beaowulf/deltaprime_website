@@ -21,12 +21,11 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
               Contact us
             </h4>
             <h1 className="mb-6 featureSubtitle text-[25px] md:text-[34px]">
-              Wanna chat? Message us.
+              Got a question to ask? We're here for you.
             </h1>
             <p className="aboutTypographyparagraphWhite max-w-xl md:leading-8 leading-6">
-              Looking for answers that you can’t find in our documentation or
-              our community conversations on Discord? Drop us a line. We’ll be
-              happy to assist.
+              You couldn't find answers in our Site, Docs or Discord? Ask us.
+              We'll be happy to assist.
             </p>
           </div>
         </div>
