@@ -67,7 +67,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
             </p>
             <div className="w-full md:hidden block rounded-[25px]">
               <Image
-                src={strategiesIntroImg}
+                src={strategyHeroImage}
                 alt="deltaprime_mascot_img rounded-[25px]"
               />
             </div>
