@@ -67,12 +67,8 @@ const HomePage = async () => {
 
   // Convert preview card data to array
   const previewDataArray = Object.values(blogPreviewCardData);
-  // console.log("🚀 ~ HomePage ~ previewDataArray:", previewDataArray);
 
   const tvlData = await fetchTvlData();
-
-  // const unlcockedData = await fetchUnlockedData();
-  // console.log(unlcockedData);
 
   return (
     <>

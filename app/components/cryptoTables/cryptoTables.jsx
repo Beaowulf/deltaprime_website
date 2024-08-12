@@ -94,7 +94,7 @@ const CryptoPreviewTables = () => {
       <div className="bg-white rounded-[30px] px-4 pb-1 pt-4 md:px-8 md:pb-2 md:pt-8 max-w-[340px]">
         <div className="flex flex-row items-center justify-start gap-3">
           <h4 className="text-black mb-[10px] font-bold">Arbitrum</h4>
-          <Image
+          <img
             src={arbitrum}
             width={20}
             height={20}

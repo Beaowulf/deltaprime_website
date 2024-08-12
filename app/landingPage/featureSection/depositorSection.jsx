@@ -121,13 +121,19 @@ const FeaturePrimeAccount = () => {
               <div className="mb-11">
                 {theme === "dark" ? (
                   <Image
+                    className="w-auto"
                     src={RoundedThreeDarkThemed}
-                    alt="Rounded_Number_One"
+                    alt="Rounded_Number_Three"
+                    height={50}
+                    width={50}
                   />
                 ) : (
                   <Image
+                    className="w-auto"
                     src={RoundedThreeLightThemed}
-                    alt="Rounded_Number_One"
+                    alt="Rounded_Number_Three"
+                    height={50}
+                    width={50}
                   />
                 )}
                 <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#252948] max-w-[15rem]">
@@ -139,6 +145,8 @@ const FeaturePrimeAccount = () => {
                   className="object-contain"
                   src={dollarSign3D}
                   alt="dollar_Sign_3D"
+                  height={220}
+                  width={180}
                 />
               </div>
             </div>
