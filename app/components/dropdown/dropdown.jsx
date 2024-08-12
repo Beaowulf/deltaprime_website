@@ -137,6 +137,7 @@ const DropdownMenu = ({
   const StrategyNavBox = ({ custom, boxVariants, className, strategy }) => {
     const { resolvedTheme } = useTheme();
 
+    console.log(strategy);
     return (
       <motion.div
         custom={custom}
@@ -154,12 +155,14 @@ const DropdownMenu = ({
           className="font-semibold pt-4 text-white !z-50 menuStrategyBoxWrapper rounded-[25px]"
         >
           <div className="p-5 pl-1 flex flex-row gap-4 w-full h-full boxContainer rounded-[26px]">
-            <Image
-              src={boxImage}
+            <img
+              src={`https:${strategy.strategyImage?.fields?.file?.url}`}
               alt="bird_carrying_book_img"
-              className="object-cover w-[80px] h-[90px]"
+              className="object-cover rounded-md w-[80px] h-[90px]"
+              width={80}
+              height={90}
             />
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 justify-center">
               <p className="w-fit font-bold text-[12px] mb-2 ">
                 {strategy.strategyTitle}
               </p>
