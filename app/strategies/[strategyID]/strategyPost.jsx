@@ -21,8 +21,7 @@ import {
 
 const StrategyDetail = ({ strategy, strategies }) => {
   const paragraph = documentToPlainTextString(strategy.strategyRichText);
-  const strategyHeroImage =
-    "https://" + strategy.strategyHeroImage?.fields?.file.url;
+  const strategyHeroImage = strategy.strategyHeroImage?.fields?.file?.url;
 
   console.log(strategyHeroImage);
   return (
@@ -32,11 +31,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
       <div className="hidden md:block">
         <div
           style={{
-            backgroundImage: `url(${
-              strategyHeroImage == "https://undefined"
-                ? "/assets/img/flipCardBG.png"
-                : strategyHeroImage
-            })`,
+            backgroundImage: `url(${strategyHeroImage})`,
           }}
           className="topsidestrategies bg-cover bg-no-repeat"
         >
