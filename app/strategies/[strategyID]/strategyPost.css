@@ -40,5 +40,5 @@
 }
 
 .strategyPostWrapper {
-  overflow: scroll;
+  overflow: hidden;
 }
