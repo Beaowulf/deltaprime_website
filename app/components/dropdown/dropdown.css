@@ -1,0 +1,95 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: none;
+}
+
+.overlay.visible {
+  display: block;
+}
+
+.brightTitle {
+  text-shadow: 0px -1px 16px #feeef4;
+  font-weight: 700;
+  letter-spacing: -2%;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+.boxWrapper {
+  position: relative;
+  border-radius: 25px;
+  padding: 1px;
+  overflow: hidden;
+  width: 15rem;
+}
+
+.boxWrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+  border-radius: 25px;
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  -webkit-mask: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+  scale: 1.02;
+}
+
+.boxContainer {
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Default styles for the box container */
+.strategy-nav-box .boxContainer {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode initial styles */
+.strategy-nav-box.dark .boxContainer {
+  background: linear-gradient(to bottom, #1b153c 10%, #1c2943 50%, #301e3e 80%);
+  color: #fff;
+}
+
+/* Light mode initial styles */
+.strategy-nav-box .boxContainer {
+  background: linear-gradient(to bottom, #f4f4ff, #e8e8f2);
+  color: #252948;
+}
+
+/* Hover effect in dark mode: change to light background and dark text */
+.strategy-nav-box.dark:hover .boxContainer {
+  background: linear-gradient(to bottom, #f4f4ff, #e8e8f2);
+  color: #252948;
+}
+
+/* Hover effect in light mode: change to dark background and light text */
+.strategy-nav-box:hover .boxContainer {
+  background: linear-gradient(to bottom, #1b153c 10%, #1c2943 50%, #301e3e 80%);
+  color: #fff;
+}

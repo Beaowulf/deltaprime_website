@@ -1,0 +1,64 @@
+/* Feature Section Styling */
+.featureBorderWrapDarkTheme {
+  position: relative;
+  background: linear-gradient(140deg, #3a2d8c 10%, #571e4b 55%, #163d59 100%);
+  padding: 2px;
+}
+
+.featureBorderWrapLightTheme {
+  position: relative;
+  background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
+  padding: 2px;
+  transition: all 0.5s ease;
+}
+
+.storyCard {
+  transition: background 0.5s ease-in-out;
+}
+.featureSubtitle,
+.featureParagraph {
+  transition: color 0.5s ease-in-out;
+}
+
+.storyCard:hover {
+  background: #3d4481;
+}
+.storyCard:hover .featureSubtitle {
+  color: white;
+}
+.storyCard:hover .featureParagraph {
+  color: white;
+}
+
+.storyCard:hover > div > p {
+  color: white;
+}
+.storyCard:hover > div > h3 {
+  color: white;
+}
+.storyCard .coloredLinkedInIcon,
+.storyCard .grayLinkedInCon {
+  transition: background 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.storyCard .coloredLinkedInIcon {
+  opacity: 0;
+}
+
+.storyCard .grayLinkedInCon {
+  opacity: 1;
+}
+
+.storyCard:hover .coloredLinkedInIcon {
+  background: #3d4481;
+  opacity: 1;
+}
+
+.storyCard:hover .grayLinkedInCon {
+  background: #3d4481;
+  opacity: 0;
+}
+
+.customBoxShadow {
+  box-shadow: 0 0 1px 1px gray;
+}

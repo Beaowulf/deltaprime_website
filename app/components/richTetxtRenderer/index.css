@@ -1,0 +1,11 @@
+.gradient-border {
+  border-image: linear-gradient(
+      to bottom,
+      #ffbb9b 10%,
+      #ff8fb8 60%,
+      #afafff 100%
+    )
+    1;
+  border-width: 2px;
+  border-style: solid;
+}

@@ -1,0 +1,145 @@
+/* Academy.css */
+
+/* Blog Button Wrapper with gradient border */
+.blogButtonWrapper {
+  position: relative;
+  border-radius: 25px;
+  padding: 1px;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.blogButtonWrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px;
+  border-radius: 25px;
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  -webkit-mask: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+}
+
+/* Content inside the blog button */
+.blogButtonContent {
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+  background: transparent; /* Default background */
+  transition: background 0.3s ease;
+}
+
+/* Active state for the button with purple border */
+.blogButtonWrapper.active:before {
+  background: linear-gradient(0deg, #a79dff 0%, #6b70ed 100%);
+}
+
+.blogButtonWrapper.active .blogButtonContent {
+  background: linear-gradient(0deg, #afafff 0%, #ff8fb8 50%, #ffbb9b 100%);
+}
+
+/* Blog Number Wrapper */
+.blogNumberWrapper {
+  position: relative;
+  border-radius: 25px;
+  padding: 10px 20px;
+  overflow: hidden;
+  background: transparent; /* Default for non-active */
+}
+
+.blogNumberWrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px;
+  border-radius: 25px;
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  -webkit-mask: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+}
+
+.blogNumberContent {
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  transition: background 0.1s ease;
+}
+
+.blogNumberWrapper.active {
+  background: linear-gradient(145deg, #a79dff 0%, #6b70ed 100%);
+}
+
+.blogNumberWrapper.active .blogNumberContent {
+  background: transparent;
+}
+
+/* Ensures the container has a consistent height */
+.blog-posts-container {
+  min-height: 600px;
+  transition: all 0.1s ease;
+}
+
+/* Animation for fading out */
+.fade-out {
+  animation: fadeOut 0.3s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+
+/* Animation for fading in */
+.fade-in {
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

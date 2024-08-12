@@ -1,0 +1,501 @@
+/* shared transitions */
+/* this is spaghetti code */
+.mainButtonWithBorderBG,
+.mainButtonBGwithoutBorder,
+.navBarButtonBGDark,
+.navbarButtonLightGradient,
+.arrowButtonBG,
+.mainButton,
+.navButtonDarkText,
+.mainButtonText,
+.mainButtonDarkBG,
+.contactUsButtonBGLight,
+.contactUsButtonBGDark,
+.arrowRightImageBtn,
+.pathArrowWhiteChild,
+.contactUsLabel,
+.pathArrowChild,
+.ctaButtonText,
+.buttonLightModeText,
+.blogCardText {
+  transition: all 0.5s ease;
+}
+.mainButtonWithBorderBG {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 54px;
+  background: linear-gradient(
+    130deg,
+    rgba(255, 187, 155, 1) 25%,
+    rgba(255, 143, 184, 1) 35%,
+    rgba(175, 175, 255, 1) 45%
+  );
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+  background-size: 100% 200%;
+}
+
+.mainButtonBGwithoutBorder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 54px;
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+}
+
+.navBarButtonBGDark {
+  padding: 2px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 54px;
+  background: linear-gradient(
+    130deg,
+    rgba(255, 187, 155, 1) 25%,
+    rgba(255, 143, 184, 1) 35%,
+    rgba(175, 175, 255, 1) 45%
+  );
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+  background-size: 100% 200%;
+}
+
+.navBarButtonBGLight {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 54px;
+  /* background: linear-gradient(145deg, #3a2d8c 10%, #571e4b 50%, #163d59 100%); */
+  box-shadow: 0px 1.447px 4.342px 0px rgba(255, 95, 162, 0.7),
+    0px 5.79px 18.816px 0px rgba(255, 95, 162, 0.41);
+  background-size: 100% 200%;
+}
+
+.navbarButtonLightGradient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  background: linear-gradient(145deg, #3a2d8c 10%, #571e4b 50%, #163d59 100%);
+}
+
+.arrowButtonBG {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    130deg,
+    rgba(255, 187, 155, 1) 25%,
+    rgba(255, 143, 184, 1) 35%,
+    rgba(175, 175, 255, 1) 45%
+  );
+  background-size: 100% 200%;
+  border-radius: 65px;
+}
+
+.mainButtonBG:hover {
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.6),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.9);
+  background-size: 200% 100%;
+}
+
+.mainButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  background: rgb(175, 175, 255);
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(255, 178, 161, 1) 10%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(211, 160, 223, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(255, 178, 161, 1) 10%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(211, 160, 223, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    180deg,
+    rgba(255, 178, 161, 1) 10%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(211, 160, 223, 1) 100%
+  );
+  background: -o-linear-gradient(
+    180deg,
+    rgba(255, 178, 161, 1) 10%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(211, 160, 223, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(255, 178, 161, 1) 10%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(211, 160, 223, 1) 100%
+  );
+}
+
+.mainButton:hover {
+  background: rgb(27, 21, 60);
+  background: linear-gradient(
+    15deg,
+    rgba(27, 21, 60, 1) 0%,
+    rgba(28, 41, 67, 1) 50%,
+    rgba(48, 30, 62, 1) 100%
+  );
+}
+
+.arrowButtonBG:hover .contactUsButtonBGDark {
+  background: rgb(27, 21, 60);
+  background: linear-gradient(
+    15deg,
+    rgba(27, 21, 60, 1) 0%,
+    rgba(28, 41, 67, 1) 50%,
+    rgba(48, 30, 62, 1) 100%
+  );
+}
+
+.contactUsButtonBGDark:hover {
+  background-color: #1b153c;
+}
+
+.contactUsButtonBGDark:hover .contactUsLabel {
+  color: #feeef4;
+}
+
+.pathArrowWhiteChild {
+  stroke: black;
+}
+
+.arrowButtonBG:hover .pathArrowWhiteChild {
+  stroke: white;
+}
+
+.svgArrowWhiteParent {
+  stroke: white;
+}
+
+.arrowButtonBG:hover .svgArrowWhiteParent {
+  stroke: black;
+}
+
+.mainButtonText {
+  color: black;
+}
+.mainButton:hover .mainButtonText {
+  color: white;
+}
+.mainButton:hover .navButtonLightText {
+  color: black;
+}
+.mainButton:hover .navButtonDarkText {
+  color: white;
+}
+.mainButton:hover .arrowRightImageBtn {
+  filter: brightness(0) invert(1);
+}
+
+.mainButton:hover .mainButtonBG {
+  background: transparent;
+}
+.mainButton:hover .mainButton {
+  background: transparent;
+}
+.navButtonWrapper:hover .navBarButtonBGDark {
+  background: transparent;
+}
+
+.mainButton:hover .mainButtonWithBorderBG {
+  background: transparent;
+  border: 1px solid red;
+}
+.mainButton:hover .arrowOnButton {
+  filter: brightness(0) invert(1);
+}
+
+/* Dark Mode Button */
+.mainButtonDarkBG {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background: rgb(27, 21, 60);
+  background: linear-gradient(
+    15deg,
+    rgba(27, 21, 60, 1) 0%,
+    rgba(28, 41, 67, 1) 50%,
+    rgba(48, 30, 62, 1) 100%
+  );
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.mainButtonDarkBG:hover {
+  background: rgb(27, 21, 60);
+  background: linear-gradient(
+    15deg,
+    rgba(27, 21, 60, 1) 0%,
+    rgba(28, 41, 67, 1) 50%,
+    rgba(48, 30, 62, 1) 100%
+  );
+}
+
+.aboutButtonDarkBG {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  background-color: #1b153c;
+  transition: all 0.3s ease;
+}
+
+.aboutButtonDarkBG:hover {
+  background-color: white;
+}
+.aboutButtonDarkBG:hover .buttonLightModeText {
+  color: black;
+}
+
+.aboutButtonDarkBG:hover .pathArrowChild {
+  fill: black;
+  stroke: black;
+}
+
+.aboutButtonDarkBG:hover .pathArrowWhiteChild {
+  stroke: black;
+}
+
+.contactUsButtonBGDark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  background-color: #feeef4;
+  box-shadow: 0 8.52px 27.7px rgba(82, 0, 255, 0.4),
+    0 2.13px 6.39px rgba(51, 0, 255, 0.7);
+  width: 100%;
+}
+.contactUsButtonBGLight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 10;
+  background-color: #1b153c;
+  box-shadow: 5px 5px 20px 0px rgba(255, 95, 162, 0.25);
+  background: linear-gradient(140deg, #1b153c 10%, #1c2943 50%, #301e3e 90%);
+  width: 100%;
+  transition: background 0.3s ease; /* Add transition for smooth background change */
+}
+
+.contactUsButtonBGLight:hover {
+  background-color: #e8e5f0;
+  background: #e8e5f0;
+}
+
+.contactUsButtonBGLight:hover .contactUsLabel {
+  color: #1b153c;
+}
+
+.ctaButtonBorder {
+  position: relative;
+  border-radius: 25px;
+  padding: 1px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-shadow: 0px 1.764px 5.293px 0px rgba(51, 0, 255, 0.7),
+    0px 7.057px 22.937px 0px rgba(82, 0, 255, 0.41);
+}
+
+.ctaButtonBorder:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px;
+  border-radius: 25px;
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  -webkit-mask: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+}
+
+.ctaButtonBorder:hover .ctaButtonText {
+  text-shadow: 1px 0px 21px rgba(183, 149, 255, 1);
+  color: #b795ff;
+}
+.svgArrowParent {
+  flex-shrink: 0;
+}
+.pathArrowChild {
+  transition: all 0.5s ease;
+}
+.ctaButtonBorder:hover .pathArrowChild {
+  stroke: #b795ff;
+}
+
+.ctaButtonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  z-index: 1;
+  background: rgb(27, 21, 60);
+  background: -moz-linear-gradient(
+    170deg,
+    rgba(27, 21, 60, 1) 20%,
+    rgba(28, 41, 67, 1) 40%,
+    rgba(27, 21, 60, 1) 80%
+  );
+  background: -webkit-linear-gradient(
+    170deg,
+    rgba(27, 21, 60, 1) 20%,
+    rgba(28, 41, 67, 1) 40%,
+    rgba(27, 21, 60, 1) 80%
+  );
+  background: linear-gradient(
+    170deg,
+    rgba(27, 21, 60, 1) 20%,
+    rgba(28, 41, 67, 1) 40%,
+    rgba(27, 21, 60, 1) 80%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b153c",endColorstr="#1b153c",GradientType=1);
+}
+
+/* Parent container with gradient border */
+.blogButtonWrapper {
+  position: relative;
+  border-radius: 25px;
+  padding: 1px;
+  overflow: hidden;
+}
+
+.blogButtonWrapper:hover h6 {
+  color: white;
+}
+
+.blogButtonWrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px;
+  border-radius: 25px;
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  -webkit-mask: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+}
+
+.blogButtonContent {
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.blogCardText {
+  transition: all 0.5s ease;
+}
+.blogButtonWrapper:hover .blogCardText {
+  background: linear-gradient(#fff, #fff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.blogCardText {
+  background: -webkit-linear-gradient(#ffbb9b, #ff8fb8, #afafff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,109 @@
+.flip-card {
+  position: relative;
+  background-color: transparent;
+  perspective: 1000px;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.innerCardWrapper {
+  position: relative;
+  border-radius: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.background-image-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover; /* Ensure the image covers the full area */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center; /* Center the image */
+  opacity: 0.35; /* Apply the desired opacity */
+  width: 100%; /* Ensure full width */
+  height: 100%; /* Ensure full height */
+  border-radius: 20px;
+  z-index: -1; /* Ensure it is behind the content */
+}
+
+.innerCardWrapper::before {
+  content: "";
+  /* background-image: url("../../../public/assets/img/flipCardBG.png"); */
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.45;
+  border-radius: 20px;
+  z-index: -11;
+}
+
+/* .hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  background-image: url("https://placekitten.com/1200/800");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+} */
+
+.flip-card-back {
+  background-color: #3d4481;
+  color: white;
+  transform: rotateY(180deg);
+  border: 2px solid #ff8fb8;
+  border-radius: 20px;
+}
+
+.custom-arrow {
+  z-index: 100 !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  z-index: 100 !important;
+  width: 60px !important;
+  height: 60px !important;
+}
