@@ -6,7 +6,6 @@
 
 .topsidestrategies::before {
   content: "";
-  background-image: url("../../../public/assets/img/images/strategieHeroImage.jpg");
   background-size: cover;
   position: absolute;
   top: 0px;

@@ -21,14 +21,25 @@ import {
 
 const StrategyDetail = ({ strategy, strategies }) => {
   const paragraph = documentToPlainTextString(strategy.strategyRichText);
+  const strategyHeroImage =
+    "https://" + strategy.strategyHeroImage?.fields?.file.url;
 
+  console.log(strategyHeroImage);
   return (
     // Top page
-    // Deksopt
     <div className="pagePaddingMedium">
       {/* Desktop View */}
       <div className="hidden md:block">
-        <div className="topsidestrategies">
+        <div
+          style={{
+            backgroundImage: `url(${
+              strategyHeroImage == "https://undefined"
+                ? "/assets/img/flipCardBG.png"
+                : strategyHeroImage
+            })`,
+          }}
+          className="topsidestrategies bg-cover bg-no-repeat"
+        >
           <div className="flex flex-col px-[100px] lg:px-[200px] pt-[150px] pb-[100px] box-border gap-8">
             <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
               {strategy.strategyTitle}
