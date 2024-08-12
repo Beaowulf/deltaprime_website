@@ -143,6 +143,7 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
           modules={[Pagination]}
           spaceBetween={30}
           slidesPerView={1}
+          loop={true}
           pagination={{
             el: ".swiper-pagination",
             clickable: true,
@@ -243,7 +244,7 @@ export const DesktopCardCarousel = ({ strategies }) => {
   return (
     <>
       {/* Swiper carousel for mobile view */}
-      <div className="flex flex-col gap-5 md:block">
+      <div className="flex flex-col gap-5 hidden md:block">
         <Swiper
           ref={sliderRef}
           modules={[Pagination]}
