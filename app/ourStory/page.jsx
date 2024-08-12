@@ -98,10 +98,10 @@ const OurStory = () => {
                   strategies.
                 </p>
                 <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left">
-                  This later became the cornerstone of DeltaPrime's
-                  revolutionary Diamond-Beacon Proxy (DBP) pattern, a robust and
-                  flexible architecture that is infinitely scalable, resilient
-                  and secure, no matter the market conditions.
+                  This later became the cornerstone of DeltaPrime's inventive
+                  Diamond-Beacon Proxy (DBP) pattern, a robust and flexible
+                  architecture that is infinitely scalable, resilient and
+                  secure, no matter the market conditions.
                 </p>
               </div>
             </div>
@@ -165,33 +165,33 @@ const OurStory = () => {
           <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px]">
             Unlocking Trapped Liquidity
           </h1>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] text-center mb-6">
+          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6">
             DeltaPrime ensures the safety of user funds through multiple
             security audits, insurance pools, and the unique Withdrawal Guard.
             This no-oracle solution only allows withdrawals if all borrowed
             assets are available, protecting against price manipulation and
             ensuring solvency.
           </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] text-center mb-6">
+          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6">
             Each user's funds are managed through Dedicated Smart Contracts
             (DSCs), providing clear on-chain accounting and effective
             anti-exploit monitoring. Our Diamond-Beacon Proxy (DBP) pattern
             ensures DeltaPrime remains resilient and secure, even in volatile
             market conditions.
           </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] text-center mb-6">
+          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6">
             {`Since launching on the Avalanche network in January 2023, DeltaPrime
             has attracted over`}{" "}
             <span className="font-semibold underline">{`$${tvtDataFormated} million`}</span>{" "}
             {`  in Total Value Locked (TVL) and unlocked more than $20 million in
             liquidity. Our platform serves two main user groups:`}{" "}
           </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] text-center mb-6">
+          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6">
             <span className="font-extrabold">Depositors:</span> Enjoy simplicity
             and security with features like the Withdrawal Guard, which protects
             funds against known and unknown attacks.
           </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] text-center mb-6">
+          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6">
             <span className="font-extrabold">Borrowers:</span> Benefit from
             investment freedom with integrations across various DeFi protocols,
             enabling diverse and scalable investment strategies.

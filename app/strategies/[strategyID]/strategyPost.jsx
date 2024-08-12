@@ -131,9 +131,9 @@ const StrategyDetail = ({ strategy, strategies }) => {
       <div>
         <Header
           title={"STRATEGIES"}
-          subTitle={"Choose Your Strategy"}
+          subTitle={"Explore More Strategies"}
           paragraph={
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
+            "We invite you to explore a broad range of strategies. Keep an eye on this space as more strategies are added as they are discovered and tested by our community."
           }
         />
         {/* Desktop Cards */}

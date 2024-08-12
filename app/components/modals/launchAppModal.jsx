@@ -54,7 +54,7 @@ const LaunchAppModal = () => {
                   <div className="modalContent">
                     <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px]">
                       <p className="mx-auto w-fit text-white font-bold">
-                        Depositor
+                        Savings Account
                       </p>
                     </div>
                     <div className="px-4 py-7 rounded-[20px]">
@@ -117,7 +117,7 @@ const LaunchAppModal = () => {
                   <div className="modalContent">
                     <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px]">
                       <p className="mx-auto w-fit text-white font-bold">
-                        Borrower
+                        Prime Account
                       </p>
                     </div>
                     <div className="px-4 py-7 rounded-[20px]">

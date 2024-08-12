@@ -45,8 +45,8 @@ function OurTokenSection() {
                 <br />
                 - Primed with adaptive emissions.
                 <br />
-                - Community-centered tokenomics
-                <br />- Aimed at reducing high volatility and inflation
+                - Community-centered tokenomics.
+                <br />- Aimed at reducing high volatility and inflation.
               </p>
               <div className="mt-auto">
                 <MainButton
@@ -88,8 +88,9 @@ function OurTokenSection() {
               <p className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#252948]">
                 Utility token for Liquidity Providers and Active Users.
                 <br />
-                - Pay with for PRIME features
+                - Pay with for PRIME features.
                 <br />- Earn governance power points.
+                <br />- Get a share of the liquidation fees.
               </p>
               <div className="mt-auto">
                 <MainButton

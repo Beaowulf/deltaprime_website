@@ -29,7 +29,7 @@ const TextWithPill = ({ totalTvl }) => {
             <br />
             Deposit and securely earn high APYs. Borrow up to 5x your
             collateral, explore intuitive investment strategies and unlock your
-            full potential.
+            capital's full potential.
           </p>
         </div>
         {/* Price pill Wrapper */}
