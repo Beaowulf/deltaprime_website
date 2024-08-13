@@ -263,24 +263,24 @@ const Tokenomics = () => {
                 serve as:
                 <br />
                 <br />
-                <div className="max-w-full mt-10">
-                  <span className="pl-2">
-                    • A utility token for the DeltaPrime platform, allowing
-                    payment for various PRIME features.
-                  </span>
-                  <br />
-                  <span className="pl-2">
-                    • An incentive to provide to the $PRIME liquidity pool and
-                    be rewarded with a share of the protocol’s liquidation fees.
-                  </span>
-                  <br />
-                  <span className="pl-2">
-                    • A token to gain governance power.
-                  </span>
-                </div>
-                <br />
                 {expandedSections[1] && (
                   <>
+                    <div className="max-w-full mt-10">
+                      <span className="pl-2">
+                        • A utility token for the DeltaPrime platform, allowing
+                        payment for various PRIME features.
+                      </span>
+                      <br />
+                      <span className="pl-2">
+                        • An incentive to provide to the $PRIME liquidity pool
+                        and be rewarded with a share of the protocol’s
+                        liquidation fees.
+                      </span>
+                      <br />
+                      <span className="pl-2">
+                        • A token to gain governance power.
+                      </span>
+                    </div>
                     <br />
                     Traditionally, holding assets has been incentivized through
                     staking, i.e. locking tokens in a smart contract for a
@@ -343,7 +343,7 @@ const Tokenomics = () => {
                   </>
                 )}
               </p>
-              <div className="h-[50px] md:h-full block w-fit text-left">
+              <div className="mt-0 h-[100%] md:h-full block w-fit text-right flex items-right justify-right">
                 <GradientButton
                   label={expandedSections[1] ? "view less" : "read more"}
                   onClick={() => toggleText(1)}
@@ -556,8 +556,10 @@ const Tokenomics = () => {
                 launchpads(1.11%), and community seed (1.67%) represent the
                 price at which the project was funded at the time. 
                 <br />
+                <br />
                 {expandedSections[4] && (
                   <>
+                    <br />
                     IEO allocation of 1.43% is used to bootstrap DEX liquidity
                     pools at launch. This is matched with 100% of the launchpad
                     and 50% of the Community Seed raises.
@@ -588,11 +590,11 @@ const Tokenomics = () => {
                   </>
                 )}
               </p>
-              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
+              <div className="mt-0 h-[100%] md:h-full block w-fit text-right flex items-right justify-right">
                 <GradientButton
                   label={expandedSections[4] ? "view less" : "read more"}
                   onClick={() => toggleText(4)}
-                  style={{ padding: "28px !important" }} // Override padding here
+                  style={{ padding: "28px !important" }}
                 />
               </div>
             </div>

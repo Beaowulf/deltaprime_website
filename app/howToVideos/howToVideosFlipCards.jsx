@@ -54,11 +54,11 @@ export const VideosDesktopFlipCards = ({ videos }) => {
   return (
     <div className="hidden md:block mx-auto p-4">
       {/* This component is hidden until the desired breakpoint */}
-      <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {videos.map((video, index) => (
           <div
             key={video.howToVideosID}
-            className="card p-4 w-full cursor-pointer"
+            className="card p-4 w-full cursor-pointer flex item-center justify-center"
           >
             <HowToVideoCard
               video={video}
