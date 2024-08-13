@@ -151,7 +151,7 @@ const DropdownMenu = ({
       >
         <a
           onClick={closeDropdown}
-          href={`/strategies/${strategy.strategySYS.id}`}
+          href={`/strategies/${strategy.slug}`}
           className="font-semibold pt-4 text-white !z-50 menuStrategyBoxWrapper rounded-[25px]"
         >
           <div className="p-5 pl-1 flex flex-row gap-4 w-full h-full boxContainer rounded-[26px]">
