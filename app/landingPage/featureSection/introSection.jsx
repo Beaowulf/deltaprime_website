@@ -1,5 +1,3 @@
-// pages/playground.js (or wherever your component is located)
-
 import React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -34,14 +32,14 @@ const TextWithPill = ({ totalTvl }) => {
         </div>
         {/* Price pill Wrapper */}
         <div className="shadow-deltaRed dark:shadow-none rounded-[100px] bg-white flex justify-between w-full md:w-fit md:py-4 sm:px-6 py-1 px-4 gap-5 items-center mt-8 md:mt-0 z-10">
-          <div className="flex flex-col items-center sm:items-start">
+          <div className="flex flex-col items-start w-fit">
             <p className="blueText text-center sm:text-left text-nowrap">
               Protocol Deposits
             </p>
             <AnimatedText targetNumber={totalTvl} duration={2} />
           </div>
           <div className="dark:bg-[#2b203f] bg-[#CED0FF] w-[2px] h-[35px]" />
-          <div className="flex flex-col items-center sm:items-start">
+          <div className="flex flex-col items-start w-fit pl-[0.65rem">
             <p className="blueText text-center sm:text-left text-nowrap">
               Liquidity Unlocked
             </p>

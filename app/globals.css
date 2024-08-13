@@ -441,10 +441,11 @@ body {
 /* Responsivness */
 @media (max-width: 640px) {
   .blueText {
-    font-size: 12px;
+    padding: 1px;
+    font-size: 15px;
   }
   .costText {
-    font-size: 14px;
+    font-size: 15px;
   }
   /* Helpers */
   .ignore_global_spacing {

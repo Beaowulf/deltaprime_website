@@ -18,26 +18,38 @@ export const AnimatedText = ({ targetNumber }) => {
     const increment = (targetNumber - start) / (duration * 60); // Increment per frame (assuming 60fps)
 
     let currentValue = start;
-    const interval = setInterval(() => {
-      currentValue += increment;
-      if (currentValue >= targetNumber) {
-        currentValue = targetNumber;
-        clearInterval(interval);
-      }
-      setFormattedCount(formatNumber(currentValue));
-    }, 1000 / 60); // Run at 60fps
+    let startTime;
 
-    return () => clearInterval(interval);
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / (duration * 1000), 1);
+
+      currentValue = start + progress * (targetNumber - start);
+
+      setFormattedCount(formatNumber(currentValue));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animate);
   }, [targetNumber]);
 
   return (
-    <motion.h1
-      className="dark:text-[#252948] costText"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      ${formattedCount}
-    </motion.h1>
+    <div className="md:w-[9rem]">
+      <motion.h1
+        className="dark:text-[#252948] costText"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        style={{ transform: "translateZ(0)", backfaceVisibility: "hidden" }}
+      >
+        ${formattedCount}
+      </motion.h1>
+    </div>
   );
 };
