@@ -89,14 +89,19 @@ const FeaturePrimeAccountSection = () => {
                   Deposit collateral
                 </p>
               </div>
-              <div className="mt-auto bg-[#EFEFF6] rounded-t-[25px]">
+              <div className="mt-auto bg-[#EFEFF6] rounded-t-[25px] min-w-full">
                 {theme === "dark" ? (
                   <TopPartDarkTheme />
                 ) : (
                   <TopPartLightTheme />
                 )}
 
-                <Image src={depositImage} alt="deposit_Image" />
+                <Image
+                  src={depositImage}
+                  style={{ width: "100%" }}
+                  className="mx-auto"
+                  alt="deposit_Image"
+                />
               </div>
             </div>
           </div>
