@@ -24,7 +24,7 @@ import {
 const StrategyDetail = ({ strategy, strategies }) => {
   const paragraph = documentToPlainTextString(strategy.strategyRichText);
   const strategyHeroImage =
-    "https://" + strategy.strategyHeroImage?.fields?.file.url;
+    "https:" + strategy.strategyHeroImage.fields.file.url;
 
   // console.log(strategyHeroImage);
   return (
@@ -40,11 +40,10 @@ const StrategyDetail = ({ strategy, strategies }) => {
                 {strategy.strategyTitle}
               </p>
               <div className="w-full md:hidden block rounded-[25px]">
-                <Image
-                  src={strategiesIntroImg}
-                  style={{ width: "100%", maxWidth: "100%" }}
-                  alt="deltaprime_mascot_img rounded-[25px]"
-                  maxWidth="100%"
+                <img
+                  src={strategyHeroImage}
+                  alt="deltaprime_mascot_img"
+                  className=" rounded-[25px]"
                 />
               </div>
               <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-5">
@@ -75,8 +74,8 @@ const StrategyDetail = ({ strategy, strategies }) => {
           </div>
           {/* Image burd */}
           <div className="w-fit md:block hidden rounded-[25px]">
-            <Image
-              src={strategiesIntroImg}
+            <img
+              src={strategyHeroImage}
               className="rounded-[25px] max-w-full w-full"
               alt="deltaprime_mascot_img "
             />
