@@ -50,7 +50,6 @@ const ListText = ({ slug }) => {
   );
 };
 
-
 export const StratDesktopFlipCards = ({ strategies }) => {
   return (
     <div className="hidden md:block mx-auto p-5 lg:p-10">
@@ -77,7 +76,6 @@ export const StratDesktopFlipCards = ({ strategies }) => {
             />
           </div>
         ))}
-        
       </div>
     </div>
   );
@@ -110,7 +108,7 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
             el: ".swiper-pagination",
             clickable: true,
             renderBullet: (index, className) => {
-              return `<div class="${className}"></div>`;
+              return `<div className="${className}"></div>`;
             },
           }}
           className="swiper-container"
@@ -127,7 +125,6 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
               />
             </SwiperSlide>
           ))}
-          
         </Swiper>
 
         {/* Custom navigation and pagination */}
@@ -179,7 +176,7 @@ export const DesktopCardCarousel = ({ strategies }) => {
             el: ".swiper-pagination-desktop",
             clickable: true,
             renderBullet: (index, className) => {
-              return `<div class="${className}"></div>`;
+              return `<div className="${className}"></div>`;
             },
           }}
           className="swiper-container"

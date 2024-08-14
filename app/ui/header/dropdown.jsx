@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import "./header.css";
 import { motion, AnimatePresence } from "framer-motion";
 import DownArrow from "@/public/assets/icons/DownArrow.svg";
 import UpArrow from "@/public/assets/icons/UpArrow.svg";
@@ -55,12 +56,12 @@ export default function Dropdown() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md dark:bg-[#000F38] bg-[#F6F6F6] border-2 p-2 dark:border-[#fff] border-[#000F38] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            className="dropdownWrapper absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-[20px] dark:bg-[#000F38] bg-[#F6F6F6] p-2 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="menu-button"
           >
-            <div className="py-1" role="none">
+            <div className="py-1 flex flex-col z-50 relative" role="none">
               <Link
                 onClick={closeDropdown}
                 href="/ourStory"

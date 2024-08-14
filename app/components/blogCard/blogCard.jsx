@@ -1,14 +1,7 @@
 import Link from "next/link";
 import { BlogCardButton } from "@/app/components/buttons/mainButton";
-import { ArrowButton } from "@/app/components/buttons/mainButton";
-import Image from "next/image";
 
-const BlogCard = ({
-  previewBlogImage,
-  blogDescription,
-  blogSlug,
-}) => {
-  console.log('Preview Image:', previewBlogImage); // Debugging line to check the image data
+const BlogCard = ({ previewBlogImage, blogDescription, blogSlug }) => {
   return (
     <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
       <div className="w-full h-[270px] ">
@@ -33,7 +26,6 @@ const BlogCard = ({
     </div>
   );
 };
-
 
 export const SmallBlogCard = ({
   previewBlogImage,

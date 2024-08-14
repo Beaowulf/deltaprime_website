@@ -50,7 +50,7 @@ const LaunchAppModal = () => {
               </h4>
               <div className="flex flex-col md:flex-row justify-center gap-4 md:mt-8 mx-0 items-center">
                 {/* Left side */}
-                <div className="flex justify-center flex-col gap-1 h-full items-center modalWrapper w-full">
+                <div className="flex justify-center flex-col gap-1 items-center modalWrapper md:w-full h-full w-[16rem]">
                   <div className="modalContent w-full">
                     <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px]">
                       <p className="mx-auto w-fit text-white font-bold">
@@ -113,8 +113,8 @@ const LaunchAppModal = () => {
                 </div>
 
                 {/* Right side */}
-                <div className="flex justify-center flex-col h-full gap-1 items-center modalWrapper w-full">
-                  <div class="modalContent w-full h-full">
+                <div className="flex justify-center flex-col gap-1 items-center modalWrapper md:w-full h-full w-[16rem]">
+                  <div className="modalContent w-full h-full">
                     <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px] mb-2">
                       <p className="mx-auto w-fit text-white font-bold">
                         Prime Account

@@ -29,9 +29,9 @@ const StrategyDetail = ({ strategy, strategies }) => {
   // console.log(strategyHeroImage);
   return (
     // Top page
-    <div className="pagePaddingMedium">
+    <div className="">
       {/* Desktop View */}
-      <div className="hidden md:block">
+      <div className="pagePaddingLarge hidden md:block">
         <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
@@ -77,8 +77,8 @@ const StrategyDetail = ({ strategy, strategies }) => {
           <div className="w-fit md:block hidden rounded-[25px]">
             <Image
               src={strategiesIntroImg}
-              alt="deltaprime_mascot_img rounded-[25px] max-width:100% "
-              style={{ width: "100%", maxWidth: "100%" }}
+              className="rounded-[25px] max-w-full w-full"
+              alt="deltaprime_mascot_img "
             />
           </div>
         </div>
@@ -152,7 +152,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
           </div>
         </div>
         {/* Image burd */}
-        <div className="w-fit md:block hidden rounded-[25px]">
+        <div className="md:block hidden rounded-[25px]">
           <Image
             src={strategiesIntroImg}
             alt="deltaprime_mascot_img rounded-[25px]"
@@ -161,7 +161,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
       </div>
 
       {/* Parent */}
-      <div className="postAndTablesWrapper flex flex-row gap-10 mt-10">
+      <div className="pagePaddingMedium postAndTablesWrapper flex flex-row gap-10 mt-10">
         {/* left side */}
         <div className="strategyPostWrapper">
           <RichTextRenderer

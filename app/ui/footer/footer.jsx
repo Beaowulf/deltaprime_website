@@ -60,6 +60,12 @@ export function FooterTextLinks() {
           <Link href="/burdLog" className="block hover:text-gray-400 text-sm">
             Burd Log
           </Link>
+          <Link
+            href="https://docs.deltaprime.io/"
+            className="block hover:text-gray-400 text-sm"
+          >
+            Docs
+          </Link>
         </div>
         <div className="block md:hidden my-10 footerTextLinksVerticalLine"></div>
         <div className="hidden md:block mx-0 md:mx-16 footerTextLinksLine"></div>
