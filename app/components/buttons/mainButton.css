@@ -374,15 +374,15 @@
   right: 0;
   bottom: 0;
   padding: 2px;
-  border-radius: 25px;
+  border-radius: 50px;
   background: linear-gradient(
-    0deg,
+    to right,
     rgba(175, 175, 255, 1) 0%,
     rgba(255, 143, 184, 1) 50%,
     rgba(255, 187, 155, 1) 100%
   );
   -webkit-mask: linear-gradient(
-    0deg,
+    to right,
     rgba(175, 175, 255, 1) 0%,
     rgba(255, 143, 184, 1) 50%,
     rgba(255, 187, 155, 1) 100%
@@ -421,13 +421,13 @@
   z-index: 1;
   background: rgb(27, 21, 60);
   background: -moz-linear-gradient(
-    170deg,
+    to right,
     rgba(27, 21, 60, 1) 20%,
     rgba(28, 41, 67, 1) 40%,
     rgba(27, 21, 60, 1) 80%
   );
   background: -webkit-linear-gradient(
-    170deg,
+    to right,
     rgba(27, 21, 60, 1) 20%,
     rgba(28, 41, 67, 1) 40%,
     rgba(27, 21, 60, 1) 80%
