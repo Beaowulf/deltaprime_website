@@ -356,43 +356,6 @@
   color: #1b153c;
 }
 
-.ctaButtonBorder {
-  position: relative;
-  border-radius: 25px;
-  padding: 1px;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  box-shadow: 0px 1.764px 5.293px 0px rgba(51, 0, 255, 0.7),
-    0px 7.057px 22.937px 0px rgba(82, 0, 255, 0.41);
-}
-
-.ctaButtonBorder:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 2px;
-  border-radius: 25px;
-  background: linear-gradient(
-    0deg,
-    rgba(175, 175, 255, 1) 0%,
-    rgba(255, 143, 184, 1) 50%,
-    rgba(255, 187, 155, 1) 100%
-  );
-  -webkit-mask: linear-gradient(
-    0deg,
-    rgba(175, 175, 255, 1) 0%,
-    rgba(255, 143, 184, 1) 50%,
-    rgba(255, 187, 155, 1) 100%
-  );
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: 1;
-}
-
 .ctaButtonBorder:hover .ctaButtonText {
   text-shadow: 1px 0px 21px rgba(183, 149, 255, 1);
   color: #b795ff;
@@ -405,40 +368,6 @@
 }
 .ctaButtonBorder:hover .pathArrowChild {
   stroke: #b795ff;
-}
-
-.ctaButtonWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-weight: bold;
-  border-radius: 50px;
-  outline: none;
-  cursor: pointer;
-  overflow: hidden;
-  text-transform: uppercase;
-  z-index: 1;
-  background: rgb(27, 21, 60);
-  background: -moz-linear-gradient(
-    170deg,
-    rgba(27, 21, 60, 1) 20%,
-    rgba(28, 41, 67, 1) 40%,
-    rgba(27, 21, 60, 1) 80%
-  );
-  background: -webkit-linear-gradient(
-    170deg,
-    rgba(27, 21, 60, 1) 20%,
-    rgba(28, 41, 67, 1) 40%,
-    rgba(27, 21, 60, 1) 80%
-  );
-  background: linear-gradient(
-    170deg,
-    rgba(27, 21, 60, 1) 20%,
-    rgba(28, 41, 67, 1) 40%,
-    rgba(27, 21, 60, 1) 80%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b153c",endColorstr="#1b153c",GradientType=1);
 }
 
 /* Parent container with gradient border */
@@ -498,4 +427,83 @@
   background: -webkit-linear-gradient(#ffbb9b, #ff8fb8, #afafff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.ctaButtonBorder {
+  position: relative;
+  border-radius: 25px;
+  padding: 1px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-shadow: 0px 1.764px 5.293px 0px rgba(51, 0, 255, 0.7),
+    0px 7.057px 22.937px 0px rgba(82, 0, 255, 0.41);
+}
+
+.ctaButtonBorder:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5px;
+  border-radius: 50px;
+  background: -moz-linear-gradient(
+    320deg,
+    rgba(175, 175, 255, 1) 50%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(255, 187, 155, 1) 70%
+  );
+  background: -webkit-linear-gradient(
+    320deg,
+    rgba(175, 175, 255, 1) 50%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(255, 187, 155, 1) 70%
+  );
+  background: linear-gradient(
+    320deg,
+    rgba(175, 175, 255, 1) 50%,
+    rgba(255, 143, 184, 1) 60%,
+    rgba(255, 187, 155, 1) 70%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+  scale: 1;
+}
+
+.ctaButtonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  background: rgb(27, 21, 60);
+  background: -moz-linear-gradient(
+    to right,
+    rgba(27, 21, 60, 1) 20%,
+    rgba(28, 41, 67, 1) 40%,
+    rgba(27, 21, 60, 1) 80%
+  );
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(27, 21, 60, 1) 20%,
+    rgba(28, 41, 67, 1) 40%,
+    rgba(27, 21, 60, 1) 80%
+  );
+  background: linear-gradient(
+    170deg,
+    rgba(27, 21, 60, 1) 20%,
+    rgba(28, 41, 67, 1) 40%,
+    rgba(27, 21, 60, 1) 80%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b153c",endColorstr="#1b153c",GradientType=1);
+  z-index: 10;
+  scale: 1;
 }

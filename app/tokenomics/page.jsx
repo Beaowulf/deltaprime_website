@@ -98,9 +98,9 @@ const Tokenomics = () => {
               </p>
               <div className="h-[50px] md:h-full block w-fit text-left">
                 <GradientButton
-                  label={expandedSections[0] ? "view less" : "read more"}
+                  label={expandedSections[0] ? "View Less" : "View More"}
                   onClick={() => toggleText(0)}
-                  style={{ padding: "28px !important" }} // Override padding here
+                  style={{ padding: "28px !important" }}
                 />
               </div>
             </div>
@@ -228,15 +228,13 @@ const Tokenomics = () => {
       </div>
 
       {/* Second Section */}
-      {/* 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222 */}
-      <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
+      <div className="flex flex-col md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
           <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
             <div className="clearfix">
-              {/* image that shows on desktop only */}
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
@@ -244,11 +242,11 @@ const Tokenomics = () => {
                 src={ourStoryIntroImg}
                 alt="deltaprime_mascot_img"
               />
-              <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
+              <p className="brightText text-wrap max-w-full mb-4 text-3xl md:text-[44px]">
                 Deep Dive into $PRIME Tokenomics
               </p>
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
+                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
@@ -264,24 +262,24 @@ const Tokenomics = () => {
                 serve as:
                 <br />
                 <br />
-                <div className="max-w-[25rem]">
-                  <span className="pl-2">
-                    • A utility token for the DeltaPrime platform, allowing
-                    payment for various PRIME features.
-                  </span>
-                  <br />
-                  <span className="pl-2">
-                    • An incentive to provide to the $PRIME liquidity pool and
-                    be rewarded with a share of the protocol’s liquidation fees.
-                  </span>
-                  <br />
-                  <span className="pl-2">
-                    • A token to gain governance power.
-                  </span>
-                </div>
-                <br />
                 {expandedSections[1] && (
                   <>
+                    <div className="max-w-full mt-10">
+                      <span className="pl-2">
+                        • A utility token for the DeltaPrime platform, allowing
+                        payment for various PRIME features.
+                      </span>
+                      <br />
+                      <span className="pl-2">
+                        • An incentive to provide to the $PRIME liquidity pool
+                        and be rewarded with a share of the protocol’s
+                        liquidation fees.
+                      </span>
+                      <br />
+                      <span className="pl-2">
+                        • A token to gain governance power.
+                      </span>
+                    </div>
                     <br />
                     Traditionally, holding assets has been incentivized through
                     staking, i.e. locking tokens in a smart contract for a
@@ -290,7 +288,7 @@ const Tokenomics = () => {
                     this effort, the price of an asset often comes crashing down
                     because of high rewards in the native token of a project. In
                     addition, the expiration of vesting schedules often
-                    contribute to high selling pressures, while liquidity pools
+                    contributes to high selling pressures, while liquidity pools
                     are often shallow, which results in high selling
                     price-impacts. Instead of following this trend, $sPRIME
                     combines the idea of staking with contributing to the $PRIME
@@ -327,7 +325,7 @@ const Tokenomics = () => {
                     Idle $sPRIME is the share in the pool that does not fall
                     within the price range at which the token is traded within a
                     period of time. Idle $sPRIME does not receive a share of the
-                    liquidation fees. This incentivises liquidity providers to
+                    liquidation fees. This incentivizes liquidity providers to
                     rebalance their assets to an active price range position.
                     Doing this means that impermanent loss may be realized.
                     However, their $sPRIME becomes active again and thus the LP
@@ -335,16 +333,18 @@ const Tokenomics = () => {
                     loss.
                     <br />
                     <br />
-                    Not only liquidity providers can gain rewards though.
-                    Eligible users who are actively using the platform can be
-                    rewarded in the form of locked $sPRIME regardless of whether
-                    they provide liquidity or not.
+                    Not only liquidity providers are eligible for the protocol’s
+                    liquidation fees. In the future, staking through the DAO,
+                    managed by our community, will reward our most loyal
+                    supporters. Governance power within the DAO is exercised by
+                    a vote of $sPRIME. The more $sPRIME a user holds, the more
+                    voting power they gain.
                   </>
                 )}
               </p>
-              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
+              <div className="mt-0 h-[100%] md:h-full block w-fit text-right flex items-right justify-right">
                 <GradientButton
-                  label={expandedSections[1] ? "view less" : "read more"}
+                  label={expandedSections[1] ? "View Less" : "View More"}
                   onClick={() => toggleText(1)}
                   style={{ padding: "28px !important" }} // Override padding here
                 />
@@ -353,8 +353,6 @@ const Tokenomics = () => {
           </div>
         </div>
       </div>
-      {/* 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222 */}
-
       <div className="mb-16">
         <p className="brightText text-wrap mb-4 text-3xl md:text-[44px]">
           The Difference Between Unlocked <br />
@@ -407,13 +405,14 @@ const Tokenomics = () => {
 
         <div className="h-[50px] md:h-full block w-full text-left">
           <GradientButton
-            label={expandedSections[2] ? "view less" : "read more"}
+            label={expandedSections[2] ? "View Less" : "View More"}
             onClick={() => toggleText(2)}
           />
         </div>
       </div>
 
       {/* Third Section */}
+      {/* third last */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
@@ -506,7 +505,7 @@ const Tokenomics = () => {
               </p>
               <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
                 <GradientButton
-                  label={expandedSections[3] ? "view less" : "read more"}
+                  label={expandedSections[3] ? "View Less" : "View More"}
                   onClick={() => toggleText(3)}
                   style={{ padding: "28px !important" }} // Override padding here
                 />
@@ -517,6 +516,7 @@ const Tokenomics = () => {
       </div>
 
       {/* Third Section */}
+      {/* second last */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
@@ -524,7 +524,7 @@ const Tokenomics = () => {
             <div className="clearfix">
               {/* image that shows on desktop only */}
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
@@ -532,7 +532,7 @@ const Tokenomics = () => {
                 src={ourStoryIntroImg}
                 alt="deltaprime_mascot_img"
               />
-              <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
+              <p className="text-wrap min-w-full mb-4 font-bold text-2xl md:text-[28px]">
                 Other $PRIME Allocations Explained
               </p>
               <Image
@@ -552,8 +552,10 @@ const Tokenomics = () => {
                 launchpads(1.11%), and community seed (1.67%) represent the
                 price at which the project was funded at the time. 
                 <br />
+                <br />
                 {expandedSections[4] && (
                   <>
+                    <br />
                     IEO allocation of 1.43% is used to bootstrap DEX liquidity
                     pools at launch. This is matched with 100% of the launchpad
                     and 50% of the Community Seed raises.
@@ -584,11 +586,11 @@ const Tokenomics = () => {
                   </>
                 )}
               </p>
-              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
+              <div className="mt-0 h-[100%] md:h-full block w-fit text-right flex items-right justify-right">
                 <GradientButton
-                  label={expandedSections[4] ? "view less" : "read more"}
+                  label={expandedSections[4] ? "View Less" : "View More"}
                   onClick={() => toggleText(4)}
-                  style={{ padding: "28px !important" }} // Override padding here
+                  style={{ padding: "28px !important" }}
                 />
               </div>
             </div>
@@ -597,6 +599,7 @@ const Tokenomics = () => {
       </div>
 
       {/* Third Section */}
+      {/* last section */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
@@ -652,7 +655,7 @@ const Tokenomics = () => {
               </p>
               <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
                 <GradientButton
-                  label={expandedSections[5] ? "view less" : "read more"}
+                  label={expandedSections[5] ? "View Less" : "View More"}
                   onClick={() => toggleText(5)}
                   style={{ padding: "28px !important" }} // Override padding here
                 />

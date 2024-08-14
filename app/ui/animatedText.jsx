@@ -13,9 +13,9 @@ export const AnimatedText = ({ targetNumber }) => {
   const [formattedCount, setFormattedCount] = useState("0.00");
 
   useEffect(() => {
-    const duration = 2; // Duration of the animation in seconds
-    const start = 0; // Starting number for the animation
-    const increment = (targetNumber - start) / (duration * 60); // Increment per frame (assuming 60fps)
+    const duration = 2;
+    const start = 0;
+    const increment = (targetNumber - start) / (duration * 60);
 
     let currentValue = start;
     let startTime;

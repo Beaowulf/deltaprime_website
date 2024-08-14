@@ -35,11 +35,11 @@ const HowToVideoCard = ({
         </div>
         <div className="w-full">
           <h4 className="line-clamp-1">
-            <p className="mb-4 aboutTypographyparagraphWhite text-wrap max-w-[25rem] dark:text-white text-[#252948] w-full inline-block text-xl font-semibold hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl line-clamp-1">
+            <p className="mb-2 aboutTypographyparagraphWhite  text-wrap max-w-full dark:text-white text-[#252948] w-full inline-block text-xl font-semibold hover:text-primary sm:text-xl lg:text-xl xl:text-2xl line-clamp-1">
               {video.howToVideoTitle}
             </p>
           </h4>
-          <p className="aboutTypographyparagraphWhite  max-w-[25rem] dark:text-white text-[#252948] text-wrap text-[12px] md:text-[14px] xl:text-[15px] leading-5 mb-4  w-full line-clamp-2">
+          <p className="aboutTypographyparagraphWhite  max-w-full dark:text-gray text-[#252948] text-wrap text-[12px] md:text-[14px] xl:text-[15px] leading-5 mb-4  w-full line-clamp-2">
             {video.howToVideoDescription}
           </p>
         </div>

@@ -34,7 +34,7 @@ const LaunchAppModal = () => {
       {modal && (
         <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
           <div className="modalParent relative z-10 w-full md:w-fit">
-            <div className="absolute top-2 right-4 w-fit h-fit text-black cursor-pointer z-50">
+            <div className="absolute top-2 right-4 px-2 py-3 w-fit h-fit text-black cursor-pointer z-50">
               <Link className="z-100 cursor-pointer" href={pathname}>
                 <Image
                   src={closeIconColored}
@@ -50,8 +50,8 @@ const LaunchAppModal = () => {
               </h4>
               <div className="flex flex-col md:flex-row justify-center gap-4 md:mt-8 mx-0 items-center">
                 {/* Left side */}
-                <div className="flex justify-center flex-col gap-1 items-center modalWrapper w-fit">
-                  <div className="modalContent">
+                <div className="flex justify-center flex-col gap-1 items-center modalWrapper md:w-full h-full w-[16rem]">
+                  <div className="modalContent w-full">
                     <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px]">
                       <p className="mx-auto w-fit text-white font-bold">
                         Savings Account
@@ -66,7 +66,7 @@ const LaunchAppModal = () => {
                           ) : (
                             poolsData.arbitrum.map((pool, index) => (
                               <p
-                                className="text-gray-800 font-medium text-[14px]"
+                                className="dark:text-gray text-gray-800 font-medium text-[14px]"
                                 key={index}
                               >
                                 {pool.symbol} {pool.apy.toFixed(1)}%
@@ -83,7 +83,7 @@ const LaunchAppModal = () => {
                           ) : (
                             poolsData.avalanche.map((pool, index) => (
                               <p
-                                className="text-gray-800 font-medium text-[14px]"
+                                className="dark:text-gray text-gray-800 font-medium text-[14px]"
                                 key={index}
                               >
                                 {pool.symbol} {pool.apy.toFixed(1)}%
@@ -113,9 +113,9 @@ const LaunchAppModal = () => {
                 </div>
 
                 {/* Right side */}
-                <div className="flex justify-center flex-col gap-1 items-center modalWrapper w-fit">
-                  <div className="modalContent">
-                    <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px]">
+                <div className="flex justify-center flex-col gap-1 items-center modalWrapper md:w-full h-full w-[16rem]">
+                  <div className="modalContent w-full h-full">
+                    <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px] mb-2">
                       <p className="mx-auto w-fit text-white font-bold">
                         Prime Account
                       </p>
@@ -124,13 +124,13 @@ const LaunchAppModal = () => {
                       <div className="flex gap-4 items-start justify-center mx-4">
                         <div className="mt-4 max-w-[200px]">
                           <ul>
-                            <li className="text-gray-800 font-medium text-[14px]">
+                            <li className="dark:text-gray text-gray-800 font-medium text-[14px]">
                               <span>•</span> Borrow up to 5x
                             </li>
-                            <li className="text-gray-800 font-medium text-[14px]">
+                            <li className="dark:text-gray text-gray-800 font-medium text-[14px]">
                               <span>•</span> Create your strategy
                             </li>
-                            <li className="text-gray-800 font-medium text-[14px]">
+                            <li className="dark:text-gray text-gray-800 font-medium text-[14px]">
                               <span>•</span> With the best of DeFi
                             </li>
                           </ul>
