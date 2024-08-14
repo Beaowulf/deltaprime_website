@@ -154,12 +154,8 @@ const BlogHomePage = ({ categories, blogs }) => {
                 <BlogCard
                   key={blogPreviewCardData.blogID}
                   blogSlug={blogPreviewCardData.slug}
-                  blogCategory={blogPreviewCardData.blogCategory}
-                  blogTitle={blogPreviewCardData.blogTitle}
                   blogDescription={blogPreviewCardData.blogDescription}
-                  minsToRead={blogPreviewCardData.minsToRead}
                   previewBlogImage={`https:${blogPreviewCardData.previewImageBlog.fields.file.url}`}
-                  roundedImage={Circles(getRandomNumber())}
                 />
               ))}
             </div>

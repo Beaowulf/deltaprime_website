@@ -14,15 +14,14 @@ import {
   FlipCardMobileCarousel,
 } from "@/app/strategies/strategyFlipCards";
 
+// Fetch strategies
 const strategies = await fetchStrategies();
 
 const StrategiesPage = () => {
-  // get strat data here since its server component
   return (
     <div className="px-4 md:px-[6%] lg:px-[8%] xl:px-[12%] 2xl:px-[15%]">
-      {/* intro */}
+      {/* Intro */}
       <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2">
-        {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
           <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
             <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
@@ -49,7 +48,6 @@ const StrategiesPage = () => {
                 />
               </Link>
             </div>
-            {/* Show this button only on mobile */}
             <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
               <Link href="?modal=true">
                 <CTAButton
@@ -62,7 +60,6 @@ const StrategiesPage = () => {
             </div>
           </div>
         </div>
-        {/* Image burd */}
         <div className="w-fit md:block hidden rounded-[25px]">
           <Image
             src={strategiesIntroImg}
@@ -71,16 +68,12 @@ const StrategiesPage = () => {
         </div>
       </div>
 
-      {/* cards */}
+      {/* Cards */}
       <div>
-        {/* Dektop Cards */}
         <StratDesktopFlipCards strategies={strategies} />
-        {/* Mobile Cards */}
         <FlipCardMobileCarousel strategies={strategies} />
-        {/* Unlock full potential button reponsive component */}
         <div>
           <UnlockPotentialContainer hasMarginTop={false} />
-          {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true">
               <CTAButton
@@ -93,11 +86,9 @@ const StrategiesPage = () => {
           </div>
         </div>
 
-        {/* other text */}
         <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 mt-10 mb-16 md:my-40">
-          {/* Text Wrapper */}
           <div className="flex flex-col items-center md:items-start dark:text-white text-[#252948] md:mb-14 max-w-96">
-            <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-gray-400 leading-6 md:text-left text-center">
+            <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-gray-400 leading-6 md:text-left text-center">
               STRATEGIES
             </h4>
             <h1 className="mb-6 featureSubtitle text-[24px] md:text-left text-center">
@@ -123,7 +114,6 @@ const StrategiesPage = () => {
               </Link>
             </div>
           </div>
-          {/* Image burd */}
           <div className="max-w-[650px]">
             <Image
               className="rounded-[20px]"
