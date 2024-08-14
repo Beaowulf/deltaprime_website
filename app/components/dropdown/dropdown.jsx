@@ -228,7 +228,7 @@ const DropdownMenu = ({
               } box-border p-2 rounded-2xl shadow-lg z-[1000]`}
             >
               <div className="p-4 flex items-center justify-between flex-wrap  ">
-                <div className="flex flex-col justify-center items-center mb-4 lg:mb-0 lg:items-start gap-5 text-white lg:pr-[5rem] max-w-[25rem] mx-auto lg:mx-0 ">
+                <div className="flex flex-col justify-center items-center mb-4 lg:mb-0 lg:items-start gap-5 text-white lg:pr-[5rem] max-w-[25rem] mx-auto lg:mx-0 z-10">
                   <motion.p
                     variants={textVariants}
                     initial="hidden"

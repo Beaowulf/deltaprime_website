@@ -19,9 +19,9 @@ const strategies = await fetchStrategies();
 
 const StrategiesPage = () => {
   return (
-    <div className="px-4 md:px-[6%] lg:px-[8%] xl:px-[12%] 2xl:px-[15%]">
+    <div className="">
       {/* Intro */}
-      <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2">
+      <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2 pagePaddingLarge">
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
           <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
             <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
@@ -69,7 +69,7 @@ const StrategiesPage = () => {
       </div>
 
       {/* Cards */}
-      <div>
+      <div className="pagePaddingMedium">
         <StratDesktopFlipCards strategies={strategies} />
         <FlipCardMobileCarousel strategies={strategies} />
         <div>
