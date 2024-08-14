@@ -98,9 +98,9 @@ const Tokenomics = () => {
               </p>
               <div className="h-[50px] md:h-full block w-fit text-left">
                 <GradientButton
-                  label={expandedSections[0] ? "view less" : "read more"}
+                  label={expandedSections[0] ? "View Less" : "View More"}
                   onClick={() => toggleText(0)}
-                  style={{ padding: "28px !important" }} // Override padding here
+                  style={{ padding: "28px !important" }}
                 />
               </div>
             </div>
@@ -344,7 +344,7 @@ const Tokenomics = () => {
               </p>
               <div className="mt-0 h-[100%] md:h-full block w-fit text-right flex items-right justify-right">
                 <GradientButton
-                  label={expandedSections[1] ? "view less" : "read more"}
+                  label={expandedSections[1] ? "View Less" : "View More"}
                   onClick={() => toggleText(1)}
                   style={{ padding: "28px !important" }} // Override padding here
                 />
@@ -405,7 +405,7 @@ const Tokenomics = () => {
 
         <div className="h-[50px] md:h-full block w-full text-left">
           <GradientButton
-            label={expandedSections[2] ? "view less" : "read more"}
+            label={expandedSections[2] ? "View Less" : "View More"}
             onClick={() => toggleText(2)}
           />
         </div>
@@ -505,7 +505,7 @@ const Tokenomics = () => {
               </p>
               <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
                 <GradientButton
-                  label={expandedSections[3] ? "view less" : "read more"}
+                  label={expandedSections[3] ? "View Less" : "View More"}
                   onClick={() => toggleText(3)}
                   style={{ padding: "28px !important" }} // Override padding here
                 />
@@ -588,7 +588,7 @@ const Tokenomics = () => {
               </p>
               <div className="mt-0 h-[100%] md:h-full block w-fit text-right flex items-right justify-right">
                 <GradientButton
-                  label={expandedSections[4] ? "view less" : "read more"}
+                  label={expandedSections[4] ? "View Less" : "View More"}
                   onClick={() => toggleText(4)}
                   style={{ padding: "28px !important" }}
                 />
@@ -655,7 +655,7 @@ const Tokenomics = () => {
               </p>
               <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
                 <GradientButton
-                  label={expandedSections[5] ? "view less" : "read more"}
+                  label={expandedSections[5] ? "View Less" : "View More"}
                   onClick={() => toggleText(5)}
                   style={{ padding: "28px !important" }} // Override padding here
                 />
