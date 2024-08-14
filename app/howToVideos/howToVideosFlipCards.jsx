@@ -14,41 +14,9 @@ import arrowLeftColored from "@/public/assets/icons/arrowBtnLeftColored.svg";
 import arrowRightColored from "@/public/assets/icons/arrowBtnRightColored.svg";
 import HowToVideoCard from "../components/howToVideoCard/howToVideoCard";
 
-export const ListText = ({ strategyID }) => {
-  return (
-    <div>
-      <h4 className="text-[16px] leading-5 mb-6 font-bold">
-        The delta neutral portfolio is perfect for investors who:
-      </h4>
-      <ul className="flex flex-col gap-2">
-        <li>
-          <p className="text-[14px] font-semibold leading-[150%]">
-            • Are in it for the long-term
-          </p>
-        </li>
-        <li>
-          <p className="text-[14px] font-semibold leading-[150%]">
-            • Want to profit whether there is a bull- crab- or bear market
-          </p>
-        </li>
-        <li>
-          <p className="text-[14px] font-semibold leading-[150%]">
-            • Mainly want to benefit from arbitrage opportunities within
-            DeltaPrime
-          </p>
-        </li>
-      </ul>
-      <div className="mt-3">
-        <Link
-          href={`/strategies/${strategyID}`}
-          className="font-semibold pt-4 underline !z-50"
-        >
-          Read More
-        </Link>
-      </div>
-    </div>
-  );
-};
+
+
+
 
 export const VideosDesktopFlipCards = ({ videos }) => {
   return (

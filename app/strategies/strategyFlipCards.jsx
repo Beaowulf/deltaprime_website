@@ -14,7 +14,7 @@ import arrowLeftColored from "@/public/assets/icons/arrowBtnLeftColored.svg";
 import arrowRightColored from "@/public/assets/icons/arrowBtnRightColored.svg";
 import Header from "@/app/components/header/header";
 
-const ListText = ({ strategyID }) => {
+const ListText = ({ slug }) => {
   return (
     <div>
       <h4 className="text-[16px] leading-5 mb-6 font-bold">
@@ -40,7 +40,7 @@ const ListText = ({ strategyID }) => {
       </ul>
       <div className="mt-3">
         <Link
-          href={`/strategies/${strategyID}`}
+          href={`/strategies/${slug}`}
           className="font-semibold pt-4 underline !z-50"
         >
           Read More
@@ -49,6 +49,7 @@ const ListText = ({ strategyID }) => {
     </div>
   );
 };
+
 
 export const StratDesktopFlipCards = ({ strategies }) => {
   return (
@@ -70,52 +71,13 @@ export const StratDesktopFlipCards = ({ strategies }) => {
               descriptionFront={strategy.strategyDescription}
               difficultyLevel={strategy.difficultyLevel}
               isFirstCard={index === 0}
-              listTextBack={<ListText strategyID={strategy.strategyID} />}
+              listTextBack={<ListText slug={strategy.slug} />} // Pass the slug here
               titleBack={strategy.strategyTitle}
               strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
             />
           </div>
         ))}
-        {/* <div className="card p-4">
-          <FlipCard
-            titleFront="The Fee Collector"
-            descriptionFront="Maximizes yield with limited price exposure"
-            difficultyLevel={1}
-            listTextBack={<ListText />}
-          />
-        </div>
-        <div className="card p-4">
-          <FlipCard
-            titleFront="The Carry Trader"
-            descriptionFront="Earns yield by depositing in higher-interest pools"
-            difficultyLevel={1}
-            listTextBack={<ListText />}
-          />
-        </div>
-        <div className="card p-4">
-          <FlipCard
-            titleFront="The Yielding Bull"
-            descriptionFront="Goes long on assets while accumulating yield"
-            difficultyLevel={3}
-            listTextBack={<ListText />}
-          />
-        </div>
-        <div className="card p-4">
-          <FlipCard
-            titleFront="The Fee Collector"
-            descriptionFront="Maximizes yield with limited price exposure"
-            difficultyLevel={1}
-            listTextBack={<ListText />}
-          />
-        </div>
-        <div className="card p-4">
-          <FlipCard
-            titleFront="The Carry Trader"
-            descriptionFront="Earns yield by depositing in higher-interest pools"
-            difficultyLevel={1}
-            listTextBack={<ListText />}
-          />
-        </div> */}
+        
       </div>
     </div>
   );
@@ -160,51 +122,12 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
                 titleBack={strategy.strategyTitle}
                 descriptionFront={strategy.strategyDescription}
                 difficultyLevel={strategy.difficultyLevel}
-                listTextBack={<ListText strategyID={strategy.strategyID} />}
+                listTextBack={<ListText slug={strategy.slug} />} // Pass the slug here
                 strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
               />
             </SwiperSlide>
           ))}
-          {/* <SwiperSlide>
-            <FlipCard
-              titleFront="The Fee Collector"
-              descriptionFront="Maximizes yield with limited price exposure"
-              difficultyLevel={1}
-              listTextBack={<ListText />}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FlipCard
-              titleFront="The Carry Trader"
-              descriptionFront="Earns yield by depositing in higher-interest pools"
-              difficultyLevel={1}
-              listTextBack={<ListText />}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FlipCard
-              titleFront="The Yielding Bull"
-              descriptionFront="Goes long on assets while accumulating yield"
-              difficultyLevel={3}
-              listTextBack={<ListText />}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FlipCard
-              titleFront="The Fee Collector"
-              descriptionFront="Maximizes yield with limited price exposure"
-              difficultyLevel={1}
-              listTextBack={<ListText />}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FlipCard
-              titleFront="The Carry Trader"
-              descriptionFront="Earns yield by depositing in higher-interest pools"
-              difficultyLevel={1}
-              listTextBack={<ListText />}
-            />
-          </SwiperSlide> */}
+          
         </Swiper>
 
         {/* Custom navigation and pagination */}
@@ -268,7 +191,7 @@ export const DesktopCardCarousel = ({ strategies }) => {
                 titleBack={strategy.strategyTitle}
                 descriptionFront={strategy.strategyDescription}
                 difficultyLevel={strategy.difficultyLevel}
-                listTextBack={<ListText strategyID={strategy.strategyID} />}
+                listTextBack={<ListText slug={strategy.slug} />} // Pass the slug here
                 strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
               />
             </SwiperSlide>
