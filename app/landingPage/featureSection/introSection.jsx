@@ -18,14 +18,13 @@ const TextWithPill = ({ totalTvl }) => {
       {/* Left side (text with pill) */}
       <div className="flex flex-col md:mb-8 mb-0 justify-between gap-2 md:gap-20 items-center md:items-start flex-1">
         {/* Text Wrapper */}
-        <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
+        <div className="text-left flex flex-col gap-1 dark:text-white text-[#252948]">
           <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px]">
             Be The Whale.
           </p>
-          <p className="aboutTypographyparagraphWhite text-wrap max-w-[25rem] dark:text-white text-[#252948]">
+          <p className="aboutTypographyparagraphWhite text-wrap  max-w-[25rem] dark:text-white text-[#252948]">
             Your trustless, transparent, prime brokerage on Avalanche and
             Arbitrum.
-            <br />
             <br />
             Deposit and securely earn high APYs. Borrow up to 5x your
             collateral, explore intuitive investment strategies and unlock your

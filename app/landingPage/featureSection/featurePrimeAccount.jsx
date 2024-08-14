@@ -12,7 +12,7 @@ import RoundedThreeDarkThemed from "@/public/assets/icons/RoundedThreeDarkThemed
 import depositImage from "@/public/assets/img/images/features/deposit_collateral.png";
 import graphImage from "@/public/assets/img/images/features/graph.png";
 import circleDarkTheme from "@/public/assets/icons/circleDarkTheme.svg";
-import fiveXNumber from "@/public/assets/icons/fiveX.svg";
+import fiveXNumber from "@/public/assets/5X.svg";
 
 // Light theme assets
 import RoundedOneLightThemed from "@/public/assets/icons/RoundedOneLightThemed.svg";

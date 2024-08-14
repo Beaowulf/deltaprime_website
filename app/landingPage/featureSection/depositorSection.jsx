@@ -8,7 +8,7 @@ import { CTAButton } from "@/app/components/buttons/mainButton";
 import { CryptoLandingPageTables } from "@/app/components/cryptoTables/cryptoTables";
 import large3DLogo from "@/public/assets/img/logo_3D_large.png";
 import piggyBank3DLarge from "@/public/assets/img/piggyBankLarge3D.png";
-import dollarSign3D from "@/public/assets/img/dollarSign3D.png";
+import dollarSign3D from "@/public/assets/dollarSign.svg";
 import Header from "@/app/components/header/header";
 
 // Dark themed assets
@@ -44,7 +44,7 @@ const FeaturePrimeAccount = () => {
             } z-10 md:w-8/12 w-full`}
           >
             <div className="flex md:flex-row flex-col justify-between items-end rounded-[20px] h-full px-4 md:pt-8 md:pl-10 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden">
-              <div className="w-full md:w-1/2 flex flex-col items-start mb-0 md:mb-11 md:mr-4">
+              <div className="w-full md:w-1/2 flex flex-col mt-5 items-start mb-0 md:mb-11 md:mr-4">
                 {theme === "dark" ? (
                   <Image src={RoundedOneDarkThemed} alt="Rounded_Number_One" />
                 ) : (
