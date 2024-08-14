@@ -108,7 +108,7 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
             el: ".swiper-pagination",
             clickable: true,
             renderBullet: (index, className) => {
-              return `<div className="${className}"></div>`;
+              return `<div class="${className}"></div>`;
             },
           }}
           className="swiper-container"
@@ -196,18 +196,18 @@ export const DesktopCardCarousel = ({ strategies }) => {
         </Swiper>
 
         {/* Custom navigation and pagination */}
-        <div className="custom-pagination-container-desktop flex justify-between items-center py-[30px] px-[4rem]">
+        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[5rem]">
           <Image
             onClick={handlePrev}
-            className="size-5 swiper-button-prev-desktop custom-arrow"
+            className="swiper-button-prev custom-arrow"
             src={arrowLeftColored}
             alt={"Arrow Left"}
           />
-          <div className="swiper-pagination-desktop"></div>
-
+          <div className="custom-swiper-pagination swiper-pagination"></div>{" "}
+          {/* Custom pagination element */}
           <Image
             onClick={handleNext}
-            className="size-5 swiper-button-next-desktop custom-arrow"
+            className="swiper-button-next custom-arrow"
             src={arrowRightColored}
             alt={"Arrow Right"}
           />
