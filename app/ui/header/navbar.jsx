@@ -169,7 +169,7 @@ function Nav() {
             }`}
             id="mobile-menu"
           >
-            <div className="w-full flex flex-col relative">
+            <div className="w-full flex flex-col relative h-full">
               <div className="p-4 flex justify-between items-center">
                 <div className="flex justify-center items-center gap-8">
                   <MobileMenuLogo />
