@@ -66,7 +66,7 @@ const LaunchAppModal = () => {
                           ) : (
                             poolsData.arbitrum.map((pool, index) => (
                               <p
-                                className="dark:text-gray text-gray-800 font-medium text-[14px]"
+                                className="dark:text-blue-950 text-blue-950 font-medium text-[14px]"
                                 key={index}
                               >
                                 {pool.symbol} {pool.apy.toFixed(1)}%
@@ -83,7 +83,7 @@ const LaunchAppModal = () => {
                           ) : (
                             poolsData.avalanche.map((pool, index) => (
                               <p
-                                className="dark:text-gray text-gray-800 font-medium text-[14px]"
+                                className="dark:text-blue-950 text-blue-950 font-medium text-[14px]"
                                 key={index}
                               >
                                 {pool.symbol} {pool.apy.toFixed(1)}%
@@ -124,13 +124,13 @@ const LaunchAppModal = () => {
                       <div className="flex gap-4 items-start justify-center mx-4">
                         <div className="mt-4 max-w-[200px]">
                           <ul>
-                            <li className="dark:text-gray text-gray-800 font-medium text-[14px]">
+                            <li className="dark:text-blue-950 text-blue-950 font-medium text-[14px]">
                               <span>•</span> Borrow up to 5x
                             </li>
-                            <li className="dark:text-gray text-gray-800 font-medium text-[14px]">
+                            <li className="dark:text-blue-950 text-blue-950 font-medium text-[14px]">
                               <span>•</span> Create your strategy
                             </li>
-                            <li className="dark:text-gray text-gray-800 font-medium text-[14px]">
+                            <li className="dark:text-blue-950 text-blue-950 font-medium text-[14px]">
                               <span>•</span> With the best of DeFi
                             </li>
                           </ul>

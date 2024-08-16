@@ -335,6 +335,7 @@ const OurStory = () => {
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
                     <Link href={"/jobDescription"}>
                       <AboutButtonDarkBG
+                        style={{ width: "100%" }}
                         label={"Learn More"}
                         hasArrowRight={true}
                       />

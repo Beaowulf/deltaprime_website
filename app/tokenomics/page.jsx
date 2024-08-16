@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import ourStoryIntroImg from "@/public/assets/img/thumbnail.png";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import GradientButton from "@/app/components/gradientButtonTokenomics/GradientButton";
@@ -15,9 +14,14 @@ import protocolRevenue from "@/public/assets/icons/protocolRevenue.svg";
 import governancePower from "@/public/assets/icons/governancePower.svg";
 import TokenomicsCards from "../components/tokenomicsCard/tokenomicsCard";
 
+import imageOne from "@/public/assets/img/images/tokenomics/1_deep_dive_tockenomics_lightless.png";
+import imageTwo from "@/public/assets/img/images/tokenomics/2_image.png";
+import imageThree from "@/public/assets/img/images/tokenomics/3_voting.png";
+import imageFour from "@/public/assets/img/images/tokenomics/4_image.png";
+import imageFive from "@/public/assets/img/images/tokenomics/5-lockers.png";
+
 import "./tokenomics.css";
 import SecuritySection from "../landingPage/featureSection/securitySection";
-import UnlockPotentialContainer from "../components/unlockPotentialContainer/unlockPotentialContainer";
 import ContactForm from "../ui/contactForm/contactForm";
 
 const Tokenomics = () => {
@@ -47,8 +51,8 @@ const Tokenomics = () => {
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={ourStoryIntroImg}
-                alt="deltaprime_mascot_img"
+                src={imageOne}
+                alt="Deep_Dive_Tockenomics_Lightless"
               />
               <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
                 Deep Dive into $PRIME Tokenomics
@@ -59,8 +63,8 @@ const Tokenomics = () => {
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={ourStoryIntroImg}
-                alt="deltaprime_mascot_img"
+                src={imageOne}
+                alt="Deep_Dive_Tockenomics_Lightless"
               />
               <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 min-w-full mb-4">
                 DeltaPrime is a decentralized Prime Brokerage solution that
@@ -239,7 +243,7 @@ const Tokenomics = () => {
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={ourStoryIntroImg}
+                src={imageTwo}
                 alt="deltaprime_mascot_img"
               />
               <p className="brightText text-wrap max-w-full mb-4 text-3xl md:text-[44px]">
@@ -251,7 +255,7 @@ const Tokenomics = () => {
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={ourStoryIntroImg}
+                src={imageTwo}
                 alt="deltaprime_mascot_img"
               />
               <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full">
@@ -425,7 +429,7 @@ const Tokenomics = () => {
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={ourStoryIntroImg}
+                src={imageThree}
                 alt="deltaprime_mascot_img"
               />
               <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
@@ -437,7 +441,7 @@ const Tokenomics = () => {
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={ourStoryIntroImg}
+                src={imageThree}
                 alt="deltaprime_mascot_img"
               />
               <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full ">
@@ -529,7 +533,7 @@ const Tokenomics = () => {
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={ourStoryIntroImg}
+                src={imageFour}
                 alt="deltaprime_mascot_img"
               />
               <p className="text-wrap min-w-full mb-4 font-bold text-2xl md:text-[28px]">
@@ -541,7 +545,7 @@ const Tokenomics = () => {
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={ourStoryIntroImg}
+                src={imageFour}
                 alt="deltaprime_mascot_img"
               />
               <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full ">
@@ -612,7 +616,7 @@ const Tokenomics = () => {
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={ourStoryIntroImg}
+                src={imageFive}
                 alt="deltaprime_mascot_img"
               />
               <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
@@ -624,7 +628,7 @@ const Tokenomics = () => {
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={ourStoryIntroImg}
+                src={imageFive}
                 alt="deltaprime_mascot_img"
               />
               <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full ">

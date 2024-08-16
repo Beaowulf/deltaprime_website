@@ -29,9 +29,9 @@ const StrategyDetail = ({ strategy, strategies }) => {
   // console.log(strategyHeroImage);
   return (
     // Top page
-    <div className="">
+    <div className="px-4 sm:px-0">
       {/* Desktop View */}
-      <div className="pagePaddingLarge hidden md:block">
+      <div className="pagePaddingMedium hidden md:block">
         <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
@@ -73,7 +73,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
             </div>
           </div>
           {/* Image burd */}
-          <div className="w-fit md:block hidden rounded-[25px]">
+          <div className="w-fit md:block hidden rounded-[25px] max-w-[60rem]">
             <img
               src={strategyHeroImage}
               className="rounded-[25px] max-w-full w-full"
@@ -119,8 +119,8 @@ const StrategyDetail = ({ strategy, strategies }) => {
               {strategy.strategyTitle}
             </p>
             <div className="w-full md:hidden block rounded-[25px]">
-              <Image
-                src={strategiesIntroImg}
+              <img
+                src={strategyHeroImage}
                 alt="deltaprime_mascot_img rounded-[25px]"
               />
             </div>
