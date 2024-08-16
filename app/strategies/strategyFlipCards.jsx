@@ -120,8 +120,8 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
                 titleBack={strategy.strategyTitle}
                 descriptionFront={strategy.strategyDescription}
                 difficultyLevel={strategy.difficultyLevel}
-                listTextBack={<ListText slug={strategy.slug} />} // Pass the slug here
-                strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
+                listTextBack={<ListText slug={strategy.slug} />}
+                strategyImage={strategy.strategyImage?.fields?.file?.url}
               />
             </SwiperSlide>
           ))}
