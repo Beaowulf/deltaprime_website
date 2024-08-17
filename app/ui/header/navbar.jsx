@@ -66,7 +66,7 @@ function Nav() {
             </div>
           </div>
           <div className="hidden md:block">
-            <div className="lg:ml-8 flex items-baseline space-x-4">
+            <div className="lg:ml-8 flex items-baseline space-x-4 relative">
               {/* <div className="text-center">
                 <Link
                   href="/ourStory"
