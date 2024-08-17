@@ -16,6 +16,7 @@ import { getLinkClass } from "@/lib/getLinkClass";
 import DropDownStrategyLoader from "@/app/ui/strategyLoader";
 import DropDownBlogLoader from "@/app/ui/burdLogLoader";
 import Dropdown from "@/app/ui/header/dropdown";
+import { MenuDropdown } from "./dropdown";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,18 +68,10 @@ function Nav() {
           </div>
           <div className="hidden md:block">
             <div className="lg:ml-8 flex items-baseline space-x-4 relative">
-              {/* <div className="text-center">
-                <Link
-                  href="/ourStory"
-                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[14px] font-medium text-nowrap"
-                >
-                  Our Story
-                </Link>
-                <div
-                  className={getLinkClass("/ourStory", pathname, resolvedTheme)}
-                />
-              </div> */}
+              {/* Insert the Dropdown component here */}
               <Dropdown />
+
+              {/* Other dropdown components */}
               <DropDownStrategyLoader
                 pathname={pathname}
                 resolvedTheme={resolvedTheme}
@@ -98,13 +91,6 @@ function Nav() {
                 >
                   Contact Us
                 </Link>
-                <div
-                  className={getLinkClass(
-                    "/contactUs",
-                    pathname,
-                    resolvedTheme
-                  )}
-                />
               </div>
             </div>
           </div>
@@ -164,7 +150,7 @@ function Nav() {
           <div
             className={`fullscreen-menu ${
               isOpen
-                ? "show absolute top-0 left-0 w-full dark:bg-gradient-to-45-dark-BG bg-gradient-to-r from-[#F4F4FF] from-10% via-[#F4F4FF] via-60% to-[#E8E8F2] to-80% z-[1000] h-screen flex justify-center rounded-[20px]"
+                ? "show absolute top-0 left-0 w-full dark:bg-gradient-to-45-dark-BG bg-gradient-to-r from-[#F4F4FF] from-10% via-[#F4F4FF] via-60% to-[#E8E8F2] to-80% z-[1000] flex justify-center rounded-[20px]"
                 : ""
             }`}
             id="mobile-menu"
@@ -202,13 +188,8 @@ function Nav() {
                   Burd Log
                 </Link>
 
-                <Link
-                  href="/ourStory"
-                  className="text-gray-800 dark:text-white dark:hover:text-gray-400 md:text-white hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-semibold"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Our Story
-                </Link>
+                {/* Mobile Menu Dropdown */}
+                <MenuDropdown />
 
                 <Link
                   href="/strategies"

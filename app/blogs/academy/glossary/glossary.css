@@ -38,3 +38,29 @@
   position: relative;
   z-index: 1;
 }
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1c2943;
+  width: 30px;
+  height: 30px;
+  z-index: 20;
+}
+
+.swiper-button-next {
+  right: -1.5rem;
+  top: 1.4rem;
+}
+.swiper-button-prev {
+  left: -5px;
+  top: 1.4rem;
+}
+.glossarySwiper {
+  position: initial;
+  z-index: 10;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+  color: transparent;
+}

@@ -6,9 +6,11 @@ import { useTheme } from "next-themes";
 import GradientButton from "@/app/components/gradientButtonTokenomics/GradientButton";
 import primePurpleLogo from "@/public/assets/icons/purpleTokenPrime.svg";
 import whiteTokenPrime from "@/public/assets/icons/whiteTokenPrime.svg";
-import protocolUsage from "@/public/assets/icons/protocolUsage.svg";
+
+import protocolUsage from "@/public/assets/icons/boost_Protocol_Usage.svg";
 import liquidityPool from "@/public/assets/icons/liquidityPool.svg";
-import bufferMarket from "@/public/assets/icons/bufferMarket.svg";
+import bufferMarket from "@/public/assets/icons/buffer_Market _Volatility.svg";
+
 import primeFeatures from "@/public/assets/icons/primeFeatures.svg";
 import protocolRevenue from "@/public/assets/icons/protocolRevenue.svg";
 import governancePower from "@/public/assets/icons/governancePower.svg";
@@ -158,9 +160,10 @@ const Tokenomics = () => {
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
               <Image
+                width={150}
+                height={150}
                 src={protocolUsage}
                 alt="Boost Protocol Usage"
-                className="h-auto w-auto"
               />
               <p className="text-center !text-xl md:!text-xl mt-4 w-[200px]">
                 Boost Protocol Usage
@@ -168,9 +171,10 @@ const Tokenomics = () => {
             </div>
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
               <Image
+                width={150}
+                height={150}
                 src={bufferMarket}
                 alt="Buffer Market Volatility"
-                className="h-auto w-auto"
               />
               <p className="text-center !text-xl md:!text-xl mt-4 w-[200px]">
                 Buffer Market Volatility
@@ -178,9 +182,10 @@ const Tokenomics = () => {
             </div>
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
               <Image
+                width={150}
+                height={150}
                 src={liquidityPool}
                 alt="Facilitate a deep, healthy liquidity pool"
-                className="h-auto w-auto"
               />
               <p className="text-center !text-xl md:!text-xl mt-4 w-[200px]">
                 Facilitate a deep, healthy liquidity pool
@@ -199,9 +204,10 @@ const Tokenomics = () => {
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
               <Image
+                width={150}
+                height={150}
                 src={protocolRevenue}
                 alt="Access PRIME Features"
-                className="h-auto w-auto"
               />
               <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px]">
                 Access PRIME Features
@@ -209,9 +215,10 @@ const Tokenomics = () => {
             </div>
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
               <Image
+                width={150}
+                height={150}
                 src={governancePower}
                 alt="Claim a share of 33% of protocol revenue"
-                className="h-auto w-auto"
               />
               <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px]">
                 Claim a share of the liquidation fees
@@ -219,9 +226,10 @@ const Tokenomics = () => {
             </div>
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
               <Image
+                width={150}
+                height={150}
                 src={primeFeatures}
                 alt="Accrue Governance Power points"
-                className="h-auto w-auto"
               />
               <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px]">
                 Accrue Governance Power points
@@ -359,7 +367,7 @@ const Tokenomics = () => {
       </div>
       <div className="mb-16">
         <p className="brightText text-wrap mb-4 text-3xl md:text-[44px]">
-          The Difference Between Unlocked <br />
+          The Difference Between Unlocked <br className="md:block hidden" />
           and Locked $sPRIME
         </p>
         <p className="whiteMainText text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">

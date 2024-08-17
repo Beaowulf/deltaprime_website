@@ -17,7 +17,10 @@ const BlogCard = ({ previewBlogImage, blogDescription, blogSlug }) => {
           </div>
         )}
       </div>
-      <p className="text-[16px] leading-6 font-medium line-clamp-2 ml-1">
+      <p
+        className="text-[16px] leading-6 font-medium line-clamp-2 ml-1"
+        style={{ minHeight: "calc(1.5rem * 2)" }}
+      >
         {blogDescription}
       </p>
       <Link prefetch={true} href={`/blogs/academy/${blogSlug}`}>

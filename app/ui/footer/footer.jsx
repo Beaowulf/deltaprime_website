@@ -149,7 +149,7 @@ const TermsOfUseFooter = ({ isTokenomics, isStrategies }) => {
               href="/legals/tokenomicsRiskDisclaimer"
               className="hover:text-gray-400 "
             >
-              <span className="mr-4">•</span> Tokenomics Risk Disclaimer
+              <span className="mr-4">•</span> Token Risk Disclaimer
             </Link>
           )}
         </div>

@@ -34,12 +34,12 @@ const LaunchAppModal = () => {
       {modal && (
         <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
           <div className="modalParent relative z-10 w-full md:w-fit">
-            <div className="absolute top-2 right-4 px-2 py-3 w-fit h-fit text-black cursor-pointer z-50">
+            <div className="absolute top-2 right-4 pb-2 pt-10 pl-5 pr-5 w-fit h-fit text-black cursor-pointer z-50">
               <Link className="z-100 cursor-pointer" href={pathname}>
                 <Image
                   src={closeIconColored}
-                  width={15}
-                  height={15}
+                  width={20}
+                  height={20}
                   alt="close_X_Button"
                 />
               </Link>
@@ -52,7 +52,7 @@ const LaunchAppModal = () => {
                 {/* Left side */}
                 <div className="flex justify-center flex-col gap-1 items-center modalWrapper md:w-full h-full w-[16rem]">
                   <div className="modalContent w-full">
-                    <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px]">
+                    <div className="w-full bg-[#6B70ED] py-1 rounded-t-[25px] mt-[0.5px] mx-[0.25px] mb-2">
                       <p className="mx-auto w-fit text-white font-bold">
                         Savings Account
                       </p>
@@ -115,7 +115,7 @@ const LaunchAppModal = () => {
                 {/* Right side */}
                 <div className="flex justify-center flex-col gap-1 items-center modalWrapper md:w-full h-full w-[16rem]">
                   <div className="modalContent w-full h-full">
-                    <div className="w-full bg-[#6B70ED] py-1 rounded-t-[20px] mb-2">
+                    <div className="w-full bg-[#6B70ED] py-1 rounded-t-[25px] mt-[0.5px] mx-[0.25px] mb-2">
                       <p className="mx-auto w-fit text-white font-bold">
                         Prime Account
                       </p>
