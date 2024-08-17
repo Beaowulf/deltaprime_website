@@ -41,6 +41,7 @@ const RichTextRenderer = ({
   hasTakeaways,
   blogTakeaways,
   onHeadingRender,
+  lastRevisionDate,
 }) => {
   const options = {
     renderNode: {
@@ -125,6 +126,38 @@ const RichTextRenderer = ({
           );
         } else if (text.includes("{{inline_Takeaways}}") && !hasTakeaways) {
           return null;
+        }
+
+        if (text.includes("{{Terms_Of_Use_Title}}")) {
+          return (
+            <div className="flex justify-center flex-col items-center">
+              <p className="mb-8 featureSubtitle md:text-[30px] text-[22px] text-center">
+                Delta Prime
+              </p>
+              <p className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-center">
+                Terms of Use
+              </p>
+              <p className="text-[20px] font-medium md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1">
+                Important information
+              </p>
+            </div>
+          );
+        }
+
+        if (text.includes("{{Terms_Of_Use_Title}}")) {
+          return (
+            <div className="flex justify-center flex-col items-center">
+              <p className="mb-8 featureSubtitle md:text-[30px] text-[22px] text-center">
+                Delta Prime
+              </p>
+              <p className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-center">
+                Risk Disclosure
+              </p>
+              <p className="text-[20px] font-medium md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1">
+                Important information
+              </p>
+            </div>
+          );
         }
 
         if (text.includes("{{inline_CTA}}")) {

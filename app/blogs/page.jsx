@@ -1,12 +1,9 @@
 // pages/blogs/page.jsx
 import { fetchBlogs } from "@/lib/getBlogs";
-import SearchBar from "@/app/components/searchBar/searchBar";
 import Header from "@/app/components/header/header";
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar";
-import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import BlogHomePage from "./blogHomePage";
-import Link from "next/link";
 
 const BlogsPage = async () => {
   const blogs = await fetchBlogs();
