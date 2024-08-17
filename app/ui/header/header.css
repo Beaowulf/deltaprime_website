@@ -88,10 +88,6 @@
   left: 2rem;
 }
 
-.dropdownWrapper {
-  position: relative;
-}
-
 .dropdownWrapper:before {
   content: "";
   position: absolute;
