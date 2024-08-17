@@ -104,7 +104,7 @@ const Glossary = () => {
         <Swiper
           modules={[Navigation]}
           spaceBetween={5}
-          slidesPerView={5}
+          slidesPerView={6}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
