@@ -28,7 +28,7 @@ const deltaPrimeTvlArbitrum =
 
 // Fetch TVL data
 const fetchTVLData = async () => {
-  console.log("Fetching TVL data...");
+  // console.log("Fetching TVL data...");
   let tvlInfo = await Promise.all([
     fetch(deltaPrimeTvlAvalanche),
     fetch(deltaPrimeTvlArbitrum),
@@ -39,13 +39,13 @@ const fetchTVLData = async () => {
   );
   const totalTVL = tvlInfo[0] + tvlInfo[1];
 
-  console.log("Total TVL fetched:", totalTVL);
+  // console.log("Total TVL fetched:", totalTVL);
   return totalTVL;
 };
 
 // Fetch pool data
 const fetchPoolData = async (provider, poolAddresses) => {
-  console.log("Fetching pool data...");
+  // console.log("Fetching pool data...");
   const poolsInfo = await Promise.all(
     Object.entries(poolAddresses).map(async ([asset, address]) => {
       const poolContract = new ethers.Contract(address, POOL.abi, provider);
@@ -55,7 +55,7 @@ const fetchPoolData = async (provider, poolAddresses) => {
         poolContract.totalBorrowed(),
       ]);
 
-      console.log(`Fetched data for pool: ${asset}`, poolDetails);
+      // console.log(`Fetched data for pool: ${asset}`, poolDetails);
       return {
         id: asset,
         totalSupply: poolDetails[0],
@@ -65,24 +65,24 @@ const fetchPoolData = async (provider, poolAddresses) => {
     })
   );
 
-  console.log("All pool data fetched.");
+  // console.log("All pool data fetched.");
   return poolsInfo;
 };
 
 // Fetch price data
 const fetchPriceData = async (apiUrl) => {
-  console.log(`Fetching price data from ${apiUrl}...`);
+  // console.log(`Fetching price data from ${apiUrl}...`);
   const priceRequest = await fetch(apiUrl);
   const prices = await priceRequest.json();
 
-  console.log("Price data fetched:", prices);
+  // console.log("Price data fetched:", prices);
   return prices;
 };
 
 // Main function to get the TVL and liquidity unlocked
 const getTVLandLiquidity = async () => {
   try {
-    console.log("Starting to calculate TVL and unlocked liquidity...");
+    // console.log("Starting to calculate TVL and unlocked liquidity...");
 
     const totalTVL = await fetchTVLData();
 
@@ -91,7 +91,7 @@ const getTVLandLiquidity = async () => {
       pools["avalanche"]
     );
 
-    console.log(avaxPoolsInfo);
+    // console.log(avaxPoolsInfo);
     const arbPoolsInfo = await fetchPoolData(
       arbitrumProvider,
       pools["arbitrum"]
@@ -124,10 +124,10 @@ const getTVLandLiquidity = async () => {
       }
 
       const borrowed = formatUnits(pool.totalBorrowed, decimals);
-      console.log(`Pool ${pool.id} - Borrowed: ${borrowed}, Price: ${price}`);
+      // console.log(`Pool ${pool.id} - Borrowed: ${borrowed}, Price: ${price}`);
 
       const unlocked = parseFloat(borrowed) * price;
-      console.log(`Liquidity unlocked for pool ${pool.id}: ${unlocked}`);
+      // console.log(`Liquidity unlocked for pool ${pool.id}: ${unlocked}`);
       return unlocked;
     };
 
@@ -172,8 +172,8 @@ const getTVLandLiquidity = async () => {
       calculateUnlockedLiquidity(arbUsdcPool, usdcPrice, "6") +
       calculateUnlockedLiquidity(arbBtcPool, btcPrice, "8") +
       calculateUnlockedLiquidity(arbArbPool, arbPrice, "18");
-
-    console.log("Liquidity Unlocked:", unlockedLiquidity);
+    //
+    // console.log("Liquidity Unlocked:", unlockedLiquidity);
 
     return { totalTVL, unlockedLiquidity };
   } catch (error) {
@@ -184,6 +184,6 @@ const getTVLandLiquidity = async () => {
 // Usage example on client-side
 if (typeof window !== "undefined") {
   getTVLandLiquidity().then(({ totalTVL, unlockedLiquidity }) => {
-    console.log("Unlocked Liquidity:", unlockedLiquidity);
+    // console.log("Unlocked Liquidity:", unlockedLiquidity);
   });
 }

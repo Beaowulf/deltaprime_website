@@ -102,7 +102,7 @@ export default function Dropdown() {
   );
 }
 
-export function MenuDropdown() {
+export function MenuDropdown({ onClick }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -145,12 +145,14 @@ export function MenuDropdown() {
       >
         <div className="mt-4 p-4">
           <Link
+            onClick={onClick}
             href="/ourStory"
             className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
           >
             <p className="text-lg">Our Story</p>
           </Link>
           <Link
+            onClick={onClick}
             href="/tokenomics"
             className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
           >

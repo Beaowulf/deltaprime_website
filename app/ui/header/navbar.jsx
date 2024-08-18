@@ -189,7 +189,7 @@ function Nav() {
                 </Link>
 
                 {/* Mobile Menu Dropdown */}
-                <MenuDropdown />
+                <MenuDropdown onClick={() => setIsOpen(false)} />
 
                 <Link
                   href="/strategies"

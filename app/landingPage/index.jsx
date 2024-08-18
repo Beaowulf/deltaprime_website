@@ -69,7 +69,7 @@ const HomePage = async () => {
   const previewDataArray = Object.values(blogPreviewCardData);
 
   const tvlData = await fetchTvlData();
-  console.log(tvlData);
+  // console.log(tvlData);
 
   return (
     <>
