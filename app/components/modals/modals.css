@@ -43,3 +43,11 @@
   position: relative;
   z-index: 1;
 }
+
+dialog {
+  z-index: 300000;
+}
+
+.modalP {
+  z-index: 300000;
+}

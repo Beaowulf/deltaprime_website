@@ -29,10 +29,23 @@ const LaunchAppModal = () => {
     setupAprs();
   }, []);
 
+  useEffect(() => {
+    if (modal) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    // Clean up the effect when the component is unmounted or when modal closes
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [modal]);
+
   return (
     <>
       {modal && (
-        <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
+        <dialog className="modalP fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
           <div className="modalParent relative z-10 w-full md:w-fit">
             <div className="absolute top-2 right-4 pb-2 pt-10 pl-5 pr-5 w-fit h-fit text-black cursor-pointer z-50">
               <Link className="z-100 cursor-pointer" href={pathname}>
