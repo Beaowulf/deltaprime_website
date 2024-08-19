@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { fetchCryptoData } from "./cryptoData";
 import "./tableStyling.css";
 import avalanche from "@/public/assets/icons/avalanche.svg";
 import arbitrum from "@/public/assets/icons/arbitrum.svg";
 import Link from "next/link";
+import { fetchCryptoData } from "@/lib/getDetailedData";
 
 const CryptoPreviewTables = () => {
   const [poolsData, setPoolsData] = useState({ arbitrum: [], avalanche: [] });

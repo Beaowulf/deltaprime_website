@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import "./modals.css";
-import { fetchCryptoData } from "@/app/components/cryptoTables/cryptoData";
 import { useSearchParams, usePathname } from "next/navigation";
 import { CTAButton } from "@/app/components/buttons/mainButton";
 import closeIconColored from "@/public/assets/icons/closeIconColored.svg";
 import Link from "next/link";
+import { fetchCryptoData } from "@/lib/getDetailedData";
 
 const LaunchAppModal = () => {
   const [poolsData, setPoolsData] = useState({ arbitrum: [], avalanche: [] });
