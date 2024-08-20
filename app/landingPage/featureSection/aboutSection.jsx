@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import homeAvalanche from "@/public/assets/img/images/home-avalanche.png";
 import homeArbitrum from "@/public/assets/img/images/home-arbitrum.png";
-import { AboutButtonDarkBG } from "@/app/components/buttons/mainButton";
+import { BlogCardButton } from "@/app/components/buttons/mainButton";
 
 const ImageComponent = () => {
   const [showFirstImage, setShowFirstImage] = useState(true);
@@ -58,8 +58,8 @@ function AboutSection() {
           innovation and resilience.
         </p>
         <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
-          <AboutButtonDarkBG
-            customClass="w-full"
+          <BlogCardButton
+            fullWidth={true}
             hasArrowRight={true}
             label={"LEARN MORE"}
           />

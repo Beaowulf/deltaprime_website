@@ -14,6 +14,9 @@ module.exports = {
           "linear-gradient(137deg, #1B153C 10%, #1C2943 50%, #301E3E 90%)",
         "gradient-to-45-dark-BG":
           "linear-gradient(137deg, #1B153C, #1C2943, #301E3E)",
+
+        deltaWhiteLinearBG:
+          "linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4)",
       },
       fontFamily: {
         sans: ["var(--font-inter)"],

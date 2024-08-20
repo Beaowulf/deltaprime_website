@@ -14,7 +14,7 @@ import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
 import FounderCard from "./cards/founderCard";
 import AdvisorCard from "./cards/advisorCard";
-import { AboutButtonDarkBG } from "@/app/components/buttons/mainButton";
+import { BlogCardButton } from "@/app/components/buttons/mainButton";
 import JakubImage from "@/public/assets/img/images/avatars/Jakub.png";
 import KamilImage from "@/public/assets/img/images/avatars/Kamil.jpeg";
 import PiotrImage from "@/public/assets/img/images/avatars/Piotr.png";
@@ -334,8 +334,7 @@ const OurStory = () => {
                   </p>
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
                     <Link href={"/jobDescription"}>
-                      <AboutButtonDarkBG
-                        style={{ width: "100%" }}
+                      <BlogCardButton
                         label={"Learn More"}
                         hasArrowRight={true}
                       />

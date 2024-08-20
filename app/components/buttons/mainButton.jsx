@@ -132,20 +132,19 @@ export function ArrowButton({ onClick }) {
   );
 }
 
+// todo: both are now same (light mode and dark mode are the same)
 export function ContactUsButton({ label, onClick }) {
   const { theme } = useTheme();
   return (
-    <button onClick={onClick} className="arrowButtonBG w-full h-fit">
+    <button onClick={onClick} className="ctaButtonBorder w-full h-fit">
       <div
-        className={`${
-          theme === "dark" ? "contactUsButtonBGDark" : "contactUsButtonBGLight"
+        className={` md:py-[10px] md:px-5 py-[18px] px-[20px] h-[30px] md:h-full ${
+          theme === "dark" ? "ctaButtonWrapper" : "ctaButtonWrapper"
         }`}
       >
-        <p className="contactUsLabel dark:text-[#1b153c] text-[#FEEEF4]">
-          {label}
-        </p>
+        <p className="ctaButtonText text-[#FEEEF4]">{label}</p>
         {theme === "dark" ? (
-          <ArrowRightWhite
+          <ArrowRight
             className="size-6 mb-[1px] arrowButton"
             alt="Arrow Right"
           />
@@ -197,7 +196,7 @@ export function CTAButton({
 export function BlogButton({ onClick, label }) {
   return (
     <button onClick={onClick} className="blogButtonWrapper">
-      <div className="blogButtonContent w-full h-[45px] md:h-full p-4">
+      <div className="blogFilterButton w-full h-[45px] md:h-full p-4">
         <h6 className="text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText">
           {label}
         </h6>
@@ -206,11 +205,16 @@ export function BlogButton({ onClick, label }) {
   );
 }
 
-export function BlogCardButton({ onClick, label, isSmallbtn }) {
+export function BlogCardButton({
+  onClick,
+  label,
+  isSmallbtn,
+  fullWidth = false,
+}) {
   return (
     <button
       onClick={onClick}
-      className="blogButtonWrapper dark:hover:shadow-deltaPurple hover:bg-[#3f4183] hover:shadow-deltaRed w-fit"
+      className={`blogButtonWrapper ${fullWidth ? "w-full" : "w-fit"}`}
     >
       <div
         className={`blogButtonContent md:h-full ${

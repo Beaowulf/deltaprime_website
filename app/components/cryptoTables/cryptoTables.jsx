@@ -28,7 +28,7 @@ const CryptoPreviewTables = () => {
   return (
     <div className="flex flex-col gap-10">
       {/* 1 box */}
-      <div className="bg-white rounded-[30px] px-4 pb-1 pt-4 md:px-8 md:pb-2 md:pt-8 max-w-[340px]">
+      <div className="deltaWhiteLinearBG rounded-[30px] px-4 pb-1 pt-4 md:px-8 md:pb-2 md:pt-8 max-w-[340px]">
         <div className="flex flex-row items-center justify-start gap-3">
           <h4 className="text-black mb-[10px] font-bold">Avalanche</h4>
           <Image
@@ -91,7 +91,7 @@ const CryptoPreviewTables = () => {
         )}
       </div>
       {/* 1 box */}
-      <div className="bg-white rounded-[30px] px-4 pb-1 pt-4 md:px-8 md:pb-2 md:pt-8 max-w-[340px]">
+      <div className="deltaWhiteLinearBG rounded-[30px] px-4 pb-1 pt-4 md:px-8 md:pb-2 md:pt-8 max-w-[340px]">
         <div className="flex flex-row items-center justify-start gap-3">
           <h4 className="text-black mb-[10px] font-bold">Arbitrum</h4>
           <Image
@@ -182,7 +182,7 @@ export const CryptoLandingPageTables = () => {
       <div className="flex justify-end items-end w-full">
         <div className="w-1/2">
           <div className="coloredBoxBorder">
-            <div className="bg-white rounded-[30px] px-4 py-5 ">
+            <div className="deltaWhiteLinearBG rounded-[30px] px-4 py-5 ">
               <div className="flex flex-row items-center justify-start gap-3">
                 <h4 className="text-black mb-[10px] font-bold">Arbitrum</h4>
                 <Image
@@ -248,7 +248,7 @@ export const CryptoLandingPageTables = () => {
         </div>
         <div className="w-1/2 -ml-6">
           <div className="coloredBoxBorder">
-            <div className="bg-white rounded-[30px] px-4 py-5 ">
+            <div className="deltaWhiteLinearBG rounded-[30px] px-4 py-5 ">
               <div className="flex flex-row items-center justify-start gap-3">
                 <h4 className="text-black mb-[10px] font-bold">Avalanche</h4>
                 <Image

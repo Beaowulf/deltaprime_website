@@ -56,7 +56,7 @@ function Nav() {
     >
       <nav
         className={`md:mb-32 mb-10 pt-4 transition-all duration-300 ${
-          isScrolled && "py-4"
+          isScrolled && "py-0 pt-0"
         }`}
       >
         <div className="flex items-center justify-between h-20">
@@ -87,7 +87,7 @@ function Nav() {
               <div className="text-center">
                 <Link
                   href="/contactUs"
-                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[14px] text-[12px] font-medium md:hidden lg:block text-nowrap"
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[12px] font-medium md:hidden lg:block text-nowrap"
                 >
                   Contact Us
                 </Link>

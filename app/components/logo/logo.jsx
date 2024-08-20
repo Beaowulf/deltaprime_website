@@ -5,7 +5,7 @@ export const Logo = () => {
   return (
     <a
       href="/#"
-      className="title-font flex items-center font-medium text-[#A79DFF] dark:text-white"
+      className="title-font flex items-center font-medium text-[#6B70ED] dark:text-white"
     >
       <Image
         className="md:h-[42px] md:w-[39px] h-[auto] w-[45px]"
@@ -13,7 +13,7 @@ export const Logo = () => {
         alt="logo_img"
       />
       <p className="ml-3 font-extrabold md:text-2xl text-lg lg:block sm:block md:hidden">
-        Delta
+        De<span className="el_delta_prime_font">l</span>ta
         <span className="font-normal">Prime</span>
       </p>
     </a>
