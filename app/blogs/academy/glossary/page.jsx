@@ -1,12 +1,20 @@
 "use client";
-import { fetchGlossaryEntries } from "@/lib/getBlogs";
 import React, { useState, useEffect } from "react";
-import "./glossary.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { fetchGlossaryEntries } from "@/lib/getBlogs";
 import { useTheme } from "next-themes";
+import "swiper/swiper-bundle.css";
+import "./glossary.css";
+
+// Import your custom icons
+import leftArrowIcon from "@/public/assets/icons/arrowLeftColored.svg";
+import rightArrowIcon from "@/public/assets/icons/arrowRightColored.svg";
+import Image from "next/image";
 
 const Glossary = () => {
   const [glossaryEntries, setGlossaryEntries] = useState([]);
-  const [selectedLetter, setSelectedLetter] = useState(null); // Default to null to show all
+  const [selectedLetter, setSelectedLetter] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [placeholder, setPlaceholder] = useState("Search Term Here");
 
@@ -22,17 +30,15 @@ const Glossary = () => {
   }, []);
 
   function clearSelect() {
-    setSelectedLetter(null); // Reset to null to show all entries
+    setSelectedLetter(null);
     setSearchTerm("");
   }
 
   const filteredEntries = glossaryEntries.filter((entry) => {
-    // Filter by letter only if a letter is selected
     if (selectedLetter && !entry.glossaryTitle.startsWith(selectedLetter)) {
       return false;
     }
 
-    // Filter by search term if provided
     if (searchTerm.length >= 2) {
       const searchWords = searchTerm.toLowerCase().split(" ");
       const combinedText = (
@@ -44,7 +50,7 @@ const Glossary = () => {
       return searchWords.every((word) => combinedText.includes(word));
     }
 
-    return true; // Show entry if no filters are applied
+    return true;
   });
 
   return (
@@ -57,7 +63,8 @@ const Glossary = () => {
         </p>
       </div>
 
-      <div className="flex flex-wrap mx-auto mt-10 justify-center mb-4">
+      {/* Desktop and Tablet view */}
+      <div className="hidden md:flex flex-wrap mx-auto mt-10 justify-center mb-4">
         <button onClick={clearSelect} className="m-2 glossaryItemWrapper">
           <p
             className={`glossaryContent md:size-[65px] size-[45px] shadow rounded-[15px] flex justify-center items-center text-2xl font-bold text-center ${
@@ -91,6 +98,58 @@ const Glossary = () => {
           )
         )}
       </div>
+
+      {/* Mobile View Swiper Carousel */}
+      <div className="md:hidden mt-10 mb-4 relative z-10 ">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={5}
+          slidesPerView={6}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          className="glossarySwiper h-[3rem] w-[90%] mx-0 px-5"
+        >
+          <SwiperSlide onClick={clearSelect} className="text-center">
+            <p
+              className={`text-xl font-bold border-r-[2px] border-[#FFBB9B] w-fit pl-1 pr-4 cursor-pointer  ${
+                selectedLetter === null
+                  ? "text-[#AFAFFF]"
+                  : "text-gray-700 dark:text-gray-300"
+              }`}
+            >
+              #
+            </p>
+          </SwiperSlide>
+          {Array.from({ length: 26 }, (_, i) =>
+            String.fromCharCode(65 + i)
+          ).map((letter) => (
+            <SwiperSlide
+              key={letter}
+              onClick={() => setSelectedLetter(letter)}
+              className="text-center flex items-center"
+            >
+              <p
+                className={`text-xl font-bold border-r-[2px] border-[#FFBB9B] w-fit pl-1 pr-4 cursor-pointer ${
+                  selectedLetter === letter
+                    ? "text-[#AFAFFF]"
+                    : "text-gray-700 dark:text-gray-300"
+                }`}
+              >
+                {letter}
+              </p>
+            </SwiperSlide>
+          ))}
+          <div className="swiper-button-next z-20">
+            <Image src={rightArrowIcon} alt="Next" width={30} height={30} />
+          </div>
+          <div className="swiper-button-prev z-20">
+            <Image src={leftArrowIcon} alt="Previous" width={30} height={30} />
+          </div>
+        </Swiper>
+      </div>
+
       <div className="my-14 !p-[1px] glossaryItemWrapper">
         <input
           type="text"
@@ -99,7 +158,7 @@ const Glossary = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => setPlaceholder("")}
           onBlur={() => setPlaceholder("Search Term Here")}
-          className="w-full border rounded-[20px] dark:placeholder:text-[#f6f6f6] placeholder:text-[#1C2943] glossaryContent p-4 text-center focus:outline-none bg-transparent"
+          className="z-10 w-full border rounded-[20px] dark:placeholder:text-[#f6f6f6] placeholder:text-[#1C2943] glossaryContent p-4 text-center focus:outline-none bg-transparent"
         />
       </div>
       <div className="glossary-entries ">

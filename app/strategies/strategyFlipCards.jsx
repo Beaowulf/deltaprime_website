@@ -164,7 +164,7 @@ export const DesktopCardCarousel = ({ strategies }) => {
   return (
     <>
       {/* Swiper carousel for mobile view */}
-      <div className="flex flex-col gap-5 hidden md:block">
+      <div className="flex flex-col gap-5 hidden md:block lg:px-[10%] md:px-[5%] px-2">
         <Swiper
           ref={sliderRef}
           modules={[Pagination]}
@@ -196,7 +196,7 @@ export const DesktopCardCarousel = ({ strategies }) => {
         </Swiper>
 
         {/* Custom navigation and pagination */}
-        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[5rem]">
+        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[5rem] w-4/12 mx-auto">
           <Image
             onClick={handlePrev}
             className="swiper-button-prev custom-arrow"

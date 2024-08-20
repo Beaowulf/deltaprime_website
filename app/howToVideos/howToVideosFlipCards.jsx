@@ -14,10 +14,6 @@ import arrowLeftColored from "@/public/assets/icons/arrowBtnLeftColored.svg";
 import arrowRightColored from "@/public/assets/icons/arrowBtnRightColored.svg";
 import HowToVideoCard from "../components/howToVideoCard/howToVideoCard";
 
-
-
-
-
 export const VideosDesktopFlipCards = ({ videos }) => {
   return (
     <div className="hidden md:block mx-auto p-4">

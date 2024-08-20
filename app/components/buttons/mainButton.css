@@ -357,8 +357,8 @@
 }
 
 .ctaButtonBorder:hover .ctaButtonText {
-  text-shadow: 1px 0px 21px rgba(183, 149, 255, 1);
-  color: #b795ff;
+  text-shadow: 0px -1px 16px #feeef4;
+  color: white;
 }
 .svgArrowParent {
   flex-shrink: 0;
@@ -367,7 +367,8 @@
   transition: all 0.5s ease;
 }
 .ctaButtonBorder:hover .pathArrowChild {
-  stroke: #b795ff;
+  stroke: white;
+  drop-shadow: 0px -1px 16px #feeef4;
 }
 
 /* Parent container with gradient border */
@@ -376,10 +377,6 @@
   border-radius: 25px;
   padding: 1px;
   overflow: hidden;
-}
-
-.blogButtonWrapper:hover h6 {
-  color: white;
 }
 
 .blogButtonWrapper:before {
@@ -413,20 +410,39 @@
   border-radius: 25px;
   position: relative;
   z-index: 1;
+  color: white;
+  background: -moz-linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
+  /* background: linear-gradient(#fff, #fff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+.blogFilterButton {
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+  color: white;
+  background: -moz-linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
 }
 
 .blogCardText {
   transition: all 0.5s ease;
 }
+
 .blogButtonWrapper:hover .blogCardText {
-  background: linear-gradient(#fff, #fff, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.blogCardText {
   background: -webkit-linear-gradient(#ffbb9b, #ff8fb8, #afafff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.blogButtonWrapper:hover .blogButtonContent {
+  background: linear-gradient(to bottom, #f4f4ff, #fff5f0 50%, #feeef4 100%);
+}
+.blogButtonWrapper:hover h6 {
+  text-shadow: 0px -1px 16px #feeef4;
+  color: white;
+}
+
+.blogCardText {
+  background: -moz-linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
 }
 
 .ctaButtonBorder {
@@ -435,8 +451,8 @@
   padding: 1px;
   overflow: hidden;
   transition: all 0.5s ease;
-  box-shadow: 0px 1.764px 5.293px 0px rgba(51, 0, 255, 0.7),
-    0px 7.057px 22.937px 0px rgba(82, 0, 255, 0.41);
+  box-shadow: 0px 1px 1px 0px rgba(51, 0, 255, 0.7),
+    0px 2px 5px 0px rgba(82, 0, 255, 0.41);
 }
 
 .ctaButtonBorder:before {
@@ -446,7 +462,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 2.5px;
+  padding: 1.5px;
   border-radius: 50px;
   background: -moz-linear-gradient(
     320deg,
@@ -484,26 +500,7 @@
   cursor: pointer;
   overflow: hidden;
   text-transform: uppercase;
-  background: rgb(27, 21, 60);
-  background: -moz-linear-gradient(
-    to right,
-    rgba(27, 21, 60, 1) 20%,
-    rgba(28, 41, 67, 1) 40%,
-    rgba(27, 21, 60, 1) 80%
-  );
-  background: -webkit-linear-gradient(
-    to right,
-    rgba(27, 21, 60, 1) 20%,
-    rgba(28, 41, 67, 1) 40%,
-    rgba(27, 21, 60, 1) 80%
-  );
-  background: linear-gradient(
-    170deg,
-    rgba(27, 21, 60, 1) 20%,
-    rgba(28, 41, 67, 1) 40%,
-    rgba(27, 21, 60, 1) 80%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b153c",endColorstr="#1b153c",GradientType=1);
+  background: -moz-linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
   z-index: 10;
   scale: 1;
 }

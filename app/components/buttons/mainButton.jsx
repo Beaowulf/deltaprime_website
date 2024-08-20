@@ -196,7 +196,7 @@ export function CTAButton({
 export function BlogButton({ onClick, label }) {
   return (
     <button onClick={onClick} className="blogButtonWrapper">
-      <div className="blogButtonContent w-full h-[45px] md:h-full p-4">
+      <div className="blogFilterButton w-full h-[45px] md:h-full p-4">
         <h6 className="text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText">
           {label}
         </h6>

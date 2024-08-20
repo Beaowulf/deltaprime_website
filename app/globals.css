@@ -42,6 +42,9 @@ body {
   font-family: var(--font-montserrat), sans-serif;
   /* Prevent body scroll and shift */
 }
+.el_delta_prime_font {
+  font-family: sans-serif;
+}
 
 html,
 body {
@@ -108,12 +111,12 @@ blending 2 of the images.
 */
 .background_1-darkTheme,
 .background_1-lightTheme {
-  transition: background 0.5s ease, color 0.5s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .background_1-darkTheme::before,
 .background_1-lightTheme::before {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 /* globals.css */
 body.light-theme {
@@ -137,7 +140,7 @@ body.dark-theme {
 }
 
 body {
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .landscapeImage {
@@ -738,4 +741,7 @@ body {
     padding: 8px;
     font-size: 14px;
   }
+}
+.deltaWhiteLinearBG {
+  background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
 }

@@ -116,16 +116,8 @@ const BlogHomePage = ({ categories, blogs }) => {
         onClick={onClick}
         className={`blogButtonWrapper ${isActive ? "active" : ""}`}
       >
-        <div className="blogButtonContent w-[140px] h-[45px] md:h-full p-4">
-          <h6
-            className={`text-[12px] lg:text-[14px] text-nowrap font-extrabold  ${
-              resolvedTheme === "dark"
-                ? isActive
-                  ? "text-black"
-                  : "text-white"
-                : "text-black"
-            }`}
-          >
+        <div className="blogFilterButton w-[140px] h-[45px] md:h-full p-4">
+          <h6 className="text-[12px] lg:text-[14px] text-nowrap font-extrabold text-white">
             {label}
           </h6>
         </div>

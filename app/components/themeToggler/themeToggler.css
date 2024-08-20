@@ -1,6 +1,7 @@
+// these are in 2 files maybe fix it todo: check it out
 .toggle_wrapper {
-  width: 60px;
-  height: 32px;
+  width: 47px;
+  height: 27px;
   background-color: #e0e1ff;
   border-radius: 25px;
   position: relative;
@@ -15,8 +16,8 @@
 }
 
 .icon {
-  width: 28px;
-  height: 28px;
+  width: 21px;
+  height: 21px;
   position: absolute;
   top: 2px;
   left: 0; /* Start from the left */

@@ -50,7 +50,6 @@ const FeaturePrimeAccountSection = () => {
   return (
     <div className="lg:mt-40 mt-0">
       <Header
-        title={"Borrow & Invest"}
         subTitle={"Prime Account"}
         paragraph={
           "Our unique escrow smart contracts allow you for truly trustless borrowing. Leverage up to 6x, and action a wide range of flexible investment strategies."
@@ -66,7 +65,11 @@ const FeaturePrimeAccountSection = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 w-1/2`}
           >
-            <div className="rounded-[20px] h-full px-4 pt-12 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden flex flex-col items-start md:items-start">
+            <div
+              className={`rounded-[20px] h-full px-4 pt-12 z-20 dark: overflow-hidden flex flex-col items-start md:items-start ${
+                theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
+              } `}
+            >
               {/* number and text */}
               <div className="mb-12">
                 {theme === "dark" ? (
@@ -115,7 +118,11 @@ const FeaturePrimeAccountSection = () => {
                   : "featureBorderWrapLightTheme"
               } `}
             >
-              <div className="h-full rounded-[20px] dark:bg-[#252948] bg-[#E8E8F2] px-4 pt-6 md:pb-14 pb-8  flex items-end justify-between">
+              <div
+                className={`h-full rounded-[20px] px-4 pt-6 md:pb-14 pb-8 flex items-end justify-between ${
+                  theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
+                }`}
+              >
                 <div className="md:w-fit w-9/12">
                   {theme === "dark" ? (
                     <Image
@@ -151,7 +158,11 @@ const FeaturePrimeAccountSection = () => {
               } `}
             >
               {/* todo: asked for the image to be cropped properly the below might change */}
-              <div className="rounded-[20px] dark:bg-[#252948] bg-[#E8E8F2] px-4 pt-6 flex md:pb-10 pb-8  items-end justify-between h-full ">
+              <div
+                className={`rounded-[20px] px-4 pt-6 flex md:pb-10 pb-8  items-end justify-between h-full ${
+                  theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
+                } `}
+              >
                 <div className="md:w-fit w-9/12">
                   {theme === "dark" ? (
                     <Image

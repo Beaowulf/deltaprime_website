@@ -18,10 +18,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 0px 2px 2px 2px;
+  padding: 2px;
   border-radius: 25px;
-  border-top-left-radius: 20px !important;
-  border-top-right-radius: 20px !important;
   background: linear-gradient(
     0deg,
     rgba(175, 175, 255, 1) 0%,
@@ -44,4 +42,12 @@
   border-radius: 25px;
   position: relative;
   z-index: 1;
+}
+
+dialog {
+  z-index: 300000;
+}
+
+.modalP {
+  z-index: 300000;
 }

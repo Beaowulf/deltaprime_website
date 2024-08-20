@@ -1,7 +1,7 @@
 /* Header */
 .toggle_wrapper {
-  width: 60px;
-  height: 32px;
+  width: 47px;
+  height: 27px;
   background-color: #e0e1ff;
   border-radius: 25px;
   position: relative;
@@ -16,8 +16,8 @@
 }
 
 .icon {
-  width: 28px;
-  height: 28px;
+  width: 21px;
+  height: 21px;
   position: absolute;
   top: 2px;
   left: 0; /* Start from the left */
@@ -55,25 +55,26 @@
 
 /* Fullscreen menu overlay */
 .fullscreen-menu {
+  height: 100vh;
   position: absolute;
   z-index: 1000;
   background-color: rgb(166, 158, 183); /* Dark semi-transparent background */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 1000; /* Ensure it's above other elements */
   transform: translateX(100%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .fullscreen-menu.show {
   opacity: 1;
   transform: translateX(0);
+  height: 100lvh;
 }
 
 .fullscreen-menu a {
@@ -86,10 +87,6 @@
   position: absolute;
   top: 2rem;
   left: 2rem;
-}
-
-.dropdownWrapper {
-  position: relative;
 }
 
 .dropdownWrapper:before {
