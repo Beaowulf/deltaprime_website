@@ -55,7 +55,7 @@ function Nav() {
       }`}
     >
       <nav
-        className={`md:mb-32 mb-10 pt-4 transition-all duration-300 ${
+        className={`md:mb-32 mb-10 pt-[2px] transition-all duration-300 ${
           isScrolled && "py-0 pt-0"
         }`}
       >
@@ -150,7 +150,7 @@ function Nav() {
           <div
             className={`fullscreen-menu ${
               isOpen
-                ? "show absolute top-0 left-0 w-full dark:bg-gradient-to-45-dark-BG bg-gradient-to-r from-[#F4F4FF] from-10% via-[#F4F4FF] via-60% to-[#E8E8F2] to-80% z-[1000] flex justify-center rounded-[20px]"
+                ? "show absolute top-0 left-0 w-full dark:bg-gradient-to-45-dark-BG bg-gradient-to-r from-[#F4F4FF] from-10% via-[#F4F4FF] via-60% to-[#E8E8F2] to-80% z-[1000] flex justify-center"
                 : ""
             }`}
             id="mobile-menu"
