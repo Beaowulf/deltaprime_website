@@ -24,7 +24,7 @@ const SocialMediaIconWrapper = ({
     ? grayLinkedInIcon
     : darkLinkedInIcon;
 
-  const coloredIcon = usesTwitter ? coloredTwtitterIcon : coloredLinkedInIcon;
+  const coloredIcon = usesTwitter ? grayTwitterIcon : coloredLinkedInIcon;
 
   return (
     <div className="relative w-8 h-8">

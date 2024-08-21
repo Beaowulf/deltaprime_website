@@ -141,17 +141,12 @@ const TermsOfUseFooter = ({ isTokenomics, isStrategies }) => {
           >
             <span className="mr-4">•</span>Privacy Policy
           </Link>
-          <Link href="/cookie-policy" className="hover:text-gray-400 ">
-            <span className="mr-4">•</span> Cookie Policy
+          <Link
+            href="/legals/tokenomicsRiskDisclaimer"
+            className="hover:text-gray-400 "
+          >
+            <span className="mr-4">•</span> Token Risk Disclaimer
           </Link>
-          {isTokenomics && (
-            <Link
-              href="/legals/tokenomicsRiskDisclaimer"
-              className="hover:text-gray-400 "
-            >
-              <span className="mr-4">•</span> Token Risk Disclaimer
-            </Link>
-          )}
         </div>
       </div>
       {isStrategies ? (

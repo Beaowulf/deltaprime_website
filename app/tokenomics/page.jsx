@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { BlogCardButton } from "@/app/components/buttons/mainButton";
+
 import GradientButton from "@/app/components/gradientButtonTokenomics/GradientButton";
 import primePurpleLogo from "@/public/assets/icons/purpleTokenPrime.svg";
 import whiteTokenPrime from "@/public/assets/icons/whiteTokenPrime.svg";
@@ -103,7 +105,7 @@ const Tokenomics = () => {
                 )}
               </p>
               <div className="h-[50px] md:h-full block w-fit text-left">
-                <GradientButton
+                <BlogCardButton
                   label={expandedSections[0] ? "View Less" : "View More"}
                   onClick={() => toggleText(0)}
                   style={{ padding: "28px !important" }}
@@ -355,7 +357,7 @@ const Tokenomics = () => {
                 )}
               </p>
               <div className="mt-0 h-[100%] md:h-full block w-fit text-right flex items-right justify-right">
-                <GradientButton
+                <BlogCardButton
                   label={expandedSections[1] ? "View Less" : "View More"}
                   onClick={() => toggleText(1)}
                   style={{ padding: "28px !important" }} // Override padding here
@@ -416,7 +418,7 @@ const Tokenomics = () => {
         </p>
 
         <div className="h-[50px] md:h-full block w-full text-left">
-          <GradientButton
+          <BlogCardButton
             label={expandedSections[2] ? "View Less" : "View More"}
             onClick={() => toggleText(2)}
           />
@@ -516,7 +518,7 @@ const Tokenomics = () => {
                 )}
               </p>
               <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
-                <GradientButton
+                <BlogCardButton
                   label={expandedSections[3] ? "View Less" : "View More"}
                   onClick={() => toggleText(3)}
                   style={{ padding: "28px !important" }} // Override padding here
@@ -599,7 +601,7 @@ const Tokenomics = () => {
                 )}
               </p>
               <div className="mt-0 h-[100%] md:h-full block w-fit text-right flex items-right justify-right">
-                <GradientButton
+                <BlogCardButton
                   label={expandedSections[4] ? "View Less" : "View More"}
                   onClick={() => toggleText(4)}
                   style={{ padding: "28px !important" }}
@@ -666,7 +668,7 @@ const Tokenomics = () => {
                 )}
               </p>
               <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
-                <GradientButton
+                <BlogCardButton
                   label={expandedSections[5] ? "View Less" : "View More"}
                   onClick={() => toggleText(5)}
                   style={{ padding: "28px !important" }} // Override padding here

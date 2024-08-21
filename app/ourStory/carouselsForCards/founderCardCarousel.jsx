@@ -48,7 +48,7 @@ const FounderCardCarousel = () => {
               imageSrc={PiotrImage}
               name="Piotr Duda"
               title="CEO"
-              description="With a combination of programming/business experience, this wolf leads the pack. Previously he led teams at Faurecia and worked at InsurTech. A FinTech company providing insurance for Lloyd’s applications."
+              description="Piotr Duda is the Chief Executive Officer (CEO) of DeltaPrime, where he seamlessly bridges deep business and technical expertise to drive the platform’s success. Under his leadership, DeltaPrime has emerged as a major player in the DeFi space, trusted by thousands of users and managing millions in assets. Piotr’s focus on operational efficiency and cross-team collaboration ensures the protocol’s continuous growth and innovation."
               socialMediaLink="https://www.linkedin.com/in/piotr-duda-62b66b63/?originalSubdomain=pl"
             />
           </SwiperSlide>
@@ -57,7 +57,7 @@ const FounderCardCarousel = () => {
               imageSrc={KamilImage}
               name="Kamil Muca"
               title="CTO"
-              description="Wolf Muca wrote his first line of code at the age of 7. Since then he developed his way up, to eventually leading a 20-headed IT team at HSBC. As a true coding wizard he now creates the security and efficiency in DeltaPrime’s architecture."
+              description="Kamil Muca is the Chief Technology Officer (CTO) of DeltaPrime, a seasoned developer who began coding at the age of 7. Before co-founding DeltaPrime, he honed his leadership and technical skills as the head of a 20-member IT team at HSBC. Kamil is the architect behind the platform’s innovative Diamond Beacon Proxy pattern, a key advancement that enables DeltaPrime to scale rapidly and efficiently while minimizing costs."
               socialMediaLink="https://www.linkedin.com/in/mucakamil/?originalSubdomain=pl"
             />
           </SwiperSlide>
@@ -66,7 +66,7 @@ const FounderCardCarousel = () => {
               imageSrc={gavinImage}
               name="Gavin Hasselbaink"
               title="CBDO"
-              description="This one is the business wolf. With a communication/trading background, he’ll help you exactly understand how to best use DeltaPrime. Additionally he’ll see to it you have access to the best strategies that DeFi offers."
+              description="Gavin Hasselbaink is the Chief Business Development Officer (CBDO) of DeltaPrime, where he drives innovation and strategic partnerships. His leadership has been pivotal in expanding DeltaPrime’s reach, facilitating over $1.5 billion in transactions, and securing $70 million in total value locked. Gavin’s focus on building alliances and integrating with DeFi protocols has been instrumental in the platform’s impressive growth."
               socialMediaLink="https://www.linkedin.com/in/gavinhasselbaink/?originalSubdomain=nl"
             />
           </SwiperSlide>
