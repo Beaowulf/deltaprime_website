@@ -52,5 +52,5 @@
 
 // purple linear
 .boxLinearPurpleBG {
-  background: -moz-linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
+  background: linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
 }
