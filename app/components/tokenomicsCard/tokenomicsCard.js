@@ -7,9 +7,9 @@ import { MainButton } from "../buttons/mainButton";
 
 const Card = ({ icon, title, description, href }) => (
   <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper md:mt-12 mt-4 md:mb-16 mb-6 flex flex-col">
-    <div className="relative flex flex-col items-center rounded-[20px] p-8 md:p-10 lg:p-12 shadow-lg flex-grow dark:bg-[#252948] bg-[#E8E8F2]">
+    <div className="relative flex flex-col items-center rounded-[20px] p-8 md:p-10 lg:p-12 shadow-lg flex-grow dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG">
       <div className="rounded-full absolute -top-16 w-32 h-32 parentColoredBorderWrapperIcon flex items-center justify-center">
-        <div className="rounded-full z-10 w-[99%] h-[99%] flex items-center justify-center dark:bg-[#252948] bg-[#E8E8F2]">
+        <div className="rounded-full z-10 w-[99%] h-[99%] flex items-center justify-center dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG">
           <Image src={icon} alt={title} className="h-[75px] w-auto" />
         </div>
       </div>

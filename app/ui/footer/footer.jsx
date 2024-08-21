@@ -10,7 +10,7 @@ import "./footer.css";
 
 // Social Media Round Images
 import discordIcon from "@/public/assets/footerIcons/discordIcon.svg";
-import xIcon from "@/public/assets/footerIcons/xIcon.svg";
+import xIcon from "@/public/assets/footerIcons/xIconWhite.svg";
 import vectorIcon from "@/public/assets/footerIcons/vectorIcon.svg";
 import githubIcon from "@/public/assets/footerIcons/githubIcon.svg";
 
@@ -145,7 +145,7 @@ const TermsOfUseFooter = ({ isTokenomics, isStrategies }) => {
             href="/legals/tokenomicsRiskDisclaimer"
             className="hover:text-gray-400 "
           >
-            <span className="mr-4">•</span> Token Risk Disclaimer
+            <span className="mr-4">•</span> Risk Disclosure Statement (Tokens)
           </Link>
         </div>
       </div>

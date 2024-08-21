@@ -43,7 +43,11 @@ const FeaturePrimeAccount = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-8/12 w-full`}
           >
-            <div className="flex md:flex-row flex-col justify-between items-end rounded-[20px] h-full px-4 md:pt-8 md:pl-10 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden">
+            <div
+              className={`flex md:flex-row flex-col justify-between items-end rounded-[20px] h-full px-4 md:pt-8 md:pl-10 z-20  overflow-hidden ${
+                theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
+              }`}
+            >
               <div className="w-full md:w-1/2 flex flex-col mt-5 items-start mb-0 md:mb-11 md:mr-4">
                 {theme === "dark" ? (
                   <Image src={RoundedOneDarkThemed} alt="Rounded_Number_One" />
@@ -71,7 +75,11 @@ const FeaturePrimeAccount = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-4/12 w-full md:block hidden`}
           >
-            <div className="justify-center p-2 rounded-[20px] h-full z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden flex">
+            <div
+              className={`justify-center p-2 rounded-[20px] h-full z-20 overflow-hidden flex ${
+                theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
+              }`}
+            >
               <Image
                 className="m-auto object-contain"
                 src={large3DLogo}
@@ -89,7 +97,11 @@ const FeaturePrimeAccount = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-1/2 w-full`}
           >
-            <div className="flex md:items-end items-center rounded-[20px] md:pl-10 md:pr-4 pl-4 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden md:h-[300px] h-[220px]">
+            <div
+              className={`flex md:items-end items-center rounded-[20px] md:pl-10 md:pr-4 pl-4 z-20 overflow-hidden md:h-[300px] h-[220px] ${
+                theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
+              }`}
+            >
               <div className="mb-11">
                 {theme === "dark" ? (
                   <Image src={RoundedTwoDarkThemed} alt="Rounded_Number_One" />
@@ -117,7 +129,11 @@ const FeaturePrimeAccount = () => {
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-1/2 w-full`}
           >
-            <div className="flex md:items-end items-center justify-between rounded-[20px] md:px-10 pl-4 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden md:h-[300px] h-[220px]">
+            <div
+              className={`flex md:items-end items-center justify-between rounded-[20px] md:px-10 pl-4 z-20 overflow-hidden md:h-[300px] h-[220px] ${
+                theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
+              }`}
+            >
               <div className="mb-11">
                 {theme === "dark" ? (
                   <Image

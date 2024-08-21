@@ -312,30 +312,33 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         </div>
         <div className="hidden md:block md:w-3/12">
           <div className="flex flex-col gap-10 sticky top-32">
-            <div className="bg-white p-4 md:p-6 rounded-[20px]">
-              <p className="font-bold leading-6 uppercase text-[18px] text-[#252948]">
-                Table of contents
-              </p>
-              <div className="w-full bg-black h-[2px] my-5" />
-              <ul className="flex flex-col gap-4">
-                {headings.map((heading) => (
-                  <>
-                    <li key={heading.id}>
-                      <a
-                        href={`#${heading.id}`}
-                        onClick={handleScrollTo(heading.id)}
-                        className={`text-[#252948] text-[15px] ${
-                          activeHeading === heading.id ? "font-bold" : ""
-                        }`}
-                      >
-                        <span className="text-[8px]">●</span> {heading.title}
-                      </a>
-                    </li>
-                    <span className="bg-gray-200 h-[1px] w-1/2 -my-1 mx-auto"></span>
-                  </>
-                ))}
-              </ul>
+            <div className="coloredBoxBorder">
+              <div className="deltaWhiteLinearBG p-4 md:p-6 rounded-[30px]">
+                <p className="font-bold leading-6 uppercase text-[18px] text-[#252948]">
+                  Table of contents
+                </p>
+                <div className="w-full bg-black h-[2px] my-5" />
+                <ul className="flex flex-col gap-4">
+                  {headings.map((heading) => (
+                    <>
+                      <li key={heading.id}>
+                        <a
+                          href={`#${heading.id}`}
+                          onClick={handleScrollTo(heading.id)}
+                          className={`text-[#252948] text-[15px] ${
+                            activeHeading === heading.id ? "font-bold" : ""
+                          }`}
+                        >
+                          <span className="text-[8px]">●</span> {heading.title}
+                        </a>
+                      </li>
+                      <span className="bg-gray-200 h-[1px] w-1/2 -my-1 mx-auto"></span>
+                    </>
+                  ))}
+                </ul>
+              </div>
             </div>
+
             <CryptoPreviewTables />
             <div className="flex flex-col gap-10 px-5 pt-8 rounded-[20px] bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%">
               <h3 className="text-[24px] text-[#1B153C] font-extrabold leading-9 tracking-[-0.72px]">

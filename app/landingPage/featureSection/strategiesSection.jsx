@@ -72,7 +72,11 @@ const Strategies = () => {
           : "featureBorderWrapLightTheme"
       } z-10 mt-16 md:mt-52`}
     >
-      <div className="flex items-center md:flex-row flex-col justify-around rounded-[20px] md:pl-20 pl-10 py-6 pr-6 z-20 dark:bg-[#252948] bg-[#E8E8F2] overflow-hidden ">
+      <div
+        className={`flex items-center md:flex-row flex-col justify-around rounded-[20px] md:pl-20 pl-10 py-6 pr-6 z-20 overflow-hidden ${
+          theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
+        }`}
+      >
         {/* Left */}
         <div className="flex flex-col items-start dark:text-white text-[#252948] mb-14 max-w-96">
           <h1 className="mb-6 featureSubtitle text-[24px]">

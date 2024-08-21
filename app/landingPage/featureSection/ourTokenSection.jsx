@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
@@ -8,6 +9,7 @@ import whiteTokenPrime from "@/public/assets/icons/whiteTokenPrime.svg";
 
 function OurTokenSection() {
   const { theme } = useTheme;
+
   return (
     <div className="lg:mb-32 mb-10 mt-14">
       <Header
@@ -23,7 +25,7 @@ function OurTokenSection() {
               : "featureBorderWrapLightTheme"
           }`}
         >
-          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full w-full">
+          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 h-full w-full dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG">
             <div className="flex flex-col h-full">
               <div className="flex flex-row pt-2 md:pt-24 justify-start gap-4 items-center">
                 <div>
@@ -68,7 +70,7 @@ function OurTokenSection() {
               : "featureBorderWrapLightTheme"
           }`}
         >
-          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full ">
+          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full ">
             <div className="flex flex-col h-full">
               <div className="flex flex-row pt-2 md:pt-24 justify-start gap-4 items-center">
                 <div>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import DarkMode_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_white.png";
 import LightMode_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_purple.png";
 
+// todo: remove the below since all are purple
 const LogoSource = () => {
   const { resolvedTheme } = useTheme();
 
@@ -21,7 +22,7 @@ export const LightModeLogo = () => {
     >
       <Image
         className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
-        src={LogoSource()}
+        src={LightMode_Logo}
         alt="logo_img"
       />
     </a>
@@ -36,7 +37,7 @@ export const DarkModeLogo = () => {
     >
       <Image
         className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
-        src={LogoSource()}
+        src={LightMode_Logo}
         alt="logo_img"
       />
     </a>
@@ -51,7 +52,7 @@ export const MobileMenuLogo = () => {
     >
       <Image
         className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
-        src={LogoSource()}
+        src={LightMode_Logo}
         alt="logo_img"
       />
     </a>
@@ -66,7 +67,7 @@ export const FooterLogo = () => {
     >
       <Image
         className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
-        src={LogoSource()}
+        src={LightMode_Logo}
         alt="logo_img"
       />
     </a>

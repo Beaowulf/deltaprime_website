@@ -155,8 +155,8 @@ const Tokenomics = () => {
 
       {/* $sPRIME Enables Section */}
       <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
-        <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full">
-          <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl">
+        <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
+          <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#252948]">
             $sPRIME enables DeltaPrime to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
@@ -167,7 +167,7 @@ const Tokenomics = () => {
                 src={protocolUsage}
                 alt="Boost Protocol Usage"
               />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px]">
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#252948]">
                 Boost Protocol Usage
               </p>
             </div>
@@ -178,7 +178,7 @@ const Tokenomics = () => {
                 src={bufferMarket}
                 alt="Buffer Market Volatility"
               />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px]">
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#252948]">
                 Buffer Market Volatility
               </p>
             </div>
@@ -189,7 +189,7 @@ const Tokenomics = () => {
                 src={liquidityPool}
                 alt="Facilitate a deep, healthy liquidity pool"
               />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px]">
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#252948]">
                 Facilitate a deep, healthy liquidity pool
               </p>
             </div>
@@ -199,8 +199,8 @@ const Tokenomics = () => {
 
       {/* $sPRIME Allows anyone to */}
       <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
-        <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-[#252948] bg-[#E8E8F2] h-full">
-          <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl">
+        <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
+          <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#252948]">
             $sPRIME allows anyone to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
@@ -211,7 +211,7 @@ const Tokenomics = () => {
                 src={protocolRevenue}
                 alt="Access PRIME Features"
               />
-              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px]">
+              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#252948]">
                 Access PRIME Features
               </p>
             </div>
@@ -222,7 +222,7 @@ const Tokenomics = () => {
                 src={governancePower}
                 alt="Claim a share of 33% of protocol revenue"
               />
-              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px]">
+              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#252948]">
                 Claim a share of the liquidation fees
               </p>
             </div>
@@ -233,7 +233,7 @@ const Tokenomics = () => {
                 src={primeFeatures}
                 alt="Accrue Governance Power points"
               />
-              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px]">
+              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#252948]">
                 Accrue Governance Power points
               </p>
             </div>

@@ -307,7 +307,7 @@ const OurStory = () => {
       </div>
 
       {/* join our team */}
-      <div className="bg-[#F4F4FF] w-full mt-40">
+      <div className="deltaWhiteLinearBG w-full mt-40">
         <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]] px-4 py-10">
           <div className="flex justify-around flex-wrap px-4 md:px-0 ">
             <div className="flex flex-col items-start dark:text-white text-[#252948] max-w-96 mb-8 md:mb-0">
@@ -328,7 +328,7 @@ const OurStory = () => {
             <div className="flex flex-col items-center my-auto gap-8">
               {/* Make this into its own component todo */}
               <div className="md:ml-10 featureBorderWrapLightTheme rounded-[30px]">
-                <div className="w-full h-full bg-[#F4F4FF] items-center font-semibold flex justify-between p-2 rounded-[20px]">
+                <div className="w-full h-full deltaWhiteLinearBG  items-center font-semibold flex justify-between p-2 rounded-[20px]">
                   <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
                     DevOps Engineer
                   </p>

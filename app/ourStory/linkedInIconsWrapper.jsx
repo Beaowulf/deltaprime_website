@@ -3,12 +3,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import grayLinkedInIcon from "@/public/assets/icons/grayLinkedInIcon.svg";
 import coloredLinkedInIcon from "@/public/assets/icons/coloredLinkedInIcon.svg";
-import grayTwitterIcon from "@/public/assets/footerIcons/xIcon.svg";
-import coloredTwtitterIcon from "@/public/assets/icons/coloredXIcon.svg";
+import coloredXIcon from "@/public/assets/footerIcons/xIconColored.svg";
 import darkLinkedInIcon from "@/public/assets/icons/darkLinkedInIcon.svg";
-import darkTwitterIcon from "@/public/assets/icons/darkTwitterIcon.svg";
+import darkTwitterIcon from "@/public/assets/footerIcons/xIconDarkBlue.svg";
 
 const SocialMediaIconWrapper = ({
   socialMediaLink = "/",
@@ -18,13 +16,14 @@ const SocialMediaIconWrapper = ({
 
   const grayIcon = usesTwitter
     ? theme === "dark"
-      ? grayTwitterIcon
+      ? darkTwitterIcon
       : darkTwitterIcon
     : theme === "dark"
-    ? grayLinkedInIcon
+    ? darkLinkedInIcon
     : darkLinkedInIcon;
 
-  const coloredIcon = usesTwitter ? grayTwitterIcon : coloredLinkedInIcon;
+  // change the below to the gradient I want twitter one
+  const coloredIcon = usesTwitter ? coloredXIcon : coloredLinkedInIcon;
 
   return (
     <div className="relative w-8 h-8">
