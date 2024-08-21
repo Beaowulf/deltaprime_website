@@ -1,21 +1,44 @@
-import DarkMode_logo from "@/public/assets/img/darkModeImg/logo.svg";
+import { useTheme } from "next-themes";
 import Image from "next/image";
+import DarkMode_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_white.png";
+import LightMode_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_purple.png";
 
-export const Logo = () => {
+const LogoSource = () => {
+  const { resolvedTheme } = useTheme();
+
+  if (resolvedTheme === "dark") {
+    return DarkMode_Logo;
+  } else {
+    return LightMode_Logo;
+  }
+};
+
+export const LightModeLogo = () => {
   return (
     <a
       href="/#"
       className="title-font flex items-center font-medium text-[#6B70ED] dark:text-white"
     >
       <Image
-        className="md:h-[42px] md:w-[39px] h-[auto] w-[45px]"
-        src={DarkMode_logo}
+        className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
+        src={LogoSource()}
         alt="logo_img"
       />
-      <p className="ml-3 font-extrabold md:text-2xl text-lg lg:block sm:block md:hidden">
-        De<span className="el_delta_prime_font">l</span>ta
-        <span className="font-normal">Prime</span>
-      </p>
+    </a>
+  );
+};
+
+export const DarkModeLogo = () => {
+  return (
+    <a
+      href="/#"
+      className="title-font flex items-center font-medium text-[#6B70ED] dark:text-white"
+    >
+      <Image
+        className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
+        src={LogoSource()}
+        alt="logo_img"
+      />
     </a>
   );
 };
@@ -27,14 +50,10 @@ export const MobileMenuLogo = () => {
       className="title-font flex items-center font-medium text-[#A79DFF] dark:text-white"
     >
       <Image
-        className="md:h-[42px] md:w-[39px] h-[25px] w-[23px]"
-        src={DarkMode_logo}
+        className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
+        src={LogoSource()}
         alt="logo_img"
       />
-      <p className="ml-3 font-extrabold md:text-2xl text-lg">
-        Delta
-        <span className="font-normal">Prime</span>
-      </p>
     </a>
   );
 };
@@ -45,11 +64,11 @@ export const FooterLogo = () => {
       href="/#"
       className="flex title-font font-medium items-center text-gray-900 dark:text-white"
     >
-      <Image className="h-[54px] w-[53px]" src={DarkMode_logo} alt="logo_img" />
-      <p className="ml-3 font-extrabold text-3xl text-white">
-        Delta
-        <span className="font-normal">Prime</span>
-      </p>
+      <Image
+        className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
+        src={LogoSource()}
+        alt="logo_img"
+      />
     </a>
   );
 };

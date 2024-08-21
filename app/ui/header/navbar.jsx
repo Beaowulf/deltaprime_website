@@ -5,7 +5,11 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { Transition } from "@headlessui/react";
-import { Logo, MobileMenuLogo } from "@/app/components/logo/logo";
+import {
+  DarkModeLogo,
+  LightModeLogo,
+  MobileMenuLogo,
+} from "@/app/components/logo/logo";
 import ThemeSwitch from "@/app/components/themeToggler/themeToggler";
 import { NavBarButton, CTAButton } from "@/app/components/buttons/mainButton";
 import hamburgerIconWhite from "@/public/assets/icons/hamburgerIconWhite.svg";
@@ -60,8 +64,9 @@ function Nav() {
         }`}
       >
         <div className="flex items-center justify-between h-20">
-          <div className="flex justify-center items-center gap-8">
-            <Logo />
+          <div className="flex justify-center items-center gap-2">
+            {resolvedTheme === "dark" ? <DarkModeLogo /> : <LightModeLogo />}
+
             <div className="ml-4 hidden md:block">
               <ThemeSwitch />
             </div>
