@@ -4,13 +4,14 @@ import Link from "next/link";
 import { CTAButton } from "@/app/components/buttons/mainButton";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import { AnimatedText } from "@/app/ui/animatedText";
+import { useCryptoData } from "@/app/context/CryptoDataContext"; // Import the context
 
 const VideoPlayer = dynamic(
   () => import("@/app/components/videoPlayer/video"),
   { ssr: false }
 );
 
-const TextWithPill = ({ totalTvl }) => {
+const TextWithPill = ({ totalTvl, totalBorrowedLiquidity }) => {
   return (
     <>
       {/* Left side (text with pill) */}
@@ -42,7 +43,7 @@ const TextWithPill = ({ totalTvl }) => {
             <p className="blueText text-center sm:text-left text-nowrap">
               Liquidity Unlocked
             </p>
-            <AnimatedText targetNumber={20950943.39} />
+            <AnimatedText targetNumber={totalBorrowedLiquidity} />
           </div>
         </div>
       </div>
@@ -50,14 +51,17 @@ const TextWithPill = ({ totalTvl }) => {
   );
 };
 
+
 const IntroSection = ({ totalTvl }) => {
+  const { totalBorrowedLiquidity } = useCryptoData(); // Use the context to get data
+
   return (
     <div className="pagePaddingLarge">
       <div className="mx-auto">
         {/* Top Intro Part (Text and video) */}
         <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-20 p-4 items-center">
           {/* Left side (text with pill) */}
-          <TextWithPill totalTvl={totalTvl} />
+          <TextWithPill totalTvl={totalTvl} totalBorrowedLiquidity={totalBorrowedLiquidity} />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren block sm:hidden">
             <Link href="?modal=true">

@@ -1,33 +1,18 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import "./modals.css";
 import { useSearchParams, usePathname } from "next/navigation";
 import { CTAButton } from "@/app/components/buttons/mainButton";
 import closeIconColored from "@/public/assets/icons/closeIconColored.svg";
 import Link from "next/link";
-import { fetchCryptoData } from "@/lib/getDetailedData";
+import { useCryptoData } from "@/app/context/CryptoDataContext";  // Import the context
 
 const LaunchAppModal = () => {
-  const [poolsData, setPoolsData] = useState({ arbitrum: [], avalanche: [] });
-  const [loading, setLoading] = useState(true);
+  const { poolsData, loading } = useCryptoData();  // Use the context to get data
   const searchParams = useSearchParams();
   const modal = searchParams.get("modal");
   const pathname = usePathname();
-
-  useEffect(() => {
-    const setupAprs = async () => {
-      try {
-        const allPoolsData = await fetchCryptoData();
-        setPoolsData(allPoolsData);
-        setLoading(false);
-      } catch (error) {
-        // TODO: maybe message to user
-        console.error("Error setting up APRs:", error);
-      }
-    };
-    setupAprs();
-  }, []);
 
   useEffect(() => {
     if (modal) {
@@ -36,7 +21,6 @@ const LaunchAppModal = () => {
       document.body.classList.remove("no-scroll");
     }
 
-    // Clean up the effect when the component is unmounted or when modal closes
     return () => {
       document.body.classList.remove("no-scroll");
     };
