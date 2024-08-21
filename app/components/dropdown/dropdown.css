@@ -78,13 +78,13 @@
 
 /* Light mode initial styles */
 .strategy-nav-box .boxContainer {
-  background: linear-gradient(to bottom, #f4f4ff, #e8e8f2);
+  background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
   color: #252948;
 }
 
 /* Hover effect in dark mode: change to light background and dark text */
 .strategy-nav-box.dark:hover .boxContainer {
-  background: linear-gradient(to bottom, #f4f4ff, #e8e8f2);
+  background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
   color: #252948;
 }
 

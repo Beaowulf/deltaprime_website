@@ -8,7 +8,7 @@
   padding: 2px;
   /* Border Radius */
   border-radius: 30px;
-  box-shadow: 0 0 8px rgba(93, 71, 255, 0.56);
+  box-shadow: 0 0 1px rgba(93, 71, 255, 0.56);
   background: -moz-linear-gradient(
     0deg,
     rgba(175, 175, 255, 1) 0%,
@@ -28,8 +28,4 @@
     rgba(255, 187, 155, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
-
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 1);
-  -moz-box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 1);
-  box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 1);
 }

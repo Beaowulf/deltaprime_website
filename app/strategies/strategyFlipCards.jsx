@@ -196,7 +196,7 @@ export const DesktopCardCarousel = ({ strategies }) => {
         </Swiper>
 
         {/* Custom navigation and pagination */}
-        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[5rem] w-4/12 mx-auto">
+        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[5rem] w-4/12 mx-auto mb-0 md:mb-10">
           <Image
             onClick={handlePrev}
             className="swiper-button-prev custom-arrow"

@@ -11,8 +11,8 @@ const AdvisorCard = ({
   usesTwitter = false,
 }) => {
   return (
-    <div className="rounded-[20px] p-4 featureBorderWrapLightTheme text-center relative">
-      <div className="rounded-[20px] z-20 pb-20 px-5 dark:bg-[#252948] deltaWhiteLinearBG storyCard h-[500px]">
+    <div className="rounded-[25px] p-4 featureBorderWrapLightTheme text-center relative">
+      <div className="rounded-[25px] z-20 pb-20 px-5 dark:bg-[#252948] deltaWhiteLinearBG storyCard h-[500px]">
         <div className="flex justify-center items-center flex-col py-5 px-4">
           <div className="relative w-[240px] h-[240px] rounded-full bg-gradient-to-t from-[#BABAFE] via-[#FA91BF] to-[#FEC2A5] p-[10px] shadow-sm">
             <div className="w-full h-full rounded-full bg-transparent flex items-center justify-center">

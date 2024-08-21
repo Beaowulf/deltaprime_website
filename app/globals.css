@@ -745,7 +745,3 @@ body {
 .deltaWhiteLinearBG {
   background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
 }
-
-/* .deltaColoredLinearBG {
-  background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
-} */
