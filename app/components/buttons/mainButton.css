@@ -411,7 +411,7 @@
   position: relative;
   z-index: 1;
   color: white;
-  background: -moz-linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
+  background: linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
   /* background: linear-gradient(#fff, #fff, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
@@ -421,7 +421,7 @@
   position: relative;
   z-index: 1;
   color: white;
-  background: -moz-linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
+  background: linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
 }
 
 .blogCardText {
@@ -442,7 +442,7 @@
 }
 
 .blogCardText {
-  background: -moz-linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
+  background: linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
 }
 
 .ctaButtonBorder {
@@ -462,8 +462,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 1.5px;
-  border-radius: 50px;
+  padding: 2.5px;
+  border-radius: 25px;
   background: -moz-linear-gradient(
     320deg,
     rgba(175, 175, 255, 1) 50%,
@@ -500,7 +500,7 @@
   cursor: pointer;
   overflow: hidden;
   text-transform: uppercase;
-  background: -moz-linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
+  background: linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
   z-index: 10;
   scale: 1;
 }
