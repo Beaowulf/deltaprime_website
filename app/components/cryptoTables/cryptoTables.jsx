@@ -1,29 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { fetchCryptoData } from "./cryptoData";
 import "./tableStyling.css";
 import avalanche from "@/public/assets/icons/avalanche.svg";
 import arbitrum from "@/public/assets/icons/arbitrum.svg";
 import Link from "next/link";
+import { useCryptoData } from "@/app/context/CryptoDataContext";
 
 const CryptoPreviewTables = () => {
-  const [poolsData, setPoolsData] = useState({ arbitrum: [], avalanche: [] });
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const setupAprs = async () => {
-      try {
-        const allPoolsData = await fetchCryptoData();
-        setPoolsData(allPoolsData);
-        setLoading(false);
-      } catch (error) {
-        // todo: maybe message to user
-        console.error("Error setting up APRs:", error);
-      }
-    };
-    setupAprs();
-  }, []);
+  const { poolsData, loading } = useCryptoData();
 
   return (
     <div className="flex flex-col gap-10">
@@ -160,23 +145,7 @@ const CryptoPreviewTables = () => {
 export default CryptoPreviewTables;
 
 export const CryptoLandingPageTables = () => {
-  const [poolsData, setPoolsData] = useState({ arbitrum: [], avalanche: [] });
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const setupAprs = async () => {
-      try {
-        const allPoolsData = await fetchCryptoData();
-        setPoolsData(allPoolsData);
-        setLoading(false);
-      } catch (error) {
-        // todo: maybe message to user
-        console.error("Error setting up APRs:", error);
-      }
-    };
-    setupAprs();
-  }, []);
-
+  const { poolsData, loading } = useCryptoData();
   return (
     <div className="w-full h-full">
       <div className="flex justify-end items-end w-full">
