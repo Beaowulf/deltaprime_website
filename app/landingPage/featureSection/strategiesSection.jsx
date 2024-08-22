@@ -73,7 +73,7 @@ const Strategies = () => {
       } z-10 mt-16 md:mt-52`}
     >
       <div
-        className={`flex items-center md:flex-row flex-col justify-around rounded-[20px] md:pl-20 pl-10 py-6 pr-6 z-20 overflow-hidden ${
+        className={`flex items-center md:flex-row flex-col justify-around rounded-[25px] md:pl-20 pl-10 py-6 pr-6 z-20 overflow-hidden ${
           theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
         }`}
       >

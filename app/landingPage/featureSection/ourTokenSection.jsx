@@ -25,7 +25,7 @@ function OurTokenSection() {
               : "featureBorderWrapLightTheme"
           }`}
         >
-          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 h-full w-full dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG">
+          <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 h-full w-full dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG">
             <div className="flex flex-col h-full">
               <div className="flex flex-row pt-2 md:pt-24 justify-start gap-4 items-center">
                 <div>
@@ -70,7 +70,7 @@ function OurTokenSection() {
               : "featureBorderWrapLightTheme"
           }`}
         >
-          <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full ">
+          <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full ">
             <div className="flex flex-col h-full">
               <div className="flex flex-row pt-2 md:pt-24 justify-start gap-4 items-center">
                 <div>

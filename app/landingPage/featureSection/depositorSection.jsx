@@ -44,7 +44,7 @@ const FeaturePrimeAccount = () => {
             } z-10 md:w-8/12 w-full`}
           >
             <div
-              className={`flex md:flex-row flex-col justify-between items-end rounded-[20px] h-full px-4 md:pt-8 md:pl-10 z-20  overflow-hidden ${
+              className={`flex md:flex-row flex-col justify-between items-end rounded-[25px] h-full px-4 md:pt-8 md:pl-10 z-20  overflow-hidden ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >
@@ -76,7 +76,7 @@ const FeaturePrimeAccount = () => {
             } z-10 md:w-4/12 w-full md:block hidden`}
           >
             <div
-              className={`justify-center p-2 rounded-[20px] h-full z-20 overflow-hidden flex ${
+              className={`justify-center p-2 rounded-[25px] h-full z-20 overflow-hidden flex ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >
@@ -98,7 +98,7 @@ const FeaturePrimeAccount = () => {
             } z-10 md:w-1/2 w-full`}
           >
             <div
-              className={`flex md:items-end items-center rounded-[20px] md:pl-10 md:pr-4 pl-4 z-20 overflow-hidden md:h-[300px] h-[220px] ${
+              className={`flex md:items-end items-center rounded-[25px] md:pl-10 md:pr-4 pl-4 z-20 overflow-hidden md:h-[300px] h-[220px] ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >
@@ -130,7 +130,7 @@ const FeaturePrimeAccount = () => {
             } z-10 md:w-1/2 w-full`}
           >
             <div
-              className={`flex md:items-end items-center justify-between rounded-[20px] md:px-10 pl-4 z-20 overflow-hidden md:h-[300px] h-[220px] ${
+              className={`flex md:items-end items-center justify-between rounded-[25px] md:px-10 pl-4 z-20 overflow-hidden md:h-[300px] h-[220px] ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >

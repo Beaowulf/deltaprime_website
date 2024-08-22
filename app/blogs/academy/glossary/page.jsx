@@ -23,7 +23,11 @@ const Glossary = () => {
   useEffect(() => {
     async function getGlossaryEntries() {
       const entries = await fetchGlossaryEntries();
-      setGlossaryEntries(entries);
+      const sortedEntries = entries.sort((a, b) =>
+        a.glossaryTitle.localeCompare(b.glossaryTitle)
+      );
+
+      setGlossaryEntries(sortedEntries);
     }
 
     getGlossaryEntries();

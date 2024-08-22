@@ -155,7 +155,7 @@ const Tokenomics = () => {
 
       {/* $sPRIME Enables Section */}
       <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
-        <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
+        <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
           <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#252948]">
             $sPRIME enables DeltaPrime to
           </p>

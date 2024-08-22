@@ -59,14 +59,14 @@ const FeaturePrimeAccountSection = () => {
         <div className="flex flex-wrap sm:flex-nowrap gap-4 w-full h-full">
           {/* Large box on the left */}
           <div
-            className={`rounded-[20px] sm:w-1/2 w-full ${
+            className={`rounded-[25px] sm:w-1/2 w-full ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
             } z-10 w-1/2`}
           >
             <div
-              className={`rounded-[20px] h-full px-4 pt-12 z-20 dark: overflow-hidden flex flex-col items-start md:items-start ${
+              className={`rounded-[25px] h-full px-4 pt-12 z-20 dark: overflow-hidden flex flex-col items-start md:items-start ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               } `}
             >
@@ -119,7 +119,7 @@ const FeaturePrimeAccountSection = () => {
               } `}
             >
               <div
-                className={`h-full rounded-[20px] px-4 pt-6 md:pb-14 pb-8 flex items-end justify-between ${
+                className={`h-full rounded-[25px] px-4 pt-6 md:pb-14 pb-8 flex items-end justify-between ${
                   theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
                 }`}
               >
@@ -159,7 +159,7 @@ const FeaturePrimeAccountSection = () => {
             >
               {/* todo: asked for the image to be cropped properly the below might change */}
               <div
-                className={`rounded-[20px] px-4 pt-6 flex md:pb-10 pb-8  items-end justify-between h-full ${
+                className={`rounded-[25px] px-4 pt-6 flex md:pb-10 pb-8  items-end justify-between h-full ${
                   theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
                 } `}
               >
