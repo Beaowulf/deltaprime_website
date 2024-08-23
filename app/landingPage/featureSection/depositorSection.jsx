@@ -90,9 +90,9 @@ const FeaturePrimeAccount = () => {
           </div>
         </div>
         {/* Bottom Boxes */}
-        <div className="w-full flex md:flex-row flex-col gap-5 md:h-[260px] h-[200px] ">
+        <div className="w-full flex md:flex-row flex-col gap-5 h-full">
           <div
-            className={`rounded-[20px] ${
+            className={`rounded-[20px] md:h-[260px] h-[200px]  ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
@@ -160,7 +160,7 @@ const FeaturePrimeAccount = () => {
               </div>
               <div className="h-full w-full flex justify-center">
                 <Image
-                  className="object-contain md:py-8 md:px-10"
+                  className="object-contain py-4 md:py-8 md:px-10"
                   src={dollarSign3D}
                   alt="dollar_Sign_3D"
                   height={220}
