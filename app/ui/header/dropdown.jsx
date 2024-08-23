@@ -114,7 +114,7 @@ export function MenuDropdown({ onClick }) {
       <div className=" flex justify-center items-center">
         <button
           type="button"
-          className="mx-auto flex flex-row justify-center items-center text-gray-800 dark:text-white dark:hover:text-gray-400 md:text-white hover:text-gray-300 px-3 py-2 rounded-md text-2xl font-semibold"
+          className="mx-auto flex flex-row justify-center items-center text-gray-800 dark:text-white text-[#6B70ED] dark:hover:text-gray-400 md:text-white hover:text-gray-300 px-3 py-2 rounded-md text-2xl font-semibold"
           onClick={toggleDropdown}
         >
           <p>About Us</p>
@@ -147,14 +147,14 @@ export function MenuDropdown({ onClick }) {
           <Link
             onClick={onClick}
             href="/ourStory"
-            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center text-[#565AC2]"
           >
             <p className="text-lg">Our Story</p>
           </Link>
           <Link
             onClick={onClick}
             href="/tokenomics"
-            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center text-[#565AC2]"
           >
             <p className="text-lg">Tokenomics</p>
           </Link>
