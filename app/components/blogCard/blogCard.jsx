@@ -18,7 +18,7 @@ const BlogCard = ({ previewBlogImage, blogDescription, blogSlug }) => {
         )}
       </div>
       <p
-        className="text-[16px] leading-6 font-medium line-clamp-2 ml-1"
+        className="text-[16px] leading-6 font-medium line-clamp-2 ml-1 dark:text-white text-[#6B70ED]"
         style={{ minHeight: "calc(1.5rem * 2)" }}
       >
         {blogDescription}
@@ -45,7 +45,7 @@ export const SmallBlogCard = ({
           className="object-cover w-full h-full rounded-[15px]"
         />
       </div>
-      <p className="text-[12px] leading-6 font-medium line-clamp-2 ml-1">
+      <p className="text-[12px] leading-6 font-medium line-clamp-2 ml-1 dark:text-white text-[#565AC2]">
         {blogDescription}
       </p>
       <Link

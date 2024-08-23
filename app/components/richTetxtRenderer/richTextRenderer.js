@@ -50,22 +50,29 @@ const RichTextRenderer = ({
         const id = sanitizeId(text);
         if (onHeadingRender) onHeadingRender(id, text);
         return (
-          <h4 id={id} className="text-lg font-bold my-4">
+          <h4
+            id={id}
+            className="text-lg font-bold my-4 dark:text-white text-[#6B70ED]"
+          >
             {children}
           </h4>
         );
       },
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className="my-4">{children}</p>
+        <p className="my-4 dark:text-white text-[#565AC2]">{children}</p>
       ),
       [BLOCKS.UL_LIST]: (node, children) => (
-        <ul className="ml-10 list-disc list-inside">{children}</ul>
+        <ul className="ml-10 list-disc list-inside dark:text-white text-[#565AC2]">
+          {children}
+        </ul>
       ),
       [BLOCKS.OL_LIST]: (node, children) => (
-        <ol className="ml-10 list-decimal list-inside">{children}</ol>
+        <ol className="ml-10 list-decimal list-inside dark:text-white text-[#565AC2]">
+          {children}
+        </ol>
       ),
       [BLOCKS.LIST_ITEM]: (node, children) => (
-        <li className="my-2">{children}</li>
+        <li className="my-2 dark:text-white text-[#565AC2]">{children}</li>
       ),
       [BLOCKS.TABLE]: (node, children) => (
         <div className="styled-table-container">
@@ -76,7 +83,9 @@ const RichTextRenderer = ({
       ),
       [BLOCKS.TABLE_ROW]: (node, children) => <tr>{children}</tr>,
       [BLOCKS.TABLE_CELL]: (node, children) => (
-        <td className="p-4 border">{children}</td>
+        <td className="p-4 border dark:text-white text-[#565AC2]">
+          {children}
+        </td>
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { file, title } = node.data.target.fields;
@@ -98,7 +107,7 @@ const RichTextRenderer = ({
         return <CustomButton buttonText={buttonText} url={url} />;
       },
       [INLINES.HYPERLINK]: (node) => {
-        return <p>Link</p>;
+        return <p className="dark:text-white text-[#565AC2]">Link</p>;
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
         const text = node.content[0]?.value;
@@ -114,7 +123,7 @@ const RichTextRenderer = ({
                     {blogTakeaways.map((takeaway, index) => (
                       <li
                         key={index}
-                        className="mb-8 text-[18px] dark:text-[#F6F6F6] text-[#252948]"
+                        className="mb-8 text-[18px] dark:text-[#F6F6F6] text-[#565AC2]"
                       >
                         <span>•</span> {takeaway}
                       </li>
@@ -130,7 +139,7 @@ const RichTextRenderer = ({
 
         if (text.includes("{{Terms_Of_Use_Title}}")) {
           return (
-            <div className="flex justify-center flex-col items-center">
+            <div className="flex justify-center flex-col items-center dark:text-white text-[#6B70ED]">
               <p className="mb-8 featureSubtitle md:text-[30px] text-[22px] text-center">
                 Delta Prime
               </p>
@@ -146,7 +155,7 @@ const RichTextRenderer = ({
 
         if (text.includes("{{Terms_Of_Use_Title}}")) {
           return (
-            <div className="flex justify-center flex-col items-center">
+            <div className="flex justify-center flex-col items-center dark:text-white text-[#6B70ED]">
               <p className="mb-8 featureSubtitle md:text-[30px] text-[22px] text-center">
                 Delta Prime
               </p>
@@ -168,7 +177,7 @@ const RichTextRenderer = ({
           );
         }
         return (
-          <div className="my-4 blogStyling text-[#252948] dark:text-[#F6F6F6]">
+          <div className="my-4 blogStyling text-[#565AC2] dark:text-[#F6F6F6]">
             {children}
           </div>
         );

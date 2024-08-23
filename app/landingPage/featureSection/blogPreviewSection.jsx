@@ -11,12 +11,12 @@ import circleThree from "@/public/assets/icons/circleThree.svg";
 
 const BlogHeader = ({ title, subTitle, paragraph }) => {
   return (
-    <div className="flex flex-col items-center dark:text-white text-[#252948] md:mb-14 mb-1 text-center">
-      <h4 className="uppercase mb-3 font-bold featureSubtitle md:text-[34px] text-[24px] text text-center">
+    <div className="flex flex-col items-center  md:mb-14 mb-1 text-center">
+      <h4 className="uppercase mb-3 font-bold featureSubtitle md:text-[34px] text-[24px] text text-center dark:text-white text-[#6B70ED]">
         {title}
       </h4>
       <h1 className="mb-8 featureSubtitle">{subTitle}</h1>
-      <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-center">
+      <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-center dark:text-white text-[#565AC2]">
         {paragraph}
       </p>
     </div>
@@ -41,7 +41,7 @@ const BlogCard = ({
           className="object-cover w-full h-full rounded-[15px]"
         />
       </div>
-      <p className="text-[16px] leading-6 font-medium line-clamp-2 ml-1">
+      <p className="text-[16px] leading-6 font-medium line-clamp-2 ml-1 dark:text-white text-[#6B70ED]">
         {blogDescription}
       </p>
       <Link prefetch={true} href={`/blogs/academy/${blogSlug}`}>

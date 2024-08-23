@@ -14,8 +14,12 @@ const Card = ({ icon, title, description, href }) => (
         </div>
       </div>
       <div className="flex flex-col items-left mt-16 mb-4 flex-grow">
-        <h2 className="text-3xl font-bold mb-4">{title}</h2>
-        <p className="text-base md:text-lg mb-4">{description}</p>
+        <h2 className="text-3xl font-bold mb-4 dark:text-white text-[#6B70ED]">
+          {title}
+        </h2>
+        <p className="text-base md:text-lg mb-4 dark:text-white text-[#565AC2]">
+          {description}
+        </p>
       </div>
     </div>
   </div>

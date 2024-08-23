@@ -23,22 +23,69 @@
 .no-scroll {
   overflow: hidden;
 }
+
+.glossaryItemWrapper {
+
+}
+
+.glossaryItemWrapper:before {
+
+}
+
+.glossaryContent {
+
+}
+
+
+
 .boxWrapper {
   position: relative;
-  border-radius: 25px;
-  padding: 1px;
+  padding: 5px;
   overflow: hidden;
   width: 15rem;
+
+/*   
+  position: relative;
+  border-radius: 0px;
+  padding: 4px;
+  overflow: hidden;
+  width: 15rem; */
 }
 
 .boxWrapper:before {
+    content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 7px;
+  border-radius: 30px;
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  -webkit-mask: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+
+/*   
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 5px;
+  padding: 7px;
   border-radius: 25px;
   background: linear-gradient(
     0deg,
@@ -56,7 +103,7 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: 1;
-  scale: 1.02;
+  scale: 1.02; */
 }
 
 .boxContainer {
@@ -79,13 +126,13 @@
 /* Light mode initial styles */
 .strategy-nav-box .boxContainer {
   background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
-  color: #252948;
+  color: #565AC2;
 }
 
 /* Hover effect in dark mode: change to light background and dark text */
 .strategy-nav-box.dark:hover .boxContainer {
   background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
-  color: #252948;
+  color: #565AC2;
 }
 
 /* Hover effect in light mode: change to dark background and light text */

@@ -46,12 +46,16 @@ const ImageComponent = () => {
 
 function AboutSection() {
   return (
-    <div className="aboutSectionBG flex md:flex-row flex-col items-center justify-between bg-cover bg-no-repeat px-4 pb-10 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[15%] ">
+    <div className="aboutSectionBG bg-fixed flex md:flex-row flex-col items-center justify-between bg-cover bg-no-repeat px-4 pb-10 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[15%] ">
       {/* Left Side */}
       <div className="w-full md:w-1/2">
-        <h4 className="pt-24  aboutTypographytitle">OUR STORY</h4>
-        <h1 className="aboutTypographysubtitle">Lava Doesn’t Melt Diamonds</h1>
-        <p className="pt-8 pb-14 aboutTypographyparagraph">
+        <h4 className="pt-24  aboutTypographytitle !text-[#EAEBFF]">
+          OUR STORY
+        </h4>
+        <h1 className="aboutTypographysubtitle !text-[#EAEBFF]">
+          Lava Doesn’t Melt Diamonds
+        </h1>
+        <p className="pt-8 pb-14 aboutTypographyparagraph !text-[#EAEBFF]">
           Our story begins on the foothills of Mount Etna, Europe’s largest
           volcano. It was here that the idea of DeltaPrime was born. A brand on
           a mission to reshape the future of DeFi, forging it in the fires of

@@ -46,7 +46,7 @@ const Tokenomics = () => {
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
-          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
+          <div className="text-left flex flex-col gap-4 w-full">
             <div className="clearfix">
               {/* image that shows on desktop only */}
               <Image
@@ -58,7 +58,7 @@ const Tokenomics = () => {
                 src={imageOne}
                 alt="Deep_Dive_Tockenomics_Lightless"
               />
-              <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
+              <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] ">
                 Deep Dive into $PRIME Tokenomics
               </p>
               <Image
@@ -70,7 +70,7 @@ const Tokenomics = () => {
                 src={imageOne}
                 alt="Deep_Dive_Tockenomics_Lightless"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 min-w-full mb-4">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 min-w-full mb-4 dark:text-white text-[#565AC2] ">
                 DeltaPrime is a decentralized Prime Brokerage solution that
                 offers undercollateralized crypto loans without relying on
                 trust. The native tokens $PRIME and $sPRIME feature advanced
@@ -118,15 +118,17 @@ const Tokenomics = () => {
 
       {/* Tokenomics Section */}
       <div className="flex flex-col items-center md:items-center mb-8 md:mt-28 mt-5 h-fit flex-grow mx-auto">
-        <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948]">
-          <p className="brightText text-center max-w-xl text-3xl md:text-[44px]">
+        <div className="text-left flex flex-col gap-4">
+          <p className="brightText text-center max-w-xl text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
             Tokenomics
           </p>
         </div>
         <div className="flex flex-col items-center md:flex-row justify-center md:gap-10 gap-0 mt-10">
           <div className="flex flex-col items-center">
-            <p className="text-center text-3xl font-bold mt-4">$PRIME</p>
-            <p className="text-center text-2xl font-normal mt-1">
+            <p className="text-center text-3xl font-bold mt-4 dark:text-white text-[#6B70ED]">
+              $PRIME
+            </p>
+            <p className="text-center text-2xl font-normal mt-1 dark:text-white text-[#6B70ED]">
               Tradeable token
             </p>
             <Image
@@ -138,8 +140,10 @@ const Tokenomics = () => {
             />
           </div>
           <div className="flex flex-col items-center">
-            <p className="text-center text-3xl font-bold mt-4">$sPRIME</p>
-            <p className="text-center  text-2xl font-normal mt-1">
+            <p className="text-center text-3xl font-bold mt-4 dark:text-white text-[#6B70ED]">
+              $sPRIME
+            </p>
+            <p className="text-center  text-2xl font-normal mt-1 dark:text-white text-[#6B70ED]">
               Utility token
             </p>
             <Image
@@ -156,7 +160,7 @@ const Tokenomics = () => {
       {/* $sPRIME Enables Section */}
       <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
         <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
-          <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#252948]">
+          <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#6B70ED]">
             $sPRIME enables DeltaPrime to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
@@ -167,7 +171,7 @@ const Tokenomics = () => {
                 src={protocolUsage}
                 alt="Boost Protocol Usage"
               />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#252948]">
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Boost Protocol Usage
               </p>
             </div>
@@ -178,7 +182,7 @@ const Tokenomics = () => {
                 src={bufferMarket}
                 alt="Buffer Market Volatility"
               />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#252948]">
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Buffer Market Volatility
               </p>
             </div>
@@ -189,7 +193,7 @@ const Tokenomics = () => {
                 src={liquidityPool}
                 alt="Facilitate a deep, healthy liquidity pool"
               />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#252948]">
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Facilitate a deep, healthy liquidity pool
               </p>
             </div>
@@ -200,7 +204,7 @@ const Tokenomics = () => {
       {/* $sPRIME Allows anyone to */}
       <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
         <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
-          <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#252948]">
+          <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#6B70ED]">
             $sPRIME allows anyone to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
@@ -211,7 +215,7 @@ const Tokenomics = () => {
                 src={protocolRevenue}
                 alt="Access PRIME Features"
               />
-              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#252948]">
+              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Access PRIME Features
               </p>
             </div>
@@ -222,7 +226,7 @@ const Tokenomics = () => {
                 src={governancePower}
                 alt="Claim a share of 33% of protocol revenue"
               />
-              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#252948]">
+              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Claim a share of the liquidation fees
               </p>
             </div>
@@ -233,7 +237,7 @@ const Tokenomics = () => {
                 src={primeFeatures}
                 alt="Accrue Governance Power points"
               />
-              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#252948]">
+              <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Accrue Governance Power points
               </p>
             </div>
@@ -245,10 +249,10 @@ const Tokenomics = () => {
       <div className="flex flex-col md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
-          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
+          <div className="text-left flex flex-col gap-4 w-full">
             <div className="clearfix">
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-4 mb-4 w-full lg:w-1/2 hidden lg:block  ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
@@ -256,7 +260,7 @@ const Tokenomics = () => {
                 src={imageTwo}
                 alt="deltaprime_mascot_img"
               />
-              <p className="brightText text-wrap max-w-full mb-4 text-3xl md:text-[44px]">
+              <p className="brightText text-wrap max-w-full mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
                 Deep Dive into $PRIME Tokenomics
               </p>
               <Image
@@ -268,7 +272,7 @@ const Tokenomics = () => {
                 src={imageTwo}
                 alt="deltaprime_mascot_img"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full dark:text-white text-[#565AC2]">
                 How $PRIME and $sPRIME work <br />
                 $PRIME serves as the main tradable token on Decentralized
                 Exchanges (DEXs). The demand for $PRIME will come from the
@@ -368,11 +372,11 @@ const Tokenomics = () => {
         </div>
       </div>
       <div className="mb-16">
-        <p className="brightText text-wrap mb-4 text-3xl md:text-[44px]">
+        <p className="brightText text-wrap mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
           The Difference Between Unlocked <br className="md:block hidden" />
           and Locked $sPRIME
         </p>
-        <p className="whiteMainText text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
+        <p className="whiteMainText dark:text-white text-[#565AC2] text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
           $sPRIME is designed to counter impermanent loss that liquidity
           providers often suffer from but also reward the community members who
           are most active on the platform. To incentivize and reward the most
@@ -384,7 +388,7 @@ const Tokenomics = () => {
       <TokenomicsCards />
 
       <div>
-        <p className="whiteMainText text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
+        <p className="whiteMainText text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 dark:text-white text-[#565AC2]">
           The way locked $sPRIME is created acts as a way to incentivize users
           to use the protocol, but also as means to reduce idle COL capital.
           Idle COL capital is the COL-derived capital providing liquidity for
@@ -442,7 +446,7 @@ const Tokenomics = () => {
                 src={imageThree}
                 alt="deltaprime_mascot_img"
               />
-              <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
+              <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px] dark:text-white text-[#6B70ED]">
                 Governance Power and Voting Rights: A Road to DAO
               </p>
               <Image
@@ -454,7 +458,7 @@ const Tokenomics = () => {
                 src={imageThree}
                 alt="deltaprime_mascot_img"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full ">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full dark:text-white text-[#565AC2]">
                 The perks of owning $sPRIME extend to governance power; $sPRIME
                 ownership is required to gain governance points. Points are
                 assigned at a 10:1 ratio of a deposited or borrowed token (e.g.
@@ -546,7 +550,7 @@ const Tokenomics = () => {
                 src={imageFour}
                 alt="deltaprime_mascot_img"
               />
-              <p className="text-wrap min-w-full mb-4 font-bold text-2xl md:text-[28px]">
+              <p className="text-wrap min-w-full mb-4 font-bold text-2xl md:text-[28px] dark:text-white text-[#6B70ED]">
                 Other $PRIME Allocations Explained
               </p>
               <Image
@@ -558,7 +562,7 @@ const Tokenomics = () => {
                 src={imageFour}
                 alt="deltaprime_mascot_img"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full ">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full dark:text-white text-[#565AC2]">
                 The team receives 16% of the tokens for the work they have put
                 in for 3 years, while advisors are allocated a 5% for their
                 invaluable contribution in developing the project. The
@@ -629,7 +633,7 @@ const Tokenomics = () => {
                 src={imageFive}
                 alt="deltaprime_mascot_img"
               />
-              <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px]">
+              <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px] dark:text-white text-[#6B70ED]">
                 DeltaPrime Tokenomics Summed Up
               </p>
               <Image
@@ -641,7 +645,7 @@ const Tokenomics = () => {
                 src={imageFive}
                 alt="deltaprime_mascot_img"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full ">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full dark:text-white text-[#565AC2]">
                 At DeltaPrime, we first implemented a protocol with high
                 security considerations, and are now positioned to organically
                 transition to a community governed platform, setting checkpoints

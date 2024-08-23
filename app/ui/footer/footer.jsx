@@ -131,18 +131,18 @@ const TermsOfUseFooter = ({ isTokenomics, isStrategies }) => {
         <p className="text-sm text-center sm:text-left mt-6 md:mt-0">
           All rights reserved © DeltaPrime 2024
         </p>
-        <div className="flex space-x-4 mt-4 sm:mt-0 text-sm justify-center sm:justify-end flex-wrap md:gap-0 gap-4 ">
-          <Link href="/legals/termsOfUse" className="hover:text-gray-400 ">
+        <div className="flex space-x-4 mt-4 sm:mt-0 text-sm justify-center sm:justify-end flex-wrap md:gap-0 gap-4 dark:text-white text-[#6B70ED]">
+          <Link href="/legals/terms-Of-Use" className="hover:text-gray-400 ">
             Terms of use
           </Link>
           <Link
-            href="/legals/privacyAndPolicy"
+            href="/legals/privacy-And-Policy"
             className="hover:text-gray-400 "
           >
             <span className="mr-4">•</span>Privacy Policy
           </Link>
           <Link
-            href="/legals/tokenomicsRiskDisclaimer"
+            href="/legals/tokenomics-Risk-Disclaimer"
             className="hover:text-gray-400 "
           >
             <span className="mr-4">•</span> Risk Disclosure Statement (Tokens)

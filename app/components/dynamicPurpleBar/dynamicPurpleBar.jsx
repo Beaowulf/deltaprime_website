@@ -21,14 +21,14 @@ const DynamicPurpleBar = ({
             {link}
             {title && (
               <>
-                <span className="w-3 h-1 bg-white rounded-[40px] font-extrabold" />
+                <span className="w-3 h-1 bg-white rounded-[40px] font-extrabold text-white" />
                 <p className="font-extrabold">{title}</p>
               </>
             )}
           </>
         ) : (
           <>
-            <p className="font-extrabold">{title}</p>
+            <p className="font-extrabold text-white">{title}</p>
           </>
         )}
       </div>

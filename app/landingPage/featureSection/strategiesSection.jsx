@@ -78,7 +78,7 @@ const Strategies = () => {
         }`}
       >
         {/* Left */}
-        <div className="flex flex-col items-start dark:text-white text-[#252948] mb-14 max-w-96">
+        <div className="flex flex-col items-start dark:text-white text-[#6B70ED] mb-14 max-w-96">
           <h1 className="mb-6 featureSubtitle text-[24px]">
             Strategies For Any Risk Appetite
           </h1>

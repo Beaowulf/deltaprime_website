@@ -210,25 +210,25 @@ const BlogPost = ({ blog, blogPreviewData }) => {
       <div className="flex flex-col lg:flex-row gap-10 mt-10 md:mt-20 pagePaddingLarge">
         <div className="w-full lg:w-9/12">
           <div className="px-4 ">
-            <h1 className="text-[24px] md:text-[35px] text-center md:text-left leading-10 text-[#252948] dark:text-[#F6F6F6] font-bold mb-10 md:mb-20">
+            <h1 className="text-[24px] md:text-[35px] text-center md:text-left leading-10 text-[#6B70ED] dark:text-[#F6F6F6] font-bold mb-10 md:mb-20">
               {blogData.blogTitle}
             </h1>
-            <div className="w-full flex md:flex-row flex-col justify-between items-center gap-4 text-[#252948] dark:text-[#F6F6F6]">
+            <div className="w-full flex md:flex-row flex-col justify-between items-center gap-4 text-[#6B70ED] dark:text-[#F6F6F6]">
               <div>
-                <p className="text-[#252948] dark:text-[#F6F6F6]">
+                <p className="text-[#565AC2] dark:text-[#F6F6F6]">
                   Written By {blogData.blogAuthor}
                 </p>
               </div>
               <div className="flex justify-center items-center gap-4">
                 <div className="flex gap-2">
                   <Image src={clockIcon} alt="clock_Icon" />
-                  <p className="text-nowrap text-[#252948] dark:text-[#F6F6F6]">
+                  <p className="text-nowrap text-[#565AC2] dark:text-[#F6F6F6]">
                     {minsToRead} min
                   </p>
                 </div>
                 <div className="flex gap-2">
                   <Image src={calendarIcon} alt="calendar_Icon" />
-                  <p className="text-nowrap text-[#252948] dark:text-[#F6F6F6]">
+                  <p className="text-nowrap text-[#565AC2] dark:text-[#F6F6F6]">
                     {formatDateString(
                       blogData.blogSYS.createdAt,
                       blogData.blogSYS.locale
@@ -237,13 +237,13 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 </div>
                 <div className="flex gap-2">
                   <Image src={hashtagIcon} alt="hashtag_Icon" />
-                  <p className="text-nowrap text-[#252948] dark:text-[#F6F6F6]">
+                  <p className="text-nowrap text-[#565AC2] dark:text-[#F6F6F6]">
                     {blogData.blogCategory}
                   </p>
                 </div>
               </div>
               <div className="md:flex hidden place-items-center gap-4">
-                <p className="text-nowrap text-[#252948] dark:text-[#F6F6F6]">
+                <p className="text-nowrap text-[#565AC2] dark:text-[#F6F6F6]">
                   Share article:
                 </p>
                 <ShareButton
@@ -261,17 +261,19 @@ const BlogPost = ({ blog, blogPreviewData }) => {
               />
             </div>
             <div className="md:hidden w-full flex justify-center mt-6 gap-4">
-              <p className="text-nowrap text-[#252948] dark:text-[#F6F6F6]">
+              <p className="text-nowrap text-[#565AC2] dark:text-[#F6F6F6]">
                 Share article:
               </p>
-              <ShareButton
-                title={blogData.blogTitle}
-                text={blogData.blogDescription}
-                url={blogUrl}
-              />
+              <div className="mt-2">
+                <ShareButton
+                  title={blogData.blogTitle}
+                  text={blogData.blogDescription}
+                  url={blogUrl}
+                />
+              </div>
             </div>
             <div className="md:hidden block bg-white mt-6 p-10 rounded-[20px]">
-              <p className="font-bold leading-6 uppercase text-[18px] text-[#252948]">
+              <p className="font-bold leading-6 uppercase text-[18px] text-[#6B70ED]">
                 Table of contents
               </p>
               <div className="w-full bg-black h-[2px] my-5" />
@@ -281,7 +283,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                     <a
                       href={`#${heading.id}`}
                       onClick={handleScrollTo(heading.id)}
-                      className={`text-[#252948] text-[15px] ${
+                      className={`text-[#565AC2] text-[15px] ${
                         activeHeading === heading.id ? "font-bold" : ""
                       }`}
                     >
@@ -314,7 +316,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
           <div className="flex flex-col gap-10 sticky top-32">
             <div className="coloredBoxBorder">
               <div className="deltaWhiteLinearBG p-4 md:p-6 rounded-[30px]">
-                <p className="font-bold leading-6 uppercase text-[18px] text-[#252948]">
+                <p className="font-bold leading-6 uppercase text-[18px] text-[#6B70ED]">
                   Table of contents
                 </p>
                 <div className="w-full bg-black h-[2px] my-5" />
@@ -325,7 +327,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                         <a
                           href={`#${heading.id}`}
                           onClick={handleScrollTo(heading.id)}
-                          className={`text-[#252948] text-[15px] ${
+                          className={`text-[#565AC2] text-[15px] ${
                             activeHeading === heading.id ? "font-bold" : ""
                           }`}
                         >

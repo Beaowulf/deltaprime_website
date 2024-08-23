@@ -109,6 +109,7 @@ h6 {
 This is used for the main background at the first level of the landing page 
 blending 2 of the images.
 */
+
 .background_1-darkTheme,
 .background_1-lightTheme {
   transition: background 0.3s ease, color 0.3s ease;
@@ -200,9 +201,8 @@ body {
   pointer-events: none;
   background-blend-mode: overlay;
 }
-
-.parentColoredBorderWrapper {
-  /* Border Radius */
+.parentColoredBorderWrapper{
+    /* Border Radius */
   padding: 2px;
   /* Border Radius */
   border-radius: 20px;
@@ -224,6 +224,57 @@ body {
     rgba(175, 175, 255, 1) 0%,
     rgba(255, 143, 184, 1) 50%,
     rgba(255, 187, 155, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
+}
+.parentColoredBorderWrapperDarkTheme {
+  /* Border Radius */
+  padding: 2px;
+  /* Border Radius */
+  border-radius: 20px;
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
+}
+
+.parentColoredBorderWrapperLightTheme {
+  /* Border Radius */
+  padding: 2px;
+  /* Border Radius */
+  border-radius: 20px;
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(255, 187, 155, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(175, 175, 255, 1) 100%    
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(255, 187, 155, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(175, 175, 255, 1) 100%    
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(255, 187, 155, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(175, 175, 255, 1) 100%    
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
 }
@@ -333,7 +384,6 @@ body {
   text-align: center;
   text-shadow: 3px 3px 13.5px rgba(191, 188, 255, 0.5);
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
 }
@@ -346,7 +396,6 @@ body {
   font-size: 15px;
   font-weight: 600;
   line-height: 20px;
-  color: #6b70ed;
 }
 
 .costText {
@@ -408,7 +457,7 @@ body {
 }
 
 .aboutTypographyparagraph {
-  font-size: 17px;
+  font-size: 18px;
   color: black;
   font-style: normal;
   font-weight: 500;
@@ -416,7 +465,7 @@ body {
 }
 
 .aboutTypographyparagraphWhite {
-  font-size: 17px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;

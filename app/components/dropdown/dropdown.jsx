@@ -181,7 +181,7 @@ const DropdownMenu = ({
         className="flex items-center cursor-pointer"
         onClick={toggleDropdown}
       >
-        <div className="mr-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[12px] font-medium text-nowrap">
+        <div className="mr-2 text-gray-500 text-[#696969] hover:text-[#000000] dark:text-[#DADADA] dark:hover:text-[#fff] rounded-md md:text-[16px] text-[12px] font-medium text-nowrap">
           {menuText}
         </div>
         {isOpen ? (
@@ -234,7 +234,7 @@ const DropdownMenu = ({
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="mb-2 brightTitle text-[25px] dark:text-[#fff] text-[#252948]"
+                    className="mb-2 brightTitle text-[25px] dark:text-[#fff] text-[#6B70ED]"
                   >
                     {boxTitle}
                   </motion.p>
@@ -243,7 +243,7 @@ const DropdownMenu = ({
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="mb-2 text-[15px] dark:text-[#fff] text-[#252948]"
+                    className="mb-2 text-[15px] dark:text-[#fff] text-[#565AC2]"
                   >
                     {boxText}
                   </motion.p>
@@ -253,7 +253,7 @@ const DropdownMenu = ({
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="mb-2 text-[15px] dark:text-[#fff] text-[#252948]"
+                      className="mb-2 text-[15px] dark:text-[#fff] text-[#565AC2]"
                     >
                       <a
                         className="mb-2 text-[15px] underline hover:text-gray-400"
@@ -269,7 +269,7 @@ const DropdownMenu = ({
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="mb-2 text-[15px] dark:text-[#fff] text-[#252948]"
+                    className="mb-2 text-[15px] dark:text-[#fff] text-[#565AC2]"
                   >
                     <a
                       className="mb-2 text-[15px] underline hover:text-gray-400"
@@ -287,7 +287,7 @@ const DropdownMenu = ({
                         key={i}
                         custom={i}
                         boxVariants={boxVariants}
-                        className="rounded-[25px] boxWrapper"
+                        className="boxWrapper"
                         strategy={strategy}
                       />
                     ))}

@@ -55,41 +55,6 @@
   transition: background 0.25s ease-in-out;
 }
 
-/* 
-.carouselItemsDarkTheme::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
-  );
-  transition: background 0.3s ease, opacity 0.3s ease;
-  opacity: 1;
-  z-index: 100;
-  pointer-events: none;
-}
-
-.carouselItemsDarkTheme:hover::before {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-  opacity: 0;
-}
-
-.carouselItemsDarkTheme img {
-  transition: filter 0.3s ease;
-}
-
-.carouselItemsDarkTheme:hover img {
-  filter: brightness(1.2);
-}
-.carouseItemsWhiteTheme {
-  box-shadow: 5px 5px 20px 0px rgba(255, 95, 162, 0.15);
-} */
-
 .swiper > .swiper-wrapper {
   transition-timing-function: linear;
 }
@@ -110,7 +75,7 @@
 }
 
 .aboutSectionBG {
-  background-image: url("../../public/assets/img/aboutSectionBG.png");
+  background-image: url("../../public/assets/img/purple-start-background-image.png");
 }
 
 .securitySection {
@@ -122,13 +87,6 @@
   .featureBorderWrapLightTheme {
     width: 100%;
   }
-}
-.logoWrapper {
-  transition: background 0.3s ease-in-out;
-}
-
-.logoWrapper:hover {
-  background: #f0f0f0; /* or any desired hover background */
 }
 
 /* Animated text */
