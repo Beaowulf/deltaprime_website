@@ -192,9 +192,12 @@ export function CTAButton({
   );
 }
 
-export function BlogButton({ onClick, label }) {
+export function BlogButton({ onClick, label, fullWidth = false }) {
   return (
-    <button onClick={onClick} className="blogButtonWrapper">
+    <button
+      onClick={onClick}
+      className={`blogButtonWrapper ${fullWidth ? "w-full" : "w-fit"}`}
+    >
       <div className="blogFilterButton w-full h-[45px] md:h-full p-4">
         <h6 className="text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText">
           {label}

@@ -51,7 +51,7 @@ export function FooterTextLinks() {
     <div className="flex justify-center items-center">
       <div className="flex text-white items-center text-lg flex-col md:flex-row">
         <div className="space-y-4 text-center md:text-start mt-10 md:mt-0">
-          <Link href="/ourStory" className="block hover:text-gray-400 text-sm">
+          <Link href="/our-story" className="block hover:text-gray-400 text-sm">
             Our Story
           </Link>
           <Link
@@ -60,7 +60,7 @@ export function FooterTextLinks() {
           >
             Strategies
           </Link>
-          <Link href="/burdLog" className="block hover:text-gray-400 text-sm">
+          <Link href="/burd-log" className="block hover:text-gray-400 text-sm">
             Burd Log
           </Link>
           <Link
@@ -77,7 +77,7 @@ export function FooterTextLinks() {
             Careers
           </Link>
           <Link
-            href="/howToVideos"
+            href="/how-to-videos"
             className="block hover:text-gray-400 text-sm"
           >
             How To Guides

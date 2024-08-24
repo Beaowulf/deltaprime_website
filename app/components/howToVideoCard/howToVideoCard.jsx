@@ -14,7 +14,7 @@ const HowToVideoCard = ({
     <div
       className="px-2 pt-2 rounded-[2px] w-full max-w-[460px] max-h-[430px] shadow-lg dark:shadow-none shadow-[#ff5fa240]"
       onClick={() => {
-        router.push(`/howToVideos/${video.slug}`);
+        router.push(`/how-to-videos/${video.slug}`);
       }}
     >
       <div className="flex flex-col gap-4 justify-between w-full ">

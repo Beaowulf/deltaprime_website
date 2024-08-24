@@ -257,7 +257,7 @@ const DropdownMenu = ({
                     >
                       <a
                         className="mb-2 text-[15px] underline hover:text-gray-400"
-                        href={"/howToVideos"}
+                        href={"/how-to-videos"}
                         onClick={closeDropdown}
                       >
                         How To Videos

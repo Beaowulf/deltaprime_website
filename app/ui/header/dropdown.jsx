@@ -78,7 +78,7 @@ export default function Dropdown() {
             <div className="py-1 flex flex-col z-50 relative" role="none">
               <Link
                 onClick={closeDropdown}
-                href="/ourStory"
+                href="/our-story"
                 className="dropdownLink block px-2 py-2 text-sm text-gray-500 text-[#696969] hover:text-[#000000] dark:text-[#DADADA] dark:hover:text-[#fff] font-medium"
                 role="menuitem"
                 id="menu-item-0"
@@ -146,7 +146,7 @@ export function MenuDropdown({ onClick }) {
         <div className="mt-4 p-4">
           <Link
             onClick={onClick}
-            href="/ourStory"
+            href="/our-story"
             className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center text-[#565AC2]"
           >
             <p className="text-lg">Our Story</p>

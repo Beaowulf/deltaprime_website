@@ -91,7 +91,7 @@ function Nav() {
 
               <div className="text-center">
                 <Link
-                  href="/contactUs"
+                  href="/contact-us"
                   className="text-[#696969] hover:text-[#000000] dark:text-[#DADADA] dark:hover:text-[#fff] rounded-md md:text-[16px] text-[12px] font-medium md:hidden lg:block text-nowrap"
                 >
                   Contact Us
@@ -205,7 +205,7 @@ function Nav() {
                 </Link>
 
                 <Link
-                  href="/contactUs"
+                  href="/contact-us"
                   className="text-gray-800 dark:text-white text-[#6B70ED] dark:hover:text-gray-400  hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-semibold"
                   onClick={() => setIsOpen(false)}
                 >

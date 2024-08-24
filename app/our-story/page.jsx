@@ -333,7 +333,7 @@ const OurStory = () => {
                     DevOps Engineer
                   </p>
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
-                    <Link href={"/jobDescription"}>
+                    <Link href={"/job-description"}>
                       <BlogCardButton
                         label={"Learn More"}
                         hasArrowRight={true}
