@@ -34,11 +34,11 @@ const BlogCard = ({
 }) => {
   return (
     <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
-      <div className="w-full h-[270px] ">
+      <div className="blogCardParent w-full h-[270px] ">
         <img
           src={previewBlogImage}
           alt="Blog Preview"
-          className="object-cover w-full h-full rounded-[15px]"
+          className="blogCardContent object-cover w-full h-full rounded-[15px]"
         />
       </div>
       <p className="text-[16px] leading-6 font-medium line-clamp-2 ml-1 dark:text-white text-[#6B70ED]">
