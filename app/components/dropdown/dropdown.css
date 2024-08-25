@@ -24,27 +24,13 @@
   overflow: hidden;
 }
 
-.glossaryItemWrapper {
-
-}
-
-.glossaryItemWrapper:before {
-
-}
-
-.glossaryContent {
-
-}
-
-
-
 .boxWrapper {
   position: relative;
   padding: 5px;
   overflow: hidden;
   width: 15rem;
 
-/*   
+  /*   
   position: relative;
   border-radius: 0px;
   padding: 4px;
@@ -53,7 +39,7 @@
 }
 
 .boxWrapper:before {
-    content: "";
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -78,7 +64,7 @@
   mask-composite: exclude;
   z-index: 1;
 
-/*   
+  /*   
   content: "";
   position: absolute;
   top: 0;
@@ -126,13 +112,13 @@
 /* Light mode initial styles */
 .strategy-nav-box .boxContainer {
   background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
-  color: #565AC2;
+  color: #565ac2;
 }
 
 /* Hover effect in dark mode: change to light background and dark text */
 .strategy-nav-box.dark:hover .boxContainer {
   background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
-  color: #565AC2;
+  color: #565ac2;
 }
 
 /* Hover effect in light mode: change to dark background and light text */
