@@ -147,14 +147,14 @@ export function MenuDropdown({ onClick }) {
           <Link
             onClick={onClick}
             href="/our-story"
-            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center text-[#565AC2]"
+            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center text-[#565AC2] dark:text-white"
           >
             <p className="text-lg">Our Story</p>
           </Link>
           <Link
             onClick={onClick}
             href="/tokenomics"
-            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center text-[#565AC2]"
+            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center text-[#565AC2] dark:text-white"
           >
             <p className="text-lg">Tokenomics</p>
           </Link>

@@ -92,18 +92,18 @@ const FeaturePrimeAccount = () => {
         {/* Bottom Boxes */}
         <div className="w-full flex md:flex-row flex-col gap-5 h-full">
           <div
-            className={`rounded-[20px] md:h-[260px] h-[200px]  ${
+            className={`rounded-[20px] md:h-[260px] h-[220px]  ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-1/2 w-full`}
           >
             <div
-              className={`h-full flex md:items-end items-center rounded-[25px] md:pl-10 md:pr-4 pl-4 z-20 overflow-hidden ${
+              className={`md:pt-0 pt-6 h-full flex md:items-end items-center rounded-[25px] md:pl-10 md:pr-4 pl-4 z-20 overflow-hidden ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >
-              <div className="mb-11">
+              <div className="mb-11 md:mt-0 mt-5">
                 {theme === "dark" ? (
                   <Image src={RoundedTwoDarkThemed} alt="Rounded_Number_One" />
                 ) : (
@@ -125,18 +125,18 @@ const FeaturePrimeAccount = () => {
           </div>
 
           <div
-            className={`rounded-[20px] md:h-[260px] h-[200px] ${
+            className={`rounded-[20px] md:h-[260px] h-[220px] ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-1/2 w-full`}
           >
             <div
-              className={`h-full flex md:items-end items-center justify-between rounded-[25px] md:px-10 pl-4 z-20 overflow-hidden ${
+              className={`md:pt-0 pt-6 h-full flex md:items-end items-center justify-between rounded-[25px] md:px-10 pl-4 z-20 overflow-hidden ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >
-              <div className="mb-11">
+              <div className="mb-11 md:mt-0 mt-5">
                 {theme === "dark" ? (
                   <Image
                     className="w-auto"

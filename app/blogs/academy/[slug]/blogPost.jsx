@@ -293,7 +293,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 ))}
               </ul>
             </div>
-            <div className="blogPostWrapper mt-10">
+            <div className="blogPostWrapper mt-10 text-[#565AC2] dark:text-[#F6F6F6]">
               <RichTextRenderer
                 blogTakeaways={blogData.blogTakeaways}
                 hasTakeaways={blogData?.blogTakeaways?.length > 0}
