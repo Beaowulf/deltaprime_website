@@ -216,7 +216,9 @@ export function BlogCardButton({
   return (
     <button
       onClick={onClick}
-      className={`blogButtonWrapper ${fullWidth ? "w-full" : "w-fit"}`}
+      className={`blogButtonWrapper md:w-fit w-full ${
+        fullWidth ? "!w-full" : "!w-fit"
+      }`}
     >
       <div
         className={`blogButtonContent md:h-full ${
