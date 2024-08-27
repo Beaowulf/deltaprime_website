@@ -16,14 +16,14 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         {/* Left Side */}
         <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center px-10 py-2 md:py-28 2xl:py-40 contactFormBG ">
           {/* Add your background image in the above style */}
-          <div className="flex flex-col items-start dark:text-white text-black mb-14 max-w-[30rem]">
-            <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-center">
+          <div className="flex flex-col items-start mb-14 max-w-[30rem]">
+            <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-center dark:text-white text-[#6B70ED] ">
               Contact us
             </h4>
-            <h1 className="mb-6 featureSubtitle text-[25px] md:text-[34px]">
+            <h1 className="mb-6 featureSubtitle text-[25px] md:text-[34px] dark:text-white text-[#6B70ED] ">
               Got a question to ask? We're here for you.
             </h1>
-            <p className="aboutTypographyparagraphWhite max-w-xl md:leading-8 leading-6">
+            <p className="aboutTypographyparagraphWhite max-w-xl md:leading-8 leading-6 dark:text-white text-[#565AC2] ">
               You couldn't find answers in our Site, Docs or Discord? Ask us.
               We'll be happy to assist.
             </p>
@@ -35,7 +35,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
-                  className="block dark:text-white text-[#252948] font-bold mb-2 text-[12px] md:text-[17px]"
+                  className="block dark:text-white text-[#6B70ED] font-bold mb-2 text-[12px] md:text-[17px]"
                   htmlFor="name"
                 >
                   Name
@@ -49,7 +49,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
               </div>
               <div className="mb-4 flex-1">
                 <label
-                  className="block dark:text-white text-[#252948] font-bold mb-2 text-[12px] md:text-[17px]"
+                  className="block dark:text-white text-[#6B70ED] font-bold mb-2 text-[12px] md:text-[17px]"
                   htmlFor="email"
                 >
                   Email
@@ -65,7 +65,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
 
             <div className="mb-6">
               <label
-                className="block dark:text-white text-[#252948] font-bold mb-2 text-[12px] md:text-[17px]"
+                className="block dark:text-white text-[#6B70ED] font-bold mb-2 text-[12px] md:text-[17px]"
                 htmlFor="message"
               >
                 Message

@@ -35,8 +35,8 @@ const StrategyDetail = ({ strategy, strategies }) => {
         <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
-            <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
-              <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
+            <div className="text-left flex flex-col gap-8">
+              <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
                 {strategy.strategyTitle}
               </p>
               <div className="w-full md:hidden block rounded-[25px]">
@@ -46,7 +46,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
                   className=" rounded-[25px]"
                 />
               </div>
-              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-5">
+              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-5 dark:text-white text-[#565AC2]">
                 {strategy.strategyDescription}
               </p>
               <div className="w-full md:block hidden">

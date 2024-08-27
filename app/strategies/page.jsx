@@ -23,8 +23,8 @@ const StrategiesPage = () => {
       {/* Intro */}
       <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2 pagePaddingLarge">
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
-          <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
-            <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
+          <div className="text-left flex flex-col gap-8">
+            <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
               Strategies
             </p>
             <div className="w-full md:hidden block rounded-[25px]">
@@ -33,7 +33,7 @@ const StrategiesPage = () => {
                 alt="deltaprime_mascot_img rounded-[25px]"
               />
             </div>
-            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-5">
+            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-5 dark:text-white text-[#565AC2]">
               DeltaPrime allows for a range of new and unique strategies. Every
               strategy is accompanied by a practical example, getting deeper
               into the risk and rewards of the specific strategy.
@@ -87,14 +87,14 @@ const StrategiesPage = () => {
         </div>
 
         <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 mt-10 mb-16 md:my-40">
-          <div className="flex flex-col items-center md:items-start dark:text-white text-[#252948] md:mb-14 max-w-96">
-            <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-gray-400 leading-6 md:text-left text-center">
+          <div className="flex flex-col items-center md:items-start md:mb-14 max-w-96">
+            <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-gray-400 leading-6 md:text-left text-center dark:text-white text-[#6B70ED]">
               STRATEGIES
             </h4>
-            <h1 className="mb-6 featureSubtitle text-[24px] md:text-left text-center">
+            <h1 className="mb-6 featureSubtitle text-[24px] md:text-left text-center dark:text-white text-[#6B70ED]">
               Do you want to learn more about strategies?
             </h1>
-            <p className="max-w-2xl text-[13px] md:leading-6 sm:text-[17px] leading-4 md:text-left text-center">
+            <p className="max-w-2xl text-[13px] md:leading-6 sm:text-[17px] leading-4 md:text-left text-center dark:text-white text-[#565AC2]">
               Our vibrant community is on a mission to discuss and explore a
               breadth of mainstream and unique strategic approaches through
               DeltaPrime. Join our community discussions on Discord and discover

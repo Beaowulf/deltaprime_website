@@ -11,11 +11,11 @@ import { logoCarouselItems } from "@/app/components/carouselImages/getCarouselDa
 const CarouselHeader = () => {
   return (
     <div className="flex flex-row w-full md:mb-20 mb-8 items-center">
-      <span className="h-[2px] w-full bg-gradient-to-r from-[#5A2950] to-[#4D3496]" />
-      <p className="slightBrightText md:mx-10 mx-4 max-w-fit whitespace-nowrap text-[20px]">
+      <span className="h-[2px] w-full bg-gradient-to-r dark:from-[#5A2950] dark:to-[#4D3496] from-[#DFE0FF] from-30% via-[#FFE1C2] via-50% to-[#FFD3E0] to-70%" />
+      <p className="slightBrightText md:mx-10 mx-4 max-w-fit whitespace-nowrap text-[20px] dark:text-white text-[#6B70ED] font-bold">
         Backed by
       </p>
-      <span className="h-[2px] w-full bg-gradient-to-r from-[#5A2950] to-[#4D3496]" />
+      <span className="h-[2px] w-full bg-gradient-to-r dark:from-[#5A2950] dark:to-[#4D3496] from-[#DFE0FF] from-30% via-[#FFE1C2] via-50% to-[#FFD3E0] to-70%" />
     </div>
   );
 };
@@ -32,7 +32,7 @@ const CarouselComponent = () => {
         a11y={false}
         speed={3000}
         autoplay={{
-          delay: 0.5,
+          delay: 0.75,
           disableOnInteraction: false,
         }}
         breakpoints={{
@@ -49,7 +49,7 @@ const CarouselComponent = () => {
             <SwiperSlide key={index}>
               <Link target="_blank" href={`${item.link}`}>
                 <div
-                  className={`bg-[white] p-1 md:p-4 rounded-[20px] flex justify-center logoWrapper ${
+                  className={`dark:bg-[#F0F0F0] dark:hover:bg-white hover:bg-white bg-transparent p-1 md:p-4 rounded-[20px] flex justify-center transition ease-in  ${
                     theme === "dark"
                       ? `carouselItemsDarkTheme`
                       : `carouseItemsWhiteTheme`

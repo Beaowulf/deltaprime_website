@@ -44,7 +44,7 @@ const FeaturePrimeAccount = () => {
             } z-10 md:w-8/12 w-full`}
           >
             <div
-              className={`flex md:flex-row flex-col justify-between items-end rounded-[20px] h-full px-4 md:pt-8 md:pl-10 z-20  overflow-hidden ${
+              className={`flex md:flex-row flex-col justify-between items-end rounded-[25px] h-full px-4 md:pt-8 md:pl-10 z-20  overflow-hidden ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >
@@ -54,8 +54,9 @@ const FeaturePrimeAccount = () => {
                 ) : (
                   <Image src={RoundedOneLightThemed} alt="Rounded_Number_One" />
                 )}
-                <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#252948] max-w-[13rem]">
-                  Deposit your tokens in one of the pools
+                <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#6B70ED] max-w-[13rem]">
+                  <span className="font-bold">Deposit</span> your tokens in one
+                  of the pools
                 </p>
               </div>
               {/* Stacked Images */}
@@ -76,12 +77,12 @@ const FeaturePrimeAccount = () => {
             } z-10 md:w-4/12 w-full md:block hidden`}
           >
             <div
-              className={`justify-center p-2 rounded-[20px] h-full z-20 overflow-hidden flex ${
+              className={`justify-center p-4 md:p-8 rounded-[25px] h-full z-20 overflow-hidden flex ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >
               <Image
-                className="m-auto object-contain"
+                className="mx-auto my-0 object-contain"
                 src={large3DLogo}
                 alt="3d_purple_DeltaPrime_logo"
               />
@@ -89,27 +90,28 @@ const FeaturePrimeAccount = () => {
           </div>
         </div>
         {/* Bottom Boxes */}
-        <div className="w-full flex md:flex-row flex-col gap-5">
+        <div className="w-full flex md:flex-row flex-col gap-5 h-full">
           <div
-            className={`rounded-[20px] ${
+            className={`rounded-[20px] md:h-[260px] h-[220px]  ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-1/2 w-full`}
           >
             <div
-              className={`flex md:items-end items-center rounded-[20px] md:pl-10 md:pr-4 pl-4 z-20 overflow-hidden md:h-[300px] h-[220px] ${
+              className={`md:pt-0 pt-6 h-full flex md:items-end items-center rounded-[25px] md:pl-10 md:pr-4 pl-4 z-20 overflow-hidden ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >
-              <div className="mb-11">
+              <div className="mb-11 md:mt-0 mt-5">
                 {theme === "dark" ? (
                   <Image src={RoundedTwoDarkThemed} alt="Rounded_Number_One" />
                 ) : (
                   <Image src={RoundedTwoLightThemed} alt="Rounded_Number_One" />
                 )}
-                <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#252948] ">
-                  Borrowers pay interest, which is autocompounded
+                <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#6B70ED] ">
+                  <span className="font-bold">Borrowers</span> pay interest,
+                  which is autocompounded
                 </p>
               </div>
               <div className="h-full w-full flex justify-center">
@@ -123,18 +125,18 @@ const FeaturePrimeAccount = () => {
           </div>
 
           <div
-            className={`rounded-[20px] ${
+            className={`rounded-[20px] md:h-[260px] h-[220px] ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
             } z-10 md:w-1/2 w-full`}
           >
             <div
-              className={`flex md:items-end items-center justify-between rounded-[20px] md:px-10 pl-4 z-20 overflow-hidden md:h-[300px] h-[220px] ${
+              className={`md:pt-0 pt-6 h-full flex md:items-end items-center justify-between rounded-[25px] md:px-10 pl-4 z-20 overflow-hidden ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >
-              <div className="mb-11">
+              <div className="mb-11 md:mt-0 mt-5">
                 {theme === "dark" ? (
                   <Image
                     className="w-auto"
@@ -152,13 +154,13 @@ const FeaturePrimeAccount = () => {
                     width={50}
                   />
                 )}
-                <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#252948] max-w-[15rem]">
-                  Withdraw whenever you want
+                <p className="aboutTypographyparagraphWhite mt-2 dark:text-white text-[#6B70ED] max-w-[15rem]">
+                  <span className="font-bold">Withdraw</span> whenever you want
                 </p>
               </div>
               <div className="h-full w-full flex justify-center">
                 <Image
-                  className="object-contain"
+                  className="object-contain py-4 md:py-8 md:px-10"
                   src={dollarSign3D}
                   alt="dollar_Sign_3D"
                   height={220}

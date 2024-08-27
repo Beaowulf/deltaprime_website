@@ -44,6 +44,7 @@
   z-index: 1;
   background: transparent; /* Default background */
   transition: background 0.3s ease;
+  background: linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
 }
 
 /* Active state for the button with purple border */

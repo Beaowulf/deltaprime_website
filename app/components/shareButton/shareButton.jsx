@@ -7,49 +7,54 @@ import {
   TwitterShareButton,
   LinkedinShareButton,
   WhatsappShareButton,
-} from 'react-share';
+} from "react-share";
 import {
   FacebookIcon,
   TwitterIcon,
   LinkedinIcon,
   WhatsappIcon,
-} from 'react-share';
+} from "react-share";
 import { useEffect, useRef, useState } from "react";
-import "./shareButton.css"
+import "./shareButton.css";
 const ShareButton = ({ title, text, url }) => {
   const { theme } = useTheme();
   const [showPopup, setShowPopup] = useState(false);
-  const [animationClass, setAnimationClass] = useState('hide');
+  const [animationClass, setAnimationClass] = useState("hide");
   const [popupStyles, setPopupStyles] = useState({});
   const buttonRef = useRef(null);
   const popupRef = useRef(null);
 
   const togglePopup = () => {
     if (showPopup) {
-      setAnimationClass('hide');
+      setAnimationClass("hide");
       setTimeout(() => setShowPopup(false), 300);
     } else {
       setShowPopup(true);
       setTimeout(() => {
-        setAnimationClass('show');
+        setAnimationClass("show");
       }, 10);
     }
   };
 
   // Close popup when clicking outside
   const handleClickOutside = (event) => {
-    if (popupRef.current && !popupRef.current.contains(event.target) && buttonRef.current && !buttonRef.current.contains(event.target)) {
-    // if (popupRef.current && !popupRef.current.contains(event.target)) {
-      setAnimationClass('hide');
-      setTimeout(() => setShowPopup(false), 300); 
+    if (
+      popupRef.current &&
+      !popupRef.current.contains(event.target) &&
+      buttonRef.current &&
+      !buttonRef.current.contains(event.target)
+    ) {
+      // if (popupRef.current && !popupRef.current.contains(event.target)) {
+      setAnimationClass("hide");
+      setTimeout(() => setShowPopup(false), 300);
     }
   };
-
 
   const positionPopupToLeft = () => {
     if (buttonRef.current && popupRef.current) {
       const buttonRect = buttonRef.current.getBoundingClientRect();
-      const left = buttonRect.left - popupRef.current.offsetWidth + window.scrollX;
+      const left =
+        buttonRect.left - popupRef.current.offsetWidth + window.scrollX;
       const top = buttonRect.top + buttonRect.height + window.scrollY;
 
       setPopupStyles({
@@ -61,12 +66,12 @@ const ShareButton = ({ title, text, url }) => {
 
   useEffect(() => {
     if (showPopup) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     } else {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     }
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [showPopup]);
 
@@ -103,8 +108,11 @@ const ShareButton = ({ title, text, url }) => {
   };
 
   return (
-    <div style={{ position: "relative", display: "inline-block" }} ref={popupRef}>
-      <button onClick={handleShare} className="w-fit"  ref={buttonRef}>
+    <div
+      style={{ position: "relative", display: "inline-block" }}
+      ref={popupRef}
+    >
+      <button onClick={handleShare} className="w-fit mt-2" ref={buttonRef}>
         {theme === "dark" ? (
           <Image src={shareIcon} alt="share_Icon" width={22} height={22} />
         ) : (
@@ -128,7 +136,7 @@ const ShareButton = ({ title, text, url }) => {
           //   width: "200px",
           // }}
 
-          className= {`text-[#252948] text-sm popup ${animationClass}` }
+          className={`text-[#252948] text-sm popup ${animationClass}`}
           ref={popupRef}
         >
           <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
@@ -150,9 +158,9 @@ const ShareButton = ({ title, text, url }) => {
               >
                 Copy link
               </button> */}
-               <h1 className="text-[24px]  text-center  font-bold mb-4">
-             Share on:
-            </h1>
+              <h1 className="text-[24px]  text-center  font-bold mb-4">
+                Share on:
+              </h1>
             </li>
             <li
               style={{
@@ -178,7 +186,7 @@ const ShareButton = ({ title, text, url }) => {
               </TwitterShareButton>
               <span style={{ marginLeft: "10px" }}> X</span>
             </li>
-              <li
+            <li
               style={{
                 marginBottom: "10px",
                 display: "flex",
@@ -204,7 +212,7 @@ const ShareButton = ({ title, text, url }) => {
             </li> */}
           </ul>
         </div>
-       )} 
+      )}
     </div>
   );
 };

@@ -114,7 +114,7 @@ const BlogHomePage = ({ categories, blogs }) => {
     return (
       <button
         onClick={onClick}
-        className={`blogButtonWrapper ${isActive ? "active" : ""}`}
+        className={`blogButtonWrapper  ${isActive ? "active" : ""}`}
       >
         <div className="blogFilterButton w-[140px] h-[45px] md:h-full p-4">
           <h6 className="text-[12px] lg:text-[14px] text-nowrap font-extrabold text-white">
@@ -130,6 +130,7 @@ const BlogHomePage = ({ categories, blogs }) => {
       <div className="flex flex-wrap gap-2 justify-center mb-8">
         {categories.map((category) => (
           <BlogButton
+            className="!w-fit"
             key={category}
             label={category}
             onClick={() => handleCategoryChange(category)}

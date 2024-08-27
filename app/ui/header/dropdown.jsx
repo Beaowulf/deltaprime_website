@@ -36,7 +36,7 @@ export default function Dropdown() {
       <div className="flex flex-row">
         <button
           type="button"
-          className="flex items-center justify-center gap-2 mr-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 rounded-md md:text-[16px] text-[12px] font-medium text-nowrap"
+          className="flex items-center justify-center gap-2 mr-2 text-[#696969] hover:text-[#000000] dark:text-[#DADADA] dark:hover:text-[#fff] rounded-md md:text-[16px] text-[12px] font-medium text-nowrap"
           id="menu-button"
           aria-expanded={isOpen}
           aria-haspopup="true"
@@ -78,8 +78,8 @@ export default function Dropdown() {
             <div className="py-1 flex flex-col z-50 relative" role="none">
               <Link
                 onClick={closeDropdown}
-                href="/ourStory"
-                className="dropdownLink block px-2 py-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
+                href="/our-story"
+                className="dropdownLink block px-2 py-2 text-sm text-gray-500 text-[#696969] hover:text-[#000000] dark:text-[#DADADA] dark:hover:text-[#fff] font-medium"
                 role="menuitem"
                 id="menu-item-0"
               >
@@ -88,7 +88,7 @@ export default function Dropdown() {
               <Link
                 onClick={closeDropdown}
                 href="/tokenomics"
-                className="dropdownLink block px-2 py-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 font-medium"
+                className="dropdownLink block px-2 py-2 text-sm text-[#696969] hover:text-[#000000] dark:text-[#DADADA] dark:hover:text-[#fff] font-medium"
                 role="menuitem"
                 id="menu-item-1"
               >
@@ -114,7 +114,7 @@ export function MenuDropdown({ onClick }) {
       <div className=" flex justify-center items-center">
         <button
           type="button"
-          className="mx-auto flex flex-row justify-center items-center text-gray-800 dark:text-white dark:hover:text-gray-400 md:text-white hover:text-gray-300 px-3 py-2 rounded-md text-2xl font-semibold"
+          className="mx-auto flex flex-row justify-center items-center text-gray-800 dark:text-white text-[#6B70ED] dark:hover:text-gray-400 md:text-white hover:text-gray-300 px-3 py-2 rounded-md text-2xl font-semibold"
           onClick={toggleDropdown}
         >
           <p>About Us</p>
@@ -146,15 +146,15 @@ export function MenuDropdown({ onClick }) {
         <div className="mt-4 p-4">
           <Link
             onClick={onClick}
-            href="/ourStory"
-            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+            href="/our-story"
+            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center text-[#565AC2] dark:text-white"
           >
             <p className="text-lg">Our Story</p>
           </Link>
           <Link
             onClick={onClick}
             href="/tokenomics"
-            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center"
+            className="block px-4 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-center text-[#565AC2] dark:text-white"
           >
             <p className="text-lg">Tokenomics</p>
           </Link>

@@ -25,13 +25,13 @@ const AdvisorCard = ({
               />
             </div>
           </div>
-          <h3 className="featureSubtitle mb-4 text-[17px] sm:text-[20px]  text-[#252948] mt-5">
+          <h3 className="featureSubtitle mb-4 text-[17px] sm:text-[20px]  dark:text-[#252948] text-[#6B70ED] mt-5">
             {name}
           </h3>
-          <p className="aboutTypographyparagraphWhite text-[#252948]">
+          <p className="aboutTypographyparagraphWhite dark:text-[#252948] text-[#6B70ED]">
             {position} <span className="font-extrabold">{subPosition}</span>
           </p>
-          <p className="my-4 aboutTypographyparagraphWhite max-w-[15rem]  text-[#252948]">
+          <p className="my-4 aboutTypographyparagraphWhite max-w-[15rem]  dark:text-[#252948] text-[#565AC2]">
             {additionalInfo}
           </p>
           <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">

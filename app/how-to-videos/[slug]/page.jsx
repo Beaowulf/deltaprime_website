@@ -22,12 +22,16 @@ const HowToVideoPage = async ({ params }) => {
     <div>
       <DynamicPurpleBar
         title={video?.howToVideoTitle}
-        link={<Link href={"/howToVideos"}>How To Videos</Link>}
+        link={<Link href={"/how-to-videos"}>How To Videos</Link>}
       />
       <HowToVideoDetail
         video={video}
-        howToVideoDescriptionImage={video?.howToVideoDescriptionImage?.fields?.file?.url}
-        howToVideosBigThumbnail={video?.howToVideosBigThumbnail?.fields?.file?.url}
+        howToVideoDescriptionImage={
+          video?.howToVideoDescriptionImage?.fields?.file?.url
+        }
+        howToVideosBigThumbnail={
+          video?.howToVideosBigThumbnail?.fields?.file?.url
+        }
         howToVideosBigAlt={video?.howToVideosBigThumbnail?.fields?.title}
       />
     </div>

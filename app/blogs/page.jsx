@@ -7,7 +7,7 @@ import BlogHomePage from "./blogHomePage";
 
 const BlogsPage = async () => {
   const blogs = await fetchBlogs();
-  console.log("🚀 ~ BlogsPage ~ blogs:", blogs);
+  // console.log("🚀 ~ BlogsPage ~ blogs:", blogs);
 
   // Sort blogs by date in descending order
   const sortedBlogs = blogs.sort(

@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { BlogCardButton } from "@/app/components/buttons/mainButton";
+import "./blogCard.css";
 
 const BlogCard = ({ previewBlogImage, blogDescription, blogSlug }) => {
   return (
     <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
-      <div className="w-full h-[270px] ">
+      <div className="blogCardParent w-full h-[270px] ">
         {previewBlogImage ? (
           <img
             src={previewBlogImage}
             alt="Blog Preview"
-            className="object-cover w-full h-full rounded-[15px]"
+            className="blogCardContent object-cover w-full h-full rounded-[15px]"
           />
         ) : (
           <div className="bg-gray-300 w-full h-full rounded-[15px] flex items-center justify-center">
@@ -18,7 +19,7 @@ const BlogCard = ({ previewBlogImage, blogDescription, blogSlug }) => {
         )}
       </div>
       <p
-        className="text-[16px] leading-6 font-medium line-clamp-2 ml-1"
+        className="text-[16px] leading-6 font-medium line-clamp-2 ml-1 dark:text-white text-[#6B70ED]"
         style={{ minHeight: "calc(1.5rem * 2)" }}
       >
         {blogDescription}
@@ -38,14 +39,14 @@ export const SmallBlogCard = ({
 }) => {
   return (
     <div className="flex flex-col justify-start w-[200px] h-[230px] flex-shrink-0 gap-2">
-      <div className="w-full h-[120px] ">
+      <div className="blogCardParentSmall w-full h-[120px]">
         <img
           src={previewBlogImage}
           alt="Blog Preview"
-          className="object-cover w-full h-full rounded-[15px]"
+          className="blogCardContentSmall object-cover w-full h-full rounded-[15px]"
         />
       </div>
-      <p className="text-[12px] leading-6 font-medium line-clamp-2 ml-1">
+      <p className="text-[12px] leading-6 font-medium line-clamp-2 ml-1 dark:text-white text-[#565AC2]">
         {blogDescription}
       </p>
       <Link

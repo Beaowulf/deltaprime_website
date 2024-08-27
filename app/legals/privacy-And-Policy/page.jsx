@@ -9,7 +9,7 @@ function PrivacyandPolicy() {
     <>
       <DynamicPurpleBar title={"Privacy Policy"} />
       <div className="pb-4 pagePaddingLarge">
-        <div className="flex justify-center items-center flex-col w-auto h-full md:mt-20 mt-5">
+        <div className="flex justify-center items-center flex-col w-auto h-full md:mt-20 mt-5 dark:text-white text-[#6B70ED]">
           <p className="brightText mb-4 text-3xl md:text-[44px] mt-10">
             Privacy Policy
           </p>

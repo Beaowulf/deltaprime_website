@@ -39,17 +39,16 @@ export function MainButton({
         <h6
           className={
             typographyClass
-              ? `${typographyClass} mainButtonText text-[12px] lg:text-[14px] text-nowrap font-extrabold`
-              : " text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText"
+              ? `${typographyClass} mainButtonText text-white text-[12px] lg:text-[14px] text-nowrap font-extrabold`
+              : " text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText text-white"
           }
         >
           {label}
         </h6>
         {hasArrowRight && (
-          <Image
-            className={"size-5 arrowRightImageBtn"}
-            src={ArrowRightBlack}
-            alt={"Arrow Right"}
+          <ArrowRight
+            className="size-6 mb-[1px] arrowButton"
+            alt="Arrow Right"
           />
         )}
       </div>
@@ -193,9 +192,12 @@ export function CTAButton({
   );
 }
 
-export function BlogButton({ onClick, label }) {
+export function BlogButton({ onClick, label, fullWidth = false }) {
   return (
-    <button onClick={onClick} className="blogButtonWrapper">
+    <button
+      onClick={onClick}
+      className={`blogButtonWrapper ${fullWidth ? "w-full" : "w-fit"}`}
+    >
       <div className="blogFilterButton w-full h-[45px] md:h-full p-4">
         <h6 className="text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText">
           {label}
@@ -214,7 +216,9 @@ export function BlogCardButton({
   return (
     <button
       onClick={onClick}
-      className={`blogButtonWrapper ${fullWidth ? "w-full" : "w-fit"}`}
+      className={`blogButtonWrapper md:w-fit w-full ${
+        fullWidth ? "!w-full" : "!w-fit"
+      }`}
     >
       <div
         className={`blogButtonContent md:h-full ${

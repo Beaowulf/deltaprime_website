@@ -35,11 +35,11 @@ const OurStory = () => {
         <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:flex-row md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
-            <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
-              <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px]">
+            <div className="text-left flex flex-col gap-8">
+              <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
                 Our Story
               </p>
-              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 md:mb-10">
+              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 md:mb-10 dark:text-white text-[#565AC2]">
                 Our story begins on the foothills of Mount Etna, Europe’s
                 largest volcano. It was here that the idea of DeltaPrime was
                 born. A brand on a mission to not only reshape the future of
@@ -78,12 +78,12 @@ const OurStory = () => {
           </div>
           {/* Text Wrapper */}
           <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-end h-fit">
-            <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
-              <div className="flex flex-col items-start dark:text-white text-[#252948] mt-20 mb-10">
-                <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left">
+            <div className="text-left flex flex-col gap-8">
+              <div className="flex flex-col items-start mt-20 mb-10">
+                <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left dark:text-white text-[#6B70ED]">
                   Unlocking Trapped Liquidity
                 </h1>
-                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left">
+                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
                   That evening, chance brought three guys together. United by
                   their love for DeFi, they started talking about one of the
                   major issues in crypto; overcollateralized lending.
@@ -97,7 +97,7 @@ const OurStory = () => {
                   ecosystem and bringing to surface a range of new investment
                   strategies.
                 </p>
-                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left">
+                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
                   This later became the cornerstone of DeltaPrime's inventive
                   Diamond-Beacon Proxy (DBP) pattern, a robust and flexible
                   architecture that is infinitely scalable, resilient and
@@ -124,12 +124,12 @@ const OurStory = () => {
         <div className="flex md:flex-row flex-col justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
-            <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
-              <div className="flex flex-col items-start dark:text-white text-[#252948] mt-20 mb-10">
-                <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-left">
+            <div className="text-left flex flex-col gap-8">
+              <div className="flex flex-col items-start mt-20 mb-10">
+                <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-left dark:text-white text-[#6B70ED]">
                   Mission & Vision
                 </h1>
-                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-left">
+                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-left dark:text-white text-[#565AC2]">
                   <span className="font-extrabold">Unlocking Liquidity:</span>{" "}
                   Traditional DeFi platforms often trap billions of dollars in
                   unused liquidity. We aim to change that by allowing users to
@@ -138,7 +138,7 @@ const OurStory = () => {
                   deepens liquidity in partner protocols, enabling larger trades
                   with lower slippage.
                 </p>
-                <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-left">
+                <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-left dark:text-white text-[#565AC2]">
                   <span className="font-extrabold">Liberating Funds:</span> We
                   envision DeltaPrime becoming the central bank of DeFi,
                   offering unique leverage and investment strategies not
@@ -162,36 +162,36 @@ const OurStory = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px]">
+          <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED]">
             Unlocking Trapped Liquidity
           </h1>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6">
+          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
             DeltaPrime ensures the safety of user funds through multiple
             security audits, insurance pools, and the unique Withdrawal Guard.
             This no-oracle solution only allows withdrawals if all borrowed
             assets are available, protecting against price manipulation and
             ensuring solvency.
           </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6">
+          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
             Each user's funds are managed through Dedicated Smart Contracts
             (DSCs), providing clear on-chain accounting and effective
             anti-exploit monitoring. Our Diamond-Beacon Proxy (DBP) pattern
             ensures DeltaPrime remains resilient and secure, even in volatile
             market conditions.
           </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6">
+          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
             {`Since launching on the Avalanche network in January 2023, DeltaPrime
             has attracted over`}{" "}
             <span className="font-semibold underline">{`$${tvtDataFormated} million`}</span>{" "}
             {`  in Total Value Locked (TVL) and unlocked more than $20 million in
             liquidity. Our platform serves two main user groups:`}{" "}
           </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6">
+          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
             <span className="font-extrabold">Depositors:</span> Enjoy simplicity
             and security with features like the Withdrawal Guard, which protects
             funds against known and unknown attacks.
           </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6">
+          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
             <span className="font-extrabold">Borrowers:</span> Benefit from
             investment freedom with integrations across various DeFi protocols,
             enabling diverse and scalable investment strategies.
@@ -310,14 +310,14 @@ const OurStory = () => {
       <div className="deltaWhiteLinearBG w-full mt-40">
         <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]] px-4 py-10">
           <div className="flex justify-around flex-wrap px-4 md:px-0 ">
-            <div className="flex flex-col items-start dark:text-white text-[#252948] max-w-96 mb-8 md:mb-0">
-              <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-black leading-6">
+            <div className="flex flex-col items-start max-w-96 mb-8 md:mb-0">
+              <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-[#6B70ED] leading-6">
                 STRATEGIES
               </h4>
-              <h1 className="mb-6 aboutTypographyparagraph text-[24px] text-black">
+              <h1 className="mb-6 aboutTypographyparagraph text-[24px] !text-[#6B70ED]">
                 Do you want to learn more about strategies?
               </h1>
-              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 text-black">
+              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-[#565AC2]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -333,8 +333,9 @@ const OurStory = () => {
                     DevOps Engineer
                   </p>
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
-                    <Link href={"/jobDescription"}>
+                    <Link href={"/job-description"}>
                       <BlogCardButton
+                        fullWidth={true}
                         label={"Learn More"}
                         hasArrowRight={true}
                       />
