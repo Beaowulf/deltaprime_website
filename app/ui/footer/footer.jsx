@@ -135,12 +135,13 @@ const TermsOfUseFooter = ({ isTokenomics, isStrategies }) => {
           <Link href="/legals/terms-Of-Use" className="hover:text-gray-400 ">
             Terms of use
           </Link>
-          <Link
-            href="/legals/privacy-And-Policy"
-            className="hover:text-gray-400 "
+          <a
+            href="/pdfs/DeltaPrime-Privcy-And-Policy.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span className="mr-4">•</span>Privacy Policy
-          </Link>
+          </a>
           <Link
             href="/legals/tokenomics-Risk-Disclaimer"
             className="hover:text-gray-400 "
