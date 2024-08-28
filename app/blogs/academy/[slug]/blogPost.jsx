@@ -257,7 +257,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
               <img
                 src={`https:${heroImage}`}
                 alt="blog_Post_Image"
-                className="w-auto max-h-450px rounded-[20px]"
+                className="w-auto mx-auto max-h-450px rounded-[20px]"
               />
             </div>
             <div className="md:hidden w-full flex justify-center mt-6 gap-4">
