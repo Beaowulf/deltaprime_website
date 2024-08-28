@@ -29,7 +29,7 @@ const DarkBoxWrapper = ({ srcImg, srcImgWhite, scrURL }) => {
         >
           <Link href={scrURL} target="_blank" className="z-50">
             <Image
-              className="md:w-[200px] md:h-[65px] w-[175px] h-[85px] sm:p-0 p-4 object-contain hover:filter-none transition duration-300 ease-in-out"
+              className="md:w-[190px] md:h-[55px] w-[165px] h-[75px] sm:p-0 p-6 object-contain hover:filter-none transition duration-300 ease-in-out"
               src={isHovered ? srcImg : srcImgWhite}
               alt="aboutimg"
             />
