@@ -47,7 +47,7 @@ import GMXLogoWhite from "@/public/assets/img/intergrations/GMXLogoWhite.png";
 // import PangolinLogo from "@/public/assets/img/intergrations/pangolinLogo.svg";
 // import ParaswapLogo from "@/public/assets/img/intergrations/paraswapLogo.svg";
 // import TraderJoeLogo from "@/public/assets/img/intergrations/traderJoeLogo.png";
-import YakLogoWhite from "@/public/assets/img/intergrations/yakLogoWhite.png";
+import YakLogoWhite from "@/public/assets/img/intergrations/YakLogoWhite.png";
 
 // Carousel object for "Integration" section
 // I am not gonna update the logic if there is no ImageURLWhite use the ImageURL because this might get updated later on
