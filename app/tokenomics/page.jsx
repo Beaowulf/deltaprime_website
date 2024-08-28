@@ -252,7 +252,7 @@ const Tokenomics = () => {
           <div className="text-left flex flex-col gap-4 w-full">
             <div className="clearfix">
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-4 mb-4 w-full lg:w-1/2 hidden lg:block  ${
+                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-10 mb-4 w-full lg:w-1/2 hidden lg:block  ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
@@ -542,7 +542,7 @@ const Tokenomics = () => {
             <div className="clearfix">
               {/* image that shows on desktop only */}
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-10 mb-4 w-full lg:w-1/2 hidden lg:block ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
