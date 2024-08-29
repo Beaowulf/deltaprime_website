@@ -225,7 +225,7 @@ const DropdownMenu = ({
                 isStrategy ? "left-[-19rem]" : "left-[-25rem]"
               } top-[5rem] lg:top-[2.5rem] mt-2 lg:w-[65rem] w-[35rem] ${
                 resolvedTheme === "dark" ? "bg-[#000F38]" : "bg-[#F6F6F6]"
-              } box-border p-2 rounded-2xl shadow-lg z-[1000]`}
+              } box-border p-2 rounded-[26px] shadow-lg z-[1000]`}
             >
               <div className="p-4 flex items-center justify-between flex-wrap  ">
                 <div className="flex flex-col justify-center items-center mb-4 lg:mb-0 lg:items-start gap-5 text-white lg:pr-[5rem] max-w-[25rem] mx-auto lg:mx-0 z-10">
@@ -294,7 +294,7 @@ const DropdownMenu = ({
                   </div>
                 )}
                 {isBlog && (
-                  <div className="flex flex-wrap flex-col lg:flex-row gap-4 mx-auto">
+                  <div className="flex flex-wrap flex-col lg:flex-row gap-4 mx-auto z-50">
                     {burdLogData.map((blog, i) => (
                       <motion.div
                         key={i}

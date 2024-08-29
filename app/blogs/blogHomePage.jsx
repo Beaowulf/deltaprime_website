@@ -109,14 +109,13 @@ const BlogHomePage = ({ categories, blogs }) => {
     }, 1000);
   };
 
-  // todo go into button folder
   function BlogButton({ onClick, label, isActive }) {
     return (
       <button
         onClick={onClick}
-        className={`blogButtonWrapper  ${isActive ? "active" : ""}`}
+        className={`blogFilterButtonParent  ${isActive ? "active" : ""}`}
       >
-        <div className="blogFilterButton w-[140px] h-[45px] md:h-full p-4">
+        <div className="blogFilterButton w-[140px] h-full md:h-full p-4">
           <h6 className="text-[12px] lg:text-[14px] text-nowrap font-extrabold text-white">
             {label}
           </h6>

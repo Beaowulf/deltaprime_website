@@ -40,41 +40,57 @@ import PangolinLogo from "@/public/assets/img/intergrations/pangolinLogo.svg";
 import ParaswapLogo from "@/public/assets/img/intergrations/paraswapLogo.svg";
 import TraderJoeLogo from "@/public/assets/img/intergrations/traderJoeLogo.png";
 import YakLogo from "@/public/assets/img/intergrations/yakLogo.png";
+// White ones
+import BalancerLogoWhite from "@/public/assets/img/intergrations/balancerLogo.svg";
+import ColonyLogoWhite from "@/public/assets/img/intergrations/colonyLogoWhite.png";
+import GMXLogoWhite from "@/public/assets/img/intergrations/GMXLogoWhite.png";
+// import PangolinLogo from "@/public/assets/img/intergrations/pangolinLogo.svg";
+// import ParaswapLogo from "@/public/assets/img/intergrations/paraswapLogo.svg";
+// import TraderJoeLogo from "@/public/assets/img/intergrations/traderJoeLogo.png";
+import YakLogoWhite from "@/public/assets/img/intergrations/YakLogoWhite.png";
 
 // Carousel object for "Integration" section
+// I am not gonna update the logic if there is no ImageURLWhite use the ImageURL because this might get updated later on
 export const integrationData = [
   {
     imageUrl: BalancerLogo,
+    imageUrlWhite: BalancerLogoWhite,
     alt: "Balancer_Logo_Icon",
     link: "https://balancer.fi/",
   },
   {
     imageUrl: ColonyLogo,
+    imageUrlWhite: ColonyLogoWhite,
     alt: "Colony_Logo_Icon",
     link: "https://www.colonylab.io/",
   },
   {
     imageUrl: GMXLogo,
+    imageUrlWhite: GMXLogoWhite,
     alt: "GMX_Logo_Icon",
     link: "https://gmx.io",
   },
   {
     imageUrl: PangolinLogo,
+    imageUrlWhite: PangolinLogo,
     alt: "Pangolin_Logo_Icon",
     link: "https://www.pangolin.exchange/",
   },
   {
     imageUrl: ParaswapLogo,
+    imageUrlWhite: ParaswapLogo,
     alt: "Paraswap_Logo_Icon",
     link: "https://www.paraswap.io/",
   },
   {
     imageUrl: TraderJoeLogo,
+    imageUrlWhite: TraderJoeLogo,
     alt: "TraderJoe_Logo_Icon",
     link: "https://traderjoexyz.com/",
   },
   {
     imageUrl: YakLogo,
+    imageUrlWhite: YakLogoWhite,
     alt: "Yak_Logo_Icon",
     link: "https://yieldyak.com/avalanche/",
   },

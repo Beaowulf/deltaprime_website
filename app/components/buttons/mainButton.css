@@ -337,9 +337,10 @@
 /* Parent container with gradient border */
 .blogButtonWrapper {
   position: relative;
-  border-radius: 25px;
-  padding: 1px;
+  border-radius: 22px;
+  padding: 3px;
   overflow: hidden;
+  scale: 1.01;
 }
 
 .blogButtonWrapper:before {
@@ -349,7 +350,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 2px;
+  padding: 3.5px;
   border-radius: 25px;
   background: linear-gradient(
     0deg,

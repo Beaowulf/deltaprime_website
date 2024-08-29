@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Autoplay } from "swiper/modules";
@@ -8,8 +9,10 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { integrationData } from "@/app/components/carouselImages/getCarouselData";
 
-const DarkBoxWrapper = ({ srcImg, scrURL }) => {
+const DarkBoxWrapper = ({ srcImg, srcImgWhite, scrURL }) => {
   const { resolvedTheme } = useTheme();
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div
       className={`rounded-[20px] p-4 cursor-pointer shadow-md ${
@@ -19,11 +22,15 @@ const DarkBoxWrapper = ({ srcImg, scrURL }) => {
       }`}
     >
       <div className="dark:bg-[#1D2943] dark:hover:bg-[#1D2943] bg-[#6B70ED] hover:bg-[#A28AFF] rounded-[20px] transition ease-linear">
-        <div className="rounded-[20px] flex justify-center items-center md:px-4 md:py-2">
-          <Link href={`${scrURL}`} target="_blank" className="z-50">
+        <div
+          className="rounded-[20px] flex justify-center items-center md:px-4 md:py-2"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <Link href={scrURL} target="_blank" className="z-50">
             <Image
-              className="md:w-[200px] md:h-[65px] w-[175px] h-[85px] sm:p-0 p-4 object-contain filter grayscale hover:filter-none transition duration-300 ease-in-out"
-              src={srcImg}
+              className="md:w-[190px] md:h-[55px] w-[165px] h-[75px] sm:p-0 p-6 object-contain hover:filter-none transition duration-300 ease-in-out"
+              src={isHovered ? srcImg : srcImgWhite}
               alt="aboutimg"
             />
           </Link>
@@ -42,7 +49,7 @@ const CarouselComponent = () => {
         speed={3000}
         slidesPerView={5}
         autoplay={{
-          delay: 0,
+          delay: 11111111111111,
           disableOnInteraction: false,
         }}
         breakpoints={{
@@ -70,6 +77,7 @@ const CarouselComponent = () => {
           return (
             <SwiperSlide className="w-fit h-fit" key={index}>
               <DarkBoxWrapper
+                srcImgWhite={data.imageUrlWhite}
                 srcImg={data.imageUrl}
                 scrURL={data.link}
                 alt={data.alt}

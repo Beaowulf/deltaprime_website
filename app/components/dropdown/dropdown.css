@@ -25,10 +25,12 @@
 }
 
 .boxWrapper {
+  height: 100%;
   position: relative;
-  padding: 5px;
+  padding: 2.5px;
   overflow: hidden;
   width: 15rem;
+  border-radius: 25px;
 
   /*   
   position: relative;
@@ -45,8 +47,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 7px;
-  border-radius: 30px;
+  padding: 3px;
+  border-radius: 25px;
   background: linear-gradient(
     0deg,
     rgba(175, 175, 255, 1) 0%,
@@ -134,8 +136,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 5px;
-  border-radius: 15px;
+  padding: 3px;
+  border-radius: 25px;
   background: linear-gradient(
     0deg,
     rgba(175, 175, 255, 1) 0%,
