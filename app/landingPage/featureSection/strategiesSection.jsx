@@ -5,10 +5,10 @@ import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import strategies_burd from "@/public/assets/img/strategiesImg.png";
-import strategies_bubble_1 from "@/public/assets/img/strategiesImgBubble1.svg";
-import strategies_bubble_2 from "@/public/assets/img/strategiesImgBubble2.svg";
-import strategies_bubble_3 from "@/public/assets/img/strategiesImgBubble3.svg";
-import strategies_bubble_4 from "@/public/assets/img/strategiesImgBubble4.svg";
+import strategies_bubble_1 from "@/public/assets/img/strategies-bubble-the-carry-trader.svg";
+import strategies_bubble_2 from "@/public/assets/img/strategies-bubble-the-market-maker.svg";
+import strategies_bubble_3 from "@/public/assets/img/strategies-bubble-the-fee-collector.svg";
+import strategies_bubble_4 from "@/public/assets/img/strategies-bubble-the-risk-evader.svg";
 
 const bubble1Variants = {
   floating: {
