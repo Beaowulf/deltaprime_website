@@ -62,6 +62,7 @@ const StrategiesPage = () => {
         </div>
         <div className="w-fit md:block hidden rounded-[25px]">
           <Image
+            className="rounded-[25px]"
             src={strategiesIntroImg}
             alt="deltaprime_mascot_img rounded-[25px]"
           />
