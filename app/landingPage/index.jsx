@@ -67,7 +67,9 @@ const HomePage = async () => {
 
   // Convert preview card data to array
   const previewDataArray = Object.values(blogPreviewCardData);
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+  await delay(500); // Delay for 500 milliseconds
   const tvlData = await fetchTvlData();
   // console.log(tvlData);
 

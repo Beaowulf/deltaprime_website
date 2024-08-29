@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CTAButton } from "@/app/components/buttons/mainButton";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import { AnimatedText } from "@/app/ui/animatedText";
-import { useCryptoData } from "@/app/context/CryptoDataContext"; // Import the context
+import { useCryptoData } from "@/app/context/CryptoDataContext";
 
 const VideoPlayer = dynamic(
   () => import("@/app/components/videoPlayer/video"),
@@ -32,14 +32,14 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity }) => {
         </div>
         {/* Price pill Wrapper */}
         <div className="shadow-deltaRed dark:shadow-none rounded-[100px] bg-white flex justify-between w-full md:w-fit md:py-4 sm:px-6 py-1 px-4 gap-5 items-center mt-8 md:mt-0 z-10">
-          <div className="flex flex-col items-start w-fit">
+          <div className="flex flex-col items-centerdark:text-[#252948] text-[#6B70ED] costText w-fit h-[2.75rem]">
             <p className="blueText text-[#565AC2] pb-1 text-center sm:text-left text-nowrap">
               Protocol Deposits
             </p>
             <AnimatedText targetNumber={totalTvl} duration={2} />
           </div>
           <div className="dark:bg-[#2b203f] bg-[#CED0FF] w-[2px] h-[35px]" />
-          <div className="flex flex-col items-start w-fit pl-[0.65rem">
+          <div className="flex flex-col items-centerdark:text-[#252948] text-[#6B70ED] costText w-fit h-[2.75rem] pl-[0.65rem">
             <p className="blueText text-[#565AC2] pb-1 text-center sm:text-left text-nowrap">
               Liquidity Unlocked
             </p>
@@ -51,9 +51,8 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity }) => {
   );
 };
 
-
 const IntroSection = ({ totalTvl }) => {
-  const { totalBorrowedLiquidity } = useCryptoData(); // Use the context to get data
+  const { totalBorrowedLiquidity } = useCryptoData();
 
   return (
     <div className="pagePaddingLarge">
@@ -61,7 +60,10 @@ const IntroSection = ({ totalTvl }) => {
         {/* Top Intro Part (Text and video) */}
         <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-20 p-4 items-center">
           {/* Left side (text with pill) */}
-          <TextWithPill totalTvl={totalTvl} totalBorrowedLiquidity={totalBorrowedLiquidity} />
+          <TextWithPill
+            totalTvl={totalTvl}
+            totalBorrowedLiquidity={totalBorrowedLiquidity}
+          />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren block sm:hidden">
             <Link href="?modal=true">

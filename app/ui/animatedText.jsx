@@ -15,7 +15,6 @@ export const AnimatedText = ({ targetNumber }) => {
   useEffect(() => {
     const duration = 2;
     const start = 0;
-    const increment = (targetNumber - start) / (duration * 60);
 
     let currentValue = start;
     let startTime;

@@ -1,5 +1,11 @@
 // CryptoDataContext.js
-import React, { createContext, useContext, useEffect, useState, useMemo } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useMemo,
+} from "react";
 import { fetchCryptoData } from "@/lib/getDetailedData";
 
 const CryptoDataContext = createContext();
@@ -25,7 +31,10 @@ export const CryptoDataProvider = ({ children }) => {
     setupAprs();
   }, []);
 
-  const value = useMemo(() => ({ poolsData, totalBorrowedLiquidity, loading }), [poolsData, totalBorrowedLiquidity, loading]);
+  const value = useMemo(
+    () => ({ poolsData, totalBorrowedLiquidity, loading }),
+    [poolsData, totalBorrowedLiquidity, loading]
+  );
 
   return (
     <CryptoDataContext.Provider value={value}>
