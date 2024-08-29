@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "next-themes";
 import "./contactForm.css";
 import { ContactUsButton } from "@/app/components/buttons/mainButton";
@@ -9,9 +9,31 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
   const { resolvedTheme } = useTheme();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error("All fields are required.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: resolvedTheme === "dark" ? "dark" : "light",
+      });
+      return;
+    }
 
     const testSend = new Promise((resolve) => {
       setTimeout(() => {
@@ -39,6 +61,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
       }
     );
   };
+
   return (
     <div>
       <ToastContainer />
@@ -66,7 +89,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         </div>
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
-          <form className="w-full max-w-lg mx-auto">
+          <form className="w-full max-w-lg mx-auto" onSubmit={sendEmail}>
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
@@ -80,6 +103,8 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   id="name"
                   type="text"
                   placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
               <div className="mb-4 flex-1">
@@ -94,6 +119,8 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   id="email"
                   type="email"
                   placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -109,14 +136,12 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                 className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                 id="message"
                 placeholder="Your Message"
+                value={formData.message}
+                onChange={handleChange}
               ></textarea>
             </div>
             <div className="flex items-center justify-center">
-              <ContactUsButton
-                onClick={sendEmail}
-                label={"SUBMIT"}
-                type="submit"
-              />
+              <ContactUsButton label={"SUBMIT"} type="submit" />
             </div>
           </form>
         </div>
