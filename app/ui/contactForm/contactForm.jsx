@@ -1,12 +1,47 @@
 "use client";
 import React from "react";
+import { useTheme } from "next-themes";
 import "./contactForm.css";
 import { ContactUsButton } from "@/app/components/buttons/mainButton";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
+  const { resolvedTheme } = useTheme();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const testSend = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 2000);
+    });
+
+    toast.promise(
+      testSend,
+      {
+        pending: "Pending...",
+        success:
+          "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+        error: "Something went wrong. Please try again later.",
+      },
+      {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: resolvedTheme === "dark" ? "dark" : "light",
+      }
+    );
+  };
   return (
     <div>
+      <ToastContainer />
       {hasUnlockPotentialContainer && (
         <div className="lg:block hidden">
           <UnlockPotentialContainer />
@@ -77,7 +112,11 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
               ></textarea>
             </div>
             <div className="flex items-center justify-center">
-              <ContactUsButton label={"SUBMIT"} type="submit" />
+              <ContactUsButton
+                onClick={sendEmail}
+                label={"SUBMIT"}
+                type="submit"
+              />
             </div>
           </form>
         </div>

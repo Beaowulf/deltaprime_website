@@ -49,7 +49,7 @@ const CarouselComponent = () => {
         speed={3000}
         slidesPerView={5}
         autoplay={{
-          delay: 11111111111111,
+          delay: 0.75,
           disableOnInteraction: false,
         }}
         breakpoints={{

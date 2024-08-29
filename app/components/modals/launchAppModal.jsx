@@ -6,10 +6,21 @@ import { useSearchParams, usePathname } from "next/navigation";
 import { CTAButton } from "@/app/components/buttons/mainButton";
 import closeIconColored from "@/public/assets/icons/closeIconColored.svg";
 import Link from "next/link";
-import { useCryptoData } from "@/app/context/CryptoDataContext";  // Import the context
+import { useCryptoData } from "@/app/context/CryptoDataContext"; // Import the context
 
 const LaunchAppModal = () => {
-  const { poolsData, loading } = useCryptoData();  // Use the context to get data
+  const { poolsData, loading } = useCryptoData();
+
+  const avalancheData = poolsData.avalanche.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDT" || item.symbol === "AVAX"
+  );
+
+  const arbitrumData = poolsData.arbitrum.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDC" || item.symbol === "BTC"
+  );
+
   const searchParams = useSearchParams();
   const modal = searchParams.get("modal");
   const pathname = usePathname();
@@ -29,10 +40,14 @@ const LaunchAppModal = () => {
   return (
     <>
       {modal && (
-        <dialog className="modalP fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
-          <div className="modalParent relative z-10 w-full md:w-fit">
+        <dialog className="modalP fixed left-0 z-[300] top-0 w-full h-full bg-black bg-opacity-50  overflow-auto backdrop-blur flex justify-center items-center">
+          <div className="modalParent relative w-full md:w-fit">
             <div className="absolute top-2 right-4 pb-2 pt-10 pl-5 pr-5 w-fit h-fit text-black cursor-pointer z-50">
-              <Link className="z-100 cursor-pointer" href={pathname}>
+              <Link
+                className="z-100 cursor-pointer"
+                href={pathname}
+                scroll={false}
+              >
                 <Image
                   src={closeIconColored}
                   width={20}
@@ -61,7 +76,7 @@ const LaunchAppModal = () => {
                           {loading ? (
                             <div className="loader"></div>
                           ) : (
-                            poolsData.arbitrum.map((pool, index) => (
+                            arbitrumData.map((pool, index) => (
                               <p
                                 className="dark:text-blue-950 text-blue-950 font-medium text-[14px]"
                                 key={index}
@@ -78,7 +93,7 @@ const LaunchAppModal = () => {
                           {loading ? (
                             <div className="loader"></div>
                           ) : (
-                            poolsData.avalanche.map((pool, index) => (
+                            avalancheData.map((pool, index) => (
                               <p
                                 className="dark:text-blue-950 text-blue-950 font-medium text-[14px]"
                                 key={index}

@@ -46,7 +46,7 @@ const OurStory = () => {
                 DeFI, but forge it in the fires of innovation and resilience.
               </p>
               <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden w-full text-left">
-                <Link href="?modal=true">
+                <Link href="?modal=true" scroll={false}>
                   <CTAButton
                     className="w-[100%] md:w-fit px-8 py-4"
                     label="LAUNCH APP"
@@ -111,7 +111,7 @@ const OurStory = () => {
           <UnlockPotentialContainer />
         </div>
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
-          <Link href="?modal=true">
+          <Link href="?modal=true" scroll={false}>
             <CTAButton
               className="mx-auto px-8 py-4"
               label="LAUNCH APP"
@@ -202,7 +202,7 @@ const OurStory = () => {
           <UnlockPotentialContainer />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
-            <Link href="?modal=true">
+            <Link href="?modal=true" scroll={false}>
               <CTAButton
                 className="mx-auto px-8 py-4"
                 label="LAUNCH APP"
@@ -216,7 +216,6 @@ const OurStory = () => {
         {/* team */}
         <div className="mt-40">
           <Header
-            title={"Our Story"}
             subTitle={"The Founders"}
             paragraph={
               "DeltaPrime was born from the minds of three visionaries, each bringing their own unique set of skills and experiences:"
@@ -254,7 +253,7 @@ const OurStory = () => {
           <UnlockPotentialContainer />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
-            <Link href="?modal=true">
+            <Link href="?modal=true" scroll={false}>
               <CTAButton
                 className="mx-auto px-8 py-4"
                 label="LAUNCH APP"
@@ -267,7 +266,6 @@ const OurStory = () => {
         {/* advisors */}
         <div className="mt-40">
           <Header
-            title={"Our Story"}
             subTitle={"Our Advisors"}
             paragraph={
               "DeltaPrime's advisors are DeFi veterans and help ensure the platform's strategic development and success"
@@ -318,10 +316,10 @@ const OurStory = () => {
                 Do you want to learn more about strategies?
               </h1>
               <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-[#565AC2]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Delta Prime is looking for a highly talented Business
+                Development Manager, to join our expanding team. The successful
+                candidate will have a sales background, preferably in payments,
+                be highly ambitious and motivated.
               </p>
             </div>
             {/* three rows */}

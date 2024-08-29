@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import "./mainButton.css";
 import Image from "next/image";
 import { useTheme } from "next-themes";
@@ -208,12 +209,37 @@ export function BlogButton({ onClick, label, fullWidth = false }) {
 }
 
 export function BlogCardButton({
+  isLink = false,
+  href = "/",
   onClick,
   label,
   isSmallbtn,
   fullWidth = false,
 }) {
-  return (
+  return isLink ? (
+    <Link href={href}>
+      <button
+        onClick={onClick}
+        className={`blogButtonWrapper md:w-fit w-full ${
+          fullWidth ? "!w-full" : "!w-fit"
+        }`}
+      >
+        <div
+          className={`blogButtonContent md:h-full ${
+            isSmallbtn ? "px-3 py-2" : "px-4 py-3"
+          }`}
+        >
+          <h6
+            className={`${
+              isSmallbtn ? "text-[12px]" : "text-[12px] lg:text-[14px]"
+            } text-nowrap font-extrabold blogCardText`}
+          >
+            {label}
+          </h6>
+        </div>
+      </button>
+    </Link>
+  ) : (
     <button
       onClick={onClick}
       className={`blogButtonWrapper md:w-fit w-full ${

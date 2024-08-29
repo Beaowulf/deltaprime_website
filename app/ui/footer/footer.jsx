@@ -21,7 +21,7 @@ const LogoButton = () => {
       <div className="w-full flex justify-center">
         {/* Show this button only on mobile */}
         <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
-          <Link href="?modal=true">
+          <Link href="?modal=true" scroll={false}>
             <CTAButton
               className="mx-auto px-8 py-4"
               label="LAUNCH APP"
@@ -32,7 +32,7 @@ const LogoButton = () => {
         </div>
         {/* Show this button only on mobile */}
         <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
-          <Link href="?modal=true">
+          <Link href="?modal=true" scroll={false}>
             <CTAButton
               className="mx-auto px-8 py-4"
               label="LAUNCH APP"
@@ -60,7 +60,7 @@ export function FooterTextLinks() {
           >
             Strategies
           </Link>
-          <Link href="/burd-log" className="block hover:text-gray-400 text-sm">
+          <Link href="/blogs" className="block hover:text-gray-400 text-sm">
             Burd Log
           </Link>
           <Link
@@ -73,7 +73,10 @@ export function FooterTextLinks() {
         <div className="block md:hidden my-10 footerTextLinksVerticalLine"></div>
         <div className="hidden md:block mx-0 md:mx-16 footerTextLinksLine"></div>
         <div className="space-y-4 md:text-start flex flex-col justify-center items-center md:items-start">
-          <Link href="/" className="block hover:text-gray-400 text-sm">
+          <Link
+            href="/job-description"
+            className="block hover:text-gray-400 text-sm"
+          >
             Careers
           </Link>
           <Link
@@ -95,7 +98,6 @@ export function FooterTextLinks() {
             Glossary
           </Link>
         </div>
-        <div className="block md:hidden my-10 footerTextLinksVerticalLine"></div>
       </div>
     </div>
   );
@@ -103,19 +105,19 @@ export function FooterTextLinks() {
 
 export function RoundButtonLinks({ hasText = true }) {
   return (
-    <div className="flex flex-col gap-4 text-white items-center md:items-start z-50">
+    <div className="flex flex-col gap-4 text-white items-center md:items-start">
       {hasText && <p className="hover:text-gray-400">Follow us</p>}
       <div className="flex flex-row gap-4">
-        <Link href="https://discord.com/invite/9bwsnsHEzD">
+        <Link href="https://discord.com/invite/9bwsnsHEzD" target="_blank">
           <Image src={discordIcon} alt="discord-round_logo" />
         </Link>
-        <Link href="https://x.com/DeltaPrimeDefi">
+        <Link href="https://x.com/DeltaPrimeDefi" target="_blank">
           <Image src={xIcon} alt="x-round_logo" />
         </Link>
-        <Link href="/vector/link">
+        <Link href="https://medium.com/@Delta_Prime" target="_blank">
           <Image src={vectorIcon} alt="vector-round_logo" />
         </Link>
-        <Link href="https://github.com/DeltaPrimeLabs">
+        <Link href="https://github.com/DeltaPrimeLabs" target="_blank">
           <Image src={githubIcon} alt="github-round_logo" />
         </Link>
       </div>

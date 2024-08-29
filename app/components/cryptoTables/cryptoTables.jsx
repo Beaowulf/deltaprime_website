@@ -10,6 +10,18 @@ import { useCryptoData } from "@/app/context/CryptoDataContext";
 const CryptoPreviewTables = () => {
   const { poolsData, loading } = useCryptoData();
 
+  // Extract data from 'avalanche'
+  const avalancheData = poolsData.avalanche.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDT" || item.symbol === "AVAX"
+  );
+
+  // Extract data from 'arbitrum'
+  const arbitrumData = poolsData.arbitrum.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDC" || item.symbol === "BTC"
+  );
+
   return (
     <div className="flex flex-col gap-10 ">
       {/* 1 box */}
@@ -43,7 +55,7 @@ const CryptoPreviewTables = () => {
             <div className="loader"></div>
           ) : (
             <div>
-              {poolsData.avalanche.map((pool) => (
+              {avalancheData.map((pool) => (
                 <React.Fragment key={pool.symbol}>
                   <div className="flex flex-row justify-between px-4">
                     <div>
@@ -109,7 +121,7 @@ const CryptoPreviewTables = () => {
             <div className="loader"></div>
           ) : (
             <div>
-              {poolsData.arbitrum.map((pool) => (
+              {arbitrumData.map((pool) => (
                 <React.Fragment key={pool.symbol}>
                   <div className="flex flex-row justify-between px-4">
                     <div>
@@ -151,6 +163,19 @@ export default CryptoPreviewTables;
 
 export const CryptoLandingPageTables = () => {
   const { poolsData, loading } = useCryptoData();
+
+  // Extract data from 'avalanche'
+  const avalancheData = poolsData.avalanche.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDT" || item.symbol === "AVAX"
+  );
+
+  // Extract data from 'arbitrum'
+  const arbitrumData = poolsData.arbitrum.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDC" || item.symbol === "BTC"
+  );
+
   return (
     <div className="w-full h-full">
       <div className="flex justify-end items-end w-full">
@@ -185,7 +210,7 @@ export const CryptoLandingPageTables = () => {
                 <div className="loader"></div>
               ) : (
                 <div>
-                  {poolsData.arbitrum.map((pool) => (
+                  {arbitrumData.map((pool) => (
                     <React.Fragment key={pool.symbol}>
                       <div className="flex flex-row justify-between px-4">
                         <div>
@@ -251,7 +276,7 @@ export const CryptoLandingPageTables = () => {
                 <div className="loader"></div>
               ) : (
                 <div>
-                  {poolsData.avalanche.map((pool) => (
+                  {avalancheData.map((pool) => (
                     <React.Fragment key={pool.symbol}>
                       <div className="flex flex-row justify-between px-4">
                         <div>

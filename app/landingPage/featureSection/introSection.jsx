@@ -31,15 +31,15 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity }) => {
           </p>
         </div>
         {/* Price pill Wrapper */}
-        <div className="shadow-deltaRed dark:shadow-none rounded-[100px] bg-white flex justify-between w-full md:w-fit md:py-4 sm:px-6 py-1 px-4 gap-5 items-center mt-8 md:mt-0 z-10">
-          <div className="flex flex-col items-centerdark:text-[#252948] text-[#6B70ED] costText w-fit h-[2.75rem]">
+        <div className="shadow-deltaRed dark:shadow-none rounded-[100px] bg-white flex justify-between w-full md:w-fit md:py-4 sm:px-7 py-1 px-5 gap-5 items-center mt-8 md:mt-0 z-10">
+          <div className="flex flex-col items-center dark:text-[#252948] text-[#6B70ED] costText w-fit h-[2.75rem]">
             <p className="blueText text-[#565AC2] pb-1 text-center sm:text-left text-nowrap">
               Protocol Deposits
             </p>
             <AnimatedText targetNumber={totalTvl} duration={2} />
           </div>
           <div className="dark:bg-[#2b203f] bg-[#CED0FF] w-[2px] h-[35px]" />
-          <div className="flex flex-col items-centerdark:text-[#252948] text-[#6B70ED] costText w-fit h-[2.75rem] pl-[0.65rem">
+          <div className="flex flex-col items-center dark:text-[#252948] text-[#6B70ED] costText w-fit h-[2.75rem] pl-[0.65rem">
             <p className="blueText text-[#565AC2] pb-1 text-center sm:text-left text-nowrap">
               Liquidity Unlocked
             </p>
@@ -66,7 +66,7 @@ const IntroSection = ({ totalTvl }) => {
           />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren block sm:hidden">
-            <Link href="?modal=true">
+            <Link href="?modal=true" scroll={false}>
               <CTAButton
                 label="LAUNCH APP"
                 hasArrowRight={true}

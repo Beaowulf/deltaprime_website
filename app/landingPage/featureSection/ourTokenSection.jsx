@@ -52,6 +52,7 @@ function OurTokenSection() {
               </p>
               <div className="mt-auto">
                 <BlogCardButton
+                  isLink={true}
                   className="w-full sm:w-fit"
                   typographyClass="md:mx-auto"
                   hasArrowRight={true}
@@ -96,6 +97,7 @@ function OurTokenSection() {
               </p>
               <div className="mt-auto">
                 <BlogCardButton
+                  isLink={true}
                   className="w-full sm:w-fit"
                   typographyClass="md:mx-auto"
                   hasArrowRight={true}

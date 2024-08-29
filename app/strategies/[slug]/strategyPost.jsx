@@ -50,7 +50,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
                 {strategy.strategyDescription}
               </p>
               <div className="w-full md:block hidden">
-                <Link href="?modal=true">
+                <Link href="?modal=true" scroll={false}>
                   <CTAButton
                     className="w-[100%] md:w-fit px-8 py-4"
                     label="LAUNCH APP"
@@ -61,7 +61,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
               </div>
               {/* Show this button only on mobile */}
               <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
-                <Link href="?modal=true">
+                <Link href="?modal=true" scroll={false}>
                   <CTAButton
                     className="mx-auto px-8 py-4"
                     label="LAUNCH APP"
@@ -128,7 +128,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
               {strategy.strategyDescription}
             </p>
             <div className="w-full md:block hidden">
-              <Link href="?modal=true">
+              <Link href="?modal=true" scroll={false}>
                 <CTAButton
                   className="w-[100%] md:w-fit px-8 py-4"
                   label="LAUNCH APP"
@@ -139,7 +139,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
             </div>
             {/* Show this button only on mobile */}
             <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
-              <Link href="?modal=true">
+              <Link href="?modal=true" scroll={false}>
                 <CTAButton
                   className="mx-auto px-8 py-4"
                   label="LAUNCH APP"

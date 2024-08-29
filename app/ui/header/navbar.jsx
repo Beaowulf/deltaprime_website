@@ -101,13 +101,13 @@ function Nav() {
           </div>
 
           <div className="hidden md:flex items-center">
-            <Link href="?modal=true">
+            <Link href="?modal=true" scroll={false}>
               <CTAButton hasArrowRight={false} label={"Launch app"} />
             </Link>
           </div>
 
           <div className="-mr-2 flex md:hidden items-center gap-4">
-            <Link href="?modal=true">
+            <Link href="?modal=true" scroll={false}>
               <CTAButton
                 hasArrowRight={false}
                 label={"Launch app"}

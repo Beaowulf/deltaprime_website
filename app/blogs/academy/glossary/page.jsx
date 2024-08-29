@@ -62,8 +62,8 @@ const Glossary = () => {
       <div className="text-center w-full">
         <h4 className="brightText">Glossary</h4>
         <p className="dark:text-white text-black text-[16px] max-w-[30rem] mx-auto mt-4">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur.
+          Explore our Glossary for quick definitions and explanations of key
+          terms. Use the search or browse alphabetically to find what you need.
         </p>
       </div>
 

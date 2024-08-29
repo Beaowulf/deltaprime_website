@@ -201,8 +201,8 @@ body {
   pointer-events: none;
   background-blend-mode: overlay;
 }
-.parentColoredBorderWrapper{
-    /* Border Radius */
+.parentColoredBorderWrapper {
+  /* Border Radius */
   padding: 2px;
   /* Border Radius */
   border-radius: 20px;
@@ -262,19 +262,19 @@ body {
     0deg,
     rgba(255, 187, 155, 1) 0%,
     rgba(255, 143, 184, 1) 50%,
-    rgba(175, 175, 255, 1) 100%    
+    rgba(175, 175, 255, 1) 100%
   );
   background: -webkit-linear-gradient(
     0deg,
     rgba(255, 187, 155, 1) 0%,
     rgba(255, 143, 184, 1) 50%,
-    rgba(175, 175, 255, 1) 100%    
+    rgba(175, 175, 255, 1) 100%
   );
   background: linear-gradient(
     0deg,
     rgba(255, 187, 155, 1) 0%,
     rgba(255, 143, 184, 1) 50%,
-    rgba(175, 175, 255, 1) 100%    
+    rgba(175, 175, 255, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
 }
@@ -793,4 +793,9 @@ body {
 }
 .deltaWhiteLinearBG {
   background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
+}
+
+.Toastify__close-button > svg {
+  height: 20px !important;
+  width: 50px !important;
 }

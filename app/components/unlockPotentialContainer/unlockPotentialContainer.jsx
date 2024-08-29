@@ -26,7 +26,7 @@ const UnlockPotentialContainer = ({ hasMarginTop = true }) => {
           <h5 className="md:text-[25px] 2xl:text-[30px] unlockPotentialTypography">
             Unlock the full potential of your capital
           </h5>
-          <Link href="?modal=true">
+          <Link href="?modal=true" scroll={false}>
             <CTAButton
               onClick={openModal}
               label="LAUNCH APP"

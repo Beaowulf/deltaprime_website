@@ -301,7 +301,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
               />
             </div>
             <div className="fullWidthButtonChildren h-[60px] mt-12 md:h-full block md:hidden w-full text-center">
-              <Link href="?modal=true">
+              <Link href="?modal=true" scroll={false}>
                 <CTAButton
                   className="mx-auto w-full p-4"
                   label="LAUNCH APP"

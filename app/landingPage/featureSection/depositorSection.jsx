@@ -173,7 +173,7 @@ const FeaturePrimeAccount = () => {
       </div>
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
-        <Link href="?modal=true">
+        <Link href="?modal=true" scroll={false}>
           <CTAButton
             className="mx-auto px-8 py-4"
             label="LAUNCH APP"
@@ -184,7 +184,7 @@ const FeaturePrimeAccount = () => {
       </div>
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
-        <Link href="?modal=true">
+        <Link href="?modal=true" scroll={false}>
           <CTAButton
             className="mx-auto px-8 py-4"
             label="LAUNCH APP"

@@ -2,7 +2,7 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import HorizontalPage from "@/app/ui/horizontalPage";
-import { CryptoDataProvider } from "@/app/context/CryptoDataContext";  // Update this import path based on where you place the file
+import { CryptoDataProvider } from "@/app/context/CryptoDataContext"; // Update this import path based on where you place the file
 
 const AppContent = ({ children }) => {
   const { resolvedTheme } = useTheme();

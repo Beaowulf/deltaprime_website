@@ -4,9 +4,7 @@ import React, { useState, useEffect } from "react";
 import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar";
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import { MainButton } from "@/app/components/buttons/mainButton";
-import Link from "next/link";
 import "./jobDescription.css";
-import { RoundButtonLinks } from "@/app/ui/footer/footer";
 import ShareButton from "@/app/components/shareButton/shareButton";
 
 function JobDescription() {
@@ -101,21 +99,16 @@ function JobDescription() {
 
         {/* Right Side */}
         <div className="rounded-2xl descriptionWrapper w-2/3 h-full flex flex-col items-center lg:w-2/3 lg:h-full gap-3 text-center !p-[40px]">
-          <Link href="/">
-            <MainButton
-              className="mx-auto w-full p-4 text-black"
-              label="APPLY FOR THIS JOB"
-            />
-          </Link>
+          <MainButton
+            className="mx-auto p-4 text-black"
+            label="APPLY FOR THIS JOB"
+          />
           <p className="text-xs font-normal pt-3">Share this job on socials</p>
-          <RoundButtonLinks hasText={false} />
-          <div className="z-50">
-            <ShareButton
-              title={"Job Description"}
-              text={"Business Manager"}
-              url={currentURL}
-            />
-          </div>
+          <ShareButton
+            title={"Job Description"}
+            text={"Business Manager"}
+            url={currentURL}
+          />
           <div className="pt-3">
             <p className="text-base font-bold">Location</p>
             <p className="">Remote</p>

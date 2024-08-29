@@ -53,7 +53,7 @@ const DropDownBlogLoader = ({ pathname, resolvedTheme, getLinkClass }) => {
       <DropdownMenu
         boxTitle={"Latest Posts"}
         boxText={
-          "Duis aute irure dolor in reprehenderit  in voluptate velit esse cillum dolore eu  fugiat nulla pariatur."
+          "Tireless Burd talks about all things DeFi. News, Guides, Infographics and more help you deepen your knowledge and stay up-to-date."
         }
         burdLogData={blogsWithReadTime}
         menuText={"Burd Log"}
