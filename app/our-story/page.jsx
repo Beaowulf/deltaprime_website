@@ -45,16 +45,6 @@ const OurStory = () => {
                 born. A brand on a mission to not only reshape the future of
                 DeFI, but forge it in the fires of innovation and resilience.
               </p>
-              <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden w-full text-left">
-                <Link href="?modal=true" scroll={false}>
-                  <CTAButton
-                    className="w-[100%] md:w-fit px-8 py-4"
-                    label="LAUNCH APP"
-                    hasArrowRight={true}
-                    typographyClass="text-[15px]"
-                  />
-                </Link>
-              </div>
             </div>
           </div>
           {/* Image */}

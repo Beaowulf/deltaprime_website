@@ -63,8 +63,8 @@ function AboutSection() {
         </p>
         <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
           <BlogCardButton
+            fullWidth={true}
             isLink={true}
-            className="w-full sm:w-fit"
             typographyClass="md:mx-auto"
             hasArrowRight={true}
             label={"LEARN MORE"}

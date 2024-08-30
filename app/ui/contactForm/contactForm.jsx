@@ -51,7 +51,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
       },
       {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 6000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
