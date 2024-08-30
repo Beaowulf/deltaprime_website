@@ -19,13 +19,21 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("All fields are required.", {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -35,9 +43,10 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
       return;
     }
 
-    const testSend = new Promise((resolve) => {
+    const testSend = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve();
+        // If there's an error, you can call reject() here instead
       }, 2000);
     });
 
@@ -45,8 +54,11 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
       testSend,
       {
         pending: "Pending...",
-        success:
-          "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+        success: {
+          render:
+            "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+          onClose: resetForm(),
+        },
         error: "Something went wrong. Please try again later.",
       },
       {
