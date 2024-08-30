@@ -6,7 +6,7 @@ const IntergrationsSection = () => {
   return (
     <div className="md:mt-32 md:mb-28 mt-12 mb-0">
       <Header
-        subTitle="Intergrations"
+        subTitle="Integrations"
         paragraph="We love our partners! Our integrations provide our community novel ways of actioning strategies and unlocking trapped liquidity throughout our integrated ecosystems.
 "
       />
