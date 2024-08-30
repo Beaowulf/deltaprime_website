@@ -14,6 +14,8 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "Delta Prime",
   description: "Delta Prime Web App",
+  name: "robots",
+  content: "noindex,nofollow",
 };
 
 export default function RootLayout({ children }) {
