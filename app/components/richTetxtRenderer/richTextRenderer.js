@@ -119,8 +119,18 @@ const RichTextRenderer = ({
         const { buttonText, url } = node.data.target.fields;
         return <CustomButton buttonText={buttonText} url={url} />;
       },
-      [INLINES.HYPERLINK]: (node) => {
-        return <p className="dark:text-white text-[#565AC2]">Link</p>;
+      [INLINES.HYPERLINK]: (node, children) => {
+        const { uri } = node.data; // Extract the URI from the node data
+        return (
+          <a
+            href={uri}
+            className="dark:text-white text-[#565AC2] underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {children}
+          </a>
+        );
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
         const text = node.content[0]?.value;
