@@ -26,7 +26,6 @@ const StrategyDetail = ({ strategy, strategies }) => {
   const strategyHeroImage =
     "https:" + strategy.strategyHeroImage.fields.file.url;
 
-  // console.log(strategyHeroImage);
   return (
     // Top page
     <div className="px-4 sm:px-0">

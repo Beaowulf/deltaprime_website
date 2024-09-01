@@ -57,7 +57,7 @@ const LaunchAppModal = () => {
               </Link>
             </div>
             <div className="w-full h-screen md:h-auto md:w-fit justify-center bg-[#f4f4ff] flex flex-col py-20 px-4 md:px-14 rounded-[25px] shadowModal">
-              <h4 className="leading-5 text-[32px] text-[#252948] text-center font-medium mb-10">
+              <h4 className="leading-5 text-[32px] text-[#6B70ED] text-center font-medium mb-10">
                 Launch your App
               </h4>
               <div className="flex flex-col md:flex-row justify-center gap-4 md:mt-8 mx-0 items-center">
@@ -78,7 +78,7 @@ const LaunchAppModal = () => {
                           ) : (
                             arbitrumData.map((pool, index) => (
                               <p
-                                className="dark:text-blue-950 text-blue-950 font-medium text-[14px]"
+                                className="text-[#565AC2] font-medium text-[14px]"
                                 key={index}
                               >
                                 {pool.symbol} {pool.apy.toFixed(1)}%
@@ -95,7 +95,7 @@ const LaunchAppModal = () => {
                           ) : (
                             avalancheData.map((pool, index) => (
                               <p
-                                className="dark:text-blue-950 text-blue-950 font-medium text-[14px]"
+                                className="text-[#565AC2] font-medium text-[14px]"
                                 key={index}
                               >
                                 {pool.symbol} {pool.apy.toFixed(1)}%
@@ -119,7 +119,7 @@ const LaunchAppModal = () => {
                   </div>
                 </div>
                 <div className="w-full md:w-fit flex place-items-center">
-                  <p className="text-[#252948] font-medium text-[32px] mx-auto md:m-0">
+                  <p className="text-[#6B70ED] font-medium text-[32px] mx-auto md:m-0">
                     OR
                   </p>
                 </div>
@@ -136,13 +136,13 @@ const LaunchAppModal = () => {
                       <div className="flex gap-4 items-start justify-center mx-4">
                         <div className="mt-4 max-w-[200px]">
                           <ul>
-                            <li className="dark:text-blue-950 text-blue-950 font-medium text-[14px]">
+                            <li className="text-[#565AC2] font-medium text-[14px]">
                               <span>•</span> Borrow up to 5x
                             </li>
-                            <li className="dark:text-blue-950 text-blue-950 font-medium text-[14px]">
+                            <li className="text-[#565AC2] font-medium text-[14px]">
                               <span>•</span> Create your strategy
                             </li>
-                            <li className="dark:text-blue-950 text-blue-950 font-medium text-[14px]">
+                            <li className="text-[#565AC2] font-medium text-[14px]">
                               <span>•</span> With the best of DeFi
                             </li>
                           </ul>

@@ -11,7 +11,7 @@ import Logo_atomica from "@/public/assets/icons/Logo_atomica.svg";
 const DarkBoxWrapper = ({ aboutimg, alt }) => {
   return (
     <div className="rounded-[20px] p-4 parentColoredBorderWrapper">
-      <div className="securitySection bg-[#1B153C] rounded-[20px] ">
+      <div className="securitySection dark:bg-[#1D2943] dark:hover:bg-[#1D2943] bg-[#6B70ED] hover:bg-[#A28AFF] rounded-[20px] ">
         <div className="rounded-[20px] h-full w-full flex place-items-center">
           <Image src={aboutimg} alt={alt} />
         </div>

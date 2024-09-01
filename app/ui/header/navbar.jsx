@@ -13,9 +13,9 @@ import {
 import ThemeSwitch from "@/app/components/themeToggler/themeToggler";
 import { NavBarButton, CTAButton } from "@/app/components/buttons/mainButton";
 import hamburgerIconWhite from "@/public/assets/icons/hamburgerIconWhite.svg";
-import hamburgerIconBlack from "@/public/assets/icons/hamburgerIconBlack.svg";
-import closeIconBlack from "@/public/assets/icons/closeIconBlack.svg";
+import hamburgerIconPurple from "@/public/assets/icons/hamburgerIconPurple.svg";
 import closeIconWhite from "@/public/assets/icons/closeIconWhite.svg";
+import closeIconPurple from "@/public/assets/icons/closeIconPurple.svg";
 import { getLinkClass } from "@/lib/getLinkClass";
 import DropDownStrategyLoader from "@/app/ui/strategyLoader";
 import DropDownBlogLoader from "@/app/ui/burdLogLoader";
@@ -133,7 +133,7 @@ function Nav() {
                 />
               ) : (
                 <Image
-                  src={hamburgerIconBlack}
+                  src={hamburgerIconPurple}
                   alt="menu_icon"
                   width={30}
                   height={30}
@@ -161,7 +161,7 @@ function Nav() {
             id="mobile-menu"
           >
             <div className="w-full flex flex-col relative h-full">
-              <div className="p-4 flex justify-between items-center">
+              <div className="px-4 pb-4 flex justify-between items-center">
                 <div className="flex justify-center items-center gap-8">
                   <MobileMenuLogo />
                 </div>
@@ -174,7 +174,7 @@ function Nav() {
                       src={
                         resolvedTheme === "dark"
                           ? closeIconWhite
-                          : closeIconBlack
+                          : closeIconPurple
                       }
                       alt="close_menu_icon"
                       width={20}
@@ -184,7 +184,7 @@ function Nav() {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center items-center gap-10 h-full">
+              <div className="flex flex-col justify-center items-center gap-10 h-full pb-[2rem]">
                 <Link
                   href="/blogs"
                   className="text-gray-800 dark:text-white text-[#6B70ED] dark:hover:text-gray-400 hover:text-gray-300 block px-3 py-2 rounded-md text-2xl font-semibold"
