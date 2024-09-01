@@ -134,6 +134,15 @@ const RichTextRenderer = ({
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
         const text = node.content[0]?.value;
+
+        // Function to handle text replacements for custom markers like \s
+        const handleCustomSpacing = (inputText) => {
+          // Replace all occurrences of "\s" with "&nbsp;" (for single space) or "&emsp;" (for tab-like space)
+          return inputText.replace(/\\s/g, "&nbsp;"); // Replace \s with non-breaking space
+          // return inputText.replace(/\\s/g, "&emsp;"); // Uncomment to use em space instead
+        };
+        const processedText = handleCustomSpacing(text);
+
         if (text.includes("{{inline_Takeaways}}") && hasTakeaways) {
           return (
             <div className="my-10 p-2">
@@ -169,24 +178,24 @@ const RichTextRenderer = ({
               <p className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-center">
                 Terms of Use
               </p>
-              <p className="text-[20px] font-medium md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1">
+              <p className="text-[20px] font-medium md:leading-6 max-w-xl text-center md:px-0 px-1 pb-1">
                 Important information
               </p>
             </div>
           );
         }
 
-        if (text.includes("{{Terms_Of_Use_Title}}")) {
+        if (text.includes("{{privacy_and_policy_title}}")) {
           return (
-            <div className="flex justify-center flex-col items-center dark:text-white text-[#6B70ED]">
-              <p className="mb-8 featureSubtitle md:text-[30px] text-[22px] text-center">
-                Delta Prime
+            <div className="py-6 flex justify-center flex-col items-center dark:text-white text-[#6B70ED]">
+              <p className="mb-8 md:text-[24px] text-[18px] text-center font-semibold">
+                Prime Labs Distributed Ltd.
               </p>
-              <p className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-center">
-                Risk Disclosure
+              <p className="mb-8 md:text-[24px] text-[18px] text-center font-semibold">
+                Intershore Chambers, P.O. Box 4342,
               </p>
-              <p className="text-[20px] font-medium md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1">
-                Important information
+              <p className="md:text-[24px] text-[18px] font-semibold md:leading-6 max-w-xl text-center md:px-0 px-1 pb-1">
+                Road Town, Tortola, British Virgin Islands
               </p>
             </div>
           );

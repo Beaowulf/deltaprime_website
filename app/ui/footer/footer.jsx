@@ -138,7 +138,7 @@ const TermsOfUseFooter = ({ isTokenomics, isStrategies }) => {
             Terms of use
           </Link>
           <a
-            href="/pdfs/DeltaPrime-Privcy-And-Policy.pdf"
+            href="/legals/Privcy-And-Policy"
             target="_blank"
             rel="noopener noreferrer"
           >
