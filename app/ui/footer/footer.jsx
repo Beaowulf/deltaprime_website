@@ -138,7 +138,7 @@ const TermsOfUseFooter = ({ isTokenomics, isStrategies }) => {
             Terms of use
           </Link>
           <a
-            href="/legals/Privcy-And-Policy"
+            href="/legals/privcy-And-Policy"
             target="_blank"
             rel="noopener noreferrer"
           >
