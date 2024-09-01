@@ -71,6 +71,19 @@ const RichTextRenderer = ({
           </h3>
         );
       },
+      [BLOCKS.HEADING_2]: (node, children) => {
+        const text = extractTextFromChildren(children);
+        const id = sanitizeId(text);
+        if (onHeadingRender) onHeadingRender(id, text);
+        return (
+          <h2
+            id={id}
+            className="text-lg font-bold my-4 dark:text-white text-[#6B70ED]"
+          >
+            {children}
+          </h2>
+        );
+      },
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <p className="my-4 dark:text-white text-[#565AC2]">{children}</p>
       ),
