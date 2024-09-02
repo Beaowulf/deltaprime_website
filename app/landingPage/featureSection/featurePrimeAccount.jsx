@@ -207,7 +207,7 @@ const FeaturePrimeAccountSection = () => {
       <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
         <Link href="?modal=true" scroll={false}>
           <CTAButton
-            className="mx-auto px-8 py-4"
+            className="mx-auto px-6 py-3"
             label="LAUNCH APP"
             hasArrowRight={true}
             typographyClass="text-[15px]"
@@ -218,7 +218,7 @@ const FeaturePrimeAccountSection = () => {
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
         <Link href="?modal=true" scroll={false}>
           <CTAButton
-            className="mx-auto px-8 py-4"
+            className="mx-auto px-6 py-3"
             label="LAUNCH APP"
             hasArrowRight={true}
             typographyClass="text-[15px]"

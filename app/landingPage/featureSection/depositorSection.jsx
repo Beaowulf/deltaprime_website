@@ -44,7 +44,7 @@ const FeaturePrimeAccount = () => {
             } z-10 md:w-8/12 w-full`}
           >
             <div
-              className={`flex md:flex-row flex-col justify-between items-end rounded-[25px] h-full px-4 md:pt-8 md:pl-10 z-20  overflow-hidden ${
+              className={`flex md:flex-row flex-col justify-between items-end rounded-[25px] h-full p-4 md:py-6 md:pl-10 z-20  overflow-hidden ${
                 theme === "dark" ? "bg-[#252948]" : "bg-deltaWhiteLinearBG"
               }`}
             >
@@ -175,7 +175,7 @@ const FeaturePrimeAccount = () => {
       <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
         <Link href="?modal=true" scroll={false}>
           <CTAButton
-            className="mx-auto px-8 py-4"
+            className="mx-auto px-6 py-3"
             label="LAUNCH APP"
             hasArrowRight={true}
             typographyClass="text-[15px]"
@@ -186,7 +186,7 @@ const FeaturePrimeAccount = () => {
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
         <Link href="?modal=true" scroll={false}>
           <CTAButton
-            className="mx-auto px-8 py-4"
+            className="mx-auto px-6 py-3"
             label="LAUNCH APP"
             hasArrowRight={true}
             typographyClass="text-[15px]"

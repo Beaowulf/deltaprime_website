@@ -31,7 +31,7 @@ const UnlockPotentialContainer = ({ hasMarginTop = true }) => {
               onClick={openModal}
               label="LAUNCH APP"
               hasArrowRight={true}
-              className="px-8 py-4"
+              className="px-4 py-3"
               typographyClass="text-[15px]"
             />
           </Link>

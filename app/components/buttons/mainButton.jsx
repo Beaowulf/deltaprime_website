@@ -158,9 +158,6 @@ export function ContactUsButton({ label, onClick }) {
     </button>
   );
 }
-
-// I dont know why there are so many buttons, but I am not going to refactor this file :D read line 11
-// I am sorry :D
 export function CTAButton({
   typographyClass,
   className,
@@ -173,7 +170,7 @@ export function CTAButton({
         className={`${
           className
             ? `${className} ctaButtonWrapper`
-            : "ctaButtonWrapper md:py-[10px] md:px-5 py-[18px] px-[20px] h-[30px] md:h-full"
+            : "ctaButtonWrapper px-4 py-3 h-[30px] md:h-full"
         }`}
       >
         <h6

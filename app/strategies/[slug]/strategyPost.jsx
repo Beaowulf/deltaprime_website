@@ -51,7 +51,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
               <div className="w-full md:block hidden">
                 <Link href="?modal=true" scroll={false}>
                   <CTAButton
-                    className="w-[100%] md:w-fit px-8 py-4"
+                    className="w-[100%] md:w-fitpx-6 py-3"
                     label="LAUNCH APP"
                     hasArrowRight={true}
                     typographyClass="text-[15px]"
@@ -62,7 +62,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
               <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
                 <Link href="?modal=true" scroll={false}>
                   <CTAButton
-                    className="mx-auto px-8 py-4"
+                    className="mx-auto px-6 py-3"
                     label="LAUNCH APP"
                     hasArrowRight={true}
                     typographyClass="text-[15px]"
@@ -129,7 +129,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
             <div className="w-full md:block hidden">
               <Link href="?modal=true" scroll={false}>
                 <CTAButton
-                  className="w-[100%] md:w-fit px-8 py-4"
+                  className="w-[100%] md:w-fitpx-6 py-3"
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"
@@ -185,7 +185,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
           <Link href="?modal=true" scroll={false}>
             <CTAButton
-              className="mx-auto px-8 py-4"
+              className="mx-auto px-6 py-3"
               label="LAUNCH APP"
               hasArrowRight={true}
               typographyClass="text-[15px]"
