@@ -69,7 +69,7 @@ const CarouselComponent = () => {
                     ) : (
                       <Image
                         className="sm:w-[220px] sm:h-[70px] w-[120px] h-[75px] object-contain"
-                        src={hoveredIndex === index ? item.bw : item.color}
+                        src={hoveredIndex === index ? item.color : item.bw}
                         alt={item.alt}
                       />
                     )}
