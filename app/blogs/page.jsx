@@ -1,4 +1,4 @@
-// pages/blogs/page.jsx
+// app/blogs/page.jsx
 import { fetchBlogs } from "@/lib/getBlogs";
 import Header from "@/app/components/header/header";
 import ContactForm from "@/app/ui/contactForm/contactForm";
@@ -6,6 +6,7 @@ import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar
 import BlogHomePage from "./blogHomePage";
 
 const BlogsPage = async () => {
+  // Fetch data on the server side every time this page is rendered
   const blogs = await fetchBlogs();
 
   const sortedBlogs = blogs.sort(
@@ -18,7 +19,6 @@ const BlogsPage = async () => {
   ];
 
   const latestBlog = sortedBlogs.slice(0, 1);
-
   const latestBlogs = sortedBlogs.slice(0, 5);
 
   return (
