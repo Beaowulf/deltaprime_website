@@ -2,17 +2,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import DarkMode_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_white.png";
 import LightMode_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_purple.png";
-
-// todo: remove the below since all are purple
-const LogoSource = () => {
-  const { resolvedTheme } = useTheme();
-
-  if (resolvedTheme === "dark") {
-    return DarkMode_Logo;
-  } else {
-    return LightMode_Logo;
-  }
-};
+import White_full_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_white.png";
 
 export const LightModeLogo = () => {
   return (
@@ -60,16 +50,26 @@ export const MobileMenuLogo = () => {
 };
 
 export const FooterLogo = () => {
+  const { resolvedTheme } = useTheme();
+
   return (
     <a
       href="/#"
       className="flex title-font font-medium items-center text-gray-900 dark:text-white"
     >
-      <Image
-        className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
-        src={LightMode_Logo}
-        alt="logo_img"
-      />
+      {resolvedTheme === "dark" ? (
+        <Image
+          className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
+          src={LightMode_Logo}
+          alt="logo_img"
+        />
+      ) : (
+        <Image
+          className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
+          src={White_full_Logo}
+          alt="logo_img"
+        />
+      )}
     </a>
   );
 };

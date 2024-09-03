@@ -15,7 +15,6 @@ export const AnimatedText = ({ targetNumber }) => {
   useEffect(() => {
     const duration = 2;
     const start = 0;
-    const increment = (targetNumber - start) / (duration * 60);
 
     let currentValue = start;
     let startTime;
@@ -42,7 +41,7 @@ export const AnimatedText = ({ targetNumber }) => {
   return (
     <div className="md:w-[9rem]">
       <motion.h1
-        className="dark:text-[#252948] text-[#6B70ED] costText"
+        className="text-[#6B70ED] costText"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

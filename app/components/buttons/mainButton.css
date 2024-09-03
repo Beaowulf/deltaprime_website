@@ -412,11 +412,9 @@
 .ctaButtonBorder {
   position: relative;
   border-radius: 25px;
-  padding: 1px;
+  padding: 3.5px;
   overflow: hidden;
   transition: all 0.5s ease;
-  box-shadow: 0px 1px 1px 0px rgba(51, 0, 255, 0.7),
-    0px 2px 5px 0px rgba(82, 0, 255, 0.41);
 }
 
 .ctaButtonBorder:before {
@@ -426,7 +424,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 2.5px;
+  padding: 3.5px;
   border-radius: 25px;
   background: -moz-linear-gradient(
     320deg,
@@ -450,7 +448,6 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: 1;
-  scale: 1;
 }
 
 .ctaButtonWrapper {
@@ -459,7 +456,7 @@
   align-items: center;
   gap: 10px;
   font-weight: bold;
-  border-radius: 25px;
+  border-radius: 22px;
   outline: none;
   cursor: pointer;
   overflow: hidden;

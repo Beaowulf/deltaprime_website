@@ -64,8 +64,11 @@ function AboutSection() {
         <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
           <BlogCardButton
             fullWidth={true}
+            isLink={true}
+            typographyClass="md:mx-auto"
             hasArrowRight={true}
             label={"LEARN MORE"}
+            href={"/tokenomics"}
           />
         </div>
       </div>

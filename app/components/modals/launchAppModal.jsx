@@ -1,33 +1,29 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import "./modals.css";
-import { fetchCryptoData } from "@/app/components/cryptoTables/cryptoData";
 import { useSearchParams, usePathname } from "next/navigation";
 import { CTAButton } from "@/app/components/buttons/mainButton";
 import closeIconColored from "@/public/assets/icons/closeIconColored.svg";
 import Link from "next/link";
+import { useCryptoData } from "@/app/context/CryptoDataContext"; // Import the context
 
 const LaunchAppModal = () => {
-  const [poolsData, setPoolsData] = useState({ arbitrum: [], avalanche: [] });
-  const [loading, setLoading] = useState(true);
+  const { poolsData, loading } = useCryptoData();
+
+  const avalancheData = poolsData.avalanche.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDT" || item.symbol === "AVAX"
+  );
+
+  const arbitrumData = poolsData.arbitrum.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDC" || item.symbol === "BTC"
+  );
+
   const searchParams = useSearchParams();
   const modal = searchParams.get("modal");
   const pathname = usePathname();
-
-  useEffect(() => {
-    const setupAprs = async () => {
-      try {
-        const allPoolsData = await fetchCryptoData();
-        setPoolsData(allPoolsData);
-        setLoading(false);
-      } catch (error) {
-        // TODO: maybe message to user
-        console.error("Error setting up APRs:", error);
-      }
-    };
-    setupAprs();
-  }, []);
 
   useEffect(() => {
     if (modal) {
@@ -36,7 +32,6 @@ const LaunchAppModal = () => {
       document.body.classList.remove("no-scroll");
     }
 
-    // Clean up the effect when the component is unmounted or when modal closes
     return () => {
       document.body.classList.remove("no-scroll");
     };
@@ -45,10 +40,14 @@ const LaunchAppModal = () => {
   return (
     <>
       {modal && (
-        <dialog className="modalP fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-50 overflow-auto backdrop-blur flex justify-center items-center">
-          <div className="modalParent relative z-10 w-full md:w-fit">
+        <dialog className="modalP fixed left-0 z-[300] top-0 w-full h-full bg-black bg-opacity-50  overflow-auto backdrop-blur flex justify-center items-center">
+          <div className="modalParent relative w-full md:w-fit">
             <div className="absolute top-2 right-4 pb-2 pt-10 pl-5 pr-5 w-fit h-fit text-black cursor-pointer z-50">
-              <Link className="z-100 cursor-pointer" href={pathname}>
+              <Link
+                className="z-100 cursor-pointer"
+                href={pathname}
+                scroll={false}
+              >
                 <Image
                   src={closeIconColored}
                   width={20}
@@ -58,7 +57,7 @@ const LaunchAppModal = () => {
               </Link>
             </div>
             <div className="w-full h-screen md:h-auto md:w-fit justify-center bg-[#f4f4ff] flex flex-col py-20 px-4 md:px-14 rounded-[25px] shadowModal">
-              <h4 className="leading-5 text-[32px] text-[#252948] text-center font-medium mb-10">
+              <h4 className="leading-5 text-[32px] text-[#6B70ED] text-center font-medium mb-10">
                 Launch your App
               </h4>
               <div className="flex flex-col md:flex-row justify-center gap-4 md:mt-8 mx-0 items-center">
@@ -77,9 +76,9 @@ const LaunchAppModal = () => {
                           {loading ? (
                             <div className="loader"></div>
                           ) : (
-                            poolsData.arbitrum.map((pool, index) => (
+                            arbitrumData.map((pool, index) => (
                               <p
-                                className="dark:text-blue-950 text-blue-950 font-medium text-[14px]"
+                                className="text-[#565AC2] font-medium text-[14px]"
                                 key={index}
                               >
                                 {pool.symbol} {pool.apy.toFixed(1)}%
@@ -94,9 +93,9 @@ const LaunchAppModal = () => {
                           {loading ? (
                             <div className="loader"></div>
                           ) : (
-                            poolsData.avalanche.map((pool, index) => (
+                            avalancheData.map((pool, index) => (
                               <p
-                                className="dark:text-blue-950 text-blue-950 font-medium text-[14px]"
+                                className="text-[#565AC2] font-medium text-[14px]"
                                 key={index}
                               >
                                 {pool.symbol} {pool.apy.toFixed(1)}%
@@ -120,7 +119,7 @@ const LaunchAppModal = () => {
                   </div>
                 </div>
                 <div className="w-full md:w-fit flex place-items-center">
-                  <p className="text-[#252948] font-medium text-[32px] mx-auto md:m-0">
+                  <p className="text-[#6B70ED] font-medium text-[32px] mx-auto md:m-0">
                     OR
                   </p>
                 </div>
@@ -137,13 +136,13 @@ const LaunchAppModal = () => {
                       <div className="flex gap-4 items-start justify-center mx-4">
                         <div className="mt-4 max-w-[200px]">
                           <ul>
-                            <li className="dark:text-blue-950 text-blue-950 font-medium text-[14px]">
+                            <li className="text-[#565AC2] font-medium text-[14px]">
                               <span>•</span> Borrow up to 5x
                             </li>
-                            <li className="dark:text-blue-950 text-blue-950 font-medium text-[14px]">
+                            <li className="text-[#565AC2] font-medium text-[14px]">
                               <span>•</span> Create your strategy
                             </li>
-                            <li className="dark:text-blue-950 text-blue-950 font-medium text-[14px]">
+                            <li className="text-[#565AC2] font-medium text-[14px]">
                               <span>•</span> With the best of DeFi
                             </li>
                           </ul>

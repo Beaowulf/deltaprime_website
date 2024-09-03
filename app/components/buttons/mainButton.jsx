@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import "./mainButton.css";
 import Image from "next/image";
 import { useTheme } from "next-themes";
@@ -157,9 +158,6 @@ export function ContactUsButton({ label, onClick }) {
     </button>
   );
 }
-
-// I dont know why there are so many buttons, but I am not going to refactor this file :D read line 11
-// I am sorry :D
 export function CTAButton({
   typographyClass,
   className,
@@ -172,7 +170,7 @@ export function CTAButton({
         className={`${
           className
             ? `${className} ctaButtonWrapper`
-            : "ctaButtonWrapper md:py-[10px] md:px-5 py-[18px] px-[20px] h-[30px] md:h-full"
+            : "ctaButtonWrapper px-4 py-3 h-[30px] md:h-full"
         }`}
       >
         <h6
@@ -208,12 +206,37 @@ export function BlogButton({ onClick, label, fullWidth = false }) {
 }
 
 export function BlogCardButton({
+  isLink = false,
+  href = "/",
   onClick,
   label,
   isSmallbtn,
   fullWidth = false,
 }) {
-  return (
+  return isLink ? (
+    <Link href={href}>
+      <button
+        onClick={onClick}
+        className={`blogButtonWrapper md:w-fit w-full ${
+          fullWidth ? "!w-full" : "!w-fit"
+        }`}
+      >
+        <div
+          className={`blogButtonContent md:h-full ${
+            isSmallbtn ? "px-3 py-2" : "px-4 py-3"
+          }`}
+        >
+          <h6
+            className={`${
+              isSmallbtn ? "text-[12px]" : "text-[12px] lg:text-[14px]"
+            } text-nowrap font-extrabold blogCardText`}
+          >
+            {label}
+          </h6>
+        </div>
+      </button>
+    </Link>
+  ) : (
     <button
       onClick={onClick}
       className={`blogButtonWrapper md:w-fit w-full ${

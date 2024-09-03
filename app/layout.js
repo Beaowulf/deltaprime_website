@@ -14,6 +14,9 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "Delta Prime",
   description: "Delta Prime Web App",
+  // This is for the noindex,nofollow meta tag - we dont want search engines to index this page
+  name: "robots",
+  content: "noindex,nofollow",
 };
 
 export default function RootLayout({ children }) {

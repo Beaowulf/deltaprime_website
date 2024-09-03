@@ -7,23 +7,18 @@ import BlogHomePage from "./blogHomePage";
 
 const BlogsPage = async () => {
   const blogs = await fetchBlogs();
-  // console.log("🚀 ~ BlogsPage ~ blogs:", blogs);
 
-  // Sort blogs by date in descending order
   const sortedBlogs = blogs.sort(
     (a, b) => new Date(b.blogDate) - new Date(a.blogDate)
   );
 
-  // Extract unique categories
   const categories = [
     "All",
     ...new Set(blogs.map((blog) => blog.blogCategory)),
   ];
 
-  // Get the latest blog as an array with one element
   const latestBlog = sortedBlogs.slice(0, 1);
 
-  // Get the latest 5 blogs
   const latestBlogs = sortedBlogs.slice(0, 5);
 
   return (

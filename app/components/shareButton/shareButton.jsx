@@ -36,7 +36,6 @@ const ShareButton = ({ title, text, url }) => {
     }
   };
 
-  // Close popup when clicking outside
   const handleClickOutside = (event) => {
     if (
       popupRef.current &&
@@ -44,7 +43,6 @@ const ShareButton = ({ title, text, url }) => {
       buttonRef.current &&
       !buttonRef.current.contains(event.target)
     ) {
-      // if (popupRef.current && !popupRef.current.contains(event.target)) {
       setAnimationClass("hide");
       setTimeout(() => setShowPopup(false), 300);
     }
@@ -94,16 +92,6 @@ const ShareButton = ({ title, text, url }) => {
       }
     } else {
       togglePopup();
-      // try {
-
-      //   await navigator.clipboard.writeText(url);
-      //   alert("URL copied to clipboard. You can now share it manually.");
-      // } catch (error) {
-      //   console.error("Error copying URL to clipboard", error);
-      //   alert(
-      //     "Web Share API is not supported in your browser. Failed to copy URL to clipboard."
-      //   );
-      // }
     }
   };
 
@@ -122,20 +110,6 @@ const ShareButton = ({ title, text, url }) => {
 
       {showPopup && (
         <div
-          // style={{
-          //   position: "absolute",
-          //   top: "100%",
-          //   left: "50%",
-          //   transform: "translateX(-50%)",
-          //   background: "#fff",
-          //   border: "1px solid #ccc",
-          //   borderRadius: "8px",
-          //   padding: "10px",
-          //   zIndex: 1000,
-          //   boxShadow: "0px 8px 16px rgba(0,0,0,0.2)",
-          //   width: "200px",
-          // }}
-
           className={`text-[#252948] text-sm popup ${animationClass}`}
           ref={popupRef}
         >
@@ -147,17 +121,6 @@ const ShareButton = ({ title, text, url }) => {
                 alignItems: "center",
               }}
             >
-              {/* <FaLink style={{ marginRight: "8px" }} /> */}
-              {/* <button
-                style={{
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                }}
-                onClick={() => navigator.clipboard.writeText(url)}
-              >
-                Copy link
-              </button> */}
               <h1 className="text-[24px]  text-center  font-bold mb-4">
                 Share on:
               </h1>
@@ -198,18 +161,6 @@ const ShareButton = ({ title, text, url }) => {
               </WhatsappShareButton>
               <span style={{ marginLeft: "10px" }}> Whatsapp</span>
             </li>
-            {/* <li
-              style={{
-                marginBottom: "10px",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <LinkedinShareButton url={url} title={title}>
-                <LinkedinIcon size={24} round />
-              </LinkedinShareButton>
-              <span style={{ marginLeft: "10px" }}> LinkedIn</span>
-            </li> */}
           </ul>
         </div>
       )}

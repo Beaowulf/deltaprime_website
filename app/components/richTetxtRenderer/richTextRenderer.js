@@ -71,6 +71,19 @@ const RichTextRenderer = ({
           </h3>
         );
       },
+      [BLOCKS.HEADING_2]: (node, children) => {
+        const text = extractTextFromChildren(children);
+        const id = sanitizeId(text);
+        if (onHeadingRender) onHeadingRender(id, text);
+        return (
+          <h2
+            id={id}
+            className="text-lg font-bold my-4 dark:text-white text-[#6B70ED]"
+          >
+            {children}
+          </h2>
+        );
+      },
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <p className="my-4 dark:text-white text-[#565AC2]">{children}</p>
       ),
@@ -119,11 +132,30 @@ const RichTextRenderer = ({
         const { buttonText, url } = node.data.target.fields;
         return <CustomButton buttonText={buttonText} url={url} />;
       },
-      [INLINES.HYPERLINK]: (node) => {
-        return <p className="dark:text-white text-[#565AC2]">Link</p>;
+      [INLINES.HYPERLINK]: (node, children) => {
+        const { uri } = node.data; // Extract the URI from the node data
+        return (
+          <a
+            href={uri}
+            className="dark:text-white text-[#565AC2] underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {children}
+          </a>
+        );
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
         const text = node.content[0]?.value;
+
+        // Function to handle text replacements for custom markers like \s
+        const handleCustomSpacing = (inputText) => {
+          // Replace all occurrences of "\s" with "&nbsp;" (for single space) or "&emsp;" (for tab-like space)
+          return inputText.replace(/\\s/g, "&nbsp;"); // Replace \s with non-breaking space
+          // return inputText.replace(/\\s/g, "&emsp;"); // Uncomment to use em space instead
+        };
+        const processedText = handleCustomSpacing(text);
+
         if (text.includes("{{inline_Takeaways}}") && hasTakeaways) {
           return (
             <div className="my-10 p-2">
@@ -159,14 +191,14 @@ const RichTextRenderer = ({
               <p className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-center">
                 Terms of Use
               </p>
-              <p className="text-[20px] font-medium md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1">
+              <p className="text-[20px] font-medium md:leading-6 max-w-xl text-center md:px-0 px-1 pb-1">
                 Important information
               </p>
             </div>
           );
         }
 
-        if (text.includes("{{Terms_Of_Use_Title}}")) {
+        if (text.includes("{{Terms_Of_Use_Risk_Disclosure_Title}}")) {
           return (
             <div className="flex justify-center flex-col items-center dark:text-white text-[#6B70ED]">
               <p className="mb-8 featureSubtitle md:text-[30px] text-[22px] text-center">
@@ -175,8 +207,24 @@ const RichTextRenderer = ({
               <p className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-center">
                 Risk Disclosure
               </p>
-              <p className="text-[20px] font-medium md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1">
+              <p className="text-[20px] font-medium md:leading-6 max-w-xl text-center md:px-0 px-1 pb-1">
                 Important information
+              </p>
+            </div>
+          );
+        }
+
+        if (text.includes("{{privacy_and_policy_title}}")) {
+          return (
+            <div className="py-6 flex justify-center flex-col items-center dark:text-white text-[#6B70ED]">
+              <p className="mb-8 md:text-[24px] text-[18px] text-center font-semibold">
+                Prime Labs Distributed Ltd.
+              </p>
+              <p className="mb-8 md:text-[24px] text-[18px] text-center font-semibold">
+                Intershore Chambers, P.O. Box 4342,
+              </p>
+              <p className="md:text-[24px] text-[18px] font-semibold md:leading-6 max-w-xl text-center md:px-0 px-1 pb-1">
+                Road Town, Tortola, British Virgin Islands
               </p>
             </div>
           );

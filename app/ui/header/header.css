@@ -19,8 +19,8 @@
   width: 21px;
   height: 21px;
   position: absolute;
-  top: 2px;
-  left: 0; /* Start from the left */
+  top: 2.75px;
+  left: 0;
   background-size: cover;
   transition: left 0.4s ease, opacity 0.4s ease;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -38,7 +38,7 @@
   background-color: #9a89fb;
   background-image: url("../../../public/assets/icons/moon.svg");
   opacity: 0;
-  left: -100%; /* Start from the right, out of view */
+  left: -100%;
   background-position-y: 1.2px;
   background-position-x: 1px;
 }
@@ -58,7 +58,7 @@
   height: 100vh;
   position: absolute;
   z-index: 1000;
-  background-color: rgb(166, 158, 183); /* Dark semi-transparent background */
+  background-color: rgb(166, 158, 183);
   top: 0;
   left: 0;
   width: 100%;
@@ -67,7 +67,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it's above other elements */
+  z-index: 1000;
   transform: translateX(100%);
 }
 

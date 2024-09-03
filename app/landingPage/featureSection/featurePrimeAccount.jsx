@@ -52,7 +52,7 @@ const FeaturePrimeAccountSection = () => {
       <Header
         subTitle={"Prime Account"}
         paragraph={
-          "Our unique escrow smart contracts allow you for truly trustless borrowing. Leverage up to 6x, and action a wide range of flexible investment strategies."
+          "Our unique escrow smart contracts allow you for truly trustless borrowing. Leverage up to 6x and action a wide range of flexible investment strategies."
         }
       />
       <div className="flex items-center justify-cente md:mb-20 mb-6 flex-wrap">
@@ -205,9 +205,9 @@ const FeaturePrimeAccountSection = () => {
 
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
-        <Link href="?modal=true">
+        <Link href="?modal=true" scroll={false}>
           <CTAButton
-            className="mx-auto px-8 py-4"
+            className="mx-auto px-6 py-3"
             label="LAUNCH APP"
             hasArrowRight={true}
             typographyClass="text-[15px]"
@@ -216,9 +216,9 @@ const FeaturePrimeAccountSection = () => {
       </div>
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
-        <Link href="?modal=true">
+        <Link href="?modal=true" scroll={false}>
           <CTAButton
-            className="mx-auto px-8 py-4"
+            className="mx-auto px-6 py-3"
             label="LAUNCH APP"
             hasArrowRight={true}
             typographyClass="text-[15px]"

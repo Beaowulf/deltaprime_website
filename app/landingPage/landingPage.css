@@ -29,7 +29,6 @@
 }
 
 /* Carousel Section Styling */
-
 .carouselItemsDarkTheme,
 .carouseItemsWhiteTheme {
   position: relative;
@@ -67,7 +66,7 @@
   padding-top: 20px;
 }
 
-/* Intergrations Section Styling */
+/* Integrations Section Styling */
 .intergrationBoxGradient {
   position: relative;
   background: linear-gradient(180deg, #ffbb9b 10%, #ff8fb8 50%, #afafff 100%);
@@ -81,12 +80,6 @@
 .securitySection {
   position: relative;
   border: 2px solid (#afafff, #ff8fb8, #ffbb9b);
-}
-
-@media (max-width: 768px) {
-  .featureBorderWrapLightTheme {
-    width: 100%;
-  }
 }
 
 /* Animated text */
@@ -134,14 +127,6 @@
   max-width: 508px;
   transition: 1s opacity ease-in-out;
   opacity: 1;
-}
-
-@media (max-width: 770px) {
-  .content-image {
-    width: 72vw;
-    margin-bottom: 40px;
-    max-width: unset;
-  }
 }
 
 .content-image--hidden {
@@ -225,4 +210,32 @@
   bottom: 23%;
   right: -10%;
   z-index: -10;
+}
+
+@media (max-width: 770px) {
+  .content-image {
+    width: 72vw;
+    margin-bottom: 40px;
+    max-width: unset;
+  }
+  .featureBorderWrapLightTheme {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .bubble-2 {
+    bottom: -5%;
+    left: 0;
+  }
+  .bubble-1 {
+    top: 30%;
+    left: -15%;
+    z-index: -10;
+  }
+  .bubble-4 {
+    bottom: 40%;
+    right: -20%;
+    z-index: -10;
+  }
 }

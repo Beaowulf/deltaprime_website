@@ -76,26 +76,3 @@
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
 }
-
-.termsOfUseGradient {
-  height: 2px;
-  background: -moz-linear-gradient(
-    2600deg,
-    rgba(175, 175, 255, 1) 0%,
-    rgba(255, 143, 184, 1) 50%,
-    rgba(255, 187, 155, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    260deg,
-    rgba(175, 175, 255, 1) 0%,
-    rgba(255, 143, 184, 1) 50%,
-    rgba(255, 187, 155, 1) 100%
-  );
-  background: linear-gradient(
-    260deg,
-    rgba(175, 175, 255, 1) 0%,
-    rgba(255, 143, 184, 1) 50%,
-    rgba(255, 187, 155, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#afafff",endColorstr="#ffbb9b",GradientType=1);
-}

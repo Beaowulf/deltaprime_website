@@ -1,12 +1,82 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { useTheme } from "next-themes";
 import "./contactForm.css";
 import { ContactUsButton } from "@/app/components/buttons/mainButton";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
+  const { resolvedTheme } = useTheme();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error("All fields are required.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: resolvedTheme === "dark" ? "dark" : "light",
+      });
+      return;
+    }
+
+    const testSend = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve();
+        // If there's an error, you can call reject() here instead
+      }, 2000);
+    });
+
+    toast.promise(
+      testSend,
+      {
+        pending: "Pending...",
+        success: {
+          render:
+            "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+          onClose: resetForm(),
+        },
+        error: "Something went wrong. Please try again later.",
+      },
+      {
+        position: "top-right",
+        autoClose: 6000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: resolvedTheme === "dark" ? "dark" : "light",
+      }
+    );
+  };
+
   return (
     <div>
+      <ToastContainer />
       {hasUnlockPotentialContainer && (
         <div className="lg:block hidden">
           <UnlockPotentialContainer />
@@ -31,7 +101,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         </div>
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
-          <form className="w-full max-w-lg mx-auto">
+          <form className="w-full max-w-lg mx-auto" onSubmit={sendEmail}>
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
@@ -45,6 +115,8 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   id="name"
                   type="text"
                   placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
               <div className="mb-4 flex-1">
@@ -59,6 +131,8 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   id="email"
                   type="email"
                   placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -74,6 +148,8 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                 className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                 id="message"
                 placeholder="Your Message"
+                value={formData.message}
+                onChange={handleChange}
               ></textarea>
             </div>
             <div className="flex items-center justify-center">

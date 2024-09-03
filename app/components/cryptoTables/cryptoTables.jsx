@@ -1,34 +1,31 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { fetchCryptoData } from "./cryptoData";
 import "./tableStyling.css";
 import avalanche from "@/public/assets/icons/avalanche.svg";
 import arbitrum from "@/public/assets/icons/arbitrum.svg";
 import Link from "next/link";
+import { useCryptoData } from "@/app/context/CryptoDataContext";
 
 const CryptoPreviewTables = () => {
-  const [poolsData, setPoolsData] = useState({ arbitrum: [], avalanche: [] });
-  const [loading, setLoading] = useState(true);
+  const { poolsData, loading } = useCryptoData();
 
-  useEffect(() => {
-    const setupAprs = async () => {
-      try {
-        const allPoolsData = await fetchCryptoData();
-        setPoolsData(allPoolsData);
-        setLoading(false);
-      } catch (error) {
-        // todo: maybe message to user
-        console.error("Error setting up APRs:", error);
-      }
-    };
-    setupAprs();
-  }, []);
+  // Extract data from 'avalanche'
+  const avalancheData = poolsData.avalanche.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDT" || item.symbol === "AVAX"
+  );
+
+  // Extract data from 'arbitrum'
+  const arbitrumData = poolsData.arbitrum.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDC" || item.symbol === "BTC"
+  );
 
   return (
     <div className="flex flex-col gap-10 ">
       {/* 1 box */}
-      <div className="coloredBoxBorder">
+      <div className="coloredBoxBorder max-w-[340px]">
         <div className="deltaWhiteLinearBG rounded-[30px] px-4 pb-1 pt-4 md:px-8 md:pb-2 md:pt-8 max-w-[340px]">
           <div className="flex flex-row items-center justify-start gap-3">
             <h4 className="text-black mb-[10px] font-bold">Avalanche</h4>
@@ -58,7 +55,7 @@ const CryptoPreviewTables = () => {
             <div className="loader"></div>
           ) : (
             <div>
-              {poolsData.avalanche.map((pool) => (
+              {avalancheData.map((pool) => (
                 <React.Fragment key={pool.symbol}>
                   <div className="flex flex-row justify-between px-4">
                     <div>
@@ -94,7 +91,7 @@ const CryptoPreviewTables = () => {
       </div>
 
       {/* 1 box */}
-      <div className="coloredBoxBorder">
+      <div className="coloredBoxBorder max-w-[340px]">
         <div className="deltaWhiteLinearBG rounded-[30px] px-4 pb-1 pt-4 md:px-8 md:pb-2 md:pt-8 max-w-[340px]">
           <div className="flex flex-row items-center justify-start gap-3">
             <h4 className="text-black mb-[10px] font-bold">Arbitrum</h4>
@@ -124,7 +121,7 @@ const CryptoPreviewTables = () => {
             <div className="loader"></div>
           ) : (
             <div>
-              {poolsData.arbitrum.map((pool) => (
+              {arbitrumData.map((pool) => (
                 <React.Fragment key={pool.symbol}>
                   <div className="flex flex-row justify-between px-4">
                     <div>
@@ -165,22 +162,19 @@ const CryptoPreviewTables = () => {
 export default CryptoPreviewTables;
 
 export const CryptoLandingPageTables = () => {
-  const [poolsData, setPoolsData] = useState({ arbitrum: [], avalanche: [] });
-  const [loading, setLoading] = useState(true);
+  const { poolsData, loading } = useCryptoData();
 
-  useEffect(() => {
-    const setupAprs = async () => {
-      try {
-        const allPoolsData = await fetchCryptoData();
-        setPoolsData(allPoolsData);
-        setLoading(false);
-      } catch (error) {
-        // todo: maybe message to user
-        console.error("Error setting up APRs:", error);
-      }
-    };
-    setupAprs();
-  }, []);
+  // Extract data from 'avalanche'
+  const avalancheData = poolsData.avalanche.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDT" || item.symbol === "AVAX"
+  );
+
+  // Extract data from 'arbitrum'
+  const arbitrumData = poolsData.arbitrum.filter(
+    (item) =>
+      item.symbol === "ETH" || item.symbol === "USDC" || item.symbol === "BTC"
+  );
 
   return (
     <div className="w-full h-full">
@@ -216,7 +210,7 @@ export const CryptoLandingPageTables = () => {
                 <div className="loader"></div>
               ) : (
                 <div>
-                  {poolsData.arbitrum.map((pool) => (
+                  {arbitrumData.map((pool) => (
                     <React.Fragment key={pool.symbol}>
                       <div className="flex flex-row justify-between px-4">
                         <div>
@@ -282,7 +276,7 @@ export const CryptoLandingPageTables = () => {
                 <div className="loader"></div>
               ) : (
                 <div>
-                  {poolsData.avalanche.map((pool) => (
+                  {avalancheData.map((pool) => (
                     <React.Fragment key={pool.symbol}>
                       <div className="flex flex-row justify-between px-4">
                         <div>

@@ -39,9 +39,9 @@ const StrategiesPage = () => {
               into the risk and rewards of the specific strategy.
             </p>
             <div className="w-full md:block hidden">
-              <Link href="?modal=true">
+              <Link href="?modal=true" scroll={false}>
                 <CTAButton
-                  className="w-[100%] md:w-fit px-8 py-4"
+                  className="w-[100%] md:w-fit px-6 py-3"
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"
@@ -49,9 +49,9 @@ const StrategiesPage = () => {
               </Link>
             </div>
             <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
-              <Link href="?modal=true">
+              <Link href="?modal=true" scroll={false}>
                 <CTAButton
-                  className="mx-auto px-8 py-4"
+                  className="mx-auto px-6 py-3"
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"
@@ -62,6 +62,7 @@ const StrategiesPage = () => {
         </div>
         <div className="w-fit md:block hidden rounded-[25px]">
           <Image
+            className="rounded-[25px]"
             src={strategiesIntroImg}
             alt="deltaprime_mascot_img rounded-[25px]"
           />
@@ -75,9 +76,9 @@ const StrategiesPage = () => {
         <div>
           <UnlockPotentialContainer hasMarginTop={false} />
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
-            <Link href="?modal=true">
+            <Link href="?modal=true" scroll={false}>
               <CTAButton
-                className="mx-auto px-8 py-4"
+                className="mx-auto px-6 py-3"
                 label="LAUNCH APP"
                 hasArrowRight={true}
                 typographyClass="text-[15px]"

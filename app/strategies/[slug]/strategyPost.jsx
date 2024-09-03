@@ -26,7 +26,6 @@ const StrategyDetail = ({ strategy, strategies }) => {
   const strategyHeroImage =
     "https:" + strategy.strategyHeroImage.fields.file.url;
 
-  // console.log(strategyHeroImage);
   return (
     // Top page
     <div className="px-4 sm:px-0">
@@ -50,9 +49,9 @@ const StrategyDetail = ({ strategy, strategies }) => {
                 {strategy.strategyDescription}
               </p>
               <div className="w-full md:block hidden">
-                <Link href="?modal=true">
+                <Link href="?modal=true" scroll={false}>
                   <CTAButton
-                    className="w-[100%] md:w-fit px-8 py-4"
+                    className="w-[100%] md:w-fit px-6 py-3"
                     label="LAUNCH APP"
                     hasArrowRight={true}
                     typographyClass="text-[15px]"
@@ -61,9 +60,9 @@ const StrategyDetail = ({ strategy, strategies }) => {
               </div>
               {/* Show this button only on mobile */}
               <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
-                <Link href="?modal=true">
+                <Link href="?modal=true" scroll={false}>
                   <CTAButton
-                    className="mx-auto px-8 py-4"
+                    className="mx-auto px-6 py-3"
                     label="LAUNCH APP"
                     hasArrowRight={true}
                     typographyClass="text-[15px]"
@@ -128,20 +127,9 @@ const StrategyDetail = ({ strategy, strategies }) => {
               {strategy.strategyDescription}
             </p>
             <div className="w-full md:block hidden">
-              <Link href="?modal=true">
+              <Link href="?modal=true" scroll={false}>
                 <CTAButton
-                  className="w-[100%] md:w-fit px-8 py-4"
-                  label="LAUNCH APP"
-                  hasArrowRight={true}
-                  typographyClass="text-[15px]"
-                />
-              </Link>
-            </div>
-            {/* Show this button only on mobile */}
-            <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
-              <Link href="?modal=true">
-                <CTAButton
-                  className="mx-auto px-8 py-4"
+                  className="w-[100%] md:w-fit px-6 py-3"
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"
@@ -193,6 +181,17 @@ const StrategyDetail = ({ strategy, strategies }) => {
 
       {/* here are the swiper components */}
       <div>
+        {/* Show this button only on mobile */}
+        <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
+          <Link href="?modal=true" scroll={false}>
+            <CTAButton
+              className="mx-auto px-6 py-3"
+              label="LAUNCH APP"
+              hasArrowRight={true}
+              typographyClass="text-[15px]"
+            />
+          </Link>
+        </div>
         <Header
           title={"STRATEGIES"}
           subTitle={"Explore More Strategies"}

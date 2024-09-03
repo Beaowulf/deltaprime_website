@@ -1,66 +1,29 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
 import Image from "next/image";
+import Fuse from "fuse.js";
 import "./academy.css";
 import SearchBar from "@/app/components/searchBar/searchBar";
 import BlogCard from "@/app/components/blogCard/blogCard";
-import circleOne from "@/public/assets/icons/circleOne.svg";
-import circleTwo from "@/public/assets/icons/circleTwo.svg";
-import circleThree from "@/public/assets/icons/circleThree.svg";
-
-function getRandomNumber() {
-  return Math.floor(Math.random() * 3) + 1;
-}
-
-const Circles = (randomNumber) => {
-  const CircleOne = () => (
-    <Image
-      src={circleOne}
-      alt="circle_with_gradient_color"
-      width={15}
-      height={15}
-    />
-  );
-
-  const CircleTwo = () => (
-    <Image
-      src={circleTwo}
-      alt="circle_with_gradient_color"
-      width={15}
-      height={15}
-    />
-  );
-
-  const CircleThree = () => (
-    <Image
-      src={circleThree}
-      alt="circle_with_gradient_color"
-      width={15}
-      height={15}
-    />
-  );
-
-  switch (randomNumber) {
-    case 1:
-      return <CircleOne />;
-    case 2:
-      return <CircleTwo />;
-    case 3:
-      return <CircleThree />;
-    default:
-      return null;
-  }
-};
 
 const BlogHomePage = ({ categories, blogs }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredBlogs, setFilteredBlogs] = useState(blogs);
-  const { resolvedTheme } = useTheme();
 
-  const postsPerPage = 3; // Display 3 items per page
+  const [fuse, setFuse] = useState(null);
+  useEffect(() => {
+    const fuseOptions = {
+      keys: ["blogTitle", "blogDescription"],
+      includeScore: true,
+      threshold: 0.3,
+    };
+
+    setFuse(new Fuse(blogs, fuseOptions));
+  }, [blogs]);
+
+  const postsPerPage = 3;
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
 
@@ -82,15 +45,13 @@ const BlogHomePage = ({ categories, blogs }) => {
       filtered = filtered.filter((blog) => blog.blogCategory === category);
     }
 
-    if (term) {
-      filtered = filtered.filter((blog) =>
-        blog.blogTitle.toLowerCase().includes(term.toLowerCase())
-      );
+    if (term && fuse) {
+      const fuseResults = fuse.search(term);
+      filtered = fuseResults.map((result) => result.item);
     }
 
     setFilteredBlogs(filtered);
   };
-
   const currentPosts = filteredBlogs.slice(indexOfFirstPost, indexOfLastPost);
   const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
 
