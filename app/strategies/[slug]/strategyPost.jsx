@@ -51,7 +51,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
               <div className="w-full md:block hidden">
                 <Link href="?modal=true" scroll={false}>
                   <CTAButton
-                    className="w-[100%] md:w-fitpx-6 py-3"
+                    className="w-[100%] md:w-fit px-6 py-3"
                     label="LAUNCH APP"
                     hasArrowRight={true}
                     typographyClass="text-[15px]"
@@ -129,7 +129,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
             <div className="w-full md:block hidden">
               <Link href="?modal=true" scroll={false}>
                 <CTAButton
-                  className="w-[100%] md:w-fitpx-6 py-3"
+                  className="w-[100%] md:w-fit px-6 py-3"
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"

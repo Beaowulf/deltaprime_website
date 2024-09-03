@@ -198,6 +198,22 @@ const RichTextRenderer = ({
           );
         }
 
+        if (text.includes("{{Terms_Of_Use_Risk_Disclosure_Title}}")) {
+          return (
+            <div className="flex justify-center flex-col items-center dark:text-white text-[#6B70ED]">
+              <p className="mb-8 featureSubtitle md:text-[30px] text-[22px] text-center">
+                Delta Prime
+              </p>
+              <p className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-center">
+                Risk Disclosure
+              </p>
+              <p className="text-[20px] font-medium md:leading-6 max-w-xl text-center md:px-0 px-1 pb-1">
+                Important information
+              </p>
+            </div>
+          );
+        }
+
         if (text.includes("{{privacy_and_policy_title}}")) {
           return (
             <div className="py-6 flex justify-center flex-col items-center dark:text-white text-[#6B70ED]">

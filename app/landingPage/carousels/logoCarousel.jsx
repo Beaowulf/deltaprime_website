@@ -5,8 +5,10 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useTheme } from "next-themes";
 import "swiper/css";
+import "./logoCarousel.css";
 import "swiper/css/autoplay";
 import { logoCarouselItems } from "@/app/components/carouselImages/getCarouselData";
+import { resolve } from "styled-jsx/css";
 
 const CarouselHeader = () => {
   return (
@@ -21,7 +23,7 @@ const CarouselHeader = () => {
 };
 
 const CarouselComponent = () => {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -49,19 +51,29 @@ const CarouselComponent = () => {
             <SwiperSlide key={index}>
               <Link target="_blank" href={`${item.link}`}>
                 <div
-                  className={`dark:bg-[#F0F0F0] dark:hover:bg-white hover:bg-white bg-transparent p-1 md:p-4 rounded-[20px] flex justify-center transition ease-in  ${
-                    theme === "dark"
-                      ? `carouselItemsDarkTheme`
-                      : `carouseItemsWhiteTheme`
-                  }`}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
+                  className={`${resolvedTheme === "dark" && "logoBoxWrapper"}`}
                 >
-                  <Image
-                    className="sm:w-[220px] sm:h-[70px] w-[120px] h-[75px] object-contain"
-                    src={hoveredIndex === index ? item.color : item.bw}
-                    alt={item.alt}
-                  />
+                  <div
+                    className={`dark:bg-transparent hover:bg-white bg-transparent p-1 md:p-4 rounded-[20px] flex justify-center transition ease-in  ${
+                      theme === "dark" ? `` : `carouseItemsWhiteTheme`
+                    }`}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                  >
+                    {resolvedTheme === "dark" ? (
+                      <Image
+                        className="sm:w-[220px] sm:h-[70px] w-[120px] h-[75px] object-contain"
+                        src={hoveredIndex === index ? item.color : item.white}
+                        alt={item.alt}
+                      />
+                    ) : (
+                      <Image
+                        className="sm:w-[220px] sm:h-[70px] w-[120px] h-[75px] object-contain"
+                        src={hoveredIndex === index ? item.bw : item.color}
+                        alt={item.alt}
+                      />
+                    )}
+                  </div>
                 </div>
               </Link>
             </SwiperSlide>
