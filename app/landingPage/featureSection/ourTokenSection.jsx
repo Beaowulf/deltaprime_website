@@ -38,12 +38,12 @@ function OurTokenSection() {
                 </div>
                 <div>
                   <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#6B70ED]">
-                    $PRIME
+                    PRIME
                   </h1>
                 </div>
               </div>
               <p className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#565AC2]">
-                Store of value, tradeable ERC20 token.
+                A tradeable token, to hold or use within DeFi
                 <br />
                 - Primed with adaptive emissions.
                 <br />
@@ -84,12 +84,12 @@ function OurTokenSection() {
                 </div>
                 <div>
                   <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#6B70ED]">
-                    $sPRIME
+                    sPRIME
                   </h1>
                 </div>
               </div>
               <p className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#565AC2]">
-                Utility token for Liquidity Providers and Active Users.
+                The main currency and utility token:
                 <br />
                 - Pay with for PRIME features.
                 <br />- Earn governance power points.
