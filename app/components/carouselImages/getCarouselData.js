@@ -55,7 +55,13 @@ import ColonyLogo from "@/public/assets/img/intergrations/colonyLogo.png";
 import GMXLogo from "@/public/assets/img/intergrations/GMXLogo.png";
 import PangolinLogo from "@/public/assets/img/intergrations/pangolinLogo.svg";
 import ParaswapLogo from "@/public/assets/img/intergrations/paraswapLogo.svg";
+<<<<<<< Updated upstream
 import TraderJoeLogo from "@/public/assets/img/intergrations/traderJoeLogo.png";
+=======
+
+import TraderJoeLogo from "@/public/assets/img/intergrations/trader-joe-logo.png";
+import TraderJoeLogoWhite from "@/public/assets/img/intergrations/trader-joe-logo-white.png";
+>>>>>>> Stashed changes
 import YakLogo from "@/public/assets/img/intergrations/yakLogo.png";
 // White ones
 import BalancerLogoWhite from "@/public/assets/img/intergrations/balancerLogo.svg";
@@ -63,7 +69,6 @@ import ColonyLogoWhite from "@/public/assets/img/intergrations/colonyLogoWhite.p
 import GMXLogoWhite from "@/public/assets/img/intergrations/GMXLogoWhite.png";
 // import PangolinLogo from "@/public/assets/img/intergrations/pangolinLogo.svg";
 // import ParaswapLogo from "@/public/assets/img/intergrations/paraswapLogo.svg";
-// import TraderJoeLogo from "@/public/assets/img/intergrations/traderJoeLogo.png";
 import YakLogoWhite from "@/public/assets/img/intergrations/YakLogoWhite.png";
 
 // Carousel object for "Integration" section
@@ -101,7 +106,7 @@ export const integrationData = [
   },
   {
     imageUrl: TraderJoeLogo,
-    imageUrlWhite: TraderJoeLogo,
+    imageUrlWhite: TraderJoeLogoWhite,
     alt: "TraderJoe_Logo_Icon",
     link: "https://traderjoexyz.com/",
   },
