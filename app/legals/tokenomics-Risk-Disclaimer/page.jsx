@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar";
 
 // content will come from contentful
@@ -19,8 +18,8 @@ function TokenomicsRiskDisclaimer() {
             RISK DISCLOSURE STATEMENT (Tokens)
           </p>
           <p className="aboutTypographyparagraphWhite font-normal leading-6 md:px-0 px-1 pb-1 mb-10 dark:text-white text-[#565AC2]">
-            Before participating in the Delta Prime Ecosystem through $PRIME and
-            $sPRIME tokens, you need to understand the nature of the tokens and
+            Before participating in the Delta Prime Ecosystem through PRIME and
+            sPRIME tokens, you need to understand the nature of the tokens and
             the associated risks. Please read this disclosure statement
             carefully.
           </p>
@@ -49,7 +48,7 @@ function TokenomicsRiskDisclaimer() {
             Tokens do not provide guaranteed returns and are not covered by any
             deposit insurance; The regulatory regime governing blockchain
             technologies is uncertain, and new regulations or policies may
-            adversely affect the development or distribution of the $PRIME or
+            adversely affect the development or distribution of the PRIME or
             $sPRIMETokens; DeltaPrime cannot guarantee a specific rate of
             staking reward. Staking rewards are dynamic and can fluctuate over a
             defined staking period; Staked principal is subject to hacking risk.

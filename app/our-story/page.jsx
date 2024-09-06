@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
 import { CTAButton } from "@/app/components/buttons/mainButton";
-import ourStoryIntroImg from "@/public/assets/img/images/strategies/burdChess.jpg";
+import ourStoryIntroImg from "@/public/assets/img/images/our-story-founders.png";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
 import whyDeltaPrimeImg from "@/public/assets/img/whyDeltaPrimeImg.jpg";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";

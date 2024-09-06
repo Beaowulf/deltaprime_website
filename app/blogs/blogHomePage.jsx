@@ -1,3 +1,4 @@
+// BlogHomePage.jsx
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
@@ -5,23 +6,31 @@ import Fuse from "fuse.js";
 import "./academy.css";
 import SearchBar from "@/app/components/searchBar/searchBar";
 import BlogCard from "@/app/components/blogCard/blogCard";
+import { fetchBlogs } from "@/lib/getBlogs";
 
-const BlogHomePage = ({ categories, blogs }) => {
+const BlogHomePage = ({ categories, blogs: initialBlogs }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredBlogs, setFilteredBlogs] = useState(blogs);
-
+  const [filteredBlogs, setFilteredBlogs] = useState(initialBlogs);
+  const [blogs, setBlogs] = useState(initialBlogs);
   const [fuse, setFuse] = useState(null);
+
   useEffect(() => {
-    const fuseOptions = {
-      keys: ["blogTitle", "blogDescription"],
-      includeScore: true,
-      threshold: 0.3,
+    const fetchData = async () => {
+      const fetchedBlogs = await fetchBlogs();
+      setBlogs(fetchedBlogs);
+      setFilteredBlogs(fetchedBlogs);
+      const fuseOptions = {
+        keys: ["blogTitle", "blogDescription"],
+        includeScore: true,
+        threshold: 0.3,
+      };
+      setFuse(new Fuse(fetchedBlogs, fuseOptions));
     };
 
-    setFuse(new Fuse(blogs, fuseOptions));
-  }, [blogs]);
+    fetchData();
+  }, []);
 
   const postsPerPage = 3;
   const indexOfLastPost = currentPage * postsPerPage;
@@ -52,6 +61,7 @@ const BlogHomePage = ({ categories, blogs }) => {
 
     setFilteredBlogs(filtered);
   };
+
   const currentPosts = filteredBlogs.slice(indexOfFirstPost, indexOfLastPost);
   const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
 
