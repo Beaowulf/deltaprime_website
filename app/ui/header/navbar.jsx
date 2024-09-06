@@ -11,7 +11,7 @@ import {
   MobileMenuLogo,
 } from "@/app/components/logo/logo";
 import ThemeSwitch from "@/app/components/themeToggler/themeToggler";
-import { NavBarButton, CTAButton } from "@/app/components/buttons/mainButton";
+import { CTAButton } from "@/app/components/buttons/mainButton";
 import hamburgerIconWhite from "@/public/assets/icons/hamburgerIconWhite.svg";
 import hamburgerIconPurple from "@/public/assets/icons/hamburgerIconPurple.svg";
 import closeIconWhite from "@/public/assets/icons/closeIconWhite.svg";
@@ -111,34 +111,31 @@ function Nav() {
               <CTAButton
                 hasArrowRight={false}
                 label={"Launch app"}
-                className="whitespace-nowrap px-5 py-3"
+                className="whitespace-nowrap md:px-5 px-3 md:py-3 py-2"
               />
             </Link>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className={`bg-transparent inline-flex items-center justify-center rounded-md text-gray-400 hover:text-white  menu-icon ${
+              className={` bg-transparent inline-flex items-center justify-center rounded-md text-gray-400 hover:text-white menu-icon ${
                 isOpen ? "open" : ""
-              }`}
+              } w-[33px] h-[33px] min-w-[33px] min-h-[33px]
+      `}
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
-              {resolvedTheme === "dark" ? (
-                <Image
-                  src={hamburgerIconWhite}
-                  alt="menu_icon"
-                  width={30}
-                  height={30}
-                />
-              ) : (
-                <Image
-                  src={hamburgerIconPurple}
-                  alt="menu_icon"
-                  width={30}
-                  height={30}
-                />
-              )}
+              <Image
+                src={
+                  resolvedTheme === "dark"
+                    ? hamburgerIconWhite
+                    : hamburgerIconPurple
+                }
+                alt="menu_icon"
+                width={33}
+                height={33}
+                className="w-full h-full"
+              />
             </button>
           </div>
         </div>
