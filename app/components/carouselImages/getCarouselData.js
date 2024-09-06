@@ -55,7 +55,8 @@ import ColonyLogo from "@/public/assets/img/intergrations/colonyLogo.png";
 import GMXLogo from "@/public/assets/img/intergrations/GMXLogo.png";
 import PangolinLogo from "@/public/assets/img/intergrations/pangolinLogo.svg";
 import ParaswapLogo from "@/public/assets/img/intergrations/paraswapLogo.svg";
-import TraderJoeLogo from "@/public/assets/img/intergrations/traderJoeLogo.png";
+
+import TraderJoeLogo from "@/public/assets/img/intergrations/trader-joe-logo1.png";
 import YakLogo from "@/public/assets/img/intergrations/yakLogo.png";
 // White ones
 import BalancerLogoWhite from "@/public/assets/img/intergrations/balancerLogo.svg";

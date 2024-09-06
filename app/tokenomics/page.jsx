@@ -59,7 +59,7 @@ const Tokenomics = () => {
                 alt="Deep_Dive_Tockenomics_Lightless"
               />
               <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] ">
-                Deep Dive into $PRIME Tokenomics
+                Deep Dive into PRIME Tokenomics
               </p>
               <Image
                 className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
@@ -73,7 +73,7 @@ const Tokenomics = () => {
               <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 min-w-full mb-4 dark:text-white text-[#565AC2] ">
                 DeltaPrime is a decentralized Prime Brokerage solution that
                 offers undercollateralized crypto loans without relying on
-                trust. The native tokens $PRIME and $sPRIME feature advanced
+                trust. The native tokens PRIME and sPRIME feature advanced
                 tokenomics on the Arbitrum and Avalanche networks and can be
                 acquired from Trader Joe and Uniswap. Their design and
                 distribution are in line with DeltaPrime’s commitment towards a
@@ -82,25 +82,25 @@ const Tokenomics = () => {
                 {expandedSections[0] && (
                   <>
                     <br />
-                    More than 50% of the total 40mil minted $PRIME tokens go to
+                    More than 50% of the total 40mil minted PRIME tokens go to
                     the Community Owned Liquidity (COL) and the DAO treasury.
-                    31.49% of the total $PRIME tokens are allocated to COL,
-                    while 20% are going to the DAO treasury. The DAO treasury
-                    will be governed by eligible community members and used for
-                    future developments when at least 40% of $PRIME is in public
-                    hands. 10% of the total supply, coming from the COL, will be
-                    used to bootstrap liquidity pools paired with AVAX and ETH
-                    on Trader Joe and Uniswap.
+                    31.49% of the total PRIME tokens are allocated to COL, while
+                    20% are going to the DAO treasury. The DAO treasury will be
+                    governed by eligible community members and used for future
+                    developments when at least 40% of PRIME is in public hands.
+                    10% of the total supply, coming from the COL, will be used
+                    to bootstrap liquidity pools paired with AVAX and ETH on
+                    Trader Joe and Uniswap.
                     <br />
                     <br />
-                    The emissions of $PRIME, i.e. getting the token into public
+                    The emissions of PRIME, i.e. getting the token into public
                     hands, will be executed in such a way that the liquidity
                     pool deepens with time. The COL that is not initially used
                     in the liquidity pool will be automatically used to buy and
-                    sell $PRIME according to demand, so as to avoid a price
-                    crash or overinflation. Enter stage: $sPRIME, which
-                    facilitates a healthy liquidity pool, rewards our community,
-                    and assigns governance power to the users.
+                    sell PRIME according to demand, so as to avoid a price crash
+                    or overinflation. Enter stage: sPRIME, which facilitates a
+                    healthy liquidity pool, rewards our community, and assigns
+                    governance power to the users.
                   </>
                 )}
               </p>
@@ -126,7 +126,7 @@ const Tokenomics = () => {
         <div className="flex flex-col items-center md:flex-row justify-center md:gap-10 gap-0 mt-10">
           <div className="flex flex-col items-center">
             <p className="text-center text-3xl font-bold mt-4 dark:text-white text-[#6B70ED]">
-              $PRIME
+              PRIME
             </p>
             <p className="text-center text-2xl font-normal mt-1 dark:text-white text-[#6B70ED]">
               Tradeable token
@@ -134,14 +134,14 @@ const Tokenomics = () => {
             <Image
               className="ml-4"
               src={primePurpleLogo}
-              alt="$PRIME Logo"
+              alt="PRIME Logo"
               width={200}
               height={200}
             />
           </div>
           <div className="flex flex-col items-center">
             <p className="text-center text-3xl font-bold mt-4 dark:text-white text-[#6B70ED]">
-              $sPRIME
+              sPRIME
             </p>
             <p className="text-center  text-2xl font-normal mt-1 dark:text-white text-[#6B70ED]">
               Utility token
@@ -149,7 +149,7 @@ const Tokenomics = () => {
             <Image
               className="ml-4"
               src={whiteTokenPrime}
-              alt="$sPRIME Logo"
+              alt="sPRIME Logo"
               width={200}
               height={200}
             />
@@ -157,11 +157,11 @@ const Tokenomics = () => {
         </div>
       </div>
 
-      {/* $sPRIME Enables Section */}
+      {/* sPRIME Enables Section */}
       <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
         <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
           <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#6B70ED]">
-            $sPRIME enables DeltaPrime to
+            sPRIME enables DeltaPrime to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
@@ -201,11 +201,11 @@ const Tokenomics = () => {
         </div>
       </div>
 
-      {/* $sPRIME Allows anyone to */}
+      {/* sPRIME Allows anyone to */}
       <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
         <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
           <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#6B70ED]">
-            $sPRIME allows anyone to
+            sPRIME allows anyone to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
@@ -261,7 +261,7 @@ const Tokenomics = () => {
                 alt="deltaprime_mascot_img"
               />
               <p className="brightText text-wrap max-w-full mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
-                Deep Dive into $PRIME Tokenomics
+                Deep Dive into PRIME Tokenomics
               </p>
               <Image
                 className={`rounded-[20px] border-4 border-[#fff56] float-left mr-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
@@ -273,11 +273,11 @@ const Tokenomics = () => {
                 alt="deltaprime_mascot_img"
               />
               <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full dark:text-white text-[#565AC2]">
-                How $PRIME and $sPRIME work <br />
-                $PRIME serves as the main tradable token on Decentralized
-                Exchanges (DEXs). The demand for $PRIME will come from the
-                demand to hold $sPRIME, a Liquidity Provider(LP)-token that will
-                serve as:
+                How PRIME and sPRIME work <br />
+                PRIME serves as the main tradable token on Decentralized
+                Exchanges (DEXs). The demand for PRIME will come from the demand
+                to hold sPRIME, a Liquidity Provider(LP)-token that will serve
+                as:
                 <br />
                 <br />
                 {expandedSections[1] && (
@@ -289,7 +289,7 @@ const Tokenomics = () => {
                       </span>
                       <br />
                       <span className="pl-2">
-                        • An incentive to provide to the $PRIME liquidity pool
+                        • An incentive to provide to the PRIME liquidity pool
                         and be rewarded with a share of the protocol’s
                         liquidation fees.
                       </span>
@@ -308,21 +308,21 @@ const Tokenomics = () => {
                     addition, the expiration of vesting schedules often
                     contributes to high selling pressures, while liquidity pools
                     are often shallow, which results in high selling
-                    price-impacts. Instead of following this trend, $sPRIME
-                    combines the idea of staking with contributing to the $PRIME
+                    price-impacts. Instead of following this trend, sPRIME
+                    combines the idea of staking with contributing to the PRIME
                     liquidity pool.
                     <br />
                     <br />
                     The rewards come from protocol revenue instead of causing
                     inflation by handing out native tokens. This creates
-                    effective incentives for holding $PRIME and contributing to
+                    effective incentives for holding PRIME and contributing to
                     its liquidity pool.
                     <br />
-                    When a user provides liquidity for $PRIME through the
-                    DeltaPrime app, they receive $sPRIME, which represents their
-                    share of the pool. $PRIME can be paired with tokens such as
-                    AVAX or ETH. LP-tokens with paired $PRIME that were acquired
-                    from a DEX directly can also be used to get $sPRIME on the
+                    When a user provides liquidity for PRIME through the
+                    DeltaPrime app, they receive sPRIME, which represents their
+                    share of the pool. PRIME can be paired with tokens such as
+                    AVAX or ETH. LP-tokens with paired PRIME that were acquired
+                    from a DEX directly can also be used to get sPRIME on the
                     DeltaPrime app. Note that this move will exit the current
                     position of the LP-tokens and rebalance to the default price
                     range set on the app.
@@ -330,23 +330,23 @@ const Tokenomics = () => {
                     <br />
                     When the provided liquidity is within the concentrated
                     liquidity price range at which the token is traded, the
-                    $sPRIME is considered active. Active $sPRIME holders are
+                    sPRIME is considered active. Active sPRIME holders are
                     eligible to receive a share from 33% of the protocol's
                     liquidation fees. This incentivizes liquidity provision and
                     ensures its depth. Having a deep liquidity pool means that
                     large buys and sells do not have a big impact on the price.
-                    At the same time, $sPRIME can be used to pay for any current
+                    At the same time, sPRIME can be used to pay for any current
                     and future features of the DeltaPrime ecosystem, regardless
                     of being active or idle.
                     <br />
                     <br />
-                    Idle $sPRIME is the share in the pool that does not fall
+                    Idle sPRIME is the share in the pool that does not fall
                     within the price range at which the token is traded within a
-                    period of time. Idle $sPRIME does not receive a share of the
+                    period of time. Idle sPRIME does not receive a share of the
                     liquidation fees. This incentivizes liquidity providers to
                     rebalance their assets to an active price range position.
                     Doing this means that impermanent loss may be realized.
-                    However, their $sPRIME becomes active again and thus the LP
+                    However, their sPRIME becomes active again and thus the LP
                     is granted the aforementioned rewards, countering realized
                     loss.
                     <br />
@@ -355,7 +355,7 @@ const Tokenomics = () => {
                     liquidation fees. In the future, staking through the DAO,
                     managed by our community, will reward our most loyal
                     supporters. Governance power within the DAO is exercised by
-                    a vote of $sPRIME. The more $sPRIME a user holds, the more
+                    a vote of sPRIME. The more sPRIME a user holds, the more
                     voting power they gain.
                   </>
                 )}
@@ -374,14 +374,13 @@ const Tokenomics = () => {
       <div className="mb-16">
         <p className="brightText text-wrap mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
           The Difference Between Unlocked <br className="md:block hidden" />
-          and Locked $sPRIME
+          and Locked sPRIME
         </p>
         <p className="whiteMainText dark:text-white text-[#565AC2] text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
-          $sPRIME is designed to counter impermanent loss that liquidity
+          sPRIME is designed to counter impermanent loss that liquidity
           providers often suffer from but also reward the community members who
           are most active on the platform. To incentivize and reward the most
-          active users, $sPRIME is split into two instances: locked and
-          unlocked.
+          active users, sPRIME is split into two instances: locked and unlocked.
         </p>
       </div>
 
@@ -389,17 +388,17 @@ const Tokenomics = () => {
 
       <div>
         <p className="whiteMainText text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 dark:text-white text-[#565AC2]">
-          The way locked $sPRIME is created acts as a way to incentivize users
-          to use the protocol, but also as means to reduce idle COL capital.
-          Idle COL capital is the COL-derived capital providing liquidity for
-          $PRIME that has been out of the trading price range for a while. To
-          make this capital active again and retain the depth of the liquidity
-          pool, a portion of it is matched with the remaining $PRIME funds of
-          the COL that are not yet in the liquidity pool.&nbsp;
+          The way locked sPRIME is created acts as a way to incentivize users to
+          use the protocol, but also as means to reduce idle COL capital. Idle
+          COL capital is the COL-derived capital providing liquidity for PRIME
+          that has been out of the trading price range for a while. To make this
+          capital active again and retain the depth of the liquidity pool, a
+          portion of it is matched with the remaining PRIME funds of the COL
+          that are not yet in the liquidity pool.&nbsp;
           {expandedSections[2] && (
             <>
               These funds are used to rebalance part of the idle AVAX or ETH
-              share in the pool to the active price range. The $sPRIME generated
+              share in the pool to the active price range. The sPRIME generated
               from this event is thereby locked and is distributed to eligible
               protocol participants. This event does not happen automatically
               but at the discretion of the DeltaPrime team and our community.
@@ -408,11 +407,11 @@ const Tokenomics = () => {
               Note that the nature of achievements required to be eligible for
               this airdrop can change over time based on the protocol and
               community requirements. If a user fails to make the achievements,
-              the locked and only the locked $sPRIME is retrieved and
+              the locked and only the locked sPRIME is retrieved and
               redistributed to the users who meet the set criteria. As such, the
-              locked $sPRIME can be reused to ensure capital efficiency without
+              locked sPRIME can be reused to ensure capital efficiency without
               causing inflation. The rewards received while holding locked
-              $sPRIME stay with the user even after they stop meeting the
+              sPRIME stay with the user even after they stop meeting the
               criteria required to hold it.
             </>
           )}
@@ -459,10 +458,10 @@ const Tokenomics = () => {
                 alt="deltaprime_mascot_img"
               />
               <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full dark:text-white text-[#565AC2]">
-                The perks of owning $sPRIME extend to governance power; $sPRIME
+                The perks of owning sPRIME extend to governance power; sPRIME
                 ownership is required to gain governance points. Points are
                 assigned at a 10:1 ratio of a deposited or borrowed token (e.g.
-                USDC) to $sPRIME. It is the underlying mechanism of the
+                USDC) to sPRIME. It is the underlying mechanism of the
                 community-centered approach of our tokenomics, which paves the
                 way towards making DeltaPrime a Decentralized Autonomous
                 Organisation (DAO). The ultimate goal is to have the DeltaPrime
@@ -479,29 +478,29 @@ const Tokenomics = () => {
                      <br />
                     <br />
                     For borrowers: 10 points for every 10:1 ratio of tokens
-                    held. When borrowing $10 and owning $1 $sPRIME (10:1 ratio),
+                    held. When borrowing $10 and owning $1 sPRIME (10:1 ratio),
                     the borrower receives 10 points per year, with a cap at 3
                     years. That means that after 3 years, the borrower will have
                     acquired 30 governance points. If they borrowed $20 and
-                    owned $2 $sPRIME, their governance power at 3 years would be
+                    owned $2 sPRIME, their governance power at 3 years would be
                     60. Points are acquired only with the 10:1 ratio. That means
-                    that if $25 was borrowed and $4 $sPRIME was held, the
+                    that if $25 was borrowed and $4 sPRIME was held, the
                     governance power would still be 60 at 3 years, and would
                     continue to be so until the user acquired more or sold. 
                     <br />
                     <br />
                     For depositors: When depositing $10 of a token and owning $1
-                    $sPRIME, the depositor receives 50 points per year, with a
+                    sPRIME, the depositor receives 50 points per year, with a
                     cap at 3 years as the borrower. Therefore, if they deposited
-                    $10 and held $1 $sPRIME they would receive 50 points per
+                    $10 and held $1 sPRIME they would receive 50 points per
                     year, capped at 150 at year 3. If they deposited $20 and
-                    owned $2 $sPRIME, their capped governance points would be
-                    300 at 3 years.
+                    owned $2 sPRIME, their capped governance points would be 300
+                    at 3 years.
                     <br />
                     <br />
-                    Locked $sPRIME Governance Power: The governance power of the
-                    users holding locked $sPRIME will be determined as mentioned
-                    above. However, if they lose their locked $sPRIME for not
+                    Locked sPRIME Governance Power: The governance power of the
+                    users holding locked sPRIME will be determined as mentioned
+                    above. However, if they lose their locked sPRIME for not
                     making the required achievements, they will also lose the
                     matching proportionate amount of governance power. As stated
                     before, any other rewards remain with the user. 
@@ -511,13 +510,13 @@ const Tokenomics = () => {
                     returns or retrieves their funds, their governance points
                     are reduced over a period of 7 days based on their current
                     cap. Therefore, if from an initial $20:$2 ratio of
-                    token:$sPRIME funds at 2 years there is a reduction of 50%,
+                    token:sPRIME funds at 2 years there is a reduction of 50%,
                     their total capped power will reduce by 50%. So from a cap
                     of 60 governance points (if they were a borrower) their cap
                     will go down to 30 points and they will not accumulate more
                     until they increase their funds (borrowed funds and owned
-                    $sPRIME). The governance points from lost locked $sPRIME
-                    will also be reduced accordingly.
+                    sPRIME). The governance points from lost locked sPRIME will
+                    also be reduced accordingly.
                   </>
                 )}
               </p>
@@ -551,7 +550,7 @@ const Tokenomics = () => {
                 alt="deltaprime_mascot_img"
               />
               <p className="text-wrap min-w-full mb-4 font-bold text-2xl md:text-[28px] dark:text-white text-[#6B70ED]">
-                Other $PRIME Allocations Explained
+                Other PRIME Allocations Explained
               </p>
               <Image
                 className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
@@ -596,7 +595,7 @@ const Tokenomics = () => {
                     Bridge, which came from early private and community adopters
                     in late 2023, is allocated 2.31% of the total tokens. <br />
                     <br />
-                    Lastly, 12% of $PRIME is allocated for Ecosystem Growth,
+                    Lastly, 12% of PRIME is allocated for Ecosystem Growth,
                     which can be utilized either for Market Making on possible
                     CEX listings in order to stabilize price, or to provide
                     grants to future partners and contributing community
@@ -650,7 +649,7 @@ const Tokenomics = () => {
                 security considerations, and are now positioned to organically
                 transition to a community governed platform, setting checkpoints
                 for stability and community rewards through our native tokens
-                $PRIME and $sPRIME.&nbsp;
+                PRIME and sPRIME.&nbsp;
                 {expandedSections[5] && (
                   <>
                     The aforementioned tokenomics work in a way to incentivize
