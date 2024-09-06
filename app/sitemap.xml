@@ -1,0 +1,40 @@
+import { fetchBlogs, fetchStrategies, fetchHowToVideos } from '../lib/getBlogs.js'
+
+const URL = 'https://deltaprime.io/'
+
+export default async function sitemap() {
+  const blogs = await fetchBlogs()
+  const strategies = await fetchStrategies()
+  const howToVideos = await fetchHowToVideos()
+
+  const staticPages = [
+    '',
+    '/blogs/academy',
+    '/about',
+    '/contact-us',
+    '/our-story',
+    '/tokenomics',
+    '/terms-of-use',
+    '/privacy-policy'
+  ].map(route => ({
+    url: `${URL}${route}`,
+    lastModified: new Date().toISOString(),
+  }))
+
+  const blogEntries = blogs.map(blog => ({
+    url: `${URL}/blogs/${blog.slug}`,
+    lastModified: blog.sys?.updatedAt || new Date().toISOString(),
+  }))
+
+  const strategyEntries = strategies.map(strategy => ({
+    url: `${URL}/strategies/${strategy.slug}`,
+    lastModified: strategy.sys?.updatedAt || new Date().toISOString(),
+  }))
+
+  const howToVideoEntries = howToVideos.map(video => ({
+    url: `${URL}/how-to-videos/${video.slug}`,
+    lastModified: video.sys?.updatedAt || new Date().toISOString(),
+  }))
+
+
+  return [...staticPages, ...blogEntries, ...strategyEntries, ...howToVideoEntries]

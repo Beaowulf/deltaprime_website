@@ -59,7 +59,7 @@ const OurStory = () => {
         {/* other text */}
         <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Image */}
-          <div className="w-full lg:w-1/2 max-w-[600px]">
+          <div className="w-full">
             <Image
               className="rounded-[20px] w-full h-auto md:h-full object-cover"
               src={rectangleImg}
