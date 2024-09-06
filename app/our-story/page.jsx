@@ -36,10 +36,10 @@ const OurStory = () => {
           {/* Text Wrapper */}
           <div className="flex flex-col md:flex-row md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
-              <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
+              <p className="brightText text-wrap  mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
                 Our Story
               </p>
-              <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 md:mb-10 dark:text-white text-[#565AC2]">
+              <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
                 Our story begins on the foothills of Mount Etna, Europe’s
                 largest volcano. It was here that the idea of DeltaPrime was
                 born. A brand on a mission to not only reshape the future of
@@ -48,7 +48,7 @@ const OurStory = () => {
             </div>
           </div>
           {/* Image */}
-          <div className="w-full lg:w-1/2 max-w-[600px]">
+          <div className="w-fit">
             <Image
               className="rounded-[25px]"
               src={ourStoryIntroImg}
