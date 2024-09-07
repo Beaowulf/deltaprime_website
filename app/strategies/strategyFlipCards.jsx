@@ -40,7 +40,7 @@ const ListText = ({
           backCardDownsides.map((benefit, index) => (
             <li key={index}>
               <p className="text-[14px] font-semibold leading-[150%]">
-                {benefit}
+                • {benefit}
               </p>
             </li>
           ))}
