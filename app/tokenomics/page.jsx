@@ -272,7 +272,7 @@ const Tokenomics = () => {
                 src={imageTwo}
                 alt="deltaprime_mascot_img"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full dark:text-white text-[#565AC2]">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full dark:text-white text-[#565AC2]">
                 How PRIME and sPRIME work <br />
                 PRIME serves as the main tradable token on Decentralized
                 Exchanges (DEXs). The demand for PRIME will come from the demand
@@ -457,7 +457,7 @@ const Tokenomics = () => {
                 src={imageThree}
                 alt="deltaprime_mascot_img"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full dark:text-white text-[#565AC2]">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full dark:text-white text-[#565AC2]">
                 The perks of owning sPRIME extend to governance power; sPRIME
                 ownership is required to gain governance points. Points are
                 assigned at a 10:1 ratio of a deposited or borrowed token (e.g.
@@ -561,7 +561,7 @@ const Tokenomics = () => {
                 src={imageFour}
                 alt="deltaprime_mascot_img"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full dark:text-white text-[#565AC2]">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full dark:text-white text-[#565AC2]">
                 The team receives 16% of the tokens for the work they have put
                 in for 3 years, while advisors are allocated a 5% for their
                 invaluable contribution in developing the project. The
@@ -644,7 +644,7 @@ const Tokenomics = () => {
                 src={imageFive}
                 alt="deltaprime_mascot_img"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 min-w-full dark:text-white text-[#565AC2]">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full dark:text-white text-[#565AC2]">
                 At DeltaPrime, we first implemented a protocol with high
                 security considerations, and are now positioned to organically
                 transition to a community governed platform, setting checkpoints

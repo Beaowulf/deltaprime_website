@@ -70,7 +70,7 @@ const IntroSection = ({ totalTvl }) => {
               <CTAButton
                 label="LAUNCH APP"
                 hasArrowRight={true}
-                className="py-5"
+                className="py-3"
                 typographyClass="text-[15px]"
               />
             </Link>
