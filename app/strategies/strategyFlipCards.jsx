@@ -84,9 +84,9 @@ export const StratDesktopFlipCards = ({ strategies }) => {
                   backCardBenefits={strategy.backCardBenefits}
                   backCardDownsides={strategy.backCardDownsides}
                 />
-              } // Pass the slug here
+              }
               titleBack={strategy.strategyTitle}
-              strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
+              strategyImage={strategy.strategyImage?.fields?.file?.url}
             />
           </div>
         ))}
@@ -121,7 +121,7 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
           pagination={{
             el: ".swiper-pagination",
             clickable: true,
-            renderBullet: (index, className) => {
+            renderBullet: (className) => {
               return `<div class="${className}"></div>`;
             },
           }}
@@ -137,7 +137,7 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
                 listTextBack={
                   <ListText
                     slug={strategy.slug}
-                    backCardTitle={strategy.backCardTitle}
+                    backCardTitle={strategy.backCardtitle}
                     backCardBenefits={strategy.backCardBenefits}
                     backCardDownsides={strategy.backCardDownsides}
                   />

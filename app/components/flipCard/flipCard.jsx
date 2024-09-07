@@ -38,9 +38,9 @@ const FlipCard = ({
   };
 
   return (
-    <div className="h-fit p-2 mx-auto md:pb-6 md:mx-0 w-full flex justify-center">
+    <div className="h-fit px-2 pt-2 pb-5 mx-auto md:pb-6 md:mx-0 w-full flex justify-center">
       <div
-        className={`flip-card 2xl:h-[500px] 2xl:w-[400px] lg:h-[500px] lg:w-[360px] h-[500px] w-[350px] ${
+        className={`flip-card 2xl:h-[500px] 2xl:w-[400px] lg:h-[500px] lg:w-[360px] h-[550px] w-[350px] ${
           isFlipped ? "flipped" : ""
         }`}
         onClick={handleClick}
