@@ -14,22 +14,19 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "Delta Prime",
   description: "Delta Prime Web App",
-  // This is for the noindex,nofollow meta tag - we dont want search engines to index this page
   name: "robots",
-  content: "noindex,nofollow",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={montserrat.className}>
+      <body
+        className={`${montserrat.className} dark:text-white text-[#565AC2]`}
+      >
         <Providers>
           <LaunchAppModal />
           <Header />
           {children}
-          {/* might put these 2 together
-          or contact into Footer
-          */}
           <Footer />
         </Providers>
       </body>

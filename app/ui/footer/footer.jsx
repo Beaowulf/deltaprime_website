@@ -107,6 +107,7 @@ export function FooterTextLinks() {
 export function RoundButtonLinks({ hasText = true }) {
   return (
     <div className="flex flex-col gap-4 text-white items-center md:items-start">
+      <div className="block md:hidden my-10 w-[8rem] h-[2px] dark:bg-deltaColoredLinearGradientVertical bg-deltaPurpleLinearGradientVertical"></div>
       {hasText && <p className="hover:text-gray-400">Follow us</p>}
       <div className="flex flex-row gap-4">
         <Link href="https://discord.com/invite/9bwsnsHEzD" target="_blank">

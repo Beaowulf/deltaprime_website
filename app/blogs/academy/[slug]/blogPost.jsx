@@ -78,7 +78,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
 
     documentToReactComponents(blog.blogRichTextParagraph, {
       renderNode: {
-        [BLOCKS.HEADING_4]: (node, children) => {
+        [BLOCKS.HEADING_2]: (node, children) => {
           const text = extractTextFromChildren(children);
           const id = sanitizeId(text);
           handleHeadingRender(id, text);
@@ -283,7 +283,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                     <a
                       href={`#${heading.id}`}
                       onClick={handleScrollTo(heading.id)}
-                      className={`text-[#565AC2] text-[15px] ${
+                      className={`text-[#565AC2] text-[15px] line-clamp-2 ${
                         activeHeading === heading.id ? "font-bold" : ""
                       }`}
                     >
@@ -327,7 +327,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                         <a
                           href={`#${heading.id}`}
                           onClick={handleScrollTo(heading.id)}
-                          className={`text-[#565AC2] text-[15px] ${
+                          className={`text-[#565AC2] text-[15px] line-clamp-2 ${
                             activeHeading === heading.id ? "font-bold" : ""
                           }`}
                         >
