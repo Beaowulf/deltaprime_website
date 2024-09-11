@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://deltaprime.io/sitemap.xml
