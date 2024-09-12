@@ -313,15 +313,31 @@ const OurStory = () => {
               </p>
             </div>
             {/* three rows */}
-            <div className="flex flex-col items-center my-auto gap-8">
+            <div className="flex flex-col items-center my-auto gap-8 xl:mt-10">
               {/* Make this into its own component todo */}
               <div className="md:ml-10 featureBorderWrapLightTheme rounded-[30px]">
                 <div className="w-full h-full deltaWhiteLinearBG  items-center font-semibold flex justify-between p-2 rounded-[20px]">
                   <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
-                    DevOps Engineer
+                    Smart Contract Developer
                   </p>
                   <div className="featureBorderWrapLightTheme rounded-[50px]">
-                    <Link href={"/job-description"}>
+                    <Link href={"/job-description/Smart-Contract-Developer"}>
+                      <BlogCardButton
+                        fullWidth={true}
+                        label={"Learn More"}
+                        hasArrowRight={true}
+                      />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="md:ml-10 featureBorderWrapLightTheme rounded-[30px]">
+                <div className="w-full h-full deltaWhiteLinearBG  items-center font-semibold flex justify-between p-2 rounded-[20px]">
+                  <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
+                    Senior DevOps Engineer
+                  </p>
+                  <div className="featureBorderWrapLightTheme rounded-[50px]">
+                    <Link href={"/job-description/Senior-DevOps-Engineer"}>
                       <BlogCardButton
                         fullWidth={true}
                         label={"Learn More"}

@@ -97,7 +97,11 @@ const ShareButton = ({ title, text, url }) => {
 
   return (
     <div
-      style={{ position: "relative", display: "inline-block" }}
+      style={{
+        position: "relative",
+        display: "inline-block",
+        zIndex: 999999,
+      }}
       ref={popupRef}
     >
       <button onClick={handleShare} className="w-fit mt-2" ref={buttonRef}>
@@ -112,6 +116,7 @@ const ShareButton = ({ title, text, url }) => {
         <div
           className={`text-[#252948] text-sm popup ${animationClass}`}
           ref={popupRef}
+          style={{ zIndex: "9999999999999 !important" }}
         >
           <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
             <li

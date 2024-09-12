@@ -18,11 +18,14 @@ export function MainButton({
   typographyClass,
   hasBorder = true,
   className,
+  onClick,
 }) {
   const router = useRouter();
 
   const handleClick = () => {
-    if (href) {
+    if (onClick) {
+      onClick();
+    } else if (href) {
       router.push(href);
     }
   };
@@ -32,8 +35,8 @@ export function MainButton({
       onClick={handleClick}
       className={
         hasBorder
-          ? `${className} mainButtonWithBorderBG`
-          : `${className} mainButtonBGwithoutBorder`
+          ? `${className} mainButtonWithBorderBG z-50`
+          : `${className} mainButtonBGwithoutBorder z-50`
       }
     >
       <div className="mainButton w-full h-[45px] md:h-full p-4">
@@ -41,7 +44,7 @@ export function MainButton({
           className={
             typographyClass
               ? `${typographyClass} mainButtonText text-white text-[12px] lg:text-[14px] text-nowrap font-extrabold`
-              : " text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText text-white"
+              : "text-[12px] lg:text-[14px] text-nowrap font-extrabold mainButtonText text-white"
           }
         >
           {label}
