@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import "./blogPost.css";
 import RichTextRenderer from "@/app/components/richTetxtRenderer/richTextRenderer";
 import ShareButton from "@/app/components/shareButton/shareButton";
 import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar";
@@ -19,7 +20,6 @@ import calendarIcon from "@/public/assets/icons/calendarIcon.svg";
 import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
-import adImg from "@/public/assets/img/adImg.png";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
@@ -78,7 +78,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
 
     documentToReactComponents(blog.blogRichTextParagraph, {
       renderNode: {
-        [BLOCKS.HEADING_4]: (node, children) => {
+        [BLOCKS.HEADING_2]: (node, children) => {
           const text = extractTextFromChildren(children);
           const id = sanitizeId(text);
           handleHeadingRender(id, text);
@@ -101,7 +101,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         const element = document.getElementById(heading.id);
         if (element) {
           const rect = element.getBoundingClientRect();
-          const offset = 100; // Adjust this value to change when the heading becomes active
+          const offset = 100;
           const distance = rect.top - offset;
 
           if (distance >= 0 && distance < closestDistance) {
@@ -127,7 +127,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -100; // Adjust this value based on your header height
+      const yOffset = -100;
       const yPosition =
         element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: yPosition, behavior: "smooth" });
@@ -283,7 +283,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                     <a
                       href={`#${heading.id}`}
                       onClick={handleScrollTo(heading.id)}
-                      className={`text-[#565AC2] text-[15px] ${
+                      className={`text-[#565AC2] text-[15px] line-clamp-2 ${
                         activeHeading === heading.id ? "font-bold" : ""
                       }`}
                     >
@@ -327,7 +327,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                         <a
                           href={`#${heading.id}`}
                           onClick={handleScrollTo(heading.id)}
-                          className={`text-[#565AC2] text-[15px] ${
+                          className={`text-[#565AC2] text-[15px] line-clamp-2 ${
                             activeHeading === heading.id ? "font-bold" : ""
                           }`}
                         >
@@ -342,9 +342,10 @@ const BlogPost = ({ blog, blogPreviewData }) => {
             </div>
 
             <CryptoPreviewTables />
-            <div className="flex flex-col gap-10 px-5 pt-8 rounded-[20px] bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%">
-              <h3 className="text-[24px] text-[#1B153C] font-extrabold leading-9 tracking-[-0.72px]">
-                This can be anything you want an ad, a new product anything
+            <div className="flex flex-col justify-center items-center gap-4 px-5 rounded-[20px] cta_background">
+              <h3 className="text-[32px] text-white text-center max-w-[12rem] leading-7">
+                <span className="font-extrabold">Explore Strategies</span> for
+                Any Risk Apetite
               </h3>
               <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
                 <AboutButtonDarkBG
@@ -353,7 +354,6 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                   label={"LEARN MORE"}
                 />
               </div>
-              <Image src={adImg} alt="deltaPrime_mascot_Holding_Keys_" />
             </div>
           </div>
         </div>

@@ -123,7 +123,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
                 alt="deltaprime_mascot_img rounded-[25px]"
               />
             </div>
-            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-5">
+            <p className="whiteMainText text-wrap max-w-[35rem] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-5 dark:text-white text-[#565AC2]">
               {strategy.strategyDescription}
             </p>
             <div className="w-full md:block hidden">

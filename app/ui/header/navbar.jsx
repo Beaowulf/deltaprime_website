@@ -53,7 +53,7 @@ function Nav() {
 
   return (
     <div
-      className={`pagePaddingLarge ${
+      className={`pagePaddingMedium ${
         isScrolled &&
         "sticky top-0 bg-white dark:bg-[#252948] shadow-md z-[1000] transition-all duration-300"
       }`}
@@ -106,7 +106,7 @@ function Nav() {
             </Link>
           </div>
 
-          <div className="-mr-2 flex md:hidden items-center gap-4">
+          <div className="-mr-1 flex md:hidden items-center gap-2">
             <Link href="?modal=true" scroll={false}>
               <CTAButton
                 hasArrowRight={false}

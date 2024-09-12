@@ -68,7 +68,7 @@ function AboutSection() {
             typographyClass="md:mx-auto"
             hasArrowRight={true}
             label={"LEARN MORE"}
-            href={"/tokenomics"}
+            href={"/our-story"}
           />
         </div>
       </div>
