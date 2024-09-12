@@ -297,23 +297,29 @@ const OurStory = () => {
       {/* join our team */}
       <div className="deltaWhiteLinearBG w-full mt-40">
         <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]] px-4 py-10">
-          <div className="flex justify-around flex-wrap px-4 md:px-0 ">
-            <div className="flex flex-col items-start max-w-96 mb-8 md:mb-0">
+          <div className="flex justify-around flex-wrap px-4 md:px-0 items-center">
+            <div className="flex flex-col items-start max-w-[30rem] mb-8 md:mb-0">
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-[#6B70ED] leading-6">
-                STRATEGIES
+                CAREERS
               </h4>
-              <h1 className="mb-6 aboutTypographyparagraph text-[24px] !text-[#6B70ED]">
-                Do you want to learn more about strategies?
+              <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center dark:text-white text-[#6B70ED] ">
+                Join our team
               </h1>
               <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-[#565AC2]">
-                Delta Prime is looking for a highly talented Business
-                Development Manager, to join our expanding team. The successful
-                candidate will have a sales background, preferably in payments,
-                be highly ambitious and motivated.
+                DeltaPrime is more than just a DeFi platform; it's a
+                community-driven project built on trust, innovation, and a
+                shared vision for the future of finance. We invite you to join
+                us on this exciting journey as we continue to break new ground
+                and redefine what's possible in DeFi.
+              </p>
+              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-[#565AC2] mt-4">
+                Our team is international, with talent from four continents and
+                growing fast. We embrace a fully remote working model, allowing
+                team members to collaborate and innovate from wherever they are.
               </p>
             </div>
             {/* three rows */}
-            <div className="flex flex-col items-center my-auto gap-8 xl:mt-10">
+            <div className="flex flex-col items-center gap-8 xl:mt-10">
               {/* Make this into its own component todo */}
               <div className="md:ml-10 featureBorderWrapLightTheme rounded-[30px]">
                 <div className="w-full h-full deltaWhiteLinearBG  items-center font-semibold flex justify-between p-2 rounded-[20px]">
