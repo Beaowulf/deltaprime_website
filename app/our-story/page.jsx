@@ -302,20 +302,19 @@ const OurStory = () => {
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-[#6B70ED] leading-6">
                 CAREERS
               </h4>
-              <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center dark:text-white text-[#6B70ED] ">
+              <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center text-[#6B70ED] ">
                 Join our team
               </h1>
               <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-[#565AC2]">
-                DeltaPrime is more than just a DeFi platform; it's a
-                community-driven project built on trust, innovation, and a
-                shared vision for the future of finance. We invite you to join
-                us on this exciting journey as we continue to break new ground
-                and redefine what's possible in DeFi.
+                DeltaPrime is a decentralised borrowing and investing ecosystem,
+                unlocking trapped liquidity across chains. Users can easily
+                deposit and borrow funds to increase the power of their usual
+                DeFi investments.
               </p>
               <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-[#565AC2] mt-4">
-                Our team is international, with talent from four continents and
-                growing fast. We embrace a fully remote working model, allowing
-                team members to collaborate and innovate from wherever they are.
+                Our team is international, with talent from all over the world.
+                We embrace a fully remote working model, allowing team members
+                to collaborate and innovate from wherever they want.
               </p>
             </div>
             {/* three rows */}
