@@ -6,15 +6,19 @@ import ContactForm from "@/app/ui/contactForm/contactForm";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import "../jobDescription.css";
 import ShareButton from "@/app/components/shareButton/shareButton";
+import { encodeEmail } from "@/utils/emailEncoding"; // Assuming you have an email encoding utility
 
 function Smart_Contract_Developer() {
   const [currentURL, setCurrentURL] = useState("");
+  const email = "jobs@deltaprime.io";
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       setCurrentURL(window.location.href);
     }
   }, []);
+
+  const encodedEmail = encodeEmail(email);
 
   return (
     <div>
@@ -25,7 +29,7 @@ function Smart_Contract_Developer() {
         {/* Left Side */}
         <div className="px-3 rounded-2xl text-justify pt-20 pb-20 w-auto flex flex-col items-start descriptionWrapper">
           <div className="descriptionContent md:px-50 md:py-45 p-10 ">
-            <p className="text-4xl font-bold">Smart Contract Developer</p>{" "}
+            <p className="text-4xl font-bold">Smart Contract Developer</p>
             <p className="text-2xl font-medium mt-3">Remote</p>
             <div className="w-[90%] h-[1px] bg-[#fab391] my-4" />
             <p className="text-justify">
@@ -169,12 +173,12 @@ function Smart_Contract_Developer() {
             <p className="text-base font-extrabold mt-6">How to Apply:</p>
             <ul className="text-justify list-disc px-5">
               <li>
-                Send your resume, portfolio, and references to
-                <a href="mailto:jobs@deltaprime.io?body=Job Position">
-                  {" "}
-                  jobs@deltaprime.io.{" "}
-                </a>
-                Include links to any relevant work or public repositories.
+                Send your resume, portfolio, and references to{" "}
+                <a
+                  href={`mailto:${email}?subject=Job%20Application&body=Please%20find%20my%20resume%20and%20portfolio%20attached.`}
+                  dangerouslySetInnerHTML={{ __html: encodedEmail }}
+                ></a>
+                . Include links to any relevant work or public repositories.
               </li>
             </ul>
           </div>
@@ -185,7 +189,7 @@ function Smart_Contract_Developer() {
           <MainButton
             onClick={() =>
               window.open(
-                "mailto:jobs@deltaprime.io?subject=Job%20Application&body=Hello"
+                `mailto:${email}?subject=Job%20Application&body=Hello`
               )
             }
             className="mx-auto p-4 text-black"
@@ -206,11 +210,6 @@ function Smart_Contract_Developer() {
             <p className="text-base font-bold ">Department</p>
             <p className="">Development</p>
           </div>
-          {/* <div className="w-44 h-[1.5px] bg-[#FFBB9B] my-4" /> */}
-          {/* <div>
-            <p className="text-base font-bold">Employment Type</p>
-            <p className="">Full-Time</p>
-          </div> */}
           <div className="w-44 h-[1.5px] bg-[#FFBB9B] my-4" />
           <div>
             <p className="text-base font-bold">Minimum Experience</p>

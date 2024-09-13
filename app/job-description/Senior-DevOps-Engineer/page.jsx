@@ -6,9 +6,11 @@ import ContactForm from "@/app/ui/contactForm/contactForm";
 import { MainButton } from "@/app/components/buttons/mainButton";
 import "../jobDescription.css";
 import ShareButton from "@/app/components/shareButton/shareButton";
+import { encodeEmail } from "@/utils/emailEncoding";
 
 function Senior_DevOps_Engineer() {
   const [currentURL, setCurrentURL] = useState("");
+  const email = "jobs@deltaprime.io";
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -140,12 +142,12 @@ function Senior_DevOps_Engineer() {
             <p className="text-base font-extrabold mt-6">How to Apply:</p>
             <ul className="text-justify list-disc px-5">
               <li>
-                Send your resume, portfolio, and references to
-                <a href="mailto:jobs@deltaprime.io?body=Job Position">
-                  {" "}
-                  jobs@deltaprime.io.{" "}
-                </a>
-                Include links to any relevant work or public repositories.
+                Send your resume, portfolio, and references to{" "}
+                <a
+                  href={`mailto:${email}?subject=Job%20Application&body=Please%20find%20my%20resume%20and%20portfolio%20attached.`}
+                  dangerouslySetInnerHTML={{ __html: encodeEmail(email) }}
+                ></a>
+                . Include links to any relevant work or public repositories.
               </li>
             </ul>
           </div>{" "}
@@ -176,11 +178,6 @@ function Senior_DevOps_Engineer() {
             <p className="text-base font-bold ">Department</p>
             <p className="">Development</p>
           </div>
-          {/* <div className="w-44 h-[1.5px] bg-[#FFBB9B] my-4" /> */}
-          {/* <div>
-            <p className="text-base font-bold">Employment Type</p>
-            <p className="">Full-Time</p>
-          </div> */}
           <div className="w-44 h-[1.5px] bg-[#FFBB9B] my-4" />
           <div>
             <p className="text-base font-bold">Minimum Experience</p>
