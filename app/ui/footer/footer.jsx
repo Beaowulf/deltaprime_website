@@ -74,10 +74,7 @@ export function FooterTextLinks() {
         <div className="block md:hidden my-10 w-[8rem] h-[2px] dark:bg-deltaColoredLinearGradientVertical bg-deltaPurpleLinearGradientVertical"></div>
         <div className="hidden md:block mx-0 md:mx-16 w-[2px] h-[8rem] dark:bg-deltaColoredLinearGradientVertical bg-deltaPurpleLinearGradientVertical"></div>
         <div className="space-y-4 md:text-start flex flex-col justify-center items-center md:items-start">
-          <Link
-            href="/job-description/Smart-Contract-Developer"
-            className="block hover:text-gray-400 text-sm"
-          >
+          <Link href="/our-story" className="block hover:text-gray-400 text-sm">
             Careers
           </Link>
           <Link
