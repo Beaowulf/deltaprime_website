@@ -79,9 +79,9 @@ const Strategies = () => {
       >
         {/* Left */}
         <div className="flex flex-col items-start dark:text-white text-[#6B70ED] mb-14 max-w-96">
-          <h1 className="mb-6 featureSubtitle text-[24px]">
+          <h2 className="mb-6 featureSubtitle text-[24px]">
             Strategies For Any Risk Appetite
-          </h1>
+          </h2>
           <p className="aboutTypographyparagraphWhite max-w-xl md:leading-6 leading-4">
             Join Burd and discover strategies to boost your earnings. From
             simple to advanced, find the perfect fit for your style.

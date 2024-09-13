@@ -92,9 +92,9 @@ const StrategiesPage = () => {
             <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-gray-400 leading-6 md:text-left text-center dark:text-white text-[#6B70ED]">
               STRATEGIES
             </h4>
-            <h1 className="mb-6 featureSubtitle text-[24px] md:text-left text-center dark:text-white text-[#6B70ED]">
+            <h2 className="mb-6 featureSubtitle text-[24px] md:text-left text-center dark:text-white text-[#6B70ED]">
               Do you want to learn more about strategies?
-            </h1>
+            </h2>
             <p className="max-w-2xl text-[13px] md:leading-6 sm:text-[17px] leading-4 md:text-left text-center dark:text-white text-[#565AC2]">
               Our vibrant community is on a mission to discuss and explore a
               breadth of mainstream and unique strategic approaches through

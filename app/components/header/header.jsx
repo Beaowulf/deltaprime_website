@@ -10,9 +10,9 @@ const Header = ({ title, subTitle, paragraph, hasMassiveSpacing }) => {
           {title}
         </p>
       )}
-      <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center dark:text-white text-[#6B70ED] ">
+      <h3 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center dark:text-white text-[#6B70ED] ">
         {subTitle}
-      </h1>
+      </h3>
       <p className="aboutTypographyparagraphWhite font-medium md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1 dark:text-white text-[#565AC2] ">
         {paragraph}
       </p>

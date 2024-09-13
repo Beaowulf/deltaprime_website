@@ -126,9 +126,9 @@ const ShareButton = ({ title, text, url }) => {
                 alignItems: "center",
               }}
             >
-              <h1 className="text-[24px]  text-center  font-bold mb-4">
+              <h3 className="text-[24px]  text-center  font-bold mb-4">
                 Share on:
-              </h1>
+              </h3>
             </li>
             <li
               style={{

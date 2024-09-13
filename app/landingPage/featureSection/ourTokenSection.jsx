@@ -37,9 +37,9 @@ function OurTokenSection() {
                   />
                 </div>
                 <div>
-                  <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#6B70ED]">
+                  <h3 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#6B70ED]">
                     PRIME
-                  </h1>
+                  </h3>
                 </div>
               </div>
               <p className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#565AC2]">
@@ -83,9 +83,9 @@ function OurTokenSection() {
                   />
                 </div>
                 <div>
-                  <h1 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#6B70ED]">
+                  <h3 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#6B70ED]">
                     sPRIME
-                  </h1>
+                  </h3>
                 </div>
               </div>
               <p className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#565AC2]">

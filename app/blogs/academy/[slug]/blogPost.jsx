@@ -210,9 +210,9 @@ const BlogPost = ({ blog, blogPreviewData }) => {
       <div className="flex flex-col lg:flex-row gap-10 mt-10 md:mt-20 pagePaddingLarge">
         <div className="w-full lg:w-9/12">
           <div className="px-4 ">
-            <h1 className="text-[24px] md:text-[35px] text-center md:text-left leading-10 text-[#6B70ED] dark:text-[#F6F6F6] font-bold mb-10 md:mb-20">
+            <h3 className="text-[24px] md:text-[35px] text-center md:text-left leading-10 text-[#6B70ED] dark:text-[#F6F6F6] font-bold mb-10 md:mb-20">
               {blogData.blogTitle}
-            </h1>
+            </h3>
             <div className="w-full flex md:flex-row flex-col justify-between items-center gap-4 text-[#6B70ED] dark:text-[#F6F6F6]">
               <div>
                 <p className="text-[#565AC2] dark:text-[#F6F6F6]">

@@ -70,9 +70,9 @@ const OurStory = () => {
           <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-end h-fit">
             <div className="text-left flex flex-col gap-8">
               <div className="flex flex-col items-start mt-20 mb-10">
-                <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left dark:text-white text-[#6B70ED]">
+                <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left dark:text-white text-[#6B70ED]">
                   Unlocking Trapped Liquidity
-                </h1>
+                </h2>
                 <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
                   That evening, chance brought three guys together. United by
                   their love for DeFi, they started talking about one of the
@@ -116,9 +116,9 @@ const OurStory = () => {
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
               <div className="flex flex-col items-start mt-20 mb-10">
-                <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-left dark:text-white text-[#6B70ED]">
+                <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-left dark:text-white text-[#6B70ED]">
                   Mission & Vision
-                </h1>
+                </h2>
                 <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-left dark:text-white text-[#565AC2]">
                   <span className="font-extrabold">Unlocking Liquidity:</span>{" "}
                   Traditional DeFi platforms often trap billions of dollars in
@@ -152,9 +152,9 @@ const OurStory = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED]">
+          <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED]">
             Unlocking Trapped Liquidity
-          </h1>
+          </h2>
           <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
             DeltaPrime ensures the safety of user funds through multiple
             security audits, insurance pools, and the unique Withdrawal Guard.
@@ -302,9 +302,9 @@ const OurStory = () => {
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-[#6B70ED] leading-6">
                 CAREERS
               </h4>
-              <h1 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center text-[#6B70ED] ">
+              <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center text-[#6B70ED] ">
                 Join our team
-              </h1>
+              </h2>
               <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-[#565AC2]">
                 DeltaPrime is a decentralised borrowing and investing ecosystem,
                 unlocking trapped liquidity across chains. Users can easily

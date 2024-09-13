@@ -15,7 +15,7 @@ const BlogHeader = ({ title, subTitle, paragraph }) => {
       <h4 className="uppercase mb-3 font-bold featureSubtitle md:text-[34px] text-[24px] text text-center dark:text-white text-[#6B70ED]">
         {title}
       </h4>
-      <h1 className="mb-8 featureSubtitle">{subTitle}</h1>
+      <h2 className="mb-8 featureSubtitle">{subTitle}</h2>
       <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-center dark:text-white text-[#565AC2]">
         {paragraph}
       </p>

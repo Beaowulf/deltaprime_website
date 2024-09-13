@@ -52,9 +52,9 @@ function AboutSection() {
         <h4 className="pt-24  aboutTypographytitle !text-[#EAEBFF]">
           OUR STORY
         </h4>
-        <h1 className="aboutTypographysubtitle !text-[#EAEBFF]">
+        <h4 className="aboutTypographysubtitle !text-[#EAEBFF]">
           Lava Doesn’t Melt Diamonds
-        </h1>
+        </h4>
         <p className="pt-8 pb-14 aboutTypographyparagraph !text-[#EAEBFF]">
           Our story begins on the foothills of Mount Etna, Europe’s largest
           volcano. It was here that the idea of DeltaPrime was born. A brand on

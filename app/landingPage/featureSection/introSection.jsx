@@ -18,9 +18,9 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity }) => {
       <div className="flex flex-col md:mb-8 mb-0 justify-between gap-2 md:gap-20 items-center md:items-start flex-1">
         {/* Text Wrapper */}
         <div className="text-left flex flex-col gap-1 ">
-          <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px] mb-4 dark:text-white text-[#6B70ED]">
+          <h3 className="brightText text-wrap max-w-xl text-3xl md:text-[44px] mb-4 dark:text-white text-[#6B70ED]">
             Be The Whale.
-          </p>
+          </h3>
           <p className="aboutTypographyparagraphWhite text-wrap  max-w-[25rem] dark:text-white text-[#565AC2]">
             Your trustless, transparent, prime brokerage on Avalanche and
             Arbitrum.
