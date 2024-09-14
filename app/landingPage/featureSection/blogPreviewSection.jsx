@@ -5,6 +5,7 @@ import { MainButton } from "@/app/components/buttons/mainButton";
 import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
+import { useRouter } from "next/navigation";
 
 const BlogHeader = ({ title, subTitle, paragraph }) => {
   return (
@@ -28,10 +29,21 @@ const BlogCard = ({
   roundedImage,
   minsToRead,
   blogSlug,
+  onClick,
 }) => {
+  const router = useRouter();
+
+  const handleImageClick = () => {
+    if (onClick) onClick();
+    router.push(`/blogs/academy/${blogSlug}`);
+  };
+
   return (
     <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
-      <div className="blogCardParent w-full h-[270px] ">
+      <div
+        className="blogCardParent w-full h-[270px] cursor-pointer"
+        onClick={handleImageClick}
+      >
         <img
           src={previewBlogImage}
           alt="Blog Preview"

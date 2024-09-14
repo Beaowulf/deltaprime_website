@@ -799,3 +799,9 @@ body {
   height: 20px !important;
   width: 50px !important;
 }
+
+.cta_background {
+  height: 520px;
+  width: 320px;
+  background: no-repeat url("../public/assets/img/cta-background-image.png");
+}

@@ -32,7 +32,7 @@ const OurStory = () => {
     <div>
       <div className="pagePaddingLarge">
         {/* intro */}
-        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
+        <div className="flex lg:flex-row flex-col justify-between items-center w-full md:gap-28 gap-5 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:flex-row md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
@@ -48,7 +48,7 @@ const OurStory = () => {
             </div>
           </div>
           {/* Image */}
-          <div className="w-fit">
+          <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
               className="rounded-[25px]"
               src={ourStoryIntroImg}
@@ -57,9 +57,9 @@ const OurStory = () => {
           </div>
         </div>
         {/* other text */}
-        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
+        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-28 gap-5 my-10 md:my-40">
           {/* Image */}
-          <div className="w-full">
+          <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
               className="rounded-[20px] w-full h-auto md:h-full object-cover"
               src={rectangleImg}
@@ -97,9 +97,7 @@ const OurStory = () => {
             </div>
           </div>
         </div>
-        <div>
-          <UnlockPotentialContainer />
-        </div>
+        <div></div>
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
           <Link href="?modal=true" scroll={false}>
             <DeltaPurpleButton
@@ -110,7 +108,7 @@ const OurStory = () => {
           </Link>
         </div>
         {/* other text */}
-        <div className="flex md:flex-row flex-col justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
+        <div className="flex md:flex-row flex-col justify-around items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
@@ -186,9 +184,7 @@ const OurStory = () => {
             enabling diverse and scalable investment strategies.
           </p>
         </div>
-        {/* Unlock full potential button reponsive component */}
         <div>
-          <UnlockPotentialContainer />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true" scroll={false}>
@@ -202,8 +198,9 @@ const OurStory = () => {
         </div>
 
         {/* team */}
-        <div className="mt-40">
+        <div className="mt-20">
           <Header
+            hasSeperator={true}
             subTitle={"The Founders"}
             paragraph={
               "DeltaPrime was born from the minds of three visionaries, each bringing their own unique set of skills and experiences:"
@@ -238,7 +235,6 @@ const OurStory = () => {
         </div>
         {/* Unlock full potential button reponsive component */}
         <div>
-          <UnlockPotentialContainer />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true" scroll={false}>
@@ -253,6 +249,7 @@ const OurStory = () => {
         {/* advisors */}
         <div className="mt-40">
           <Header
+            hasSeperator={true}
             subTitle={"Our Advisors"}
             paragraph={
               "DeltaPrime's advisors are DeFi veterans and help ensure the platform's strategic development and success"
@@ -315,37 +312,43 @@ const OurStory = () => {
               </p>
             </div>
             {/* three rows */}
-            <div className="flex flex-col items-center gap-8 xl:mt-10">
-              {/* Make this into its own component todo */}
-              <div className="md:ml-10 featureBorderWrapLightTheme rounded-[30px]">
-                <div className="w-full h-full deltaWhiteLinearBG  items-center font-semibold flex justify-between p-2 rounded-[20px]">
-                  <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
+            <div className="flex flex-col items-stretch gap-8 mt-10 xl:mt-0">
+              {/* First Box */}
+              <div className="featureBorderWrapLightTheme rounded-[30px] flex-1">
+                <div className="deltaWhiteLinearBG font-semibold flex items-center justify-between py-2 px-5 rounded-[25px] h-full gap-8">
+                  <p className="pl-6 text-[18px] text-[#29233B]">
                     Smart Contract Developer
                   </p>
-                  <div className="featureBorderWrapLightTheme rounded-[50px]">
-                    <Link href={"/job-description/Smart-Contract-Developer"}>
-                      <BlogCardButton
-                        fullWidth={true}
-                        label={"Learn More"}
-                        hasArrowRight={true}
-                      />
-                    </Link>
+                  <div className="rounded-[50px]">
+                    <BlogCardButton
+                      isSmallbtn={true}
+                      isLink={true}
+                      forcePurpleArrow={true}
+                      href="/job-description/Smart-Contract-Developer"
+                      typographyClass="text-[#565AC2]"
+                      label={"Learn More"}
+                      hasArrowRight={true}
+                    />
                   </div>
                 </div>
               </div>
-              <div className="md:ml-10 featureBorderWrapLightTheme rounded-[30px]">
-                <div className="w-full h-full deltaWhiteLinearBG  items-center font-semibold flex justify-between p-2 rounded-[20px]">
-                  <p className="pl-6  mr-[50px] md:mr-[150px] text-[18px] text-[#29233B]">
+
+              {/* Second Box */}
+              <div className="featureBorderWrapLightTheme rounded-[30px] flex-1">
+                <div className="deltaWhiteLinearBG font-semibold flex items-center justify-between py-2 px-5 rounded-[25px] h-full gap-8">
+                  <p className="pl-6 text-[18px] text-[#29233B]">
                     Senior DevOps Engineer
                   </p>
-                  <div className="featureBorderWrapLightTheme rounded-[50px]">
-                    <Link href={"/job-description/Senior-DevOps-Engineer"}>
-                      <BlogCardButton
-                        fullWidth={true}
-                        label={"Learn More"}
-                        hasArrowRight={true}
-                      />
-                    </Link>
+                  <div className="rounded-[50px]">
+                    <BlogCardButton
+                      isSmallbtn={true}
+                      isLink={true}
+                      forcePurpleArrow={true}
+                      href="/job-description/Senior-DevOps-Engineer"
+                      typographyClass="text-[#565AC2]"
+                      label={"Learn More"}
+                      hasArrowRight={true}
+                    />
                   </div>
                 </div>
               </div>

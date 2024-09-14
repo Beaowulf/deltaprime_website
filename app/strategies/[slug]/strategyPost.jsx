@@ -161,18 +161,20 @@ const StrategyDetail = ({ strategy, strategies }) => {
             {" "}
             {/* Sticky class added */}
             <CryptoPreviewTables />
-            <div className="flex flex-col gap-10 px-5 pt-8 rounded-[20px] bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%">
-              <h3 className="text-[24px] text-[#1B153C] font-extrabold leading-9 tracking-[-0.72px]">
-                This can be anything you want an ad, a new product anything
+            <div className="flex flex-col justify-center items-center gap-4 px-5 rounded-[20px] cta_background">
+              <h3 className="text-[32px] text-white text-center max-w-[12rem] leading-7">
+                <span className="font-extrabold">Explore Strategies</span> for
+                Any Risk Appetite
               </h3>
               <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
                 <AboutButtonDarkBG
+                  href={"/strategies"}
+                  hasArrowRight={true}
                   customClass="w-full"
                   hasWhiteArrowRight={true}
                   label={"LEARN MORE"}
                 />
               </div>
-              <Image src={adImg} alt="deltaPrime_mascot_Holding_Keys_" />
             </div>
           </div>
         </div>

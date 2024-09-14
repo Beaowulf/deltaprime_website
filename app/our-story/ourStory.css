@@ -7,6 +7,7 @@
 
 .featureBorderWrapLightTheme {
   position: relative;
+  background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
   padding: 2.5px;
 }
 
@@ -55,4 +56,8 @@
 
 .customBoxShadow {
   box-shadow: 0 0 1px 1px gray;
+}
+
+.purpleText {
+  color: #3d4481 !important;
 }

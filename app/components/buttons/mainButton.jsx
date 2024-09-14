@@ -254,8 +254,42 @@ export function BlogCardButton({
   hasArrowRight = false,
   typographyClass,
   whiteOnlyArrow = false,
+  forcePurpleArrow = false,
 }) {
   const { theme } = useTheme();
+
+  const ArrowIcon = () => {
+    if (!hasArrowRight) return null;
+
+    if (forcePurpleArrow) {
+      return (
+        <ArrowRightPurple
+          className="size-6 mb-[1px] arrowButton"
+          alt="Arrow Right Purple"
+        />
+      );
+    }
+
+    if (theme === "dark") {
+      return (
+        <ArrowRight className="size-6 mb-[1px] arrowButton" alt="Arrow Right" />
+      );
+    }
+
+    if (!whiteOnlyArrow) {
+      return (
+        <ArrowRightPurple
+          className="size-6 mb-[1px] arrowButton"
+          alt="Arrow Right Purple"
+        />
+      );
+    }
+
+    return (
+      <ArrowRight className="size-6 mb-[1px] arrowButton" alt="Arrow Right" />
+    );
+  };
+
   return isLink ? (
     <Link href={href}>
       <button
@@ -273,28 +307,12 @@ export function BlogCardButton({
             className={`${
               isSmallbtn ? "text-[12px]" : "text-[12px] lg:text-[14px]"
             } text-nowrap font-extrabold blogCardText ${
-              !typographyClass && "dark:text-[#FFF5F0] text-[#565AC2]"
+              typographyClass || "dark:text-[#FFF5F0] text-[#565AC2]"
             }`}
           >
             {label}
           </h6>
-          {hasArrowRight &&
-            (theme === "dark" ? (
-              <ArrowRight
-                className="size-6 mb-[1px] arrowButton"
-                alt="Arrow Right"
-              />
-            ) : !whiteOnlyArrow ? (
-              <ArrowRightPurple
-                className="size-6 mb-[1px] arrowButton"
-                alt="Arrow Right"
-              />
-            ) : (
-              <ArrowRight
-                className="size-6 mb-[1px] arrowButton"
-                alt="Arrow Right"
-              />
-            ))}
+          <ArrowIcon />
         </div>
       </button>
     </Link>
@@ -313,22 +331,13 @@ export function BlogCardButton({
         <h6
           className={`${
             isSmallbtn ? "text-[12px]" : "text-[12px] lg:text-[14px]"
-          } text-nowrap font-extrabold blogCardText dark:text-[#FFF5F0] text-[#565AC2]`}
+          } text-nowrap font-extrabold blogCardText ${
+            typographyClass || "dark:text-[#FFF5F0] text-[#565AC2]"
+          }`}
         >
           {label}
         </h6>
-        {hasArrowRight &&
-          (theme === "dark" ? (
-            <ArrowRight
-              className="size-6 mb-[1px] arrowButton"
-              alt="Arrow Right"
-            />
-          ) : (
-            <ArrowRightPurple
-              className="size-6 mb-[1px] arrowButton"
-              alt="Arrow Right"
-            />
-          ))}
+        <ArrowIcon />
       </div>
     </button>
   );

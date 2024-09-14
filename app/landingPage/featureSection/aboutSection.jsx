@@ -74,7 +74,7 @@ function AboutSection() {
         </div>
       </div>
       {/* Right Side */}
-      <div className="px-10 pt-10 w-full md:w-1/2 flex justify-center">
+      <div className="px-10 pt-10 w-full md:w-1/2 flex justify-center overflow-hidden">
         <div className="w-fit">
           <ImageComponent />
         </div>

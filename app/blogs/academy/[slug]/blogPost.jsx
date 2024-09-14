@@ -321,8 +321,8 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 <div className="w-full bg-black h-[2px] my-5" />
                 <ul className="flex flex-col gap-4">
                   {headings.map((heading) => (
-                    <>
-                      <li key={heading.id}>
+                    <div key={heading.id}>
+                      <li>
                         <a
                           href={`#${heading.id}`}
                           onClick={handleScrollTo(heading.id)}
@@ -334,7 +334,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                         </a>
                       </li>
                       <span className="bg-gray-200 h-[1px] w-1/2 -my-1 mx-auto"></span>
-                    </>
+                    </div>
                   ))}
                 </ul>
               </div>
@@ -370,7 +370,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         <div className="flex flex-wrap gap-6 items-center justify-center mb-20 md:mb-0">
           {blogPreviewData.slice(0, 3).map((blogPreviewData) => (
             <BlogCard
-              key={blogPreviewData.blog.slug}
+              key={blogPreviewData.blog.blogID}
               blogSlug={blogPreviewData.blog.slug}
               blogCategory={blogPreviewData.blog.blogCategory}
               blogTitle={blogPreviewData.blog.blogTitle}

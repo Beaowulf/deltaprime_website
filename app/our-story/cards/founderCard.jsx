@@ -30,7 +30,7 @@ const FounderCard = ({
           <p className="aboutTypographyparagraphWhite dark:text-[#252948] text-[#6B70ED]">
             {title}
           </p>
-          <p className="my-8 aboutTypographyparagraphWhite max-w-[320px] dark:text-[#252948] text-[#565AC2] text-justify">
+          <p className="my-8 aboutTypographyparagraphWhite max-w-[320px] dark:text-[#252948] text-[#565AC2] text-justify hyphens-auto">
             {description}
           </p>
           <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">

@@ -1,10 +1,20 @@
 import Link from "next/link";
 import "./blogCard.css";
+import { useRouter } from "next/navigation";
 
-const BlogCard = ({ previewBlogImage, blogDescription, blogSlug }) => {
+const BlogCard = ({ previewBlogImage, blogDescription, blogSlug, onClick }) => {
+  const router = useRouter();
+
+  const handleImageClick = () => {
+    if (onClick) onClick();
+    router.push(`/blogs/academy/${blogSlug}`);
+  };
   return (
     <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
-      <div className="blogCardParent w-full h-[270px] ">
+      <div
+        className="blogCardParent w-full h-[270px] cursor-pointer"
+        onClick={handleImageClick}
+      >
         {previewBlogImage ? (
           <img
             src={previewBlogImage}
@@ -36,9 +46,19 @@ export const SmallBlogCard = ({
   blogSlug,
   onClick,
 }) => {
+  const router = useRouter();
+
+  const handleImageClick = () => {
+    if (onClick) onClick();
+    router.push(`/blogs/academy/${blogSlug}`);
+  };
+
   return (
     <div className="flex flex-col justify-start w-[200px] h-[230px] flex-shrink-0 gap-2">
-      <div className="blogCardParentSmall w-full h-[120px]">
+      <div
+        className="blogCardParentSmall w-full h-[120px] cursor-pointer"
+        onClick={handleImageClick}
+      >
         <img
           src={previewBlogImage}
           alt="Blog Preview"
@@ -49,9 +69,9 @@ export const SmallBlogCard = ({
         {blogDescription}
       </p>
       <Link
+        href={`/blogs/academy/${blogSlug}`}
         onClick={onClick}
         prefetch={true}
-        href={`/blogs/academy/${blogSlug}`}
       >
         <span className="underline ml-1">Read More</span>
       </Link>
