@@ -52,7 +52,7 @@ const FeaturePrimeAccountSection = () => {
       <Header
         subTitle={"Prime Account"}
         paragraph={
-          "Our unique escrow smart contracts allow you for truly trustless borrowing. Leverage up to 6x and action a wide range of flexible investment strategies."
+          "Our unique escrow smart contracts allow for truly trustless borrowing. Leverage up to 6x and action a wide range of flexible investment strategies."
         }
       />
       <div className="flex items-center justify-cente md:mb-20 mb-6 flex-wrap">
