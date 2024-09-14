@@ -5,7 +5,7 @@ import "./ourStory.css";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
-import { CTAButton } from "@/app/components/buttons/mainButton";
+import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import ourStoryIntroImg from "@/public/assets/img/images/our-story-founders.png";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
 import whyDeltaPrimeImg from "@/public/assets/img/whyDeltaPrimeImg.jpg";
@@ -102,8 +102,7 @@ const OurStory = () => {
         </div>
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
           <Link href="?modal=true" scroll={false}>
-            <CTAButton
-              className="mx-auto px-6 py-3"
+            <DeltaPurpleButton
               label="LAUNCH APP"
               hasArrowRight={true}
               typographyClass="text-[15px]"
@@ -193,8 +192,7 @@ const OurStory = () => {
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true" scroll={false}>
-              <CTAButton
-                className="mx-auto px-6 py-3"
+              <DeltaPurpleButton
                 label="LAUNCH APP"
                 hasArrowRight={true}
                 typographyClass="text-[15px]"
@@ -244,8 +242,7 @@ const OurStory = () => {
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true" scroll={false}>
-              <CTAButton
-                className="mx-auto px-6 py-3"
+              <DeltaPurpleButton
                 label="LAUNCH APP"
                 hasArrowRight={true}
                 typographyClass="text-[15px]"
@@ -295,8 +292,8 @@ const OurStory = () => {
       </div>
 
       {/* join our team */}
-      <div className="deltaWhiteLinearBG w-full mt-40">
-        <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]] px-4 py-10">
+      <div className="deltaWhiteLinearBG w-full mt-40" id="job-description">
+        <div className="pagePaddingMedium px-4 py-10">
           <div className="flex justify-around flex-wrap px-4 md:px-0 items-center">
             <div className="flex flex-col items-start max-w-[30rem] mb-8 md:mb-0">
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-[#6B70ED] leading-6">

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BlogCardButton } from "@/app/components/buttons/mainButton";
 import "./blogCard.css";
 
 const BlogCard = ({ previewBlogImage, blogDescription, blogSlug }) => {
@@ -25,7 +24,7 @@ const BlogCard = ({ previewBlogImage, blogDescription, blogSlug }) => {
         {blogDescription}
       </p>
       <Link prefetch={true} href={`/blogs/academy/${blogSlug}`}>
-        <BlogCardButton label={"Read More"} />
+        <span className="underline ml-1">Read More</span>
       </Link>
     </div>
   );
@@ -54,7 +53,7 @@ export const SmallBlogCard = ({
         prefetch={true}
         href={`/blogs/academy/${blogSlug}`}
       >
-        <BlogCardButton isSmallbtn={true} label={"Read More"} />
+        <span className="underline ml-1">Read More</span>
       </Link>
     </div>
   );

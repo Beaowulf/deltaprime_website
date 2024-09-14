@@ -1,7 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { CTAButton } from "@/app/components/buttons/mainButton";
+import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import { AnimatedText } from "@/app/ui/animatedText";
 import { useCryptoData } from "@/app/context/CryptoDataContext";
@@ -67,10 +67,9 @@ const IntroSection = ({ totalTvl }) => {
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren block sm:hidden">
             <Link href="?modal=true" scroll={false}>
-              <CTAButton
+              <DeltaPurpleButton
                 label="LAUNCH APP"
                 hasArrowRight={true}
-                className="py-3"
                 typographyClass="text-[15px]"
               />
             </Link>
@@ -80,8 +79,6 @@ const IntroSection = ({ totalTvl }) => {
             <VideoPlayer url={"https://youtu.be/2nJLhZ33lno"} />
           </div>
         </div>
-        {/* Bottom Intro Part ( full potential of your capital Launch app) */}
-        <UnlockPotentialContainer />
       </div>
     </div>
   );

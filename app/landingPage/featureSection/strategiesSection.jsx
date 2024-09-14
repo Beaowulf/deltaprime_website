@@ -66,11 +66,11 @@ const Strategies = () => {
 
   return (
     <div
-      className={`rounded-[20px] w-full h-full ${
+      className={`w-full h-full ${
         theme === "dark"
-          ? "featureBorderWrapDarkTheme"
-          : "featureBorderWrapLightTheme"
-      } z-10 mt-16 md:mt-52`}
+          ? "featureBorderWrapDarkTheme rounded-[25px]"
+          : "featureBorderWrapLightTheme rounded-[27px]"
+      } z-10 mt-16 md:mt-40`}
     >
       <div
         className={`flex items-center md:flex-row flex-col justify-around rounded-[25px] md:pl-20 pl-10 py-6 pr-6 z-20 overflow-hidden ${
@@ -88,7 +88,11 @@ const Strategies = () => {
           </p>
           <div className="mt-10 md:w-fit w-full">
             <Link href="/strategies">
-              <MainButton hasArrowRight={true} label={"EXPLORE STRATEGIES"} />
+              <MainButton
+                wrapperClass="px-8 py-4"
+                hasArrowRight={true}
+                label={"EXPLORE STRATEGIES"}
+              />
             </Link>
           </div>
         </div>

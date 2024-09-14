@@ -22,10 +22,11 @@ const DarkBoxWrapper = ({ aboutimg, alt }) => {
 
 function SecuritySection() {
   return (
-    <div className="mt-14">
+    <div className="mt-40 pagePaddingLarge">
       <Header
+        hasSeperator={true}
         subTitle="Security"
-        paragraph="Smart contracts with protocol-level security and 7 audits, help protect what we value most, our community’s investments, "
+        paragraph="Smart contracts with protocol-level security and 7 audits, help protect what we value most, our community’s investments."
       />
       <div className="items-center pb-16 flex flex-wrap justify-center gap-5">
         <Link href="https://peckshield.com/" target="_blank">

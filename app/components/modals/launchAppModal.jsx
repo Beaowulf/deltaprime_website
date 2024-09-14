@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import "./modals.css";
 import { useSearchParams, usePathname } from "next/navigation";
-import { CTAButton } from "@/app/components/buttons/mainButton";
+import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import closeIconColored from "@/public/assets/icons/closeIconColored.svg";
 import Link from "next/link";
 import { useCryptoData } from "@/app/context/CryptoDataContext"; // Import the context
@@ -40,7 +40,7 @@ const LaunchAppModal = () => {
   return (
     <>
       {modal && (
-        <dialog className="modalP fixed left-0 z-[300] top-0 w-full h-full bg-black bg-opacity-50  overflow-auto backdrop-blur flex justify-center items-center">
+        <dialog className="modalP fixed left-0 top-0 w-full h-full bg-black bg-opacity-50  overflow-auto backdrop-blur flex justify-center items-center">
           <div className="modalParent relative w-full md:w-fit">
             <div className="absolute top-2 right-4 pb-2 pt-10 pl-5 pr-5 w-fit h-fit text-black cursor-pointer z-50">
               <Link
@@ -112,7 +112,10 @@ const LaunchAppModal = () => {
                           target="_blank"
                           href="https://app.deltaprime.io/#/pools"
                         >
-                          <CTAButton label="Launch App" />
+                          <DeltaPurpleButton
+                            className="px-3 py-3"
+                            label="Launch App"
+                          />
                         </Link>
                       </div>
                     </div>
@@ -156,7 +159,10 @@ const LaunchAppModal = () => {
                           target="_blank"
                           href="https://app.deltaprime.io/#/prime-account/zaps"
                         >
-                          <CTAButton label="Launch App" />
+                          <DeltaPurpleButton
+                            className="px-3 py-3"
+                            label="Launch App"
+                          />
                         </Link>
                       </div>
                     </div>

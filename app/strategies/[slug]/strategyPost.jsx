@@ -12,7 +12,7 @@ import strategiespostImg from "@/public/assets/img/flipCardBG.png";
 import {
   MainButton,
   AboutButtonDarkBG,
-  CTAButton,
+  DeltaPurpleButton,
 } from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
 import CryptoPreviewTables from "@/app/components/cryptoTables/cryptoTables";
@@ -50,7 +50,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
               </p>
               <div className="w-full md:block hidden">
                 <Link href="?modal=true" scroll={false}>
-                  <CTAButton
+                  <DeltaPurpleButton
                     className="w-[100%] md:w-fit px-6 py-3"
                     label="LAUNCH APP"
                     hasArrowRight={true}
@@ -61,8 +61,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
               {/* Show this button only on mobile */}
               <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
                 <Link href="?modal=true" scroll={false}>
-                  <CTAButton
-                    className="mx-auto px-6 py-3"
+                  <DeltaPurpleButton
                     label="LAUNCH APP"
                     hasArrowRight={true}
                     typographyClass="text-[15px]"
@@ -128,7 +127,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
             </p>
             <div className="w-full md:block hidden">
               <Link href="?modal=true" scroll={false}>
-                <CTAButton
+                <DeltaPurpleButton
                   className="w-[100%] md:w-fit px-6 py-3"
                   label="LAUNCH APP"
                   hasArrowRight={true}
@@ -184,8 +183,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
         {/* Show this button only on mobile */}
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
           <Link href="?modal=true" scroll={false}>
-            <CTAButton
-              className="mx-auto px-6 py-3"
+            <DeltaPurpleButton
               label="LAUNCH APP"
               hasArrowRight={true}
               typographyClass="text-[15px]"

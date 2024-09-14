@@ -8,19 +8,7 @@ import "swiper/css";
 import "./logoCarousel.css";
 import "swiper/css/autoplay";
 import { logoCarouselItems } from "@/app/components/carouselImages/getCarouselData";
-import { resolve } from "styled-jsx/css";
-
-const CarouselHeader = () => {
-  return (
-    <div className="flex flex-row w-full md:mb-20 mb-8 items-center">
-      <span className="h-[2px] w-full bg-gradient-to-r dark:from-[#5A2950] dark:to-[#4D3496] from-[#DFE0FF] from-30% via-[#FFE1C2] via-50% to-[#FFD3E0] to-70%" />
-      <p className="slightBrightText md:mx-10 mx-4 max-w-fit whitespace-nowrap text-[20px] dark:text-white text-[#6B70ED] font-bold">
-        Backed by
-      </p>
-      <span className="h-[2px] w-full bg-gradient-to-r dark:from-[#5A2950] dark:to-[#4D3496] from-[#DFE0FF] from-30% via-[#FFE1C2] via-50% to-[#FFD3E0] to-70%" />
-    </div>
-  );
-};
+import Seperator from "@/app/components/seperator/seperator";
 
 const CarouselComponent = () => {
   const { theme, resolvedTheme } = useTheme();
@@ -87,7 +75,7 @@ const CarouselComponent = () => {
 const Carousel = () => {
   return (
     <div className="flex flex-col justify-between items-center md:mt-40 mt-10">
-      <CarouselHeader />
+      <Seperator className="pagePaddingLarge" label="Backed By" />
       <CarouselComponent />
     </div>
   );

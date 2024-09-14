@@ -12,7 +12,7 @@ import BlogCard from "@/app/components/blogCard/blogCard";
 import CryptoPreviewTables from "@/app/components/cryptoTables/cryptoTables";
 import {
   AboutButtonDarkBG,
-  CTAButton,
+  DeltaPurpleButton,
 } from "@/app/components/buttons/mainButton";
 import clockIcon from "@/public/assets/icons/clockIcon.svg";
 import hashtagIcon from "@/public/assets/icons/hashtagIcon.svg";
@@ -302,8 +302,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
             </div>
             <div className="fullWidthButtonChildren h-[60px] mt-12 md:h-full block md:hidden w-full text-center">
               <Link href="?modal=true" scroll={false}>
-                <CTAButton
-                  className="mx-auto w-full p-4"
+                <DeltaPurpleButton
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"
@@ -345,10 +344,12 @@ const BlogPost = ({ blog, blogPreviewData }) => {
             <div className="flex flex-col justify-center items-center gap-4 px-5 rounded-[20px] cta_background">
               <h3 className="text-[32px] text-white text-center max-w-[12rem] leading-7">
                 <span className="font-extrabold">Explore Strategies</span> for
-                Any Risk Apetite
+                Any Risk Appetite
               </h3>
               <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
                 <AboutButtonDarkBG
+                  href={"/strategies"}
+                  hasArrowRight={true}
                   customClass="w-full"
                   hasWhiteArrowRight={true}
                   label={"LEARN MORE"}

@@ -1,10 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  BlogCardButton,
-  MainButton,
-} from "@/app/components/buttons/mainButton";
+import { MainButton } from "@/app/components/buttons/mainButton";
 import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
@@ -45,7 +42,7 @@ const BlogCard = ({
         {blogDescription}
       </p>
       <Link prefetch={true} href={`/blogs/academy/${blogSlug}`}>
-        <BlogCardButton label={"Read More"} />
+        <span className="underline ml-1">Read More</span>
       </Link>
     </div>
   );
@@ -129,8 +126,9 @@ const BlogPreviewSection = ({ blogPreviewCardData }) => {
         </div>
         <div className="flex justify-center items-center">
           <MainButton
+            wrapperClass="py-3 px-8"
             hasArrowRight={true}
-            label={"LAUNCH BURD LOG"}
+            label={"VISIT BLOG"}
             href={"/blogs"}
           />
         </div>
