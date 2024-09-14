@@ -186,7 +186,7 @@ const FeaturePrimeAccount = () => {
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
         <Link href="?modal=true" scroll={false}>
           <DeltaPurpleButton
-            className="py-4 px-5"
+            className="py-4 px-5 h-[50px]"
             label="LAUNCH SAVINGS ACCOUNT"
             typographyClass="text-[15px]"
             hasArrowRight={false}

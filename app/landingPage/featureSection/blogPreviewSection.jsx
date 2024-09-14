@@ -8,7 +8,7 @@ import circleThree from "@/public/assets/icons/circleThree.svg";
 
 const BlogHeader = ({ title, subTitle, paragraph }) => {
   return (
-    <div className="flex flex-col items-center  md:mb-14 mb-1 text-center">
+    <div className="flex flex-col items-center  md:mb-14 mb-10 text-center">
       <h4 className="uppercase mb-3 font-bold featureSubtitle md:text-[34px] text-[24px] text text-center dark:text-white text-[#6B70ED]">
         {title}
       </h4>

@@ -155,7 +155,9 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
             <div className="flex items-center justify-center">
               <DeltaPurpleButton
                 buttonClassName={"w-full"}
-                className={"w-full flex items-center justify-center py-3"}
+                className={
+                  "w-full flex items-center justify-center py-3 h-[50px] md:h-full"
+                }
                 typographyClass={"text-[15px]"}
                 label={"SUBMIT"}
                 type="submit"
