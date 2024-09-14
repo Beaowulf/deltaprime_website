@@ -11,7 +11,7 @@ import { logoCarouselItems } from "@/app/components/carouselImages/getCarouselDa
 import Seperator from "@/app/components/seperator/seperator";
 
 const CarouselComponent = () => {
-  const { theme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -43,7 +43,7 @@ const CarouselComponent = () => {
                 >
                   <div
                     className={`dark:bg-transparent hover:bg-white bg-transparent p-1 md:p-4 rounded-[20px] flex justify-center transition ease-in  ${
-                      theme === "dark" ? `` : `carouseItemsWhiteTheme`
+                      resolvedTheme === "dark" ? `` : `carouseItemsWhiteTheme`
                     }`}
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}

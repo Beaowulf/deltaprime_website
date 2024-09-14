@@ -29,6 +29,7 @@
 }
 
 /* Carousel Section Styling */
+/* todo dark theme might need to be removed completely */
 .carouselItemsDarkTheme,
 .carouseItemsWhiteTheme {
   position: relative;
