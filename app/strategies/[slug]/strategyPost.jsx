@@ -161,21 +161,6 @@ const StrategyDetail = ({ strategy, strategies }) => {
             {" "}
             {/* Sticky class added */}
             <CryptoPreviewTables />
-            <div className="flex flex-col justify-center items-center gap-4 px-5 rounded-[20px] cta_background">
-              <h3 className="text-[32px] text-white text-center max-w-[12rem] leading-7">
-                <span className="font-extrabold">Explore Strategies</span> for
-                Any Risk Appetite
-              </h3>
-              <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
-                <AboutButtonDarkBG
-                  href={"/strategies"}
-                  hasArrowRight={true}
-                  customClass="w-full"
-                  hasWhiteArrowRight={true}
-                  label={"LEARN MORE"}
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>
