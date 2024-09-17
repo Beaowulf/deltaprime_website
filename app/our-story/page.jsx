@@ -157,7 +157,7 @@ const OurStory = () => {
             />
           </div>
           <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-end h-fit">
-            <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED]">
+            <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED] text-left">
               Unlocking Trapped Liquidity
             </h2>
             <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
