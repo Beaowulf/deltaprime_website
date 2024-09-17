@@ -7,9 +7,9 @@ import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
 import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import ourStoryIntroImg from "@/public/assets/img/images/our-story-founders.png";
-import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
+import rectangleImg from "@/public/assets/img//images/rectangle-Image.png";
+import unlocked_Image from "@/public/assets/img//images/unlocked-image.png";
 import whyDeltaPrimeImg from "@/public/assets/img/whyDeltaPrimeImg.jpg";
-import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
 import FounderCard from "./cards/founderCard";
@@ -97,7 +97,7 @@ const OurStory = () => {
             </div>
           </div>
         </div>
-        <div></div>
+        {/* other text */}
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
           <Link href="?modal=true" scroll={false}>
             <DeltaPurpleButton
@@ -148,42 +148,52 @@ const OurStory = () => {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center">
-          <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED]">
-            Unlocking Trapped Liquidity
-          </h2>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
-            DeltaPrime ensures the safety of user funds through multiple
-            security audits, insurance pools, and the unique Withdrawal Guard.
-            This no-oracle solution only allows withdrawals if all borrowed
-            assets are available, protecting against price manipulation and
-            ensuring solvency.
-          </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
-            Each user's funds are managed through Dedicated Smart Contracts
-            (DSCs), providing clear on-chain accounting and effective
-            anti-exploit monitoring. Our Diamond-Beacon Proxy (DBP) pattern
-            ensures DeltaPrime remains resilient and secure, even in volatile
-            market conditions.
-          </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
-            {`Since launching on the Avalanche network in January 2023, DeltaPrime
+        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-28 gap-5 my-10 md:my-40">
+          <div className="w-fit rounded-[25px] max-w-[60rem]">
+            <Image
+              className="rounded-[20px] w-full h-auto md:h-full object-cover"
+              src={unlocked_Image}
+              alt="unlocked_image"
+            />
+          </div>
+          <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-end h-fit">
+            <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED]">
+              Unlocking Trapped Liquidity
+            </h2>
+            <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
+              DeltaPrime ensures the safety of user funds through multiple
+              security audits, insurance pools, and the unique Withdrawal Guard.
+              This no-oracle solution only allows withdrawals if all borrowed
+              assets are available, protecting against price manipulation and
+              ensuring solvency.
+            </p>
+            <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
+              Each user's funds are managed through Dedicated Smart Contracts
+              (DSCs), providing clear on-chain accounting and effective
+              anti-exploit monitoring. Our Diamond-Beacon Proxy (DBP) pattern
+              ensures DeltaPrime remains resilient and secure, even in volatile
+              market conditions.
+            </p>
+            <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
+              {`Since launching on the Avalanche network in January 2023, DeltaPrime
             has attracted over`}{" "}
-            <span className="font-semibold underline">{`$${tvtDataFormated} million`}</span>{" "}
-            {`  in Total Value Locked (TVL) and unlocked more than $20 million in
+              <span className="font-semibold underline">{`$${tvtDataFormated} million`}</span>{" "}
+              {`  in Total Value Locked (TVL) and unlocked more than $20 million in
             liquidity. Our platform serves two main user groups:`}{" "}
-          </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
-            <span className="font-extrabold">Depositors:</span> Enjoy simplicity
-            and security with features like the Withdrawal Guard, which protects
-            funds against known and unknown attacks.
-          </p>
-          <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] md:text-center mb-6 dark:text-white text-[#565AC2]">
-            <span className="font-extrabold">Borrowers:</span> Benefit from
-            investment freedom with integrations across various DeFi protocols,
-            enabling diverse and scalable investment strategies.
-          </p>
+            </p>
+            <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
+              <span className="font-extrabold">Depositors:</span> Enjoy
+              simplicity and security with features like the Withdrawal Guard,
+              which protects funds against known and unknown attacks.
+            </p>
+            <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
+              <span className="font-extrabold">Borrowers:</span> Benefit from
+              investment freedom with integrations across various DeFi
+              protocols, enabling diverse and scalable investment strategies.
+            </p>
+          </div>
         </div>
+
         <div>
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
