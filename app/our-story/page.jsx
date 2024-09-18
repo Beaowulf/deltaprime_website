@@ -180,7 +180,7 @@ const OurStory = () => {
               alt="unlocked_image"
             />
           </div>
-          <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-end h-fit">
+          <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-start h-fit">
             <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED] text-left">
               Unlocking Trapped Liquidity
             </h2>
