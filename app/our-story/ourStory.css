@@ -64,7 +64,7 @@
 
 .jobDescriptionBoxWrapper {
   position: relative;
-  border-radius: 25px;
+  border-radius: 15px;
   padding: 1px;
   overflow: hidden;
 }
@@ -77,7 +77,7 @@
   right: 0;
   bottom: 0;
   padding: 2px;
-  border-radius: 25px;
+  border-radius: 15px;
   background: linear-gradient(
     0deg,
     rgba(175, 175, 255, 1) 0%,
