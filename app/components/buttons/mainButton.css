@@ -8,7 +8,6 @@
 .mainButton,
 .navButtonDarkText,
 .mainButtonText,
-.mainButtonDarkBG,
 .contactUsButtonBGLight,
 .contactUsButtonBGDark,
 .arrowRightImageBtn,
@@ -221,40 +220,6 @@
 }
 .mainButton:hover .arrowOnButton {
   filter: brightness(0) invert(1);
-}
-
-/* Dark Mode Button */
-.mainButtonDarkBG {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  background: rgb(27, 21, 60);
-  background: linear-gradient(
-    15deg,
-    rgba(27, 21, 60, 1) 0%,
-    rgba(28, 41, 67, 1) 50%,
-    rgba(48, 30, 62, 1) 100%
-  );
-  border-radius: 50px;
-  outline: none;
-  cursor: pointer;
-  overflow: hidden;
-  text-transform: uppercase;
-  z-index: 1;
-}
-
-.mainButtonDarkBG:hover {
-  background: rgb(27, 21, 60);
-  background: linear-gradient(
-    15deg,
-    rgba(27, 21, 60, 1) 0%,
-    rgba(28, 41, 67, 1) 50%,
-    rgba(48, 30, 62, 1) 100%
-  );
 }
 
 .aboutButtonDarkBG {

@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import "./mainButton.css";
-import Image from "next/image";
 import { useTheme } from "next-themes";
-import ArrowRightBlack from "../../../public/assets/img/arrow-right.svg";
 import {
   ArrowRightWhite,
   ArrowRightPurple,
+  ArrowRightLinearPurple,
 } from "@/app/components/icons/arrowRight";
 import ArrowRight from "@/app/components/icons/arrowRight";
 import { useRouter } from "next/navigation";
@@ -113,26 +112,53 @@ export function DeltaPurpleButton({
   );
 }
 
-// export function NavBarButton({ label, onClick }) {
-//   const { resolvedTheme } = useTheme();
-//   return (
-//     <>
-//       <div className="navButtonWrapper">
-//         <button onClick={onClick} className={"navBarButtonBGDark"}>
-//           <div className={"mainButton w-full h-[35px] md:h-[45px]"}>
-//             <p
-//               className={
-//                 "navButtonDarkText text-[12px] md:text-[14px] dark:text-[black] text-white lg:text-[16px] text-nowrap"
-//               }
-//             >
-//               {label}
-//             </p>
-//           </div>
-//         </button>
-//       </div>
-//     </>
-//   );
-// }
+export function DeltaWhiteButton({
+  className,
+  onClick,
+  label,
+  href,
+  hasArrowRight = true,
+}) {
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    } else if (href) {
+      router.push(href);
+    }
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="bg-white rounded-full cursor-pointer z-[100] relative"
+    >
+      <div
+        className={`${
+          className
+            ? `${className} h-[30px] md:h-full flex items-center justify-center gap-2 mx-auto`
+            : "px-5 py-6 md:py-[10px] h-[30px] md:h-full flex items-center justify-center gap-2 mx-auto"
+        }`}
+      >
+        <h6
+          className={
+            "text-[15px] font-bold uppercase bg-gradient-to-r from-[#AD91FF] to-[#6B70ED] inline-block text-transparent bg-clip-text"
+          }
+        >
+          {label}
+        </h6>
+        {hasArrowRight && (
+          <ArrowRightLinearPurple
+            className="size-6 mb-[1px] arrowButton"
+            alt="Arrow-Right-Purple"
+          />
+        )}
+      </div>
+    </button>
+  );
+}
+
 export function AboutButtonDarkBG({
   customClass,
   label,
@@ -162,30 +188,6 @@ export function AboutButtonDarkBG({
         )}
       </div>
     </button>
-  );
-}
-
-export function MainButtonDarkBG({
-  label,
-  onClick,
-  hasArrowRight = false,
-  className,
-}) {
-  return (
-    <>
-      <button className={className} onClick={onClick}>
-        <div className="mainButtonDarkBG">
-          <p className="buttonLightModeText min-w-fit text-nowrap">{label}</p>
-          {hasArrowRight && (
-            <Image
-              className={"size-5"}
-              src={ArrowRightBlack}
-              alt={"Arrow Right"}
-            />
-          )}
-        </div>
-      </button>
-    </>
   );
 }
 

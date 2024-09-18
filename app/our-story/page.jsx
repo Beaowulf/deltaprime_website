@@ -5,7 +5,10 @@ import "./ourStory.css";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
-import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
+import {
+  DeltaPurpleButton,
+  DeltaWhiteButton,
+} from "@/app/components/buttons/mainButton";
 import ourStoryIntroImg from "@/public/assets/img/images/our-story-founders.png";
 import rectangleImg from "@/public/assets/img//images/rectangle-Image.png";
 import unlocked_Image from "@/public/assets/img//images/unlocked-image.png";
@@ -23,6 +26,7 @@ import gavinImage from "@/public/assets/img/images/avatars/Gavin.png";
 import avaxImage from "@/public/assets/img/images/avatars/hn_avax.png";
 import AdvisorCardCarousel from "./carouselsForCards/advisorCardCarousel";
 import FounderCardCarousel from "./carouselsForCards/founderCardCarousel";
+import JobDescriptionBox from "@/app/our-story/jobDescriptionBox";
 
 const tvlData = await fetchTvlData();
 const tvtDataFormated = tvlData.totalTvl.slice(0, 2);
@@ -319,69 +323,68 @@ const OurStory = () => {
       </div>
 
       {/* join our team */}
-      <div className="deltaWhiteLinearBG w-full mt-40" id="job-description">
-        <div className="pagePaddingMedium px-4 py-10">
+      <div className="bg-purpleGradient w-full mt-40" id="job-description">
+        <div className="pagePaddingMedium px-4 py-32">
           <div className="flex justify-around flex-wrap px-4 md:px-0 items-center">
             <div className="flex flex-col items-start max-w-[30rem] mb-8 md:mb-0">
-              <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-[#6B70ED] leading-6">
+              <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-white leading-6">
                 CAREERS
               </h4>
-              <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center text-[#6B70ED] ">
+              <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center text-white ">
                 Join our team
               </h2>
-              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-[#565AC2]">
+              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-white">
                 DeltaPrime is a decentralised borrowing and investing ecosystem,
                 unlocking trapped liquidity across chains. Users can easily
                 deposit and borrow funds to increase the power of their usual
                 DeFi investments.
               </p>
-              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-[#565AC2] mt-4">
+              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-white mt-4">
                 Our team is international, with talent from all over the world.
                 We embrace a fully remote working model, allowing team members
                 to collaborate and innovate from wherever they want.
               </p>
             </div>
-            {/* three rows */}
+
             <div className="flex flex-col items-stretch gap-8 mt-10 xl:mt-0">
               {/* First Box */}
-              <div className="featureBorderWrapLightTheme rounded-[30px] flex-1">
-                <div className="deltaWhiteLinearBG font-semibold flex items-center justify-between py-2 px-5 rounded-[25px] h-full gap-8">
-                  <p className="pl-6 text-[18px] text-[#29233B]">
-                    Smart Contract Developer
-                  </p>
-                  <div className="rounded-[50px]">
-                    <BlogCardButton
-                      isSmallbtn={true}
-                      isLink={true}
-                      forcePurpleArrow={true}
-                      href="/job-description/Smart-Contract-Developer"
-                      typographyClass="text-[#565AC2]"
-                      label={"Learn More"}
-                      hasArrowRight={true}
-                    />
-                  </div>
-                </div>
-              </div>
+
+              <JobDescriptionBox
+                title="Smart Contract Developer"
+                textOne="FULL-TIME"
+                textTwo="REMOTE"
+                textThree="DEVELOPER"
+                buttonElement={
+                  <DeltaWhiteButton
+                    isSmallbtn={true}
+                    isLink={true}
+                    forcePurpleArrow={true}
+                    href="/job-description/Smart-Contract-Developer"
+                    typographyClass="text-[#565AC2]"
+                    label={"Learn More"}
+                    hasArrowRight={true}
+                  />
+                }
+              />
+              <JobDescriptionBox
+                title="Senior DevOps Engineer"
+                textOne="FULL-TIME"
+                textTwo="REMOTE"
+                textThree="DEVELOPER"
+                buttonElement={
+                  <DeltaWhiteButton
+                    isSmallbtn={true}
+                    isLink={true}
+                    forcePurpleArrow={true}
+                    href="/job-description/Senior-DevOps-Engineer"
+                    typographyClass="text-[#565AC2]"
+                    label={"Learn More"}
+                    hasArrowRight={true}
+                  />
+                }
+              />
 
               {/* Second Box */}
-              <div className="featureBorderWrapLightTheme rounded-[30px] flex-1">
-                <div className="deltaWhiteLinearBG font-semibold flex items-center justify-between py-2 px-5 rounded-[25px] h-full gap-8">
-                  <p className="pl-6 text-[18px] text-[#29233B]">
-                    Senior DevOps Engineer
-                  </p>
-                  <div className="rounded-[50px]">
-                    <BlogCardButton
-                      isSmallbtn={true}
-                      isLink={true}
-                      forcePurpleArrow={true}
-                      href="/job-description/Senior-DevOps-Engineer"
-                      typographyClass="text-[#565AC2]"
-                      label={"Learn More"}
-                      hasArrowRight={true}
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -77,3 +77,54 @@ export const ArrowRightPurple = () => {
     </svg>
   );
 };
+
+export const ArrowRightLinearPurple = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M5.49219 12.0547H18.5188"
+        stroke="url(#paint0_linear_2094_19053)"
+        stroke-width="1.86094"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12 5.54688L18.5133 12.0602L12 18.5734"
+        stroke="url(#paint1_linear_2094_19053)"
+        stroke-width="1.86094"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_2094_19053"
+          x1="15.0912"
+          y1="11.4622"
+          x2="8.95872"
+          y2="8.87149"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#6B70ED" />
+          <stop offset="1" stop-color="#AD91FF" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_2094_19053"
+          x1="16.7995"
+          y1="-2.17074"
+          x2="13.187"
+          y2="-2.22931"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#6B70ED" />
+          <stop offset="1" stop-color="#AD91FF" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};

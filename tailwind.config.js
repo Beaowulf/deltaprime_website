@@ -14,6 +14,8 @@ module.exports = {
           "linear-gradient(137deg, #1B153C 10%, #1C2943 50%, #301E3E 90%)",
         "gradient-to-45-dark-BG":
           "linear-gradient(137deg, #1B153C, #1C2943, #301E3E)",
+        purpleGradient:
+          "linear-gradient(135deg, #9179d8 25%, #6b70ed 45%, #3b32d9 70%)",
 
         deltaWhiteLinearBG:
           "linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4)",
