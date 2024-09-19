@@ -139,6 +139,7 @@ export function TokenomicsGraph() {
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <ChartTooltip
+                className="bg-white text-black"
                 cursor={false}
                 content={<ChartTooltipContent hideLabel />}
               />

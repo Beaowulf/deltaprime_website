@@ -243,7 +243,11 @@ const Tokenomics = () => {
       <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-28 gap-5 mt-10 md:my-40">
         <div className="w-fit rounded-[25px] lg:w-5/12">
           <Image
-            className={`rounded-[20px] border-4 border-[#fff56] mr-10 mb-4 w-full hidden lg:block`}
+            className={`rounded-[20px] mr-10 mb-4 w-full hidden lg:block  ${
+              resolvedTheme === "dark"
+                ? "shadow-custom-dark"
+                : "shadow-custom-light"
+            }`}
             src={imageTwo}
             alt="deltaprime_mascot_img"
           />
@@ -288,7 +292,11 @@ const Tokenomics = () => {
             </ol>
           </p>
           <Image
-            className={`rounded-[20px] border-4 border-[#fff56] mr-4 mb-4 w-full block lg:hidden`}
+            className={`rounded-[20px] mr-4 mb-4 w-full block lg:hidden  ${
+              resolvedTheme === "dark"
+                ? "shadow-custom-dark"
+                : "shadow-custom-light"
+            }`}
             src={imageTwo}
             alt="deltaprime_mascot_img"
           />
@@ -335,7 +343,11 @@ const Tokenomics = () => {
             <div className="clearfix">
               {/* image that shows on desktop only */}
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block`}
+                className={`rounded-[20px] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block  ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
                 src={tokenomicsImage}
                 alt="deltaprime_mascot_img"
               />
@@ -351,7 +363,11 @@ const Tokenomics = () => {
                 $PRIME and $sPRIME.
               </p>
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden`}
+                className={`rounded-[20px] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden  ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
                 src={tokenomicsImage}
                 alt="deltaprime_mascot_img"
               />
