@@ -363,19 +363,22 @@ const Tokenomics = () => {
                 src={tokenomicsImage}
                 alt="deltaprime_mascot_img"
               />
-              <p className="brightText text-center md:text-left text-wrap mb-4 text-2xl md:text-[44px] dark:text-white text-[#6B70ED]">
-                DeltaPrime Tokenomics Summed Up
-              </p>
+              <div className="flex items-center flex-col">
+                {" "}
+                <p className="brightText text-center md:text-left text-wrap mb-4 text-2xl md:text-[44px] dark:text-white text-[#6B70ED]">
+                  DeltaPrime Tokenomics Summed Up
+                </p>
+                <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full font-normal dark:text-white text-[#565AC2] text-left">
+                  At DeltaPrime, we first implemented a protocol with high
+                  security considerations, and are now positioned to organically
+                  transition to a community governed platform, setting
+                  checkpoints for stability and community rewards through our
+                  native tokens $PRIME and $sPRIME.
+                </p>
+              </div>
 
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full font-normal dark:text-white text-[#565AC2] text-left md:text-center">
-                At DeltaPrime, we first implemented a protocol with high
-                security considerations, and are now positioned to organically
-                transition to a community governed platform, setting checkpoints
-                for stability and community rewards through our native tokens
-                $PRIME and $sPRIME.
-              </p>
               <Image
-                className={`rounded-[20px] float-right ml-10 mb-4 w-full lg:w-1/2 block lg:hidden  ${
+                className={`rounded-[20px] float-right ml-10 mb-4 w-full lg:w-1/2 block lg:hidden mt-10  ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
