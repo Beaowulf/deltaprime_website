@@ -164,7 +164,7 @@ const Tokenomics = () => {
             sPRIME enables DeltaPrime to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -175,7 +175,7 @@ const Tokenomics = () => {
                 Boost Protocol Usage
               </p>
             </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -186,7 +186,7 @@ const Tokenomics = () => {
                 Buffer Market Volatility
               </p>
             </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -208,7 +208,7 @@ const Tokenomics = () => {
             sPRIME allows anyone to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -219,7 +219,7 @@ const Tokenomics = () => {
                 Access PRIME Features
               </p>
             </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -230,7 +230,7 @@ const Tokenomics = () => {
                 Claim a share of the liquidation fees
               </p>
             </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}

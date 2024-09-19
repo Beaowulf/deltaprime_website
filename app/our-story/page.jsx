@@ -243,7 +243,7 @@ const OurStory = () => {
           {/* Carousel for mobile view */}
           <FounderCardCarousel />
           {/* Only for Desktop view */}
-          <div className="grid md:grid-cols-3 gap-8 items-stretch justify-center">
+          <div className="md:grid-cols-3 gap-8 items-stretch justify-center md:grid hidden">
             <FounderCard
               imageSrc={PiotrImage}
               name="Piotr Duda"

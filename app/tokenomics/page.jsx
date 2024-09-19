@@ -45,7 +45,7 @@ const Tokenomics = () => {
   };
 
   return (
-    <div className="pagePaddingLarge">
+    <div className="px-4 sm:px-6 md:px-[6%] xl:px-[8%] 2xl:px-[10%]">
       {/* First Section */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
@@ -150,7 +150,7 @@ const Tokenomics = () => {
             sPRIME allows anyone to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -162,7 +162,7 @@ const Tokenomics = () => {
                 Access PRIME Features
               </p>
             </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -174,7 +174,7 @@ const Tokenomics = () => {
                 Claim a share of the liquidation fees
               </p>
             </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -197,7 +197,7 @@ const Tokenomics = () => {
             sPRIME enables DeltaPrime to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -205,11 +205,11 @@ const Tokenomics = () => {
                 className="h-[150px] w-[150px]"
                 alt="Boost Protocol Usage"
               />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[220px] dark:text-white text-[#565AC2]">
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Boost Protocol Usage
               </p>
             </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -217,11 +217,11 @@ const Tokenomics = () => {
                 className="h-[150px] w-[150px]"
                 alt="Buffer Market Volatility"
               />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[220px] dark:text-white text-[#565AC2]">
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Buffer Market Volatility
               </p>
             </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
@@ -229,7 +229,7 @@ const Tokenomics = () => {
                 className="h-[150px] w-[150px]"
                 alt="Facilitate a deep, healthy liquidity pool"
               />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[220px] dark:text-white text-[#565AC2]">
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Facilitate a deep, healthy liquidity pool
               </p>
             </div>
@@ -241,7 +241,7 @@ const Tokenomics = () => {
 
       {/* Text Wrapper */}
 
-      <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-28 gap-5 mt-10 md:my-40">
+      <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 mt-10 md:my-40">
         <div className="w-fit rounded-[25px] lg:w-5/12">
           <Image
             className={`rounded-[20px] mr-10 mb-4 w-full hidden lg:block  ${
@@ -259,7 +259,7 @@ const Tokenomics = () => {
             Deep Dive into sPRIME
           </h3>
 
-          <p className="whiteMainText text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full dark:text-white text-[#565AC2] pr-0 md:pr-10 lg:pr-20">
+          <p className="whiteMainText text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 max-w-[40rem] dark:text-white text-[#565AC2] ">
             As the main currency in our ecosystem, sPRIME supports DeltaPrime on
             multiple levels. In contrast to traditional staked tokens, sPRIME
             promotes efficient staking. Instead of locking up PRIME to sit idle
@@ -270,7 +270,7 @@ const Tokenomics = () => {
             contributing to DeltaPrime as an LP, results in an efficient and
             self-sustaining ecosystem as a whole. This is achieved by the
             following features of sPRIME:
-            <ol className="p-4">
+            <ol className="lg:p-4">
               <li className="list_dot">
                 Access PRIME Features: Having sPRIME allows users to maximise
                 the potential of DeltaPrime by unlocking PRIME Features. Amongst
@@ -326,7 +326,7 @@ const Tokenomics = () => {
             Token Distribution
           </p>
         </div>
-        <div className="w-full relative flex flex-col md:flex-row">
+        <div className="w-full relative flex flex-col md:flex-row md:pl-0 xl:pl-[12rem]">
           <div className="lg:w-1/2">
             <TokenomicsGraph className="" />
           </div>
