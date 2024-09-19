@@ -179,6 +179,7 @@ const FeaturePrimeAccount = () => {
             label="LAUNCH SAVINGS ACCOUNT"
             typographyClass="text-[15px]"
             hasArrowRight={false}
+            href="https://app.deltaprime.io/#/pools"
           />
         </Link>
       </div>
@@ -190,6 +191,7 @@ const FeaturePrimeAccount = () => {
             label="LAUNCH SAVINGS ACCOUNT"
             typographyClass="text-[15px]"
             hasArrowRight={false}
+            href="https://app.deltaprime.io/#/pools"
           />
         </Link>
       </div>
