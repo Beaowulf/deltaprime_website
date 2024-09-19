@@ -141,7 +141,7 @@ export function TokenomicsGraph() {
               <ChartTooltip
                 className="bg-white text-black"
                 cursor={false}
-                content={<ChartTooltipContent hideLabel />}
+                content={<ChartTooltipContent hideLabel percentage={true} />}
               />
               <Pie
                 data={chartData}
