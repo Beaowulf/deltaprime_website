@@ -40,9 +40,9 @@ const LaunchAppModal = () => {
   return (
     <>
       {modal && (
-        <dialog className="modalP fixed left-0 top-0 w-full h-full bg-black bg-opacity-50  overflow-auto backdrop-blur flex justify-center items-center">
+        <dialog className="modalP fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 overflow-auto backdrop-blur flex justify-center items-center">
           <div className="modalParent relative w-full md:w-fit">
-            <div className="absolute top-2 right-4 pb-2 pt-20 pl-5 pr-5 w-fit h-fit text-black cursor-pointer z-50">
+            <div className="absolute top-2 right-4 pb-2 pt-14 pl-5 pr-5 w-fit h-fit text-black cursor-pointer z-50">
               <Link
                 className="z-100 cursor-pointer"
                 href={pathname}
