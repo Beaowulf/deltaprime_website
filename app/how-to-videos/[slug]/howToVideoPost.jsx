@@ -17,8 +17,6 @@ const HowToVideoDetail = ({
     setIsPlaying(true);
   };
 
-  console.log(video);
-
   return (
     <div key={video.howToVideosID}>
       {/* Parent */}
