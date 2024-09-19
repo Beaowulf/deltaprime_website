@@ -241,10 +241,10 @@ const Tokenomics = () => {
 
       {/* Text Wrapper */}
 
-      <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 mt-10 md:my-40">
-        <div className="w-fit rounded-[25px] lg:w-5/12">
+      <div className="flex lg:flex-row flex-col-reverse justify-center items-center w-full md:gap-20 gap-2 mt-10 md:my-40 mx-auto">
+        <div className="rounded-[25px] ">
           <Image
-            className={`rounded-[20px] mr-10 mb-4 w-full hidden lg:block  ${
+            className={`rounded-[20px] mr-2 xl:mr-10 mb-4 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
               resolvedTheme === "dark"
                 ? "shadow-custom-dark"
                 : "shadow-custom-light"
@@ -254,7 +254,7 @@ const Tokenomics = () => {
           />
         </div>
 
-        <div className="flex flex-col w-full md:mb-8 mb-0 justify-between items-center lg:items-start h-fit lg:w-7/12">
+        <div className="flex flex-col w-full md:mb-8 mb-0 justify-between items-center lg:items-start h-fit lg:w-fit">
           <h3 className="brightText text-center md:text-left text-wrap max-w-full mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
             Deep Dive into sPRIME
           </h3>
@@ -293,7 +293,7 @@ const Tokenomics = () => {
             </ol>
           </p>
           <Image
-            className={`rounded-[20px] mr-4 mb-4 w-full block lg:hidden  ${
+            className={`rounded-[20px] my-5 mb-4 mx-auto h-[500px] w-auto block lg:hidden  ${
               resolvedTheme === "dark"
                 ? "shadow-custom-dark"
                 : "shadow-custom-light"
@@ -309,7 +309,7 @@ const Tokenomics = () => {
         <p className="brightText text-wrap mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] text-center">
           Community-governed platform
         </p>
-        <p className="whiteMainText dark:text-white text-[#565AC2] text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
+        <p className="whiteMainText dark:text-white text-[#565AC2] text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 text-center">
           DeltaPrime has taken a unique approach to governance. Where most DAOs
           have tokenholders governing the platform, DeltaPrime is governed by
           its users. Governance Power is accrued by having sPRIME and using the
@@ -367,7 +367,7 @@ const Tokenomics = () => {
                 DeltaPrime Tokenomics Summed Up
               </p>
 
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full font-normal dark:text-white text-[#565AC2]">
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full font-normal dark:text-white text-[#565AC2] text-left md:text-center">
                 At DeltaPrime, we first implemented a protocol with high
                 security considerations, and are now positioned to organically
                 transition to a community governed platform, setting checkpoints
