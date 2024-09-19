@@ -241,7 +241,7 @@ const Tokenomics = () => {
 
       {/* Text Wrapper */}
 
-      <div className="flex lg:flex-row flex-col-reverse justify-center items-center w-full md:gap-20 gap-2 mt-10 md:my-40 mx-auto">
+      <div className="flex lg:flex-row flex-col-reverse justify-center items-center w-full md:gap-5 gap-2 mt-10 md:my-40 mx-auto">
         <div className="rounded-[25px] ">
           <Image
             className={`rounded-[20px] mr-2 xl:mr-10 mb-4 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
@@ -293,7 +293,7 @@ const Tokenomics = () => {
             </ol>
           </p>
           <Image
-            className={`rounded-[20px] my-5 mb-4 mx-auto h-[500px] w-auto block lg:hidden  ${
+            className={`rounded-[20px] my-5 mb-4 mx-auto h-[500px] w-auto block md:hidden  ${
               resolvedTheme === "dark"
                 ? "shadow-custom-dark"
                 : "shadow-custom-light"
