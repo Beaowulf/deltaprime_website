@@ -355,7 +355,7 @@ const Tokenomics = () => {
             <div className="clearfix">
               {/* image that shows on desktop only */}
               <Image
-                className={`rounded-[20px] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block  ${
+                className={`rounded-[20px] float-right ml-10 mb-4 w-full lg:w-1/2 hidden lg:block  ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
@@ -375,7 +375,7 @@ const Tokenomics = () => {
                 $PRIME and $sPRIME.
               </p>
               <Image
-                className={`rounded-[20px] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden  ${
+                className={`rounded-[20px] float-right ml-10 mb-4 w-full lg:w-1/2 block lg:hidden  ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
