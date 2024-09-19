@@ -126,7 +126,7 @@ const Tokenomics = () => {
               typographyClass="text-[15px]"
               label="GET PRIME"
               hasArrowRight={false}
-              href="https://app.deltaprime.io"
+              onClick={openModal}
             />
           </div>
           <div className="flex flex-col items-center">
@@ -148,7 +148,7 @@ const Tokenomics = () => {
               label="MINT sPrime"
               isUppercase={false}
               hasArrowRight={false}
-              onClick={openModal}
+              href="https://app.deltaprime.io"
             />
           </div>
         </div>
