@@ -16,7 +16,7 @@ const tokenomicsData = [
 
 export function TokenomicsList() {
   return (
-    <ul className="flex flex-col gap-2">
+    <ul className="flex flex-col gap-2 dark:text-white text-[#6B70ED]">
       {tokenomicsData.map((item, index) => (
         <li key={index} className="flex items-center gap-2 text-white">
           <span
