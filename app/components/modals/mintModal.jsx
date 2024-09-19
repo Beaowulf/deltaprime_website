@@ -1,12 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import "./modals.css";
 import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import closeIconColored from "@/public/assets/icons/closeIconColored.svg";
 
 const MintModal = ({ onClose }) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
   return (
     <dialog className="fixed inset-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center backdrop-blur">
       <div className="parentColoredBorderWrapper rounded-lg shadow-lg w-full max-w-lg flex flex-col mx-4">
