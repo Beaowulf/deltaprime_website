@@ -121,10 +121,10 @@ export function TokenomicsGraph() {
         transform="translate(-100, -50)"
       >
         <div xmlns="http://www.w3.org/1999/xhtml" className="text-center">
-          <p className="text-lg font-medium mb-2 break-words">
+          <p className="text-lg font-medium mt-3 break-words w-[10rem] mx-auto">
             {chartData[activeIndex].label}
           </p>
-          <p className="text-lg font-medium">{`${chartData[activeIndex].value}%`}</p>
+          <p className="text-lg font-medium ">{`${chartData[activeIndex].value}%`}</p>
         </div>
       </foreignObject>
     ) : null;
