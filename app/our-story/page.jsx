@@ -314,7 +314,7 @@ const OurStory = () => {
               name="Wojciech Lugowski"
               position="Managing Partner"
               subPosition="Lawarton"
-              additionalInfo="Co-founder & Head of legal at CobinAngels"
+              additionalInfo="Co-founder & Head of Legal at CobinAngels"
               socialMediaLink="https://www.linkedin.com/in/wojciech-lugowski/?originalSubdomain=pl"
             />
           </div>

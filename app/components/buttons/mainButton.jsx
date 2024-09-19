@@ -77,13 +77,12 @@ export function DeltaPurpleButton({
   href,
   hasArrowRight = true,
 }) {
-  const router = useRouter();
-
   const handleClick = () => {
     if (onClick) {
       onClick();
     } else if (href) {
-      router.push(href);
+      // Open the link in a new tab if href is provided
+      window.open(href, "_blank");
     }
   };
 

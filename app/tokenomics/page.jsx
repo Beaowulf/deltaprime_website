@@ -31,10 +31,12 @@ import tokenomicsImage from "@/public/assets/img/images/tokenomics/tokenomics-im
 import "./tokenomics.css";
 import SecuritySection from "../landingPage/featureSection/securitySection";
 import ContactForm from "../ui/contactForm/contactForm";
+import MintModal from "@/app/components/modals/mintModal";
 
 const Tokenomics = () => {
   const { resolvedTheme } = useTheme();
   const [expandedSections, setExpandedSections] = useState([false, false]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleText = (index) => {
     setExpandedSections((prevState) => {
@@ -44,8 +46,17 @@ const Tokenomics = () => {
     });
   };
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="px-4 sm:px-6 md:px-[6%] xl:px-[8%] 2xl:px-[10%]">
+      {isModalOpen && <MintModal onClose={closeModal} />}
       {/* First Section */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
@@ -115,7 +126,7 @@ const Tokenomics = () => {
               typographyClass="text-[15px]"
               label="GET PRIME"
               hasArrowRight={false}
-              href="https://app.deltaprime.io"
+              onClick={openModal}
             />
           </div>
           <div className="flex flex-col items-center">

@@ -171,27 +171,28 @@ const FeaturePrimeAccount = () => {
           </div>
         </div>
       </div>
+
       {/* Show this button only on mobile */}
-      <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center md:flex items-center justify-center">
-        <Link href="?modal=true" scroll={false}>
-          <DeltaPurpleButton
-            className="py-4 px-5"
-            label="LAUNCH SAVINGS ACCOUNT"
-            typographyClass="text-[15px]"
-            hasArrowRight={false}
-          />
-        </Link>
+      <div className="fullWidthButtonChildren h-[60px] md:h-full hidden w-full text-center md:flex items-center justify-center">
+        <DeltaPurpleButton
+          className="py-4 px-5"
+          label="LAUNCH SAVINGS ACCOUNT"
+          typographyClass="text-[15px]"
+          hasArrowRight={false}
+          href="https://app.deltaprime.io/#/pools"
+          target="_blank"
+        />
       </div>
       {/* Show this button only on mobile */}
-      <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
-        <Link href="?modal=true" scroll={false}>
-          <DeltaPurpleButton
-            className="py-4 px-5 h-[50px]"
-            label="LAUNCH SAVINGS ACCOUNT"
-            typographyClass="text-[15px]"
-            hasArrowRight={false}
-          />
-        </Link>
+      <div className="fullWidthButtonChildren h-[60px] md:h-full flex items-center justify-center md:hidden w-full text-center">
+        <DeltaPurpleButton
+          className="py-4 px-5 h-[50px]"
+          label="LAUNCH SAVINGS ACCOUNT"
+          typographyClass="text-[15px]"
+          hasArrowRight={false}
+          href="https://app.deltaprime.io/#/pools"
+          target="_blank"
+        />
       </div>
     </div>
   );

@@ -42,21 +42,21 @@ const LaunchAppModal = () => {
       {modal && (
         <dialog className="modalP fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 overflow-auto backdrop-blur flex justify-center items-center">
           <div className="modalParent relative w-full md:w-fit">
-            <div className="absolute top-2 right-4 pb-2 pt-14 pl-5 pr-5 w-fit h-fit text-black cursor-pointer z-50">
-              <Link
-                className="z-100 cursor-pointer"
-                href={pathname}
-                scroll={false}
-              >
-                <Image
-                  src={closeIconColored}
-                  width={20}
-                  height={20}
-                  alt="close_X_Button"
-                />
-              </Link>
-            </div>
-            <div className="w-full h-screen md:h-auto md:w-fit justify-center bg-[#f4f4ff] flex flex-col py-20 px-4 md:px-14 rounded-[25px] shadowModal">
+            <div className="w-full h-screen md:h-auto md:w-fit justify-center bg-[#f4f4ff] flex flex-col py-10 px-4 md:px-12 rounded-[25px] shadowModal">
+              <div className="py-5 pl-5 pr-5 w-full h-fit text-black cursor-pointer z-50 flex items-center justify-end">
+                <Link
+                  className="z-100 cursor-pointer"
+                  href={pathname}
+                  scroll={false}
+                >
+                  <Image
+                    src={closeIconColored}
+                    width={20}
+                    height={20}
+                    alt="close_X_Button"
+                  />
+                </Link>
+              </div>
               <h4 className="leading-5 text-[32px] text-[#6B70ED] text-center font-medium mb-10">
                 Launch your App
               </h4>
