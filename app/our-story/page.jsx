@@ -81,7 +81,7 @@ const OurStory = () => {
           </div>
         </div>
         {/* other text */}
-        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-28 gap-5 my-10 md:my-40">
+        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Image */}
           <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
@@ -121,7 +121,6 @@ const OurStory = () => {
             </div>
           </div>
         </div>
-        {/* other text */}
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
           <Link href="?modal=true" scroll={false}>
             <DeltaPurpleButton
@@ -172,7 +171,7 @@ const OurStory = () => {
           </div>
         </div>
 
-        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-28 gap-5 my-10 md:my-40">
+        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
               className="rounded-[20px] w-full h-auto md:h-full object-cover"
@@ -243,7 +242,7 @@ const OurStory = () => {
           {/* Carousel for mobile view */}
           <FounderCardCarousel />
           {/* Only for Desktop view */}
-          <div className="md:grid-cols-3 gap-8 items-stretch justify-center md:grid hidden">
+          <div className="md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-center hidden">
             <FounderCard
               imageSrc={PiotrImage}
               name="Piotr Duda"
