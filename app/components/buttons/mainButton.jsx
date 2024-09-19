@@ -73,6 +73,7 @@ export function DeltaPurpleButton({
   buttonClassName,
   onClick,
   label,
+  isUppercase = true,
   href,
   hasArrowRight = true,
 }) {
@@ -98,8 +99,13 @@ export function DeltaPurpleButton({
         <h6
           className={`${
             typographyClass
-              ? `${typographyClass} ctaButtonText font-bold uppercase text-white text-nowrap`
-              : "ctaButtonText text-[12px] font-bold uppercase text-white text-nowrap"
+              ? `${typographyClass} ctaButtonText font-bold ${
+                  isUppercase && "uppercase"
+                } text-white text-nowrap`
+              : `${
+                  isUppercase && "uppercase"
+                } ctaButtonText text-[12px] font-bold  text-white text-nowrap`
+          }
           }`}
         >
           {label}

@@ -135,6 +135,7 @@ const Tokenomics = () => {
             <DeltaPurpleButton
               typographyClass="text-[15px]"
               label="MINT sPrime"
+              isUppercase={false}
               hasArrowRight={false}
               href="https://app.deltaprime.io"
             />
