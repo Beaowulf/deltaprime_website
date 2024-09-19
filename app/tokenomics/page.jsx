@@ -142,57 +142,10 @@ const Tokenomics = () => {
         </div>
       </div>
 
-      {/* sPRIME Enables Section */}
-      <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
-        <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
-          <p className="brightText text-center pt-12 mb-16 aboutTypographyparagraphWhite !font-bold  dark:text-white text-[#6B70ED]">
-            sPRIME enables DeltaPrime to
-          </p>
-          <div className="flex flex-col md:flex-row justify-center items-center">
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
-              <Image
-                width={150}
-                height={150}
-                src={protocolUsage}
-                className="h-[150px] w-[150px]"
-                alt="Boost Protocol Usage"
-              />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[220px] dark:text-white text-[#565AC2]">
-                Boost Protocol Usage
-              </p>
-            </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
-              <Image
-                width={150}
-                height={150}
-                src={bufferMarket}
-                className="h-[150px] w-[150px]"
-                alt="Buffer Market Volatility"
-              />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[220px] dark:text-white text-[#565AC2]">
-                Buffer Market Volatility
-              </p>
-            </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
-              <Image
-                width={150}
-                height={150}
-                src={liquidityPool}
-                className="h-[150px] w-[150px]"
-                alt="Facilitate a deep, healthy liquidity pool"
-              />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[220px] dark:text-white text-[#565AC2]">
-                Facilitate a deep, healthy liquidity pool
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* sPRIME Allows anyone to */}
       <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
         <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
-          <p className="brightText text-center pt-12 mb-16 !font-bold dark:text-white text-[#6B70ED]">
+          <p className="smallBrigthText text-center pt-12 mb-16 !font-bold dark:text-white text-[#6B70ED]">
             sPRIME allows anyone to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
@@ -230,6 +183,53 @@ const Tokenomics = () => {
               />
               <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Accrue Governance Power points
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* sPRIME Enables Section */}
+      <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
+        <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
+          <p className="smallBrigthText text-center pt-12 mb-16 !font-bold dark:text-white text-[#6B70ED]">
+            sPRIME enables DeltaPrime to
+          </p>
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+              <Image
+                width={150}
+                height={150}
+                src={protocolUsage}
+                className="h-[150px] w-[150px]"
+                alt="Boost Protocol Usage"
+              />
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[220px] dark:text-white text-[#565AC2]">
+                Boost Protocol Usage
+              </p>
+            </div>
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+              <Image
+                width={150}
+                height={150}
+                src={bufferMarket}
+                className="h-[150px] w-[150px]"
+                alt="Buffer Market Volatility"
+              />
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[220px] dark:text-white text-[#565AC2]">
+                Buffer Market Volatility
+              </p>
+            </div>
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+              <Image
+                width={150}
+                height={150}
+                src={liquidityPool}
+                className="h-[150px] w-[150px]"
+                alt="Facilitate a deep, healthy liquidity pool"
+              />
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[220px] dark:text-white text-[#565AC2]">
+                Facilitate a deep, healthy liquidity pool
               </p>
             </div>
           </div>
