@@ -3,9 +3,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { BlogCardButton } from "@/app/components/buttons/mainButton";
+import {
+  BlogCardButton,
+  DeltaPurpleButton,
+} from "@/app/components/buttons/mainButton";
+import { TokenomicsGraph } from "@/app/tokenomics/tokenomicsGraph";
+import { TokenomicsList } from "@/app/tokenomics/tokenomicsList";
 
-import GradientButton from "@/app/components/gradientButtonTokenomics/GradientButton";
 import primePurpleLogo from "@/public/assets/icons/purpleTokenPrime.svg";
 import whiteTokenPrime from "@/public/assets/icons/whiteTokenPrime.svg";
 
@@ -22,7 +26,7 @@ import imageOne from "@/public/assets/img/images/tokenomics/1_deep_dive_tockenom
 import imageTwo from "@/public/assets/img/images/tokenomics/2_image.png";
 import imageThree from "@/public/assets/img/images/tokenomics/3_voting.png";
 import imageFour from "@/public/assets/img/images/tokenomics/4_image.png";
-import imageFive from "@/public/assets/img/images/tokenomics/5-lockers.png";
+import tokenomicsImage from "@/public/assets/img/images/tokenomics/tokenomics-image.png";
 
 import "./tokenomics.css";
 import SecuritySection from "../landingPage/featureSection/securitySection";
@@ -41,7 +45,7 @@ const Tokenomics = () => {
   };
 
   return (
-    <div className="pagePaddingLarge">
+    <div className="px-4 sm:px-6 md:px-[6%] xl:px-[8%] 2xl:px-[10%]">
       {/* First Section */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
         {/* Text Wrapper */}
@@ -50,7 +54,7 @@ const Tokenomics = () => {
             <div className="clearfix">
               {/* image that shows on desktop only */}
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                className={`rounded-[20px]  float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
@@ -59,10 +63,20 @@ const Tokenomics = () => {
                 alt="Deep_Dive_Tockenomics_Lightless"
               />
               <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] ">
-                Deep Dive into PRIME Tokenomics
+                Introducing PRIME Tokenomics
+              </p>
+              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 min-w-full mb-4 dark:text-white text-[#565AC2] ">
+                The native tokens of DeltaPrime, namely PRIME and sPRIME, have a
+                central role in the DeltaPrime ecosystem. The tokens PRIME and
+                sPRIME are designed to further scale DeltaPrime, while getting
+                the community in on the action. As such, the tokenomics of
+                PRIME, with the spotlight on sPRIME, are true to the values of
+                our ecosystem and promote efficiency, sustainability, and
+                usefulness. In doing so, PRIME and sPRIME align users, holders,
+                and governors of DeltaPrime on a fundamental level.
               </p>
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
+                className={`rounded-[20px]  float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
@@ -70,47 +84,6 @@ const Tokenomics = () => {
                 src={imageOne}
                 alt="Deep_Dive_Tockenomics_Lightless"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 min-w-full mb-4 dark:text-white text-[#565AC2] ">
-                DeltaPrime is a decentralized Prime Brokerage solution that
-                offers undercollateralized crypto loans without relying on
-                trust. The native tokens PRIME and sPRIME feature advanced
-                tokenomics on the Arbitrum and Avalanche networks and can be
-                acquired from Trader Joe and Uniswap. Their design and
-                distribution are in line with DeltaPrime’s commitment towards a
-                sustainable, community-governed ecosystem.
-                <br />
-                {expandedSections[0] && (
-                  <>
-                    <br />
-                    More than 50% of the total 40mil minted PRIME tokens go to
-                    the Community Owned Liquidity (COL) and the DAO treasury.
-                    31.49% of the total PRIME tokens are allocated to COL, while
-                    20% are going to the DAO treasury. The DAO treasury will be
-                    governed by eligible community members and used for future
-                    developments when at least 40% of PRIME is in public hands.
-                    10% of the total supply, coming from the COL, will be used
-                    to bootstrap liquidity pools paired with AVAX and ETH on
-                    Trader Joe and Uniswap.
-                    <br />
-                    <br />
-                    The emissions of PRIME, i.e. getting the token into public
-                    hands, will be executed in such a way that the liquidity
-                    pool deepens with time. The COL that is not initially used
-                    in the liquidity pool will be automatically used to buy and
-                    sell PRIME according to demand, so as to avoid a price crash
-                    or overinflation. Enter stage: sPRIME, which facilitates a
-                    healthy liquidity pool, rewards our community, and assigns
-                    governance power to the users.
-                  </>
-                )}
-              </p>
-              <div className="h-[50px] md:h-full block w-fit text-left">
-                <BlogCardButton
-                  label={expandedSections[0] ? "View Less" : "View More"}
-                  onClick={() => toggleText(0)}
-                  style={{ padding: "28px !important" }}
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -124,79 +97,48 @@ const Tokenomics = () => {
           </p>
         </div>
         <div className="flex flex-col items-center md:flex-row justify-center md:gap-10 gap-0 mt-10">
-          <div className="flex flex-col items-center">
-            <p className="text-center text-3xl font-bold mt-4 dark:text-white text-[#6B70ED]">
+          <div className="flex flex-col items-center md:mb-0 mb-10">
+            <p className="text-center text-[32px] font-bold mt-4 dark:text-white text-[#6B70ED]">
               PRIME
             </p>
-            <p className="text-center text-2xl font-normal mt-1 dark:text-white text-[#6B70ED]">
-              Tradeable token
+            <p className="text-center text-[24px] font-normal mt-1 dark:text-white text-[#6B70ED] md:max-w-[80%]">
+               A tradeable token used for holding or within DeFi
             </p>
             <Image
-              className="ml-4"
+              className="my-11 h-[120px] w-[120px]"
               src={primePurpleLogo}
               alt="PRIME Logo"
-              width={200}
-              height={200}
+              width={120}
+              height={120}
+            />
+            <DeltaPurpleButton
+              typographyClass="text-[15px]"
+              label="GET PRIME"
+              hasArrowRight={false}
+              href="https://app.deltaprime.io"
             />
           </div>
           <div className="flex flex-col items-center">
-            <p className="text-center text-3xl font-bold mt-4 dark:text-white text-[#6B70ED]">
+            <p className="text-center text-[32px] font-bold mt-4 dark:text-white text-[#6B70ED]">
               sPRIME
             </p>
-            <p className="text-center  text-2xl font-normal mt-1 dark:text-white text-[#6B70ED]">
-              Utility token
+            <p className="text-center text-[24px] font-normal mt-1 dark:text-white text-[#6B70ED] md:max-w-[70%]">
+              The main currency and utility token within DeltaPrime.
             </p>
             <Image
-              className="ml-4"
+              className="my-11 h-[120px] w-[120px]"
               src={whiteTokenPrime}
               alt="sPRIME Logo"
-              width={200}
-              height={200}
+              width={120}
+              height={120}
             />
-          </div>
-        </div>
-      </div>
-
-      {/* sPRIME Enables Section */}
-      <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
-        <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
-          <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#6B70ED]">
-            sPRIME enables DeltaPrime to
-          </p>
-          <div className="flex flex-col md:flex-row justify-center items-center">
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
-              <Image
-                width={150}
-                height={150}
-                src={protocolUsage}
-                alt="Boost Protocol Usage"
-              />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
-                Boost Protocol Usage
-              </p>
-            </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
-              <Image
-                width={150}
-                height={150}
-                src={bufferMarket}
-                alt="Buffer Market Volatility"
-              />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
-                Buffer Market Volatility
-              </p>
-            </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
-              <Image
-                width={150}
-                height={150}
-                src={liquidityPool}
-                alt="Facilitate a deep, healthy liquidity pool"
-              />
-              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
-                Facilitate a deep, healthy liquidity pool
-              </p>
-            </div>
+            <DeltaPurpleButton
+              typographyClass="text-[15px]"
+              label="MINT sPrime"
+              isUppercase={false}
+              hasArrowRight={false}
+              href="https://app.deltaprime.io"
+            />
           </div>
         </div>
       </div>
@@ -204,37 +146,40 @@ const Tokenomics = () => {
       {/* sPRIME Allows anyone to */}
       <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
         <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
-          <p className="brightText text-center pt-12 mb-16 !text-2xl !font-bold md:!text-2xl dark:text-white text-[#6B70ED]">
+          <p className="smallBrigthText text-center pt-12 mb-16 !font-bold dark:text-white text-[#6B70ED]">
             sPRIME allows anyone to
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center">
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
                 src={protocolRevenue}
+                className="h-[150px] w-[150px]"
                 alt="Access PRIME Features"
               />
               <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Access PRIME Features
               </p>
             </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
                 src={governancePower}
+                className="h-[150px] w-[150px]"
                 alt="Claim a share of 33% of protocol revenue"
               />
               <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#565AC2]">
                 Claim a share of the liquidation fees
               </p>
             </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-4 lg:mx-12">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
                 width={150}
                 height={150}
                 src={primeFeatures}
+                className="h-[150px] w-[150px]"
                 alt="Accrue Governance Power points"
               />
               <p className="text-center !text-xl md:!text-xl !font-normal mt-4 w-[200px] dark:text-white text-[#565AC2]">
@@ -245,438 +190,202 @@ const Tokenomics = () => {
         </div>
       </div>
 
-      {/* Second Section */}
-      <div className="flex flex-col md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
-        {/* Text Wrapper */}
-        <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
-          <div className="text-left flex flex-col gap-4 w-full">
-            <div className="clearfix">
+      {/* sPRIME Enables Section */}
+      <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
+        <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
+          <p className="smallBrigthText text-center pt-12 mb-16 !font-bold dark:text-white text-[#6B70ED]">
+            sPRIME enables DeltaPrime to
+          </p>
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-10 mb-4 w-full lg:w-1/2 hidden lg:block  ${
-                  resolvedTheme === "dark"
-                    ? "shadow-custom-dark"
-                    : "shadow-custom-light"
-                }`}
-                src={imageTwo}
-                alt="deltaprime_mascot_img"
+                width={150}
+                height={150}
+                src={protocolUsage}
+                className="h-[150px] w-[150px]"
+                alt="Boost Protocol Usage"
               />
-              <p className="brightText text-wrap max-w-full mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
-                Deep Dive into PRIME Tokenomics
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
+                Boost Protocol Usage
               </p>
+            </div>
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
-                  resolvedTheme === "dark"
-                    ? "shadow-custom-dark"
-                    : "shadow-custom-light"
-                }`}
-                src={imageTwo}
-                alt="deltaprime_mascot_img"
+                width={150}
+                height={150}
+                src={bufferMarket}
+                className="h-[150px] w-[150px]"
+                alt="Buffer Market Volatility"
               />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full dark:text-white text-[#565AC2]">
-                How PRIME and sPRIME work <br />
-                PRIME serves as the main tradable token on Decentralized
-                Exchanges (DEXs). The demand for PRIME will come from the demand
-                to hold sPRIME, a Liquidity Provider(LP)-token that will serve
-                as:
-                <br />
-                <br />
-                {expandedSections[1] && (
-                  <>
-                    <div className="max-w-full mt-10">
-                      <span className="pl-2">
-                        • A utility token for the DeltaPrime platform, allowing
-                        payment for various PRIME features.
-                      </span>
-                      <br />
-                      <span className="pl-2">
-                        • An incentive to provide to the PRIME liquidity pool
-                        and be rewarded with a share of the protocol’s
-                        liquidation fees.
-                      </span>
-                      <br />
-                      <span className="pl-2">
-                        • A token to gain governance power.
-                      </span>
-                    </div>
-                    <br />
-                    Traditionally, holding assets has been incentivized through
-                    staking, i.e. locking tokens in a smart contract for a
-                    certain period of time in order to earn staking rewards. It
-                    is the go-to approach to keep holders from selling. Despite
-                    this effort, the price of an asset often comes crashing down
-                    because of high rewards in the native token of a project. In
-                    addition, the expiration of vesting schedules often
-                    contributes to high selling pressures, while liquidity pools
-                    are often shallow, which results in high selling
-                    price-impacts. Instead of following this trend, sPRIME
-                    combines the idea of staking with contributing to the PRIME
-                    liquidity pool.
-                    <br />
-                    <br />
-                    The rewards come from protocol revenue instead of causing
-                    inflation by handing out native tokens. This creates
-                    effective incentives for holding PRIME and contributing to
-                    its liquidity pool.
-                    <br />
-                    When a user provides liquidity for PRIME through the
-                    DeltaPrime app, they receive sPRIME, which represents their
-                    share of the pool. PRIME can be paired with tokens such as
-                    AVAX or ETH. LP-tokens with paired PRIME that were acquired
-                    from a DEX directly can also be used to get sPRIME on the
-                    DeltaPrime app. Note that this move will exit the current
-                    position of the LP-tokens and rebalance to the default price
-                    range set on the app.
-                    <br />
-                    <br />
-                    When the provided liquidity is within the concentrated
-                    liquidity price range at which the token is traded, the
-                    sPRIME is considered active. Active sPRIME holders are
-                    eligible to receive a share from 33% of the protocol's
-                    liquidation fees. This incentivizes liquidity provision and
-                    ensures its depth. Having a deep liquidity pool means that
-                    large buys and sells do not have a big impact on the price.
-                    At the same time, sPRIME can be used to pay for any current
-                    and future features of the DeltaPrime ecosystem, regardless
-                    of being active or idle.
-                    <br />
-                    <br />
-                    Idle sPRIME is the share in the pool that does not fall
-                    within the price range at which the token is traded within a
-                    period of time. Idle sPRIME does not receive a share of the
-                    liquidation fees. This incentivizes liquidity providers to
-                    rebalance their assets to an active price range position.
-                    Doing this means that impermanent loss may be realized.
-                    However, their sPRIME becomes active again and thus the LP
-                    is granted the aforementioned rewards, countering realized
-                    loss.
-                    <br />
-                    <br />
-                    Not only liquidity providers are eligible for the protocol’s
-                    liquidation fees. In the future, staking through the DAO,
-                    managed by our community, will reward our most loyal
-                    supporters. Governance power within the DAO is exercised by
-                    a vote of sPRIME. The more sPRIME a user holds, the more
-                    voting power they gain.
-                  </>
-                )}
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
+                Buffer Market Volatility
               </p>
-              <div className="mt-0 h-[100%] md:h-full block w-fit text-right flex items-right justify-right">
-                <BlogCardButton
-                  label={expandedSections[1] ? "View Less" : "View More"}
-                  onClick={() => toggleText(1)}
-                  style={{ padding: "28px !important" }} // Override padding here
-                />
-              </div>
+            </div>
+            <div className="flex flex-col items-center mb-8 md:mb-0 md:mx-3 lg:mx-12">
+              <Image
+                width={150}
+                height={150}
+                src={liquidityPool}
+                className="h-[150px] w-[150px]"
+                alt="Facilitate a deep, healthy liquidity pool"
+              />
+              <p className="text-center !text-xl md:!text-xl mt-4 w-[200px] dark:text-white text-[#565AC2]">
+                Facilitate a deep, healthy liquidity pool
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="mb-16">
-        <p className="brightText text-wrap mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
-          The Difference Between Unlocked <br className="md:block hidden" />
-          and Locked sPRIME
-        </p>
-        <p className="whiteMainText dark:text-white text-[#565AC2] text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
-          sPRIME is designed to counter impermanent loss that liquidity
-          providers often suffer from but also reward the community members who
-          are most active on the platform. To incentivize and reward the most
-          active users, sPRIME is split into two instances: locked and unlocked.
-        </p>
-      </div>
 
-      <TokenomicsCards />
+      {/* Second Section */}
 
-      <div>
-        <p className="whiteMainText text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 dark:text-white text-[#565AC2]">
-          The way locked sPRIME is created acts as a way to incentivize users to
-          use the protocol, but also as means to reduce idle COL capital. Idle
-          COL capital is the COL-derived capital providing liquidity for PRIME
-          that has been out of the trading price range for a while. To make this
-          capital active again and retain the depth of the liquidity pool, a
-          portion of it is matched with the remaining PRIME funds of the COL
-          that are not yet in the liquidity pool.&nbsp;
-          {expandedSections[2] && (
-            <>
-              These funds are used to rebalance part of the idle AVAX or ETH
-              share in the pool to the active price range. The sPRIME generated
-              from this event is thereby locked and is distributed to eligible
-              protocol participants. This event does not happen automatically
-              but at the discretion of the DeltaPrime team and our community.
-              <br />
-              <br />
-              Note that the nature of achievements required to be eligible for
-              this airdrop can change over time based on the protocol and
-              community requirements. If a user fails to make the achievements,
-              the locked and only the locked sPRIME is retrieved and
-              redistributed to the users who meet the set criteria. As such, the
-              locked sPRIME can be reused to ensure capital efficiency without
-              causing inflation. The rewards received while holding locked
-              sPRIME stay with the user even after they stop meeting the
-              criteria required to hold it.
-            </>
-          )}
-        </p>
-        <p>
-          <br />
-        </p>
+      {/* Text Wrapper */}
 
-        <div className="h-[50px] md:h-full block w-full text-left">
-          <BlogCardButton
-            label={expandedSections[2] ? "View Less" : "View More"}
-            onClick={() => toggleText(2)}
+      <div className="flex lg:flex-row flex-col-reverse justify-center items-center w-full md:gap-5 gap-2 mt-10 md:my-40 mx-auto">
+        <div className="rounded-[25px] ">
+          <Image
+            className={`rounded-[20px] mr-2 xl:mr-10 mb-4 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
+              resolvedTheme === "dark"
+                ? "shadow-custom-dark"
+                : "shadow-custom-light"
+            }`}
+            src={imageTwo}
+            alt="deltaprime_mascot_img"
+          />
+        </div>
+
+        <div className="flex flex-col w-full md:mb-8 mb-0 justify-between items-center lg:items-start h-fit lg:w-fit">
+          <h3 className="brightText text-center md:text-left text-wrap max-w-full mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
+            Deep Dive into sPRIME
+          </h3>
+
+          <p className="whiteMainText text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 max-w-[40rem] dark:text-white text-[#565AC2] ">
+            As the main currency in our ecosystem, sPRIME supports DeltaPrime on
+            multiple levels. In contrast to traditional staked tokens, sPRIME
+            promotes efficient staking. Instead of locking up PRIME to sit idle
+            in a vault, sPRIME deepens liquidity thereby promoting efficient
+            markets and increased stability. The value of sPRIME is derived from
+            the value of the DeltaPrime ecosystem, not the other way around.
+            This sustainable model, with any holder of sPRIME actively
+            contributing to DeltaPrime as an LP, results in an efficient and
+            self-sustaining ecosystem as a whole. This is achieved by the
+            following features of sPRIME:
+            <ol className="lg:p-4">
+              <li className="list_dot">
+                Access PRIME Features: Having sPRIME allows users to maximise
+                the potential of DeltaPrime by unlocking PRIME Features. Amongst
+                others, these can include a notification system, access to more
+                tokens, more pools, higher leverage, or advanced features.
+              </li>
+              <li className="list_dot">
+                Claim a share of liquidation fees: Active sPRIME actively
+                contributes to the DeltaPrime ecosystem and delivers value. As a
+                reward, a portion of liquidation fees is airdropped to holders
+                of active sPRIME. Current protocol fees consist of liquidation
+                fees, but may be modified by the DAO.
+              </li>
+              <li className="list_dot">
+                Accrue Governance Power: Over time, governance of DeltaPrime
+                will move from the team to the DAO. sPRIME, when combined with
+                usage of the protocol, will accrue Governance Power over time.
+                This ensures DeltaPrime is governed by its most loyal users.
+              </li>
+            </ol>
+          </p>
+          <Image
+            className={`rounded-[20px] my-5 mb-4 mx-auto h-[500px] w-auto block md:hidden  ${
+              resolvedTheme === "dark"
+                ? "shadow-custom-dark"
+                : "shadow-custom-light"
+            }`}
+            src={imageTwo}
+            alt="deltaprime_mascot_img"
           />
         </div>
       </div>
 
-      {/* Third Section */}
-      {/* third last */}
-      <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
-        {/* Text Wrapper */}
-        <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
-          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
-            <div className="clearfix">
-              {/* image that shows on desktop only */}
-              <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
-                  resolvedTheme === "dark"
-                    ? "shadow-custom-dark"
-                    : "shadow-custom-light"
-                }`}
-                src={imageThree}
-                alt="deltaprime_mascot_img"
-              />
-              <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px] dark:text-white text-[#6B70ED]">
-                Governance Power and Voting Rights: A Road to DAO
-              </p>
-              <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
-                  resolvedTheme === "dark"
-                    ? "shadow-custom-dark"
-                    : "shadow-custom-light"
-                }`}
-                src={imageThree}
-                alt="deltaprime_mascot_img"
-              />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full dark:text-white text-[#565AC2]">
-                The perks of owning sPRIME extend to governance power; sPRIME
-                ownership is required to gain governance points. Points are
-                assigned at a 10:1 ratio of a deposited or borrowed token (e.g.
-                USDC) to sPRIME. It is the underlying mechanism of the
-                community-centered approach of our tokenomics, which paves the
-                way towards making DeltaPrime a Decentralized Autonomous
-                Organisation (DAO). The ultimate goal is to have the DeltaPrime
-                community support and govern the platform, reaping the benefits
-                of its operation while deciding on its position in the DeFi
-                industry. 
-                <br />
-                {expandedSections[3] && (
-                  <>
-                    <br />
-                    <strong>
-                      Governance Power points are handled as follows:
-                    </strong>
-                     <br />
-                    <br />
-                    For borrowers: 10 points for every 10:1 ratio of tokens
-                    held. When borrowing $10 and owning $1 sPRIME (10:1 ratio),
-                    the borrower receives 10 points per year, with a cap at 3
-                    years. That means that after 3 years, the borrower will have
-                    acquired 30 governance points. If they borrowed $20 and
-                    owned $2 sPRIME, their governance power at 3 years would be
-                    60. Points are acquired only with the 10:1 ratio. That means
-                    that if $25 was borrowed and $4 sPRIME was held, the
-                    governance power would still be 60 at 3 years, and would
-                    continue to be so until the user acquired more or sold. 
-                    <br />
-                    <br />
-                    For depositors: When depositing $10 of a token and owning $1
-                    sPRIME, the depositor receives 50 points per year, with a
-                    cap at 3 years as the borrower. Therefore, if they deposited
-                    $10 and held $1 sPRIME they would receive 50 points per
-                    year, capped at 150 at year 3. If they deposited $20 and
-                    owned $2 sPRIME, their capped governance points would be 300
-                    at 3 years.
-                    <br />
-                    <br />
-                    Locked sPRIME Governance Power: The governance power of the
-                    users holding locked sPRIME will be determined as mentioned
-                    above. However, if they lose their locked sPRIME for not
-                    making the required achievements, they will also lose the
-                    matching proportionate amount of governance power. As stated
-                    before, any other rewards remain with the user. 
-                    <br />
-                    <br />
-                    Governance Power Reduction: When a borrower or depositor
-                    returns or retrieves their funds, their governance points
-                    are reduced over a period of 7 days based on their current
-                    cap. Therefore, if from an initial $20:$2 ratio of
-                    token:sPRIME funds at 2 years there is a reduction of 50%,
-                    their total capped power will reduce by 50%. So from a cap
-                    of 60 governance points (if they were a borrower) their cap
-                    will go down to 30 points and they will not accumulate more
-                    until they increase their funds (borrowed funds and owned
-                    sPRIME). The governance points from lost locked sPRIME will
-                    also be reduced accordingly.
-                  </>
-                )}
-              </p>
-              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
-                <BlogCardButton
-                  label={expandedSections[3] ? "View Less" : "View More"}
-                  onClick={() => toggleText(3)}
-                  style={{ padding: "28px !important" }} // Override padding here
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Second Section */}
+      <div className="mb-16">
+        <p className="brightText text-wrap mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] text-center">
+          Community-governed platform
+        </p>
+        <p className="whiteMainText dark:text-white text-[#565AC2] text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 text-center">
+          DeltaPrime has taken a unique approach to governance. Where most DAOs
+          have tokenholders governing the platform, DeltaPrime is governed by
+          its users. Governance Power is accrued by having sPRIME and using the
+          protocol. As a result, governors of DeltaPrime are its users, which
+          removes the principal-agent problem and puts the power into the hands
+          of the community.
+        </p>
       </div>
 
-      {/* Third Section */}
-      {/* second last */}
-      <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
-        {/* Text Wrapper */}
-        <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
-          <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
-            <div className="clearfix">
-              {/* image that shows on desktop only */}
-              <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-left mr-10 mb-4 w-full lg:w-1/2 hidden lg:block ${
-                  resolvedTheme === "dark"
-                    ? "shadow-custom-dark"
-                    : "shadow-custom-light"
-                }`}
-                src={imageFour}
-                alt="deltaprime_mascot_img"
-              />
-              <p className="text-wrap min-w-full mb-4 font-bold text-2xl md:text-[28px] dark:text-white text-[#6B70ED]">
-                Other PRIME Allocations Explained
-              </p>
-              <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
-                  resolvedTheme === "dark"
-                    ? "shadow-custom-dark"
-                    : "shadow-custom-light"
-                }`}
-                src={imageFour}
-                alt="deltaprime_mascot_img"
-              />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full dark:text-white text-[#565AC2]">
-                The team receives 16% of the tokens for the work they have put
-                in for 3 years, while advisors are allocated a 5% for their
-                invaluable contribution in developing the project. The
-                allocations to private seed (1.75%), pre-seed(4.67%),
-                launchpads(1.11%), and community seed (1.67%) represent the
-                price at which the project was funded at the time. 
-                <br />
-                <br />
-                {expandedSections[4] && (
-                  <>
-                    <br />
-                    IEO allocation of 1.43% is used to bootstrap DEX liquidity
-                    pools at launch. This is matched with 100% of the launchpad
-                    and 50% of the Community Seed raises.
-                    <br />
-                    <br />
-                    Grant from the Avalanche Foundation in the early stages of
-                    the development receives a 0.57% allocation. This can be
-                    bought at a discount up to the grant amount of $300,000 at a
-                    future date. <br />
-                    <br />
-                    Bounties amount to 2% of the tokens and are to reward
-                    individuals or organizations that manage to find any
-                    critical bugs on the protocol and report them to DeltaPrime.
-                    Informational and up to high severity bugs will be rewarded
-                    in FIAT. Though no bug has been found so far, it is not
-                    guaranteed that it will not be discovered in the future.
-                    This is why DeltaPrime has added this to their suite of
-                    security provisions of the platform. <br />
-                    <br />
-                    Bridge, which came from early private and community adopters
-                    in late 2023, is allocated 2.31% of the total tokens. <br />
-                    <br />
-                    Lastly, 12% of PRIME is allocated for Ecosystem Growth,
-                    which can be utilized either for Market Making on possible
-                    CEX listings in order to stabilize price, or to provide
-                    grants to future partners and contributing community
-                    members.
-                  </>
-                )}
-              </p>
-              <div className="mt-0 h-[100%] md:h-full block w-fit text-right flex items-right justify-right">
-                <BlogCardButton
-                  label={expandedSections[4] ? "View Less" : "View More"}
-                  onClick={() => toggleText(4)}
-                  style={{ padding: "28px !important" }}
-                />
-              </div>
-            </div>
+      {/* graph */}
+      <div className="flex flex-col items-center md:items-center mb-8 md:mt-28 mt-5 h-fit flex-grow mx-auto">
+        <div className="text-left flex flex-col gap-4">
+          <p className="brightText text-center max-w-xl text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
+            Token Distribution
+          </p>
+        </div>
+        <div className="w-full relative flex flex-col md:flex-row md:pl-0 xl:pl-[13rem] 2xl:pl-[14rem]">
+          <div className="lg:w-1/2">
+            <TokenomicsGraph className="" />
+          </div>
+          <div className="pt-4 mb:pb-0 pb-10 md:pt-20 md:pl-20 mx-auto md:mx-0 lg:w-1/2">
+            <TokenomicsList />
           </div>
         </div>
+        <div>
+          <p>
+            You can check the vesting schedule for the token allocations{" "}
+            <a
+              href="https://docs.deltaprime.io/tokenomics/usdprime/vesting-schedule"
+              className="underline"
+            >
+              here
+            </a>
+          </p>
+        </div>
       </div>
+      {/* end of graph */}
 
-      {/* Third Section */}
-      {/* last section */}
-      <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
+      <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-40">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
           <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
             <div className="clearfix">
               {/* image that shows on desktop only */}
               <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                className={`rounded-[20px] float-right ml-10 mb-4 w-full lg:w-1/2 hidden lg:block  ${
                   resolvedTheme === "dark"
                     ? "shadow-custom-dark"
                     : "shadow-custom-light"
                 }`}
-                src={imageFive}
+                src={tokenomicsImage}
                 alt="deltaprime_mascot_img"
               />
-              <p className="text-wrap max-w-xl mb-4 font-bold text-2xl md:text-[28px] dark:text-white text-[#6B70ED]">
-                DeltaPrime Tokenomics Summed Up
-              </p>
-              <Image
-                className={`rounded-[20px] border-4 border-[#fff56] float-right ml-4 mb-4 w-full lg:w-1/2 block lg:hidden ${
-                  resolvedTheme === "dark"
-                    ? "shadow-custom-dark"
-                    : "shadow-custom-light"
-                }`}
-                src={imageFive}
-                alt="deltaprime_mascot_img"
-              />
-              <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full dark:text-white text-[#565AC2]">
-                At DeltaPrime, we first implemented a protocol with high
-                security considerations, and are now positioned to organically
-                transition to a community governed platform, setting checkpoints
-                for stability and community rewards through our native tokens
-                PRIME and sPRIME.&nbsp;
-                {expandedSections[5] && (
-                  <>
-                    The aforementioned tokenomics work in a way to incentivize
-                    usage of the platform, reduce price volatility as much as
-                    possible, ensure a healthy liquidity pool with a reduced
-                    price-impact due to large buys or sells, and mitigate
-                    possible selling pressure from early adopters due to release
-                    of tokens based on vesting schedules.
-                    <br />
-                    <br />
-                    Meanwhile, development continues with more protocol
-                    integrations, allowing for even more curated choices for
-                    utilizing crypto capital. Features aiming to elevate the
-                    user experience are also in the works and coming soon.
-                    <br />
-                    <br />A more detailed explanation of the protocol is given
-                    in DeltaPrime’s documents available online.
-                  </>
-                )}
-              </p>
-              <div className="mt-4 h-[50px] md:h-full block w-fit text-left">
-                <BlogCardButton
-                  label={expandedSections[5] ? "View Less" : "View More"}
-                  onClick={() => toggleText(5)}
-                  style={{ padding: "28px !important" }} // Override padding here
-                />
+              <div className="flex items-center flex-col">
+                {" "}
+                <p className="brightText text-center md:text-left text-wrap mb-4 text-2xl md:text-[44px] dark:text-white text-[#6B70ED]">
+                  DeltaPrime Tokenomics Summed Up
+                </p>
+                <p className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full font-normal dark:text-white text-[#565AC2] text-left">
+                  At DeltaPrime, we first implemented a protocol with high
+                  security considerations, and are now positioned to organically
+                  transition to a community governed platform, setting
+                  checkpoints for stability and community rewards through our
+                  native tokens $PRIME and $sPRIME.
+                </p>
               </div>
+
+              <Image
+                className={`rounded-[20px] float-right ml-10 mb-4 w-full lg:w-1/2 block lg:hidden mt-10  ${
+                  resolvedTheme === "dark"
+                    ? "shadow-custom-dark"
+                    : "shadow-custom-light"
+                }`}
+                src={tokenomicsImage}
+                alt="deltaprime_mascot_img"
+              />
             </div>
           </div>
         </div>

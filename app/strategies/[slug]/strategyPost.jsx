@@ -12,7 +12,7 @@ import strategiespostImg from "@/public/assets/img/flipCardBG.png";
 import {
   MainButton,
   AboutButtonDarkBG,
-  CTAButton,
+  DeltaPurpleButton,
 } from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
 import CryptoPreviewTables from "@/app/components/cryptoTables/cryptoTables";
@@ -50,7 +50,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
               </p>
               <div className="w-full md:block hidden">
                 <Link href="?modal=true" scroll={false}>
-                  <CTAButton
+                  <DeltaPurpleButton
                     className="w-[100%] md:w-fit px-6 py-3"
                     label="LAUNCH APP"
                     hasArrowRight={true}
@@ -61,8 +61,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
               {/* Show this button only on mobile */}
               <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
                 <Link href="?modal=true" scroll={false}>
-                  <CTAButton
-                    className="mx-auto px-6 py-3"
+                  <DeltaPurpleButton
                     label="LAUNCH APP"
                     hasArrowRight={true}
                     typographyClass="text-[15px]"
@@ -128,7 +127,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
             </p>
             <div className="w-full md:block hidden">
               <Link href="?modal=true" scroll={false}>
-                <CTAButton
+                <DeltaPurpleButton
                   className="w-[100%] md:w-fit px-6 py-3"
                   label="LAUNCH APP"
                   hasArrowRight={true}
@@ -162,19 +161,6 @@ const StrategyDetail = ({ strategy, strategies }) => {
             {" "}
             {/* Sticky class added */}
             <CryptoPreviewTables />
-            <div className="flex flex-col gap-10 px-5 pt-8 rounded-[20px] bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%">
-              <h3 className="text-[24px] text-[#1B153C] font-extrabold leading-9 tracking-[-0.72px]">
-                This can be anything you want an ad, a new product anything
-              </h3>
-              <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
-                <AboutButtonDarkBG
-                  customClass="w-full"
-                  hasWhiteArrowRight={true}
-                  label={"LEARN MORE"}
-                />
-              </div>
-              <Image src={adImg} alt="deltaPrime_mascot_Holding_Keys_" />
-            </div>
           </div>
         </div>
       </div>
@@ -184,8 +170,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
         {/* Show this button only on mobile */}
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
           <Link href="?modal=true" scroll={false}>
-            <CTAButton
-              className="mx-auto px-6 py-3"
+            <DeltaPurpleButton
               label="LAUNCH APP"
               hasArrowRight={true}
               typographyClass="text-[15px]"

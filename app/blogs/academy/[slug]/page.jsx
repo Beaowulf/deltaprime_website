@@ -8,7 +8,6 @@ function getRandomItem(array) {
   return array[randomIndex];
 }
 
-
 const BlogPage = async ({ params }) => {
   const blog = await fetchBlogBySlug(params.slug);
 
@@ -36,6 +35,7 @@ const BlogPage = async ({ params }) => {
   const blogPreviewCardData = Object.keys(blogsByCategory).map((category) => {
     const categoryBlogs = blogsByCategory[category];
     const randomBlog = getRandomItem(categoryBlogs);
+    console.log("🚀 ~ blogPreviewCardData ~ randomBlog:", randomBlog);
 
     const processBlog = (blog) => {
       const description = blog.blogDescription;
@@ -62,7 +62,7 @@ const BlogPage = async ({ params }) => {
   const previewDataArray = Object.values(blogPreviewCardData);
 
   return (
-    <div>
+    <div key={blog.blogID}>
       <BlogPost blogPreviewData={previewDataArray} blog={blog} />
     </div>
   );

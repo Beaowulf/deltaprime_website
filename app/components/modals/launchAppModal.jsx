@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import "./modals.css";
 import { useSearchParams, usePathname } from "next/navigation";
-import { CTAButton } from "@/app/components/buttons/mainButton";
+import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import closeIconColored from "@/public/assets/icons/closeIconColored.svg";
 import Link from "next/link";
 import { useCryptoData } from "@/app/context/CryptoDataContext"; // Import the context
@@ -40,7 +40,7 @@ const LaunchAppModal = () => {
   return (
     <>
       {modal && (
-        <dialog className="modalP fixed left-0 z-[300] top-0 w-full h-full bg-black bg-opacity-50  overflow-auto backdrop-blur flex justify-center items-center">
+        <dialog className="modalP fixed left-0 top-0 w-full h-full bg-black bg-opacity-50  overflow-auto backdrop-blur flex justify-center items-center">
           <div className="modalParent relative w-full md:w-fit">
             <div className="absolute top-2 right-4 pb-2 pt-10 pl-5 pr-5 w-fit h-fit text-black cursor-pointer z-50">
               <Link
@@ -62,7 +62,7 @@ const LaunchAppModal = () => {
               </h4>
               <div className="flex flex-col md:flex-row justify-center gap-4 md:mt-8 mx-0 items-center">
                 {/* Left side */}
-                <div className="flex justify-center flex-col gap-1 items-center modalWrapper md:w-full h-full w-[17rem]">
+                <div className="flex justify-center flex-col gap-1 items-center modalWrapper md:w-full h-[16rem] w-[17rem]">
                   <div className="modalContent w-full h-full">
                     <div className="w-full bg-[#6B70ED] py-1 rounded-t-[25px] mt-[0.5px] mx-[0.25px] mb-2">
                       <p className="mx-auto w-fit text-white font-bold">
@@ -112,7 +112,10 @@ const LaunchAppModal = () => {
                           target="_blank"
                           href="https://app.deltaprime.io/#/pools"
                         >
-                          <CTAButton label="Launch App" />
+                          <DeltaPurpleButton
+                            className="px-3 py-3"
+                            label="Launch App"
+                          />
                         </Link>
                       </div>
                     </div>
@@ -125,7 +128,7 @@ const LaunchAppModal = () => {
                 </div>
 
                 {/* Right side */}
-                <div className="flex justify-center flex-col gap-1 items-center modalWrapper md:w-full h-full w-[17rem]">
+                <div className="flex justify-center flex-col gap-1 items-center modalWrapper md:w-full h-[16rem] w-[17rem]">
                   <div className="modalContent w-full h-full">
                     <div className="w-full bg-[#6B70ED] py-1 rounded-t-[25px] mt-[0.5px] mx-[0.25px] mb-2">
                       <p className="mx-auto w-fit text-white font-bold">
@@ -156,7 +159,10 @@ const LaunchAppModal = () => {
                           target="_blank"
                           href="https://app.deltaprime.io/#/prime-account/zaps"
                         >
-                          <CTAButton label="Launch App" />
+                          <DeltaPurpleButton
+                            className="px-3 py-3"
+                            label="Launch App"
+                          />
                         </Link>
                       </div>
                     </div>

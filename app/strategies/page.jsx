@@ -2,7 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "./strategiesPage.css";
-import { CTAButton, MainButton } from "@/app/components/buttons/mainButton";
+import {
+  DeltaPurpleButton,
+  MainButton,
+} from "@/app/components/buttons/mainButton";
 import strategiesIntroImg from "@/public/assets/img/images/strategieHeroImage.jpg";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
 
@@ -40,8 +43,7 @@ const StrategiesPage = () => {
             </p>
             <div className="w-full md:block hidden">
               <Link href="?modal=true" scroll={false}>
-                <CTAButton
-                  className="w-[100%] md:w-fit px-6 py-3"
+                <DeltaPurpleButton
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"
@@ -50,8 +52,7 @@ const StrategiesPage = () => {
             </div>
             <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
               <Link href="?modal=true" scroll={false}>
-                <CTAButton
-                  className="mx-auto px-6 py-3"
+                <DeltaPurpleButton
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"
@@ -77,8 +78,7 @@ const StrategiesPage = () => {
           <UnlockPotentialContainer hasMarginTop={false} />
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true" scroll={false}>
-              <CTAButton
-                className="mx-auto px-6 py-3"
+              <DeltaPurpleButton
                 label="LAUNCH APP"
                 hasArrowRight={true}
                 typographyClass="text-[15px]"

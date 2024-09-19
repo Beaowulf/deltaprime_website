@@ -1,15 +1,13 @@
 "use client"; // Ensure this component is only rendered on the client side
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { FooterLogo } from "@/app/components/logo/logo";
-import { LightModeLogo } from "@/app/components/logo/logo";
-import { CTAButton } from "@/app/components/buttons/mainButton";
+import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import "./footer.css";
-
-// Social Media Round Images
 import discordIcon from "@/public/assets/footerIcons/discordIcon.svg";
 import xIcon from "@/public/assets/footerIcons/xIconWhite.svg";
 import vectorIcon from "@/public/assets/footerIcons/vectorIcon.svg";
@@ -23,8 +21,7 @@ const LogoButton = () => {
         {/* Show this button only on mobile */}
         <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
           <Link href="?modal=true" scroll={false}>
-            <CTAButton
-              className="mx-auto px-6 py-3"
+            <DeltaPurpleButton
               label="LAUNCH APP"
               hasArrowRight={true}
               typographyClass="text-[15px]"
@@ -34,8 +31,7 @@ const LogoButton = () => {
         {/* Show this button only on mobile */}
         <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
           <Link href="?modal=true" scroll={false}>
-            <CTAButton
-              className="mx-auto px-6 py-3"
+            <DeltaPurpleButton
               label="LAUNCH APP"
               hasArrowRight={true}
               typographyClass="text-[15px]"
@@ -49,7 +45,7 @@ const LogoButton = () => {
 
 export function FooterTextLinks() {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-start">
       <div className="flex text-white items-center text-lg flex-col md:flex-row">
         <div className="space-y-4 text-center md:text-start mt-10 md:mt-0">
           <Link href="/our-story" className="block hover:text-gray-400 text-sm">
@@ -74,7 +70,10 @@ export function FooterTextLinks() {
         <div className="block md:hidden my-10 w-[8rem] h-[2px] dark:bg-deltaColoredLinearGradientVertical bg-deltaPurpleLinearGradientVertical"></div>
         <div className="hidden md:block mx-0 md:mx-16 w-[2px] h-[8rem] dark:bg-deltaColoredLinearGradientVertical bg-deltaPurpleLinearGradientVertical"></div>
         <div className="space-y-4 md:text-start flex flex-col justify-center items-center md:items-start">
-          <Link href="/our-story" className="block hover:text-gray-400 text-sm">
+          <Link
+            href="/our-story#job-description"
+            className="block hover:text-gray-400 text-sm"
+          >
             Careers
           </Link>
           <Link
@@ -105,7 +104,7 @@ export function RoundButtonLinks({ hasText = true }) {
   return (
     <div className="flex flex-col gap-4 text-white items-center md:items-start">
       <div className="block md:hidden my-10 w-[8rem] h-[2px] dark:bg-deltaColoredLinearGradientVertical bg-deltaPurpleLinearGradientVertical"></div>
-      {hasText && <p className="hover:text-gray-400">Follow us</p>}
+      {hasText && <p className="hover:text-gray-400 text-sm">Follow us</p>}
       <div className="flex flex-row gap-4">
         <Link href="https://discord.com/invite/9bwsnsHEzD" target="_blank">
           <Image src={discordIcon} alt="discord-round_logo" />

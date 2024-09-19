@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useTheme } from "next-themes";
 import "./contactForm.css";
-import { ContactUsButton } from "@/app/components/buttons/mainButton";
+import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -78,11 +78,11 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
     <div>
       <ToastContainer />
       {hasUnlockPotentialContainer && (
-        <div className="lg:block hidden">
-          <UnlockPotentialContainer />
+        <div className="lg:block hidden mt-10">
+          <UnlockPotentialContainer hasMarginTop={false} />
         </div>
       )}
-      <div className="flex flex-col md:flex-row mt-5 md:mt-40 md:pb-36 pb-5 relative overflow-hidden">
+      <div className="flex flex-col md:flex-row mt-10 md:mt-20 md:pb-36 pb-5 relative overflow-hidden">
         {/* Left Side */}
         <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center px-10 py-2 md:py-28 2xl:py-40 contactFormBG ">
           {/* Add your background image in the above style */}
@@ -153,7 +153,15 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
               ></textarea>
             </div>
             <div className="flex items-center justify-center">
-              <ContactUsButton label={"SUBMIT"} type="submit" />
+              <DeltaPurpleButton
+                buttonClassName={"w-full"}
+                className={
+                  "w-full flex items-center justify-center py-3 h-[50px] md:h-full"
+                }
+                typographyClass={"text-[15px]"}
+                label={"SUBMIT"}
+                type="submit"
+              />
             </div>
           </form>
         </div>

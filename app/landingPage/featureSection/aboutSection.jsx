@@ -61,11 +61,12 @@ function AboutSection() {
           a mission to reshape the future of DeFi, forging it in the fires of
           innovation and resilience.
         </p>
-        <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
+        <div className="sm:w-fit w-full rounded-[25px]">
           <BlogCardButton
             fullWidth={true}
             isLink={true}
-            typographyClass="md:mx-auto"
+            whiteOnlyArrow={true}
+            typographyClass="md:mx-auto text-white"
             hasArrowRight={true}
             label={"LEARN MORE"}
             href={"/our-story"}
@@ -73,7 +74,7 @@ function AboutSection() {
         </div>
       </div>
       {/* Right Side */}
-      <div className="px-10 pt-10 w-full md:w-1/2 flex justify-center">
+      <div className="px-10 pt-10 w-full md:w-1/2 flex justify-center overflow-hidden">
         <div className="w-fit">
           <ImageComponent />
         </div>

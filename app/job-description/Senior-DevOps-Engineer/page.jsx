@@ -23,8 +23,8 @@ function Senior_DevOps_Engineer() {
       <div>
         <DynamicPurpleBar title="Senior DevOps Engineer" />
       </div>
-      <div className="my-10 gap-4 w-full h-auto flex flex-col lg:flex-row justify-center items-center lg:items-start pagePaddingLarge">
-        <div className="px-3 rounded-2xl text-justify pt-20 pb-20 w-auto flex flex-col items-start descriptionWrapper">
+      <div className="my-10 gap-4 w-full h-auto flex flex-col lg:flex-row justify-start items-start pagePaddingLarge">
+        <div className="px-3 rounded-2xl text-justify pt-20 pb-20 flex flex-col items-start descriptionWrapper w-full lg:w-auto">
           <div className="descriptionContent md:px-50 md:py-45 p-10">
             <p className="text-4xl font-bold">Senior DevOps Engineer</p>
             <p className="text-2xl font-medium mt-3">Remote</p>
@@ -152,15 +152,14 @@ function Senior_DevOps_Engineer() {
             </ul>
           </div>{" "}
         </div>
-
-        <div className="rounded-2xl descriptionWrapper w-2/3 h-full flex flex-col items-center lg:w-2/3 lg:h-full gap-3 text-center !p-[40px]">
+        <div className="rounded-2xl descriptionWrapper h-full flex flex-col items-center gap-3 text-center !p-10 w-full lg:w-[35rem]">
           <MainButton
             onClick={() =>
               window.open(
                 "mailto:jobs@deltaprime.io?subject=Job%20Application&body=Hello"
               )
             }
-            className="mx-auto p-4 text-black z-50"
+            className="z-50"
             label="APPLY FOR THIS JOB"
           />
           <p className="text-xs font-normal pt-3">Share this job on socials</p>

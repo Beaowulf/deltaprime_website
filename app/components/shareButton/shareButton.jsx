@@ -5,15 +5,9 @@ import { useTheme } from "next-themes";
 import {
   FacebookShareButton,
   TwitterShareButton,
-  LinkedinShareButton,
   WhatsappShareButton,
 } from "react-share";
-import {
-  FacebookIcon,
-  TwitterIcon,
-  LinkedinIcon,
-  WhatsappIcon,
-} from "react-share";
+import { FacebookIcon, TwitterIcon, WhatsappIcon } from "react-share";
 import { useEffect, useRef, useState } from "react";
 import "./shareButton.css";
 const ShareButton = ({ title, text, url }) => {
@@ -45,20 +39,6 @@ const ShareButton = ({ title, text, url }) => {
     ) {
       setAnimationClass("hide");
       setTimeout(() => setShowPopup(false), 300);
-    }
-  };
-
-  const positionPopupToLeft = () => {
-    if (buttonRef.current && popupRef.current) {
-      const buttonRect = buttonRef.current.getBoundingClientRect();
-      const left =
-        buttonRect.left - popupRef.current.offsetWidth + window.scrollX;
-      const top = buttonRect.top + buttonRect.height + window.scrollY;
-
-      setPopupStyles({
-        top: `${top}px`,
-        left: `${left}px`,
-      });
     }
   };
 
@@ -100,7 +80,7 @@ const ShareButton = ({ title, text, url }) => {
       style={{
         position: "relative",
         display: "inline-block",
-        zIndex: 999999,
+        zIndex: 500,
       }}
       ref={popupRef}
     >

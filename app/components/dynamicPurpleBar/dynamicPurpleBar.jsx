@@ -10,7 +10,7 @@ const DynamicPurpleBar = ({
     <div
       className={`${mediumPadding ? "pagePaddingMedium" : "pagePaddingLarge"}`}
     >
-      <div className="flex items-center gap-3 rounded-[20px] bg-[#565AC2] relative px-5 md:px-16 py-4 text-white ">
+      <div className="flex items-center gap-3 rounded-[20px] bg-[#565AC2] relative px-5 md:px-16 py-[10px] md:py-3 text-white ">
         <Link className="hidden sm:block text-nowrap" href={"/"}>
           Home
         </Link>

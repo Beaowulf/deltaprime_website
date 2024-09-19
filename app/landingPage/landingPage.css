@@ -29,6 +29,7 @@
 }
 
 /* Carousel Section Styling */
+/* todo dark theme might need to be removed completely */
 .carouselItemsDarkTheme,
 .carouseItemsWhiteTheme {
   position: relative;
@@ -225,17 +226,21 @@
 
 @media (max-width: 500px) {
   .bubble-2 {
-    bottom: -5%;
+    bottom: 0%;
     left: 0;
   }
   .bubble-1 {
     top: 30%;
-    left: -15%;
+    left: -10%;
     z-index: -10;
+  }
+  .bubble-3 {
+    top: 55%;
+    right: 10%;
   }
   .bubble-4 {
     bottom: 40%;
-    right: -20%;
+    right: -18%;
     z-index: -10;
   }
 }

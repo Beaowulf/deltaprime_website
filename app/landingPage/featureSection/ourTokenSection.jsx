@@ -11,18 +11,19 @@ function OurTokenSection() {
   const { theme } = useTheme;
 
   return (
-    <div className="lg:mb-32 mb-10 mt-14">
+    <div className="lg:mb-32 mb-10 mt-40">
       <Header
+        hasSeperator={true}
         subTitle="Our Tokens"
         paragraph="Our tradeable and utility tokens feature majority ownership for the community as well as access to advanced platform features.  "
       />
       <div className="flex flex-wrap justify-center flex-col md:flex-row gap-4">
         {/* Left Card */}
         <div
-          className={`rounded-[20px] flex-1 p-4 w-full ${
+          className={`rounded-[25px] flex-1 p-4 w-full ${
             theme === "dark"
               ? "featureBorderWrapDarkTheme"
-              : "featureBorderWrapLightTheme"
+              : "featureBorderDarkerTheme"
           }`}
         >
           <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 h-full w-full dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG">
@@ -54,7 +55,6 @@ function OurTokenSection() {
                 <BlogCardButton
                   isLink={true}
                   className="w-full sm:w-fit"
-                  typographyClass="md:mx-auto"
                   hasArrowRight={true}
                   label={"LEARN MORE"}
                   href={"/tokenomics"}
@@ -65,10 +65,10 @@ function OurTokenSection() {
         </div>
         {/* Right Card */}
         <div
-          className={`rounded-[20px] flex-1 p-4 w-full ${
+          className={`rounded-[25px] flex-1 p-4 w-full ${
             theme === "dark"
               ? "featureBorderWrapDarkTheme"
-              : "featureBorderWrapLightTheme"
+              : "featureBorderDarkerTheme"
           }`}
         >
           <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full ">
@@ -99,7 +99,6 @@ function OurTokenSection() {
                 <BlogCardButton
                   isLink={true}
                   className="w-full sm:w-fit"
-                  typographyClass="md:mx-auto"
                   hasArrowRight={true}
                   label={"LEARN MORE"}
                   href={"/tokenomics"}

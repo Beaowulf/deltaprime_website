@@ -1,17 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  BlogCardButton,
-  MainButton,
-} from "@/app/components/buttons/mainButton";
+import { MainButton } from "@/app/components/buttons/mainButton";
 import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
+import { useRouter } from "next/navigation";
 
 const BlogHeader = ({ title, subTitle, paragraph }) => {
   return (
-    <div className="flex flex-col items-center  md:mb-14 mb-1 text-center">
+    <div className="flex flex-col items-center  md:mb-14 mb-10 text-center">
       <h4 className="uppercase mb-3 font-bold featureSubtitle md:text-[34px] text-[24px] text text-center dark:text-white text-[#6B70ED]">
         {title}
       </h4>
@@ -31,10 +29,21 @@ const BlogCard = ({
   roundedImage,
   minsToRead,
   blogSlug,
+  onClick,
 }) => {
+  const router = useRouter();
+
+  const handleImageClick = () => {
+    if (onClick) onClick();
+    router.push(`/blogs/academy/${blogSlug}`);
+  };
+
   return (
     <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
-      <div className="blogCardParent w-full h-[270px] ">
+      <div
+        className="blogCardParent w-full h-[270px] cursor-pointer"
+        onClick={handleImageClick}
+      >
         <img
           src={previewBlogImage}
           alt="Blog Preview"
@@ -45,7 +54,7 @@ const BlogCard = ({
         {blogDescription}
       </p>
       <Link prefetch={true} href={`/blogs/academy/${blogSlug}`}>
-        <BlogCardButton label={"Read More"} />
+        <span className="underline ml-1">Read More</span>
       </Link>
     </div>
   );
@@ -129,8 +138,9 @@ const BlogPreviewSection = ({ blogPreviewCardData }) => {
         </div>
         <div className="flex justify-center items-center">
           <MainButton
+            wrapperClass="py-3 px-8"
             hasArrowRight={true}
-            label={"LAUNCH BURD LOG"}
+            label={"VISIT BLOG"}
             href={"/blogs"}
           />
         </div>

@@ -10,7 +10,7 @@ const FounderCard = ({
 }) => {
   return (
     <div className="rounded-[25px] p-4 h-full featureBorderWrapLightTheme text-center relative">
-      <div className="rounded-[25px] z-20 pb-12 dark:bg-[#252948] deltaWhiteLinearBG storyCard">
+      <div className="rounded-[25px] z-20 pb-12 dark:bg-[#252948] deltaWhiteLinearBG storyCard h-full">
         <div className="flex justify-center items-center flex-col pt-10 px-4">
           {/* Adjust padding here to make the border less thick */}
           <div className="relative w-[220px] h-[220px] rounded-full bg-gradient-to-t from-[#BABAFE] via-[#FA91BF] to-[#FEC2A5] p-[7px]">
@@ -30,7 +30,7 @@ const FounderCard = ({
           <p className="aboutTypographyparagraphWhite dark:text-[#252948] text-[#6B70ED]">
             {title}
           </p>
-          <p className="my-8 aboutTypographyparagraphWhite max-w-[320px] dark:text-[#252948] text-[#565AC2] text-justify">
+          <p className="my-8 aboutTypographyparagraphWhite max-w-[320px] dark:text-[#252948] text-[#565AC2] text-justify hyphens-auto">
             {description}
           </p>
           <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2">

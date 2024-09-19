@@ -12,7 +12,7 @@ import BlogCard from "@/app/components/blogCard/blogCard";
 import CryptoPreviewTables from "@/app/components/cryptoTables/cryptoTables";
 import {
   AboutButtonDarkBG,
-  CTAButton,
+  DeltaPurpleButton,
 } from "@/app/components/buttons/mainButton";
 import clockIcon from "@/public/assets/icons/clockIcon.svg";
 import hashtagIcon from "@/public/assets/icons/hashtagIcon.svg";
@@ -302,8 +302,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
             </div>
             <div className="fullWidthButtonChildren h-[60px] mt-12 md:h-full block md:hidden w-full text-center">
               <Link href="?modal=true" scroll={false}>
-                <CTAButton
-                  className="mx-auto w-full p-4"
+                <DeltaPurpleButton
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"
@@ -322,8 +321,8 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 <div className="w-full bg-black h-[2px] my-5" />
                 <ul className="flex flex-col gap-4">
                   {headings.map((heading) => (
-                    <>
-                      <li key={heading.id}>
+                    <div key={heading.id}>
+                      <li>
                         <a
                           href={`#${heading.id}`}
                           onClick={handleScrollTo(heading.id)}
@@ -335,7 +334,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                         </a>
                       </li>
                       <span className="bg-gray-200 h-[1px] w-1/2 -my-1 mx-auto"></span>
-                    </>
+                    </div>
                   ))}
                 </ul>
               </div>
@@ -345,10 +344,12 @@ const BlogPost = ({ blog, blogPreviewData }) => {
             <div className="flex flex-col justify-center items-center gap-4 px-5 rounded-[20px] cta_background">
               <h3 className="text-[32px] text-white text-center max-w-[12rem] leading-7">
                 <span className="font-extrabold">Explore Strategies</span> for
-                Any Risk Apetite
+                Any Risk Appetite
               </h3>
               <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
                 <AboutButtonDarkBG
+                  href={"/strategies"}
+                  hasArrowRight={true}
                   customClass="w-full"
                   hasWhiteArrowRight={true}
                   label={"LEARN MORE"}
@@ -369,7 +370,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         <div className="flex flex-wrap gap-6 items-center justify-center mb-20 md:mb-0">
           {blogPreviewData.slice(0, 3).map((blogPreviewData) => (
             <BlogCard
-              key={blogPreviewData.blog.slug}
+              key={blogPreviewData.blog.blogID}
               blogSlug={blogPreviewData.blog.slug}
               blogCategory={blogPreviewData.blog.blogCategory}
               blogTitle={blogPreviewData.blog.blogTitle}

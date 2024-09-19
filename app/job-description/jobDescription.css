@@ -1,7 +1,7 @@
 .descriptionWrapper {
   position: relative;
   border-radius: 25px;
-  padding: 1px;
+  padding: 2px;
   overflow: hidden;
 }
 
@@ -12,7 +12,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 1.2px;
+  padding: 2px;
   border-radius: 25px;
   background: linear-gradient(
     0deg,

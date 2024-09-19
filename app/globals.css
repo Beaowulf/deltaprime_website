@@ -372,6 +372,14 @@ body {
   line-height: 54px;
   letter-spacing: -2%;
 }
+.smallBrigthText {
+  font-size: 32px;
+  text-shadow: 0px -1px 16px #feeef4;
+  font-weight: 700;
+  line-height: 54px;
+  letter-spacing: -2%;
+}
+
 .selectedLetterDark {
   text-shadow: 0px 0px 13px #feeef4;
 }
@@ -389,7 +397,7 @@ body {
 }
 
 .whiteMainText {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .blueText {
@@ -790,6 +798,12 @@ body {
     padding: 8px;
     font-size: 14px;
   }
+  .brightText {
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 34.5px */
+  }
 }
 .deltaWhiteLinearBG {
   background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
@@ -798,4 +812,10 @@ body {
 .Toastify__close-button > svg {
   height: 20px !important;
   width: 50px !important;
+}
+
+.cta_background {
+  height: 520px;
+  width: 320px;
+  background: no-repeat url("../public/assets/img/cta-background-image.png");
 }

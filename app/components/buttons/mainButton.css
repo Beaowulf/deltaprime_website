@@ -1,4 +1,4 @@
-/* shared transitions */
+/* TODO refactor and remove some unused css */
 /* this is spaghetti code */
 .mainButtonWithBorderBG,
 .mainButtonBGwithoutBorder,
@@ -8,7 +8,6 @@
 .mainButton,
 .navButtonDarkText,
 .mainButtonText,
-.mainButtonDarkBG,
 .contactUsButtonBGLight,
 .contactUsButtonBGDark,
 .arrowRightImageBtn,
@@ -98,13 +97,34 @@
   background-size: 200% 100%;
 }
 
+/* Purple Delta Prime Button */
+.purpleButton {
+  display: flex;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  overflow: hidden;
+  background: linear-gradient(272deg, #6b70ed 30%, #ad91ff 85%);
+  box-shadow: 0px 2px 4px rgba(51, 0, 255, 0.7),
+    0px 6px 18px rgba(82, 0, 255, 0.41);
+  transition: all 0.5s ease;
+  background-clip: border-box;
+}
+
+.purpleButton:hover {
+  border-radius: 100px;
+  background: linear-gradient(272deg, #6b70ed 50%, #ad91ff 100%);
+  box-shadow: 0px 4px 6px rgba(51, 0, 255, 0.7),
+    0px 8px 20px rgba(82, 0, 255, 0.41);
+}
+/* End of Purple Delta Prime Button */
 .mainButton {
   display: flex;
   /* display: flex; */
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 10px 20px;
   font-size: 18px;
   font-weight: bold;
   border-radius: 50px;
@@ -114,26 +134,19 @@
   text-transform: uppercase;
   z-index: 1;
   border-radius: 100px;
-  background: linear-gradient(345deg, #6267ea 40%, #8187fa 60%, #a695ff 80%),
-    var(--Main, #6b70ed);
-  box-shadow: 2px 2px 10px 0px rgba(255, 95, 162, 0.12),
-    7px 7px 30px 0px rgba(255, 95, 162, 0.2), 0px -4px 3px 0px #5f64dd inset,
-    0px 3px 3px 0px rgba(255, 255, 255, 0.37) inset;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  background: linear-gradient(272deg, #6b70ed 30%, #ad91ff 85%);
+  box-shadow: 0px 4px 6px rgba(51, 0, 255, 0.7),
+    0px 8px 20px rgba(82, 0, 255, 0.41);
+  transition: all 0.5s ease;
+  background-clip: border-box;
 }
 
 .mainButton:hover {
   border-radius: 100px;
-  background: linear-gradient(
-    303deg,
-    #8697ff 9.24%,
-    #9f7dff 51.51%,
-    #cd9cff 93.79%
-  );
-  box-shadow: 2px 2px 10px 0px rgba(255, 95, 162, 0.12),
-    7px 7px 30px 0px rgba(255, 95, 162, 0.2),
-    0px -4px 3px 0px rgba(95, 100, 221, 0.6) inset,
-    0px 3px 3px 0px rgba(255, 255, 255, 0.37) inset;
+  background: linear-gradient(272deg, #6b70ed 50%, #ad91ff 100%);
+  box-shadow: 1px 4px 6px 1px rgba(51, 0, 255, 0.7),
+    0px 5.79px 18.816px 0px rgba(82, 0, 255, 0.41);
 }
 
 .arrowButtonBG:hover .contactUsButtonBGDark {
@@ -157,6 +170,9 @@
 .pathArrowWhiteChild {
   stroke: black;
 }
+.pathArrowPurpleChild {
+  stroke: #565ac2;
+}
 
 .arrowButtonBG:hover .pathArrowWhiteChild {
   stroke: white;
@@ -164,6 +180,10 @@
 
 .svgArrowWhiteParent {
   stroke: white;
+}
+
+.svgArrowPurpleParent {
+  stroke: #565ac2;
 }
 
 .arrowButtonBG:hover .svgArrowWhiteParent {
@@ -200,40 +220,6 @@
 }
 .mainButton:hover .arrowOnButton {
   filter: brightness(0) invert(1);
-}
-
-/* Dark Mode Button */
-.mainButtonDarkBG {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  background: rgb(27, 21, 60);
-  background: linear-gradient(
-    15deg,
-    rgba(27, 21, 60, 1) 0%,
-    rgba(28, 41, 67, 1) 50%,
-    rgba(48, 30, 62, 1) 100%
-  );
-  border-radius: 50px;
-  outline: none;
-  cursor: pointer;
-  overflow: hidden;
-  text-transform: uppercase;
-  z-index: 1;
-}
-
-.mainButtonDarkBG:hover {
-  background: rgb(27, 21, 60);
-  background: linear-gradient(
-    15deg,
-    rgba(27, 21, 60, 1) 0%,
-    rgba(28, 41, 67, 1) 50%,
-    rgba(48, 30, 62, 1) 100%
-  );
 }
 
 .aboutButtonDarkBG {
@@ -335,22 +321,21 @@
 }
 
 /* Parent container with gradient border */
-.blogButtonWrapper {
+.glossaryItemWrapper {
   position: relative;
-  border-radius: 22px;
-  padding: 3px;
+  border-radius: 25px;
+  padding: 1px;
   overflow: hidden;
-  scale: 1.01;
 }
 
-.blogButtonWrapper:before {
+.glossaryItemWrapper:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 3.5px;
+  padding: 2px;
   border-radius: 25px;
   background: linear-gradient(
     0deg,
@@ -370,12 +355,36 @@
   z-index: 1;
 }
 
+.blogButtonWrapper {
+  position: relative;
+  border-radius: 25px;
+  padding: 1px;
+  overflow: hidden;
+}
+
+.blogButtonWrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px;
+  border-radius: 25px;
+  border: 3px solid var(--Linear, #6b70ed);
+  box-shadow: 0px 2.131px 6.393px 0px rgba(51, 0, 255, 0.7),
+    0px 8.524px 27.702px 0px rgba(82, 0, 255, 0.41);
+  z-index: 1;
+}
+
 .blogButtonContent {
   border-radius: 25px;
   position: relative;
   z-index: 1;
   color: white;
-  background: linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
+  box-shadow: 0px 2px 4px rgba(51, 0, 255, 0.7),
+    0px 6px 18px rgba(82, 0, 255, 0.41);
+
   /* background: linear-gradient(#fff, #fff, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
@@ -392,21 +401,8 @@
   transition: all 0.5s ease;
 }
 
-.blogButtonWrapper:hover .blogCardText {
-  background: -webkit-linear-gradient(#ffbb9b, #ff8fb8, #afafff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.blogButtonWrapper:hover .blogButtonContent {
-  background: linear-gradient(to bottom, #f4f4ff, #fff5f0 50%, #feeef4 100%);
-}
 .blogButtonWrapper:hover h6 {
-  text-shadow: 0px -1px 16px #feeef4;
-  color: white;
-}
-
-.blogCardText {
-  background: linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
+  text-shadow: 0px -1px 5px #feeef4;
 }
 
 .ctaButtonBorder {

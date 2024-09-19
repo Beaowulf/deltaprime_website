@@ -7,7 +7,7 @@
 
 .featureBorderWrapLightTheme {
   position: relative;
-  background: linear-gradient(0deg, #c0beff 10%, #ffcee0 55%, #ffdecc 100%);
+  background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
   padding: 2.5px;
 }
 
@@ -56,4 +56,42 @@
 
 .customBoxShadow {
   box-shadow: 0 0 1px 1px gray;
+}
+
+.purpleText {
+  color: #3d4481 !important;
+}
+
+.jobDescriptionBoxWrapper {
+  position: relative;
+  border-radius: 15px;
+  padding: 1px;
+  overflow: hidden;
+}
+
+.jobDescriptionItemWrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px;
+  border-radius: 15px;
+  background: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  -webkit-mask: linear-gradient(
+    0deg,
+    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 143, 184, 1) 50%,
+    rgba(255, 187, 155, 1) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
 }

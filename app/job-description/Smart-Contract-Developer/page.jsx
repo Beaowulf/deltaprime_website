@@ -25,10 +25,9 @@ function Smart_Contract_Developer() {
       <div>
         <DynamicPurpleBar title="Smart Contract Developer" />
       </div>
-      <div className="my-10 gap-4 w-full h-auto flex flex-col lg:flex-row justify-center items-center lg:items-start pagePaddingLarge">
-        {/* Left Side */}
-        <div className="px-3 rounded-2xl text-justify pt-20 pb-20 w-auto flex flex-col items-start descriptionWrapper">
-          <div className="descriptionContent md:px-50 md:py-45 p-10 ">
+      <div className="my-10 gap-4 w-full h-auto flex flex-col lg:flex-row justify-start items-start pagePaddingLarge">
+        <div className="px-3 rounded-2xl text-justify pt-20 pb-20 flex flex-col items-start descriptionWrapper w-full lg:w-auto">
+          <div className="descriptionContent md:px-50 md:py-45 p-10">
             <p className="text-4xl font-bold">Smart Contract Developer</p>
             <p className="text-2xl font-medium mt-3">Remote</p>
             <div className="w-[90%] h-[1px] bg-[#fab391] my-4" />
@@ -185,14 +184,14 @@ function Smart_Contract_Developer() {
         </div>
 
         {/* Right Side */}
-        <div className="rounded-2xl descriptionWrapper w-2/3 h-full flex flex-col items-center lg:w-2/3 lg:h-full gap-3 text-center !p-[40px]">
+        <div className="rounded-2xl descriptionWrapper h-full flex flex-col items-center gap-3 text-center !p-10 w-full lg:w-[35rem]">
           <MainButton
             onClick={() =>
               window.open(
                 `mailto:${email}?subject=Job%20Application&body=Hello`
               )
             }
-            className="mx-auto p-4 text-black"
+            className=""
             label="APPLY FOR THIS JOB"
           />
           <p className="text-xs font-normal pt-3">Share this job on socials</p>

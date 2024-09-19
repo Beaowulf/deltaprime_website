@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { CTAButton } from "@/app/components/buttons/mainButton";
+import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
 
 // Dark themed assets
@@ -52,14 +52,14 @@ const FeaturePrimeAccountSection = () => {
       <Header
         subTitle={"Prime Account"}
         paragraph={
-          "Our unique escrow smart contracts allow you for truly trustless borrowing. Leverage up to 6x and action a wide range of flexible investment strategies."
+          "Our unique escrow smart contracts allow for truly trustless borrowing. Leverage up to 6x and action a wide range of flexible investment strategies."
         }
       />
       <div className="flex items-center justify-cente md:mb-20 mb-6 flex-wrap">
         <div className="flex flex-wrap sm:flex-nowrap gap-4 w-full h-full">
           {/* Large box on the left */}
           <div
-            className={`rounded-[25px] sm:w-1/2 w-full ${
+            className={`rounded-[27px] sm:w-1/2 w-full ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
@@ -112,7 +112,7 @@ const FeaturePrimeAccountSection = () => {
           <div className="sm:w-1/2 w-full flex flex-col space-y-4">
             {/* 5X BOX */}
             <div
-              className={`h-[50%] rounded-[20px] ${
+              className={`h-[50%] rounded-[27px] ${
                 theme === "dark"
                   ? "featureBorderWrapDarkTheme"
                   : "featureBorderWrapLightTheme"
@@ -156,7 +156,7 @@ const FeaturePrimeAccountSection = () => {
             </div>
             {/* Graph BOX */}
             <div
-              className={`h-[50%] rounded-[20px] ${
+              className={`h-[50%] rounded-[27px] ${
                 theme === "dark"
                   ? "featureBorderWrapDarkTheme"
                   : "featureBorderWrapLightTheme"
@@ -204,24 +204,24 @@ const FeaturePrimeAccountSection = () => {
       </div>
 
       {/* Show this button only on mobile */}
-      <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
+      <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center md:flex items-center justify-center">
         <Link href="?modal=true" scroll={false}>
-          <CTAButton
-            className="mx-auto px-6 py-3"
-            label="LAUNCH APP"
-            hasArrowRight={true}
+          <DeltaPurpleButton
+            className="py-4 px-5"
+            label="LAUNCH PRIME ACCOUNT"
             typographyClass="text-[15px]"
+            hasArrowRight={false}
           />
         </Link>
       </div>
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
         <Link href="?modal=true" scroll={false}>
-          <CTAButton
-            className="mx-auto px-6 py-3"
-            label="LAUNCH APP"
-            hasArrowRight={true}
+          <DeltaPurpleButton
+            className="py-4 px-5 h-[50px]"
+            label="LAUNCH PRIME ACCOUNT"
             typographyClass="text-[15px]"
+            hasArrowRight={false}
           />
         </Link>
       </div>

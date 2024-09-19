@@ -11,7 +11,7 @@ import {
   MobileMenuLogo,
 } from "@/app/components/logo/logo";
 import ThemeSwitch from "@/app/components/themeToggler/themeToggler";
-import { CTAButton } from "@/app/components/buttons/mainButton";
+import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import hamburgerIconWhite from "@/public/assets/icons/hamburgerIconWhite.svg";
 import hamburgerIconPurple from "@/public/assets/icons/hamburgerIconPurple.svg";
 import closeIconWhite from "@/public/assets/icons/closeIconWhite.svg";
@@ -59,7 +59,7 @@ function Nav() {
       }`}
     >
       <nav
-        className={`md:mb-32 mb-10 pt-[2px] transition-all duration-300 ${
+        className={`md:mb-24 mb-10 pt-[2px] transition-all duration-300 ${
           isScrolled && "py-0 pt-0"
         }`}
       >
@@ -72,10 +72,8 @@ function Nav() {
             </div>
           </div>
           <div className="hidden md:block">
-            <div className="lg:ml-8 flex items-baseline space-x-4 relative">
-              {/* Insert the Dropdown component here */}
+            <div className="lg:ml-[29px] flex items-baseline space-x-4 relative">
               <Dropdown />
-
               {/* Other dropdown components */}
               <DropDownStrategyLoader
                 pathname={pathname}
@@ -102,13 +100,13 @@ function Nav() {
 
           <div className="hidden md:flex items-center">
             <Link href="?modal=true" scroll={false}>
-              <CTAButton hasArrowRight={false} label={"Launch app"} />
+              <DeltaPurpleButton hasArrowRight={false} label={"Launch app"} />
             </Link>
           </div>
 
           <div className="-mr-1 flex md:hidden items-center gap-2">
             <Link href="?modal=true" scroll={false}>
-              <CTAButton
+              <DeltaPurpleButton
                 hasArrowRight={false}
                 label={"Launch app"}
                 className="whitespace-nowrap md:px-5 px-3 md:py-3 py-2"
