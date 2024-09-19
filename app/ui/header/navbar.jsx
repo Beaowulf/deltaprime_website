@@ -72,7 +72,7 @@ function Nav() {
             </div>
           </div>
           <div className="hidden md:block">
-            <div className="lg:ml-8 flex items-baseline space-x-4 relative">
+            <div className="lg:ml-[29px] flex items-baseline space-x-4 relative">
               <Dropdown />
               {/* Other dropdown components */}
               <DropDownStrategyLoader

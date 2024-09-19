@@ -326,7 +326,7 @@ const Tokenomics = () => {
             Token Distribution
           </p>
         </div>
-        <div className="w-full relative flex flex-col md:flex-row md:pl-0 xl:pl-[12rem]">
+        <div className="w-full relative flex flex-col md:flex-row md:pl-0 xl:pl-[13rem] 2xl:pl-[14rem]">
           <div className="lg:w-1/2">
             <TokenomicsGraph className="" />
           </div>
