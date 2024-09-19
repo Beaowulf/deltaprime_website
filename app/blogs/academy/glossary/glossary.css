@@ -48,11 +48,11 @@
 
 .swiper-button-next {
   right: -0.75rem;
-  top: 1.45rem;
+  top: 1.8rem;
 }
 .swiper-button-prev {
   left: -5px;
-  top: 1.45rem;
+  top: 1.8rem;
   z-index: 100;
 }
 .glossarySwiper {
