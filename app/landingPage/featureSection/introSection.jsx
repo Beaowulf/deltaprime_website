@@ -33,14 +33,20 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity }) => {
         {/* Price pill Wrapper */}
         <div className="shadow-deltaRed dark:shadow-deltaWhite rounded-[100px] bg-white flex justify-between w-full md:w-fit md:py-4 sm:px-7 py-2 px-5 gap-5 items-center mt-8 md:mt-0 z-10">
           <div className="flex flex-col items-center text-[#6B70ED] costText w-fit h-[2.75rem]">
-            <p className="blueText text-[#565AC2] pb-1 text-center sm:text-left text-nowrap">
+            <p
+              className="blueText text-[#565AC2] pb-1 text-center sm:text-left !text-nowrap"
+              style={{ textWrap: "nowrap" }}
+            >
               Protocol Deposits
             </p>
             <AnimatedText targetNumber={totalTvl} duration={2} />
           </div>
           <div className=" bg-[#CED0FF] w-[2px] h-[35px]" />
           <div className="flex flex-col items-center text-[#6B70ED] costText w-fit h-[2.75rem] pl-[0.65rem">
-            <p className="blueText text-[#565AC2] pb-1 text-center sm:text-left text-nowrap">
+            <p
+              className="blueText text-[#565AC2] pb-1 text-center sm:text-left !text-nowrap"
+              style={{ textWrap: "nowrap" }}
+            >
               Liquidity Unlocked
             </p>
             <AnimatedText targetNumber={totalBorrowedLiquidity} />
