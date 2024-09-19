@@ -113,7 +113,7 @@ const Glossary = () => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           }}
-          className="glossarySwiper h-[3rem] w-[90%] mx-0 px-5"
+          className="glossarySwiper h-[3rem] w-[80%] mx-0 px-5 h-fit"
         >
           <SwiperSlide onClick={clearSelect} className="text-center">
             <p
@@ -132,7 +132,7 @@ const Glossary = () => {
             <SwiperSlide
               key={letter}
               onClick={() => setSelectedLetter(letter)}
-              className="text-center flex items-center"
+              className="text-center flex items-center h-fit"
             >
               <p
                 className={`text-xl font-bold border-r-[2px] border-[#FFBB9B] w-fit pl-1 pr-4 cursor-pointer ${
