@@ -5,15 +5,9 @@ import { useTheme } from "next-themes";
 import {
   FacebookShareButton,
   TwitterShareButton,
-  LinkedinShareButton,
   WhatsappShareButton,
 } from "react-share";
-import {
-  FacebookIcon,
-  TwitterIcon,
-  LinkedinIcon,
-  WhatsappIcon,
-} from "react-share";
+import { FacebookIcon, TwitterIcon, WhatsappIcon } from "react-share";
 import { useEffect, useRef, useState } from "react";
 import "./shareButton.css";
 const ShareButton = ({ title, text, url }) => {
@@ -45,20 +39,6 @@ const ShareButton = ({ title, text, url }) => {
     ) {
       setAnimationClass("hide");
       setTimeout(() => setShowPopup(false), 300);
-    }
-  };
-
-  const positionPopupToLeft = () => {
-    if (buttonRef.current && popupRef.current) {
-      const buttonRect = buttonRef.current.getBoundingClientRect();
-      const left =
-        buttonRect.left - popupRef.current.offsetWidth + window.scrollX;
-      const top = buttonRect.top + buttonRect.height + window.scrollY;
-
-      setPopupStyles({
-        top: `${top}px`,
-        left: `${left}px`,
-      });
     }
   };
 
@@ -97,7 +77,11 @@ const ShareButton = ({ title, text, url }) => {
 
   return (
     <div
-      style={{ position: "relative", display: "inline-block" }}
+      style={{
+        position: "relative",
+        display: "inline-block",
+        zIndex: 500,
+      }}
       ref={popupRef}
     >
       <button onClick={handleShare} className="w-fit mt-2" ref={buttonRef}>
@@ -112,6 +96,7 @@ const ShareButton = ({ title, text, url }) => {
         <div
           className={`text-[#252948] text-sm popup ${animationClass}`}
           ref={popupRef}
+          style={{ zIndex: "9999999999999 !important" }}
         >
           <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
             <li
@@ -121,9 +106,9 @@ const ShareButton = ({ title, text, url }) => {
                 alignItems: "center",
               }}
             >
-              <h1 className="text-[24px]  text-center  font-bold mb-4">
+              <h3 className="text-[24px]  text-center  font-bold mb-4">
                 Share on:
-              </h1>
+              </h3>
             </li>
             <li
               style={{

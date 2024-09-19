@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  rewrites: async () => [
+    {
+      source: "/sitemap.xml",
+      destination: "/api/sitemap",
+    },
+  ],
   images: {
     remotePatterns: [
       {

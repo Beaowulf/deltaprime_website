@@ -17,7 +17,6 @@ import HowToVideoCard from "../components/howToVideoCard/howToVideoCard";
 export const VideosDesktopFlipCards = ({ videos }) => {
   return (
     <div className="hidden md:block mx-auto p-4">
-      {/* This component is hidden until the desired breakpoint */}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {videos.map((video, index) => (
           <div

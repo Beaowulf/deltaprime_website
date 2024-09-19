@@ -2,6 +2,7 @@
   position: relative;
   box-shadow: 0px 0px 20px 0px #6b70ed;
   border-radius: 25px;
+  z-index: 300000;
 }
 .modalWrapper {
   position: relative;
@@ -49,5 +50,5 @@ dialog {
 }
 
 .modalP {
-  z-index: 300000;
+  z-index: 999999999;
 }

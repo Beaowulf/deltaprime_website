@@ -14,30 +14,37 @@ import arrowLeftColored from "@/public/assets/icons/arrowBtnLeftColored.svg";
 import arrowRightColored from "@/public/assets/icons/arrowBtnRightColored.svg";
 import Header from "@/app/components/header/header";
 
-const ListText = ({ slug }) => {
+const ListText = ({
+  slug,
+  backCardTitle,
+  backCardBenefits,
+  backCardDownsides,
+}) => {
   return (
     <div>
-      <h4 className="text-[16px] leading-5 mb-6 font-bold">
-        The delta neutral portfolio is perfect for investors who:
-      </h4>
-      <ul className="flex flex-col gap-2">
-        <li>
-          <p className="text-[14px] font-semibold leading-[150%]">
-            • Are in it for the long-term
-          </p>
-        </li>
-        <li>
-          <p className="text-[14px] font-semibold leading-[150%]">
-            • Want to profit whether there is a bull- crab- or bear market
-          </p>
-        </li>
-        <li>
-          <p className="text-[14px] font-semibold leading-[150%]">
-            • Mainly want to benefit from arbitrage opportunities within
-            DeltaPrime
-          </p>
-        </li>
-      </ul>
+      <h4 className="text-[16px] leading-1 mb-4 font-bold">{backCardTitle}</h4>
+      <ol className="flex flex-col gap-1 pb-4">
+        <h5 className="text-[20px] leading-5 mb-2 font-bold">Benefits:</h5>
+        {Array.isArray(backCardBenefits) &&
+          backCardBenefits.map((benefit, index) => (
+            <li key={index}>
+              <p className="text-[14px] font-semibold leading-[150%]">
+                • {benefit}
+              </p>
+            </li>
+          ))}
+      </ol>
+      <ol className="flex flex-col gap-1 mt-2 ">
+        <h5 className="text-[20px] leading-5 mb-2 font-bold">Downsides:</h5>
+        {Array.isArray(backCardDownsides) &&
+          backCardDownsides.map((benefit, index) => (
+            <li key={index}>
+              <p className="text-[14px] font-semibold leading-[150%]">
+                • {benefit}
+              </p>
+            </li>
+          ))}
+      </ol>
       <div className="mt-3">
         <Link
           href={`/strategies/${slug}`}
@@ -62,7 +69,7 @@ export const StratDesktopFlipCards = ({ strategies }) => {
           }
         />
       </div>
-      <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+      <div className="grid gap-4 xl:grid-cols-3 lg:grid-cols-2 grid-cols-1">
         {strategies.map((strategy, index) => (
           <div key={strategy.strategyID} className="card w-full">
             <FlipCard
@@ -70,9 +77,16 @@ export const StratDesktopFlipCards = ({ strategies }) => {
               descriptionFront={strategy.strategyDescription}
               difficultyLevel={strategy.difficultyLevel}
               isFirstCard={index === 0}
-              listTextBack={<ListText slug={strategy.slug} />} // Pass the slug here
+              listTextBack={
+                <ListText
+                  slug={strategy.slug}
+                  backCardTitle={strategy.backCardtitle}
+                  backCardBenefits={strategy.backCardBenefits}
+                  backCardDownsides={strategy.backCardDownsides}
+                />
+              }
               titleBack={strategy.strategyTitle}
-              strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
+              strategyImage={strategy.strategyImage?.fields?.file?.url}
             />
           </div>
         ))}
@@ -107,7 +121,7 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
           pagination={{
             el: ".swiper-pagination",
             clickable: true,
-            renderBullet: (index, className) => {
+            renderBullet: (className) => {
               return `<div class="${className}"></div>`;
             },
           }}
@@ -120,7 +134,14 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
                 titleBack={strategy.strategyTitle}
                 descriptionFront={strategy.strategyDescription}
                 difficultyLevel={strategy.difficultyLevel}
-                listTextBack={<ListText slug={strategy.slug} />}
+                listTextBack={
+                  <ListText
+                    slug={strategy.slug}
+                    backCardTitle={strategy.backCardtitle}
+                    backCardBenefits={strategy.backCardBenefits}
+                    backCardDownsides={strategy.backCardDownsides}
+                  />
+                }
                 strategyImage={strategy.strategyImage?.fields?.file?.url}
               />
             </SwiperSlide>
@@ -188,7 +209,14 @@ export const DesktopCardCarousel = ({ strategies }) => {
                 titleBack={strategy.strategyTitle}
                 descriptionFront={strategy.strategyDescription}
                 difficultyLevel={strategy.difficultyLevel}
-                listTextBack={<ListText slug={strategy.slug} />} // Pass the slug here
+                listTextBack={
+                  <ListText
+                    slug={strategy.slug}
+                    backCardTitle={strategy.backCardTitle}
+                    backCardBenefits={strategy.backCardBenefits}
+                    backCardDownsides={strategy.backCardDownsides}
+                  />
+                } // Pass the slug here
                 strategyImage={strategy.strategyImage?.fields?.file?.url} // Pass the image URL here
               />
             </SwiperSlide>

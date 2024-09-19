@@ -2,7 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "./strategiesPage.css";
-import { CTAButton, MainButton } from "@/app/components/buttons/mainButton";
+import {
+  DeltaPurpleButton,
+  MainButton,
+} from "@/app/components/buttons/mainButton";
 import strategiesIntroImg from "@/public/assets/img/images/strategieHeroImage.jpg";
 import rectangleImg from "@/public/assets/img/blogImages/rectangleImg.jpg";
 
@@ -40,8 +43,7 @@ const StrategiesPage = () => {
             </p>
             <div className="w-full md:block hidden">
               <Link href="?modal=true" scroll={false}>
-                <CTAButton
-                  className="w-[100%] md:w-fit px-6 py-3"
+                <DeltaPurpleButton
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"
@@ -50,8 +52,7 @@ const StrategiesPage = () => {
             </div>
             <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
               <Link href="?modal=true" scroll={false}>
-                <CTAButton
-                  className="mx-auto px-6 py-3"
+                <DeltaPurpleButton
                   label="LAUNCH APP"
                   hasArrowRight={true}
                   typographyClass="text-[15px]"
@@ -77,8 +78,7 @@ const StrategiesPage = () => {
           <UnlockPotentialContainer hasMarginTop={false} />
           <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true" scroll={false}>
-              <CTAButton
-                className="mx-auto px-6 py-3"
+              <DeltaPurpleButton
                 label="LAUNCH APP"
                 hasArrowRight={true}
                 typographyClass="text-[15px]"
@@ -92,9 +92,9 @@ const StrategiesPage = () => {
             <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-gray-400 leading-6 md:text-left text-center dark:text-white text-[#6B70ED]">
               STRATEGIES
             </h4>
-            <h1 className="mb-6 featureSubtitle text-[24px] md:text-left text-center dark:text-white text-[#6B70ED]">
+            <h2 className="mb-6 featureSubtitle text-[24px] md:text-left text-center dark:text-white text-[#6B70ED]">
               Do you want to learn more about strategies?
-            </h1>
+            </h2>
             <p className="max-w-2xl text-[13px] md:leading-6 sm:text-[17px] leading-4 md:text-left text-center dark:text-white text-[#565AC2]">
               Our vibrant community is on a mission to discuss and explore a
               breadth of mainstream and unique strategic approaches through

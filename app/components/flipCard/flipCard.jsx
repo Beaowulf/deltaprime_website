@@ -38,9 +38,9 @@ const FlipCard = ({
   };
 
   return (
-    <div className="h-fit p-2 mx-auto md:pb-6 md:mx-0 w-full flex justify-center">
+    <div className="h-fit px-2 pt-2 pb-5 mx-auto md:pb-6 md:mx-0 w-full flex justify-center">
       <div
-        className={`flip-card 2xl:h-[470px] 2xl:w-[370px] lg:h-[470px] lg:w-[330px] h-[470px] w-[320px] ${
+        className={`flip-card 2xl:h-[500px] 2xl:w-[400px] lg:h-[500px] lg:w-[360px] h-[550px] w-[350px] ${
           isFlipped ? "flipped" : ""
         }`}
         onClick={handleClick}
@@ -72,7 +72,7 @@ const FlipCard = ({
               </div>
             </div>
           </div>
-          <div className="flip-card-back p-8 rounded-[20px] flex flex-col justify-center items-center">
+          <div className="flip-card-back p-4 rounded-[20px] flex flex-col justify-center items-center">
             <h4 className="text-white pb-3 font-extrabold text-[20px] leading-7">
               {titleBack ? titleBack : "Delta Neutral"}
             </h4>

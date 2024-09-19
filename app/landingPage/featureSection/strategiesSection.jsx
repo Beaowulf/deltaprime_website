@@ -66,11 +66,11 @@ const Strategies = () => {
 
   return (
     <div
-      className={`rounded-[20px] w-full h-full ${
+      className={`w-full h-full ${
         theme === "dark"
-          ? "featureBorderWrapDarkTheme"
-          : "featureBorderWrapLightTheme"
-      } z-10 mt-16 md:mt-52`}
+          ? "featureBorderWrapDarkTheme rounded-[25px]"
+          : "featureBorderWrapLightTheme rounded-[27px]"
+      } z-10 mt-16 md:mt-40`}
     >
       <div
         className={`flex items-center md:flex-row flex-col justify-around rounded-[25px] md:pl-20 pl-10 py-6 pr-6 z-20 overflow-hidden ${
@@ -79,16 +79,20 @@ const Strategies = () => {
       >
         {/* Left */}
         <div className="flex flex-col items-start dark:text-white text-[#6B70ED] mb-14 max-w-96">
-          <h1 className="mb-6 featureSubtitle text-[24px]">
+          <h2 className="mb-6 featureSubtitle text-[24px]">
             Strategies For Any Risk Appetite
-          </h1>
+          </h2>
           <p className="aboutTypographyparagraphWhite max-w-xl md:leading-6 leading-4">
             Join Burd and discover strategies to boost your earnings. From
             simple to advanced, find the perfect fit for your style.
           </p>
           <div className="mt-10 md:w-fit w-full">
             <Link href="/strategies">
-              <MainButton hasArrowRight={true} label={"EXPLORE STRATEGIES"} />
+              <MainButton
+                wrapperClass="px-8 py-4"
+                hasArrowRight={true}
+                label={"EXPLORE STRATEGIES"}
+              />
             </Link>
           </div>
         </div>

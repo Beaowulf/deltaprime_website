@@ -4,7 +4,7 @@ import Image from "next/image";
 import "../landingPage.css";
 import Link from "next/link";
 import "@/app/globals.css";
-import { CTAButton } from "@/app/components/buttons/mainButton";
+import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import { CryptoLandingPageTables } from "@/app/components/cryptoTables/cryptoTables";
 import large3DLogo from "@/public/assets/img/logo_3D_large.png";
 import piggyBank3DLarge from "@/public/assets/img/piggyBankLarge3D.png";
@@ -37,7 +37,7 @@ const FeaturePrimeAccount = () => {
         <div className="flex flex-col md:flex-row gap-5 justify-center w-full">
           {/* 70% */}
           <div
-            className={`rounded-[20px] ${
+            className={`rounded-[25px] ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
@@ -70,7 +70,7 @@ const FeaturePrimeAccount = () => {
           </div>
           {/* 30% */}
           <div
-            className={`rounded-[20px] ${
+            className={`rounded-[27px] ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
@@ -92,7 +92,7 @@ const FeaturePrimeAccount = () => {
         {/* Bottom Boxes */}
         <div className="w-full flex md:flex-row flex-col gap-5 h-full">
           <div
-            className={`rounded-[20px] md:h-[260px] h-[220px]  ${
+            className={`rounded-[25px] md:h-[260px] h-[220px]  ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
@@ -125,7 +125,7 @@ const FeaturePrimeAccount = () => {
           </div>
 
           <div
-            className={`rounded-[20px] md:h-[260px] h-[220px] ${
+            className={`rounded-[25px] md:h-[260px] h-[220px] ${
               theme === "dark"
                 ? "featureBorderWrapDarkTheme"
                 : "featureBorderWrapLightTheme"
@@ -172,24 +172,24 @@ const FeaturePrimeAccount = () => {
         </div>
       </div>
       {/* Show this button only on mobile */}
-      <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center">
+      <div className="fullWidthButtonChildren h-[60px] md:h-full hidden sm:block w-full text-center md:flex items-center justify-center">
         <Link href="?modal=true" scroll={false}>
-          <CTAButton
-            className="mx-auto px-6 py-3"
-            label="LAUNCH APP"
-            hasArrowRight={true}
+          <DeltaPurpleButton
+            className="py-4 px-5"
+            label="LAUNCH SAVINGS ACCOUNT"
             typographyClass="text-[15px]"
+            hasArrowRight={false}
           />
         </Link>
       </div>
       {/* Show this button only on mobile */}
       <div className="fullWidthButtonChildren h-[60px] md:h-full block sm:hidden w-full text-center">
         <Link href="?modal=true" scroll={false}>
-          <CTAButton
-            className="mx-auto px-6 py-3"
-            label="LAUNCH APP"
-            hasArrowRight={true}
+          <DeltaPurpleButton
+            className="py-4 px-5 h-[50px]"
+            label="LAUNCH SAVINGS ACCOUNT"
             typographyClass="text-[15px]"
+            hasArrowRight={false}
           />
         </Link>
       </div>
