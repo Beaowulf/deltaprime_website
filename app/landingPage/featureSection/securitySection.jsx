@@ -22,7 +22,7 @@ const DarkBoxWrapper = ({ aboutimg, alt }) => {
 
 function SecuritySection() {
   return (
-    <div className="mt-40 pagePaddingLarge">
+    <div className="mt-20 md:mt-40 pagePaddingLarge">
       <Header
         hasSeperator={true}
         subTitle="Security"

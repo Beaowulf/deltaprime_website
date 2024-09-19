@@ -389,7 +389,7 @@ body {
 }
 
 .whiteMainText {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .blueText {
@@ -789,6 +789,12 @@ body {
   .styled-table td {
     padding: 8px;
     font-size: 14px;
+  }
+  .brightText {
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 34.5px */
   }
 }
 .deltaWhiteLinearBG {
