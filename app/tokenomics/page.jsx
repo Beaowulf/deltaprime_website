@@ -334,6 +334,17 @@ const Tokenomics = () => {
             <TokenomicsList />
           </div>
         </div>
+        <div>
+          <p>
+            You can check the vesting schedule for the token allocations{" "}
+            <a
+              href="https://docs.deltaprime.io/tokenomics/usdprime/vesting-schedule"
+              className="underline"
+            >
+              here
+            </a>
+          </p>
+        </div>
       </div>
       {/* end of graph */}
 
