@@ -20,11 +20,15 @@ export function TokenomicsList() {
       {tokenomicsData.map((item, index) => (
         <li key={index} className="flex items-center gap-2 text-white">
           <span
-            className="inline-block w-4 h-4 rounded-full"
+            className="inline-block w-4 h-4 rounded-full dark:text-white text-[#6B70ED]"
             style={{ backgroundColor: item.color }}
           ></span>
-          <span className="font-semibold">{item.label}</span>
-          <span>{item.percentage}%</span>
+          <span className="font-semibold dark:text-white text-[#6B70ED]">
+            {item.label}
+          </span>
+          <span className="dark:text-white text-[#6B70ED]">
+            {item.percentage}%
+          </span>
         </li>
       ))}
     </ul>
