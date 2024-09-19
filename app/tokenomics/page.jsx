@@ -306,7 +306,7 @@ const Tokenomics = () => {
 
       {/* Second Section */}
       <div className="mb-16">
-        <p className="brightText text-wrap mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
+        <p className="brightText text-wrap mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] text-center">
           Community-governed platform
         </p>
         <p className="whiteMainText dark:text-white text-[#565AC2] text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0">
