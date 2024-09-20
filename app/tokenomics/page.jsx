@@ -351,6 +351,7 @@ const Tokenomics = () => {
             <a
               href="https://docs.deltaprime.io/tokenomics/usdprime/vesting-schedule"
               className="underline"
+              target="_blank"
             >
               here
             </a>
