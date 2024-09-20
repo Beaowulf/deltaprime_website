@@ -50,13 +50,7 @@
   }
 }
 
+/* purple linear */
 .boxLinearPurpleBG {
   background: linear-gradient(to bottom, #504ec2 50%, #5a4eb5 100%);
 }
-
-.list_dot {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-/* Graph stylings */
