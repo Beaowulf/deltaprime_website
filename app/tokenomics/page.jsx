@@ -1,5 +1,5 @@
 import { fetchTokenomicsData } from "@/lib/getTokenomicsData";
-import TokenomicsClient from "./TokenomicsClient"; // Import the client-side component
+import TokenomicsClient from "./tokenomicsClient"; // Import the client-side component
 
 export default async function TokenomicsPage() {
   let tokenomicsData = [];
