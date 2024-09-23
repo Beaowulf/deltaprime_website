@@ -6,6 +6,7 @@ import circleOne from "@/public/assets/icons/circleOne.svg";
 import circleTwo from "@/public/assets/icons/circleTwo.svg";
 import circleThree from "@/public/assets/icons/circleThree.svg";
 import { useRouter } from "next/navigation";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const BlogHeader = ({ title, subTitle, paragraph }) => {
   return (
@@ -111,16 +112,16 @@ const Circles = (randomNumber) => {
   }
 };
 
-const BlogPreviewSection = ({ blogPreviewCardData }) => {
+const BlogPreviewSection = ({ blogPreviewCardData, eleventhSection, options }) => {
   return (
     <>
       <div className="pt-12 md:pt-40 pagePaddingMedium">
-        <BlogHeader
-          title={"The Burd Log"}
-          paragraph={
-            "Tireless Burd talks about all things DeFi. News, Guides, Infographics and more help you deepen your knowledge and stay up-to-date."
-          }
-        />
+        {eleventhSection && (
+          <BlogHeader
+            title={eleventhSection.fields.heading}
+            paragraph={documentToReactComponents(eleventhSection.fields.mainText, options)}
+          />
+        )}
         <div className="flex flex-wrap gap-6 items-center justify-center md:mb-20 mb-6">
           {blogPreviewCardData.slice(0, 3).map((blogPreviewCardData) => (
             // Added the encodeURIComponent to be utf-8 compatible

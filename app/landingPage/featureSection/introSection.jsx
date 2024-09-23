@@ -5,13 +5,21 @@ import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import { AnimatedText } from "@/app/ui/animatedText";
 import { useCryptoData } from "@/app/context/CryptoDataContext";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"; // Import rich text renderer
+
+
+
 
 const VideoPlayer = dynamic(
   () => import("@/app/components/videoPlayer/video"),
   { ssr: false }
 );
 
-const TextWithPill = ({ totalTvl, totalBorrowedLiquidity }) => {
+
+
+
+
+const TextWithPill = ({ totalTvl, totalBorrowedLiquidity, SectionDetails, options}) => {
   return (
     <>
       {/* Left side (text with pill) */}
@@ -19,16 +27,12 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity }) => {
         {/* Text Wrapper */}
         <div className="text-left flex flex-col gap-1 ">
           <h3 className="brightText text-wrap max-w-xl text-3xl md:text-[44px] mb-4 dark:text-white text-[#6B70ED]">
-            Be The Whale.
+            {SectionDetails?.fields?.heading}
           </h3>
-          <p className="aboutTypographyparagraphWhite text-wrap  max-w-[25rem] dark:text-white text-[#565AC2]">
-            Your trustless, transparent, prime brokerage on Avalanche and
-            Arbitrum.
-            <br />
-            Deposit and securely earn high APYs. Borrow up to 5x your
-            collateral, explore intuitive investment strategies and unlock your
-            capital's full potential.
-          </p>
+          <div className="aboutTypographyparagraphWhite text-wrap  max-w-[25rem] dark:text-white text-[#565AC2]">
+            {SectionDetails?.fields?.mainText &&
+              documentToReactComponents(SectionDetails.fields.mainText, options)}
+          </div>
         </div>
         {/* Price pill Wrapper */}
         <div className="shadow-deltaRed dark:shadow-deltaWhite rounded-[100px] bg-white flex justify-between w-full md:w-fit md:py-4 sm:px-7 py-2 px-5 gap-5 items-center mt-8 md:mt-0 z-10">
@@ -57,8 +61,9 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity }) => {
   );
 };
 
-const IntroSection = ({ totalTvl }) => {
+const IntroSection = ({ totalTvl, SectionDetails, options }) => {
   const { totalBorrowedLiquidity } = useCryptoData();
+  console.log(SectionDetails);
 
   return (
     <div className="pagePaddingLarge">
@@ -69,6 +74,8 @@ const IntroSection = ({ totalTvl }) => {
           <TextWithPill
             totalTvl={totalTvl}
             totalBorrowedLiquidity={totalBorrowedLiquidity}
+            SectionDetails = {SectionDetails}
+            options = {options}
           />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren block sm:hidden">
@@ -82,7 +89,7 @@ const IntroSection = ({ totalTvl }) => {
           </div>
           {/* Right side (video player) */}
           <div className="w-full max-w-[50rem]">
-            <VideoPlayer url={"https://youtu.be/2nJLhZ33lno"} />
+            <VideoPlayer url={`${SectionDetails?.fields?.linkUrl}`} />
           </div>
         </div>
       </div>
