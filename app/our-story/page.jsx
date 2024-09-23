@@ -3,27 +3,17 @@ import React from "react";
 import Image from "next/image";
 import "./ourStory.css";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
 import {
   DeltaPurpleButton,
   DeltaWhiteButton,
 } from "@/app/components/buttons/mainButton";
-import ourStoryIntroImg from "@/public/assets/img/images/our-story-founders.png";
-import rectangleImg from "@/public/assets/img//images/rectangle-Image.png";
-import unlocked_Image from "@/public/assets/img//images/unlocked-image.png";
-import whyDeltaPrimeImg from "@/public/assets/img/whyDeltaPrimeImg.jpg";
+
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
 import FounderCard from "./cards/founderCard";
 import AdvisorCard from "./cards/advisorCard";
-import { BlogCardButton } from "@/app/components/buttons/mainButton";
-import JakubImage from "@/public/assets/img/images/avatars/Jakub.png";
-import KamilImage from "@/public/assets/img/images/avatars/Kamil.jpeg";
-import PiotrImage from "@/public/assets/img/images/avatars/Piotr.png";
-import WojciechImage from "@/public/assets/img/images/avatars/Wojciech.png";
-import gavinImage from "@/public/assets/img/images/avatars/Gavin.png";
-import avaxImage from "@/public/assets/img/images/avatars/hn_avax.png";
+
 import AdvisorCardCarousel from "./carouselsForCards/advisorCardCarousel";
 import FounderCardCarousel from "./carouselsForCards/founderCardCarousel";
 import JobDescriptionBox from "@/app/our-story/jobDescriptionBox";
