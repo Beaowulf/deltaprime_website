@@ -10,6 +10,8 @@ import large3DLogo from "@/public/assets/img/logo_3D_large.png";
 import piggyBank3DLarge from "@/public/assets/img/piggyBankLarge3D.png";
 import dollarSign3D from "@/public/assets/dollarSign.svg";
 import Header from "@/app/components/header/header";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 
 // Dark themed assets
 import RoundedOneDarkThemed from "@/public/assets/icons/RoundedOneDarkThemed.svg";
@@ -21,17 +23,17 @@ import RoundedOneLightThemed from "@/public/assets/icons/RoundedOneLightThemed.s
 import RoundedTwoLightThemed from "@/public/assets/icons/RoundedTwoLightThemed.svg";
 import RoundedThreeLightThemed from "@/public/assets/icons/RoundedThreeLightThemed.svg";
 
-const FeaturePrimeAccount = () => {
+const FeaturePrimeAccount = ({fourthSection, options}) => {
   const { theme } = useTheme();
 
   return (
     <div className="lg:mt-40 mt-14">
-      <Header
-        subTitle={"Savings"}
-        paragraph={
-          "Let your capital work for you. Deposit into a savings pool within seconds. Receive upwards of 12% APY on interest from borrowed funds."
-        }
-      />
+      {fourthSection && (
+        <Header
+          subTitle={fourthSection.fields.heading}
+          paragraph={documentToReactComponents(fourthSection.fields.mainText, options)}
+        />
+      )}
       <div className="flex flex-col flex-wrap gap-5 md:mb-20 mb-6">
         {/* Top Boxes */}
         <div className="flex flex-col md:flex-row gap-5 justify-center w-full">
