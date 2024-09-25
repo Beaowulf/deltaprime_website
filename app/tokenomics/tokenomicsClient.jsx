@@ -29,6 +29,8 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
 
 export default function TokenomicsClient({ tokenomicsData }) {
+  console.log('TokenomicsClient: tokenomicsData received:', tokenomicsData);
+
 
 
   const options = {
