@@ -84,10 +84,11 @@ export default function TokenomicsClient({ tokenomicsData }) {
   };
 
   // Ensure tokenomicsData is available and has fields
-  const sections = tokenomicsData ? tokenomicsData.map((entry) => entry.fields) : [];
+  const sections = tokenomicsData.sectionsCollection.items || [];
 
   // Find the specific sections based on their sectionId
   const introSection = sections.find((section) => section.sectionId === 1);
+  console.log(introSection);
   const secondSection = sections.find((section) => section.sectionId === 2);
   const thirdSection = sections.find((section) => section.sectionId === 3);
   const fourthSection = sections.find((section) => section.sectionId === 4);
@@ -129,10 +130,10 @@ export default function TokenomicsClient({ tokenomicsData }) {
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
                   }`}
-                  src={`https:${introSection.image.fields.file.url}`}
-                  alt={introSection.image.fields.title}
-                  width={introSection.image.fields.file.details.image.width}
-                  height={introSection.image.fields.file.details.image.height}
+                  src={`${introSection.image.url}`}
+                  alt={introSection.image.title}
+                  width={introSection.image.width}
+                  height={introSection.image.height}
                 />
               )}
               <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] ">
@@ -140,7 +141,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
               </p>
               <div className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 min-w-full mb-4 dark:text-white text-[#565AC2]">
                 {introSection?.mainText &&
-                  documentToReactComponents(introSection.mainText, options)}
+                  documentToReactComponents(introSection.mainText.json, options)}
               </div>
               {/* Image (Mobile only) */}
               {introSection?.image && (
@@ -150,10 +151,10 @@ export default function TokenomicsClient({ tokenomicsData }) {
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
                   }`}
-                  src={`https:${introSection.image.fields.file.url}`}
-                  alt={introSection.image.fields.title}
-                  width={introSection.image.fields.file.details.image.width}
-                  height={introSection.image.fields.file.details.image.height}
+                  src={`${introSection.image.url}`}
+                  alt={introSection.image.title}
+                  width={introSection.image.width}
+                  height={introSection.image.height}
                 />
               )}
             </div>
@@ -175,13 +176,13 @@ export default function TokenomicsClient({ tokenomicsData }) {
             </p>
             <div className="text-center text-[24px] font-normal mt-1 dark:text-white text-[#6B70ED] md:max-w-[80%]">
               {thirdSection?.mainText &&
-                documentToReactComponents(thirdSection.mainText, options)}
+                documentToReactComponents(thirdSection.mainText.json, options)}
             </div>
             {introSection?.image && (
 
               <Image
                 className="my-11 h-[120px] w-[120px]"
-                src={`https:${thirdSection.image.fields.file.url}`}
+                src={`${thirdSection.image.url}`}
                 alt="PRIME Logo"
                 width={120}
                 height={120}
@@ -200,13 +201,13 @@ export default function TokenomicsClient({ tokenomicsData }) {
             </p>
             <div className="text-center text-[24px] font-normal mt-1 dark:text-white text-[#6B70ED] md:max-w-[80%]">
               {fourthSection?.mainText &&
-                documentToReactComponents(fourthSection.mainText, options)}
+                documentToReactComponents(fourthSection.mainText.json, options)}
             </div>
             {fourthSection?.image && (
 
               <Image
                 className="my-11 h-[120px] w-[120px]"
-                src={`https:${fourthSection.image.fields.file.url}`}
+                src={`${fourthSection.image.url}`}
                 alt="sPRIME Logo"
                 width={120}
                 height={120}
@@ -217,7 +218,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
               label="MINT sPrime"
               isUppercase={false}
               hasArrowRight={false}
-              href="https://app.deltaprime.io"
+              href="//app.deltaprime.io"
             />
           </div>
         </div>
@@ -328,10 +329,10 @@ export default function TokenomicsClient({ tokenomicsData }) {
             className={`rounded-[20px] mr-2 xl:mr-10 mb-4 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
               resolvedTheme === "dark" ? "shadow-custom-dark" : "shadow-custom-light"
             }`}
-            src={`https:${fifthSection.image.fields.file.url}`}
-            alt={fifthSection.image.fields.title}
-            width={fifthSection.image.fields.file.details.image.width}
-            height={fifthSection.image.fields.file.details.image.height}
+            src={`${fifthSection.image.url}`}
+            alt={fifthSection.image.title}
+            width={fifthSection.image.width}
+            height={fifthSection.image.height}
           />
         )}
         </div>
@@ -343,7 +344,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
 
           <div className="whiteMainText text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 max-w-[40rem] dark:text-white text-[#565AC2] ">
             {fifthSection?.mainText &&
-              documentToReactComponents(fifthSection.mainText, options)}
+              documentToReactComponents(fifthSection.mainText.json, options)}
           </div>
 
           {/* for mobile view */}
@@ -352,10 +353,10 @@ export default function TokenomicsClient({ tokenomicsData }) {
               className={`rounded-[20px] my-5 mb-4 mx-auto h-[500px] w-auto block md:hidden ${
                 resolvedTheme === "dark" ? "shadow-custom-dark" : "shadow-custom-light"
               }`}
-              src={`https:${fifthSection.image.fields.file.url}`}
-              alt={fifthSection.image.fields.title}
-              width={fifthSection.image.fields.file.details.image.width}
-              height={fifthSection.image.fields.file.details.image.height}
+              src={`${fifthSection.image.url}`}
+              alt={fifthSection.image.title}
+              width={fifthSection.image.width}
+              height={fifthSection.image.height}
             />
           )}
         </div>
@@ -368,7 +369,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
         </p>
         <div className="whiteMainText dark:text-white text-[#565AC2] text-wrap max-w-[95%] text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-0 text-center">
           {sixthSection?.mainText &&
-            documentToReactComponents(sixthSection.mainText, options)}
+            documentToReactComponents(sixthSection.mainText.json, options)}
         </div>
       </div>
 
@@ -389,7 +390,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
         </div>
         <div>
           {seventhSection?.mainText &&
-              documentToReactComponents(seventhSection.mainText, options)}
+              documentToReactComponents(seventhSection.mainText.json, options)}
         </div>
       </div>
       {/* end of graph */}
@@ -408,10 +409,10 @@ export default function TokenomicsClient({ tokenomicsData }) {
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
                   }`}
-                  src={`https:${eigthSection.image.fields.file.url}`}
+                  src={`${eigthSection.image.url}`}
                   alt="deltaprime_mascot_img"
-                  width={eigthSection.image.fields.file.details.image.width}
-                  height={eigthSection.image.fields.file.details.image.height}
+                  width={eigthSection.image.width}
+                  height={eigthSection.image.height}
                 />
               )}
 
@@ -422,7 +423,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
                 </p>
                 <div className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full font-normal dark:text-white text-[#565AC2] text-left">
                   {eigthSection?.mainText &&
-                    documentToReactComponents(eigthSection.mainText, options)}
+                    documentToReactComponents(eigthSection.mainText.json, options)}
                 </div>
               </div>
 
@@ -433,9 +434,9 @@ export default function TokenomicsClient({ tokenomicsData }) {
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
                   }`}
-                  src={`https:${eigthSection.image.fields.file.url}`}
-                  width={eigthSection.image.fields.file.details.image.width}
-                  height={eigthSection.image.fields.file.details.image.height}
+                  src={`${eigthSection.image.url}`}
+                  width={eigthSection.image.width}
+                  height={eigthSection.image.height}
                   alt="deltaprime_mascot_img"
                 />
               )}
