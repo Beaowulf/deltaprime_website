@@ -28,58 +28,58 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
 
-
-const options = {
-  renderText: (text) => {
-    return text.split('\n').reduce((children, textSegment, index) => {
-      return [...children, index > 0 && <br key={index} />, textSegment];
-    }, []);
-  },
-  renderNode: {
-    
-    // Headings
-    [BLOCKS.HEADING_1]: (node, children) => {
-      return <h1 className="text-4xl font-bold ">{children}</h1>;
-    },
-    [BLOCKS.HEADING_2]: (node, children) => {
-      return <h2 className="text-3xl font-semibold">{children}</h2>;
-    },
-    [BLOCKS.HEADING_3]: (node, children) => {
-      return <h3 className="text-2xl font-semibold">{children}</h3>;
-    },
-    [BLOCKS.HEADING_4]: (node, children) => {
-      return <h4 className="text-xl font-semibold mb-4">{children}</h4>;
-    },
-    [BLOCKS.HEADING_5]: (node, children) => {
-      return <h5 className="text-lg font-semibold mb-4">{children}</h5>;
-    },
-    [BLOCKS.HEADING_6]: (node, children) => {
-      return <h6 className="text-base font-semibold mb-4">{children}</h6>;
-    },
-    
-    // Lists
-    [BLOCKS.UL_LIST]: (node, children) => {
-      return <ul className="list-disc">{children}</ul>;
-    },
-    [BLOCKS.OL_LIST]: (node, children) => {
-      return <ol className="list-decimal">{children}</ol>;
-    },
-    [BLOCKS.LIST_ITEM]: (node, children) => {
-      return <li className="">{children}</li>;
-    },
-    [INLINES.HYPERLINK]: (node, children) => {
-      const url = node.data.uri;
-      return (
-        <a href={url} className="underline" target="_blank" rel="noopener noreferrer">
-          {children}
-        </a>
-      );
-    },
-
-  },
-};
-
 export default function TokenomicsClient({ tokenomicsData }) {
+
+
+  const options = {
+    renderText: (text) => {
+      return text.split('\n').reduce((children, textSegment, index) => {
+        return [...children, index > 0 && <br key={index} />, textSegment];
+      }, []);
+    },
+    renderNode: {
+      
+      // Headings
+      [BLOCKS.HEADING_1]: (node, children) => {
+        return <h1 className="text-4xl font-bold ">{children}</h1>;
+      },
+      [BLOCKS.HEADING_2]: (node, children) => {
+        return <h2 className="text-3xl font-semibold">{children}</h2>;
+      },
+      [BLOCKS.HEADING_3]: (node, children) => {
+        return <h3 className="text-2xl font-semibold">{children}</h3>;
+      },
+      [BLOCKS.HEADING_4]: (node, children) => {
+        return <h4 className="text-xl font-semibold mb-4">{children}</h4>;
+      },
+      [BLOCKS.HEADING_5]: (node, children) => {
+        return <h5 className="text-lg font-semibold mb-4">{children}</h5>;
+      },
+      [BLOCKS.HEADING_6]: (node, children) => {
+        return <h6 className="text-base font-semibold mb-4">{children}</h6>;
+      },
+      
+      // Lists
+      [BLOCKS.UL_LIST]: (node, children) => {
+        return <ul className="list-disc">{children}</ul>;
+      },
+      [BLOCKS.OL_LIST]: (node, children) => {
+        return <ol className="list-decimal">{children}</ol>;
+      },
+      [BLOCKS.LIST_ITEM]: (node, children) => {
+        return <li className="">{children}</li>;
+      },
+      [INLINES.HYPERLINK]: (node, children) => {
+        const url = node.data.uri;
+        return (
+          <a href={url} className="underline" target="_blank" rel="noopener noreferrer">
+            {children}
+          </a>
+        );
+      },
+  
+    },
+  };
 
   // Ensure tokenomicsData is available and has fields
   const sections = tokenomicsData ? tokenomicsData.map((entry) => entry.fields) : [];
