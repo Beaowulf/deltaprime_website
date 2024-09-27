@@ -4,6 +4,7 @@ import Image from "next/image";
 import homeAvalanche from "@/public/assets/img/images/home-avalanche.png";
 import homeArbitrum from "@/public/assets/img/images/home-arbitrum.png";
 import { BlogCardButton } from "@/app/components/buttons/mainButton";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const ImageComponent = () => {
   const [showFirstImage, setShowFirstImage] = useState(true);
@@ -44,23 +45,21 @@ const ImageComponent = () => {
   );
 };
 
-function AboutSection() {
+function AboutSection({tenthSection, options}) {
   return (
     <div className="aboutSectionBG bg-fixed flex md:flex-row flex-col items-center justify-between bg-cover bg-no-repeat px-4 pb-10 sm:px-6 md:px-[8%] lg:px-[10%] xl:px-[15%] ">
       {/* Left Side */}
       <div className="w-full md:w-1/2">
         <h4 className="pt-24  aboutTypographytitle !text-[#EAEBFF]">
-          OUR STORY
+          {tenthSection?.Subheading}
         </h4>
         <h4 className="aboutTypographysubtitle !text-[#EAEBFF]">
-          Lava Doesn’t Melt Diamonds
+          {tenthSection?.heading}
         </h4>
-        <p className="pt-8 pb-14 aboutTypographyparagraph !text-[#EAEBFF]">
-          Our story begins on the foothills of Mount Etna, Europe’s largest
-          volcano. It was here that the idea of DeltaPrime was born. A brand on
-          a mission to reshape the future of DeFi, forging it in the fires of
-          innovation and resilience.
-        </p>
+        <div className="pt-8 pb-14 aboutTypographyparagraph !text-[#EAEBFF]">
+          {tenthSection?.mainText &&
+            documentToReactComponents(tenthSection.mainText.json, options)}
+        </div>
         <div className="sm:w-fit w-full rounded-[25px]">
           <BlogCardButton
             fullWidth={true}

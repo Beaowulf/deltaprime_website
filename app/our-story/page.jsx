@@ -1,54 +1,87 @@
-// "use client";
 import React from "react";
 import Image from "next/image";
 import "./ourStory.css";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
 import {
   DeltaPurpleButton,
   DeltaWhiteButton,
 } from "@/app/components/buttons/mainButton";
-import ourStoryIntroImg from "@/public/assets/img/images/our-story-founders.png";
-import rectangleImg from "@/public/assets/img//images/rectangle-Image.png";
-import unlocked_Image from "@/public/assets/img//images/unlocked-image.png";
-import whyDeltaPrimeImg from "@/public/assets/img/whyDeltaPrimeImg.jpg";
+
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
 import FounderCard from "./cards/founderCard";
 import AdvisorCard from "./cards/advisorCard";
-import { BlogCardButton } from "@/app/components/buttons/mainButton";
-import JakubImage from "@/public/assets/img/images/avatars/Jakub.png";
-import KamilImage from "@/public/assets/img/images/avatars/Kamil.jpeg";
-import PiotrImage from "@/public/assets/img/images/avatars/Piotr.png";
-import WojciechImage from "@/public/assets/img/images/avatars/Wojciech.png";
-import gavinImage from "@/public/assets/img/images/avatars/Gavin.png";
-import avaxImage from "@/public/assets/img/images/avatars/hn_avax.png";
+
 import AdvisorCardCarousel from "./carouselsForCards/advisorCardCarousel";
 import FounderCardCarousel from "./carouselsForCards/founderCardCarousel";
 import JobDescriptionBox from "@/app/our-story/jobDescriptionBox";
+import { getOurStorySections } from "@/lib/ourStoryData";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from '@contentful/rich-text-types';
 
-const tvlData = await fetchTvlData();
-const tvtDataFormated = tvlData.totalTvl.slice(0, 2);
 
-const OurStory = () => {
+export default async function OurStory() {
+  const tvlData = await fetchTvlData();
+  const tvtDataFormatted = tvlData.totalTvl.slice(0, 2);
+ 
+  const sections = await getOurStorySections();
+  
+  if (!sections || sections.length === 0) {
+    return <div>No sections available for Our Story</div>;
+  }
+  const introSection = sections.find(section => section.sectionId === 1);
+  const secondSection = sections.find(section => section.sectionId === 2);
+  const thirdSection = sections.find(section => section.sectionId === 3);
+  const fourthSection = sections.find(section => section.sectionId === 4);
+  const fifthSection = sections.find(section => section.sectionId === 5);
+  const sixthSection = sections.find(section => section.sectionId === 6);
+  const seventhSection = sections.find(section => section.sectionId === 7);
+  const eighthSection = sections.find(section => section.sectionId === 8);
+  const ninthSection = sections.find(section => section.sectionId === 9);
+  const tenthSection = sections.find(section => section.sectionId === 10);
+  const eleventhSection = sections.find(section => section.sectionId === 11);
+  const twelfthSection = sections.find(section => section.sectionId === 12);
+  const thirteenthSection = sections.find(section => section.sectionId === 13);
+
+
+  // Define rich text rendering options
+  const options = {
+    renderText: (text) => {
+      // Replace `{{tvlData}}` with the actual TVL data
+      return text.split('{{tvlData}}').reduce((children, textSegment, index) => {
+        // If it's after the first split, insert the dynamic value
+        return [
+          ...children,
+          index > 0 && <span key={index} className="font-semibold underline">{`$${tvtDataFormatted} million`}</span>,
+          ...textSegment.split('\n').reduce((acc, segment, i) => (
+            [...acc, i > 0 && <br key={`br-${i}`} />, segment]
+          ), [])
+        ];
+      }, []);
+    },
+    renderNode: {
+      [BLOCKS.HEADING_1]: (node, children) => <h1 className="text-4xl font-bold ">{children}</h1>,
+      [BLOCKS.HEADING_2]: (node, children) => <h2 className="text-3xl font-semibold">{children}</h2>,
+      [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+    },
+  };
+
   return (
     <div>
       <div className="pagePaddingLarge">
         {/* intro */}
+        {introSection && (
         <div className="flex lg:flex-row flex-col justify-between items-center w-full md:gap-28 gap-5 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:flex-row md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
               <p className="brightText text-wrap  mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
-                Our Story
+                {introSection.heading}
               </p>
-              <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
-                Our story begins on the foothills of Mount Etna, Europe’s
-                largest volcano. It was here that the idea of DeltaPrime was
-                born. A brand on a mission to not only reshape the future of
-                DeFI, but forge it in the fires of innovation and resilience.
-              </p>
+              <div className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
+                {documentToReactComponents(introSection.mainText.json, options)}
+              </div>
               <div className="w-full md:block hidden">
                 <Link href="?modal=true" scroll={false}>
                   <DeltaPurpleButton
@@ -75,19 +108,26 @@ const OurStory = () => {
           <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
               className="rounded-[25px]"
-              src={ourStoryIntroImg}
-              alt="deltaprime_mascot_img"
+              src={introSection.image.url}
+              alt={introSection.image.title}
+              width={introSection.image.width}
+              height={introSection.image.height}
             />
           </div>
         </div>
+        )}
+        
+
         {/* other text */}
         <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Image */}
           <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
               className="rounded-[20px] w-full h-auto md:h-full object-cover"
-              src={rectangleImg}
-              alt="cyberpunk_box_images"
+              src={secondSection.image.url}
+              alt={secondSection.image.title}
+              width={secondSection.image.width}
+              height={secondSection.image.height}
             />
           </div>
           {/* Text Wrapper */}
@@ -95,32 +135,16 @@ const OurStory = () => {
             <div className="text-left flex flex-col gap-8">
               <div className="flex flex-col items-start mt-20 mb-10">
                 <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left dark:text-white text-[#6B70ED]">
-                  Unlocking Trapped Liquidity
+                  {secondSection.heading}
                 </h2>
-                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
-                  That evening, chance brought three guys together. United by
-                  their love for DeFi, they started talking about one of the
-                  major issues in crypto; overcollateralized lending.
-                  <br />
-                  <span className="font-bold">
-                    ”There must be a better way”, they pondered.
-                  </span>
-                  <br />
-                  That’s when they envisioned a platform that interacts with
-                  trapped liquidity, unlocking cash flows throughout the
-                  ecosystem and bringing to surface a range of new investment
-                  strategies.
-                </p>
-                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
-                  This later became the cornerstone of DeltaPrime's inventive
-                  Diamond-Beacon Proxy (DBP) pattern, a robust and flexible
-                  architecture that is infinitely scalable, resilient and
-                  secure, no matter the market conditions.
-                </p>
+                <div className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
+                  {documentToReactComponents(secondSection.mainText.json, options)}
+                </div>
               </div>
             </div>
           </div>
         </div>
+
         <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
           <Link href="?modal=true" scroll={false}>
             <DeltaPurpleButton
@@ -130,34 +154,19 @@ const OurStory = () => {
             />
           </Link>
         </div>
+
         {/* other text */}
         <div className="flex md:flex-row flex-col justify-around items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
               <div className="flex flex-col items-start mt-20 mb-10">
-                <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-left dark:text-white text-[#6B70ED]">
-                  Mission & Vision
+                <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left dark:text-white text-[#6B70ED]">
+                  {thirdSection.heading}
                 </h2>
-                <p className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-left dark:text-white text-[#565AC2]">
-                  <span className="font-extrabold">Unlocking Liquidity:</span>{" "}
-                  Traditional DeFi platforms often trap billions of dollars in
-                  unused liquidity. We aim to change that by allowing users to
-                  borrow capital without the need to lock up extra collateral.
-                  This approach frees up cash throughout the ecosystem and
-                  deepens liquidity in partner protocols, enabling larger trades
-                  with lower slippage.
-                </p>
-                <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-left dark:text-white text-[#565AC2]">
-                  <span className="font-extrabold">Liberating Funds:</span> We
-                  envision DeltaPrime becoming the central bank of DeFi,
-                  offering unique leverage and investment strategies not
-                  available elsewhere. Our innovative DBP pattern allows us to
-                  scale infinitely and integrate new functionalities without
-                  major upgrades. We aim to expand beyond DeFi into other
-                  verticals like NFTs and gaming, creating a more interconnected
-                  and efficient financial ecosystem.
-                </p>
+                <div className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-left dark:text-white text-[#565AC2]">
+                  {documentToReactComponents(thirdSection.mainText.json, options)}
+                </div>
               </div>
             </div>
           </div>
@@ -165,57 +174,35 @@ const OurStory = () => {
           <div className="w-fit">
             <Image
               className="rounded-[20px]"
-              src={whyDeltaPrimeImg}
-              alt="cyberpunk_box_images"
+              src={thirdSection.image.url}
+              alt={thirdSection.image.title}
+              width={thirdSection.image.width}
+              height={thirdSection.image.height}
             />
           </div>
         </div>
+
 
         <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
           <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
               className="rounded-[20px] w-full h-auto md:h-full object-cover"
-              src={unlocked_Image}
-              alt="unlocked_image"
+              src={fourthSection.image.url}
+              alt={fourthSection.image.title}
+              width={fourthSection.image.width}
+              height={fourthSection.image.height}
             />
           </div>
           <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-start h-fit">
             <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED] text-left">
-              Diamond Beacon Proxy
+              {fourthSection.heading}
             </h2>
-            <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
-              DeltaPrime ensures the safety of user funds through multiple
-              security audits, insurance pools, and the unique Withdrawal Guard.
-              This no-oracle solution only allows withdrawals if all borrowed
-              assets are available, protecting against price manipulation and
-              ensuring solvency.
-            </p>
-            <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
-              Each user's funds are managed through Dedicated Smart Contracts
-              (DSCs), providing clear on-chain accounting and effective
-              anti-exploit monitoring. Our Diamond-Beacon Proxy (DBP) pattern
-              ensures DeltaPrime remains resilient and secure, even in volatile
-              market conditions.
-            </p>
-            <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
-              {`Since launching on the Avalanche network in January 2023, DeltaPrime
-            has attracted over`}{" "}
-              <span className="font-semibold underline">{`$${tvtDataFormated} million`}</span>{" "}
-              {`  in Total Value Locked (TVL) and unlocked more than $20 million in
-            liquidity. Our platform serves two main user groups:`}{" "}
-            </p>
-            <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
-              <span className="font-extrabold">Depositors:</span> Enjoy
-              simplicity and security with features like the Withdrawal Guard,
-              which protects funds against known and unknown attacks.
-            </p>
-            <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
-              <span className="font-extrabold">Borrowers:</span> Benefit from
-              investment freedom with integrations across various DeFi
-              protocols, enabling diverse and scalable investment strategies.
-            </p>
+            <div className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
+              {documentToReactComponents(fourthSection.mainText.json, options)}
+            </div>
           </div>
         </div>
+
 
         <div>
           {/* Show this button only on mobile */}
@@ -232,38 +219,44 @@ const OurStory = () => {
 
         {/* team */}
         <div className="mt-20">
-          <Header
-            hasSeperator={true}
-            subTitle={"The Founders"}
-            paragraph={
-              "DeltaPrime was born from the minds of three visionaries, each bringing their own unique set of skills and experiences:"
-            }
-          />
+          {fifthSection && (
+              <Header
+                hasSeperator={true}
+                subTitle={fifthSection.heading}
+                paragraph={documentToReactComponents(fifthSection.mainText.json, options)}
+              />
+          )}
           {/* Carousel for mobile view */}
           <FounderCardCarousel />
           {/* Only for Desktop view */}
           <div className="md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-center hidden">
-            <FounderCard
-              imageSrc={PiotrImage}
-              name="Piotr Duda"
-              title="CEO"
-              description="Piotr Duda is the Chief Executive Officer (CEO) of DeltaPrime, where he seamlessly bridges deep business and technical expertise to drive the platform's success. Under his leadership, DeltaPrime has emerged as a major player in the DeFi space, trusted by thousands of users and managing millions in assets. Piotr's focus on operational efficiency and cross-team collaboration ensures the protocol's continuous growth and innovation."
-              socialMediaLink="https://www.linkedin.com/in/piotr-duda-62b66b63/?originalSubdomain=pl"
-            />
-            <FounderCard
-              imageSrc={KamilImage}
-              name="Kamil Muca"
-              title="CTO"
-              description="Kamil Muca is the Chief Technology Officer (CTO) of DeltaPrime, a seasoned developer who began coding at the age of 7. Before co-founding DeltaPrime, he honed his leadership and technical skills as the head of a 20-member IT team at HSBC. Kamil is the architect behind the platform's innovative Diamond Beacon Proxy pattern, a key advancement that enables DeltaPrime to scale rapidly and efficiently while minimizing costs."
-              socialMediaLink="https://www.linkedin.com/in/mucakamil/?originalSubdomain=pl"
-            />
-            <FounderCard
-              imageSrc={gavinImage}
-              name="Gavin Hasselbaink"
-              title="CBDO"
-              description="Gavin Hasselbaink is the Chief Business Development Officer (CBDO) of DeltaPrime, where he drives innovation and strategic partnerships. His leadership has been pivotal in expanding DeltaPrime's reach, facilitating over $1.5 billion in transactions, and securing $70 million in total value locked. Gavin's focus on building alliances and integrating with DeFi protocols has been instrumental in the platform's impressive growth."
-              socialMediaLink="https://www.linkedin.com/in/gavinhasselbaink/?originalSubdomain=nl"
-            />
+            {sixthSection && (
+              <FounderCard
+                imageSrc={sixthSection.image.url}
+                name={sixthSection.heading}
+                title={sixthSection.subheading}
+                description={documentToReactComponents(sixthSection.mainText.json, options)}
+                socialMediaLink={sixthSection.linkUrl}
+              />
+            )}
+            {seventhSection && (
+              <FounderCard
+                imageSrc={seventhSection.image.url}
+                name={seventhSection.heading}
+                title={seventhSection.subheading}
+                description={documentToReactComponents(seventhSection.mainText.json, options)}
+                socialMediaLink={seventhSection.linkUrl}
+              />
+            )}
+            {eighthSection && (
+              <FounderCard
+                imageSrc={eighthSection.image.url}
+                name={eighthSection.heading}
+                title={eighthSection.subheading}
+                description={documentToReactComponents(eighthSection.mainText.json, options)}
+                socialMediaLink={eighthSection.linkUrl}
+              />
+            )}
           </div>
         </div>
         {/* Unlock full potential button reponsive component */}
@@ -281,42 +274,48 @@ const OurStory = () => {
         </div>
         {/* advisors */}
         <div className="mt-40">
-          <Header
-            hasSeperator={true}
-            subTitle={"Our Advisors"}
-            paragraph={
-              "DeltaPrime's advisors are DeFi veterans and help ensure the platform's strategic development and success"
-            }
-          />
+          {ninthSection && (
+              <Header
+                hasSeperator={true}
+                subTitle={ninthSection.heading}
+                paragraph={documentToReactComponents(ninthSection.mainText.json, options)}
+              />
+          )}
           {/* Carousel for mobile view */}
           <AdvisorCardCarousel />
           {/* Only for Desktop view */}
           <div className="md:flex hidden flex-wrap gap-12 items-center justify-center">
-            <AdvisorCard
-              imageSrc={avaxImage}
-              name="hn_avax"
-              position="Cofounder"
-              subPosition="Benqi Finance"
-              additionalInfo="Head of Strategy Benqi Finance"
-              socialMediaLink="https://x.com/hn_avax"
-              usesTwitter={true}
-            />
-            <AdvisorCard
-              imageSrc={JakubImage}
-              name="Jakub Wojciechowski"
-              position="Founder"
-              subPosition="Redstone Finance"
-              additionalInfo="Former auditor OpenZeppelin"
-              socialMediaLink="https://www.linkedin.com/in/jakub-wojciechowski-5901b68/?originalSubdomain=pl"
-            />
-            <AdvisorCard
-              imageSrc={WojciechImage}
-              name="Wojciech Lugowski"
-              position="Managing Partner"
-              subPosition="Lawarton"
-              additionalInfo="Co-founder & Head of Legal at CobinAngels"
-              socialMediaLink="https://www.linkedin.com/in/wojciech-lugowski/?originalSubdomain=pl"
-            />
+            {tenthSection && (
+              <AdvisorCard
+                imageSrc={tenthSection.image.url}
+                name={tenthSection.heading}
+                position={tenthSection.subheading}
+                subPosition={tenthSection.subposition}
+                additionalInfo={documentToReactComponents(tenthSection.mainText.json, options)}
+                socialMediaLink={tenthSection.linkUrl}
+                usesTwitter={true}
+              />
+            )}
+            {eleventhSection && (
+              <AdvisorCard
+                imageSrc={eleventhSection.image.url}
+                name={eleventhSection.heading}
+                position={eleventhSection.subheading}
+                subPosition={eleventhSection.subposition}
+                additionalInfo={documentToReactComponents(eleventhSection.mainText.json, options)}
+                socialMediaLink={eleventhSection.linkUrl}
+              />
+            )}
+            {twelfthSection && (
+              <AdvisorCard
+                imageSrc={twelfthSection.image.url}
+                name={twelfthSection.heading}
+                position={twelfthSection.subheading}
+                subPosition={twelfthSection.subposition}
+                additionalInfo={documentToReactComponents(twelfthSection.mainText.json, options)}
+                socialMediaLink={twelfthSection.linkUrl}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -327,22 +326,14 @@ const OurStory = () => {
           <div className="flex justify-around flex-wrap px-4 md:px-0 items-center">
             <div className="flex flex-col items-start max-w-[30rem] mb-8 md:mb-0">
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-white leading-6">
-                CAREERS
+              {thirteenthSection.heading}
               </h4>
               <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center text-white ">
-                Join our team
+              {thirteenthSection.subheading}
               </h2>
-              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-white">
-                DeltaPrime is a decentralised borrowing and investing ecosystem,
-                unlocking trapped liquidity across chains. Users can easily
-                deposit and borrow funds to increase the power of their usual
-                DeFi investments.
-              </p>
-              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-white mt-4">
-                Our team is international, with talent from all over the world.
-                We embrace a fully remote working model, allowing team members
-                to collaborate and innovate from wherever they want.
-              </p>
+              <div className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-white">
+                {documentToReactComponents(thirteenthSection.mainText.json, options)}
+              </div>
             </div>
 
             <div className="flex flex-col items-stretch gap-8 mt-10 xl:mt-0">
@@ -395,5 +386,3 @@ const OurStory = () => {
     </div>
   );
 };
-
-export default OurStory;

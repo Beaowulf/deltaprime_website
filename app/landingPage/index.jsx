@@ -2,6 +2,7 @@ import { fetchBlogs } from "@/lib/getBlogs";
 import LandingPage from "./landingPage";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 import { fetchTvlData } from "@/lib/getCryptoData";
+import { fetchLandingData } from "@/lib/getLandingData";
 
 // Utility function to format ISO date string
 function formatDateString(isoString, locale = "en-GB") {
@@ -28,6 +29,14 @@ function getRandomItem(array) {
 const HomePage = async () => {
   // Fetch blogs data
   const blogs = await fetchBlogs();
+  const landingData = await fetchLandingData(); // Fetch landing data
+
+  if (!landingData) {
+    return <div>Error fetching landing data.</div>;
+  }
+
+  // Get the sectionsCollection from landingData
+  const { sectionsCollection } = landingData;
 
   // Get and Process blog data to match what we need for the previewCards on the landing page
   const blogsByCategory = blogs.reduce((acc, blog) => {
@@ -43,7 +52,7 @@ const HomePage = async () => {
     const categoryBlogs = blogsByCategory[category];
     const randomBlog = getRandomItem(categoryBlogs);
 
-    // console.log(randomBlog);
+    // Process the blog data
     const processBlog = (blog) => {
       const description = blog.blogDescription;
       const paragraphs = documentToPlainTextString(blog.blogRichTextParagraph);
@@ -71,13 +80,13 @@ const HomePage = async () => {
 
   await delay(500); // Delay for 500 milliseconds
   const tvlData = await fetchTvlData();
-  // console.log(tvlData);
 
   return (
     <>
       <LandingPage
         totalTvl={tvlData.totalTvl}
         blogPreviewCardData={previewDataArray}
+        sectionsCollection={sectionsCollection} // Pass sectionsCollection to LandingPage
       />
     </>
   );

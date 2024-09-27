@@ -72,10 +72,10 @@ const CarouselComponent = () => {
   );
 };
 
-const Carousel = () => {
+const Carousel = ({secondSection, options}) => {
   return (
     <div className="flex flex-col justify-between items-center md:mt-40 mt-10">
-      <Seperator className="pagePaddingLarge" label="Backed By" />
+      <Seperator className="pagePaddingLarge" label={secondSection?.heading || ''} />
       <CarouselComponent />
     </div>
   );

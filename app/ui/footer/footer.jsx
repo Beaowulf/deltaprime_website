@@ -131,7 +131,7 @@ const TermsOfUseFooter = ({ isTokenomics, isStrategies }) => {
         <p className="text-sm text-center sm:text-left mt-6 md:mt-0">
           All rights reserved © DeltaPrime 2024
         </p>
-        <div className="flex space-x-4 mt-4 sm:mt-0 text-sm justify-center sm:justify-end flex-wrap md:gap-0 gap-4 text-white">
+        <div className="flex mt-4 sm:mt-0 text-sm justify-center sm:justify-end flex-wrap md:gap-0 gap-4 text-white">
           <Link href="/legals/terms-Of-Use" className="hover:text-gray-400 ">
             Terms of use
           </Link>

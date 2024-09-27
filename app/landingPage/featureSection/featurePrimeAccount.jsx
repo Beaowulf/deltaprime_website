@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"; // Import rich text renderer
+
 
 // Dark themed assets
 import RoundedOneDarkThemed from "@/public/assets/icons/RoundedOneDarkThemed.svg";
@@ -44,17 +46,17 @@ const TopPartLightTheme = () => {
   );
 };
 
-const FeaturePrimeAccountSection = () => {
+const FeaturePrimeAccountSection = ({thirdSection, options}) => {
   const { theme } = useTheme();
 
   return (
     <div className="lg:mt-40 mt-0">
-      <Header
-        subTitle={"Prime Account"}
-        paragraph={
-          "Our unique escrow smart contracts allow for truly trustless borrowing. Leverage up to 6x and action a wide range of flexible investment strategies."
-        }
-      />
+      {thirdSection && (
+        <Header
+          subTitle={thirdSection.heading}
+          paragraph={documentToReactComponents(thirdSection.mainText.json, options)}
+        />
+      )}
       <div className="flex items-center justify-cente md:mb-20 mb-6 flex-wrap">
         <div className="flex flex-wrap sm:flex-nowrap gap-4 w-full h-full">
           {/* Large box on the left */}

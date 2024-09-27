@@ -9,6 +9,9 @@ import strategies_bubble_1 from "@/public/assets/img/strategies-bubble-the-carry
 import strategies_bubble_2 from "@/public/assets/img/strategies-bubble-the-market-maker.svg";
 import strategies_bubble_3 from "@/public/assets/img/strategies-bubble-the-fee-collector.svg";
 import strategies_bubble_4 from "@/public/assets/img/strategies-bubble-the-risk-evader.svg";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+
 
 const bubble1Variants = {
   floating: {
@@ -61,7 +64,7 @@ const bubble4Variants = {
   },
 };
 
-const Strategies = () => {
+const Strategies = ({fifthSection, options}) => {
   const { theme } = useTheme();
 
   return (
@@ -80,12 +83,12 @@ const Strategies = () => {
         {/* Left */}
         <div className="flex flex-col items-start dark:text-white text-[#6B70ED] mb-14 max-w-96">
           <h2 className="mb-6 featureSubtitle text-[24px]">
-            Strategies For Any Risk Appetite
+            {fifthSection?.heading}  
           </h2>
-          <p className="aboutTypographyparagraphWhite max-w-xl md:leading-6 leading-4">
-            Join Burd and discover strategies to boost your earnings. From
-            simple to advanced, find the perfect fit for your style.
-          </p>
+          <div className="aboutTypographyparagraphWhite max-w-xl md:leading-6 leading-4">
+            {fifthSection?.mainText &&
+              documentToReactComponents(fifthSection.mainText.json, options)}
+          </div>
           <div className="mt-10 md:w-fit w-full">
             <Link href="/strategies">
               <MainButton
@@ -98,12 +101,19 @@ const Strategies = () => {
         </div>
         {/* Right */}
         <div className="mr-8 md:mr-0 strategiesIntroImgParent">
-          <Image src={strategies_burd} alt="burd_mascot_with_bubbles" />
+          {fifthSection?.media && (
+            <Image
+              src={fifthSection.media.url}
+              alt={fifthSection.media.title}
+              width={fifthSection.media.width}
+              height={fifthSection.media.height}
+            />
+          )}
           <motion.div
             className="purple_bubble bubble-1"
             variants={bubble1Variants}
             animate="floating"
-          >
+            >
             <Image
               src={strategies_bubble_1}
               alt="burd_mascot_bubble_one"
