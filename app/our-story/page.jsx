@@ -1,4 +1,3 @@
-// "use client";
 import React from "react";
 import Image from "next/image";
 import "./ourStory.css";
@@ -27,19 +26,23 @@ export default async function OurStory() {
   const tvtDataFormatted = tvlData.totalTvl.slice(0, 2);
  
   const sections = await getOurStorySections();
-  const introSection = sections.find(section => section.fields.sectionId === 1);
-  const secondSection = sections.find(section => section.fields.sectionId === 2);
-  const thirdSection = sections.find(section => section.fields.sectionId === 3);
-  const fourthSection = sections.find(section => section.fields.sectionId === 4);
-  const fifthSection = sections.find(section => section.fields.sectionId === 5);
-  const sixthSection = sections.find(section => section.fields.sectionId === 6);
-  const seventhSection = sections.find(section => section.fields.sectionId === 7);
-  const eighthSection = sections.find(section => section.fields.sectionId === 8);
-  const ninthSection = sections.find(section => section.fields.sectionId === 9);
-  const tenthSection = sections.find(section => section.fields.sectionId === 10);
-  const eleventhSection = sections.find(section => section.fields.sectionId === 11);
-  const twelfthSection = sections.find(section => section.fields.sectionId === 12);
-  const thirteenthSection = sections.find(section => section.fields.sectionId === 13);
+  
+  if (!sections || sections.length === 0) {
+    return <div>No sections available for Our Story</div>;
+  }
+  const introSection = sections.find(section => section.sectionId === 1);
+  const secondSection = sections.find(section => section.sectionId === 2);
+  const thirdSection = sections.find(section => section.sectionId === 3);
+  const fourthSection = sections.find(section => section.sectionId === 4);
+  const fifthSection = sections.find(section => section.sectionId === 5);
+  const sixthSection = sections.find(section => section.sectionId === 6);
+  const seventhSection = sections.find(section => section.sectionId === 7);
+  const eighthSection = sections.find(section => section.sectionId === 8);
+  const ninthSection = sections.find(section => section.sectionId === 9);
+  const tenthSection = sections.find(section => section.sectionId === 10);
+  const eleventhSection = sections.find(section => section.sectionId === 11);
+  const twelfthSection = sections.find(section => section.sectionId === 12);
+  const thirteenthSection = sections.find(section => section.sectionId === 13);
 
 
   // Define rich text rendering options
@@ -74,10 +77,10 @@ export default async function OurStory() {
           <div className="flex flex-col md:flex-row md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
               <p className="brightText text-wrap  mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
-                {introSection.fields.heading}
+                {introSection.heading}
               </p>
               <div className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
-                {documentToReactComponents(introSection.fields.mainText, options)}
+                {documentToReactComponents(introSection.mainText.json, options)}
               </div>
               <div className="w-full md:block hidden">
                 <Link href="?modal=true" scroll={false}>
@@ -105,10 +108,10 @@ export default async function OurStory() {
           <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
               className="rounded-[25px]"
-              src={`https:${introSection.fields.image.fields.file.url}`}
-              alt={introSection.fields.image.fields.title}
-              width={introSection.fields.image.fields.file.details.image.width}
-              height={introSection.fields.image.fields.file.details.image.height}
+              src={introSection.image.url}
+              alt={introSection.image.title}
+              width={introSection.image.width}
+              height={introSection.image.height}
             />
           </div>
         </div>
@@ -121,10 +124,10 @@ export default async function OurStory() {
           <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
               className="rounded-[20px] w-full h-auto md:h-full object-cover"
-              src={`https:${secondSection.fields.image.fields.file.url}`}
-              alt={secondSection.fields.image.fields.title}
-              width={secondSection.fields.image.fields.file.details.image.width}
-              height={secondSection.fields.image.fields.file.details.image.height}
+              src={secondSection.image.url}
+              alt={secondSection.image.title}
+              width={secondSection.image.width}
+              height={secondSection.image.height}
             />
           </div>
           {/* Text Wrapper */}
@@ -132,10 +135,10 @@ export default async function OurStory() {
             <div className="text-left flex flex-col gap-8">
               <div className="flex flex-col items-start mt-20 mb-10">
                 <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left dark:text-white text-[#6B70ED]">
-                  {secondSection.fields.heading}
+                  {secondSection.heading}
                 </h2>
                 <div className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
-                  {documentToReactComponents(secondSection.fields.mainText, options)}
+                  {documentToReactComponents(secondSection.mainText.json, options)}
                 </div>
               </div>
             </div>
@@ -159,10 +162,10 @@ export default async function OurStory() {
             <div className="text-left flex flex-col gap-8">
               <div className="flex flex-col items-start mt-20 mb-10">
                 <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left dark:text-white text-[#6B70ED]">
-                  {thirdSection.fields.heading}
+                  {thirdSection.heading}
                 </h2>
                 <div className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-left dark:text-white text-[#565AC2]">
-                  {documentToReactComponents(thirdSection.fields.mainText, options)}
+                  {documentToReactComponents(thirdSection.mainText.json, options)}
                 </div>
               </div>
             </div>
@@ -171,10 +174,10 @@ export default async function OurStory() {
           <div className="w-fit">
             <Image
               className="rounded-[20px]"
-              src={`https:${thirdSection.fields.image.fields.file.url}`}
-              alt={thirdSection.fields.image.fields.title}
-              width={thirdSection.fields.image.fields.file.details.image.width}
-              height={thirdSection.fields.image.fields.file.details.image.height}
+              src={thirdSection.image.url}
+              alt={thirdSection.image.title}
+              width={thirdSection.image.width}
+              height={thirdSection.image.height}
             />
           </div>
         </div>
@@ -184,18 +187,18 @@ export default async function OurStory() {
           <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
               className="rounded-[20px] w-full h-auto md:h-full object-cover"
-              src={`https:${fourthSection.fields.image.fields.file.url}`}
-              alt={fourthSection.fields.image.fields.title}
-              width={fourthSection.fields.image.fields.file.details.image.width}
-              height={fourthSection.fields.image.fields.file.details.image.height}
+              src={fourthSection.image.url}
+              alt={fourthSection.image.title}
+              width={fourthSection.image.width}
+              height={fourthSection.image.height}
             />
           </div>
           <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-start h-fit">
             <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED] text-left">
-              {fourthSection.fields.heading}
+              {fourthSection.heading}
             </h2>
             <div className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
-              {documentToReactComponents(fourthSection.fields.mainText, options)}
+              {documentToReactComponents(fourthSection.mainText.json, options)}
             </div>
           </div>
         </div>
@@ -219,8 +222,8 @@ export default async function OurStory() {
           {fifthSection && (
               <Header
                 hasSeperator={true}
-                subTitle={fifthSection.fields.heading}
-                paragraph={documentToReactComponents(fifthSection.fields.mainText, options)}
+                subTitle={fifthSection.heading}
+                paragraph={documentToReactComponents(fifthSection.mainText.json, options)}
               />
           )}
           {/* Carousel for mobile view */}
@@ -229,29 +232,29 @@ export default async function OurStory() {
           <div className="md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-center hidden">
             {sixthSection && (
               <FounderCard
-                imageSrc={`https:${sixthSection.fields.image.fields.file.url}`}
-                name={sixthSection.fields.heading}
-                title={sixthSection.fields.subheading}
-                description={documentToReactComponents(sixthSection.fields.mainText, options)}
-                socialMediaLink={sixthSection.fields.linkUrl}
+                imageSrc={sixthSection.image.url}
+                name={sixthSection.heading}
+                title={sixthSection.subheading}
+                description={documentToReactComponents(sixthSection.mainText.json, options)}
+                socialMediaLink={sixthSection.linkUrl}
               />
             )}
             {seventhSection && (
               <FounderCard
-                imageSrc={`https:${seventhSection.fields.image.fields.file.url}`}
-                name={seventhSection.fields.heading}
-                title={seventhSection.fields.subheading}
-                description={documentToReactComponents(seventhSection.fields.mainText, options)}
-                socialMediaLink={seventhSection.fields.linkUrl}
+                imageSrc={seventhSection.image.url}
+                name={seventhSection.heading}
+                title={seventhSection.subheading}
+                description={documentToReactComponents(seventhSection.mainText.json, options)}
+                socialMediaLink={seventhSection.linkUrl}
               />
             )}
             {eighthSection && (
               <FounderCard
-                imageSrc={`https:${eighthSection.fields.image.fields.file.url}`}
-                name={eighthSection.fields.heading}
-                title={eighthSection.fields.subheading}
-                description={documentToReactComponents(eighthSection.fields.mainText, options)}
-                socialMediaLink={eighthSection.fields.linkUrl}
+                imageSrc={eighthSection.image.url}
+                name={eighthSection.heading}
+                title={eighthSection.subheading}
+                description={documentToReactComponents(eighthSection.mainText.json, options)}
+                socialMediaLink={eighthSection.linkUrl}
               />
             )}
           </div>
@@ -274,8 +277,8 @@ export default async function OurStory() {
           {ninthSection && (
               <Header
                 hasSeperator={true}
-                subTitle={ninthSection.fields.heading}
-                paragraph={documentToReactComponents(ninthSection.fields.mainText, options)}
+                subTitle={ninthSection.heading}
+                paragraph={documentToReactComponents(ninthSection.mainText.json, options)}
               />
           )}
           {/* Carousel for mobile view */}
@@ -284,33 +287,33 @@ export default async function OurStory() {
           <div className="md:flex hidden flex-wrap gap-12 items-center justify-center">
             {tenthSection && (
               <AdvisorCard
-                imageSrc={`https:${tenthSection.fields.image.fields.file.url}`}
-                name={tenthSection.fields.heading}
-                position={tenthSection.fields.subheading}
-                subPosition={tenthSection.fields.subposition}
-                additionalInfo={documentToReactComponents(tenthSection.fields.mainText, options)}
-                socialMediaLink={tenthSection.fields.linkUrl}
+                imageSrc={tenthSection.image.url}
+                name={tenthSection.heading}
+                position={tenthSection.subheading}
+                subPosition={tenthSection.subposition}
+                additionalInfo={documentToReactComponents(tenthSection.mainText.json, options)}
+                socialMediaLink={tenthSection.linkUrl}
                 usesTwitter={true}
               />
             )}
             {eleventhSection && (
               <AdvisorCard
-                imageSrc={`https:${eleventhSection.fields.image.fields.file.url}`}
-                name={eleventhSection.fields.heading}
-                position={eleventhSection.fields.subheading}
-                subPosition={eleventhSection.fields.subposition}
-                additionalInfo={documentToReactComponents(eleventhSection.fields.mainText, options)}
-                socialMediaLink={eleventhSection.fields.linkUrl}
+                imageSrc={eleventhSection.image.url}
+                name={eleventhSection.heading}
+                position={eleventhSection.subheading}
+                subPosition={eleventhSection.subposition}
+                additionalInfo={documentToReactComponents(eleventhSection.mainText.json, options)}
+                socialMediaLink={eleventhSection.linkUrl}
               />
             )}
             {twelfthSection && (
               <AdvisorCard
-                imageSrc={`https:${twelfthSection.fields.image.fields.file.url}`}
-                name={twelfthSection.fields.heading}
-                position={twelfthSection.fields.subheading}
-                subPosition={twelfthSection.fields.subposition}
-                additionalInfo={documentToReactComponents(twelfthSection.fields.mainText, options)}
-                socialMediaLink={twelfthSection.fields.linkUrl}
+                imageSrc={twelfthSection.image.url}
+                name={twelfthSection.heading}
+                position={twelfthSection.subheading}
+                subPosition={twelfthSection.subposition}
+                additionalInfo={documentToReactComponents(twelfthSection.mainText.json, options)}
+                socialMediaLink={twelfthSection.linkUrl}
               />
             )}
           </div>
@@ -323,13 +326,13 @@ export default async function OurStory() {
           <div className="flex justify-around flex-wrap px-4 md:px-0 items-center">
             <div className="flex flex-col items-start max-w-[30rem] mb-8 md:mb-0">
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-white leading-6">
-              {thirteenthSection.fields.heading}
+              {thirteenthSection.heading}
               </h4>
               <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center text-white ">
-              {thirteenthSection.fields.subheading}
+              {thirteenthSection.subheading}
               </h2>
               <div className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-white">
-                {documentToReactComponents(thirteenthSection.fields.mainText, options)}
+                {documentToReactComponents(thirteenthSection.mainText.json, options)}
               </div>
             </div>
 

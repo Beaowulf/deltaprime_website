@@ -51,14 +51,14 @@ function AboutSection({tenthSection, options}) {
       {/* Left Side */}
       <div className="w-full md:w-1/2">
         <h4 className="pt-24  aboutTypographytitle !text-[#EAEBFF]">
-          {tenthSection?.fields?.Subheading}
+          {tenthSection?.Subheading}
         </h4>
         <h4 className="aboutTypographysubtitle !text-[#EAEBFF]">
-          {tenthSection?.fields?.heading}
+          {tenthSection?.heading}
         </h4>
         <div className="pt-8 pb-14 aboutTypographyparagraph !text-[#EAEBFF]">
-          {tenthSection?.fields?.mainText &&
-            documentToReactComponents(tenthSection.fields.mainText, options)}
+          {tenthSection?.mainText &&
+            documentToReactComponents(tenthSection.mainText.json, options)}
         </div>
         <div className="sm:w-fit w-full rounded-[25px]">
           <BlogCardButton

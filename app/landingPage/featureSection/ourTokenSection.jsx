@@ -16,8 +16,8 @@ function OurTokenSection({seventhSection, eighthSection, ninthSection, options})
       {seventhSection && (
         <Header
           hasSeperator={true}
-          subTitle={seventhSection.fields.heading}
-          paragraph={documentToReactComponents(seventhSection.fields.mainText, options)}
+          subTitle={seventhSection.heading}
+          paragraph={documentToReactComponents(seventhSection.mainText.json, options)}
         />
       )}
       <div className="flex flex-wrap justify-center flex-col md:flex-row gap-4">
@@ -33,10 +33,10 @@ function OurTokenSection({seventhSection, eighthSection, ninthSection, options})
             <div className="flex flex-col h-full">
               <div className="flex flex-row pt-2 md:pt-24 justify-start gap-4 items-center">
                 <div>
-                {eighthSection?.fields?.media && (
+                {eighthSection?.media && (
                   <Image
-                    src={`https:${eighthSection.fields.media.fields.file.url}`}
-                    alt={eighthSection.fields.media.fields.title}
+                    src={eighthSection.media.url}
+                    alt={eighthSection.media.title}
                     width={100}
                     height={100}
                   />
@@ -44,13 +44,13 @@ function OurTokenSection({seventhSection, eighthSection, ninthSection, options})
                 </div>
                 <div>
                   <h3 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#6B70ED]">
-                    {eighthSection?.fields?.heading}
+                    {eighthSection?.heading}
                   </h3>
                 </div>
               </div>
               <div className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#565AC2]">
-                {eighthSection?.fields?.mainText &&
-                  documentToReactComponents(eighthSection.fields.mainText, options)}
+                {eighthSection?.mainText &&
+                  documentToReactComponents(eighthSection.mainText.json, options)}
               </div>
               <div className="mt-auto">
                 <BlogCardButton
@@ -76,10 +76,10 @@ function OurTokenSection({seventhSection, eighthSection, ninthSection, options})
             <div className="flex flex-col h-full">
               <div className="flex flex-row pt-2 md:pt-24 justify-start gap-4 items-center">
                 <div>
-                {ninthSection?.fields?.media && (
+                {ninthSection?.media && (
                   <Image
-                    src={`https:${ninthSection.fields.media.fields.file.url}`}
-                    alt={ninthSection.fields.media.fields.title}
+                    src={ninthSection.media.url}
+                    alt={ninthSection.media.title}
                     width={100}
                     height={100}
                   />
@@ -87,13 +87,13 @@ function OurTokenSection({seventhSection, eighthSection, ninthSection, options})
                 </div>
                 <div>
                   <h3 className="featureSubtitle text-[17px] sm:text-[34px] dark:text-[#FFF5F0] text-[#6B70ED]">
-                    {ninthSection?.fields?.heading}
+                    {ninthSection?.heading}
                   </h3>
                 </div>
               </div>
               <div className="mt-8 aboutTypographyparagraphWhite mb-20 dark:text-[#FFF5F0] text-[#565AC2]">
-                {ninthSection?.fields?.mainText &&
-                  documentToReactComponents(ninthSection.fields.mainText, options)}
+                {ninthSection?.mainText &&
+                  documentToReactComponents(ninthSection.mainText.json, options)}
               </div>
               <div className="mt-auto">
                 <BlogCardButton

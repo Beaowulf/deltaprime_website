@@ -27,11 +27,11 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity, SectionDetails, option
         {/* Text Wrapper */}
         <div className="text-left flex flex-col gap-1 ">
           <h3 className="brightText text-wrap max-w-xl text-3xl md:text-[44px] mb-4 dark:text-white text-[#6B70ED]">
-            {SectionDetails?.fields?.heading}
+            {SectionDetails?.heading}
           </h3>
           <div className="aboutTypographyparagraphWhite text-wrap  max-w-[25rem] dark:text-white text-[#565AC2]">
-            {SectionDetails?.fields?.mainText &&
-              documentToReactComponents(SectionDetails.fields.mainText, options)}
+            {SectionDetails?.mainText &&
+              documentToReactComponents(SectionDetails.mainText.json, options)}
           </div>
         </div>
         {/* Price pill Wrapper */}
@@ -89,7 +89,7 @@ const IntroSection = ({ totalTvl, SectionDetails, options }) => {
           </div>
           {/* Right side (video player) */}
           <div className="w-full max-w-[50rem]">
-            <VideoPlayer url={`${SectionDetails?.fields?.linkUrl}`} />
+            <VideoPlayer url={`${SectionDetails?.linkUrl}`} />
           </div>
         </div>
       </div>

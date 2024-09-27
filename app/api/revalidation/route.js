@@ -12,19 +12,27 @@ export async function POST(request) {
 
   // Parse the incoming request body
   const body = await request.json();
-  console.log('Incoming request body:', body);
 
   // Extract the content type from the request
   const contentType = body.sys?.contentType?.sys?.id;
-  console.log('Content type:', contentType);
 
-  // Check if the content type is either TokenomicsPage or TokenomicsSection
+  // Check if the content type is either TokenomicsPage, TokenomicsSection, LandingPage, LandingPageSections, OurStoryPage, or OurStorySections
   if (contentType === "tokenomicsPage" || contentType === "tokenomicsSection") {
-    console.log(`Content type ${contentType} matches. Triggering revalidation...`);
-    revalidateTag("tokenomics");
-
+    console.log(`Content type ${contentType} matches. Triggering tokenomics revalidation...`);
+    revalidateTag("tokenomicsPage");
     return NextResponse.json({ revalidated: true, now: Date.now() });
-  } else {
+  } 
+  else if (contentType === "landingPage" || contentType === "landingPageSections") {
+    console.log(`Content type ${contentType} matches. Triggering landing page revalidation...`);
+    revalidateTag("landingPage");
+    return NextResponse.json({ revalidated: true, now: Date.now() });
+  }
+  else if (contentType === "ourStoryPage" || contentType === "ourStorySections") {
+    console.log(`Content type ${contentType} matches. Triggering our story page revalidation...`);
+    revalidateTag("ourStoryPage");
+    return NextResponse.json({ revalidated: true, now: Date.now() });
+  } 
+  else {
     console.log(`Content type ${contentType} does not match the expected types.`);
     return NextResponse.json({ message: "No revalidation needed for this content type" }, { status: 200 });
   }

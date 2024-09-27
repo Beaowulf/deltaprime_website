@@ -118,8 +118,8 @@ const BlogPreviewSection = ({ blogPreviewCardData, eleventhSection, options }) =
       <div className="pt-12 md:pt-40 pagePaddingMedium">
         {eleventhSection && (
           <BlogHeader
-            title={eleventhSection.fields.heading}
-            paragraph={documentToReactComponents(eleventhSection.fields.mainText, options)}
+            title={eleventhSection.heading}
+            paragraph={documentToReactComponents(eleventhSection.mainText.json, options)}
           />
         )}
         <div className="flex flex-wrap gap-6 items-center justify-center md:mb-20 mb-6">
