@@ -144,6 +144,7 @@ function Senior_DevOps_Engineer() {
               <li>
                 Send your resume, portfolio, and references to{" "}
                 <a
+                  className="underline"
                   href={`mailto:${email}?subject=Job%20Application&body=Please%20find%20my%20resume%20and%20portfolio%20attached.`}
                   dangerouslySetInnerHTML={{ __html: encodeEmail(email) }}
                 ></a>
