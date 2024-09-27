@@ -75,7 +75,7 @@ const CarouselComponent = () => {
 const Carousel = ({secondSection, options}) => {
   return (
     <div className="flex flex-col justify-between items-center md:mt-40 mt-10">
-      <Seperator className="pagePaddingLarge" label={secondSection?.fields?.heading || ''} />
+      <Seperator className="pagePaddingLarge" label={secondSection?.heading || ''} />
       <CarouselComponent />
     </div>
   );

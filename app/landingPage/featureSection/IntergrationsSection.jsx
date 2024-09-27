@@ -8,8 +8,8 @@ const IntergrationsSection = ({sixthSection, options}) => {
     <div className="md:mt-32 md:mb-28 mt-12 mb-0">
       <Header
         hasSeperator={true}
-        subTitle={sixthSection.fields.heading}
-        paragraph={documentToReactComponents(sixthSection.fields.mainText, options)}
+        subTitle={sixthSection.heading}
+        paragraph={documentToReactComponents(sixthSection.mainText.json, options)}
       />
       <IntegrationCarousel />
     </div>

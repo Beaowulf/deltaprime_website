@@ -83,11 +83,11 @@ const Strategies = ({fifthSection, options}) => {
         {/* Left */}
         <div className="flex flex-col items-start dark:text-white text-[#6B70ED] mb-14 max-w-96">
           <h2 className="mb-6 featureSubtitle text-[24px]">
-            {fifthSection?.fields?.heading}  
+            {fifthSection?.heading}  
           </h2>
           <div className="aboutTypographyparagraphWhite max-w-xl md:leading-6 leading-4">
-            {fifthSection?.fields?.mainText &&
-              documentToReactComponents(fifthSection.fields.mainText, options)}
+            {fifthSection?.mainText &&
+              documentToReactComponents(fifthSection.mainText.json, options)}
           </div>
           <div className="mt-10 md:w-fit w-full">
             <Link href="/strategies">
@@ -101,12 +101,12 @@ const Strategies = ({fifthSection, options}) => {
         </div>
         {/* Right */}
         <div className="mr-8 md:mr-0 strategiesIntroImgParent">
-          {fifthSection?.fields?.media && (
+          {fifthSection?.media && (
             <Image
-              src={`https:${fifthSection.fields.media.fields.file.url}`}
-              alt={fifthSection.fields.media.fields.title}
-              width={fifthSection.fields.media.fields.file.details.image.width}
-              height={fifthSection.fields.media.fields.file.details.image.height}
+              src={fifthSection.media.url}
+              alt={fifthSection.media.title}
+              width={fifthSection.media.width}
+              height={fifthSection.media.height}
             />
           )}
           <motion.div

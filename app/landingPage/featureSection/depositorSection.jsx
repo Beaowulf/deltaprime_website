@@ -30,8 +30,8 @@ const FeaturePrimeAccount = ({fourthSection, options}) => {
     <div className="lg:mt-40 mt-14">
       {fourthSection && (
         <Header
-          subTitle={fourthSection.fields.heading}
-          paragraph={documentToReactComponents(fourthSection.fields.mainText, options)}
+          subTitle={fourthSection.heading}
+          paragraph={documentToReactComponents(fourthSection.mainText.json, options)}
         />
       )}
       <div className="flex flex-col flex-wrap gap-5 md:mb-20 mb-6">

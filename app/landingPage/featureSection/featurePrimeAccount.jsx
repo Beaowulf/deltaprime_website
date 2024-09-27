@@ -53,8 +53,8 @@ const FeaturePrimeAccountSection = ({thirdSection, options}) => {
     <div className="lg:mt-40 mt-0">
       {thirdSection && (
         <Header
-          subTitle={thirdSection.fields.heading}
-          paragraph={documentToReactComponents(thirdSection.fields.mainText, options)}
+          subTitle={thirdSection.heading}
+          paragraph={documentToReactComponents(thirdSection.mainText.json, options)}
         />
       )}
       <div className="flex items-center justify-cente md:mb-20 mb-6 flex-wrap">
