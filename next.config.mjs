@@ -33,6 +33,23 @@ const nextConfig = {
             key: "X-Frame-Options",
             value: "DENY",
           },
+          {
+            key: "Content-Security-Policy",
+            value:
+              "default-src 'self'; img-src 'self' https://images.ctfassets.net; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';", // Adjust as necessary
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "no-referrer", // Adjust to your referrer policy needs
+          },
+          {
+            key: "Permissions-Policy",
+            value: "geolocation=(), microphone=(), camera=()", // Adjust as necessary based on your site requirements
+          },
         ],
       },
     ];
