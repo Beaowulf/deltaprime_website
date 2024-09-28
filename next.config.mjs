@@ -36,7 +36,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; img-src 'self' https://images.ctfassets.net; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';", // Adjust as necessary
+              "default-src 'self'; img-src 'self' https://images.ctfassets.net; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline';",
           },
           {
             key: "X-Content-Type-Options",
@@ -44,11 +44,11 @@ const nextConfig = {
           },
           {
             key: "Referrer-Policy",
-            value: "no-referrer", // Adjust to your referrer policy needs
+            value: "no-referrer",
           },
           {
             key: "Permissions-Policy",
-            value: "geolocation=(), microphone=(), camera=()", // Adjust as necessary based on your site requirements
+            value: "geolocation=(), microphone=(), camera=()",
           },
         ],
       },
