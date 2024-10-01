@@ -6,7 +6,6 @@ import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"; // Import rich text renderer
 
-
 // Dark themed assets
 import RoundedOneDarkThemed from "@/public/assets/icons/RoundedOneDarkThemed.svg";
 import RoundedTwoDarkThemed from "@/public/assets/icons/RoundedTwoDarkThemed.svg";
@@ -46,7 +45,7 @@ const TopPartLightTheme = () => {
   );
 };
 
-const FeaturePrimeAccountSection = ({thirdSection, options}) => {
+const FeaturePrimeAccountSection = ({ thirdSection, options }) => {
   const { theme } = useTheme();
 
   return (
@@ -54,7 +53,10 @@ const FeaturePrimeAccountSection = ({thirdSection, options}) => {
       {thirdSection && (
         <Header
           subTitle={thirdSection.heading}
-          paragraph={documentToReactComponents(thirdSection.mainText.json, options)}
+          paragraph={documentToReactComponents(
+            thirdSection.mainText.json,
+            options
+          )}
         />
       )}
       <div className="flex items-center justify-cente md:mb-20 mb-6 flex-wrap">

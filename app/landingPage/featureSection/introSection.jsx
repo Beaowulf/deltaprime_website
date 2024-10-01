@@ -63,7 +63,7 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity, SectionDetails, option
 
 const IntroSection = ({ totalTvl, SectionDetails, options }) => {
   const { totalBorrowedLiquidity } = useCryptoData();
-  console.log(SectionDetails);
+  // console.log(SectionDetails);
 
   return (
     <div className="pagePaddingLarge">

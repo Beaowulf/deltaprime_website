@@ -272,6 +272,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 />
               </div>
             </div>
+            {/* hide on desktop */}
             <div className="md:hidden block bg-white mt-6 p-10 rounded-[20px]">
               <p className="font-bold leading-6 uppercase text-[18px] text-[#6B70ED]">
                 Table of contents
@@ -311,6 +312,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
             </div>
           </div>
         </div>
+        {/* hide on mobile */}
         <div className="hidden md:block md:w-3/12">
           <div className="flex flex-col gap-10 sticky top-32">
             <div className="coloredBoxBorder">

@@ -35,7 +35,7 @@ const BlogPage = async ({ params }) => {
   const blogPreviewCardData = Object.keys(blogsByCategory).map((category) => {
     const categoryBlogs = blogsByCategory[category];
     const randomBlog = getRandomItem(categoryBlogs);
-    console.log("🚀 ~ blogPreviewCardData ~ randomBlog:", randomBlog);
+    // console.log("🚀 ~ blogPreviewCardData ~ randomBlog:", randomBlog);
 
     const processBlog = (blog) => {
       const description = blog.blogDescription;

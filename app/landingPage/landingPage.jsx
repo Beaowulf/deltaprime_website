@@ -17,7 +17,7 @@ import { useTheme } from "next-themes";
 
 const options = {
   renderText: (text) => {
-    return text.split('\n').reduce((children, textSegment, index) => {
+    return text.split("\n").reduce((children, textSegment, index) => {
       return [...children, index > 0 && <br key={index} />, textSegment];
     }, []);
   },
@@ -43,7 +43,7 @@ const LandingPage = ({ blogPreviewCardData, totalTvl, sectionsCollection }) => {
   const ninthSection = sections.find((section) => section.sectionId === 9);
   const tenthSection = sections.find((section) => section.sectionId === 10);
   const eleventhSection = sections.find((section) => section.sectionId === 11);
-  console.log(introSection);
+  // console.log(introSection);
   const { resolvedTheme } = useTheme();
 
   return (
