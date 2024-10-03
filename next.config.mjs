@@ -36,7 +36,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com",
+              "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://www.google.com; font-src 'self' data: https://your-font-host.com; connect-src 'self'; frame-src 'self' https://www.youtube.com",
           },
           {
             key: "X-Content-Type-Options",
