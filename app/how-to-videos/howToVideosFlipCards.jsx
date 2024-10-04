@@ -16,7 +16,7 @@ import HowToVideoCard from "../components/howToVideoCard/howToVideoCard";
 
 export const VideosDesktopFlipCards = ({ videos }) => {
   return (
-    <div className="hidden md:block mx-auto p-4">
+    <div className="hidden md:block mx-auto">
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {videos.map((video, index) => (
           <div
@@ -58,7 +58,7 @@ export const FlipCardMobileCarousel = ({ videos }) => {
   return (
     <>
       {/* Swiper carousel for mobile view */}
-      <div className="flex flex-col gap-10 md:hidden my-10 md:my-0">
+      <div className="flex flex-col md:hidden my-10 md:my-0">
         <Swiper
           ref={sliderRef}
           modules={[Pagination]}

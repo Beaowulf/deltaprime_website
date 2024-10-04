@@ -12,7 +12,7 @@ function OurTokenSection({seventhSection, eighthSection, ninthSection, options})
   const { theme } = useTheme;
 
   return (
-    <div className="lg:mb-32 mb-10 mt-40">
+    <div className="my-mobile-spacing md:my-desktop-spacing ">
       {seventhSection && (
         <Header
           hasSeperator={true}

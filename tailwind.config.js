@@ -9,6 +9,10 @@ module.exports = {
   theme: {
     typography: (theme) => ({}),
     extend: {
+            spacing: {
+        'mobile-spacing': '90px',   // 90px for mobile
+        'desktop-spacing': '112px', // 112px for desktop
+      },
       backgroundImage: {
         arrowButtonDarkGradient:
           "linear-gradient(137deg, #1B153C 10%, #1C2943 50%, #301E3E 90%)",

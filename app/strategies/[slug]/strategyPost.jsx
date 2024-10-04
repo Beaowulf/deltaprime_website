@@ -119,7 +119,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
     <div className="px-4 sm:px-0">
       {/* Desktop View */}
       <div className="pagePaddingMedium hidden md:block">
-        <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2">
+        <div className="my-mobile-spacing md:my-desktop-spacing flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
@@ -188,7 +188,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
       {/* Mobile View */}
       {/* intro */}
 
-      <div className="flex md:hidden md:flex-row flex-col justify-center items-center w-full gap-20 mb-2 md:mb-40">
+      <div className="my-mobile-spacing md:my-desktop-spacing flex md:hidden md:flex-row flex-col justify-center items-center w-full gap-20 mb-2 md:mb-40">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
           <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
@@ -236,7 +236,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
         </Link>
       </div>
       {/* Parent */}
-      <div className="pagePaddingMedium postAndTablesWrapper flex flex-row gap-10 mt-20 mb-20">
+      <div className="my-mobile-spacing md:my-desktop-spacing pagePaddingMedium postAndTablesWrapper flex flex-row gap-10 mt-20 mb-20">
         {/* left side */}
         <div className="strategyPostWrapper">
           <RichTextRenderer
@@ -280,9 +280,9 @@ const StrategyDetail = ({ strategy, strategies }) => {
       </div>
 
       {/* here are the swiper components */}
-      <div>
+      <div className="my-mobile-spacing md:my-desktop-spacing">
         {/* Show this button only on mobile */}
-        <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
+        <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden w-full text-center">
           <Link href="?modal=true" scroll={false}>
             <DeltaPurpleButton
               label="LAUNCH APP"
