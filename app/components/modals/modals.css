@@ -18,6 +18,7 @@
   top: 0;
   left: 0;
   right: 0;
+
   bottom: 0;
   padding: 2px;
   border-radius: 25px;
@@ -52,4 +53,70 @@ dialog {
 .modalP {
   z-index: 999999999;
   height: 100vh;
+}
+
+
+@media (max-width: 768px) {
+  .modalParent {
+    width: 100%;
+    max-width: 350px; /* Set a max-width for better mobile appearance */
+    max-height: 80vh;
+    overflow-y: auto;
+    margin: 0 auto;
+
+  }
+  .modalParent:before{
+    background: none;
+
+  }
+
+  .modalWrapper {
+    justify-content: flex-start;
+    width: 100%;
+    max-height: 80vh; /* Prevents modal from exceeding screen height */
+    overflow-y: auto; /* Allows scrolling if content is too large */
+    
+  }
+  .modalWrapper:before,
+  .modalParent:before {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+
+  .modalContent {
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  .modalContent p, .modalContent h5 {
+    font-size: 12px;
+  }
+
+  .DeltaPurpleButton {
+    padding: 8px 16px;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .modalP {
+    height: auto; /* Ensure height adjusts to fit content */
+  }
+}
+
+@media (min-width: 769px) {
+  .modalParent {
+    max-width: 600px; /* Adjust width for larger screens */
+    margin: 0 auto;
+  }
+
+  .modalWrapper {
+    max-height: 85vh; /* Adjust height for larger screens */
+    overflow-y: auto;
+  }
 }
