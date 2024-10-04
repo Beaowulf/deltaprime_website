@@ -232,13 +232,13 @@ const RichTextRenderer = ({
 
         if (text.includes("{{inline_CTA}}")) {
           return (
-            <div className="mb-20">
-              <UnlockPotentialContainer />
+            <div className="mt-mobile-spacing md:mt-desktop-spacing">
+              <UnlockPotentialContainer hasMarginTop={false}/>
             </div>
           );
         }
         return (
-          <div className="my-4 blogStyling text-[#565AC2] dark:text-[#F6F6F6]">
+          <div className=" blogStyling text-[#565AC2] dark:text-[#F6F6F6]">
             {children}
           </div>
         );

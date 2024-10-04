@@ -5,7 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const IntergrationsSection = ({sixthSection, options}) => {
   return (
-    <div className="md:mt-32 md:mb-28 mt-12 mb-0">
+    <div className="my-mobile-spacing md:my-desktop-spacing ">
       <Header
         hasSeperator={true}
         subTitle={sixthSection.heading}

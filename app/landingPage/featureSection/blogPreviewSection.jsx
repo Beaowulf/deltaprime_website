@@ -119,7 +119,7 @@ const BlogPreviewSection = ({
 }) => {
   return (
     <>
-      <div className="pt-12 md:pt-40 pagePaddingMedium">
+      <div className="pt-mobile-spacing md:pt-desktop-spacing  pagePaddingMedium">
         {eleventhSection && (
           <BlogHeader
             title={eleventhSection.heading}

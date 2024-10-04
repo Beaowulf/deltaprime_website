@@ -647,8 +647,8 @@ body {
 
 .styled-table {
   width: 100%;
+  margin-top: 25px;
   border-collapse: collapse;
-  margin: 25px 0;
   font-size: 18px;
   text-align: left;
 }

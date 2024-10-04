@@ -49,7 +49,7 @@ const FeaturePrimeAccountSection = ({ thirdSection, options }) => {
   const { theme } = useTheme();
 
   return (
-    <div className="lg:mt-40 mt-0">
+    <div className="my-mobile-spacing md:my-desktop-spacing ">
       {thirdSection && (
         <Header
           subTitle={thirdSection.heading}

@@ -24,10 +24,10 @@ const StrategiesPage = () => {
   return (
     <div className="">
       {/* Intro */}
-      <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2 pagePaddingLarge">
-        <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
+      <div className="my-mobile-spacing md:my-desktop-spacing flex md:flex-row flex-col justify-center items-center w-full gap-20 pagePaddingLarge">
+        <div className="flex flex-col justify-between items-center md:items-start h-fit">
           <div className="text-left flex flex-col gap-8">
-            <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
+            <p className="brightText text-wrap max-w-xl text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
               Strategies
             </p>
             <div className="w-full md:hidden block rounded-[25px]">
@@ -50,7 +50,7 @@ const StrategiesPage = () => {
                 />
               </Link>
             </div>
-            <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
+            <div className="fullWidthButtonChildren md:h-full block md:hidden md:my-10 w-full text-center">
               <Link href="?modal=true" scroll={false}>
                 <DeltaPurpleButton
                   label="LAUNCH APP"
@@ -71,12 +71,11 @@ const StrategiesPage = () => {
       </div>
 
       {/* Cards */}
-      <div className="pagePaddingMedium">
+      <div className="my-mobile-spacing md:my-desktop-spacing pagePaddingLarge">
         <StratDesktopFlipCards strategies={strategies} />
         <FlipCardMobileCarousel strategies={strategies} />
         <div>
-          <UnlockPotentialContainer hasMarginTop={false} />
-          <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
+          <div className="my-mobile-spacing fullWidthButtonChildren md:h-full block md:hidden w-full text-center">
             <Link href="?modal=true" scroll={false}>
               <DeltaPurpleButton
                 label="LAUNCH APP"
@@ -87,12 +86,12 @@ const StrategiesPage = () => {
           </div>
         </div>
 
-        <div className="flex md:flex-row flex-col justify-between items-center w-full gap-20 mt-10 mb-16 md:my-40">
-          <div className="flex flex-col items-center md:items-start md:mb-14 max-w-96">
-            <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-gray-400 leading-6 md:text-left text-center dark:text-white text-[#6B70ED]">
+        <div className="my-mobile-spacing md:my-desktop-spacing flex md:flex-row flex-col justify-between items-center w-full gap-20">
+          <div className="flex flex-col items-center md:items-start max-w-96">
+            <h4 className=" uppercase featureTitle md:text-[15px] text-[12px] text-gray-400 leading-6 md:text-left text-center dark:text-white text-[#6B70ED]">
               STRATEGIES
             </h4>
-            <h2 className="mb-6 featureSubtitle text-[24px] md:text-left text-center dark:text-white text-[#6B70ED]">
+            <h2 className="featureSubtitle text-[24px] md:text-left text-center dark:text-white text-[#6B70ED]">
               Do you want to learn more about strategies?
             </h2>
             <p className="max-w-2xl text-[13px] md:leading-6 sm:text-[17px] leading-4 md:text-left text-center dark:text-white text-[#565AC2]">
@@ -123,7 +122,9 @@ const StrategiesPage = () => {
             />
           </div>
         </div>
-        <ContactForm />
+        <div className="">
+        <ContactForm hasUnlockPotentialContainer={false} />
+        </div>
       </div>
     </div>
   );

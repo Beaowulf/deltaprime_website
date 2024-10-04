@@ -109,10 +109,10 @@ const BlogHomePage = ({ categories, blogs: initialBlogs }) => {
         ))}
       </div>
       <SearchBar onSearch={handleSearch} />
-      <div className="flex flex-col mb-20 md:mb-0">
+      <div className="flex flex-col">
         <div className="flex flex-col gap-6 items-start">
-          <div className="py-20 w-full relative">
-            <div className="blog-posts-container transition-all duration-500 ease-in-out transform translate-x-0 opacity-100 flex flex-col xl:flex-row gap-6 items-center justify-center">
+          <div className="mt-mobile-spacing md:mt-desktop-spacing w-full relative">
+            <div className="pb-mobile-spacing md:pb-desktop-spacing blog-posts-container transition-all duration-500 ease-in-out transform translate-x-0 opacity-100 flex flex-col xl:flex-row gap-6 items-center justify-center">
               {currentPosts.map((blogPreviewCardData, index) => (
                 <BlogCard
                   key={blogPreviewCardData.blogID}

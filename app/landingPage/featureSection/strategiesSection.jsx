@@ -73,7 +73,7 @@ const Strategies = ({fifthSection, options}) => {
         theme === "dark"
           ? "featureBorderWrapDarkTheme rounded-[25px]"
           : "featureBorderWrapLightTheme rounded-[27px]"
-      } z-10 mt-16 md:mt-40`}
+      } z-10 my-mobile-spacing md:my-desktop-spacing`}
     >
       <div
         className={`flex items-center md:flex-row flex-col justify-around rounded-[25px] md:pl-20 pl-10 py-6 pr-6 z-20 overflow-hidden ${

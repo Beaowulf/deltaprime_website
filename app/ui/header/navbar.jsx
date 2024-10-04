@@ -59,7 +59,7 @@ function Nav() {
       }`}
     >
       <nav
-        className={`md:mb-24 mb-10 pt-[2px] transition-all duration-300 ${
+        className={`pt-[2px] transition-all duration-300 ${
           isScrolled && "py-0 pt-0"
         }`}
       >

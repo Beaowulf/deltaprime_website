@@ -70,9 +70,9 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
       <div className="pagePaddingLarge">
         {/* intro */}
         {introSection && (
-        <div className="flex lg:flex-row flex-col justify-between items-center w-full md:gap-28 gap-5 my-10 md:my-40">
+        <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col justify-between items-center w-full md:gap-20 gap-5">
           {/* Text Wrapper */}
-          <div className="flex flex-col md:flex-row md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
               <p className="brightText text-wrap  mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
                 {introSection.heading}
@@ -80,7 +80,7 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
               <div className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
                 {documentToReactComponents(introSection.mainText.json, options)}
               </div>
-              <div className="w-full md:block hidden">
+              <div className="hidden w-full md:block ">
                 <Link href="?modal=true" scroll={false}>
                   <DeltaPurpleButton
                     className="w-[100%] md:w-fit px-6 py-3"
@@ -91,7 +91,7 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
                 </Link>
               </div>
               {/* Show this button only on mobile */}
-              <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
+              <div className="fullWidthButtonChildren md:h-full block md:hidden md:my-10 w-full text-center">
                 <Link href="?modal=true" scroll={false}>
                   <DeltaPurpleButton
                     label="LAUNCH APP"
@@ -114,10 +114,11 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
           </div>
         </div>
         )}
+
         
 
         {/* other text */}
-        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
+        <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5">
           {/* Image */}
           <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
@@ -129,13 +130,13 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
             />
           </div>
           {/* Text Wrapper */}
-          <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-end h-fit">
+          <div className="flex flex-col lg:w-1/2 w-full justify-between items-center lg:items-end h-fit">
             <div className="text-left flex flex-col gap-8">
-              <div className="flex flex-col items-start mt-20 mb-10">
+              <div className="flex flex-col items-start">
                 <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left dark:text-white text-[#6B70ED]">
                   {secondSection.heading}
                 </h2>
-                <div className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
+                <div className=" aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-xl text-left dark:text-white text-[#565AC2]">
                   {documentToReactComponents(secondSection.mainText.json, options)}
                 </div>
               </div>
@@ -143,7 +144,7 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
           </div>
         </div>
 
-        <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
+        <div className="fullWidthButtonChildren md:h-full block md:hidden my-mobile-spacing w-full text-center">
           <Link href="?modal=true" scroll={false}>
             <DeltaPurpleButton
               label="LAUNCH APP"
@@ -154,15 +155,15 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
         </div>
 
         {/* other text */}
-        <div className="flex md:flex-row flex-col justify-around items-center w-full md:gap-20 gap-5 my-10 md:my-40">
+        <div className="my-mobile-spacing md:my-desktop-spacing flex md:flex-row flex-col justify-around items-center w-full md:gap-20 gap-5 ">
           {/* Text Wrapper */}
-          <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
+          <div className="flex flex-col justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
-              <div className="flex flex-col items-start mt-20 mb-10">
+              <div className="flex flex-col items-start">
                 <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-left dark:text-white text-[#6B70ED]">
                   {thirdSection.heading}
                 </h2>
-                <div className="mb-4 aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-left dark:text-white text-[#565AC2]">
+                <div className=" font-medium leading-5 md:leading-6 height max-w-xl text-left dark:text-white text-[#565AC2]">
                   {documentToReactComponents(thirdSection.mainText.json, options)}
                 </div>
               </div>
@@ -181,7 +182,7 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
         </div>
 
 
-        <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5 my-10 md:my-40">
+        <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5">
           <div className="w-fit rounded-[25px] max-w-[60rem]">
             <Image
               className="rounded-[20px] w-full h-auto md:h-full object-cover"
@@ -191,11 +192,11 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
               height={fourthSection.image.height}
             />
           </div>
-          <div className="flex flex-col lg:w-1/2 w-full md:mb-8 mb-0 justify-between items-center lg:items-start h-fit">
+          <div className="flex flex-col lg:w-1/2 w-full justify-between items-center lg:items-start h-fit">
             <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED] text-left">
               {fourthSection.heading}
             </h2>
-            <div className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] mb-6 dark:text-white text-[#565AC2]">
+            <div className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 max-w-[55rem] dark:text-white text-[#565AC2]">
               {documentToReactComponents(fourthSection.mainText.json, options)}
             </div>
           </div>
@@ -204,7 +205,7 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
 
         <div>
           {/* Show this button only on mobile */}
-          <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
+          <div className="fullWidthButtonChildren md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true" scroll={false}>
               <DeltaPurpleButton
                 label="LAUNCH APP"
@@ -216,7 +217,7 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
         </div>
 
         {/* team */}
-        <div className="mt-20">
+        <div className="my-mobile-spacing md:my-desktop-spacing">
           {fifthSection && (
               <Header
                 hasSeperator={true}
@@ -260,7 +261,7 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
         {/* Unlock full potential button reponsive component */}
         <div>
           {/* Show this button only on mobile */}
-          <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
+          <div className="fullWidthButtonChildren md:h-full block md:hidden my-10 w-full text-center">
             <Link href="?modal=true" scroll={false}>
               <DeltaPurpleButton
                 label="LAUNCH APP"
@@ -271,7 +272,7 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
           </div>
         </div>
         {/* advisors */}
-        <div className="mt-40">
+        <div className="my-mobile-spacing md:my-desktop-spacing">
           {ninthSection && (
               <Header
                 hasSeperator={true}
@@ -319,8 +320,8 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
       </div>
 
       {/* join our team */}
-      <div className="bg-purpleGradient w-full mt-40" id="job-description">
-        <div className="pagePaddingMedium px-4 py-32">
+      <div className="bg-purpleGradient w-full mt-mobile-spacing md:mt-desktop-spacing" id="job-description">
+        <div className="pagePaddingMedium px-4 py-mobile-spacing">
           <div className="flex justify-around flex-wrap px-4 md:px-0 items-center">
             <div className="flex flex-col items-start max-w-[30rem] mb-8 md:mb-0">
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-white leading-6">
@@ -378,7 +379,7 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
         </div>
       </div>
 
-      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] px-4">
+      <div className="sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] px-4 my-mobile-spacing md:my-desktop-spacing">
         <ContactForm />
       </div>
     </div>

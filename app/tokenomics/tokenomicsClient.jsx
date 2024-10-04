@@ -117,15 +117,15 @@ export default function TokenomicsClient({ tokenomicsData }) {
     <div className="px-4 sm:px-6 md:px-[6%] xl:px-[8%] 2xl:px-[10%]">
       {isModalOpen && <MintModal onClose={closeModal} />}
       {/* First Section */}
-      <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-20">
+      <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10">
         {/* Text Wrapper */}
-        <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
+        <div className="flex flex-col justify-between items-center md:items-start h-fit flex-grow">
           <div className="text-left flex flex-col gap-4 w-full">
             <div className="clearfix">
               {/* image that shows on desktop only */}
               {introSection?.image && (
                 <Image
-                  className={`rounded-[20px] float-right ml-4 mb-4 w-full lg:w-1/2 hidden lg:block ${
+                  className={`rounded-[20px] float-right ml-4 w-full lg:w-1/2 hidden lg:block ${
                     resolvedTheme === "dark"
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
@@ -139,7 +139,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
               <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] ">
                 {introSection?.title}
               </p>
-              <div className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 min-w-full mb-4 dark:text-white text-[#565AC2]">
+              <div className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-4 md:mb-0 min-w-full dark:text-white text-[#565AC2]">
                 {introSection?.mainText &&
                   documentToReactComponents(introSection.mainText.json, options)}
               </div>
@@ -163,8 +163,8 @@ export default function TokenomicsClient({ tokenomicsData }) {
       </div>
 
       {/* Tokenomics Section */}
-      <div className="flex flex-col items-center md:items-center mb-8 md:mt-28 mt-5 h-fit flex-grow mx-auto">
-        <div className="text-left flex flex-col gap-4">
+      <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col items-center md:items-center h-fit flex-grow">
+        <div className="text-left flex flex-col">
           <p className="brightText text-center max-w-xl text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
             {secondSection?.title}
           </p>
@@ -225,7 +225,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
       </div>
 
       {/* sPRIME Allows anyone to */}
-      <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
+      <div className="my-mobile-spacing md:my-desktop-spacing rounded-[20px] flex-1 p-4 parentColoredBorderWrapper">
         <div className="rounded-[20px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
           <p className="smallBrigthText text-center pt-12 mb-16 !font-bold dark:text-white text-[#6B70ED]">
             sPRIME allows anyone to
@@ -272,7 +272,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
       </div>
 
       {/* sPRIME Enables Section */}
-      <div className="rounded-[20px] flex-1 p-4 parentColoredBorderWrapper mt-12 mb-16">
+      <div className="my-mobile-spacing md:my-desktop-spacing rounded-[20px] flex-1 p-4 parentColoredBorderWrapper">
         <div className="rounded-[25px] px-8 md:px-10 lg:px-18 z-20 pb-12 dark:bg-deltaDarkBlueBG bg-deltaWhiteLinearBG h-full">
           <p className="smallBrigthText text-center pt-12 mb-16 !font-bold dark:text-white text-[#6B70ED]">
             sPRIME enables DeltaPrime to
@@ -322,11 +322,11 @@ export default function TokenomicsClient({ tokenomicsData }) {
 
       {/* Text Wrapper */}
 
-      <div className="flex lg:flex-row flex-col-reverse justify-center items-center w-full md:gap-5 gap-2 mt-10 md:my-40 mx-auto">
+      <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col-reverse justify-center items-center w-full md:gap-5 gap-2">
         <div className="rounded-[25px] ">
         {fifthSection?.image && (
           <Image
-            className={`rounded-[20px] mr-2 xl:mr-10 mb-4 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
+            className={`rounded-[20px] mr-2 md:mr-10 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
               resolvedTheme === "dark" ? "shadow-custom-dark" : "shadow-custom-light"
             }`}
             src={`${fifthSection.image.url}`}
@@ -337,12 +337,12 @@ export default function TokenomicsClient({ tokenomicsData }) {
         )}
         </div>
 
-        <div className="flex flex-col w-full md:mb-8 mb-0 justify-between items-center lg:items-start h-fit lg:w-fit">
+        <div className="flex flex-col w-full justify-between items-center lg:items-start h-fit lg:w-fit">
           <h3 className="brightText text-center md:text-left text-wrap max-w-full mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
             {fifthSection?.title}
           </h3>
 
-          <div className="whiteMainText text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 max-w-[40rem] dark:text-white text-[#565AC2] ">
+          <div className="whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 max-w-[40rem] dark:text-white text-[#565AC2] ">
             {fifthSection?.mainText &&
               documentToReactComponents(fifthSection.mainText.json, options)}
           </div>
@@ -363,7 +363,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
       </div>
 
       {/* Second Section */}
-      <div className="mb-16">
+      <div className="my-mobile-spacing md:my-desktop-spacing">
         <p className="brightText text-wrap mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] text-center">
           {sixthSection?.title}
         </p>
@@ -374,7 +374,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
       </div>
 
       {/* graph */}
-      <div className="flex flex-col items-center md:items-center mb-8 md:mt-28 mt-5 h-fit flex-grow mx-auto">
+      <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col items-center md:items-center h-fit flex-grow">
         <div className="text-left flex flex-col gap-4">
           <p className="brightText text-center max-w-xl text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
             {seventhSection?.title || "Token Distribution"}
@@ -395,16 +395,16 @@ export default function TokenomicsClient({ tokenomicsData }) {
       </div>
       {/* end of graph */}
 
-      <div className="flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10 my-10 md:my-40">
+      <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10">
         {/* Text Wrapper */}
-        <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit flex-grow">
+        <div className="flex flex-col justify-between items-center md:items-start h-fit flex-grow">
           <div className="text-left flex flex-col gap-4 dark:text-white text-[#252948] w-full">
             <div className="clearfix">
               {/* image that shows on desktop only */}
               {eigthSection?.image && (
 
                 <Image
-                  className={`rounded-[20px] float-right ml-10 mb-4 w-full lg:w-1/2 hidden lg:block  ${
+                  className={`rounded-[20px] float-right ml-10 w-full lg:w-1/2 hidden lg:block  ${
                     resolvedTheme === "dark"
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
@@ -429,7 +429,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
 
               {eigthSection?.image && (
                 <Image
-                  className={`rounded-[20px] float-right ml-10 mb-4 w-full lg:w-1/2 block lg:hidden mt-10  ${
+                  className={`rounded-[20px] float-right ml-10 mb-4 w-full lg:w-1/2 block lg:hidden mt-2  ${
                     resolvedTheme === "dark"
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"

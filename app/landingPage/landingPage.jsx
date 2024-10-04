@@ -58,6 +58,7 @@ const LandingPage = ({ blogPreviewCardData, totalTvl, sectionsCollection }) => {
           <IntergrationsSection sixthSection={sixthSection} options={options} />
         </Features>
         <OurTokenSection seventhSection={seventhSection} eighthSection={eighthSection} ninthSection={ninthSection} options={options} />
+        
       </div>
       <AboutSection tenthSection={tenthSection} options={options} />
       <div
@@ -69,9 +70,10 @@ const LandingPage = ({ blogPreviewCardData, totalTvl, sectionsCollection }) => {
       >
         <BlogPreviewSection blogPreviewCardData={blogPreviewCardData} eleventhSection={eleventhSection} options={options} />
         <SecuritySection />
-        <div className={`sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]`}>
-          <ContactForm />
-        </div>
+    {/* Contact Form Section with separate styling */}
+    <div className="px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] 2xl:px-[15%] pb-mobile-spacing md:pb-desktop-spacing"> 
+      <ContactForm isLanding={true}/>
+    </div>
       </div>
     </div>
   );
