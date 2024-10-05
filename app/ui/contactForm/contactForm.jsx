@@ -30,7 +30,6 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // Validation to check if fields are filled
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("All fields are required.", {
         position: "top-right",
@@ -44,23 +43,36 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
       return;
     }
 
-    // Let the form submit to FormSubmit by invoking submit method
-    toast.success("Thanks for reaching out. We will contact you soon.", {
-      position: "top-right",
-      autoClose: 6000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: resolvedTheme === "dark" ? "dark" : "light",
+    // Show pending state
+    const testSend = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        e.target.submit();
+        resolve();
+      }, 2000);
     });
 
-    // Submit the form after validation
-    e.target.submit();
-
-    // Reset form fields after submission
-    resetForm();
+    toast.promise(
+      testSend,
+      {
+        pending: "Pending...",
+        success: {
+          render: () =>
+            "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+          onClose: () => resetForm(), // Reset the form after the submission
+        },
+        error: "Something went wrong. Please try again later.",
+      },
+      {
+        position: "top-right",
+        autoClose: 6000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: resolvedTheme === "dark" ? "dark" : "light",
+      }
+    );
   };
 
   return (
@@ -87,7 +99,6 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
             </p>
           </div>
         </div>
-
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
           <form
@@ -98,9 +109,12 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
           >
             {/* Hidden Inputs for FormSubmit Configuration */}
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://your-thank-you-page.com"
+            />
 
-            {/* Form Fields */}
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
@@ -119,7 +133,6 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   required
                 />
               </div>
-
               <div className="mb-4 flex-1">
                 <label
                   className="block dark:text-white text-[#6B70ED] font-bold mb-2 text-[12px] md:text-[17px]"
