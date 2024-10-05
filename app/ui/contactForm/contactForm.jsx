@@ -47,7 +47,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
     setIsSubmitting(true); // Set loading state
     try {
       const response = await fetch(
-        "https://formsubmit.co/ajax/021c06f8f0e573140e17b029ced2a16b",
+        "https://formsubmit.co/contact@deltaprime.io",
         {
           method: "POST",
           headers: {
@@ -125,13 +125,8 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
             <input type="hidden" name="_captcha" value="false" />
             <input
               type="hidden"
-              name="_next"
-              value="https://formsubmit.co/contact@deltaprime.io"
-            />
-            <input
-              type="hidden"
               name="_url"
-              value="https://formsubmit.co/contact@deltaprime.io"
+              value="https://deltaprime.io/contact"
             />
 
             <div className="flex gap-5">
