@@ -9,12 +9,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
   const { resolvedTheme } = useTheme();
-  const [isSubmitting, setIsSubmitting] = useState(false); // Add loading state
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Manually trigger a success message
+  const handleFormSubmit = () => {
     toast.success(
       "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
       {
@@ -28,7 +25,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         theme: resolvedTheme === "dark" ? "dark" : "light",
       }
     );
-    setIsSubmitting(true); // Set loading state
+    setIsSubmitting(false);
   };
 
   return (
@@ -61,22 +58,20 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
             className="w-full max-w-lg mx-auto"
             action="https://formsubmit.co/contact@deltaprime.io"
             method="POST"
-            onSubmit={handleSubmit}
+            onSubmit={handleFormSubmit}
           >
             {/* Hidden Inputs for FormSubmit Configuration */}
             <input type="hidden" name="_captcha" value="false" />
-            {/* <input type="hidden" name="_next" value="https://deltaprime.io" /> */}
             <input
               type="hidden"
               name="_url"
-              value="https://deltaprime.io/contact"
+              value="https://deltaprime.io/contact.html"
             />
 
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
-                  className="block dark:text-white text-[#6B70ED
-                font-bold mb-2 text-[12px] md:text-[17px]"
+                  className="block dark:text-white text-[#6B70ED font-bold mb-2 text-[12px] md:text-[17px]"
                   htmlFor="name"
                 >
                   Name
@@ -84,11 +79,11 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                 <input
                   className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                   id="name"
-                  name="name" // Added name attribute for form submission
+                  name="name"
                   type="text"
                   placeholder="Your Name"
                   required
-                  disabled={isSubmitting} // Disable input during submission
+                  disabled={isSubmitting}
                 />
               </div>
               <div className="mb-4 flex-1">
@@ -101,11 +96,11 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                 <input
                   className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                   id="email"
-                  name="email" // Added name attribute for form submission
+                  name="email"
                   type="email"
                   placeholder="Your Email"
                   required
-                  disabled={isSubmitting} // Disable input during submission
+                  disabled={isSubmitting}
                 />
               </div>
             </div>
@@ -120,7 +115,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
               <textarea
                 className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                 id="message"
-                name="message" // Added name attribute for form submission
+                name="message" // Ensure name attribute is set
                 placeholder="Your Message"
                 required
                 disabled={isSubmitting} // Disable input during submission
