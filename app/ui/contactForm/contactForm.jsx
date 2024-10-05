@@ -123,6 +123,11 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
           <form className="w-full max-w-lg mx-auto" onSubmit={handleSubmit}>
             {/* Hidden Inputs for FormSubmit Configuration */}
             <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://deltaprime.io"
+            ></input>
 
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
