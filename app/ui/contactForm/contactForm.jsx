@@ -126,7 +126,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
             <input
               type="hidden"
               name="_url"
-              value="https://deltaprime.io/contact"
+              value="https://deltaprime.io/contact-us.html"
             />
 
             <div className="flex gap-5">
