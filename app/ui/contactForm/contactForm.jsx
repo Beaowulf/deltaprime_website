@@ -27,7 +27,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
     });
   };
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
@@ -43,25 +43,9 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
       return;
     }
 
-    // Show pending state
-    const testSend = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        e.target.submit();
-        resolve();
-      }, 2000);
-    });
-
-    toast.promise(
-      testSend,
-      {
-        pending: "Pending...",
-        success: {
-          render: () =>
-            "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
-          onClose: () => resetForm(), // Reset the form after the submission
-        },
-        error: "Something went wrong. Please try again later.",
-      },
+    // Simulate success notification and reset form after a delay
+    toast.success(
+      "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
       {
         position: "top-right",
         autoClose: 6000,
@@ -71,8 +55,12 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         draggable: true,
         progress: undefined,
         theme: resolvedTheme === "dark" ? "dark" : "light",
+        onClose: () => setTimeout(resetForm, 1000),
       }
     );
+
+    // Submit the form natively without JS
+    e.target.submit(); // Native HTML form submission
   };
 
   return (
@@ -105,7 +93,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
             className="w-full max-w-lg mx-auto"
             action="https://formsubmit.co/021c06f8f0e573140e17b029ced2a16b"
             method="POST"
-            onSubmit={sendEmail}
+            onSubmit={handleSubmit}
           >
             {/* Hidden Inputs for FormSubmit Configuration */}
             <input type="hidden" name="_captcha" value="false" />
