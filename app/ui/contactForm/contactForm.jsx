@@ -14,22 +14,84 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
     email: "",
     message: "",
   });
-  const [isModalVisible, setIsModalVisible] = useState(false); // Modal state
+  const [isSubmitting, setIsSubmitting] = useState(false); // Add loading state
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Simulate successful form submission
-    setIsModalVisible(true); // Show modal after submission
-    setFormData({ name: "", email: "", message: "" }); // Reset form
-  };
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error("All fields are required.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: resolvedTheme === "dark" ? "dark" : "light",
+      });
+      return;
+    }
 
-  const closeModal = () => {
-    setIsModalVisible(false);
+    setIsSubmitting(true); // Set loading state
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/021c06f8f0e573140e17b029ced2a16b",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        toast.success(
+          "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+          {
+            position: "top-right",
+            autoClose: 6000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: resolvedTheme === "dark" ? "dark" : "light",
+          }
+        );
+        resetForm(); // Reset the form after submission
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast.error("Something went wrong. Please try again later.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: resolvedTheme === "dark" ? "dark" : "light",
+      });
+    } finally {
+      setIsSubmitting(false); // Reset loading state
+    }
   };
 
   return (
@@ -58,19 +120,16 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         </div>
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
-          <form
-            action="https://formsubmit.co/021c06f8f0e573140e17b029ced2a16b"
-            method="POST"
-            onSubmit={handleSubmit}
-          >
+          <form className="w-full max-w-lg mx-auto" onSubmit={handleSubmit}>
             {/* Hidden Inputs for FormSubmit Configuration */}
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://deltaprime.io" />
             <input
               type="hidden"
               name="_url"
               value="https://deltaprime.io/contact"
-            />{" "}
-            {/* Add this */}
+            />
+
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
@@ -82,12 +141,12 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                 <input
                   className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                   id="name"
-                  name="name"
                   type="text"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting} // Disable input during submission
                 />
               </div>
               <div className="mb-4 flex-1">
@@ -100,15 +159,16 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                 <input
                   className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                   id="email"
-                  name="email"
                   type="email"
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting} // Disable input during submission
                 />
               </div>
             </div>
+
             <div className="mb-6">
               <label
                 className="block dark:text-white text-[#6B70ED] font-bold mb-2 text-[12px] md:text-[17px]"
@@ -119,13 +179,14 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
               <textarea
                 className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                 id="message"
-                name="message"
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting} // Disable input during submission
               ></textarea>
             </div>
+
             <div className="flex items-center justify-center">
               <DeltaPurpleButton
                 buttonClassName={"w-full"}
@@ -133,32 +194,14 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   "w-full flex items-center justify-center py-3 h-[50px] md:h-full"
                 }
                 typographyClass={"text-[15px]"}
-                label={"SUBMIT"}
+                label={isSubmitting ? "Submitting..." : "SUBMIT"} // Change button text during submission
                 type="submit"
+                disabled={isSubmitting} // Disable button during submission
               />
             </div>
           </form>
         </div>
       </div>
-
-      {/* Modal */}
-      {isModalVisible && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white rounded-lg p-8">
-            <h2 className="text-lg font-bold text-center mb-4">Thank You!</h2>
-            <p>
-              Your message has been sent successfully. We will get back to you
-              shortly.
-            </p>
-            <button
-              className="mt-4 bg-purple-500 text-white py-2 px-4 rounded"
-              onClick={closeModal}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
