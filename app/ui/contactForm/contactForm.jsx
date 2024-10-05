@@ -98,11 +98,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
           >
             {/* Hidden Inputs for FormSubmit Configuration */}
             <input type="hidden" name="_captcha" value="false" />
-            <input
-              type="hidden"
-              name="_next"
-              value="https://your-thank-you-page.com"
-            />
+            <input type="hidden" name="_next" />
 
             {/* Form Fields */}
             <div className="flex gap-5">
