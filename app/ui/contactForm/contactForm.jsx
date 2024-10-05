@@ -14,6 +14,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false); // Add loading state
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -27,7 +28,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
@@ -43,24 +44,54 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
       return;
     }
 
-    // Simulate success notification and reset form after a delay
-    toast.success(
-      "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
-      {
+    setIsSubmitting(true); // Set loading state
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/021c06f8f0e573140e17b029ced2a16b",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        toast.success(
+          "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+          {
+            position: "top-right",
+            autoClose: 6000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: resolvedTheme === "dark" ? "dark" : "light",
+          }
+        );
+        resetForm(); // Reset the form after submission
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast.error("Something went wrong. Please try again later.", {
         position: "top-right",
-        autoClose: 6000,
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-        progress: undefined,
         theme: resolvedTheme === "dark" ? "dark" : "light",
-        onClose: () => setTimeout(resetForm, 1000),
-      }
-    );
-
-    // Submit the form natively without JS
-    e.target.submit(); // Native HTML form submission
+      });
+    } finally {
+      setIsSubmitting(false); // Reset loading state
+    }
   };
 
   return (
@@ -89,19 +120,9 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         </div>
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
-          <form
-            className="w-full max-w-lg mx-auto"
-            action="https://formsubmit.co/021c06f8f0e573140e17b029ced2a16b"
-            method="POST"
-            onSubmit={handleSubmit}
-          >
+          <form className="w-full max-w-lg mx-auto" onSubmit={handleSubmit}>
             {/* Hidden Inputs for FormSubmit Configuration */}
             <input type="hidden" name="_captcha" value="false" />
-            <input
-              type="hidden"
-              name="_next"
-              value="https://your-thank-you-page.com"
-            />
 
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
@@ -119,6 +140,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting} // Disable input during submission
                 />
               </div>
               <div className="mb-4 flex-1">
@@ -136,6 +158,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting} // Disable input during submission
                 />
               </div>
             </div>
@@ -154,6 +177,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                 value={formData.message}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting} // Disable input during submission
               ></textarea>
             </div>
 
@@ -164,8 +188,9 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   "w-full flex items-center justify-center py-3 h-[50px] md:h-full"
                 }
                 typographyClass={"text-[15px]"}
-                label={"SUBMIT"}
+                label={isSubmitting ? "Submitting..." : "SUBMIT"} // Change button text during submission
                 type="submit"
+                disabled={isSubmitting} // Disable button during submission
               />
             </div>
           </form>
