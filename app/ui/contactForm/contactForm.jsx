@@ -14,9 +14,22 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
     email: "",
     message: "",
   });
+  const [isModalVisible, setIsModalVisible] = useState(false); // Modal state
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Simulate successful form submission
+    setIsModalVisible(true); // Show modal after submission
+    setFormData({ name: "", email: "", message: "" }); // Reset form
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
   };
 
   return (
@@ -48,10 +61,10 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
           <form
             action="https://formsubmit.co/021c06f8f0e573140e17b029ced2a16b"
             method="POST"
+            onSubmit={handleSubmit}
           >
             {/* Hidden Inputs for FormSubmit Configuration */}
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://deltaprime.io" />
             <input
               type="hidden"
               name="_url"
@@ -127,6 +140,25 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
           </form>
         </div>
       </div>
+
+      {/* Modal */}
+      {isModalVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white rounded-lg p-8">
+            <h2 className="text-lg font-bold text-center mb-4">Thank You!</h2>
+            <p>
+              Your message has been sent successfully. We will get back to you
+              shortly.
+            </p>
+            <button
+              className="mt-4 bg-purple-500 text-white py-2 px-4 rounded"
+              onClick={closeModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
