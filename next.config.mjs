@@ -35,8 +35,15 @@ const nextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value:
-              "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://www.google.com https://www.googletagmanager.com; font-src 'self' data: https://your-font-host.com; img-src 'self' https://images.ctfassets.net data:; connect-src 'self' https://oracle-gateway-2.a.redstone.finance https://2t8cq5jra.execute-api.us-east-1.amazonaws.com https://cdn.contentful.com https://formsubmit.co; frame-src 'self' https://www.youtube.com;",
+            value: `
+              default-src 'self'; 
+              style-src 'self' 'unsafe-inline'; 
+              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://www.google.com https://www.googletagmanager.com https://static.cloudflareinsights.com; 
+              font-src 'self' data: https://your-font-host.com; 
+              img-src 'self' https://images.ctfassets.net data:; 
+              connect-src 'self' https://oracle-gateway-2.a.redstone.finance https://2t8cq5jra.execute-api.us-east-1.amazonaws.com https://cdn.contentful.com https://formsubmit.co https://region1.google-analytics.com; 
+              frame-src 'self' https://www.youtube.com;
+            `,
           },
           {
             key: "X-Content-Type-Options",
@@ -52,7 +59,7 @@ const nextConfig = {
           },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://deltaprime.io",
+            value: "*",
           },
           {
             key: "Access-Control-Allow-Methods",
