@@ -59,7 +59,7 @@ const nextConfig = {
           },
           {
             key: "Access-Control-Allow-Origin",
-            value: "*",
+            value: "https://deltaprime.io",
           },
           {
             key: "Access-Control-Allow-Methods",
