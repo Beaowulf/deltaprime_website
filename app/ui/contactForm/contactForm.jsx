@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import axios from "axios";
 import { useTheme } from "next-themes";
 import "./contactForm.css";
 import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
@@ -12,53 +11,21 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
   const { resolvedTheme } = useTheme();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Create FormData object from form data
-    const form = e.target;
-    const formData = new FormData(form);
-
-    try {
-      // Send the form data via AJAX
-      const response = await axios.post(
-        "https://formsubmit.co/ajax/contact@deltaprime.io", // Ajax endpoint
-        formData,
-        { headers: { "Content-Type": "multipart/form-data" } } // Correct headers
-      );
-
-      if (response.status === 200) {
-        toast.success(
-          "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
-          {
-            position: "top-right",
-            autoClose: 6000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: resolvedTheme === "dark" ? "dark" : "light",
-          }
-        );
-        form.reset();
-      } else {
-        throw new Error("Form submission failed.");
-      }
-    } catch (error) {
-      toast.error("An error occurred. Please try again later.", {
+  const handleFormSubmit = () => {
+    toast.success(
+      "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+      {
         position: "top-right",
         autoClose: 6000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
+        progress: undefined,
         theme: resolvedTheme === "dark" ? "dark" : "light",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+      }
+    );
+    setIsSubmitting(false);
   };
 
   return (
@@ -87,7 +54,19 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         </div>
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
-          <form className="w-full max-w-lg mx-auto" onSubmit={handleFormSubmit}>
+          <form
+            className="w-full max-w-lg mx-auto"
+            action="https://formsubmit.co/contact@deltaprime.io"
+            method="POST"
+            onSubmit={handleFormSubmit}
+          >
+            {/* Hidden Inputs for FormSubmit Configuration */}
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_url"
+              value="https://deltaprime.io/contact.html"
+            />
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
