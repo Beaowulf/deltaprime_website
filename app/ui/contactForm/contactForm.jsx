@@ -14,32 +14,38 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setIsSubmitting(true); // Set loading state
 
     const form = e.target;
-    const formData = new FormData(form);
+    const formData = new FormData(form); // Collect form data
 
     try {
-      await axios.post(
+      const response = await axios.post(
         "https://formsubmit.co/ajax/contact@deltaprime.io",
         formData
       );
 
-      toast.success(
-        "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
-        {
-          position: "top-right",
-          autoClose: 6000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: resolvedTheme === "dark" ? "dark" : "light",
-        }
-      );
-      form.reset();
+      // Check if the response is successful
+      if (response.status === 200) {
+        toast.success(
+          "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+          {
+            position: "top-right",
+            autoClose: 6000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: resolvedTheme === "dark" ? "dark" : "light",
+          }
+        );
+        form.reset(); // Reset the form after submission
+      } else {
+        throw new Error("Form submission failed");
+      }
     } catch (error) {
+      console.error("Form submission error:", error); // Log the error for debugging
       toast.error("An error occurred. Please try again later.", {
         position: "top-right",
         autoClose: 6000,
@@ -47,11 +53,10 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-        progress: undefined,
         theme: resolvedTheme === "dark" ? "dark" : "light",
       });
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false); // Reset loading state
     }
   };
 
@@ -82,13 +87,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
           <form className="w-full max-w-lg mx-auto" onSubmit={handleFormSubmit}>
-            {/* Hidden Inputs for FormSubmit Configuration */}
-            {/* <input type="hidden" name="_captcha" value="false" />
-            <input
-              type="hidden"
-              name="_url"
-              value="https://deltaprime.io/contact.html"
-            /> */}
+            {/* Form Fields */}
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
@@ -136,10 +135,10 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
               <textarea
                 className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                 id="message"
-                name="message" // Ensure name attribute is set
+                name="message"
                 placeholder="Your Message"
                 required
-                disabled={isSubmitting} // Disable input during submission
+                disabled={isSubmitting}
               ></textarea>
             </div>
 
@@ -150,9 +149,9 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   "w-full flex items-center justify-center py-3 h-[50px] md:h-full"
                 }
                 typographyClass={"text-[15px]"}
-                label={isSubmitting ? "Submitting..." : "SUBMIT"} // Change button text during submission
+                label={isSubmitting ? "Submitting..." : "SUBMIT"}
                 type="submit"
-                disabled={isSubmitting} // Disable button during submission
+                disabled={isSubmitting}
               />
             </div>
           </form>
