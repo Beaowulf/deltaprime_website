@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import axios from "axios";
 import { useTheme } from "next-themes";
 import "./contactForm.css";
 import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
@@ -40,7 +41,14 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
       form.reset();
     } catch (error) {
       toast.error("An error occurred. Please try again later.", {
-        // ... toast options ...
+        position: "top-right",
+        autoClose: 6000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: resolvedTheme === "dark" ? "dark" : "light",
       });
     } finally {
       setIsSubmitting(false);
