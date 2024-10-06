@@ -14,18 +14,20 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true); // Set loading state
+    setIsSubmitting(true);
 
+    // Create FormData object from form data
     const form = e.target;
-    const formData = new FormData(form); // Collect form data
+    const formData = new FormData(form);
 
     try {
+      // Send the form data via AJAX
       const response = await axios.post(
-        "https://formsubmit.co/ajax/contact@deltaprime.io",
-        formData
+        "https://formsubmit.co/ajax/contact@deltaprime.io", // Ajax endpoint
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } } // Correct headers
       );
 
-      // Check if the response is successful
       if (response.status === 200) {
         toast.success(
           "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
@@ -40,12 +42,11 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
             theme: resolvedTheme === "dark" ? "dark" : "light",
           }
         );
-        form.reset(); // Reset the form after submission
+        form.reset();
       } else {
-        throw new Error("Form submission failed");
+        throw new Error("Form submission failed.");
       }
     } catch (error) {
-      console.error("Form submission error:", error); // Log the error for debugging
       toast.error("An error occurred. Please try again later.", {
         position: "top-right",
         autoClose: 6000,
@@ -56,7 +57,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         theme: resolvedTheme === "dark" ? "dark" : "light",
       });
     } finally {
-      setIsSubmitting(false); // Reset loading state
+      setIsSubmitting(false);
     }
   };
 
@@ -87,7 +88,6 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
           <form className="w-full max-w-lg mx-auto" onSubmit={handleFormSubmit}>
-            {/* Form Fields */}
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
@@ -135,10 +135,10 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
               <textarea
                 className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                 id="message"
-                name="message"
+                name="message" // Ensure name attribute is set
                 placeholder="Your Message"
                 required
-                disabled={isSubmitting}
+                disabled={isSubmitting} // Disable input during submission
               ></textarea>
             </div>
 
@@ -149,9 +149,9 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
                   "w-full flex items-center justify-center py-3 h-[50px] md:h-full"
                 }
                 typographyClass={"text-[15px]"}
-                label={isSubmitting ? "Submitting..." : "SUBMIT"}
+                label={isSubmitting ? "Submitting..." : "SUBMIT"} // Change button text during submission
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting} // Disable button during submission
               />
             </div>
           </form>
