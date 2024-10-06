@@ -11,21 +11,40 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
   const { resolvedTheme } = useTheme();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleFormSubmit = () => {
-    toast.success(
-      "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
-      {
-        position: "top-right",
-        autoClose: 6000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: resolvedTheme === "dark" ? "dark" : "light",
-      }
-    );
-    setIsSubmitting(false);
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      await axios.post(
+        "https://formsubmit.co/ajax/contact@deltaprime.io",
+        formData
+      );
+
+      toast.success(
+        "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+        {
+          position: "top-right",
+          autoClose: 6000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: resolvedTheme === "dark" ? "dark" : "light",
+        }
+      );
+      form.reset();
+    } catch (error) {
+      toast.error("An error occurred. Please try again later.", {
+        // ... toast options ...
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -54,20 +73,14 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         </div>
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
-          <form
-            className="w-full max-w-lg mx-auto"
-            action="https://formsubmit.co/contact@deltaprime.io"
-            method="POST"
-            onSubmit={handleFormSubmit}
-          >
+          <form className="w-full max-w-lg mx-auto" onSubmit={handleFormSubmit}>
             {/* Hidden Inputs for FormSubmit Configuration */}
-            <input type="hidden" name="_captcha" value="false" />
+            {/* <input type="hidden" name="_captcha" value="false" />
             <input
               type="hidden"
               name="_url"
               value="https://deltaprime.io/contact.html"
-            />
-
+            /> */}
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
