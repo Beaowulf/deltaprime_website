@@ -325,20 +325,20 @@ const OurStory = () => {
       <div className="bg-purpleGradient w-full mt-40" id="job-description">
         <div className="pagePaddingMedium px-4 py-32">
           <div className="flex justify-around flex-wrap px-4 md:px-0 items-start">
-            <div className="flex flex-col items-start max-w-[30rem] mb-8">
+            <div className="flex flex-col items-start lg:w-[61rem] mb-8">
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-white leading-6">
                 CAREERS
               </h4>
               <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] text text-center text-white ">
                 Join our team
               </h2>
-              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-white">
+              <p className="aboutTypographyparagraph w-full md:leading-6 leading-4 !text-white">
                 DeltaPrime is a decentralised borrowing and investing ecosystem,
                 unlocking trapped liquidity across chains. Users can easily
                 deposit and borrow funds to increase the power of their usual
                 DeFi investments.
               </p>
-              <p className="aboutTypographyparagraph max-w-2xl md:leading-6 leading-4 !text-white mt-4">
+              <p className="aboutTypographyparagraph w-full md:leading-6 leading-4 !text-white mt-4">
                 Our team is international, with talent from all over the world.
                 We embrace a fully remote working model, allowing team members
                 to collaborate and innovate from wherever they want.
