@@ -324,8 +324,8 @@ const OurStory = () => {
       {/* join our team */}
       <div className="bg-purpleGradient w-full mt-40" id="job-description">
         <div className="pagePaddingMedium px-4 py-32">
-          <div className="flex justify-around flex-wrap px-4 md:px-0 items-center">
-            <div className="flex flex-col items-start max-w-[30rem] mb-8 md:mb-0">
+          <div className="flex justify-around flex-wrap px-4 md:px-0 items-start">
+            <div className="flex flex-col items-start max-w-[30rem] mb-8">
               <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12 px] text-center text-white leading-6">
                 CAREERS
               </h4>
@@ -376,6 +376,40 @@ const OurStory = () => {
                     isLink={true}
                     forcePurpleArrow={true}
                     href="/job-description/Senior-DevOps-Engineer"
+                    typographyClass="text-[#565AC2]"
+                    label={"Learn More"}
+                    hasArrowRight={true}
+                  />
+                }
+              />
+              <JobDescriptionBox
+                title="Lead DeFi Security Engineer"
+                textOne="Either Part-Time or Full-Time"
+                textTwo="REMOTE"
+                textThree="SECURITY ENGINEER"
+                buttonElement={
+                  <DeltaWhiteButton
+                    isSmallbtn={true}
+                    isLink={true}
+                    forcePurpleArrow={true}
+                    href="/job-description/Lead-DeFi-Security-Engineer"
+                    typographyClass="text-[#565AC2]"
+                    label={"Learn More"}
+                    hasArrowRight={true}
+                  />
+                }
+              />
+              <JobDescriptionBox
+                title="Head of Security and DevOps"
+                textOne="Either Part-Time or Full-Time"
+                textTwo="REMOTE"
+                textThree="Head of Security and DevOps"
+                buttonElement={
+                  <DeltaWhiteButton
+                    isSmallbtn={true}
+                    isLink={true}
+                    forcePurpleArrow={true}
+                    href="/job-description/Head-of-Security-and-DevOps"
                     typographyClass="text-[#565AC2]"
                     label={"Learn More"}
                     hasArrowRight={true}

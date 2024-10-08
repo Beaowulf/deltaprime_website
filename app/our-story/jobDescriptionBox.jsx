@@ -12,9 +12,9 @@ const JobDescriptionBox = ({
 }) => {
   return (
     <div className="jobDescriptionBoxWrapper">
-      <div className="jobDescriptionItemWrapper md:py-6 md:pr-6 md:pl-12 p-4 flex md:flex-row flex-col items-center justify-between gap-8 md:gap-32">
+      <div className="jobDescriptionItemWrapper md:py-6 md:pr-6 md:pl-12 p-4 flex md:flex-row flex-col items-start justify-between gap-8 md:gap-32">
         {/* left */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 z-50">
           <div className="flex flex-row gap-8 items-center">
             <Image
               src={BriefCaseIcon}
