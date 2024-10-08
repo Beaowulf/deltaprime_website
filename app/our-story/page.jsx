@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import "./ourStory.css";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { fetchTvlData } from "@/lib/getCryptoData";
 import {
   DeltaPurpleButton,
@@ -17,7 +16,6 @@ import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
 import FounderCard from "./cards/founderCard";
 import AdvisorCard from "./cards/advisorCard";
-import { BlogCardButton } from "@/app/components/buttons/mainButton";
 import JakubImage from "@/public/assets/img/images/avatars/Jakub.png";
 import KamilImage from "@/public/assets/img/images/avatars/Kamil.jpeg";
 import PiotrImage from "@/public/assets/img/images/avatars/Piotr.png";
@@ -27,6 +25,7 @@ import avaxImage from "@/public/assets/img/images/avatars/hn_avax.png";
 import AdvisorCardCarousel from "./carouselsForCards/advisorCardCarousel";
 import FounderCardCarousel from "./carouselsForCards/founderCardCarousel";
 import JobDescriptionBox from "@/app/our-story/jobDescriptionBox";
+import ScrollToJobDescription from "./scrollerToJobDescription";
 
 const tvlData = await fetchTvlData();
 const tvtDataFormated = tvlData.totalTvl.slice(0, 2);
@@ -322,6 +321,7 @@ const OurStory = () => {
       </div>
 
       {/* join our team */}
+      <ScrollToJobDescription />
       <div className="bg-purpleGradient w-full mt-40" id="job-description">
         <div className="pagePaddingMedium px-4 py-32">
           <div className="flex justify-around flex-wrap px-4 md:px-0 items-start">
