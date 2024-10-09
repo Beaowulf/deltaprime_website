@@ -28,7 +28,7 @@ function Head_of_Security_and_DevOps() {
           <div className="descriptionContent md:px-50 md:py-45 p-10">
             <p className="text-4xl font-bold">Head of Security and DevOps</p>
             <p className="text-2xl font-medium mt-3">
-              Remote - Either Part-Time or Full-Time
+              Remote - Part-Time or Full-Time
             </p>
             <div className="w-[90%] h-[1px] bg-[#fab391] my-4" />
 

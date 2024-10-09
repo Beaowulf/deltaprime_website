@@ -384,7 +384,7 @@ const OurStory = () => {
               />
               <JobDescriptionBox
                 title="Lead DeFi Security Engineer"
-                textOne="Either Part-Time or Full-Time"
+                textOne="Part-Time or Full-Time"
                 textTwo="REMOTE"
                 textThree="SECURITY ENGINEER"
                 buttonElement={
@@ -401,7 +401,7 @@ const OurStory = () => {
               />
               <JobDescriptionBox
                 title="Head of Security and DevOps"
-                textOne="Either Part-Time or Full-Time"
+                textOne="Part-Time or Full-Time"
                 textTwo="REMOTE"
                 textThree="Head of Security and DevOps"
                 buttonElement={
