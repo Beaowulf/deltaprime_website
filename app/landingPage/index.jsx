@@ -71,7 +71,7 @@ const HomePage = async () => {
 
   await delay(500); // Delay for 500 milliseconds
   const tvlData = await fetchTvlData();
-  // console.log(tvlData);
+  console.log(tvlData);
 
   return (
     <>
