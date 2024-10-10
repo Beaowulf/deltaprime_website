@@ -125,7 +125,7 @@ export function RoundButtonLinks({ hasText = true }) {
 
 const TermsOfUseFooter = ({ isTokenomics, isStrategies }) => {
   return (
-    <div className="w-full py-6 md:mt-32 mt-11 md:px-0 px-7 relative">
+    <div className="w-full py-6 md:mt-20 mt-11 md:px-0 px-7 relative">
       <div className="bg-deltaPurpleLinearGradient dark:bg-deltaColoredLinearGradient h-[2px] mb-4"></div>
       <div className="container flex flex-col-reverse sm:flex-row justify-between items-center text-white">
         <p className="text-sm text-center sm:text-left mt-6 md:mt-0">

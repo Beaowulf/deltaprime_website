@@ -1,37 +1,125 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react"; // Make sure to import these
 import Image from "next/image";
 import "./strategyPost.css";
 import Link from "next/link";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 import RichTextRenderer from "@/app/components/richTetxtRenderer/richTextRenderer";
-import adImg from "@/public/assets/img/adImg.png";
 import strategiesIntroImg from "@/public/assets/img/images/strategieHeroImage.jpg";
-import strategiespostImg from "@/public/assets/img/flipCardBG.png";
-
-import {
-  MainButton,
-  AboutButtonDarkBG,
-  DeltaPurpleButton,
-} from "@/app/components/buttons/mainButton";
+import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
 import CryptoPreviewTables from "@/app/components/cryptoTables/cryptoTables";
 import {
   DesktopCardCarousel,
   FlipCardMobileCarousel,
 } from "@/app/strategies/strategyFlipCards";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
+
+const sanitizeId = (text) => {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .trim();
+};
+
+const extractTextFromChildren = (children) => {
+  if (!Array.isArray(children)) {
+    children = [children];
+  }
+
+  return children
+    .map((child) => {
+      if (typeof child === "string") {
+        return child;
+      } else if (React.isValidElement(child)) {
+        return extractTextFromChildren(child.props.children);
+      }
+      return "";
+    })
+    .join("");
+};
 
 const StrategyDetail = ({ strategy, strategies }) => {
   const paragraph = documentToPlainTextString(strategy.strategyRichText);
   const strategyHeroImage =
     "https:" + strategy.strategyHeroImage.fields.file.url;
 
+  const [headings, setHeadings] = useState([]);
+  const [activeHeading, setActiveHeading] = useState(null);
+
+  useEffect(() => {
+    const collectedHeadings = [];
+    const handleHeadingRender = (id, title) => {
+      collectedHeadings.push({ id, title });
+    };
+
+    documentToReactComponents(strategy.strategyRichText, {
+      renderNode: {
+        [BLOCKS.HEADING_2]: (node, children) => {
+          const text = extractTextFromChildren(children);
+          const id = sanitizeId(text);
+          handleHeadingRender(id, text);
+          return (
+            <h2 id={id} className="text-lg font-bold my-4">
+              {children}
+            </h2>
+          );
+        },
+      },
+    });
+
+    setHeadings(collectedHeadings);
+
+    const handleScroll = () => {
+      let closestHeading = null;
+      let closestDistance = Infinity;
+
+      collectedHeadings.forEach((heading) => {
+        const element = document.getElementById(heading.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const offset = 100;
+          const distance = rect.top - offset;
+
+          if (distance >= 0 && distance < closestDistance) {
+            closestDistance = distance;
+            closestHeading = heading.id;
+          }
+        }
+      });
+
+      if (closestHeading) {
+        setActiveHeading(closestHeading);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [strategy]);
+
+  const handleScrollTo = (id) => (e) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -100;
+      const yPosition =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: yPosition, behavior: "smooth" });
+    }
+  };
+
   return (
     // Top page
     <div className="px-4 sm:px-0">
       {/* Desktop View */}
       <div className="pagePaddingMedium hidden md:block">
-        <div className="flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2">
+        <div className="my-mobile-spacing md:my-desktop-spacing flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2">
           {/* Text Wrapper */}
           <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
             <div className="text-left flex flex-col gap-8">
@@ -52,16 +140,6 @@ const StrategyDetail = ({ strategy, strategies }) => {
                 <Link href="?modal=true" scroll={false}>
                   <DeltaPurpleButton
                     className="w-[100%] md:w-fit px-6 py-3"
-                    label="LAUNCH APP"
-                    hasArrowRight={true}
-                    typographyClass="text-[15px]"
-                  />
-                </Link>
-              </div>
-              {/* Show this button only on mobile */}
-              <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
-                <Link href="?modal=true" scroll={false}>
-                  <DeltaPurpleButton
                     label="LAUNCH APP"
                     hasArrowRight={true}
                     typographyClass="text-[15px]"
@@ -109,7 +187,8 @@ const StrategyDetail = ({ strategy, strategies }) => {
 
       {/* Mobile View */}
       {/* intro */}
-      <div className="flex md:hidden md:flex-row flex-col justify-center items-center w-full gap-20 mb-2 md:mb-40">
+
+      <div className="my-mobile-spacing md:my-desktop-spacing flex md:hidden md:flex-row flex-col justify-center items-center w-full gap-20 mb-2 md:mb-40">
         {/* Text Wrapper */}
         <div className="flex flex-col md:mb-8 mb-0 justify-between items-center md:items-start h-fit">
           <div className="text-left flex flex-col gap-8 dark:text-white text-[#252948]">
@@ -118,6 +197,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
             </p>
             <div className="w-full md:hidden block rounded-[25px]">
               <img
+                className="rounded-[25px] max-w-full w-full"
                 src={strategyHeroImage}
                 alt="deltaprime_mascot_img rounded-[25px]"
               />
@@ -145,9 +225,18 @@ const StrategyDetail = ({ strategy, strategies }) => {
           />
         </div>
       </div>
-
+      {/* Show this button only on mobile */}
+      <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden md:my-10 w-full text-center">
+        <Link href="?modal=true" scroll={false}>
+          <DeltaPurpleButton
+            label="LAUNCH APP"
+            hasArrowRight={true}
+            typographyClass="text-[15px]"
+          />
+        </Link>
+      </div>
       {/* Parent */}
-      <div className="pagePaddingMedium postAndTablesWrapper flex flex-row gap-10 mt-10">
+      <div className="my-mobile-spacing md:my-desktop-spacing pagePaddingMedium postAndTablesWrapper flex flex-row gap-10 mt-20 mb-20">
         {/* left side */}
         <div className="strategyPostWrapper">
           <RichTextRenderer
@@ -158,7 +247,32 @@ const StrategyDetail = ({ strategy, strategies }) => {
         {/* Right side */}
         <div className="rightSideBoxWrapper hidden md:block w-full">
           <div className="flex flex-col gap-10 sticky top-40">
-            {" "}
+            <div className="coloredBoxBorder max-w-[340px]">
+              <div className="deltaWhiteLinearBG p-4 md:p-6 rounded-[30px] ">
+                <p className="font-bold leading-6 uppercase text-[18px] text-[#6B70ED]">
+                  Table of contents
+                </p>
+                <div className="w-full bg-black h-[2px] my-5" />
+                <ul className="flex flex-col gap-4">
+                  {headings.map((heading) => (
+                    <div key={heading.id}>
+                      <li>
+                        <a
+                          href={`#${heading.id}`}
+                          onClick={handleScrollTo(heading.id)}
+                          className={`text-[#565AC2] text-[15px] line-clamp-2 ${
+                            activeHeading === heading.id ? "font-bold" : ""
+                          }`}
+                        >
+                          <span className="text-[8px]">●</span> {heading.title}
+                        </a>
+                      </li>
+                      <span className="bg-gray-200 h-[1px] w-1/2 -my-1 mx-auto"></span>
+                    </div>
+                  ))}
+                </ul>
+              </div>
+            </div>{" "}
             {/* Sticky class added */}
             <CryptoPreviewTables />
           </div>
@@ -166,9 +280,9 @@ const StrategyDetail = ({ strategy, strategies }) => {
       </div>
 
       {/* here are the swiper components */}
-      <div>
+      <div className="my-mobile-spacing md:my-desktop-spacing">
         {/* Show this button only on mobile */}
-        <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden my-10 w-full text-center">
+        <div className="fullWidthButtonChildren h-[60px] md:h-full block md:hidden w-full text-center">
           <Link href="?modal=true" scroll={false}>
             <DeltaPurpleButton
               label="LAUNCH APP"

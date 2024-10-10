@@ -59,7 +59,7 @@ const ListText = ({
 
 export const StratDesktopFlipCards = ({ strategies }) => {
   return (
-    <div className="hidden md:block mx-auto p-5 lg:p-10">
+    <div className="my-mobile-spacing md:my-desktop-spacing hidden md:block mx-auto px-5 lg:px-10">
       {/* This component is hidden until the desired breakpoint */}
       <div>
         <Header
@@ -111,7 +111,7 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
   return (
     <>
       {/* Swiper carousel for mobile view */}
-      <div className="flex flex-col gap-10 md:hidden ">
+      <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col gap-10 md:hidden ">
         <Swiper
           ref={sliderRef}
           modules={[Pagination]}
@@ -149,7 +149,7 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
         </Swiper>
 
         {/* Custom navigation and pagination */}
-        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[4rem] mb-5">
+        <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[4rem]">
           <Image
             onClick={handlePrev}
             className="size-5 swiper-button-prev custom-arrow"

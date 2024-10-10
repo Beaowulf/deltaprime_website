@@ -14,9 +14,9 @@ const Header = ({
       } `}
     >
       {title && (
-        <p className="dark:text-gray-400 text-[18px] font-bold dark:text-white text-[#6B70ED] ">
+        <h4 className="dark:text-gray-400 text-[18px] font-bold dark:text-white text-[#6B70ED] ">
           {title}
-        </p>
+        </h4>
       )}
       {hasSeperator ? (
         <Seperator bigHeader={true} label={subTitle} />
@@ -25,9 +25,9 @@ const Header = ({
           {subTitle}
         </h3>
       )}
-      <p className="aboutTypographyparagraphWhite font-medium md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1 dark:text-white text-[#565AC2] ">
+      <h4 className="aboutTypographyparagraphWhite font-medium md:leading-6 height max-w-xl text-center md:px-0 px-1 pb-1 dark:text-white text-[#565AC2] ">
         {paragraph}
-      </p>
+      </h4>
     </div>
   );
 };

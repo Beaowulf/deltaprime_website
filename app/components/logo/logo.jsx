@@ -4,6 +4,7 @@ import DarkMode_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo
 import LightMode_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_purple.png";
 import White_full_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_white.png";
 
+// Duplicate delete: todo:
 export const LightModeLogo = () => {
   return (
     <a
@@ -19,14 +20,18 @@ export const LightModeLogo = () => {
   );
 };
 
-export const DarkModeLogo = () => {
+export const DarkModeLogo = (large = false) => {
   return (
     <a
       href="/#"
       className="title-font flex items-center font-medium text-[#6B70ED] dark:text-white"
     >
       <Image
-        className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
+        className={`${
+          large
+            ? "max-w-[230px] lg:max-w-[270px]"
+            : "max-w-[200px] lg:max-w-[240px]"
+        } h-auto object-cover`}
         src={LightMode_Logo}
         alt="logo_img"
       />

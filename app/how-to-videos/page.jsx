@@ -10,15 +10,15 @@ const StrategiesPage = async () => {
   const videos = await fetchHowToVideos();
 
   return (
-    <div>
+    <div className="">
       <DynamicPurpleBar mediumPadding={true} title={"How To Videos"} />
 
-      <div className="pagePaddingMedium">
+      <div className="my-mobile-spacing md:my-desktop-spacing pagePaddingMedium">
         {/* Desktop */}
         <VideosDesktopFlipCards videos={videos} />
       </div>
       {/* Mobile */}
-      <div className="pagePaddingLarge">
+      <div className="my-mobile-spacing md:my-desktop-spacing pagePaddingLarge">
         <FlipCardMobileCarousel videos={videos} />
       </div>
     </div>

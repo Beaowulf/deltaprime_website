@@ -208,33 +208,17 @@ export function ArrowButton({ onClick }) {
   );
 }
 
-// todo: both are now same (light mode and dark mode are the same)
-// todo: check if its removable
 export function ContactUsButton({ label, onClick }) {
-  const { theme } = useTheme();
   return (
     <button onClick={onClick} className="ctaButtonBorder w-full h-fit">
-      <div
-        className={` md:py-[10px] md:px-5 py-[18px] px-[20px] h-[30px] md:h-full ${
-          theme === "dark" ? "ctaButtonWrapper" : "ctaButtonWrapper"
-        }`}
-      >
+      <div className="md:py-[10px] md:px-5 py-[18px] px-[20px] h-[30px] md:h-full ctaButtonWrapper">
         <p className="ctaButtonText text-[#FEEEF4]">{label}</p>
-        {theme === "dark" ? (
-          <ArrowRight
-            className="size-6 mb-[1px] arrowButton"
-            alt="Arrow Right"
-          />
-        ) : (
-          <ArrowRight
-            className="size-6 mb-[1px] arrowButton"
-            alt="Arrow Right"
-          />
-        )}
+        <ArrowRight className="size-6 mb-[1px] arrowButton" alt="Arrow Right" />
       </div>
     </button>
   );
 }
+
 
 export function BlogButton({ onClick, label, fullWidth = false }) {
   return (

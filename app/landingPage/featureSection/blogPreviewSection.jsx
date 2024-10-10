@@ -15,9 +15,9 @@ const BlogHeader = ({ title, subTitle, paragraph }) => {
         {title}
       </h4>
       <h2 className="mb-8 featureSubtitle">{subTitle}</h2>
-      <p className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-center dark:text-white text-[#565AC2]">
+      <h4 className="aboutTypographyparagraphWhite font-medium leading-5 md:leading-6 height max-w-xl text-center dark:text-white text-[#565AC2]">
         {paragraph}
-      </p>
+      </h4>
     </div>
   );
 };
@@ -112,14 +112,21 @@ const Circles = (randomNumber) => {
   }
 };
 
-const BlogPreviewSection = ({ blogPreviewCardData, eleventhSection, options }) => {
+const BlogPreviewSection = ({
+  blogPreviewCardData,
+  eleventhSection,
+  options,
+}) => {
   return (
     <>
-      <div className="pt-12 md:pt-40 pagePaddingMedium">
+      <div className="pt-mobile-spacing md:pt-desktop-spacing  pagePaddingMedium">
         {eleventhSection && (
           <BlogHeader
             title={eleventhSection.heading}
-            paragraph={documentToReactComponents(eleventhSection.mainText.json, options)}
+            paragraph={documentToReactComponents(
+              eleventhSection.mainText.json,
+              options
+            )}
           />
         )}
         <div className="flex flex-wrap gap-6 items-center justify-center md:mb-20 mb-6">

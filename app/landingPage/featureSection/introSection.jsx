@@ -23,7 +23,7 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity, SectionDetails, option
   return (
     <>
       {/* Left side (text with pill) */}
-      <div className="flex flex-col md:mb-8 mb-0 justify-between gap-2 md:gap-20 items-center md:items-start flex-1">
+      <div className="flex flex-col justify-between gap-2 md:gap-10 items-center md:items-start flex-1">
         {/* Text Wrapper */}
         <div className="text-left flex flex-col gap-1 ">
           <h3 className="brightText text-wrap max-w-xl text-3xl md:text-[44px] mb-4 dark:text-white text-[#6B70ED]">
@@ -63,13 +63,13 @@ const TextWithPill = ({ totalTvl, totalBorrowedLiquidity, SectionDetails, option
 
 const IntroSection = ({ totalTvl, SectionDetails, options }) => {
   const { totalBorrowedLiquidity } = useCryptoData();
-  console.log(SectionDetails);
+  // console.log(SectionDetails);
 
   return (
     <div className="pagePaddingLarge">
       <div className="mx-auto">
         {/* Top Intro Part (Text and video) */}
-        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-20 p-4 items-center">
+        <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col lg:flex-row justify-between gap-10 lg:gap-20 px-4 items-center">
           {/* Left side (text with pill) */}
           <TextWithPill
             totalTvl={totalTvl}

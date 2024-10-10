@@ -77,12 +77,12 @@ const LaunchAppModal = () => {
                             <div className="loader"></div>
                           ) : (
                             arbitrumData.map((pool, index) => (
-                              <p
+                              <h5
                                 className="text-[#565AC2] font-medium text-[14px]"
                                 key={index}
                               >
                                 {pool.symbol} {pool.apy.toFixed(1)}%
-                              </p>
+                              </h5>
                             ))
                           )}
                         </div>
@@ -94,12 +94,12 @@ const LaunchAppModal = () => {
                             <div className="loader"></div>
                           ) : (
                             avalancheData.map((pool, index) => (
-                              <p
+                              <h5
                                 className="text-[#565AC2] font-medium text-[14px]"
                                 key={index}
                               >
                                 {pool.symbol} {pool.apy.toFixed(1)}%
-                              </p>
+                              </h5>
                             ))
                           )}
                         </div>

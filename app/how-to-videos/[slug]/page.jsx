@@ -19,7 +19,7 @@ const HowToVideoPage = async ({ params }) => {
   }
 
   return (
-    <div>
+    <div className="my-mobile-spacing md:my-desktop-spacing">
       <DynamicPurpleBar
         title={video?.howToVideoTitle}
         link={<Link href={"/how-to-videos"}>How To Videos</Link>}
