@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { BlogCardButton } from "@/app/components/buttons/mainButton";
 
-import GradientButton from "@/app/components/gradientButtonTokenomics/GradientButton";
 import primePurpleLogo from "@/public/assets/icons/purpleTokenPrime.svg";
 import whiteTokenPrime from "@/public/assets/icons/whiteTokenPrime.svg";
 
