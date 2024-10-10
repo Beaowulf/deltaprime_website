@@ -7,55 +7,29 @@ import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ContactForm = ({ hasUnlockPotentialContainer = true, isLanding = false }) => {
+const ContactForm = ({
+  hasUnlockPotentialContainer = true,
+  isLanding = false,
+}) => {
   const { resolvedTheme } = useTheme();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/contact@deltaprime.io", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        toast.success(
-          "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
-          {
-            position: "top-right",
-            autoClose: 6000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: resolvedTheme === "dark" ? "dark" : "light",
-          }
-        );
-        setFormData({ name: "", email: "", message: "" }); // Clear form on success
-      } else {
-        toast.error(`Error: ${data.message || "Submission failed"}`);
+  // todo: need to revisit the logic here.
+  const handleFormSubmit = () => {
+    toast.success(
+      "Thanks for reaching out. A member of our team will review your message and contact you shortly.",
+      {
+        position: "top-right",
+        autoClose: 6000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: resolvedTheme === "dark" ? "dark" : "light",
       }
-    } catch (error) {
-      toast.error("There was an issue submitting your form. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    );
+    setIsSubmitting(false);
   };
 
   return (
@@ -66,14 +40,20 @@ const ContactForm = ({ hasUnlockPotentialContainer = true, isLanding = false }) 
           <UnlockPotentialContainer hasMarginTop={false} />
         </div>
       )}
-      <div className={`flex flex-col md:flex-row relative overflow-hidden ${isLanding ? 'mb-0 mt-mobile-spacing md:mt-desktop-spacing' : 'my-mobile-spacing md:my-desktop-spacing'}`}>
-      {/* Left Side */}
+      <div
+        className={`flex flex-col md:flex-row relative overflow-hidden ${
+          isLanding
+            ? "mb-0 mt-mobile-spacing md:mt-desktop-spacing"
+            : "my-mobile-spacing md:my-desktop-spacing"
+        }`}
+      >
+        {/* Left Side */}
         <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center contactFormBG">
           <div className="flex flex-col items-start mb-14 max-w-[30rem]">
             <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-center dark:text-white text-[#6B70ED]">
               Contact us
             </h4>
-            <h2 className="mb-6 featureSubtitle text-[25px] md:text-[34px] dark:text-white text-[#6B70ED]">
+            <h2 className="mb-6 featureSubtitle text-[25px] md:text-[34px] dark:text-white text-[#6B70ED] leading-[30px] md:leading-[40px]">
               Got a question to ask? We're here for you.
             </h2>
             <p className="aboutTypographyparagraphWhite max-w-xl md:leading-8 leading-6 dark:text-white text-[#565AC2]">
@@ -84,14 +64,23 @@ const ContactForm = ({ hasUnlockPotentialContainer = true, isLanding = false }) 
         </div>
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center px-8">
-          <form className="w-full max-w-lg mx-auto" onSubmit={handleFormSubmit}>
-            
-            
+          <form
+            className="w-full max-w-lg mx-auto"
+            action="https://formsubmit.co/contact@deltaprime.io"
+            method="POST"
+            onSubmit={handleFormSubmit}
+          >
+            {/* Hidden Inputs for FormSubmit Configuration */}
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_url"
+              value="https://deltaprime.io/landing.html"
+            />
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
-
                 <label
-                  className="block dark:text-white text-[#6B70ED] font-bold mb-2 text-[12px] md:text-[17px]"
+                  className="block dark:text-white text-[#6B70ED font-bold mb-2 text-[12px] md:text-[17px]"
                   htmlFor="name"
                 >
                   Name
@@ -103,8 +92,6 @@ const ContactForm = ({ hasUnlockPotentialContainer = true, isLanding = false }) 
                   type="text"
                   placeholder="Your Name"
                   required
-                  value={formData.name}
-                  onChange={handleInputChange}
                   disabled={isSubmitting}
                 />
               </div>
@@ -122,8 +109,6 @@ const ContactForm = ({ hasUnlockPotentialContainer = true, isLanding = false }) 
                   type="email"
                   placeholder="Your Email"
                   required
-                  value={formData.email}
-                  onChange={handleInputChange}
                   disabled={isSubmitting}
                 />
               </div>
@@ -139,23 +124,23 @@ const ContactForm = ({ hasUnlockPotentialContainer = true, isLanding = false }) 
               <textarea
                 className="shadow appearance-none border-2 rounded-lg w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none border-[#7C71FF] bg-transparent focus:border-[#B39FFF]"
                 id="message"
-                name="message"
+                name="message" // Ensure name attribute is set
                 placeholder="Your Message"
                 required
-                value={formData.message}
-                onChange={handleInputChange}
-                disabled={isSubmitting}
+                disabled={isSubmitting} // Disable input during submission
               ></textarea>
             </div>
 
             <div className="flex items-center justify-center">
               <DeltaPurpleButton
                 buttonClassName={"w-full"}
-                className={"w-full flex items-center justify-center py-3 h-[50px] md:h-full"}
+                className={
+                  "w-full flex items-center justify-center py-3 h-[50px] md:h-full"
+                }
                 typographyClass={"text-[15px]"}
-                label={isSubmitting ? "Submitting..." : "SUBMIT"}
+                label={isSubmitting ? "Submitting..." : "SUBMIT"} // Change button text during submission
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting} // Disable button during submission
               />
             </div>
           </form>
