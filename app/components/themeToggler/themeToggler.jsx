@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import "./themeToggler.css";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);

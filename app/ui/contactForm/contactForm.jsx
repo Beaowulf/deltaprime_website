@@ -85,8 +85,11 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
         {/* Right Side */}
         <div className="flex-1 flex flex-col justify-center p-8">
           <form className="w-full max-w-lg mx-auto" onSubmit={handleFormSubmit}>
+            
+            
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
+
                 <label
                   className="block dark:text-white text-[#6B70ED] font-bold mb-2 text-[12px] md:text-[17px]"
                   htmlFor="name"
