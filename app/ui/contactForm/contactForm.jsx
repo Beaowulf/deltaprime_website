@@ -7,7 +7,7 @@ import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
+const ContactForm = ({ hasUnlockPotentialContainer = true, isLanding = false }) => {
   const { resolvedTheme } = useTheme();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -62,13 +62,13 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
     <div>
       <ToastContainer />
       {hasUnlockPotentialContainer && (
-        <div className="lg:block hidden mt-10">
+        <div className="lg:block hidden my-mobile-spacing md:my-desktop-spacing">
           <UnlockPotentialContainer hasMarginTop={false} />
         </div>
       )}
-      <div className="flex flex-col md:flex-row mt-10 md:mt-20 md:pb-36 pb-5 relative overflow-hidden">
-        {/* Left Side */}
-        <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center px-10 py-2 md:py-28 2xl:py-40 contactFormBG">
+      <div className={`flex flex-col md:flex-row relative overflow-hidden ${isLanding ? 'mb-0 mt-mobile-spacing md:mt-desktop-spacing' : 'my-mobile-spacing md:my-desktop-spacing'}`}>
+      {/* Left Side */}
+        <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center contactFormBG">
           <div className="flex flex-col items-start mb-14 max-w-[30rem]">
             <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-center dark:text-white text-[#6B70ED]">
               Contact us
@@ -83,7 +83,7 @@ const ContactForm = ({ hasUnlockPotentialContainer = true }) => {
           </div>
         </div>
         {/* Right Side */}
-        <div className="flex-1 flex flex-col justify-center p-8">
+        <div className="flex-1 flex flex-col justify-center px-8">
           <form className="w-full max-w-lg mx-auto" onSubmit={handleFormSubmit}>
             
             
