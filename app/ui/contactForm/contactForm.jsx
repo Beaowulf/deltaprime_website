@@ -71,7 +71,6 @@ const ContactForm = ({
             onSubmit={handleFormSubmit}
           >
             {/* Hidden Inputs for FormSubmit Configuration */}
-            <input type="hidden" name="_captcha" value="false" />
             <input
               type="hidden"
               name="_url"
