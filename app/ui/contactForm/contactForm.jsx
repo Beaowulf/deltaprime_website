@@ -70,12 +70,14 @@ const ContactForm = ({
             method="POST"
             onSubmit={handleFormSubmit}
           >
+            <input type="hidden" name="_captcha" value="true"></input>
             {/* Hidden Inputs for FormSubmit Configuration */}
             <input
               type="hidden"
               name="_url"
               value="https://deltaprime.io/landing.html"
             />
+
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
