@@ -45,6 +45,20 @@ const RichTextRenderer = ({
 }) => {
   const options = {
     renderNode: {
+      [BLOCKS.HEADING_5]: (node, children) => {
+        const text = extractTextFromChildren(children);
+        const id = sanitizeId(text);
+        if (onHeadingRender) onHeadingRender(id, text);
+        return (
+          <h3
+            id={id}
+            className="text-xl font-bold mt-8 mb-4 dark:text-white text-[#6B70ED]"
+          >
+            {children}
+          </h3>
+        );
+      },
+
       [BLOCKS.HEADING_4]: (node, children) => {
         const text = extractTextFromChildren(children);
         const id = sanitizeId(text);
@@ -52,7 +66,7 @@ const RichTextRenderer = ({
         return (
           <h4
             id={id}
-            className="text-lg font-bold my-4 dark:text-white text-[#6B70ED]"
+            className="text-3xl font-bold mt-10 mb-5 dark:text-white text-[#6B70ED]"
           >
             {children}
           </h4>
@@ -65,7 +79,7 @@ const RichTextRenderer = ({
         return (
           <h3
             id={id}
-            className="text-lg font-bold my-4 dark:text-white text-[#6B70ED]"
+            className="text-lg font-boldmt-10 mb-5 dark:text-white text-[#6B70ED]"
           >
             {children}
           </h3>
@@ -78,15 +92,13 @@ const RichTextRenderer = ({
         return (
           <h2
             id={id}
-            className="text-lg font-bold my-4 dark:text-white text-[#6B70ED]"
+            className="text-3xl font-bold mt-10 mb-5 dark:text-white text-[#6B70ED]"
           >
             {children}
           </h2>
         );
       },
-      [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className="my-4 dark:text-white text-[#565AC2]">{children}</p>
-      ),
+
       [BLOCKS.UL_LIST]: (node, children) => (
         <ul className="ml-10 list-disc list-inside dark:text-white text-[#565AC2]">
           {children}
@@ -146,14 +158,16 @@ const RichTextRenderer = ({
         );
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
-        const text = node.content[0]?.value;
+        // Ensure the content exists
+        const text = node.content[0]?.value || "";
 
         // Function to handle text replacements for custom markers like \s
         const handleCustomSpacing = (inputText) => {
-          // Replace all occurrences of "\s" with "&nbsp;" (for single space) or "&emsp;" (for tab-like space)
-          return inputText.replace(/\\s/g, "&nbsp;"); // Replace \s with non-breaking space
-          // return inputText.replace(/\\s/g, "&emsp;"); // Uncomment to use em space instead
+          // Replace all occurrences of "\s" with non-breaking spaces (&nbsp;)
+          return inputText.replace(/\\s/g, " ");
         };
+
+        // Process the text to replace custom markers
         const processedText = handleCustomSpacing(text);
 
         if (text.includes("{{inline_Takeaways}}") && hasTakeaways) {
@@ -233,12 +247,12 @@ const RichTextRenderer = ({
         if (text.includes("{{inline_CTA}}")) {
           return (
             <div className="mt-mobile-spacing md:mt-desktop-spacing">
-              <UnlockPotentialContainer hasMarginTop={false}/>
+              <UnlockPotentialContainer hasMarginTop={false} />
             </div>
           );
         }
         return (
-          <div className=" blogStyling text-[#565AC2] dark:text-[#F6F6F6]">
+          <div className="my-3 blogStyling text-[#565AC2] dark:text-[#F6F6F6]">
             {children}
           </div>
         );
