@@ -132,7 +132,7 @@ const ContactForm = ({
               ></textarea>
             </div>
 
-            <div className="flex items-center justify-center py-10">
+            <div className="flex items-center justify-center pt-10">
               <DeltaPurpleButton
                 buttonClassName={"w-full"}
                 className={

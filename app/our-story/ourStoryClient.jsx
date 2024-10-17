@@ -19,7 +19,7 @@ import JobDescriptionBox from "@/app/our-story/jobDescriptionBox";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 
-export default function OurStoryClient({ storyData, tvtDataFormatted }) {
+export default function OurStoryClient({ storyData, tvtDataFormatted, jobDescriptions }) {
   const sections = storyData;
 
   if (!sections || sections.length === 0) {
@@ -387,79 +387,27 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
             </div>
 
             <div className="flex flex-col items-stretch gap-8 mt-10 xl:mt-0">
-              {/* First Box */}
-
-              <JobDescriptionBox
-                title="Smart Contract Developer"
-                textOne="FULL-TIME"
-                textTwo="REMOTE"
-                textThree="DEVELOPER"
-                buttonElement={
-                  <DeltaWhiteButton
-                    isSmallbtn={true}
-                    isLink={true}
-                    forcePurpleArrow={true}
-                    href="/job-description/Smart-Contract-Developer"
-                    typographyClass="text-[#565AC2]"
-                    label={"Learn More"}
-                    hasArrowRight={true}
+                {jobDescriptions.map((job) => (
+                  <JobDescriptionBox
+                    key={job.slug}
+                    title={job.jobTitle}
+                    textOne={job.employmentType}
+                    textTwo={job.workLocation}
+                    textThree={job.jobCategory}
+                    buttonElement={
+                      <DeltaWhiteButton
+                        isSmallbtn={true}
+                        isLink={true}
+                        forcePurpleArrow={true}
+                        href={`/our-story/job-description/${job.slug}`}
+                        typographyClass="text-[#565AC2]"
+                        label={"Learn More"}
+                        hasArrowRight={true}
+                      />
+                    }
                   />
-                }
-              />
-              <JobDescriptionBox
-                title="Senior DevOps Engineer"
-                textOne="FULL-TIME"
-                textTwo="REMOTE"
-                textThree="DEVELOPER"
-                buttonElement={
-                  <DeltaWhiteButton
-                    isSmallbtn={true}
-                    isLink={true}
-                    forcePurpleArrow={true}
-                    href="/job-description/Senior-DevOps-Engineer"
-                    typographyClass="text-[#565AC2]"
-                    label={"Learn More"}
-                    hasArrowRight={true}
-                  />
-                }
-              />
-              <JobDescriptionBox
-                title="Lead DeFi Security Engineer"
-                textOne="Part-Time or Full-Time"
-                textTwo="REMOTE"
-                textThree="SECURITY ENGINEER"
-                buttonElement={
-                  <DeltaWhiteButton
-                    isSmallbtn={true}
-                    isLink={true}
-                    forcePurpleArrow={true}
-                    href="/job-description/Lead-DeFi-Security-Engineer"
-                    typographyClass="text-[#565AC2]"
-                    label={"Learn More"}
-                    hasArrowRight={true}
-                  />
-                }
-              />
-              <JobDescriptionBox
-                title="Head of Security and DevOps"
-                textOne="Part-Time or Full-Time"
-                textTwo="REMOTE"
-                textThree="Head of Security and DevOps"
-                buttonElement={
-                  <DeltaWhiteButton
-                    isSmallbtn={true}
-                    isLink={true}
-                    forcePurpleArrow={true}
-                    href="/job-description/Head-of-Security-and-DevOps"
-                    typographyClass="text-[#565AC2]"
-                    label={"Learn More"}
-                    hasArrowRight={true}
-                  />
-                }
-              />
-
-              {/* Second Box */}
-            </div>
+                ))}
+              </div>
           </div>
         </div>
       </div>
