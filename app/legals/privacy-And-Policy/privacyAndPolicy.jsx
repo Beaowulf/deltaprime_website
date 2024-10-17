@@ -11,7 +11,7 @@ const PrivacyAndPolicyPage = ({ privacyAndPolicy }) => {
   }
 
   return (
-    <div className="pagePaddingLarge mb-40">
+    <div className="my-mobile-spacing md:my-desktop-spacing pagePaddingLarge">
       <RichTextRenderer richTextDocument={privacyAndPolicy.richText} />
     </div>
   );
