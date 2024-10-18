@@ -5,9 +5,9 @@ import { getJobDescriptions } from "@/lib/jobData";
 
 export async function sitemap() {
   const blogs = await fetchBlogs();
-  const howToVideos = await fetchHowToVideos(); // Fetch how-to videos
-  const strategies = await fetchStrategies(); // Fetch strategies
-  const jobDescriptions = await getJobDescriptions(); // Fetch job descriptions
+  const howToVideos = await fetchHowToVideos();
+  const strategies = await fetchStrategies();
+  const jobDescriptions = await getJobDescriptions();
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://deltaprime.io";
 
   // todo: doublecheck this.
