@@ -37,7 +37,6 @@ export async function sitemap() {
   const staticRoutes = [
     { url: `${baseUrl}`, lastModified: new Date().toISOString() },
     { url: `${baseUrl}/contact-us`, lastModified: new Date().toISOString() },
-    { url: `${baseUrl}/about-us`, lastModified: new Date().toISOString() },
     { url: `${baseUrl}/how-to-videos`, lastModified: new Date().toISOString() },
     { url: `${baseUrl}/our-story`, lastModified: new Date().toISOString() },
     { url: `${baseUrl}/tokenomics`, lastModified: new Date().toISOString() },
