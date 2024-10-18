@@ -7,7 +7,7 @@ const TermsOfUsePage = ({ termsOfUse }) => {
   }
 
   return (
-    <div className="pagePaddingLarge mb-40">
+    <div className="my-mobile-spacing md:my-desktop-spacing pagePaddingLarge">
       <RichTextRenderer richTextDocument={termsOfUse.termsOfUse} />
     </div>
   );
