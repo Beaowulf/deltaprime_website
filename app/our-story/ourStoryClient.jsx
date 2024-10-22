@@ -123,13 +123,16 @@ export default function OurStoryClient({ storyData, tvtDataFormatted, jobDescrip
             </div>
             {/* Image */}
             <div className="w-fit rounded-[25px] max-w-[60rem]">
-              <Image
-                className="rounded-[25px]"
-                src={introSection.image.url}
-                alt={introSection.image.title}
-                width={introSection.image.width}
-                height={introSection.image.height}
-              />
+            <Image
+              className="rounded-[25px]"
+              src={introSection.image.url}
+              alt={introSection.image.title}
+              layout="responsive"
+              width={introSection.image.width}
+              height={introSection.image.height}
+              priority={true}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
             </div>
           </div>
         )}
@@ -138,13 +141,15 @@ export default function OurStoryClient({ storyData, tvtDataFormatted, jobDescrip
         <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5">
           {/* Image */}
           <div className="w-fit rounded-[25px] max-w-[60rem]">
-            <Image
-              className="rounded-[20px] w-full h-auto md:h-full object-cover"
-              src={secondSection.image.url}
-              alt={secondSection.image.title}
-              width={secondSection.image.width}
-              height={secondSection.image.height}
-            />
+          <Image
+            className="rounded-[20px] w-full h-auto md:h-full object-cover"
+            src={secondSection.image.url}
+            alt={secondSection.image.title}
+            layout="responsive"
+            width={secondSection.image.width}
+            height={secondSection.image.height}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
           </div>
           {/* Text Wrapper */}
           <div className="flex flex-col lg:w-1/2 w-full justify-between items-center lg:items-end h-fit">
@@ -206,13 +211,16 @@ export default function OurStoryClient({ storyData, tvtDataFormatted, jobDescrip
 
         <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5">
           <div className="w-fit rounded-[25px] max-w-[60rem]">
-            <Image
-              className="rounded-[20px] w-full h-auto md:h-full object-cover"
-              src={fourthSection.image.url}
-              alt={fourthSection.image.title}
-              width={fourthSection.image.width}
-              height={fourthSection.image.height}
-            />
+          <Image
+            className="rounded-[20px] w-full h-auto md:h-full object-cover"
+            src={fourthSection.image.url}
+            alt={fourthSection.image.title}
+            layout="responsive"
+            width={fourthSection.image.width}
+            height={fourthSection.image.height}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+
           </div>
           <div className="flex flex-col lg:w-1/2 w-full justify-between items-center lg:items-start h-fit">
             <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED] text-left">
