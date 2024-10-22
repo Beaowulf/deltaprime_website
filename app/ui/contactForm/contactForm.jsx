@@ -54,11 +54,11 @@ const ContactForm = ({
               Contact us
             </h4>
             <h2 className="mb-6 featureSubtitle text-[25px] md:text-[34px] dark:text-white text-[#6B70ED] leading-[30px] md:leading-[40px]">
-              Got a question to ask? We're here for you.
+              Got a question to ask? We&#39;re here for you.
             </h2>
             <p className="aboutTypographyparagraphWhite max-w-xl md:leading-8 leading-6 dark:text-white text-[#565AC2]">
-              You couldn't find answers in our Site, Docs or Discord? Ask us.
-              We'll be happy to assist.
+              You couldn&#39;t find answers in our Site, Docs or Discord? Ask us.
+              We&#39;ll be happy to assist.
             </p>
           </div>
         </div>
