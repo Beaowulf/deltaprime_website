@@ -25,6 +25,7 @@ const options = {
 
 // Clean up the 2 divs with the same padding styling
 const LandingPage = ({ blogPreviewCardData, totalTvl, sectionsCollection }) => {
+  const { resolvedTheme } = useTheme();
   if (!sectionsCollection?.items) {
     return <div>No sections available</div>;
   }
@@ -44,7 +45,6 @@ const LandingPage = ({ blogPreviewCardData, totalTvl, sectionsCollection }) => {
   const tenthSection = sections.find((section) => section.sectionId === 10);
   const eleventhSection = sections.find((section) => section.sectionId === 11);
   // console.log(introSection);
-  const { resolvedTheme } = useTheme();
 
   return (
     <div>

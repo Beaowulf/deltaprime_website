@@ -33,7 +33,7 @@ export const CryptoDataProvider = ({ children }) => {
 
   const value = useMemo(
     () => ({ poolsData, totalBorrowedLiquidity, loading }),
-    [poolsData, totalBorrowedLiquidity]
+    [poolsData, totalBorrowedLiquidity, loading]
   );
 
   return (

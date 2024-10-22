@@ -68,7 +68,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
       };
       fetchData();
     }
-  }, [blogData, blogData.slug]);
+  }, [blog.slug, blogData]);
 
   useEffect(() => {
     const collectedHeadings = [];
@@ -254,7 +254,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
               </div>
             </div>
             <div className="mt-6">
-              <img
+              <Image 
                 src={`https:${heroImage}`}
                 alt="blog_Post_Image"
                 className="w-auto mx-auto max-h-450px rounded-[20px]"

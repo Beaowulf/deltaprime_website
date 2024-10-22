@@ -154,7 +154,7 @@ const DropdownMenu = ({
           className="font-semibold pt-4 text-white !z-50 menuStrategyBoxWrapper rounded-[25px]"
         >
           <div className="p-5 pl-1 flex flex-row gap-4 w-full h-full boxContainer rounded-[26px]">
-            <img
+            <Image 
               src={`https:${strategy.strategyImage?.fields?.file?.url}`}
               alt="bird_carrying_book_img"
               className="object-cover rounded-md w-[80px] h-[90px]"
