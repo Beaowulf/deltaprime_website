@@ -19,7 +19,7 @@ const HowToVideoCard = ({
     >
       <div className="flex flex-col gap-4 justify-between w-full ">
         <div className="overflow-hidden rounded-[25px] bg-[#F4F4FF] w-full self-center">
-          <img
+          <Image 
             width={"100%"}
             height={145}
             src={

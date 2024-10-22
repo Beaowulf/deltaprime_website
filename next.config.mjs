@@ -1,5 +1,9 @@
+import withBundleAnalyzer from '@next/bundle-analyzer';
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+})({
   rewrites: async () => [
     {
       source: "/sitemap.xml",
@@ -66,6 +70,13 @@ const nextConfig = {
       },
     ];
   },
-};
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Use 'web' for client-side to avoid legacy JavaScript
+      config.target = 'web';
+    }
+    return config;
+  },
+});
 
 export default nextConfig;

@@ -45,7 +45,7 @@ const BlogCard = ({
         className="blogCardParent w-full h-[270px] cursor-pointer"
         onClick={handleImageClick}
       >
-        <img
+        <Image 
           src={previewBlogImage}
           alt="Blog Preview"
           className="blogCardContent object-cover w-full h-full rounded-[15px]"
