@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import "./blogCard.css";
 import { useRouter } from "next/navigation";
 
@@ -17,7 +16,7 @@ const BlogCard = ({ previewBlogImage, blogDescription, blogSlug, onClick }) => {
         onClick={handleImageClick}
       >
         {previewBlogImage ? (
-          <Image 
+          <img
             src={previewBlogImage}
             alt="Blog Preview"
             className="blogCardContent object-cover w-full h-full rounded-[15px]"
@@ -60,7 +59,7 @@ export const SmallBlogCard = ({
         className="blogCardParentSmall w-full h-[120px] cursor-pointer"
         onClick={handleImageClick}
       >
-        <Image 
+        <img
           src={previewBlogImage}
           alt="Blog Preview"
           className="blogCardContentSmall object-cover w-full h-full rounded-[15px]"

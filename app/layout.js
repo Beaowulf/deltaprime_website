@@ -1,8 +1,14 @@
 import { Montserrat } from "next/font/google";
 import { Providers } from "./providers";
-import Header from "@/app/ui/header/navbar";
-import Footer from "@/app/ui/footer/footer";
-import LaunchAppModal from "@/app/components/modals/launchAppModal";
+
+
+import dynamic from 'next/dynamic';
+
+const Header = dynamic(() => import('@/app/ui/header/navbar'), { ssr: false });
+const Footer = dynamic(() => import('@/app/ui/footer/footer'), { ssr: false });
+const LaunchAppModal = dynamic(() => import('@/app/components/modals/launchAppModal'), { ssr: false });
+
+
 import Script from "next/script";
 import "./globals.css";
 
