@@ -116,6 +116,13 @@
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+.thumbnail-bg{
+  background: url("../../public/assets/img/thumbnail.png");
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+
 /* custom animation from delta-prime */
 /* styles.css */
 .content-image__wrapper {

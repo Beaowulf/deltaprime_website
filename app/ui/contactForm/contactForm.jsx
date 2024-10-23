@@ -63,7 +63,7 @@ const ContactForm = ({
           </div>
         </div>
         {/* Right Side */}
-        <div className="flex-1 flex flex-col justify-center px-8">
+        <div className="flex-1 flex flex-col justify-center px-8 pb-6">
           <form
             className="w-full max-w-lg mx-auto"
             action="https://formsubmit.co/contact@deltaprime.io"
