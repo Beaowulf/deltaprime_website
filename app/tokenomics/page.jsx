@@ -29,17 +29,14 @@ export async function generateMetadata() {
 }
 
 export default async function TokenomicsPage() {
-  console.log('TokenomicsPage: Fetching tokenomics data...');
 
   // Fetch the tokenomics data on the server side
   const tokenomicsData = await fetchTokenomicsData();
 
   if (!tokenomicsData || !tokenomicsData.tokenomicsPageCollection?.items[0]) {
-    console.log('Error: No tokenomics data found');
     return <div>Error: Unable to fetch tokenomics data.</div>;
   }
 
-  console.log('TokenomicsPage: Tokenomics data received:', tokenomicsData);
   
   // Extract the specific tokenomics page data
   const pageData = tokenomicsData.tokenomicsPageCollection.items[0];

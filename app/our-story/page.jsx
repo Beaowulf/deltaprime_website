@@ -1,8 +1,7 @@
 import OurStoryClient from "./ourStoryClient"; // Client component for rendering
-import { getOurStorySections } from "@/lib/ourStoryData"; // Fetching the Our Story data
 import { fetchTvlData } from "@/lib/getCryptoData";
+import { getOurStorySections } from "@/lib/ourStoryData"; // Fetching the Our Story data
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'; // Convert rich text JSON to plain text
-import { getJobDescriptions } from "@/lib/jobData";
 
 // Define dynamic metadata for this page
 export async function generateMetadata() {
@@ -35,7 +34,6 @@ export default async function OurStoryPage() {
   const storyData = await getOurStorySections();
   console.log(storyData);
 
-  const jobDescriptions = await getJobDescriptions(); // Fetch job descriptions
 
 
 
@@ -55,7 +53,6 @@ export default async function OurStoryPage() {
     <OurStoryClient
       storyData={storyData.sectionsCollection.items}
       tvtDataFormatted={tvtDataFormatted}
-      jobDescriptions={jobDescriptions} // Pass job descriptions data
     />
   );
 }

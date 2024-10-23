@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import "./ourStory.css";
 import Link from "next/link";
@@ -7,6 +7,8 @@ import {
   DeltaPurpleButton,
   DeltaWhiteButton,
 } from "@/app/components/buttons/mainButton";
+
+import { getJobDescriptions } from "@/lib/jobData"; // Adjust import paths as necessary
 
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
@@ -19,8 +21,23 @@ import JobDescriptionBox from "@/app/our-story/jobDescriptionBox";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 
-export default function OurStoryClient({ storyData, tvtDataFormatted, jobDescriptions }) {
+export default function OurStoryClient({ storyData, tvtDataFormatted }) {
+  const [jobDescriptions, setJobDescriptions] = useState([]);
   const sections = storyData;
+
+
+  useEffect(() => {
+
+
+    // Fetch job descriptions on the client side
+    async function fetchJobs() {
+      const jobs = await getJobDescriptions();
+      setJobDescriptions(jobs);
+    }
+
+    fetchJobs();
+  }, []);
+
 
   if (!sections || sections.length === 0) {
     return <div>No sections available for Our Story</div>;
@@ -200,11 +217,13 @@ export default function OurStoryClient({ storyData, tvtDataFormatted, jobDescrip
           {/* Image */}
           <div className="w-fit">
             <Image
-              className="rounded-[20px]"
+              className="rounded-[20px] w-full h-auto md:h-full object-cover"
               src={thirdSection.image.url}
               alt={thirdSection.image.title}
+              layout="responsive"
               width={thirdSection.image.width}
               height={thirdSection.image.height}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </div>
