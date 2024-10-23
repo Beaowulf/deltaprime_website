@@ -8,8 +8,6 @@ import {
   BlogCardButton,
   DeltaPurpleButton,
 } from "@/app/components/buttons/mainButton";
-import { TokenomicsGraph } from "@/app/tokenomics/tokenomicsGraph";
-import { TokenomicsList } from "@/app/tokenomics/tokenomicsList";
 
 import protocolUsage from "@/public/assets/icons/boost_Protocol_Usage.svg";
 import liquidityPool from "@/public/assets/icons/liquidityPool.svg";
@@ -20,14 +18,19 @@ import protocolRevenue from "@/public/assets/icons/protocolRevenue.svg";
 import governancePower from "@/public/assets/icons/governancePower.svg";
 
 import "./tokenomics.css";
-import SecuritySection from "../landingPage/featureSection/securitySection";
-import ContactForm from "../ui/contactForm/contactForm";
-import MintModal from "@/app/components/modals/mintModal";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"; // Import rich text renderer
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import dynamic from 'next/dynamic';
+
+// Dynamically import components that are not critical for the initial load
+const TokenomicsGraph = dynamic(() => import('@/app/tokenomics/tokenomicsGraph'), { ssr: false });
+const TokenomicsList = dynamic(() => import('@/app/tokenomics/tokenomicsList'), { ssr: false });
+const MintModal = dynamic(() => import('@/app/components/modals/mintModal'), { ssr: false });
+const SecuritySection = dynamic(() => import('../landingPage/featureSection/securitySection'));
+const ContactForm = dynamic(() => import('../ui/contactForm/contactForm'));
+
 
 export default function TokenomicsClient({ tokenomicsData }) {
-  // console.log("TokenomicsClient: tokenomicsData received:", tokenomicsData);
 
   const options = {
     renderText: (text) => {
@@ -87,7 +90,6 @@ export default function TokenomicsClient({ tokenomicsData }) {
 
   // Find the specific sections based on their sectionId
   const introSection = sections.find((section) => section.sectionId === 1);
-  // console.log(introSection);
   const secondSection = sections.find((section) => section.sectionId === 2);
   const thirdSection = sections.find((section) => section.sectionId === 3);
   const fourthSection = sections.find((section) => section.sectionId === 4);
@@ -128,6 +130,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
                   alt={introSection.image.title}
                   width={introSection.image.width}
                   height={introSection.image.height}
+                  priority
                 />
               )}
               <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] ">
@@ -152,6 +155,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
                   alt={introSection.image.title}
                   width={introSection.image.width}
                   height={introSection.image.height}
+                  priority
                 />
               )}
             </div>
