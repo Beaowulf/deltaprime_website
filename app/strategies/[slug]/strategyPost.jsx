@@ -127,7 +127,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
                 {strategy.strategyTitle}
               </p>
               <div className="w-full md:hidden block rounded-[25px]">
-                <Image
+                <img
                   src={strategyHeroImage}
                   alt="deltaprime_mascot_img"
                   className=" rounded-[25px]"
@@ -150,7 +150,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
           </div>
           {/* Image burd */}
           <div className="w-fit md:block hidden rounded-[25px] max-w-[60rem]">
-            <Image
+            <img
               src={strategyHeroImage}
               className="rounded-[25px] max-w-full w-full"
               alt="deltaprime_mascot_img "
@@ -196,7 +196,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
               {strategy.strategyTitle}
             </p>
             <div className="w-full md:hidden block rounded-[25px]">
-              <Image
+              <img
                 className="rounded-[25px] max-w-full w-full"
                 src={strategyHeroImage}
                 alt="deltaprime_mascot_img rounded-[25px]"
@@ -219,7 +219,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
         </div>
         {/* Image burd */}
         <div className="md:block hidden rounded-[25px]">
-          <Image
+          <img
             src={strategiesIntroImg}
             alt="deltaprime_mascot_img rounded-[25px]"
           />

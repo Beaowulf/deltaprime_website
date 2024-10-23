@@ -151,6 +151,8 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
         {/* Custom navigation and pagination */}
         <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[4rem]">
           <Image
+            height={20}
+            width={20}
             onClick={handlePrev}
             className="size-5 swiper-button-prev custom-arrow"
             src={arrowLeftColored}
@@ -158,6 +160,8 @@ export const FlipCardMobileCarousel = ({ strategies }) => {
           />
           <div className="swiper-pagination"></div>
           <Image
+            height={20}
+            width={20}
             onClick={handleNext}
             className="size-5 swiper-button-next custom-arrow"
             src={arrowRightColored}

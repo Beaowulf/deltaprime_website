@@ -41,19 +41,26 @@ export default function JobDescriptionClient({ jobDescription }) {
             <div className="text-justify">
               <RichTextRenderer richTextDocument={jobDescription.description} />
             </div>
-            
           </div>
         </div>
 
         {/* Job Details Sidebar */}
         <div className="rounded-2xl descriptionWrapper h-full flex flex-col items-center gap-3 text-center !p-10 w-full lg:w-[35rem]">
           <MainButton
-            onClick={() => window.open(`mailto:${email}?subject=Job%20Application&body=Hello`)}
-            className="z-50"
+            wrapperClass="px-3 py-2"
+            onClick={() =>
+              window.open(
+                `mailto:${email}?subject=Job%20Application&body=Hello`
+              )
+            }
             label="APPLY FOR THIS JOB"
           />
           <p className="text-xs font-normal pt-3">Share this job on socials</p>
-          <ShareButton title={"Job Description"} text={jobDescription.jobTitle} url={currentURL} />
+          <ShareButton
+            title={"Job Description"}
+            text={jobDescription.jobTitle}
+            url={currentURL}
+          />
           <div className="pt-3">
             <p className="text-base font-bold">Location</p>
             <p className="">{jobDescription.workLocation}</p>

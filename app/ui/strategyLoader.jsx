@@ -26,6 +26,10 @@ const DropDownStrategyLoader = ({ pathname, resolvedTheme, getLinkClass }) => {
     return <p>Loading...</p>;
   }
 
+  // strategies.forEach((strategy) => {
+  //   console.log(strategy.difficultyLevel);
+  // });
+
   return (
     <div className="text-center">
       <DropdownMenu

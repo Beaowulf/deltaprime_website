@@ -129,7 +129,7 @@ const StrategiesPage = () => {
           </div>
         </div>
         <div className="">
-        <ContactForm hasUnlockPotentialContainer={false} />
+          <ContactForm hasUnlockPotentialContainer={false} />
         </div>
       </div>
     </div>

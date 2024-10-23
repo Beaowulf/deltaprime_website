@@ -8,12 +8,13 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import DownArrow from "@/public/assets/icons/DownArrow.svg";
 import UpArrow from "@/public/assets/icons/UpArrow.svg";
+import RightArrow from "@/public/assets/icons/bigArrowRight.svg";
+import BigArrowDown from "@/public/assets/icons/bigArrowDown.svg";
+import StarFilled from "@/public/assets/icons/starFilled.svg";
+import StarUnfilled from "@/public/assets/icons/starUnfilled.svg";
 import boxImage from "@/public/assets/img/images/navStrategieContainerImg.png";
 import { getLinkClass } from "@/lib/getLinkClass";
 import { SmallBlogCard } from "@/app/components/blogCard/blogCard";
-import circleOne from "@/public/assets/icons/circleOne.svg";
-import circleTwo from "@/public/assets/icons/circleTwo.svg";
-import circleThree from "@/public/assets/icons/circleThree.svg";
 
 const DropdownMenu = ({
   strategyData,
@@ -83,59 +84,51 @@ const DropdownMenu = ({
     exit: { opacity: 0, y: 20, transition: { duration: 0.2 } },
   };
 
-  function getRandomNumber() {
-    const randomIndex = Math.floor(Math.random() * 3) + 1;
-    return randomIndex;
-  }
-
-  const Circles = (randomNumber) => {
-    const CircleOne = () => {
-      return (
-        <Image
-          src={circleOne}
-          alt="circle_with_gradient_color"
-          width={15}
-          height={15}
-        />
-      );
-    };
-
-    const CircleTwo = () => {
-      return (
-        <Image
-          src={circleTwo}
-          alt="circle_with_gradient_color"
-          width={15}
-          height={15}
-        />
-      );
-    };
-
-    const CircleThree = () => {
-      return (
-        <Image
-          src={circleThree}
-          alt="circle_with_gradient_color"
-          width={15}
-          height={15}
-        />
-      );
-    };
-
-    switch (randomNumber) {
-      case 1:
-        return <CircleOne />;
-      case 2:
-        return <CircleTwo />;
-      case 3:
-        return <CircleThree />;
-      default:
-        return null;
-    }
-  };
-
   const StrategyNavBox = ({ custom, boxVariants, className, strategy }) => {
     const { resolvedTheme } = useTheme();
+
+    const StarLevel = (level) => {
+      const numericLevel = level?.level;
+
+      const totalStars = 3;
+      const filledStars = numericLevel ?? 0;
+      const unfilledStars = totalStars - filledStars;
+
+      const stars = [];
+
+      for (let i = 0; i < filledStars; i++) {
+        stars.push(
+          <Image
+            key={`filled-${i}`}
+            className="w-4 h-4"
+            height={15}
+            width={15}
+            src={StarFilled}
+          />
+        );
+      }
+
+      for (let i = 0; i < unfilledStars; i++) {
+        stars.push(
+          <Image
+            key={`unfilled-${i}`}
+            className="w-4 h-4"
+            height={15}
+            width={15}
+            src={StarUnfilled}
+          />
+        );
+      }
+
+      return (
+        <div className="flex flex-row">
+          <p className="text-[15px] textShadow mr-2">Difficulty Level:</p>
+          <div className="flex flex-row gap-2 justify-center items-center">
+            {stars}
+          </div>
+        </div>
+      );
+    };
 
     return (
       <motion.div
@@ -144,33 +137,140 @@ const DropdownMenu = ({
         initial="hidden"
         animate="visible"
         exit="exit"
-        className={`${className} strategy-nav-box ${
+        className={`mb-4 ${className} ${
           resolvedTheme === "dark" ? "dark" : ""
         }`}
       >
         <a
           onClick={closeDropdown}
           href={`/strategies/${strategy.slug}`}
-          className="font-semibold pt-4 text-white !z-50 menuStrategyBoxWrapper rounded-[25px]"
+          className="font-semibold pt-4 text-white !z-50 rounded-[25px]"
         >
-          <div className="p-5 pl-1 flex flex-row gap-4 w-full h-full boxContainer rounded-[26px]">
-            <Image 
-              src={`https:${strategy.strategyImage?.fields?.file?.url}`}
-              alt="bird_carrying_book_img"
-              className="object-cover rounded-md w-[80px] h-[90px]"
-              width={80}
-              height={90}
-            />
-            <div className="flex flex-col gap-2 justify-center">
-              <p className="w-fit font-bold text-[12px] mb-2 ">
-                {strategy.strategyTitle}
-              </p>
-              <p className="overflow-hidden text-ellipsis line-clamp-2 text-wrap font-semibold text-[10px] mb-2 ">
-                {strategy.strategyDescription}
-              </p>
-            </div>
+          <div className="flex flex-col gap-2 justify-center dark:text-white text-[#565AC2] ">
+            <p className="w-full font-bold text-[17px] textShadow">
+              {strategy.strategyTitle}
+            </p>
+            <StarLevel level={strategy.difficultyLevel} />
+            <p className="font-semibold text-[12px] line-clamp-3 overflow-ellipsis">
+              {strategy.strategyDescription}
+            </p>
           </div>
         </a>
+      </motion.div>
+    );
+
+    // return (
+    //   <motion.div
+    //     custom={custom}
+    //     variants={boxVariants}
+    //     initial="hidden"
+    //     animate="visible"
+    //     exit="exit"
+    //     className={`${className} strategy-nav-box ${
+    //       resolvedTheme === "dark" ? "dark" : ""
+    //     }`}
+    //   >
+    //     <a
+    //       onClick={closeDropdown}
+    //       href={`/strategies/${strategy.slug}`}
+    //       className="font-semibold pt-4 text-white !z-50 rounded-[25px]"
+    //     >
+    //       <div className="p-5 pl-1 flex flex-row gap-4 w-full h-full boxContainer rounded-[26px]">
+    //         <div className="flex flex-col gap-2 justify-center">
+    //           <p className="w-fit font-bold text-[12px] mb-2 ">
+    //             {strategy.strategyTitle}
+    //           </p>
+    //           <p className="overflow-hidden text-ellipsis line-clamp-2 text-wrap font-semibold text-[10px] mb-2 ">
+    //             {strategy.strategyDescription}
+    //           </p>
+    //         </div>
+    //       </div>
+    //     </a>
+    //   </motion.div>
+    // );
+  };
+
+  const MenuDropDownDesktop = () => {
+    resolvedTheme === "dark" ? "bg-[#000F38]" : "bg-[#F6F6F6]";
+
+    return (
+      <motion.div
+        ref={dropdownRef}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        className={`dark:text-white text-[#565AC2]  dropdown-menu absolute 2xl:-left-[9rem] lg:-left-[19rem] -left-[27rem] top-[2.5rem] box-border rounded-[26px] shadow-lg z-[1000] p-6 ${
+          resolvedTheme === "dark" ? "bg-[#000F38]" : "bg-[#F6F6F6]"
+        } `}
+      >
+        <div className="w-full">
+          <p className="text-[23px] textShadow mb-8">
+            {isStrategy ? "Strategies" : "Latest Posts"}
+          </p>
+        </div>
+        <div className="flex flex-row gap-8">
+          {isStrategy ? (
+            <div className="">
+              <div className="flex flex-row justify-between w-[13rem]">
+                <p className="text-[12px] text-wrap mr-4">
+                  DeltaPrime allows for a range of new and unique strategies.
+                  Every strategy is accompanied by a practical example, getting
+                  deeper into the risk and rewards of the specific strategy.
+                </p>
+                <Image
+                  className="w-6 h-6"
+                  height={15}
+                  width={15}
+                  src={BigArrowDown}
+                  alt="Big Arrow Down"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-row justify-between w-[12rem]">
+                <p className="text-[15px] textShadow text-nowrap">Blogs</p>
+                <Image
+                  className="w-4 h-4"
+                  height={15}
+                  width={15}
+                  src={RightArrow}
+                  alt="Right Arrow"
+                />
+              </div>
+              <div className="flex flex-row justify-between w-[12rem]">
+                <p className="text-[15px] textShadow text-nowrap">
+                  How To Videos
+                </p>
+                <Image
+                  className="w-4 h-4"
+                  height={15}
+                  width={15}
+                  src={RightArrow}
+                  alt="Right Arrow"
+                />
+              </div>
+            </div>
+          )}
+
+          <div className="relative pl-[25px] z-10">
+            <div className="absolute inset-0 h-full w-[2px] bg-gradient-to-b from-[#afafffab] via-[#FF8FB8ab] to-[#FFBB9Bab] rounded-[25px]" />
+            {isStrategy && (
+              <div className="grid md:grid-cols-2 grid-cols-1 gap-4 w-[30rem]">
+                {strategyData.map((strategy, i) => (
+                  <StrategyNavBox
+                    key={i}
+                    custom={i}
+                    boxVariants={boxVariants}
+                    // className="boxWrapper"
+                    strategy={strategy}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       </motion.div>
     );
   };
@@ -202,6 +302,7 @@ const DropdownMenu = ({
           />
         )}
       </div>
+
       {isOpen && (
         <div className="w-full h-[2px] mt-1 bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%" />
       )}
@@ -211,12 +312,14 @@ const DropdownMenu = ({
       {!isOpen && isBlog && (
         <div className={getLinkClass("/blogs", pathname, resolvedTheme)} />
       )}
+
       <AnimatePresence>
         {isOpen && (
           <>
             {isOpen && <div className="overlay visible" />}
             {/* Add the overlay */}
-            <motion.div
+            <MenuDropDownDesktop />
+            {/* <motion.div
               ref={dropdownRef}
               initial="hidden"
               animate="visible"
@@ -310,7 +413,6 @@ const DropdownMenu = ({
                           blogTitle={blog.blogTitle}
                           blogCategory={blog.blogCategory}
                           previewBlogImage={`https:${blog.previewImageBlog.fields.file.url}`}
-                          roundedImage={Circles(getRandomNumber())}
                           blogSlug={blog.slug}
                           onClick={closeDropdown}
                           blogDescription={blog.blogDescription}
@@ -320,7 +422,7 @@ const DropdownMenu = ({
                   </div>
                 )}
               </div>
-            </motion.div>
+            </motion.div> */}
           </>
         )}
       </AnimatePresence>
