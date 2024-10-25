@@ -45,7 +45,7 @@ export default function Dropdown() {
           <div className="relative w-fit">
             <p className="pb-[2px">About us</p>
             <motion.div
-              className="absolute bottom-0 left-0 w-full h-[2px] bg-[#6C6EED]"
+              className="absolute bottom-0 left-0 w-full h-[2px] bg-[#FFACA5]"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: isOpen ? 1 : 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
