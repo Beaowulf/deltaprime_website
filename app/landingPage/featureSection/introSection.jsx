@@ -6,11 +6,6 @@ import { useCryptoData } from "@/app/context/CryptoDataContext";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"; // Import rich text renderer
 import VideoThumbnail from "@/app/components/videoPlayer/video";
 
-// const VideoPlayer = dynamic(
-//   () => import("@/app/components/videoPlayer/video"),
-//   { ssr: false }
-// );
-
 const TextWithPill = ({
   totalTvl,
   totalBorrowedLiquidity,

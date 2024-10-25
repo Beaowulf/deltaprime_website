@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Thumbnail_bg from "@/public/assets/img/thumbnail.png";
-
 import playIconSVG from "@/public/assets/icons/play.svg";
 import VideoPlayerModal from "@/app/components/videoPlayer/videoPlayerModal";
-import "./videoPlayer.css";
+import styles from "./videoPlayer.module.css"; // Import the CSS module
 
 export const PlayButton = () => (
   <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -47,28 +46,31 @@ const VideoThumbnail = ({ url }) => {
             height={500}
             alt="key_hand_thumbnail_image"
             className="w-full h-auto rounded-[25px] border-white border-[5px]"
+            priority
+            placeholder="blur"
           />
           <PlayButton />
         </div>
       </div>
       <VideoPlayerModal isOpen={isModalOpen} onClose={closeModal}>
-        <div className="playerWrapper">
+        <div className={styles.playerWrapper}>
           {/* might make this into a video */}
           <iframe
             height="100%"
             width="100%"
             src={url}
-            className="reactPlayer"
+            className={styles.reactPlayer}
             title="What is DeltaPrime"
-            frameborder="0"
+            frameBorder="0"
+            loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           />
           {/* <ReactPlayer
             height="100%"
             width="100%"
-            className="reactPlayer"
+            className={styles.reactPlayer}
             url={url}
             controls={true}
             playing={isModalOpen}
