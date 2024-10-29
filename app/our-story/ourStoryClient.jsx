@@ -148,7 +148,6 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
               width={introSection.image.width}
               height={introSection.image.height}
               priority={true}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             </div>
           </div>
@@ -165,7 +164,6 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
             layout="responsive"
             width={secondSection.image.width}
             height={secondSection.image.height}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           </div>
           {/* Text Wrapper */}
@@ -223,7 +221,6 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
               layout="responsive"
               width={thirdSection.image.width}
               height={thirdSection.image.height}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </div>
@@ -237,7 +234,6 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
             layout="responsive"
             width={fourthSection.image.width}
             height={fourthSection.image.height}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
 
           </div>
