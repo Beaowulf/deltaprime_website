@@ -32,7 +32,7 @@ export default function ThemeSwitch() {
       <div
         className="icon moon"
         style={{
-          left: isDay ? "0%" : "48%",
+          left: isDay ? "-100%" : "48%",
           opacity: isDay ? 0 : 1,
         }}
       />

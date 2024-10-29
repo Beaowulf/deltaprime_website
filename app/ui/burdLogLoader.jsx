@@ -4,6 +4,7 @@ import { fetchBlogs, fetchHowToVideos } from "@/lib/getBlogs";
 import DropdownMenu from "@/app/components/dropdown/dropdown";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 
+// todo might not need this with the new mega menu
 const DropDownBlogLoader = ({ pathname, resolvedTheme, getLinkClass }) => {
   const [blogs, setBlogs] = useState([]);
   const [howToVideos, setHowToVideoData] = useState([]);
