@@ -90,6 +90,9 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
                   width={18}
                   height={18}
                   alt="arrow"
+                  className={`transition-transform ${
+                    selectedMenu === item ? "rotate-90" : ""
+                  }`}
                 />
               </div>
               <div
@@ -102,6 +105,9 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
                   width={18}
                   height={18}
                   alt="arrow"
+                  className={`transition-transform ${
+                    selectedMenu === item ? "rotate-90" : ""
+                  }`}
                 />
               </div>
               <div
@@ -114,6 +120,9 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
                   width={18}
                   height={18}
                   alt="arrow"
+                  className={`transition-transform ${
+                    selectedMenu === item ? "rotate-90" : ""
+                  }`}
                 />
               </div>
             </div>
@@ -281,7 +290,6 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
     </div>
   );
 };
-
 const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
   const [selectedMenu, setSelectedMenu] = useState("Blogs");
   const [isLatestPostsExpanded, setIsLatestPostsExpanded] = useState(true);
@@ -373,7 +381,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
         blogs={blogs}
         howToVideos={howToVideos}
         strategies={strategies}
-        toggleMenu={toggleDesktopMenu} // Pass toggle function to MobileMenu
+        toggleMenu={toggleDesktopMenu}
       />
     );
   }
@@ -420,15 +428,18 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                 {["Blogs", "How to Videos"].map((item) => (
                   <div
                     key={item}
-                    className="cursor-pointer flex justify-between text-[24px]"
+                    className="cursor-pointer flex justify-between text-[24px] mr-2"
                     onClick={() => setSelectedMenu(item)}
                   >
                     <p>{item}</p>
                     <Image
                       src={arrowRightColored}
-                      width={18}
-                      height={18}
+                      width={14}
+                      height={14}
                       alt="arrow"
+                      className={`transition-transform ${
+                        selectedMenu === item ? "rotate-90" : ""
+                      }`}
                     />
                   </div>
                 ))}
@@ -450,6 +461,9 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                 width={18}
                 height={18}
                 alt="arrow"
+                className={`transition-transform ${
+                  selectedMenu === item ? "rotate-90" : ""
+                }`}
               />
             </motion.div>
           ))}
@@ -463,43 +477,45 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
             items.length <= 3 ? "grid-cols-1" : "grid-cols-2"
           } gap-4`}
         >
-          {items.map((item, index) => (
-            <motion.div
-              key={index}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={{
-                hidden: { opacity: 0, x: 50 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              className="mb-4 space-y-3"
-            >
-              <Link
-                href={
-                  selectedMenu === "Blogs"
-                    ? `/blogs/academy/${item.slug}`
-                    : item.href || `/${selectedMenu.toLowerCase()}/${item.slug}`
-                }
-                onClick={toggleDesktopMenu}
-                className="font-semibold text-[24px] hover:underline textShadow"
+          {items
+            .slice(0, selectedMenu === "How to Videos" ? 4 : 3) // Show 4 for "How to Videos" and 3 for others
+            .map((item, index) => (
+              <motion.div
+                key={index}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={{
+                  hidden: { opacity: 0, x: 50 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                className="mb-4 space-y-3"
               >
-                {item.blogTitle ||
-                  item.title ||
-                  item.strategyTitle ||
-                  item.howToVideoTitle}
-              </Link>
-              {/* Conditionally render the stars if strategyDescription exists */}
-              <div className="flex items-center flex-col w-full">
-                {item.strategyDescription && renderStars(item.difficultyLevel)}
-              </div>
-              <p className="text-[16px] line-clamp-3">
-                {item.blogDescription ||
-                  item.strategyDescription ||
-                  item.howToVideoDescription}
-              </p>
-            </motion.div>
-          ))}
+                <Link
+                  href={
+                    selectedMenu === "Blogs"
+                      ? `/blogs/academy/${item.slug}`
+                      : item.href ||
+                        `/${selectedMenu.toLowerCase()}/${item.slug}`
+                  }
+                  onClick={toggleDesktopMenu}
+                  className="font-semibold text-[24px] hover:underline textShadow"
+                >
+                  {item.blogTitle ||
+                    item.title ||
+                    item.strategyTitle ||
+                    item.howToVideoTitle}
+                </Link>
+                {selectedMenu === "Strategies" &&
+                  item.difficultyLevel &&
+                  renderStars(item.difficultyLevel)}
+                <p className="text-[16px] line-clamp-4">
+                  {item.blogDescription ||
+                    item.strategyDescription ||
+                    item.howToVideoDescription}
+                </p>
+              </motion.div>
+            ))}
         </div>
         {selectedMenu !== "About Us" && (
           <motion.div
