@@ -1,15 +1,22 @@
 import React from "react";
 import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar";
 
-// content will come from contentful
+// todos: content will come from contentful
+
+export async function generateMetadata() {
+  return {
+    title: "Tokenomics Risk Disclaimer | DeltaPrime",
+    description: "Read the full risk disclaimer for PRIME and sPRIME tokens. Ensure you understand the risks associated with tokenomics in the DeltaPrime ecosystem before proceeding.",
+  };
+}
 
 function TokenomicsRiskDisclaimer() {
   return (
     <>
       <DynamicPurpleBar title={"Tokenomics Risk Disclaimer"} />
-      <div className="pb-4 pagePaddingLarge">
+      <div className="my-mobile-spacing md:my-desktop-spacing pagePaddingLarge">
         <div className="flex justify-center items-center flex-col w-auto h-full md:mt-20 mt-5">
-          <p className="featureSubtitle mb-4 text-3xl md:text-[44px] mt-10 dark:text-white text-[#6B70ED]">
+          <p className="featureSubtitle mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED]">
             Tokenomics Risk Disclaimer
           </p>
         </div>

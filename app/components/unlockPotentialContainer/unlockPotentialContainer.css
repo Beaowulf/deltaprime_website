@@ -6,7 +6,7 @@
   height: 100%;
   width: 100%;
   background: linear-gradient(45deg, #48427b 20%, #3236978f 80%),
-    url("../../../public/assets/img/images/bg_image_introTextBtn.png") no-repeat
+    url("../../../public/assets/img/images/bg_image_introTextBtn.webp") no-repeat
       center;
   background-size: cover;
   background-blend-mode: overlay;

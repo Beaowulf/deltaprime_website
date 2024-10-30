@@ -1,5 +1,10 @@
-import React from "react";
 import ContactForm from "@/app/ui/contactForm/contactForm";
+
+// Define dynamic metadata for the Contact Us page
+export const metadata = {
+  title: "Contact Us | Delta Prime",
+  description: "Have questions? Contact Delta Prime. We're here to assist with any queries or issues you may have.",
+};
 
 const ContactUs = () => {
   return (

@@ -1,18 +1,22 @@
 // StrategyLoader.js
 import React, { useState, useEffect } from "react";
-import { fetchBlogs } from "@/lib/getBlogs";
+import { fetchBlogs, fetchHowToVideos } from "@/lib/getBlogs";
 import DropdownMenu from "@/app/components/dropdown/dropdown";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 
+// todo might not need this with the new mega menu
 const DropDownBlogLoader = ({ pathname, resolvedTheme, getLinkClass }) => {
   const [blogs, setBlogs] = useState([]);
+  const [howToVideos, setHowToVideoData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchBlogs();
+        const howToVideoData = await fetchHowToVideos();
         setBlogs(data);
+        setHowToVideoData(howToVideoData);
       } catch (error) {
         console.error("Error fetching blogs:", error);
       } finally {
@@ -56,6 +60,7 @@ const DropDownBlogLoader = ({ pathname, resolvedTheme, getLinkClass }) => {
           "Tireless Burd talks about all things DeFi. News, Guides, Infographics and more help you deepen your knowledge and stay up-to-date."
         }
         burdLogData={blogsWithReadTime}
+        howToVideoData={howToVideos}
         menuText={"Burd Log"}
         className={getLinkClass("/blogs", pathname, resolvedTheme)}
         isBlog={true}

@@ -155,7 +155,6 @@ export const FlipDesktopCarousel = ({ strategies }) => {
                 titleBack={strategy.strategyTitle}
                 descriptionFront={strategy.strategyDescription}
                 difficultyLevel={strategy.difficultyLevel}
-                listTextBack={<ListText strategyID={strategy.strategyID} />}
               />
             </SwiperSlide>
           ))}

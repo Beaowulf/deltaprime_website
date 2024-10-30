@@ -68,7 +68,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
       };
       fetchData();
     }
-  }, [blogData, blogData.slug]);
+  }, [blog.slug, blogData]);
 
   useEffect(() => {
     const collectedHeadings = [];
@@ -207,7 +207,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         title={blogData.blogTitle}
         link={<Link href={"/blogs"}>Burd Log</Link>}
       />
-      <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col lg:flex-row gap-10 pagePaddingLarge">
+      <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col lg:flex-row gap-10 pagePaddingMedium">
         <div className="w-full lg:w-9/12">
           <div className="px-4 ">
             <h3 className="text-[24px] md:text-[35px] text-center md:text-left leading-10 text-[#6B70ED] dark:text-[#F6F6F6] font-bold mb-10 md:mb-20">
@@ -260,11 +260,11 @@ const BlogPost = ({ blog, blogPreviewData }) => {
                 className="w-auto mx-auto max-h-450px rounded-[20px]"
               />
             </div>
-            <div className="md:hidden w-full flex justify-center mt-6 gap-4">
-              <p className="text-nowrap text-[#565AC2] dark:text-[#F6F6F6]">
+            <div className="md:hidden w-full flex justify-center mt-6 gap-4 items-center">
+              <p className="text-nowrap text-[#565AC2] dark:text-[#F6F6F6] ">
                 Share article:
               </p>
-              <div className="mt-2">
+              <div>
                 <ShareButton
                   title={blogData.blogTitle}
                   text={blogData.blogDescription}

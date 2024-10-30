@@ -1,25 +1,17 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
-import UnlockPotentialContainer from "@/app/components/unlockPotentialContainer/unlockPotentialContainer";
 import { AnimatedText } from "@/app/ui/animatedText";
 import { useCryptoData } from "@/app/context/CryptoDataContext";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"; // Import rich text renderer
+import VideoThumbnail from "@/app/components/videoPlayer/video";
 
-
-
-
-const VideoPlayer = dynamic(
-  () => import("@/app/components/videoPlayer/video"),
-  { ssr: false }
-);
-
-
-
-
-
-const TextWithPill = ({ totalTvl, totalBorrowedLiquidity, SectionDetails, options}) => {
+const TextWithPill = ({
+  totalTvl,
+  totalBorrowedLiquidity,
+  SectionDetails,
+  options,
+}) => {
   return (
     <>
       {/* Left side (text with pill) */}
@@ -74,8 +66,8 @@ const IntroSection = ({ totalTvl, SectionDetails, options }) => {
           <TextWithPill
             totalTvl={totalTvl}
             totalBorrowedLiquidity={totalBorrowedLiquidity}
-            SectionDetails = {SectionDetails}
-            options = {options}
+            SectionDetails={SectionDetails}
+            options={options}
           />
           {/* Show this button only on mobile */}
           <div className="fullWidthButtonChildren block sm:hidden">
@@ -89,7 +81,8 @@ const IntroSection = ({ totalTvl, SectionDetails, options }) => {
           </div>
           {/* Right side (video player) */}
           <div className="w-full max-w-[50rem]">
-            <VideoPlayer url={`${SectionDetails?.linkUrl}`} />
+        
+            <VideoThumbnail url={`${SectionDetails?.embedYouTubeLink}`} />
           </div>
         </div>
       </div>

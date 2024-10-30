@@ -1,8 +1,24 @@
-// app/howToVideos/[slug]/page.jsx
 import { fetchHowToVideos, fetchHowToVideoBySlug } from "@/lib/getBlogs";
 import HowToVideoDetail from "./howToVideoPost";
 import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar";
 import Link from "next/link";
+
+// This function dynamically generates metadata based on the video's title and description
+export async function generateMetadata({ params }) {
+  const video = await fetchHowToVideoBySlug(params.slug);
+
+  if (!video) {
+    return {
+      title: "Video Not Found | Delta Prime",
+      description: "This video could not be found on Delta Prime.",
+    };
+  }
+
+  return {
+    title: `${video.howToVideoTitle} | Delta Prime`,
+    description: video.howToVideoDescription || "Learn more with our how-to videos.",
+  };
+}
 
 export async function generateStaticParams() {
   const videos = await fetchHowToVideos();

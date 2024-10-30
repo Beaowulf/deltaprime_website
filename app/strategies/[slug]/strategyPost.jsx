@@ -219,7 +219,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
         </div>
         {/* Image burd */}
         <div className="md:block hidden rounded-[25px]">
-          <Image
+          <img
             src={strategiesIntroImg}
             alt="deltaprime_mascot_img rounded-[25px]"
           />

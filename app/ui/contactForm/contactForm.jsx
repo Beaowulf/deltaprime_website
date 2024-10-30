@@ -54,29 +54,30 @@ const ContactForm = ({
               Contact us
             </h4>
             <h2 className="mb-6 featureSubtitle text-[25px] md:text-[34px] dark:text-white text-[#6B70ED] leading-[30px] md:leading-[40px]">
-              Got a question to ask? We're here for you.
+              Got a question to ask? We&#39;re here for you.
             </h2>
             <p className="aboutTypographyparagraphWhite max-w-xl md:leading-8 leading-6 dark:text-white text-[#565AC2]">
-              You couldn't find answers in our Site, Docs or Discord? Ask us.
-              We'll be happy to assist.
+              You couldn&#39;t find answers in our Site, Docs or Discord? Ask us.
+              We&#39;ll be happy to assist.
             </p>
           </div>
         </div>
         {/* Right Side */}
-        <div className="flex-1 flex flex-col justify-center px-8">
+        <div className="flex-1 flex flex-col justify-center px-8 pb-6">
           <form
             className="w-full max-w-lg mx-auto"
             action="https://formsubmit.co/contact@deltaprime.io"
             method="POST"
             onSubmit={handleFormSubmit}
           >
+            <input type="hidden" name="_captcha" value="true"></input>
             {/* Hidden Inputs for FormSubmit Configuration */}
-            <input type="hidden" name="_captcha" value="false" />
             <input
               type="hidden"
               name="_url"
               value="https://deltaprime.io/landing.html"
             />
+
             <div className="flex gap-5">
               <div className="mb-4 flex-1">
                 <label
@@ -131,7 +132,7 @@ const ContactForm = ({
               ></textarea>
             </div>
 
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center pt-10">
               <DeltaPurpleButton
                 buttonClassName={"w-full"}
                 className={
