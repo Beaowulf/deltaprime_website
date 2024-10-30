@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import arrowRightColored from "@/public/assets/icons/arrowRightColored.svg";
 import StarFilled from "@/public/assets/icons/starFilled.svg";
 import StarUnfilled from "@/public/assets/icons/starUnfilled.svg";
+import { RoundButtonLinks } from "@/app/ui/footer/footer";
 
 const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
   const [currentSlide, setCurrentSlide] = useState("main");
@@ -90,9 +91,6 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
                   width={18}
                   height={18}
                   alt="arrow"
-                  className={`transition-transform ${
-                    selectedMenu === item ? "rotate-90" : ""
-                  }`}
                 />
               </div>
               <div
@@ -105,9 +103,6 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
                   width={18}
                   height={18}
                   alt="arrow"
-                  className={`transition-transform ${
-                    selectedMenu === item ? "rotate-90" : ""
-                  }`}
                 />
               </div>
               <div
@@ -120,9 +115,6 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
                   width={18}
                   height={18}
                   alt="arrow"
-                  className={`transition-transform ${
-                    selectedMenu === item ? "rotate-90" : ""
-                  }`}
                 />
               </div>
             </div>
@@ -387,74 +379,25 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
   }
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
-      className="flex text-center bg-gray-900 pt-40 rounded-lg w-full text-[#565AC2] dark:text-white"
-    >
-      {/* Desktop layout */}
-      <motion.div className="flex flex-col w-[25rem] pr-12 border-r border-gray-700">
-        <p className="text-[34px] font-semibold mb-14 text-left brightTitle">
-          Menu
-        </p>
-        <div className="space-y-8">
-          <div
-            className="cursor-pointer flex items-center justify-between mb-2"
-            onClick={() => setIsLatestPostsExpanded(!isLatestPostsExpanded)}
-          >
-            <p className="text-[#565AC2] dark:text-white font-semibold text-[24px]">
-              Latest Posts
-            </p>
-            <Image
-              src={arrowRightColored}
-              width={18}
-              height={18}
-              alt="arrow"
-              className={`transition-transform ${
-                isLatestPostsExpanded ? "rotate-90" : ""
-              }`}
-            />
-          </div>
-          <AnimatePresence>
-            {isLatestPostsExpanded && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="ml-4 space-y-2 overflow-hidden"
-              >
-                {["Blogs", "How to Videos"].map((item) => (
-                  <div
-                    key={item}
-                    className="cursor-pointer flex justify-between text-[24px] mr-2"
-                    onClick={() => setSelectedMenu(item)}
-                  >
-                    <p>{item}</p>
-                    <Image
-                      src={arrowRightColored}
-                      width={14}
-                      height={14}
-                      alt="arrow"
-                      className={`transition-transform ${
-                        selectedMenu === item ? "rotate-90" : ""
-                      }`}
-                    />
-                  </div>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {["Strategies", "About Us"].map((item, index) => (
-            <motion.div
-              key={item}
-              className="cursor-pointer flex justify-between mb-2"
-              onClick={() => setSelectedMenu(item)}
+    <>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        className="flex text-center bg-gray-900 pt-6 rounded-lg w-full text-[#565AC2] dark:text-white"
+      >
+        {/* Desktop layout */}
+        <motion.div className="flex flex-col w-[25rem] pr-12 border-r border-gray-700">
+          <p className="text-[34px] font-semibold mb-14 text-left brightTitle">
+            Menu
+          </p>
+          <div className="space-y-8">
+            <div
+              className="cursor-pointer flex items-center justify-between mb-2"
+              onClick={() => setIsLatestPostsExpanded(!isLatestPostsExpanded)}
             >
               <p className="text-[#565AC2] dark:text-white font-semibold text-[24px]">
-                {item}
+                Latest Posts
               </p>
               <Image
                 src={arrowRightColored}
@@ -462,79 +405,138 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                 height={18}
                 alt="arrow"
                 className={`transition-transform ${
-                  selectedMenu === item ? "rotate-90" : ""
+                  isLatestPostsExpanded ? "rotate-90" : ""
                 }`}
               />
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Right side - content display */}
-      <motion.div className="flex flex-col w-3/4 lg:pl-20 md:pl-12 pl-0">
-        <div
-          className={`grid ${
-            items.length <= 3 ? "grid-cols-1" : "grid-cols-2"
-          } gap-4`}
-        >
-          {items
-            .slice(0, selectedMenu === "How to Videos" ? 4 : 3) // Show 4 for "How to Videos" and 3 for others
-            .map((item, index) => (
-              <motion.div
-                key={index}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                variants={{
-                  hidden: { opacity: 0, x: 50 },
-                  visible: { opacity: 1, x: 0 },
-                }}
-                className="mb-4 space-y-3"
-              >
-                <Link
-                  href={
-                    selectedMenu === "Blogs"
-                      ? `/blogs/academy/${item.slug}`
-                      : item.href ||
-                        `/${selectedMenu.toLowerCase()}/${item.slug}`
-                  }
-                  onClick={toggleDesktopMenu}
-                  className="font-semibold text-[24px] hover:underline textShadow"
+            </div>
+            <AnimatePresence>
+              {isLatestPostsExpanded && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="ml-4 space-y-2 overflow-hidden"
                 >
-                  {item.blogTitle ||
-                    item.title ||
-                    item.strategyTitle ||
-                    item.howToVideoTitle}
-                </Link>
-                {selectedMenu === "Strategies" &&
-                  item.difficultyLevel &&
-                  renderStars(item.difficultyLevel)}
-                <p className="text-[16px] line-clamp-4">
-                  {item.blogDescription ||
-                    item.strategyDescription ||
-                    item.howToVideoDescription}
+                  {["Blogs", "How to Videos"].map((item) => (
+                    <div
+                      key={item}
+                      className="cursor-pointer flex justify-between text-[24px] mr-2"
+                      onClick={() => setSelectedMenu(item)}
+                    >
+                      <p>{item}</p>
+                      <Image
+                        src={arrowRightColored}
+                        width={14}
+                        height={14}
+                        alt="arrow"
+                        className={`transition-transform ${
+                          selectedMenu === item ? "rotate-90" : ""
+                        }`}
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {["Strategies", "About Us"].map((item, index) => (
+              <motion.div
+                key={item}
+                className="cursor-pointer flex justify-between mb-2"
+                onClick={() => setSelectedMenu(item)}
+              >
+                <p className="text-[#565AC2] dark:text-white font-semibold text-[24px]">
+                  {item}
                 </p>
+                <Image
+                  src={arrowRightColored}
+                  width={18}
+                  height={18}
+                  alt="arrow"
+                  className={`transition-transform ${
+                    selectedMenu === item ? "rotate-90" : ""
+                  }`}
+                />
               </motion.div>
             ))}
-        </div>
-        {selectedMenu !== "About Us" && (
-          <motion.div
-            className="mt-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+          </div>
+        </motion.div>
+
+        {/* Right side - content display */}
+        <motion.div className="flex flex-col w-3/4 lg:pl-20 md:pl-12 pl-0">
+          <div
+            className={`grid ${
+              items.length <= 3 ? "grid-cols-1" : "grid-cols-2"
+            } gap-4`}
           >
-            <Link
-              href={`/${selectedMenu.toLowerCase().replace(" ", "-")}`}
-              onClick={toggleDesktopMenu}
-              className="underline"
+            {items
+              .slice(0, selectedMenu === "How to Videos" ? 6 : 3)
+              .map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  variants={{
+                    hidden: { opacity: 0, x: 50 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  className="mb-4 space-y-3 flex flex-col items-start"
+                >
+                  <Link
+                    href={
+                      selectedMenu === "Blogs"
+                        ? `/blogs/academy/${item.slug}`
+                        : selectedMenu === "How to Videos"
+                        ? `/how-to-videos/${item.slug}`
+                        : `/strategies/${item.slug}`
+                    }
+                    onClick={toggleDesktopMenu}
+                    className="font-semibold text-[24px] hover:underline textShadow text-left"
+                  >
+                    {item.blogTitle ||
+                      item.title ||
+                      item.strategyTitle ||
+                      item.howToVideoTitle}
+                  </Link>
+                  {selectedMenu === "Strategies" &&
+                    item.difficultyLevel &&
+                    renderStars(item.difficultyLevel)}
+                  <p className="text-[16px] line-clamp-4 text-left">
+                    {item.blogDescription ||
+                      item.strategyDescription ||
+                      item.howToVideoDescription}
+                  </p>
+                </motion.div>
+              ))}
+          </div>
+          {selectedMenu !== "About Us" && (
+            <motion.div
+              className="mt-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
             >
-              View All
-            </Link>
-          </motion.div>
-        )}
+              <Link
+                href={
+                  selectedMenu === "How to Videos"
+                    ? "/how-to-videos"
+                    : `/${selectedMenu.toLowerCase().replace(" ", "-")}`
+                }
+                onClick={toggleDesktopMenu}
+                className="underline"
+              >
+                View All
+              </Link>
+            </motion.div>
+          )}
+        </motion.div>
       </motion.div>
-    </motion.div>
+      <motion.div className="flex flex-row mb-10">
+        <RoundButtonLinks />
+      </motion.div>
+    </>
   );
 };
 
