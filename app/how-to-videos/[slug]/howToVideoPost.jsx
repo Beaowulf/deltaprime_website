@@ -43,7 +43,9 @@ const HowToVideoDetail = ({
                 className={`relative w-full cursor-pointer`}
                 onClick={startPlaying}
               >
-                <Image 
+                <Image
+                  height={500}
+                  width={1250}
                   src={
                     howToVideosBigThumbnail
                       ? `https:${howToVideosBigThumbnail}`

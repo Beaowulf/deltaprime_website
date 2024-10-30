@@ -104,7 +104,7 @@ function Nav() {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="fixed inset-0 z-[1000] bg-gradient-to-r from-[#FFF] to-[#FFF] dark:from-[#252948] dark:to-[#252948] flex justify-around w-full pagePaddingMedium"
           >
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full justify-between">
               <div
                 className={`w-full ${
                   isScrolled &&
