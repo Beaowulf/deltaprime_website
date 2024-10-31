@@ -124,3 +124,18 @@
   line-height: 20px;
   letter-spacing: -2%;
 }
+
+/* mega menu styff */
+.responsive-bg {
+  background-image: url("/assets/img/mega-menu-background-dark.png");
+  opacity: 0.05;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .responsive-bg {
+    background-size: contain;
+  }
+}

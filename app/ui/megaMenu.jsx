@@ -3,12 +3,21 @@ import { fetchBlogs, fetchHowToVideos, fetchStrategies } from "@/lib/getBlogs";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import arrowRightColored from "@/public/assets/icons/arrowRightColored.svg";
+import arrowLeftColored from "@/public/assets/icons/arrowLeftColored.svg";
 import StarFilled from "@/public/assets/icons/starFilled.svg";
 import StarUnfilled from "@/public/assets/icons/starUnfilled.svg";
+import StarFilledPurple from "@/public/assets/icons/starFilledPurple.svg";
+import StarUnfilledPurple from "@/public/assets/icons/starUnfilledPurple.svg";
 import { RoundButtonLinks } from "@/app/ui/footer/footer";
+import "./header/header.css";
 
-const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
+const MobileMenu = ({
+  blogs,
+  howToVideos,
+  strategies,
+  toggleMenu,
+  resolvedTheme,
+}) => {
   const [currentSlide, setCurrentSlide] = useState("main");
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -30,7 +39,7 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
           {Array.from({ length: filledStars }, (_, i) => (
             <Image
               key={`filled-${i}`}
-              src={StarFilled}
+              src={resolvedTheme === "dark" ? StarFilled : StarFilledPurple}
               alt="Filled Star"
               width={15}
               height={15}
@@ -39,7 +48,7 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
           {Array.from({ length: unfilledStars }, (_, i) => (
             <Image
               key={`unfilled-${i}`}
-              src={StarUnfilled}
+              src={resolvedTheme === "dark" ? StarUnfilled : StarUnfilledPurple}
               alt="Unfilled Star"
               width={15}
               height={15}
@@ -51,7 +60,7 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white text-center p-4 relative">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-center p-4 relative text-[#565AC2] dark:text-white">
       <motion.div
         variants={slideVariants}
         initial="enter"
@@ -61,9 +70,10 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
       >
         <button
           onClick={() => setCurrentSlide("main")}
-          className="bg-gray-700 p-2 rounded-full z-10"
+          className="bg-gray-700 p-2 rounded-full z-10 flex items-center"
           style={{ visibility: currentSlide === "main" ? "hidden" : "visible" }}
         >
+          <Image src={arrowLeftColored} width={24} height={24} />
           Back
         </button>
       </motion.div>
@@ -86,36 +96,18 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
                 onClick={() => setCurrentSlide("latestPosts")}
               >
                 Latest Posts
-                <Image
-                  src={arrowRightColored}
-                  width={18}
-                  height={18}
-                  alt="arrow"
-                />
               </div>
               <div
                 className="cursor-pointer flex justify-center text-[24px] font-semibold gap-6"
                 onClick={() => setCurrentSlide("strategies")}
               >
                 Strategies
-                <Image
-                  src={arrowRightColored}
-                  width={18}
-                  height={18}
-                  alt="arrow"
-                />
               </div>
               <div
                 className="cursor-pointer flex items-center justify-center text-[24px] font-semibold gap-6"
                 onClick={() => setCurrentSlide("aboutUs")}
               >
                 About Us
-                <Image
-                  src={arrowRightColored}
-                  width={18}
-                  height={18}
-                  alt="arrow"
-                />
               </div>
             </div>
           </motion.div>
@@ -143,12 +135,6 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
                 }}
               >
                 Blogs
-                <Image
-                  src={arrowRightColored}
-                  width={18}
-                  height={18}
-                  alt="arrow"
-                />
               </div>
               <div
                 className="cursor-pointer flex items-center justify-center text-[24px] gap-6"
@@ -158,12 +144,6 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
                 }}
               >
                 How to Videos
-                <Image
-                  src={arrowRightColored}
-                  width={18}
-                  height={18}
-                  alt="arrow"
-                />
               </div>
             </div>
           </motion.div>
@@ -282,6 +262,7 @@ const MobileMenu = ({ blogs, howToVideos, strategies, toggleMenu }) => {
     </div>
   );
 };
+
 const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
   const [selectedMenu, setSelectedMenu] = useState("Blogs");
   const [isLatestPostsExpanded, setIsLatestPostsExpanded] = useState(true);
@@ -374,6 +355,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
         howToVideos={howToVideos}
         strategies={strategies}
         toggleMenu={toggleDesktopMenu}
+        resolvedTheme={resolvedTheme}
       />
     );
   }
@@ -384,10 +366,10 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
         initial="hidden"
         animate="visible"
         exit="hidden"
-        className="flex text-center bg-gray-900 pt-6 rounded-lg w-full text-[#565AC2] dark:text-white"
+        className="flex text-center bg-gray-900 pt-6 rounded-lg w-full text-[#565AC2] dark:text-white megaMenuBG pagePaddingMedium"
       >
         {/* Desktop layout */}
-        <motion.div className="flex flex-col w-[25rem] pr-12 border-r border-gray-700">
+        <motion.div className="flex flex-col w-[25rem] h-[40rem] pr-12 border-r border-gray-700">
           <p className="text-[34px] font-semibold mb-14 text-left brightTitle">
             Menu
           </p>
@@ -396,18 +378,17 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
               className="cursor-pointer flex items-center justify-between mb-2"
               onClick={() => setIsLatestPostsExpanded(!isLatestPostsExpanded)}
             >
-              <p className="text-[#565AC2] dark:text-white font-semibold text-[24px]">
+              <p
+                className={`${
+                  selectedMenu === "Latest Posts"
+                    ? resolvedTheme === "dark"
+                      ? "text-[#565AC2] font-bold"
+                      : "text-black font-bold"
+                    : "text-[#565AC2] dark:text-white font-semibold"
+                } text-[24px]`}
+              >
                 Latest Posts
               </p>
-              <Image
-                src={arrowRightColored}
-                width={18}
-                height={18}
-                alt="arrow"
-                className={`transition-transform ${
-                  isLatestPostsExpanded ? "rotate-90" : ""
-                }`}
-              />
             </div>
             <AnimatePresence>
               {isLatestPostsExpanded && (
@@ -424,41 +405,41 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                       className="cursor-pointer flex justify-between text-[24px] mr-2"
                       onClick={() => setSelectedMenu(item)}
                     >
-                      <p>{item}</p>
-                      <Image
-                        src={arrowRightColored}
-                        width={14}
-                        height={14}
-                        alt="arrow"
-                        className={`transition-transform ${
-                          selectedMenu === item ? "rotate-90" : ""
+                      <p
+                        className={`${
+                          selectedMenu === item
+                            ? resolvedTheme === "dark"
+                              ? "text-[#565AC2] font-bold"
+                              : "text-black font-bold"
+                            : "text-[#565AC2] dark:text-white font-semibold"
                         }`}
-                      />
+                      >
+                        {item}
+                      </p>
                     </div>
                   ))}
                 </motion.div>
               )}
             </AnimatePresence>
 
-            {["Strategies", "About Us"].map((item, index) => (
-              <motion.div
+            {["Strategies", "About Us"].map((item) => (
+              <div
                 key={item}
                 className="cursor-pointer flex justify-between mb-2"
                 onClick={() => setSelectedMenu(item)}
               >
-                <p className="text-[#565AC2] dark:text-white font-semibold text-[24px]">
+                <p
+                  className={`${
+                    selectedMenu === item
+                      ? resolvedTheme === "dark"
+                        ? "text-[#565AC2] font-bold"
+                        : "text-black font-bold"
+                      : "text-[#565AC2] dark:text-white font-semibold"
+                  } text-[24px]`}
+                >
                   {item}
                 </p>
-                <Image
-                  src={arrowRightColored}
-                  width={18}
-                  height={18}
-                  alt="arrow"
-                  className={`transition-transform ${
-                    selectedMenu === item ? "rotate-90" : ""
-                  }`}
-                />
-              </motion.div>
+              </div>
             ))}
           </div>
         </motion.div>
@@ -534,7 +515,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
         </motion.div>
       </motion.div>
       <motion.div className="flex flex-row mb-10">
-        <RoundButtonLinks />
+        <RoundButtonLinks isOnMenu={true} resolvedTheme={resolvedTheme} />
       </motion.div>
     </>
   );
