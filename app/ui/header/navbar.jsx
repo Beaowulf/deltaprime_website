@@ -65,7 +65,7 @@ function Nav() {
             {/* Logo and Theme Toggle */}
             <div className="flex items-center gap-2">
               {resolvedTheme === "dark" ? <DarkModeLogo /> : <LightModeLogo />}
-              <div className="ml-4 hidden md:block">
+              <div className="ml-4">
                 <ThemeSwitch />
               </div>
             </div>
@@ -102,7 +102,7 @@ function Nav() {
             exit="hidden"
             variants={menuVariants}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="fixed inset-0 z-[1000] bg-gradient-to-r from-[#FFF] to-[#FFF] dark:from-[#252948] dark:to-[#252948] flex justify-around w-full pagePaddingMedium"
+            className="fixed inset-0 z-[1000] bg-gradient-to-br from-[#F4F4FF] via-[#FFF5F0] to-[#cccccc] dark:from-[#1B153C] dark:via-[#1C2943] dark:to-[#301E3E] flex justify-around w-full pagePaddingMedium"
           >
             <div className="flex flex-col w-full justify-between">
               <div
@@ -123,7 +123,7 @@ function Nav() {
                       ) : (
                         <LightModeLogo />
                       )}
-                      <div className="ml-4 hidden md:block">
+                      <div className="ml-4">
                         <ThemeSwitch />
                       </div>
                     </div>
