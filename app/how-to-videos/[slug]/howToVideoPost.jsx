@@ -29,7 +29,7 @@ const HowToVideoDetail = ({
           </h4>
 
           {/* video Image or Video Player */}
-          <div className="mb-4 w-full self-center relative lg:h-[45rem] h-[25rem]">
+          <div className="mb-4 w-full self-center relative lg:h-[45rem] h-[15rem]">
             {isPlaying ? (
               <ReactPlayer
                 width="100%"

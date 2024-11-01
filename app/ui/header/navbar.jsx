@@ -52,8 +52,11 @@ function Nav() {
       {/* Main Navbar */}
       <div
         className={`pagePaddingMedium ${
-          isScrolled &&
-          "sticky top-0 bg-white dark:bg-[#252948] shadow-md z-[1000] transition-all duration-300"
+          isScrolled
+            ? isOpenDesktop
+              ? "sticky top-0 bg-transparent z-[1000] transition-all duration-300"
+              : "sticky top-0 bg-white dark:bg-[#252948] shadow-md z-[1000] transition-all duration-300"
+            : "pagePaddingMedium"
         }`}
       >
         <nav
@@ -80,13 +83,6 @@ function Nav() {
 
             {/* Mobile Toggle Button */}
             <div className="-mr-1 flex md:hidden items-center gap-2">
-              <Link href="?modal=true" scroll={false}>
-                <DeltaPurpleButton
-                  hasArrowRight={false}
-                  label={"Launch app"}
-                  className="whitespace-nowrap md:px-5 px-3 md:py-3 py-2"
-                />
-              </Link>
               <MenuToggle toggle={toggleDesktopMenu} isOpen={isOpenDesktop} />
             </div>
           </div>
@@ -104,7 +100,7 @@ function Nav() {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="fixed inset-0 z-[1000] bg-gradient-to-br from-[#F4F4FF] via-[#FFF5F0] to-[#cccccc] dark:from-[#1B153C] dark:via-[#1C2943] dark:to-[#301E3E] flex justify-around w-full pagePaddingMedium"
           >
-            <div className="flex flex-col w-full justify-between">
+            <div className="flex flex-col w-full overflow-scroll h-screen">
               <div
                 className={`w-full ${
                   isScrolled &&

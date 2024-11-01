@@ -114,7 +114,6 @@ export function RoundButtonLinks({
 
   return (
     <div className="flex flex-col gap-4 items-center md:items-start">
-      <div className="block md:hidden my-10 w-[8rem] h-[2px] dark:bg-deltaColoredLinearGradientVertical bg-deltaPurpleLinearGradientVertical"></div>
       {hasText && (
         <p
           className={`${
@@ -131,8 +130,8 @@ export function RoundButtonLinks({
       <div className="flex flex-row gap-4">
         <Link href="https://discord.com/invite/deltaprime" target="_blank">
           <Image
-            width={24}
-            height={24}
+            width={30}
+            height={30}
             src={
               isOnMenu
                 ? isDarkTheme
@@ -145,16 +144,16 @@ export function RoundButtonLinks({
         </Link>
         <Link href="https://x.com/DeltaPrimeDefi" target="_blank">
           <Image
-            width={24}
-            height={24}
+            width={30}
+            height={30}
             src={isOnMenu ? (isDarkTheme ? xIcon : xIconPurple) : xIcon}
             alt="x-round_logo"
           />
         </Link>
         <Link href="https://medium.com/@Delta_Prime" target="_blank">
           <Image
-            width={24}
-            height={24}
+            width={30}
+            height={30}
             src={
               isOnMenu
                 ? isDarkTheme
@@ -167,8 +166,8 @@ export function RoundButtonLinks({
         </Link>
         <Link href="https://github.com/DeltaPrimeLabs" target="_blank">
           <Image
-            width={24}
-            height={24}
+            width={30}
+            height={30}
             src={
               isOnMenu
                 ? isDarkTheme
