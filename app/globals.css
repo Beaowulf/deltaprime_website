@@ -455,6 +455,33 @@ body {
   box-shadow: 2px 6px 11px 0px rgba(191, 188, 255, 0.26);
 }
 
+/* Line bottom animation */
+.text_bottom_animation_dark_theme {
+  background: linear-gradient(0deg, #565ac2, #565ac2) no-repeat right bottom / 0
+    var(--bg-h);
+  transition: background-size 350ms;
+  padding-bottom: 2px;
+  --bg-h: 2px;
+}
+
+.text_bottom_animation_dark_theme:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+
+.text_bottom_animation_white_theme {
+  background: linear-gradient(0deg, #000000, #000000) no-repeat right bottom / 0
+    var(--bg-h);
+  transition: background-size 350ms;
+  padding-bottom: 2px;
+  --bg-h: 2px;
+}
+
+.text_bottom_animation_white_theme:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+
 /* Line Clamp */
 .lineClampThree {
   display: -webkit-box;

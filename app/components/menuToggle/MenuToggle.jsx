@@ -27,19 +27,18 @@ export const MenuToggle = ({ toggle, isOpen }) => {
 
   return (
     <motion.button
-      className="w-[50px] h-[50px] rounded-full"
+      className="rounded-full"
       onClick={toggle}
       initial={false}
-      animate={{ opacity: isOpen ? 1 : 1 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeInOut", delay: 0.3 }}
     >
       <Image
         src={iconPath}
         alt={isOpen ? "Close Menu" : "Open Menu"}
-        width={25}
-        height={25}
+        width={isOpen ? 20 : 30}
+        height={isOpen ? 20 : 30}
         priority
-        className="w-[25px] h-[25px]"
       />
     </motion.button>
   );
