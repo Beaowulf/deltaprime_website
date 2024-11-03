@@ -260,7 +260,7 @@ export function Footer() {
     <>
       <div className="overflow-hidden">
         <div className="w-full h-1 bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%" />
-        <div className="h-[46vh] pt-10 pb-3 dark:from-[#1b153c] dark:to-[#1b153c] bg-gradient-to-r from-[#504EC2] to-[#5A4EB5] relative z-[100] overflow-hidden sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
+        <div className="pt-10 pb-3 dark:from-[#1b153c] dark:to-[#1b153c] bg-gradient-to-r from-[#504EC2] to-[#5A4EB5] relative z-[100] overflow-hidden sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
           <div className="flex justify-between flex-wrap md:flex-row flex-col">
             <LogoButton />
             <FooterTextLinks />

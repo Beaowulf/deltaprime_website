@@ -81,7 +81,6 @@ const IntroSection = ({ totalTvl, SectionDetails, options }) => {
           </div>
           {/* Right side (video player) */}
           <div className="w-full max-w-[50rem]">
-        
             <VideoThumbnail url={`${SectionDetails?.embedYouTubeLink}`} />
           </div>
         </div>
