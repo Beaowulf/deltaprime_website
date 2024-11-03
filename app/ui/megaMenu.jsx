@@ -61,7 +61,7 @@ const MobileMenu = ({
 
   return (
     <div className="w-full h-full flex flex-col items-center overflow-hidden">
-      <div className="flex flex-col items-start justify-center h-full text-center bg-gray-900 pr-5 text-[#6B70ED] dark:text-white relative w-[300px] overflow-visible">
+      <div className="flex flex-col items-start justify-center h-full text-center bg-gray-900 text-[#6B70ED] dark:text-white relative w-[320px] overflow-visible">
         <AnimatePresence mode="wait">
           {currentSlide === "main" && (
             <motion.div
