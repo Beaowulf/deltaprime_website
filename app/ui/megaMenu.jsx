@@ -34,7 +34,7 @@ const MobileMenu = ({
 
     return (
       <div className="flex flex-row">
-        <p className="text-[15px] textShadow mr-2">Difficulty Level:</p>
+        <p className="text-[16px] mr-2">Difficulty Level:</p>
         <div className="flex flex-row gap-1">
           {Array.from({ length: filledStars }, (_, i) => (
             <Image
@@ -60,27 +60,8 @@ const MobileMenu = ({
   };
 
   return (
-    <div className="w-full h-full">
-      <div className="flex flex-col items-start justify-between h-full text-center bg-gray-900 p-4 pt-10 text-[#6B70ED] dark:text-white relative overflow-scroll">
-        <motion.div
-          variants={slideVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          className=""
-        >
-          <button
-            onClick={() => setCurrentSlide("main")}
-            className="bg-gray-700 p-2 rounded-full z-10 flex items-center"
-            style={{
-              visibility: currentSlide === "main" ? "hidden" : "visible",
-            }}
-          >
-            <Image src={arrowLeftColored} width={24} height={24} />
-            Back
-          </button>
-        </motion.div>
-
+    <div className="w-full h-full flex flex-col items-center overflow-hidden">
+      <div className="flex flex-col items-start justify-center h-full text-center bg-gray-900 text-[#6B70ED] dark:text-white relative w-[320px] overflow-visible">
         <AnimatePresence mode="wait">
           {currentSlide === "main" && (
             <motion.div
@@ -90,24 +71,24 @@ const MobileMenu = ({
               animate="center"
               exit="exit"
               transition={{ duration: 0.3 }}
-              className="w-full flex flex-col"
+              className="flex flex-col items-start"
             >
-              <p className="text-[34px] font-semibold mb-8">Menu</p>
-              <div className="space-y-6">
+              <p className="text-[19px] mb-[50px]">Menu</p>
+              <div className="space-y-[10px] flex flex-col items-start">
                 <div
-                  className="cursor-pointer flex items-center justify-center text-[24px] font-semibold gap-6"
+                  className="cursor-pointer flex items-center justify-center text-[38px] font-semibold gap-[12px]"
                   onClick={() => setCurrentSlide("aboutUs")}
                 >
                   About Us
                 </div>
                 <div
-                  className="cursor-pointer flex justify-center text-[24px] font-semibold gap-6"
+                  className="cursor-pointer flex justify-center text-[38px] font-semibold gap-6"
                   onClick={() => setCurrentSlide("latestPosts")}
                 >
                   Latest Posts
                 </div>
                 <div
-                  className="cursor-pointer flex justify-center text-[24px] font-semibold gap-6"
+                  className="cursor-pointer flex justify-center text-[38px] font-semibold gap-6"
                   onClick={() => setCurrentSlide("strategies")}
                 >
                   Strategies
@@ -124,30 +105,48 @@ const MobileMenu = ({
               animate="center"
               exit="exit"
               transition={{ duration: 0.3 }}
-              className="w-full flex flex-col"
+              className="max-w-[300px] flex flex-col items-start"
             >
-              <p className="text-[28px] font-semibold mb-12 textShadow">
-                Latest Posts
-              </p>
-              <div className="space-y-6">
+              <p className="text-[19px] mb-[50px]">Burd Blogs</p>
+              <div className="space-y-6 flex flex-col items-start">
                 <div
-                  className="cursor-pointer flex justify-center text-[24px] gap-6"
-                  onClick={() => {
-                    setSelectedCategory("Blogs");
-                    setCurrentSlide("categoryItems");
-                  }}
-                >
-                  Blogs
-                </div>
-                <div
-                  className="cursor-pointer flex items-center justify-center text-[24px] gap-6"
+                  className="cursor-pointer flex justify-center text-[38px] gap-6 font-semibold text-nowrap"
                   onClick={() => {
                     setSelectedCategory("How to Videos");
                     setCurrentSlide("categoryItems");
                   }}
                 >
-                  How to Videos
+                  How To Videos
                 </div>
+                <div
+                  className="cursor-pointer flex items-center justify-center text-[38px] gap-6 font-semibold"
+                  onClick={() => {
+                    setSelectedCategory("Blogs");
+                    setCurrentSlide("categoryItems");
+                  }}
+                >
+                  Latest Posts
+                </div>
+              </div>
+              <div className="flex flex-row items-center justify-center gap-4 mt-[1.5rem]">
+                <motion.div
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  className=""
+                >
+                  <button
+                    onClick={() => setCurrentSlide("main")}
+                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px]"
+                    style={{
+                      visibility:
+                        currentSlide === "main" ? "hidden" : "visible",
+                    }}
+                  >
+                    Back
+                  </button>
+                </motion.div>
               </div>
             </motion.div>
           )}
@@ -160,17 +159,15 @@ const MobileMenu = ({
               animate="center"
               exit="exit"
               transition={{ duration: 0.3 }}
-              className="w-full flex flex-col items-center justify-center"
+              className="max-w-[300px] flex flex-col items-start justify-center"
             >
-              <p className="text-[28px] font-semibold mb-6 text-left textShadow">
-                Strategies
-              </p>
-              <div className="space-y-4 text-[20px] w-full px-4 flex items-center flex-col text-left">
+              <p className="text-[19px] mb-[50px] text-left">Strategies</p>
+              <div className="space-y-4 text-[22px] w-full flex items-start flex-col text-left">
                 {strategies.map((strategy, index) => (
                   <div className="pb-4 text-left" key={index}>
                     <Link
                       href={`/strategies/${strategy.slug}`}
-                      className="block text-left textShadow text-[24px]"
+                      className="block text-left textShadow text-[22px]"
                       onClick={toggleMenu}
                     >
                       {strategy.strategyTitle}
@@ -179,13 +176,34 @@ const MobileMenu = ({
                   </div>
                 ))}
               </div>
-              <Link
-                href="/strategies"
-                className="text-[20px] mt-6 underline"
-                onClick={toggleMenu}
-              >
-                View All
-              </Link>
+
+              <div className="flex flex-row items-center justify-center gap-4 mt-[1.5rem]">
+                <motion.div
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  className=""
+                >
+                  <button
+                    onClick={() => setCurrentSlide("main")}
+                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px]"
+                    style={{
+                      visibility:
+                        currentSlide === "main" ? "hidden" : "visible",
+                    }}
+                  >
+                    Back
+                  </button>
+                </motion.div>
+                <Link
+                  href="/strategies"
+                  className="text-[19px]"
+                  onClick={toggleMenu}
+                >
+                  View All
+                </Link>
+              </div>
             </motion.div>
           )}
 
@@ -197,26 +215,44 @@ const MobileMenu = ({
               animate="center"
               exit="exit"
               transition={{ duration: 0.3 }}
-              className="w-full flex flex-col items-center"
+              className="max-w-[300px] flex flex-col items-start"
             >
-              <p className="text-[28px] font-semibold mb-12 text-left textShadow">
-                About Us
-              </p>
-              <div className="space-y-6 flex flex-col items-center">
+              <p className="text-[19px] mb-[50px] text-left">About Us</p>
+              <div className="space-y-6 flex flex-col items-start">
                 <Link
                   href="/our-story"
-                  className="cursor-pointer text-[24px] text-left"
+                  className="cursor-pointer text-[38px] text-left font-semibold"
                   onClick={toggleMenu}
                 >
                   Our Story
                 </Link>
                 <Link
                   href="/tokenomics"
-                  className="cursor-pointer text-[24px] text-left"
+                  className="cursor-pointer text-[38px] text-left font-semibold"
                   onClick={toggleMenu}
                 >
                   Tokenomics
                 </Link>
+              </div>
+              <div className="flex flex-row items-center justify-center gap-4 mt-[1.5rem]">
+                <motion.div
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  className=""
+                >
+                  <button
+                    onClick={() => setCurrentSlide("main")}
+                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px]"
+                    style={{
+                      visibility:
+                        currentSlide === "main" ? "hidden" : "visible",
+                    }}
+                  >
+                    Back
+                  </button>
+                </motion.div>
               </div>
             </motion.div>
           )}
@@ -229,23 +265,21 @@ const MobileMenu = ({
               animate="center"
               exit="exit"
               transition={{ duration: 0.3 }}
-              className="w-full flex flex-col items-center"
+              className="max-w-[300px] flex flex-col items-start overflow-y-scroll"
             >
-              <p className="text-[28px] font-semibold mb-12 textShadow">
-                {selectedCategory}
-              </p>
-              <div className="space-y-4 text-[20px] text-left px-5">
+              <p className="text-[19px] mb-[50px]">{selectedCategory}</p>
+              <div className="space-y-4 text-[20px] text-left">
                 {selectedCategory === "Blogs" &&
                   blogs.map((blog, index) => (
                     <div className="pb-6" key={index}>
                       <Link
                         href={`/blogs/academy/${blog.slug}`}
-                        className="block textShadow"
+                        className="block font-semibold text-[22px]"
                         onClick={toggleMenu}
                       >
                         {blog.blogTitle}
                       </Link>
-                      <p className="text-[14px] mt-2">{blog.blogDescription}</p>
+                      <p className="text-[16px] mt-1">{blog.blogDescription}</p>
                     </div>
                   ))}
                 {selectedCategory === "How to Videos" &&
@@ -253,43 +287,62 @@ const MobileMenu = ({
                     <div key={index}>
                       <Link
                         href={`/how-to-videos/${video.slug}`}
-                        className="block textShadow"
+                        className="block font-semibold text-[22px]"
                         onClick={toggleMenu}
                       >
                         {video.howToVideoTitle}
                       </Link>
-                      <p className="text-[14px] mt-2">
+                      <p className="text-[16px] mt-1">
                         {video.howToVideoDescription}
                       </p>
                     </div>
                   ))}
               </div>
-              {selectedCategory && (
-                <Link
-                  href={`/${
-                    selectedCategory === "Blogs"
-                      ? "blogs/academy"
-                      : selectedCategory === "How to Videos"
-                      ? "how-to-videos"
-                      : "strategies"
-                  }`}
-                  className="text-[20px] mt-6 underline"
-                  onClick={toggleMenu}
+              <div className="flex flex-row items-center justify-center gap-4 mt-[1.5rem]">
+                <motion.div
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  className=""
                 >
-                  View All
-                </Link>
-              )}
+                  <button
+                    onClick={() => setCurrentSlide("main")}
+                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px]"
+                    style={{
+                      visibility:
+                        currentSlide === "main" ? "hidden" : "visible",
+                    }}
+                  >
+                    Back
+                  </button>
+                </motion.div>
+                {selectedCategory && (
+                  <Link
+                    href={`/${
+                      selectedCategory === "Blogs"
+                        ? "blogs/academy"
+                        : selectedCategory === "How to Videos"
+                        ? "how-to-videos"
+                        : "strategies"
+                    }`}
+                    className="text-[19px] underline"
+                    onClick={toggleMenu}
+                  >
+                    View All
+                  </Link>
+                )}
+              </div>
             </motion.div>
           )}
+          <div className="flex flex-row items-start justify-start w-full mt-[3.5rem] mb-[25px] pb-[25px]">
+            <RoundButtonLinks
+              hasText={false}
+              isOnMenu={true}
+              resolvedTheme={resolvedTheme}
+            />
+          </div>
         </AnimatePresence>
-
-        <div className="flex flex-row items-center justify-center w-full pb-10 pt-10">
-          <RoundButtonLinks
-            hasText={false}
-            isOnMenu={true}
-            resolvedTheme={resolvedTheme}
-          />
-        </div>
       </div>
     </div>
   );
@@ -311,7 +364,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
 
     return (
       <div className="flex flex-row">
-        <p className="text-[15px] textShadow mr-2">Difficulty Level:</p>
+        <p className="text-[16px] mr-2">Difficulty Level:</p>
         <div className="flex flex-row gap-1">
           {Array.from({ length: filledStars }, (_, i) => (
             <Image
@@ -435,8 +488,8 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
               className={`${
                 selectedMenu === "About Us"
                   ? resolvedTheme === "dark"
-                    ? "text-[#6B70ED] font-bold border-b-[2px] border-[#6B70ED]"
-                    : "text-black font-bold border-b-[2px] border-black"
+                    ? "text-[#6B70ED] font-bold"
+                    : "text-black font-bold"
                   : "text-[#6B70ED] dark:text-white font-semibold text_bottom_animation_dark_theme"
               } text-[24px]`}
             >
@@ -450,14 +503,15 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
             >
               <p
                 className={`${
-                  selectedMenu === "Blogs" || selectedMenu === "How to Videos"
+                  selectedMenu === "How To Videos" ||
+                  selectedMenu === "Latest Posts"
                     ? resolvedTheme === "dark"
-                      ? "text-[#6B70ED] font-bold border-b-[2px] border-[#6B70ED]"
+                      ? "dark:text-white font-bold border-b-[2px] border-[#6B70ED]"
                       : "text-black font-bold border-b-[2px] border-black"
                     : "text-[#6B70ED] dark:text-white font-semibold text_bottom_animation_dark_theme"
                 } text-[24px]`}
               >
-                Latest Posts
+                Burd Blogs
               </p>
             </div>
             <AnimatePresence>
@@ -469,7 +523,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                   exit={{ height: 0, opacity: 0 }}
                   className="ml-4 space-y-2 overflow-hidden !mt-4"
                 >
-                  {["Blogs", "How to Videos"].map((item) => (
+                  {["How To Videos", "Latest Posts"].map((item) => (
                     <div
                       key={item}
                       className="cursor-pointer flex justify-between text-[24px] mr-2"
@@ -479,8 +533,8 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                         className={`${
                           selectedMenu === item
                             ? resolvedTheme === "dark"
-                              ? "text-[#6B70ED] font-bold border-b-[2px] border-[#6B70ED]"
-                              : "text-black font-bold border-b-[2px] border-black"
+                              ? "text-[#6B70ED] font-bold "
+                              : "text-black font-bold"
                             : "text-[#6B70ED] dark:text-white font-semibold text_bottom_animation_dark_theme"
                         }`}
                       >
@@ -500,8 +554,8 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
               className={`${
                 selectedMenu === "Strategies"
                   ? resolvedTheme === "dark"
-                    ? "text-[#6B70ED] font-bold border-b-[2px] border-[#6B70ED]"
-                    : "text-black font-bold border-b-[2px] border-black"
+                    ? "text-[#6B70ED] font-bold "
+                    : "text-black font-bold"
                   : "text-[#6B70ED] dark:text-white font-semibold text_bottom_animation_dark_theme"
               } text-[24px]`}
             >
@@ -515,8 +569,8 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
               className={`${
                 selectedMenu === "Contact Us"
                   ? resolvedTheme === "dark"
-                    ? "text-[#6B70ED] font-bold border-b-[2px] border-[#6B70ED]"
-                    : "text-black font-bold border-b-[2px] border-black"
+                    ? "text-[#6B70ED] font-bold"
+                    : "text-black font-bold"
                   : "text-[#6B70ED] dark:text-white font-semibold text_bottom_animation_dark_theme"
               } text-[24px]`}
             >
