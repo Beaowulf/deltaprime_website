@@ -72,7 +72,7 @@ const NewsLetter = ({ blog }) => {
           </div>
 
           <div className="px-0 sm:px-3 md:px-[2%] lg:px-[4%] xl:px-[5%] 2xl:px-[7%]">
-            <div className="my-mobile-spacing md:my-desktop-spacing">
+            <div className="my-12 md:my-desktop-spacing">
               <p className="brightTitle text-[40px] text-center mb-10">
                 DeltaPrime in Numbers
               </p>
@@ -80,7 +80,7 @@ const NewsLetter = ({ blog }) => {
               <div className="flex flex-col lg:flex-row gap-4 w-full md:px-0 px-4">
                 {/* left */}
                 <div className="newsLetterWrapper lg:w-[30%]">
-                  <div className="newsLetterContent px-10 py-6 flex flex-col gap-10 h-full lg:items-start items-center lg:justify-center bg-[#252948]">
+                  <div className="newsLetterContent px-10 py-6 flex flex-col gap-10 h-full lg:items-start items-center lg:justify-center bg-[#252948] text-white">
                     <div className="text-[24px] flex flex-row font-semibold gap-4">
                       <p>TVL Savings</p>
                       <div className="w-[2px] h-[full] bg-gradient-to-b from-[#FFBB9B] from-60% via-[#FF8FB8] via-70% to-[#AFAFFF] to-90%" />
@@ -104,13 +104,13 @@ const NewsLetter = ({ blog }) => {
                     <table className="table-auto text-white w-full">
                       <thead>
                         <tr>
-                          <th className="brightTitle md:text-[24px] text-[22px] px-4 py-2">
+                          <th className="brightTitle md:text-[24px] text-[20px] p-2">
                             Avalanche
                           </th>
-                          <th className="brightTitle md:text-[24px] text-[22px] px-4 py-2">
+                          <th className="brightTitle md:text-[24px] text-[20px] p-2">
                             Asset
                           </th>
-                          <th className="brightTitle md:text-[24px] text-[22px] px-4 py-2">
+                          <th className="brightTitle md:text-[24px] text-[20px] p-2">
                             Arbitrum
                           </th>
                         </tr>
@@ -158,7 +158,7 @@ const NewsLetter = ({ blog }) => {
               </div>
             </div>
 
-            <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col justify-between items-center w-full gap-6 md:px-0 px-4">
+            <div className="my-12 md:my-desktop-spacing flex lg:flex-row flex-col justify-between items-center w-full gap-6 md:px-0 px-4">
               <div className="rounded-[25px] ">
                 <Image
                   className={`rounded-[20px] mr-2 md:mr-10 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
@@ -212,7 +212,7 @@ const NewsLetter = ({ blog }) => {
               </div>
             </div>
 
-            <div className="my-mobile-spacing md:my-desktop-spacing md:newsLetter_Linear_BG_MD newsLetter_Linear_BG_SM py-10 md:px-10 md:py-20 p-4 md:rounded-[25px]">
+            <div className="my-12 md:my-desktop-spacing md:newsLetter_Linear_BG_MD newsLetter_Linear_BG_SM py-10 md:px-10 md:py-20 p-4 md:rounded-[25px]">
               <h3 className="md:brightText textShadow text-center text-wrap max-w-full mb-8 text-3xl md:text-[60px] dark:text-white text-white ">
                 DeltaPrime News
               </h3>
@@ -288,7 +288,7 @@ const NewsLetter = ({ blog }) => {
               </div>
             </div>
 
-            <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col justify-between items-center w-full md:gap-5 gap-2">
+            <div className="my-12 md:my-desktop-spacing flex lg:flex-row flex-col justify-between items-center w-full md:gap-5 gap-2">
               <div className="rounded-[25px] ">
                 <Image
                   className={`rounded-[20px] mr-2 md:mr-10 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
@@ -340,14 +340,14 @@ const NewsLetter = ({ blog }) => {
             </div>
             {/* Last Section What’s next for DeltaPrime */}
 
-            <div className="my-mobile-spacing md:my-desktop-spacing md:newsLetter_Linear_BG_MD newsLetter_Linear_BG_SM px-4 py-10 md:px-24 md:py-20 md:rounded-[25px]">
+            <div className="my-12 md:my-desktop-spacing md:newsLetter_Linear_BG_MD newsLetter_Linear_BG_SM px-4 py-10 md:px-24 md:py-20 md:rounded-[25px]">
               <div className="flex flex-col gap-10">
                 <div className="w-full flex justify-center">
                   <h3 className="md:brightText textShadow text-center text-wrap md:mb-8 text-3xl w-[40rem] md:text-[60px] dark:text-white text-white leading-[100%]">
                     What’s next for DeltaPrime
                   </h3>
                 </div>
-                <div className="whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%]  w-full dark:text-white text-[#565AC2] ">
+                <div className="whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%] w-full dark:text-white text-white">
                   <p>
                     The last couple of months were unique in DeltaPrime’s
                     history. We were forced to take ten steps back, reevaluating
@@ -392,7 +392,7 @@ const NewsLetter = ({ blog }) => {
                       />
                     </div>
                     <div className="w-full">
-                      <p className="max-w-[15rem] md:max-w-[30rem] pl-2 whiteMainText md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%]  w-full dark:text-white text-[#565AC2] md:m-0 mx-auto md:text-left text-center">
+                      <p className="max-w-[15rem] md:max-w-[30rem] pl-2 whiteMainText md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%] w-full dark:text-white text-white md:m-0 mx-auto md:text-left text-center">
                         1. The Bull Meter, showing you how hedged you are on
                         your borrowable assets, regardless of whether you hold
                         them in your balance, GMX, Trader Joe, or elsewhere.
@@ -422,14 +422,14 @@ const NewsLetter = ({ blog }) => {
                       />
                     </div>
                     <div className="w-full">
-                      <p className="max-w-[15rem] md:max-w-[30rem] pl-2 whiteMainText md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%]  w-full dark:text-white text-[#565AC2] md:m-0 mx-auto md:text-left text-center">
+                      <p className="max-w-[15rem] md:max-w-[30rem] pl-2 whiteMainText md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%] w-full dark:text-white text-white md:m-0 mx-auto md:text-left text-center">
                         2. PA PnL, which tells you how you have been performing
                         so far.
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="text-center md:text-left whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%] w-full dark:text-white text-[#565AC2] ">
+                <div className="text-center md:text-left whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%] w-full dark:text-white text-white">
                   <p className="md:text-[15px] text-[20px] leading-[150%]">
                     These two features are close to being finished, after which,
                     Elon-willing, we can get some much requested PA and CA
