@@ -598,7 +598,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                 items.length <= 3 ? "grid-cols-1" : "grid-cols-1 lg:grid-cols-2"
               } gap-6`}
             >
-              {items.slice(0, 6).map((item, index) => (
+              {items.slice(0, 7).map((item, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
@@ -609,7 +609,9 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                       selectedMenu === "About Us"
                         ? item.href
                         : selectedMenu === "Latest Posts"
-                        ? `/blogs/academy/${item.slug}`
+                        ? item.blogCategory !== "News"
+                          ? `/blogs/academy/${item.slug}`
+                          : `/blogs/news/${item.slug}`
                         : selectedMenu === "How To Videos"
                         ? `/how-to-videos/${item.slug}`
                         : `/strategies/${item.slug}`

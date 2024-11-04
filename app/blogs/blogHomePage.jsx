@@ -116,7 +116,7 @@ const BlogHomePage = ({ categories, blogs: initialBlogs }) => {
             <div className="pb-mobile-spacing md:pb-desktop-spacing blog-posts-container transition-all duration-500 ease-in-out transform translate-x-0 opacity-100 flex flex-col xl:flex-row gap-6 items-center justify-center">
               {currentPosts.map((blogPreviewCardData) => (
                 <BlogCard
-                  category={blogPreviewCardData.blogCategory}
+                  blogCategory={blogPreviewCardData.blogCategory}
                   key={blogPreviewCardData.blogID}
                   blogSlug={blogPreviewCardData.slug}
                   blogDescription={blogPreviewCardData.blogDescription}

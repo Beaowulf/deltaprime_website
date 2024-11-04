@@ -11,7 +11,6 @@ import {
 import { TokenomicsGraph } from "@/app/tokenomics/tokenomicsGraph";
 import { TokenomicsList } from "@/app/tokenomics/tokenomicsList";
 
-
 import protocolUsage from "@/public/assets/icons/boost_Protocol_Usage.svg";
 import liquidityPool from "@/public/assets/icons/liquidityPool.svg";
 import bufferMarket from "@/public/assets/icons/buffer_Market _Volatility.svg";
@@ -25,12 +24,9 @@ import SecuritySection from "../landingPage/featureSection/securitySection";
 import ContactForm from "../ui/contactForm/contactForm";
 import MintModal from "@/app/components/modals/mintModal";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"; // Import rich text renderer
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
-
-
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 export default function TokenomicsClient({ tokenomicsData }) {
-
   const options = {
     renderText: (text) => {
       return text.split("\n").reduce((children, textSegment, index) => {
@@ -109,7 +105,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
   };
 
   return (
-    <div className="px-4 sm:px-6 md:px-[6%] xl:px-[8%] 2xl:px-[10%]">
+    <div className="pagePaddingLarge">
       {isModalOpen && <MintModal onClose={closeModal} />}
       {/* First Section */}
       <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10">

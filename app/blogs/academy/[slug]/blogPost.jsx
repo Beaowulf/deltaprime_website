@@ -204,6 +204,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
   return (
     <div key={blogData.slug}>
       <DynamicPurpleBar
+        mediumPadding={true}
         title={blogData.blogTitle}
         link={<Link href={"/blogs"}>Burd Log</Link>}
       />
@@ -315,7 +316,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         {/* hide on mobile */}
         <div className="hidden md:block md:w-3/12">
           <div className="flex flex-col gap-10 sticky top-32">
-            <div className="coloredBoxBorder">
+            <div className="coloredBoxBorder max-w-[340px]">
               <div className="deltaWhiteLinearBG p-4 md:p-6 rounded-[30px]">
                 <p className="font-bold leading-6 uppercase text-[18px] text-[#6B70ED]">
                   Table of contents

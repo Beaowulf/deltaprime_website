@@ -103,8 +103,11 @@ function Nav() {
             <div className="flex flex-col w-full overflow-scroll h-screen">
               <div
                 className={`w-full ${
-                  isScrolled &&
-                  " bg-white dark:bg-[#252948] z-[1000] transition-all duration-300"
+                  isScrolled
+                    ? isOpenDesktop
+                      ? "bg-transparent z-[1000] transition-all duration-300"
+                      : "bg-white dark:bg-[#252948] shadow-md z-[1000] transition-all duration-300"
+                    : "pagePaddingMedium"
                 }`}
               >
                 <nav
@@ -130,7 +133,6 @@ function Nav() {
                   </div>
                 </nav>
               </div>
-
               <MegaMenu
                 pathname={pathname}
                 resolvedTheme={resolvedTheme}

@@ -48,7 +48,7 @@ const ContactForm = ({
         }`}
       >
         {/* Left Side */}
-        <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center contactFormBG">
+        <div className="flex-1 flex flex-col justify-center items-start bg-cover bg-center contactFormBG px-8 md:px-0">
           <div className="flex flex-col items-start mb-14 max-w-[30rem]">
             <h4 className="uppercase mb-2 featureTitle md:text-[15px] text-[12px] text-center dark:text-white text-[#6B70ED]">
               Contact us
@@ -57,8 +57,8 @@ const ContactForm = ({
               Got a question to ask? We&#39;re here for you.
             </h2>
             <p className="aboutTypographyparagraphWhite max-w-xl md:leading-8 leading-6 dark:text-white text-[#565AC2]">
-              You couldn&#39;t find answers in our Site, Docs or Discord? Ask us.
-              We&#39;ll be happy to assist.
+              You couldn&#39;t find answers in our Site, Docs or Discord? Ask
+              us. We&#39;ll be happy to assist.
             </p>
           </div>
         </div>

@@ -13,10 +13,12 @@ const BlogCard = ({
 
   const handleImageClick = () => {
     if (onClick) onClick();
-    router.push(
-      `/blogs/${blogCategory ? blogCategory : "academy"}/${blogSlug}`
-    );
+
+    const categoryPath = blogCategory === "News" ? "news" : "academy";
+    console.log(categoryPath);
+    router.push(`/blogs/${categoryPath}/${blogSlug}`);
   };
+
   return (
     <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
       <div
@@ -41,7 +43,12 @@ const BlogCard = ({
       >
         {blogDescription}
       </p>
-      <Link prefetch={true} href={`/blogs/academy/${blogSlug}`}>
+      <Link
+        prefetch={true}
+        href={`/blogs/${
+          blogCategory === "News" ? "news" : "academy"
+        }/${blogSlug}`}
+      >
         <span className="underline ml-1">Read More</span>
       </Link>
     </div>

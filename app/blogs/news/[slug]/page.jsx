@@ -1,5 +1,5 @@
 import { fetchBlogs, fetchBlogBySlug } from "@/lib/getBlogs";
-import BlogPost from "@/app/blogs/academy/[slug]/blogPost";
+import NewsLetter from "@/app/blogs/news/[slug]/newsLetter";
 
 function getRandomItem(array) {
   const randomIndex = Math.floor(Math.random() * array.length);
@@ -77,7 +77,7 @@ const BlogPage = async ({ params }) => {
 
   return (
     <div key={blog.blogID}>
-      <BlogPost blogPreviewData={previewDataArray} blog={blog} />
+      <NewsLetter blogPreviewData={previewDataArray} blog={blog} />
     </div>
   );
 };
