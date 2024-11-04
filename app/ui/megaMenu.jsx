@@ -325,9 +325,9 @@ const MobileMenu = ({
                 {selectedCategory && (
                   <Link
                     href={`/${
-                      selectedCategory === "Blogs"
+                      selectedCategory === "Latest Posts"
                         ? "blogs/academy"
-                        : selectedCategory === "How to Videos"
+                        : selectedCategory === "How To Videos"
                         ? "how-to-videos"
                         : "strategies"
                     }`}
@@ -354,7 +354,7 @@ const MobileMenu = ({
 };
 
 const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
-  const [selectedMenu, setSelectedMenu] = useState("Blogs");
+  const [selectedMenu, setSelectedMenu] = useState("About Us"); // Set default to "About Us"
   const [isLatestPostsExpanded, setIsLatestPostsExpanded] = useState(true);
   const [blogs, setBlogs] = useState([]);
   const [howToVideos, setHowToVideos] = useState([]);
@@ -637,7 +637,9 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
               <motion.div variants={itemVariants} className="pt-12">
                 <Link
                   href={
-                    selectedMenu === "How To Videos"
+                    selectedMenu === "Latest Posts"
+                      ? "/blogs" // Redirect to "/blogs" for "Latest Posts"
+                      : selectedMenu === "How To Videos"
                       ? "/how-to-videos"
                       : `/${selectedMenu.toLowerCase().replace(" ", "-")}`
                   }
