@@ -21,7 +21,6 @@ export async function generateMetadata({ params }) {
     blog.blogDescription ||
     "Read this blog on Delta Prime to explore more about DeFi, strategies, and the latest updates.";
 
-  // If the blog has a preview image, include it in the OpenGraph metadata
   const blogImage = blog.previewImageBlog
     ? `https:${blog.previewImageBlog.fields.file.url}`
     : null;
@@ -54,7 +53,6 @@ const BlogPage = async ({ params }) => {
     return <div>Blog not found</div>;
   }
 
-  // Organize blogs by category (if needed for additional functionality)
   const blogs = await fetchBlogs();
   const blogsByCategory = blogs.reduce((acc, blog) => {
     const blogCategory = blog.blogCategory;
@@ -65,7 +63,6 @@ const BlogPage = async ({ params }) => {
     return acc;
   }, {});
 
-  // Get random blog for each category (if needed for related posts)
   const blogPreviewCardData = Object.keys(blogsByCategory).map((category) => {
     const categoryBlogs = blogsByCategory[category];
     const randomBlog = getRandomItem(categoryBlogs);
@@ -76,7 +73,6 @@ const BlogPage = async ({ params }) => {
     };
   });
 
-  // Convert preview card data to array (if needed for related posts)
   const previewDataArray = Object.values(blogPreviewCardData);
 
   return (

@@ -680,8 +680,8 @@ body {
 
 .inlineImage {
   border-radius: 20px;
-  width: 100%;
-  object-fit: cover;
+  width: auto;
+  object-fit: contain;
   object-position: bottom;
   height: 400px;
   margin: 0 auto;

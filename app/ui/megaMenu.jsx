@@ -369,9 +369,9 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
   }
 
   const items =
-    selectedMenu === "Blogs"
+    selectedMenu === "Latest Posts"
       ? blogs
-      : selectedMenu === "How to Videos"
+      : selectedMenu === "How To Videos"
       ? howToVideos
       : selectedMenu === "Strategies"
       ? strategies
@@ -551,7 +551,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                         ? item.href
                         : selectedMenu === "Blogs"
                         ? `/blogs/academy/${item.slug}`
-                        : selectedMenu === "How to Videos"
+                        : selectedMenu === "How To Videos"
                         ? `/how-to-videos/${item.slug}`
                         : `/strategies/${item.slug}`
                     }
@@ -578,7 +578,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                 <motion.div variants={itemVariants} className="mt-4">
                   <Link
                     href={
-                      selectedMenu === "How to Videos"
+                      selectedMenu === "How To Videos"
                         ? "/how-to-videos"
                         : `/${selectedMenu.toLowerCase().replace(" ", "-")}`
                     }
