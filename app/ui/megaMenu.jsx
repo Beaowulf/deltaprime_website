@@ -61,7 +61,7 @@ const MobileMenu = ({
 
   return (
     <div className="w-full h-full flex flex-col items-center overflow-hidden">
-      <div className="flex flex-col items-start justify-center h-full text-center bg-gray-900 text-[#6B70ED] dark:text-white relative w-[320px] overflow-visible">
+      <div className="flex flex-col items-start justify-center h-full text-center bg-gray-900 text-[#6B70ED] dark:text-white relative w-[360px] overflow-visible">
         <AnimatePresence mode="wait">
           {currentSlide === "main" && (
             <motion.div
@@ -85,7 +85,7 @@ const MobileMenu = ({
                   className="cursor-pointer flex justify-center text-[38px] font-semibold gap-6"
                   onClick={() => setCurrentSlide("latestPosts")}
                 >
-                  Burd Log
+                  Burd Logs
                 </div>
                 <div
                   className="cursor-pointer flex justify-center text-[38px] font-semibold gap-6"
@@ -273,7 +273,7 @@ const MobileMenu = ({
               className="max-w-[300px] flex flex-col items-start overflow-y-scroll"
             >
               <p className="text-[19px] mb-[50px]">{selectedCategory}</p>
-              <div className="space-y-4 text-[20px] text-left">
+              <div className="space-y-4 text-[20px] text-left pr-6">
                 {selectedCategory === "Blogs" &&
                   blogs.map((blog, index) => (
                     <div className="pb-6" key={index}>
@@ -608,7 +608,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                     href={
                       selectedMenu === "About Us"
                         ? item.href
-                        : selectedMenu === "Blogs"
+                        : selectedMenu === "Latest Posts"
                         ? `/blogs/academy/${item.slug}`
                         : selectedMenu === "How To Videos"
                         ? `/how-to-videos/${item.slug}`
@@ -632,23 +632,22 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                   </p>
                 </motion.div>
               ))}
-
-              {selectedMenu !== "About Us" && (
-                <motion.div variants={itemVariants} className="mt-4">
-                  <Link
-                    href={
-                      selectedMenu === "How To Videos"
-                        ? "/how-to-videos"
-                        : `/${selectedMenu.toLowerCase().replace(" ", "-")}`
-                    }
-                    onClick={toggleDesktopMenu}
-                    className="underline"
-                  >
-                    View All
-                  </Link>
-                </motion.div>
-              )}
             </div>
+            {selectedMenu !== "About Us" && (
+              <motion.div variants={itemVariants} className="pt-12">
+                <Link
+                  href={
+                    selectedMenu === "How To Videos"
+                      ? "/how-to-videos"
+                      : `/${selectedMenu.toLowerCase().replace(" ", "-")}`
+                  }
+                  onClick={toggleDesktopMenu}
+                  className="underline"
+                >
+                  View All
+                </Link>
+              </motion.div>
+            )}
           </motion.div>
         </AnimatePresence>
       </motion.div>

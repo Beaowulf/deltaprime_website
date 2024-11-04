@@ -8,12 +8,6 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import DownArrow from "@/public/assets/icons/DownArrow.svg";
 import UpArrow from "@/public/assets/icons/UpArrow.svg";
-import RightArrow from "@/public/assets/icons/bigArrowRight.svg";
-import BigArrowDown from "@/public/assets/icons/bigArrowDown.svg";
-import StarFilled from "@/public/assets/icons/starFilled.svg";
-import StarUnfilled from "@/public/assets/icons/starUnfilled.svg";
-import { getLinkClass } from "@/lib/getLinkClass";
-import { SmallBlogCard } from "@/app/components/blogCard/blogCard";
 
 // todo this whole thing might be delete since I dont need all of this with the new mega menu
 

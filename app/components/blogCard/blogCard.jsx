@@ -2,12 +2,20 @@ import Link from "next/link";
 import "./blogCard.css";
 import { useRouter } from "next/navigation";
 
-const BlogCard = ({ previewBlogImage, blogDescription, blogSlug, onClick }) => {
+const BlogCard = ({
+  previewBlogImage,
+  blogDescription,
+  blogSlug,
+  onClick,
+  blogCategory,
+}) => {
   const router = useRouter();
 
   const handleImageClick = () => {
     if (onClick) onClick();
-    router.push(`/blogs/academy/${blogSlug}`);
+    router.push(
+      `/blogs/${blogCategory ? blogCategory : "academy"}/${blogSlug}`
+    );
   };
   return (
     <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
