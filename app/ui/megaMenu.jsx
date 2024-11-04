@@ -85,13 +85,18 @@ const MobileMenu = ({
                   className="cursor-pointer flex justify-center text-[38px] font-semibold gap-6"
                   onClick={() => setCurrentSlide("latestPosts")}
                 >
-                  Latest Posts
+                  Burd Log
                 </div>
                 <div
                   className="cursor-pointer flex justify-center text-[38px] font-semibold gap-6"
                   onClick={() => setCurrentSlide("strategies")}
                 >
                   Strategies
+                </div>
+                <div className="cursor-pointer flex justify-center text-[38px] font-semibold gap-6">
+                  <Link href="/contact-us" onClick={toggleMenu}>
+                    Contact Us
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -107,7 +112,7 @@ const MobileMenu = ({
               transition={{ duration: 0.3 }}
               className="max-w-[300px] flex flex-col items-start"
             >
-              <p className="text-[19px] mb-[50px]">Burd Blogs</p>
+              <p className="text-[19px] mb-[50px]">Burd Logs</p>
               <div className="space-y-6 flex flex-col items-start">
                 <div
                   className="cursor-pointer flex justify-center text-[38px] gap-6 font-semibold text-nowrap"
@@ -511,7 +516,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                     : "text-[#6B70ED] dark:text-white font-semibold text_bottom_animation_dark_theme"
                 } text-[24px]`}
               >
-                Burd Blogs
+                Burd Logs
               </p>
             </div>
             <AnimatePresence>
