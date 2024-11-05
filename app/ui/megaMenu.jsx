@@ -429,6 +429,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
       try {
         if (blogs.length === 0) {
           const blogData = await fetchBlogs();
+          console.log(blogData);
           setBlogs(blogData);
         }
         if (howToVideos.length === 0) {
@@ -637,9 +638,11 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                       selectedMenu === "About Us"
                         ? item.href
                         : selectedMenu === "Latest Posts"
-                        ? item.blogCategory !== "News"
+                        ? item.blogCategory === "News" && item.isPartOfBlogs
                           ? `/blogs/academy/${item.slug}`
-                          : `/blogs/news/${item.slug}`
+                          : item.blogCategory === "News"
+                          ? `/blogs/news/${item.slug}`
+                          : `/blogs/academy/${item.slug}`
                         : selectedMenu === "How To Videos"
                         ? `/how-to-videos/${item.slug}`
                         : `/strategies/${item.slug}`
