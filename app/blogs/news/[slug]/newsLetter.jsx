@@ -72,13 +72,11 @@ const NewsLetter = ({ blog }) => {
           </div>
 
           <div className="px-0 sm:px-3 md:px-[2%] lg:px-[4%] xl:px-[5%] 2xl:px-[7%]">
-            <div className="my-12 md:my-desktop-spacing">
+            {/* <div className="my-12 md:my-desktop-spacing">
               <p className="brightTitle text-[40px] text-center mb-10">
                 DeltaPrime in Numbers
               </p>
-              {/* table of contents newsletter */}
               <div className="flex flex-col lg:flex-row gap-4 w-full md:px-0 px-4">
-                {/* left */}
                 <div className="newsLetterWrapper lg:w-[30%]">
                   <div className="newsLetterContent px-10 py-6 flex flex-col gap-10 h-full lg:items-start items-center lg:justify-center bg-[#252948] text-white">
                     <div className="text-[24px] flex flex-row font-semibold gap-4">
@@ -98,7 +96,6 @@ const NewsLetter = ({ blog }) => {
                     </div>
                   </div>
                 </div>
-                {/* right  */}
                 <div className="newsLetterWrapper flex-grow">
                   <div className="newsLetterContent md:px-10 md:py-6 p-2 bg-[#252948]">
                     <table className="table-auto text-white w-full">
@@ -156,7 +153,7 @@ const NewsLetter = ({ blog }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="my-12 md:my-desktop-spacing flex lg:flex-row flex-col justify-between items-center w-full gap-6 md:px-0 px-4">
               <div className="rounded-[25px] ">
@@ -369,11 +366,11 @@ const NewsLetter = ({ blog }) => {
                     first two coming up?
                   </p>
                 </div>
-                <div className="flex md:flex-row flex-col w-full justify-between gap-4 md:gap-10 md:px-0 px-10">
+                <div className="flex lg:flex-row flex-col w-full justify-around lg:items-start md:items-center gap-4 md:gap-10 md:px-0 px-10">
                   <div className="flex flex-col gap-4 md:justify-start justify-center md:items-start items-center">
-                    <div className="rounded-[25px] w-fit ">
+                    <div className="rounded-[25px] w-fit mx-auto">
                       <Image
-                        className={`rounded-[20px] h-auto max-w-[650px] object-cover hidden md:block ${
+                        className={`rounded-[20px] h-auto 2xl:max-w-[650px] md:max-w-[350px] object-cover hidden md:block ${
                           resolvedTheme === "dark"
                             ? "shadow-custom-dark"
                             : "shadow-custom-light"
@@ -401,9 +398,9 @@ const NewsLetter = ({ blog }) => {
                   </div>
 
                   <div className="flex flex-col gap-4 md:justify-start justify-center md:items-start items-center">
-                    <div className="rounded-[25px] ">
+                    <div className="rounded-[25px] w-fit mx-auto">
                       <Image
-                        className={`rounded-[20px] h-auto max-w-[650px] object-cover hidden md:block ${
+                        className={`rounded-[20px] h-auto 2xl:max-w-[650px] md:max-w-[350px] object-cover hidden md:block ${
                           resolvedTheme === "dark"
                             ? "shadow-custom-dark"
                             : "shadow-custom-light"
