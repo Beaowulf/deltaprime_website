@@ -309,7 +309,14 @@ const MobileMenu = ({
                   blogs.map((blog, index) => (
                     <div className="pb-6" key={index}>
                       <Link
-                        href={`/blogs/academy/${blog.slug}`}
+                        href={
+                          blog.Category === "News" && blog.isPartOfBlogs
+                            ? `/blogs/academy/${blog.slug}`
+                            : blog.blogCategory === "News" &&
+                              !blog.isPartOfBlogs
+                            ? `/blogs/news/${blog.slug}`
+                            : `/blogs/academy/${blog.slug}`
+                        }
                         className="block font-semibold text-[22px]"
                         onClick={toggleMenu}
                       >
