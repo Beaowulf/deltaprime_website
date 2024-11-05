@@ -299,7 +299,7 @@ const MobileMenu = ({
               animate="center"
               exit="exit"
               transition={{ duration: 0.3 }}
-              className="max-w-full flex flex-col items-start overflow-y-scroll h-full"
+              className="max-w-full flex flex-col items-start overflow-y-scroll h-full md:pb-[3rem]"
             >
               <p className="text-[19px] mb-[50px] font-semibold">
                 {selectedCategory}
