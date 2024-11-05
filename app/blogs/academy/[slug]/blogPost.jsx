@@ -255,10 +255,13 @@ const BlogPost = ({ blog, blogPreviewData }) => {
               </div>
             </div>
             <div className="mt-6">
-              <img
+              <Image
                 src={`https:${heroImage}`}
                 alt="blog_Post_Image"
                 className="w-auto mx-auto max-h-450px rounded-[20px]"
+                width={450}
+                height={450}
+                loading="lazy"
               />
             </div>
             <div className="md:hidden w-full flex justify-center mt-6 gap-4 items-center">

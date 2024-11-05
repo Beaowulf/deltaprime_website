@@ -649,6 +649,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                     }
                     onClick={toggleDesktopMenu}
                     className="font-semibold text-[22px] hover:underline text-left"
+                    prefetch={true}
                   >
                     {item.blogTitle ||
                       item.title ||
