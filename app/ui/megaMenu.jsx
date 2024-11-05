@@ -60,7 +60,7 @@ const MobileMenu = ({
 
   return (
     <div className="w-full h-full flex flex-col items-center overflow-hidden">
-      <div className="flex flex-col items-start justify-center h-full text-center bg-gray-900 text-[#6B70ED] dark:text-white relative w-full overflow-visible pl-[12px]">
+      <div className="flex flex-col items-start justify-center text-center bg-gray-900 text-[#6B70ED] dark:text-white relative w-full pl-[12px] h-full">
         <AnimatePresence mode="wait">
           {currentSlide === "main" && (
             <motion.div
@@ -299,7 +299,7 @@ const MobileMenu = ({
               animate="center"
               exit="exit"
               transition={{ duration: 0.3 }}
-              className="max-w-full flex flex-col items-start overflow-y-scroll h-fit"
+              className="max-w-full flex flex-col items-start overflow-y-scroll h-full"
             >
               <p className="text-[19px] mb-[50px] font-semibold">
                 {selectedCategory}
