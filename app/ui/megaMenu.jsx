@@ -123,20 +123,20 @@ const MobileMenu = ({
                 <div
                   className="cursor-pointer flex justify-center text-[38px] gap-6 font-semibold text-nowrap"
                   onClick={() => {
-                    setSelectedCategory("How to Videos");
-                    setCurrentSlide("categoryItems");
-                  }}
-                >
-                  How To Videos
-                </div>
-                <div
-                  className="cursor-pointer flex items-center justify-center text-[38px] gap-6 font-semibold"
-                  onClick={() => {
                     setSelectedCategory("Blogs");
                     setCurrentSlide("categoryItems");
                   }}
                 >
                   Latest Posts
+                </div>
+                <div
+                  className="cursor-pointer flex items-center justify-center text-[38px] gap-6 font-semibold"
+                  onClick={() => {
+                    setSelectedCategory("How to Videos");
+                    setCurrentSlide("categoryItems");
+                  }}
+                >
+                  How To Videos
                 </div>
               </div>
               <div className="flex flex-row items-center justify-center gap-4 mt-[1.5rem]">
@@ -355,13 +355,14 @@ const MobileMenu = ({
                 </motion.div>
                 {selectedCategory && (
                   <Link
-                    href={`/${
-                      selectedCategory === "Latest Posts"
-                        ? "blogs/academy"
-                        : selectedCategory === "How To Videos"
-                        ? "how-to-videos"
-                        : "strategies"
-                    }`}
+                    href={
+                      selectedCategory === "Latest Posts" ||
+                      selectedCategory === "Blogs"
+                        ? "/blogs"
+                        : selectedCategory === "How to Videos"
+                        ? "/how-to-videos"
+                        : "/strategies"
+                    }
                     className="text-[19px] font-semibold"
                     onClick={toggleMenu}
                   >
@@ -557,7 +558,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                   exit={{ height: 0, opacity: 0 }}
                   className="ml-4 space-y-2 overflow-hidden !mt-4"
                 >
-                  {["How To Videos", "Latest Posts"].map((item) => (
+                  {["Latest Posts", "How To Videos"].map((item) => (
                     <div
                       key={item}
                       className="cursor-pointer flex justify-between text-[22px] mr-2"
