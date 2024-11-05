@@ -15,7 +15,7 @@ const BlogCard = ({
     if (onClick) onClick();
 
     const categoryPath = blogCategory === "News" ? "news" : "academy";
-    console.log(categoryPath);
+
     router.push(`/blogs/${categoryPath}/${blogSlug}`);
   };
 

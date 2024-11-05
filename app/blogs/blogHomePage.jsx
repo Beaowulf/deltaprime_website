@@ -63,7 +63,7 @@ const BlogHomePage = ({ categories, blogs: initialBlogs }) => {
   };
 
   const currentPosts = filteredBlogs.slice(indexOfFirstPost, indexOfLastPost);
-  console.log(currentPosts);
+
   const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
 
   const handlePageChange = (pageNumber) => {

@@ -164,7 +164,7 @@ const MobileMenu = ({
               animate="center"
               exit="exit"
               transition={{ duration: 0.3 }}
-              className="max-w-[300px] flex flex-col items-start justify-center"
+              className="w-full flex flex-col items-start overflow-y-scroll"
             >
               <p className="text-[19px] mb-[50px] text-left">Strategies</p>
               <div className="space-y-4 text-[22px] w-full flex items-start flex-col text-left">
