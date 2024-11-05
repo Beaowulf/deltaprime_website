@@ -598,7 +598,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                 items.length <= 3 ? "grid-cols-1" : "grid-cols-1 lg:grid-cols-2"
               } gap-6`}
             >
-              {items.slice(0, 7).map((item, index) => (
+              {items.slice(0, 9).map((item, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}

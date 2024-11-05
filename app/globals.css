@@ -16,9 +16,9 @@
 }
 
 :root {
-  --primary: rgba(0, 0, 0, 0);
+  --primary: rgba(255, 255, 255, 0.1);
   --secondary: #8175e1;
-  --tertiary: rgba(0, 0, 0, 0);
+  --tertiary: rgba(255, 255, 255, 0);
 }
 
 /*
