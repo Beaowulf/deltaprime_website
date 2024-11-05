@@ -3,7 +3,6 @@ import { fetchBlogs, fetchHowToVideos, fetchStrategies } from "@/lib/getBlogs";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import arrowLeftColored from "@/public/assets/icons/arrowLeftColored.svg";
 import StarFilled from "@/public/assets/icons/starFilled.svg";
 import StarUnfilled from "@/public/assets/icons/starUnfilled.svg";
 import StarFilledPurple from "@/public/assets/icons/starFilledPurple.svg";
@@ -22,9 +21,9 @@ const MobileMenu = ({
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const slideVariants = {
-    enter: { x: "100%", opacity: 1 },
-    center: { x: 0, opacity: 1 },
-    exit: { x: "-100%", opacity: 1 },
+    enter: { x: "100%", opacity: 1, display: "flex" },
+    center: { x: 0, opacity: 1, display: "flex" },
+    exit: { x: "-100%", opacity: 1, display: "flex" },
   };
 
   const renderStars = (level) => {
@@ -61,7 +60,7 @@ const MobileMenu = ({
 
   return (
     <div className="w-full h-full flex flex-col items-center overflow-hidden">
-      <div className="flex flex-col items-start justify-center h-full text-center bg-gray-900 text-[#6B70ED] dark:text-white relative w-[95%] overflow-visible">
+      <div className="flex flex-col items-start justify-center h-full text-center bg-gray-900 text-[#6B70ED] dark:text-white relative w-full overflow-visible pl-[12px]">
         <AnimatePresence mode="wait">
           {currentSlide === "main" && (
             <motion.div
@@ -73,7 +72,7 @@ const MobileMenu = ({
               transition={{ duration: 0.3 }}
               className="flex flex-col items-start"
             >
-              <p className="text-[19px] mb-[50px]">Menu</p>
+              <p className="text-[19px] mb-[50px] font-semibold">Menu</p>
               <div className="space-y-[10px] flex flex-col items-start">
                 <div
                   className="cursor-pointer flex items-center justify-center text-[38px] font-semibold gap-[12px]"
@@ -99,6 +98,13 @@ const MobileMenu = ({
                   </Link>
                 </div>
               </div>
+              <div className="flex flex-row items-start justify-start w-full mt-[3.5rem] mb-[25px] pb-[25px]">
+                <RoundButtonLinks
+                  hasText={false}
+                  isOnMenu={true}
+                  resolvedTheme={resolvedTheme}
+                />
+              </div>
             </motion.div>
           )}
 
@@ -112,7 +118,7 @@ const MobileMenu = ({
               transition={{ duration: 0.3 }}
               className="max-w-[300px] flex flex-col items-start"
             >
-              <p className="text-[19px] mb-[50px]">Burd Logs</p>
+              <p className="text-[19px] mb-[50px] font-semibold">Burd Logs</p>
               <div className="space-y-6 flex flex-col items-start">
                 <div
                   className="cursor-pointer flex justify-center text-[38px] gap-6 font-semibold text-nowrap"
@@ -143,7 +149,7 @@ const MobileMenu = ({
                 >
                   <button
                     onClick={() => setCurrentSlide("main")}
-                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px]"
+                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px] font-semibold"
                     style={{
                       visibility:
                         currentSlide === "main" ? "hidden" : "visible",
@@ -152,6 +158,13 @@ const MobileMenu = ({
                     Back
                   </button>
                 </motion.div>
+              </div>
+              <div className="flex flex-row items-start justify-start w-full mt-[3.5rem] mb-[25px] pb-[25px]">
+                <RoundButtonLinks
+                  hasText={false}
+                  isOnMenu={true}
+                  resolvedTheme={resolvedTheme}
+                />
               </div>
             </motion.div>
           )}
@@ -166,13 +179,13 @@ const MobileMenu = ({
               transition={{ duration: 0.3 }}
               className="w-full flex flex-col items-start overflow-y-scroll"
             >
-              <p className="text-[19px] mb-[50px] text-left">Strategies</p>
+              <p className="text-[19px] mb-[50px] font-semibold">Strategies</p>
               <div className="space-y-4 text-[22px] w-full flex items-start flex-col text-left">
                 {strategies.map((strategy, index) => (
                   <div className="pb-4 text-left" key={index}>
                     <Link
                       href={`/strategies/${strategy.slug}`}
-                      className="block text-left textShadow text-[22px]"
+                      className="block text-left font-bold text-[22px]"
                       onClick={toggleMenu}
                     >
                       {strategy.strategyTitle}
@@ -192,7 +205,7 @@ const MobileMenu = ({
                 >
                   <button
                     onClick={() => setCurrentSlide("main")}
-                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px]"
+                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px] font-semibold"
                     style={{
                       visibility:
                         currentSlide === "main" ? "hidden" : "visible",
@@ -203,11 +216,18 @@ const MobileMenu = ({
                 </motion.div>
                 <Link
                   href="/strategies"
-                  className="text-[19px]"
+                  className="text-[19px] font-semibold"
                   onClick={toggleMenu}
                 >
                   View All
                 </Link>
+              </div>
+              <div className="flex flex-row items-start justify-start w-full mt-[3.5rem] mb-[25px] pb-[25px]">
+                <RoundButtonLinks
+                  hasText={false}
+                  isOnMenu={true}
+                  resolvedTheme={resolvedTheme}
+                />
               </div>
             </motion.div>
           )}
@@ -222,7 +242,9 @@ const MobileMenu = ({
               transition={{ duration: 0.3 }}
               className="max-w-[300px] flex flex-col items-start"
             >
-              <p className="text-[19px] mb-[50px] text-left">About Us</p>
+              <p className="text-[19px] mb-[50px] text-left font-semibold">
+                About Us
+              </p>
               <div className="space-y-6 flex flex-col items-start">
                 <Link
                   href="/our-story"
@@ -249,7 +271,7 @@ const MobileMenu = ({
                 >
                   <button
                     onClick={() => setCurrentSlide("main")}
-                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px]"
+                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px] font-semibold"
                     style={{
                       visibility:
                         currentSlide === "main" ? "hidden" : "visible",
@@ -258,6 +280,13 @@ const MobileMenu = ({
                     Back
                   </button>
                 </motion.div>
+              </div>
+              <div className="flex flex-row items-start justify-start w-full mt-[3.5rem] mb-[25px] pb-[25px]">
+                <RoundButtonLinks
+                  hasText={false}
+                  isOnMenu={true}
+                  resolvedTheme={resolvedTheme}
+                />
               </div>
             </motion.div>
           )}
@@ -272,7 +301,9 @@ const MobileMenu = ({
               transition={{ duration: 0.3 }}
               className="max-w-full flex flex-col items-start overflow-y-scroll"
             >
-              <p className="text-[19px] mb-[50px]">{selectedCategory}</p>
+              <p className="text-[19px] mb-[50px] font-semibold">
+                {selectedCategory}
+              </p>
               <div className="space-y-4 text-[20px] text-left pr-6">
                 {selectedCategory === "Blogs" &&
                   blogs.map((blog, index) => (
@@ -288,7 +319,7 @@ const MobileMenu = ({
                     </div>
                   ))}
                 {selectedCategory === "How to Videos" &&
-                  howToVideos.slice(0, 3).map((video, index) => (
+                  howToVideos.slice(0, 6).map((video, index) => (
                     <div key={index}>
                       <Link
                         href={`/how-to-videos/${video.slug}`}
@@ -313,7 +344,7 @@ const MobileMenu = ({
                 >
                   <button
                     onClick={() => setCurrentSlide("main")}
-                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px]"
+                    className="bg-gray-700 rounded-full z-10 flex items-center text-[19px] font-semibold"
                     style={{
                       visibility:
                         currentSlide === "main" ? "hidden" : "visible",
@@ -331,22 +362,22 @@ const MobileMenu = ({
                         ? "how-to-videos"
                         : "strategies"
                     }`}
-                    className="text-[19px] underline"
+                    className="text-[19px] font-semibold"
                     onClick={toggleMenu}
                   >
                     View All
                   </Link>
                 )}
               </div>
+              <div className="flex flex-row items-start justify-start w-full mt-[3.5rem] mb-[25px] pb-[25px]">
+                <RoundButtonLinks
+                  hasText={false}
+                  isOnMenu={true}
+                  resolvedTheme={resolvedTheme}
+                />
+              </div>
             </motion.div>
           )}
-          <div className="flex flex-row items-start justify-start w-full mt-[3.5rem] mb-[25px] pb-[25px]">
-            <RoundButtonLinks
-              hasText={false}
-              isOnMenu={true}
-              resolvedTheme={resolvedTheme}
-            />
-          </div>
         </AnimatePresence>
       </div>
     </div>
@@ -354,12 +385,11 @@ const MobileMenu = ({
 };
 
 const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
-  const [selectedMenu, setSelectedMenu] = useState("About Us"); // Set default to "About Us"
+  const [selectedMenu, setSelectedMenu] = useState("About Us"); // Default to "About Us"
   const [isLatestPostsExpanded, setIsLatestPostsExpanded] = useState(true);
   const [blogs, setBlogs] = useState([]);
   const [howToVideos, setHowToVideos] = useState([]);
   const [strategies, setStrategies] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   const renderStars = (level) => {
@@ -397,16 +427,20 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const blogData = await fetchBlogs();
-        const videoData = await fetchHowToVideos();
-        const strategyData = await fetchStrategies();
-        setBlogs(blogData);
-        setHowToVideos(videoData);
-        setStrategies(strategyData);
+        if (blogs.length === 0) {
+          const blogData = await fetchBlogs();
+          setBlogs(blogData);
+        }
+        if (howToVideos.length === 0) {
+          const videoData = await fetchHowToVideos();
+          setHowToVideos(videoData);
+        }
+        if (strategies.length === 0) {
+          const strategyData = await fetchStrategies();
+          setStrategies(strategyData);
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
-      } finally {
-        setIsLoading(false);
       }
     };
 
@@ -421,10 +455,6 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
 
   const items =
     selectedMenu === "Latest Posts"
@@ -482,9 +512,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
       >
         {/* Desktop layout */}
         <motion.div className="flex justify-center items-start flex-col w-[25rem] h-[700px] pr-12 border-r border-gray-700 overflow-hidden">
-          <p className="text-[34px] font-semibold mb-14 text-left brightTitle">
-            Menu
-          </p>
+          <p className="text-[25px] font-semibold mb-14 text-left">Menu</p>
           <div
             className="cursor-pointer flex justify-between mb-5"
             onClick={() => setSelectedMenu("About Us")}
@@ -514,7 +542,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                       ? "dark:text-white font-bold border-b-[2px] border-[#6B70ED]"
                       : "text-[#3A3564] font-bold border-b-[2px] border-black"
                     : "text-[#6B70ED] dark:text-white font-semibold text_bottom_animation_dark_theme"
-                } text-[24px]`}
+                } text-[22px]`}
               >
                 Burd Logs
               </p>
@@ -531,7 +559,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                   {["How To Videos", "Latest Posts"].map((item) => (
                     <div
                       key={item}
-                      className="cursor-pointer flex justify-between text-[24px] mr-2"
+                      className="cursor-pointer flex justify-between text-[22px] mr-2"
                       onClick={() => setSelectedMenu(item)}
                     >
                       <p
@@ -562,7 +590,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                     ? "text-[#6B70ED] font-bold "
                     : "text-[#3A3564] font-bold"
                   : "text-[#6B70ED] dark:text-white font-semibold text_bottom_animation_dark_theme"
-              } text-[24px]`}
+              } text-[22px]`}
             >
               Strategies
             </p>
@@ -577,7 +605,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                     ? "text-[#6B70ED] font-bold"
                     : "text-[#3A3564] font-bold"
                   : "text-[#6B70ED] dark:text-white font-semibold text_bottom_animation_dark_theme"
-              } text-[24px]`}
+              } text-[22px]`}
             >
               Contact Us
             </Link>
@@ -598,7 +626,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                 items.length <= 3 ? "grid-cols-1" : "grid-cols-1 lg:grid-cols-2"
               } gap-6`}
             >
-              {items.slice(0, 9).map((item, index) => (
+              {items.slice(0, 6).map((item, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
@@ -617,7 +645,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                         : `/strategies/${item.slug}`
                     }
                     onClick={toggleDesktopMenu}
-                    className="font-semibold text-[24px] hover:underline textShadow text-left"
+                    className="font-semibold text-[22px] hover:underline text-left"
                   >
                     {item.blogTitle ||
                       item.title ||
@@ -646,7 +674,7 @@ const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
                       : `/${selectedMenu.toLowerCase().replace(" ", "-")}`
                   }
                   onClick={toggleDesktopMenu}
-                  className="underline"
+                  className="text-[25px] font-semibold"
                 >
                   View All
                 </Link>

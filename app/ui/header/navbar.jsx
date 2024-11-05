@@ -98,7 +98,7 @@ function Nav() {
             exit="hidden"
             variants={menuVariants}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="fixed inset-0 z-[1000] bg-gradient-to-br from-[#F4F4FF] via-[#FFF5F0] to-[#cccccc] dark:from-[#1B153C] dark:via-[#1C2943] dark:to-[#301E3E] flex justify-around w-full pagePaddingMedium"
+            className="fixed inset-0 z-[1000] bg-gradient-to-br from-[#F4F4FF] via-[#FFF5F0] to-[#cccccc] dark:from-[#1B153C] dark:via-[#1C2943] dark:to-[#301E3E] flex justify-around w-full md:!pr-0"
           >
             <div className="flex flex-col w-full md:overflow-y-scroll h-screen">
               <div
@@ -115,7 +115,7 @@ function Nav() {
                     isScrolled && "py-0 pt-0"
                   }`}
                 >
-                  <div className="flex items-center justify-between h-20">
+                  <div className="flex items-center justify-between h-20 md:pr-0">
                     <div className="flex items-center gap-2">
                       {resolvedTheme === "dark" ? (
                         <DarkModeLogo />
