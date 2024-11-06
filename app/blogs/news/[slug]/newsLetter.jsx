@@ -219,8 +219,13 @@ const NewsLetter = ({ blog }) => {
                     along with our partners Yield Yak and Trader Joe. The topic
                     covered liquidity, incentives and everything in between. It
                     even included some differing perspectives, making it an
-                    interesting fireside among frens. We’ll let you know when
-                    the full video is out. 
+                    interesting fireside among frens. The full show can be found
+                    <a
+                      className="underline cursor-pointer"
+                      href="https://youtu.be/ZP9V3cJetEg"
+                    >
+                      here.
+                    </a>
                   </p>
                 </div>
               </div>
