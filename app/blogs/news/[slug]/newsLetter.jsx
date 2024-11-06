@@ -219,10 +219,11 @@ const NewsLetter = ({ blog }) => {
                     along with our partners Yield Yak and Trader Joe. The topic
                     covered liquidity, incentives and everything in between. It
                     even included some differing perspectives, making it an
-                    interesting fireside among frens. The full show can be found
+                    interesting fireside among frens. The full show can be found{" "}
                     <a
                       className="underline cursor-pointer"
                       href="https://youtu.be/ZP9V3cJetEg"
+                      target="_blank"
                     >
                       here.
                     </a>
@@ -239,16 +240,21 @@ const NewsLetter = ({ blog }) => {
                 <div className="flex flex-col w-full justify-between items-center lg:items-start h-fit lg:w-fit">
                   <div className="whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%]  max-w-[40rem] dark:text-white text-white ">
                     <p>
-                      The month of October closed an eventful chapter of
-                      DeltaPrime centered around security. Near its end, a live
-                      video-AMA was held with the community to discuss recent
-                      events and plans to move forward. With the full founding
-                      team, answering every question until there were none left,
-                      the call lasted for a solid two hours and ten minutes. Due
-                      to the positive response to the AMA, this will now be
-                      introduced as a recurring event in the DeltaPrime discord:
-                      The Community Call. For the full, unedited video, you can
-                      find the link here.
+                      To close it, a{" "}
+                      <a
+                        href="https://www.youtube.com/watch?v=EJoY_AH_p2Q"
+                        className="underline cursor-pointer"
+                        target="_blank"
+                      >
+                        live video-AMA
+                      </a>{" "}
+                      was held with the community to discuss recent events and
+                      plans to move forward. With the full founding team,
+                      answering every question until there were none left, the
+                      call lasted for a solid two hours and ten minutes. Due to
+                      the positive response to the AMA, this will now be
+                      introduced as a recurring event in the DeltaPrime discord:{" "}
+                      <span className="font-semibold">The Community Call.</span>
                     </p>
                     <br />
                     <p>
@@ -257,28 +263,34 @@ const NewsLetter = ({ blog }) => {
                       Banner that invites you on this journey with us. More
                       importantly, no longer will the Discord invite link be a
                       random series of letters and numbers. From now on, it’s
-                      simply:
+                      simply:{" "}
                       <a
                         className="underline cursor-pointer"
                         href="https://discord.gg/deltaprime"
                       >
-                        {" "}
-                        https://discord.gg/deltaprime.{" "}
+                        https://discord.gg/deltaprime
                       </a>
-                      Easy.
+                      . Easy.
                     </p>
                     <br />
                     <p>
-                      Simultaneously, it opens the door for HD Streaming and
-                      Custom Role Icons. As the heart of our community, we would
-                      like to invite everyone to join the Discord to stay
-                      involved and up-to-date.
+                      Simultaneously, it opens the door for quality audio, HD
+                      streaming, and Custom Role Icons. As the heart of our
+                      community, we would like to invite everyone to join the
+                      Discord and get in on the action.
                     </p>
                     <br />
                     <p>
                       In other news, or should we say content, we recently
                       published our first articles of our Burd Log! Last Monday
-                      featured a new article with a deep-dive on Cross-Margin
+                      featured a new article with a deep-dive on{" "}
+                      <a
+                        href="https://deltaprime.io/blogs/academy/cross-margin-maximising-capital-efficiency"
+                        className="underline cursor-pointer"
+                        target="_blank"
+                      >
+                        Cross-Margin
+                      </a>{" "}
                       with all the details, benefits, and a practical example of
                       how it sets DeltaPrime apart from other protocols.
                     </p>
@@ -337,7 +349,7 @@ const NewsLetter = ({ blog }) => {
                 <div className="whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%]  max-w-[40rem] dark:text-white text-[#565AC2] ">
                   <p>
                     As a protocol of partners, there are a few developments to
-                    share from our frens. 
+                    share from our friends. 
                   </p>
                   <br />
                   <p>
@@ -375,11 +387,19 @@ const NewsLetter = ({ blog }) => {
                   </p>
                   <br />
                   <p>
-                    Tesseract is a new protocol built by the creators of Yield
-                    Yak to offer a trustless, non-custodial, on-chain trading
-                    platform connecting all L1s. It hosts several benefits such
-                    as deeper liquidity by leveraging all L1s, better prices via
-                    the familiar multi-routing of swaps, with none of the
+                    <a
+                      href="https://tesseract.ghost.io/introducing-tesseract-revolutionising-cross-l1-swaps-on-avalanche/"
+                      className="underline cursor-pointer"
+                      target="_blank"
+                    >
+                      {" "}
+                      Tesseract
+                    </a>{" "}
+                    is a new protocol built by the creators of Yield Yak to
+                    offer a trustless, non-custodial, on-chain trading platform
+                    connecting all L1s. It hosts several benefits such as deeper
+                    liquidity by leveraging all L1s, better prices via the
+                    familiar multi-routing of swaps, with none of the
                     RPC-switching. A practical analogy of Tesseract, from our
                     view, is Yak Swap but for all Avalanche L1s. It will be a
                     crucial platform for increased interoperability within
@@ -397,11 +417,11 @@ const NewsLetter = ({ blog }) => {
 
                 <div className="whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%]  max-w-[40rem] dark:text-white text-[#565AC2] ">
                   <p>
-                    Our partners over at GoGoPool have been gogoing at during
-                    October, with some practical updates to back that up. Just
-                    before the Summit, Steven hosted the first call with their
-                    network of L1 founders. Main take-away? Bullish. Bullish
-                    products and value-add. 
+                    Our partners over at GoGoPool have been GoGo-going at it
+                    during October, with some practical updates to back that up.
+                    Just before the Summit, Steven hosted the first call with
+                    their network of L1 founders. Main take-away? Bullish.
+                    Bullish products and value-add. 
                   </p>
                   <br />
                   <p>
@@ -410,8 +430,15 @@ const NewsLetter = ({ blog }) => {
                     to supercharge the Avalanche ecosystem. They have been
                     ‘quietly’ building and are soon coming out with improved
                     support for validators and projects, their teased
-                    l1marketplace, and on top: their one-click L1 launcher which
-                    Steven himself showcased at the Summit. 
+                    l1marketplace, and on top: their{" "}
+                    <a
+                      href="https://www.gogopool.com/launcher"
+                      className="underline cursror-cursor-pointer"
+                      target="_blank"
+                    >
+                      one-click L1 launcher
+                    </a>{" "}
+                    which Steven himself showcased at the Summit. 
                   </p>
                   <br />
                   <p>
@@ -476,7 +503,7 @@ const NewsLetter = ({ blog }) => {
                     first two coming up?
                   </p>
                 </div>
-                <div className="flex lg:flex-row flex-col w-full justify-around lg:items-start md:items-center gap-4 md:gap-10 md:px-0 px-10">
+                <div className="flex lg:flex-row flex-col w-full justify-around lg:items-start md:items-center gap-4 md:gap-10 md:px-0 px-5">
                   <div className="flex flex-col gap-4 md:justify-start justify-center md:items-start items-center">
                     <div className="rounded-[25px] w-fit mx-auto">
                       <Image
@@ -489,7 +516,7 @@ const NewsLetter = ({ blog }) => {
                         alt="newsLetter-Preview-Image"
                       />
                       <Image
-                        className={`rounded-[25px] mr-2 md:mr-10 w-auto h-[350px] object-cover block md:hidden ${
+                        className={`rounded-[25px] mr-2 md:mr-10 w-auto h-[325px] object-contain block md:hidden ${
                           resolvedTheme === "dark"
                             ? "shadow-custom-dark"
                             : "shadow-custom-light"
@@ -519,7 +546,7 @@ const NewsLetter = ({ blog }) => {
                         alt="newsLetter-Preview-Image"
                       />
                       <Image
-                        className={`rounded-[25px] mr-2 md:mr-10 w-auto h-[350px] object-contain block md:hidden ${
+                        className={`rounded-[25px] mr-2 md:mr-10 w-auto h-[325px] object-contain block md:hidden ${
                           resolvedTheme === "dark"
                             ? "shadow-custom-dark"
                             : "shadow-custom-light"
@@ -537,17 +564,17 @@ const NewsLetter = ({ blog }) => {
                   </div>
                 </div>
                 <div className="text-center md:text-left whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%] w-full dark:text-white text-white">
-                  <p className="md:text-[15px] text-[20px] leading-[150%]">
+                  <p className="md:text-[17px] text-[15px] leading-[150%]">
                     These two features are close to being finished, after which,
                     Elon-willing, we can get some much requested PA and CA
                     statistics in place.
                   </p>
                   <br />
-                  <p className="md:text-[15px] text-[20px] leading-[150%]">
+                  <p className="md:text-[17px] text-[15px] leading-[150%]">
                     And after that? The opportunities are endless.
                   </p>
                   <br />
-                  <p className="font-semibold text-[20px]">Be the Whale.</p>
+                  <p className="font-semibold text-[20px]">Be The Whale.</p>
                 </div>
               </div>
             </div>
