@@ -13,6 +13,23 @@ import newsLetterPreviewImage from "@/public/assets/img/images/newsLetter-Previe
 import newsLetterDeltaNewsImage from "@/public/assets/img/images/newsletter-2024-deltaPrime-image.png";
 import newsLetterDeltaNewsImageMobile from "@/public/assets/img/images/newsletter-2024-deltaPrime-image-mobile.png";
 
+// Summint
+import summmitDesktopImage from "@/public/assets/img/images/summit_desktop_image.png";
+import summmitMobileImage from "@/public/assets/img/images/summit_mobile_image.png";
+
+// Partner Spotlight
+import partnerSpotlightDesktopImage from "@/public/assets/img/images/defi_desktop_image_newsletter.png";
+import partnerSpotlightMobileImage from "@/public/assets/img/images/defi_mobile_image_newsletter.png";
+
+// What's Next
+import whatsNextDesktopImageFirst from "@/public/assets/img/images/whats_next_desktop_Image_First.png";
+import whatsNextDesktopImageSecond from "@/public/assets/img/images/whats_next_desktop_Image_Second.png";
+import whatsNextMobileImageFirst from "@/public/assets/img/images/whats_next_mobile_Image_First.png";
+import whatsNextMobileImageSecond from "@/public/assets/img/images/whats_next_mobile_Image_Second.png";
+
+import newsLetterGoGoPoolImage from "@/public/assets/img/images/gogopool_desktop_image_newsletter.png";
+import newsLetterGoGoPoolImageMobile from "@/public/assets/img/images/gogopool_mobile_image_newsletter.png";
+
 const NewsLetter = ({ blog }) => {
   const [blogData, setBlogData] = useState(blog);
   const { resolvedTheme } = useTheme();
@@ -47,10 +64,10 @@ const NewsLetter = ({ blog }) => {
       <div className="newsLetter">
         <div className="md:pagePaddingLarge my-0 mt-10 md:mt-32">
           <div className="flex justify-center">
-            <div className="w-fit flex flex-col gap-4 md:px-0 px-2">
+            <div className="w-fit flex flex-col-reverse gap-4 md:px-0 px-2">
               <div className="flex gap-2 items-center justify-end">
                 <Image src={calendarIcon} alt="calendar_Icon" />
-                <p className="text-nowrap text-[18px] font-medium text-[#565AC2] dark:text-[#F6F6F6] pr-4 md:pr-0">
+                <p className="text-nowrap text-[12px] font-medium text-[#565AC2] dark:text-[#F6F6F6] pr-4 md:pr-0">
                   {formatDateString(
                     blogData.blogSYS.createdAt,
                     blogData.blogSYS.locale
@@ -66,7 +83,7 @@ const NewsLetter = ({ blog }) => {
               <Image
                 src={newsletterImageMobile}
                 alt="newsletter_image"
-                className="md:hidden block max-w-full h-auto object-cover rounded-[25px] px-2"
+                className="rounded-[20px] mr-2 md:mr-10 w-auto h-[350px] xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover block md:hidden"
               />
             </div>
           </div>
@@ -155,7 +172,7 @@ const NewsLetter = ({ blog }) => {
               </div>
             </div> */}
 
-            <div className="my-12 md:my-desktop-spacing flex lg:flex-row flex-col justify-between items-center w-full gap-6 md:px-0 px-4">
+            <div className="my-12 md:my-desktop-spacing flex lg:flex-row flex-col-reverse justify-between items-center w-full gap-6 md:px-0 px-4">
               <div className="rounded-[25px] ">
                 <Image
                   className={`rounded-[20px] mr-2 md:mr-10 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
@@ -163,22 +180,22 @@ const NewsLetter = ({ blog }) => {
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
                   }`}
-                  src={newsLetterPreviewImage}
+                  src={summmitDesktopImage}
                   alt="newsLetter-Preview-Image"
                 />
                 <Image
-                  className={`rounded-[20px] mr-2 md:mr-10 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover block md:hidden ${
+                  className={`rounded-[20px] mr-2 md:mr-10 w-auto h-[350px] xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover block md:hidden ${
                     resolvedTheme === "dark"
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
                   }`}
-                  src={newsLetterPreviewImageMobile}
+                  src={summmitMobileImage}
                   alt="newsLetter-Preview-Image"
                 />
               </div>
 
               <div className="flex flex-col w-full justify-between items-center lg:items-start h-fit lg:w-fit">
-                <h3 className="md:brightText textShadow text-center md:text-left text-wrap max-w-[40rem] mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] leading-[100%]">
+                <h3 className="md:brightText textShadow text-center md:text-left text-wrap max-w-[40rem] my-6 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] leading-[100%]">
                   Review of DeltaPrime at the Summit
                 </h3>
 
@@ -241,7 +258,7 @@ const NewsLetter = ({ blog }) => {
                         href="https://discord.gg/deltaprime"
                       >
                         {" "}
-                        https://discord.gg/deltaprime.
+                        https://discord.gg/deltaprime.{" "}
                       </a>
                       Easy.
                     </p>
@@ -273,7 +290,7 @@ const NewsLetter = ({ blog }) => {
                     alt="newsLetter-Preview-Image"
                   />
                   <Image
-                    className={`rounded-[25px] mr-2 md:mr-10 w-full h-auto object-cover block md:hidden mb-4 ${
+                    className={`rounded-[25px] mr-2 md:mr-10 w-auto h-[350px] object-cover block md:hidden mb-4 ${
                       resolvedTheme === "dark"
                         ? "shadow-custom-dark"
                         : "shadow-custom-light"
@@ -293,32 +310,63 @@ const NewsLetter = ({ blog }) => {
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
                   }`}
-                  src={newsLetterPreviewImage}
+                  src={partnerSpotlightDesktopImage}
                   alt="newsLetter-Preview-Image"
                 />{" "}
                 <Image
-                  className={`rounded-[25px] mr-2 md:mr-10 w-full h-auto object-cover block md:hidden mb-4 ${
+                  className={`rounded-[25px] mr-2 md:mr-10 w-auto h-[350px] object-cover block md:hidden mb-4 ${
                     resolvedTheme === "dark"
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
                   }`}
-                  src={newsLetterPreviewImageMobile}
+                  src={partnerSpotlightMobileImage}
                   alt="newsLetter-Preview-Image-Mobile"
                 />
               </div>
 
               <div className="flex flex-col w-full justify-between items-center lg:items-start h-fit lg:w-fit md:px-0 px-4">
-                <h3 className="md:brightText textShadow text-center md:text-left text-wrap max-w-[40rem] mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] leading-[100%]">
-                  Partner Spotlight: Yield Yak’s Tesseract
+                <h3 className="md:brightText textShadow text-center md:text-left text-wrap max-w-[40rem] my-6 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] leading-[100%]">
+                  Last month in DeFi
                 </h3>
 
                 <div className="whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%]  max-w-[40rem] dark:text-white text-[#565AC2] ">
                   <p>
-                    Every month we will be diving into a new development from
-                    one of our partners. The above expansion of the Avalanche
-                    ecosystem leads us to this month’s partner spotlight. A
-                    large and growing network of L1s needs a protocol to connect
-                    all that liquidity, that’s where Tesseract comes in. 
+                    As a protocol of partners, there are a few developments to
+                    share from our frens. 
+                  </p>
+                  <br />
+                  <p>
+                    At the start of October, GMX launched their GMX Liquidity
+                    Vault for AVAX (GLV). GLV is an index of GM Pools, offering
+                    exposure to all its underlying pools through a single token.
+                    Its aim is diversification and optimisation of yield by
+                    allocating capital efficiently - that’s what we like to see.
+                    The current composition includes AVAX, LTC, DOGE, and XRP,
+                    with the lion’s share (95%) of capital being in the AVAX
+                    pool.
+                  </p>
+                  <br />
+                  <p>
+                    On Arbitrum, GMX has been rapidly integrating new assets
+                    into their protocol. In October alone, they have launched
+                    pools for EIGEN, SATS, PEPE, AAVE, UNI, POL, SUI, SEI, and
+                    APE. All these new pools, with the exception of APE, are
+                    backed by USDC and WETH or WBTC, and are included in their
+                    respective GLV. From these pools, UNI, SUI and EIGEN are
+                    seeing the most traction and could meaningfully impact GLV.
+                    It is too soon to tell whether that persists, so let’s keep
+                    an eye on them.
+                  </p>
+                </div>
+                <div className="whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%]  max-w-[40rem] dark:text-white text-[#565AC2] ">
+                  <br />
+                  <p>
+                    Over at Yield Yak, in the build-up towards Avalanche9000,
+                    its creators have announced a necessary protocol going
+                    forward. Avalanche9000, with its aim to grow and develop the
+                    ecosystem with Avalanche L1s, needs a protocol to connect
+                    the liquidity of all those networks. That is where Tesseract
+                    comes in.
                   </p>
                   <br />
                   <p>
@@ -330,9 +378,66 @@ const NewsLetter = ({ blog }) => {
                     RPC-switching. A practical analogy of Tesseract, from our
                     view, is Yak Swap but for all Avalanche L1s. It will be a
                     crucial platform for increased interoperability within
-                    Avalanche, and we will be following it closely!
+                    Avalanche, and we will be following it closely.
                   </p>
                 </div>
+              </div>
+            </div>
+
+            <div className="my-12 md:my-desktop-spacing flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-5 gap-2">
+              <div className="flex flex-col w-full justify-between items-center lg:items-start h-fit lg:w-fit md:px-0 px-4">
+                <h3 className="md:brightText textShadow text-center md:text-left text-wrap max-w-[40rem] my-6 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] leading-[100%]">
+                  In Good Company
+                </h3>
+
+                <div className="whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%]  max-w-[40rem] dark:text-white text-[#565AC2] ">
+                  <p>
+                    Our partners over at GoGoPool have been gogoing at during
+                    October, with some practical updates to back that up. Just
+                    before the Summit, Steven hosted the first call with their
+                    network of L1 founders. Main take-away? Bullish. Bullish
+                    products and value-add. 
+                  </p>
+                  <br />
+                  <p>
+                    Unsurprisingly since GoGoPool is so close to the metal of
+                    Avalanche. With ACP-77 looming, they are priming themselves
+                    to supercharge the Avalanche ecosystem. They have been
+                    ‘quietly’ building and are soon coming out with improved
+                    support for validators and projects, their teased
+                    l1marketplace, and on top: their one-click L1 launcher which
+                    Steven himself showcased at the Summit. 
+                  </p>
+                  <br />
+                  <p>
+                    Already, ggAVAX has been earning an average +7.5% APY for
+                    holders as the highest yielding LST on Avalanche. If you’re
+                    curious how, stay tuned. In the meantime, ggAVAX is the
+                    centerpiece for a commonly used strategy that yields up to
+                    ~45% APY on DeltaPrime. This is a partnership that does more
+                    than just deliver yield. 
+                  </p>
+                </div>
+              </div>
+              <div className="rounded-[25px] ">
+                <Image
+                  className={`rounded-[20px] mr-2 md:mr-10 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
+                    resolvedTheme === "dark"
+                      ? "shadow-custom-dark"
+                      : "shadow-custom-light"
+                  }`}
+                  src={newsLetterGoGoPoolImage}
+                  alt="newsLetter-Preview-Image"
+                />{" "}
+                <Image
+                  className={`rounded-[25px] mr-2 md:mr-10 w-auto h-[350px] object-cover block md:hidden mb-4 ${
+                    resolvedTheme === "dark"
+                      ? "shadow-custom-dark"
+                      : "shadow-custom-light"
+                  }`}
+                  src={newsLetterGoGoPoolImage}
+                  alt="newsLetter-Preview-Image-Mobile"
+                />
               </div>
             </div>
             {/* Last Section What’s next for DeltaPrime */}
@@ -375,21 +480,21 @@ const NewsLetter = ({ blog }) => {
                             ? "shadow-custom-dark"
                             : "shadow-custom-light"
                         }`}
-                        src={newsLetterPreviewImage}
+                        src={whatsNextDesktopImageFirst}
                         alt="newsLetter-Preview-Image"
                       />
                       <Image
-                        className={`rounded-[20px] h-auto max-w-[650px] object-cover block md:hidden ${
+                        className={`rounded-[25px] mr-2 md:mr-10 w-auto h-[350px] object-cover block md:hidden ${
                           resolvedTheme === "dark"
                             ? "shadow-custom-dark"
                             : "shadow-custom-light"
                         }`}
-                        src={newsLetterPreviewImageMobile}
+                        src={whatsNextDesktopImageFirst}
                         alt="newsLetter-Preview-Image"
                       />
                     </div>
                     <div className="w-full">
-                      <p className="max-w-[15rem] md:max-w-[30rem] pl-2 whiteMainText md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%] w-full dark:text-white text-white md:m-0 mx-auto md:text-left text-center">
+                      <p className="max-w-[25rem] md:max-w-[30rem] pl-2 whiteMainText md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%] w-full dark:text-white text-white md:m-0 mx-auto md:text-left text-center">
                         1. The Bull Meter, showing you how hedged you are on
                         your borrowable assets, regardless of whether you hold
                         them in your balance, GMX, Trader Joe, or elsewhere.
@@ -405,21 +510,21 @@ const NewsLetter = ({ blog }) => {
                             ? "shadow-custom-dark"
                             : "shadow-custom-light"
                         }`}
-                        src={newsLetterPreviewImage}
+                        src={whatsNextDesktopImageSecond}
                         alt="newsLetter-Preview-Image"
                       />
                       <Image
-                        className={`rounded-[20px] h-auto max-w-[650px] object-cover block md:hidden ${
+                        className={`rounded-[25px] mr-2 md:mr-10 w-auto h-[350px] object-contain block md:hidden ${
                           resolvedTheme === "dark"
                             ? "shadow-custom-dark"
                             : "shadow-custom-light"
                         }`}
-                        src={newsLetterPreviewImageMobile}
+                        src={whatsNextDesktopImageSecond}
                         alt="newsLetter-Preview-Image"
                       />
                     </div>
                     <div className="w-full">
-                      <p className="max-w-[15rem] md:max-w-[30rem] pl-2 whiteMainText md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%] w-full dark:text-white text-white md:m-0 mx-auto md:text-left text-center">
+                      <p className="max-w-[25rem] md:max-w-[30rem] pl-2 whiteMainText md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%] w-full dark:text-white text-white md:m-0 mx-auto md:text-left text-center">
                         2. PA PnL, which tells you how you have been performing
                         so far.
                       </p>

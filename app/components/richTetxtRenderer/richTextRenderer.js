@@ -153,7 +153,7 @@ const RichTextRenderer = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            {children}
+            <p>{children}</p>
           </a>
         );
       },

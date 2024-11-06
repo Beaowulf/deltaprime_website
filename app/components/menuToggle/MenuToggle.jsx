@@ -27,7 +27,7 @@ export const MenuToggle = ({ toggle, isOpen }) => {
 
   return (
     <motion.button
-      className="rounded-full"
+      className="rounded-full pr-[5px]"
       onClick={toggle}
       initial={false}
       animate={{ opacity: 1 }}

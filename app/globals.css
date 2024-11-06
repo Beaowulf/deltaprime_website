@@ -781,7 +781,7 @@ body {
 }
 
 .styled-table td {
-  white-space: nowrap; /* Prevents text from wrapping */
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 768px) {
@@ -794,7 +794,7 @@ body {
     font-size: 33px;
     font-style: normal;
     font-weight: 700;
-    line-height: 150%; /* 34.5px */
+    line-height: 150%;
   }
 }
 .deltaWhiteLinearBG {

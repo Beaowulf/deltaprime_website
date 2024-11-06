@@ -52,7 +52,7 @@
 }
 
 .newsLetter_Linear_BG_SM {
-  background: linear-gradient(45deg, #3b32d9 76%, #6b70ed 85%, #9179d8 100%);
+  background: linear-gradient(45deg, #532dbf 60%, #ad91ff 100%);
 }
 
 @media (min-width: 768px) {
