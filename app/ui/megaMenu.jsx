@@ -394,7 +394,7 @@ const MobileMenu = ({
 
 const MegaMenu = ({ pathname, resolvedTheme, toggleDesktopMenu }) => {
   const [selectedMenu, setSelectedMenu] = useState("About Us"); // Default to "About Us"
-  const [isLatestPostsExpanded, setIsLatestPostsExpanded] = useState(true);
+  const [isLatestPostsExpanded, setIsLatestPostsExpanded] = useState(false);
   const [blogs, setBlogs] = useState([]);
   const [howToVideos, setHowToVideos] = useState([]);
   const [strategies, setStrategies] = useState([]);
