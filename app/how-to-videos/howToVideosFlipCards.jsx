@@ -92,6 +92,8 @@ export const FlipCardMobileCarousel = ({ videos }) => {
         {/* Custom navigation and pagination */}
         <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[5rem]">
           <Image
+            width={30}
+            height={30}
             onClick={handlePrev}
             className="swiper-button-prev custom-arrow"
             src={arrowLeftColored}
@@ -100,6 +102,8 @@ export const FlipCardMobileCarousel = ({ videos }) => {
           <div className="custom-swiper-pagination swiper-pagination"></div>{" "}
           {/* Custom pagination element */}
           <Image
+            width={30}
+            height={30}
             onClick={handleNext}
             className="swiper-button-next custom-arrow"
             src={arrowRightColored}
@@ -155,7 +159,6 @@ export const FlipDesktopCarousel = ({ strategies }) => {
                 titleBack={strategy.strategyTitle}
                 descriptionFront={strategy.strategyDescription}
                 difficultyLevel={strategy.difficultyLevel}
-                listTextBack={<ListText strategyID={strategy.strategyID} />}
               />
             </SwiperSlide>
           ))}
@@ -164,6 +167,8 @@ export const FlipDesktopCarousel = ({ strategies }) => {
         {/* Custom navigation and pagination */}
         <div className="custom-pagination-container flex justify-between items-center py-[30px] px-[4rem] w-full">
           <Image
+            width={30}
+            height={30}
             onClick={handlePrev}
             className="swiper-button-prev custom-arrow"
             src={arrowLeftColored}
@@ -171,6 +176,8 @@ export const FlipDesktopCarousel = ({ strategies }) => {
           />
           <div className="custom-swiper-pagination swiper-pagination"></div>
           <Image
+            width={30}
+            height={30}
             onClick={handleNext}
             className="swiper-button-next custom-arrow"
             src={arrowRightColored}

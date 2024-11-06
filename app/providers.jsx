@@ -15,7 +15,7 @@ const CheckOrientation = () => {
   // Check if the screen is mobile and in landscape
   const checkOrientation = () => {
     const isLandscape = window.innerWidth > window.innerHeight;
-    const isMobile = window.innerWidth <= 1024; // Adjust this threshold for tablet/mobile breakpoint
+    const isMobile = window.innerWidth <= 950 && window.innerWidth >= 450;
 
     setIsLandscape(isLandscape);
     setIsMobile(isMobile);

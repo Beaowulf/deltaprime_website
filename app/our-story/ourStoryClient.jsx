@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import "./ourStory.css";
 import Link from "next/link";
@@ -7,6 +7,8 @@ import {
   DeltaPurpleButton,
   DeltaWhiteButton,
 } from "@/app/components/buttons/mainButton";
+
+import { getJobDescriptions } from "@/lib/jobData"; // Adjust import paths as necessary
 
 import ContactForm from "@/app/ui/contactForm/contactForm";
 import Header from "@/app/components/header/header";
@@ -20,7 +22,22 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types";
 
 export default function OurStoryClient({ storyData, tvtDataFormatted }) {
+  const [jobDescriptions, setJobDescriptions] = useState([]);
   const sections = storyData;
+
+
+  useEffect(() => {
+
+
+    // Fetch job descriptions on the client side
+    async function fetchJobs() {
+      const jobs = await getJobDescriptions();
+      setJobDescriptions(jobs);
+    }
+
+    fetchJobs();
+  }, []);
+
 
   if (!sections || sections.length === 0) {
     return <div>No sections available for Our Story</div>;
@@ -123,13 +140,15 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
             </div>
             {/* Image */}
             <div className="w-fit rounded-[25px] max-w-[60rem]">
-              <Image
-                className="rounded-[25px]"
-                src={introSection.image.url}
-                alt={introSection.image.title}
-                width={introSection.image.width}
-                height={introSection.image.height}
-              />
+            <Image
+              className="rounded-[25px]"
+              src={introSection.image.url}
+              alt={introSection.image.title}
+              layout="responsive"
+              width={introSection.image.width}
+              height={introSection.image.height}
+              priority={true}
+            />
             </div>
           </div>
         )}
@@ -138,13 +157,14 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
         <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5">
           {/* Image */}
           <div className="w-fit rounded-[25px] max-w-[60rem]">
-            <Image
-              className="rounded-[20px] w-full h-auto md:h-full object-cover"
-              src={secondSection.image.url}
-              alt={secondSection.image.title}
-              width={secondSection.image.width}
-              height={secondSection.image.height}
-            />
+          <Image
+            className="rounded-[20px] w-full h-auto md:h-full object-cover"
+            src={secondSection.image.url}
+            alt={secondSection.image.title}
+            layout="responsive"
+            width={secondSection.image.width}
+            height={secondSection.image.height}
+          />
           </div>
           {/* Text Wrapper */}
           <div className="flex flex-col lg:w-1/2 w-full justify-between items-center lg:items-end h-fit">
@@ -195,9 +215,10 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
           {/* Image */}
           <div className="w-fit">
             <Image
-              className="rounded-[20px]"
+              className="rounded-[20px] w-full h-auto md:h-full object-cover"
               src={thirdSection.image.url}
               alt={thirdSection.image.title}
+              layout="responsive"
               width={thirdSection.image.width}
               height={thirdSection.image.height}
             />
@@ -206,13 +227,15 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
 
         <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col-reverse justify-between items-center w-full md:gap-20 gap-5">
           <div className="w-fit rounded-[25px] max-w-[60rem]">
-            <Image
-              className="rounded-[20px] w-full h-auto md:h-full object-cover"
-              src={fourthSection.image.url}
-              alt={fourthSection.image.title}
-              width={fourthSection.image.width}
-              height={fourthSection.image.height}
-            />
+          <Image
+            className="rounded-[20px] w-full h-auto md:h-full object-cover"
+            src={fourthSection.image.url}
+            alt={fourthSection.image.title}
+            layout="responsive"
+            width={fourthSection.image.width}
+            height={fourthSection.image.height}
+          />
+
           </div>
           <div className="flex flex-col lg:w-1/2 w-full justify-between items-center lg:items-start h-fit">
             <h2 className="mb-8 featureSubtitle md:text-[34px] text-[24px] dark:text-white text-[#6B70ED] text-left">
@@ -387,79 +410,27 @@ export default function OurStoryClient({ storyData, tvtDataFormatted }) {
             </div>
 
             <div className="flex flex-col items-stretch gap-8 mt-10 xl:mt-0">
-              {/* First Box */}
-
-              <JobDescriptionBox
-                title="Smart Contract Developer"
-                textOne="FULL-TIME"
-                textTwo="REMOTE"
-                textThree="DEVELOPER"
-                buttonElement={
-                  <DeltaWhiteButton
-                    isSmallbtn={true}
-                    isLink={true}
-                    forcePurpleArrow={true}
-                    href="/job-description/Smart-Contract-Developer"
-                    typographyClass="text-[#565AC2]"
-                    label={"Learn More"}
-                    hasArrowRight={true}
+                {jobDescriptions.map((job) => (
+                  <JobDescriptionBox
+                    key={job.slug}
+                    title={job.jobTitle}
+                    textOne={job.employmentType}
+                    textTwo={job.workLocation}
+                    textThree={job.jobCategory}
+                    buttonElement={
+                      <DeltaWhiteButton
+                        isSmallbtn={true}
+                        isLink={true}
+                        forcePurpleArrow={true}
+                        href={`/our-story/job-description/${job.slug}`}
+                        typographyClass="text-[#565AC2]"
+                        label={"Learn More"}
+                        hasArrowRight={true}
+                      />
+                    }
                   />
-                }
-              />
-              <JobDescriptionBox
-                title="Senior DevOps Engineer"
-                textOne="FULL-TIME"
-                textTwo="REMOTE"
-                textThree="DEVELOPER"
-                buttonElement={
-                  <DeltaWhiteButton
-                    isSmallbtn={true}
-                    isLink={true}
-                    forcePurpleArrow={true}
-                    href="/job-description/Senior-DevOps-Engineer"
-                    typographyClass="text-[#565AC2]"
-                    label={"Learn More"}
-                    hasArrowRight={true}
-                  />
-                }
-              />
-              <JobDescriptionBox
-                title="Lead DeFi Security Engineer"
-                textOne="Part-Time or Full-Time"
-                textTwo="REMOTE"
-                textThree="SECURITY ENGINEER"
-                buttonElement={
-                  <DeltaWhiteButton
-                    isSmallbtn={true}
-                    isLink={true}
-                    forcePurpleArrow={true}
-                    href="/job-description/Lead-DeFi-Security-Engineer"
-                    typographyClass="text-[#565AC2]"
-                    label={"Learn More"}
-                    hasArrowRight={true}
-                  />
-                }
-              />
-              <JobDescriptionBox
-                title="Head of Security and DevOps"
-                textOne="Part-Time or Full-Time"
-                textTwo="REMOTE"
-                textThree="Head of Security and DevOps"
-                buttonElement={
-                  <DeltaWhiteButton
-                    isSmallbtn={true}
-                    isLink={true}
-                    forcePurpleArrow={true}
-                    href="/job-description/Head-of-Security-and-DevOps"
-                    typographyClass="text-[#565AC2]"
-                    label={"Learn More"}
-                    hasArrowRight={true}
-                  />
-                }
-              />
-
-              {/* Second Box */}
-            </div>
+                ))}
+              </div>
           </div>
         </div>
       </div>

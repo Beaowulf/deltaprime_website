@@ -68,7 +68,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
       };
       fetchData();
     }
-  }, [blogData, blogData.slug]);
+  }, [blog.slug, blogData]);
 
   useEffect(() => {
     const collectedHeadings = [];
@@ -204,10 +204,11 @@ const BlogPost = ({ blog, blogPreviewData }) => {
   return (
     <div key={blogData.slug}>
       <DynamicPurpleBar
+        mediumPadding={true}
         title={blogData.blogTitle}
         link={<Link href={"/blogs"}>Burd Log</Link>}
       />
-      <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col lg:flex-row gap-10 pagePaddingLarge">
+      <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col lg:flex-row gap-10 pagePaddingMedium">
         <div className="w-full lg:w-9/12">
           <div className="px-4 ">
             <h3 className="text-[24px] md:text-[35px] text-center md:text-left leading-10 text-[#6B70ED] dark:text-[#F6F6F6] font-bold mb-10 md:mb-20">
@@ -254,17 +255,20 @@ const BlogPost = ({ blog, blogPreviewData }) => {
               </div>
             </div>
             <div className="mt-6">
-              <img
+              <Image
                 src={`https:${heroImage}`}
                 alt="blog_Post_Image"
                 className="w-auto mx-auto max-h-450px rounded-[20px]"
+                width={450}
+                height={450}
+                loading="lazy"
               />
             </div>
-            <div className="md:hidden w-full flex justify-center mt-6 gap-4">
-              <p className="text-nowrap text-[#565AC2] dark:text-[#F6F6F6]">
+            <div className="md:hidden w-full flex justify-center mt-6 gap-4 items-center">
+              <p className="text-nowrap text-[#565AC2] dark:text-[#F6F6F6] ">
                 Share article:
               </p>
-              <div className="mt-2">
+              <div>
                 <ShareButton
                   title={blogData.blogTitle}
                   text={blogData.blogDescription}
@@ -315,7 +319,7 @@ const BlogPost = ({ blog, blogPreviewData }) => {
         {/* hide on mobile */}
         <div className="hidden md:block md:w-3/12">
           <div className="flex flex-col gap-10 sticky top-32">
-            <div className="coloredBoxBorder">
+            <div className="coloredBoxBorder max-w-[340px]">
               <div className="deltaWhiteLinearBG p-4 md:p-6 rounded-[30px]">
                 <p className="font-bold leading-6 uppercase text-[18px] text-[#6B70ED]">
                   Table of contents

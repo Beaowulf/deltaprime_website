@@ -204,7 +204,7 @@ export const logoCarouselItems = [
     color: color_psalion_vc,
     white: backers_psalion_vc_white,
     alt: "PSA Lion VC Logo",
-    link: "https://www.psalion.com/",
+    link: "https://www.psalion.com/psalion-vc",
   },
   {
     bw: bw_uplift,

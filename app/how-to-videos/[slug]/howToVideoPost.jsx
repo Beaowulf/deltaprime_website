@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "./howToVideoPost.css";
 import RichTextRenderer from "@/app/components/richTetxtRenderer/richTextRenderer";
+import Image from "next/image";
 import ReactPlayer from "react-player";
 import { PlayButton } from "@/app/components/videoPlayer/video";
 
@@ -28,7 +29,7 @@ const HowToVideoDetail = ({
           </h4>
 
           {/* video Image or Video Player */}
-          <div className="mb-4 w-full self-center relative">
+          <div className="mb-4 w-full self-center relative lg:h-[45rem] h-[15rem]">
             {isPlaying ? (
               <ReactPlayer
                 width="100%"
@@ -42,7 +43,9 @@ const HowToVideoDetail = ({
                 className={`relative w-full cursor-pointer`}
                 onClick={startPlaying}
               >
-                <img
+                <Image
+                  height={500}
+                  width={1250}
                   src={
                     howToVideosBigThumbnail
                       ? `https:${howToVideosBigThumbnail}`

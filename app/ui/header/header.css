@@ -100,18 +100,28 @@
   border-radius: 20px;
   background: linear-gradient(
     0deg,
-    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 187, 155, 1) 0%,
     rgba(255, 143, 184, 1) 50%,
-    rgba(255, 187, 155, 1) 100%
+    rgba(175, 175, 255, 1) 100%
   );
   -webkit-mask: linear-gradient(
     0deg,
-    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 187, 155, 1) 0%,
     rgba(255, 143, 184, 1) 50%,
-    rgba(255, 187, 155, 1) 100%
+    rgba(175, 175, 255, 1) 100%
   );
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: 1;
 }
+
+/* typography */
+.dropdownLink {
+  font-size: 15px;
+  text-shadow: 0px 1px 10px rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -2%;
+}
+

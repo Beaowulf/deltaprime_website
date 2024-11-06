@@ -11,7 +11,6 @@ import {
 import { TokenomicsGraph } from "@/app/tokenomics/tokenomicsGraph";
 import { TokenomicsList } from "@/app/tokenomics/tokenomicsList";
 
-
 import protocolUsage from "@/public/assets/icons/boost_Protocol_Usage.svg";
 import liquidityPool from "@/public/assets/icons/liquidityPool.svg";
 import bufferMarket from "@/public/assets/icons/buffer_Market _Volatility.svg";
@@ -25,22 +24,16 @@ import SecuritySection from "../landingPage/featureSection/securitySection";
 import ContactForm from "../ui/contactForm/contactForm";
 import MintModal from "@/app/components/modals/mintModal";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"; // Import rich text renderer
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
-
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 export default function TokenomicsClient({ tokenomicsData }) {
-  console.log('TokenomicsClient: tokenomicsData received:', tokenomicsData);
-
-
-
   const options = {
     renderText: (text) => {
-      return text.split('\n').reduce((children, textSegment, index) => {
+      return text.split("\n").reduce((children, textSegment, index) => {
         return [...children, index > 0 && <br key={index} />, textSegment];
       }, []);
     },
     renderNode: {
-      
       // Headings
       [BLOCKS.HEADING_1]: (node, children) => {
         return <h1 className="text-4xl font-bold ">{children}</h1>;
@@ -60,7 +53,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
       [BLOCKS.HEADING_6]: (node, children) => {
         return <h6 className="text-base font-semibold mb-4">{children}</h6>;
       },
-      
+
       // Lists
       [BLOCKS.UL_LIST]: (node, children) => {
         return <ul className="list-disc">{children}</ul>;
@@ -74,12 +67,16 @@ export default function TokenomicsClient({ tokenomicsData }) {
       [INLINES.HYPERLINK]: (node, children) => {
         const url = node.data.uri;
         return (
-          <a href={url} className="underline" target="_blank" rel="noopener noreferrer">
+          <a
+            href={url}
+            className="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {children}
           </a>
         );
       },
-  
     },
   };
 
@@ -88,7 +85,6 @@ export default function TokenomicsClient({ tokenomicsData }) {
 
   // Find the specific sections based on their sectionId
   const introSection = sections.find((section) => section.sectionId === 1);
-  console.log(introSection);
   const secondSection = sections.find((section) => section.sectionId === 2);
   const thirdSection = sections.find((section) => section.sectionId === 3);
   const fourthSection = sections.find((section) => section.sectionId === 4);
@@ -97,13 +93,8 @@ export default function TokenomicsClient({ tokenomicsData }) {
   const seventhSection = sections.find((section) => section.sectionId === 7);
   const eigthSection = sections.find((section) => section.sectionId === 8);
 
-
-
-
   const { resolvedTheme } = useTheme();
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -114,7 +105,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
   };
 
   return (
-    <div className="px-4 sm:px-6 md:px-[6%] xl:px-[8%] 2xl:px-[10%]">
+    <div className="pagePaddingLarge">
       {isModalOpen && <MintModal onClose={closeModal} />}
       {/* First Section */}
       <div className="my-mobile-spacing md:my-desktop-spacing flex flex-col-reverse md:flex-row justify-between items-start w-full gap-10">
@@ -134,6 +125,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
                   alt={introSection.image.title}
                   width={introSection.image.width}
                   height={introSection.image.height}
+                  priority
                 />
               )}
               <p className="brightText text-wrap max-w-xl mb-4 text-3xl md:text-[44px] dark:text-white text-[#6B70ED] ">
@@ -141,7 +133,10 @@ export default function TokenomicsClient({ tokenomicsData }) {
               </p>
               <div className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-4 md:mb-0 min-w-full dark:text-white text-[#565AC2]">
                 {introSection?.mainText &&
-                  documentToReactComponents(introSection.mainText.json, options)}
+                  documentToReactComponents(
+                    introSection.mainText.json,
+                    options
+                  )}
               </div>
               {/* Image (Mobile only) */}
               {introSection?.image && (
@@ -155,6 +150,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
                   alt={introSection.image.title}
                   width={introSection.image.width}
                   height={introSection.image.height}
+                  priority
                 />
               )}
             </div>
@@ -179,7 +175,6 @@ export default function TokenomicsClient({ tokenomicsData }) {
                 documentToReactComponents(thirdSection.mainText.json, options)}
             </div>
             {introSection?.image && (
-
               <Image
                 className="my-11 h-[120px] w-[120px]"
                 src={`${thirdSection.image.url}`}
@@ -204,7 +199,6 @@ export default function TokenomicsClient({ tokenomicsData }) {
                 documentToReactComponents(fourthSection.mainText.json, options)}
             </div>
             {fourthSection?.image && (
-
               <Image
                 className="my-11 h-[120px] w-[120px]"
                 src={`${fourthSection.image.url}`}
@@ -324,17 +318,19 @@ export default function TokenomicsClient({ tokenomicsData }) {
 
       <div className="my-mobile-spacing md:my-desktop-spacing flex lg:flex-row flex-col-reverse justify-center items-center w-full md:gap-5 gap-2">
         <div className="rounded-[25px] ">
-        {fifthSection?.image && (
-          <Image
-            className={`rounded-[20px] mr-2 md:mr-10 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
-              resolvedTheme === "dark" ? "shadow-custom-dark" : "shadow-custom-light"
-            }`}
-            src={`${fifthSection.image.url}`}
-            alt={fifthSection.image.title}
-            width={fifthSection.image.width}
-            height={fifthSection.image.height}
-          />
-        )}
+          {fifthSection?.image && (
+            <Image
+              className={`rounded-[20px] mr-2 md:mr-10 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
+                resolvedTheme === "dark"
+                  ? "shadow-custom-dark"
+                  : "shadow-custom-light"
+              }`}
+              src={`${fifthSection.image.url}`}
+              alt={fifthSection.image.title}
+              width={fifthSection.image.width}
+              height={fifthSection.image.height}
+            />
+          )}
         </div>
 
         <div className="flex flex-col w-full justify-between items-center lg:items-start h-fit lg:w-fit">
@@ -351,7 +347,9 @@ export default function TokenomicsClient({ tokenomicsData }) {
           {fifthSection?.image && (
             <Image
               className={`rounded-[20px] my-5 mb-4 mx-auto h-[500px] w-auto block md:hidden ${
-                resolvedTheme === "dark" ? "shadow-custom-dark" : "shadow-custom-light"
+                resolvedTheme === "dark"
+                  ? "shadow-custom-dark"
+                  : "shadow-custom-light"
               }`}
               src={`${fifthSection.image.url}`}
               alt={fifthSection.image.title}
@@ -390,7 +388,7 @@ export default function TokenomicsClient({ tokenomicsData }) {
         </div>
         <div>
           {seventhSection?.mainText &&
-              documentToReactComponents(seventhSection.mainText.json, options)}
+            documentToReactComponents(seventhSection.mainText.json, options)}
         </div>
       </div>
       {/* end of graph */}
@@ -402,7 +400,6 @@ export default function TokenomicsClient({ tokenomicsData }) {
             <div className="clearfix">
               {/* image that shows on desktop only */}
               {eigthSection?.image && (
-
                 <Image
                   className={`rounded-[20px] float-right ml-10 w-full lg:w-1/2 hidden lg:block  ${
                     resolvedTheme === "dark"
@@ -423,7 +420,10 @@ export default function TokenomicsClient({ tokenomicsData }) {
                 </p>
                 <div className="whiteMainText text-wrap text-[15px] md:text-[17px] md:leading-[25.5px] leading-5 mb-2 min-w-full font-normal dark:text-white text-[#565AC2] text-left">
                   {eigthSection?.mainText &&
-                    documentToReactComponents(eigthSection.mainText.json, options)}
+                    documentToReactComponents(
+                      eigthSection.mainText.json,
+                      options
+                    )}
                 </div>
               </div>
 
@@ -440,7 +440,6 @@ export default function TokenomicsClient({ tokenomicsData }) {
                   alt="deltaprime_mascot_img"
                 />
               )}
-
             </div>
           </div>
         </div>
@@ -449,4 +448,4 @@ export default function TokenomicsClient({ tokenomicsData }) {
       <ContactForm />
     </div>
   );
-};
+}

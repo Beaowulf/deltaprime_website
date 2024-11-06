@@ -20,6 +20,12 @@ import {
 // Fetch strategies
 const strategies = await fetchStrategies();
 
+export const metadata = {
+  title: "Strategies | Delta Prime",
+  description:
+    "Explore DeltaPrime's unique strategies, each accompanied by practical examples, offering insights into the risk and rewards of various strategic approaches.",
+};
+
 const StrategiesPage = () => {
   return (
     <div className="">
@@ -123,7 +129,7 @@ const StrategiesPage = () => {
           </div>
         </div>
         <div className="">
-        <ContactForm hasUnlockPotentialContainer={false} />
+          <ContactForm hasUnlockPotentialContainer={false} />
         </div>
       </div>
     </div>

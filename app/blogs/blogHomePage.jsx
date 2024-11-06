@@ -63,6 +63,7 @@ const BlogHomePage = ({ categories, blogs: initialBlogs }) => {
   };
 
   const currentPosts = filteredBlogs.slice(indexOfFirstPost, indexOfLastPost);
+
   const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
 
   const handlePageChange = (pageNumber) => {
@@ -113,8 +114,9 @@ const BlogHomePage = ({ categories, blogs: initialBlogs }) => {
         <div className="flex flex-col gap-6 items-start">
           <div className="mt-mobile-spacing md:mt-desktop-spacing w-full relative">
             <div className="pb-mobile-spacing md:pb-desktop-spacing blog-posts-container transition-all duration-500 ease-in-out transform translate-x-0 opacity-100 flex flex-col xl:flex-row gap-6 items-center justify-center">
-              {currentPosts.map((blogPreviewCardData, index) => (
+              {currentPosts.map((blogPreviewCardData) => (
                 <BlogCard
+                  blogCategory={blogPreviewCardData.blogCategory}
                   key={blogPreviewCardData.blogID}
                   blogSlug={blogPreviewCardData.slug}
                   blogDescription={blogPreviewCardData.blogDescription}

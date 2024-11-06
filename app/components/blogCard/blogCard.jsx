@@ -2,13 +2,23 @@ import Link from "next/link";
 import "./blogCard.css";
 import { useRouter } from "next/navigation";
 
-const BlogCard = ({ previewBlogImage, blogDescription, blogSlug, onClick }) => {
+const BlogCard = ({
+  previewBlogImage,
+  blogDescription,
+  blogSlug,
+  onClick,
+  blogCategory,
+}) => {
   const router = useRouter();
 
   const handleImageClick = () => {
     if (onClick) onClick();
-    router.push(`/blogs/academy/${blogSlug}`);
+
+    const categoryPath = blogCategory === "News" ? "news" : "academy";
+
+    router.push(`/blogs/${categoryPath}/${blogSlug}`);
   };
+
   return (
     <div className="flex flex-col justify-start w-[330px] md:w-[380px] flex-shrink-0 gap-2">
       <div
@@ -33,7 +43,12 @@ const BlogCard = ({ previewBlogImage, blogDescription, blogSlug, onClick }) => {
       >
         {blogDescription}
       </p>
-      <Link prefetch={true} href={`/blogs/academy/${blogSlug}`}>
+      <Link
+        prefetch={true}
+        href={`/blogs/${
+          blogCategory === "News" ? "news" : "academy"
+        }/${blogSlug}`}
+      >
         <span className="underline ml-1">Read More</span>
       </Link>
     </div>

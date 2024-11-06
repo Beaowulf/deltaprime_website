@@ -1,10 +1,8 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import DarkMode_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_white.png";
 import LightMode_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_purple.png";
 import White_full_Logo from "@/public/assets/img/images/logos/DeltaPrime-full-logo_white.png";
 
-// Duplicate delete: todo:
 export const LightModeLogo = () => {
   return (
     <a
@@ -15,12 +13,16 @@ export const LightModeLogo = () => {
         className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
         src={LightMode_Logo}
         alt="logo_img"
+        width={240} // Setting fixed width for optimization
+        height={80} // Setting height proportionate to logo aspect ratio
+        quality={75} // Adjust image quality for better performance
+        priority // Ensure the logo loads as a priority image
       />
     </a>
   );
 };
 
-export const DarkModeLogo = (large = false) => {
+export const DarkModeLogo = ({ large = false }) => {
   return (
     <a
       href="/#"
@@ -34,6 +36,10 @@ export const DarkModeLogo = (large = false) => {
         } h-auto object-cover`}
         src={LightMode_Logo}
         alt="logo_img"
+        width={large ? 270 : 240} // Dynamic width based on size
+        height={90} // Adjust height accordingly
+        quality={75}
+        priority
       />
     </a>
   );
@@ -49,6 +55,10 @@ export const MobileMenuLogo = () => {
         className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
         src={LightMode_Logo}
         alt="logo_img"
+        width={240}
+        height={80}
+        quality={75}
+        priority
       />
     </a>
   );
@@ -67,12 +77,20 @@ export const FooterLogo = () => {
           className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
           src={LightMode_Logo}
           alt="logo_img"
+          width={240}
+          height={80}
+          quality={75}
+          priority
         />
       ) : (
         <Image
           className="max-w-[200px] lg:max-w-[240px] h-auto object-cover"
           src={White_full_Logo}
           alt="logo_img"
+          width={240}
+          height={80}
+          quality={75}
+          priority
         />
       )}
     </a>

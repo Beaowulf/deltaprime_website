@@ -133,13 +133,13 @@ const BlogPreviewSection = ({
           {blogPreviewCardData.slice(0, 3).map((blogPreviewCardData) => (
             // Added the encodeURIComponent to be utf-8 compatible
             <BlogCard
-              key={blogPreviewCardData.blog.blogID}
-              blogSlug={blogPreviewCardData.blog.slug}
-              blogCategory={blogPreviewCardData.blog.blogCategory}
-              blogTitle={blogPreviewCardData.blog.blogTitle}
-              blogDescription={blogPreviewCardData.blog.blogDescription}
-              minsToRead={blogPreviewCardData.blog.minsToRead}
-              previewBlogImage={`https:${blogPreviewCardData.blog.previewImageBlog.fields.file.url}`}
+              key={blogPreviewCardData.blogID}
+              blogSlug={blogPreviewCardData.slug}
+              blogCategory={blogPreviewCardData.blogCategory}
+              blogTitle={blogPreviewCardData.blogTitle}
+              blogDescription={blogPreviewCardData.blogDescription}
+              minsToRead={blogPreviewCardData.minsToRead}
+              previewBlogImage={`https:${blogPreviewCardData.previewImageBlog.fields.file.url}`}
               roundedImage={Circles(getRandomNumber())}
             />
           ))}

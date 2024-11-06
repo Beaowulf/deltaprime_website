@@ -42,8 +42,8 @@ const LaunchAppModal = () => {
       {modal && (
         <dialog className="modalP fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 overflow-auto backdrop-blur flex justify-center items-center">
           <div className="modalParent relative w-full md:w-fit">
-            <div className="w-full h-screen md:h-auto md:w-fit justify-center bg-[#f4f4ff] flex flex-col py-10 px-4 md:px-12 rounded-[25px] shadowModal">
-              <div className="py-5 pl-5 pr-5 w-full h-fit text-black cursor-pointer z-50 flex items-center justify-end">
+            <div className="w-full md:w-fit justify-center bg-[#f4f4ff] flex flex-col px-4 pb-4 md:px-12 rounded-[25px] shadowModal">
+              <div className="pt-5 pb-2 pl-5 pr-5 w-full h-fit text-black cursor-pointer z-50 flex items-center justify-end">
                 <Link
                   className="z-100 cursor-pointer"
                   href={pathname}
@@ -69,7 +69,7 @@ const LaunchAppModal = () => {
                         Savings Account
                       </p>
                     </div>
-                    <div className="px-4 py-7 rounded-[20px]">
+                    <div className="px-4 pb-7 pt-2 rounded-[20px]">
                       <div className="flex gap-4 items-start justify-center mx-4">
                         <div>
                           <p className="text-[#6B70ED] font-bold">Arbitrum:</p>
@@ -135,9 +135,9 @@ const LaunchAppModal = () => {
                         Prime Account
                       </p>
                     </div>
-                    <div className="px-4 py-7 rounded-[20px]">
+                    <div className="px-4 pb-7 pt-2 rounded-[20px]">
                       <div className="flex gap-4 items-start justify-center mx-4">
-                        <div className="mt-4 max-w-[200px]">
+                        <div className="max-w-[200px]">
                           <ul>
                             <li className="text-[#565AC2] font-medium text-[14px]">
                               <span>•</span> Borrow up to 5x

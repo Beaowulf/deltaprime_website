@@ -1,11 +1,12 @@
+/* todo cleanup commented out css */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(1px);
   z-index: 1000;
   display: none;
 }
@@ -16,6 +17,11 @@
 
 .brightTitle {
   text-shadow: 0px -1px 16px #feeef4;
+  font-weight: 700;
+  letter-spacing: -2%;
+}
+.textShadow {
+  text-shadow: 0px 0px 4px #feeef4;
   font-weight: 700;
   letter-spacing: -2%;
 }
@@ -100,35 +106,35 @@
   z-index: 1;
 }
 
-/* Default styles for the box container */
-.strategy-nav-box .boxContainer {
+/* .strategy-nav-box .boxContainer {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Dark mode initial styles */
+
 .strategy-nav-box.dark .boxContainer {
   background: linear-gradient(to bottom, #1b153c 10%, #1c2943 50%, #301e3e 80%);
   color: #fff;
 }
 
-/* Light mode initial styles */
+
 .strategy-nav-box .boxContainer {
   background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
   color: #565ac2;
 }
 
-/* Hover effect in dark mode: change to light background and dark text */
+
 .strategy-nav-box.dark:hover .boxContainer {
   background: linear-gradient(to bottom, #f4f4ff, #fff5f0, #feeef4);
   color: #565ac2;
 }
 
-/* Hover effect in light mode: change to dark background and light text */
+
 .strategy-nav-box:hover .boxContainer {
   background: linear-gradient(to bottom, #1b153c 10%, #1c2943 50%, #301e3e 80%);
   color: #fff;
-}
+} */
 
+/* todo delete */
 .dropdown-menu:before {
   content: "";
   position: absolute;
@@ -140,15 +146,15 @@
   border-radius: 25px;
   background: linear-gradient(
     0deg,
-    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 187, 155, 1) 0%,
     rgba(255, 143, 184, 1) 50%,
-    rgba(255, 187, 155, 1) 100%
+    rgba(175, 175, 255, 1) 100%
   );
   -webkit-mask: linear-gradient(
     0deg,
-    rgba(175, 175, 255, 1) 0%,
+    rgba(255, 187, 155, 1) 0%,
     rgba(255, 143, 184, 1) 50%,
-    rgba(255, 187, 155, 1) 100%
+    rgba(175, 175, 255, 1) 100%
   );
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;

@@ -20,7 +20,7 @@ const LandscapePage = () => {
         <DarkModeLogo large={true} />
       </div>
       <h3 className="w-full text-center">
-        For better experience please rotate your phone
+        For a better experience please rotate your phone
       </h3>
     </div>
   );

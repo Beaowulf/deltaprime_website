@@ -13,6 +13,11 @@ import xIcon from "@/public/assets/footerIcons/xIconWhite.svg";
 import vectorIcon from "@/public/assets/footerIcons/vectorIcon.svg";
 import githubIcon from "@/public/assets/footerIcons/githubIcon.svg";
 
+import discordIconPurple from "@/public/assets/footerIcons/discordIconPurple.svg";
+import xIconPurple from "@/public/assets/footerIcons/xIconPurple.svg";
+import vectorIconPurple from "@/public/assets/footerIcons/vectorIconPurple.svg";
+import githubIconPurple from "@/public/assets/footerIcons/githubIconPurple.svg";
+
 const LogoButton = () => {
   return (
     <div className="flex flex-col gap-6 px-6 md:px-0 items-center md:items-start">
@@ -100,23 +105,78 @@ export function FooterTextLinks() {
   );
 }
 
-export function RoundButtonLinks({ hasText = true }) {
+export function RoundButtonLinks({
+  hasText = true,
+  isOnMenu = false,
+  resolvedTheme,
+}) {
+  const isDarkTheme = resolvedTheme === "dark";
+
   return (
-    <div className="flex flex-col gap-4 text-white items-center md:items-start">
-      <div className="block md:hidden my-10 w-[8rem] h-[2px] dark:bg-deltaColoredLinearGradientVertical bg-deltaPurpleLinearGradientVertical"></div>
-      {hasText && <p className="hover:text-gray-400 text-sm">Follow us</p>}
+    <div className="flex flex-col gap-4 items-center md:items-start">
+      {hasText && (
+        <p
+          className={`${
+            isOnMenu
+              ? isDarkTheme
+                ? "text-white font-semibold"
+                : "text-[#504EC2] font-semibold"
+              : "text-white"
+          } text-sm hover:text-gray-400`}
+        >
+          Follow us
+        </p>
+      )}
       <div className="flex flex-row gap-4">
-        <Link href="https://discord.com/invite/9bwsnsHEzD" target="_blank">
-          <Image src={discordIcon} alt="discord-round_logo" />
+        <Link href="https://discord.com/invite/deltaprime" target="_blank">
+          <Image
+            width={30}
+            height={30}
+            src={
+              isOnMenu
+                ? isDarkTheme
+                  ? discordIcon
+                  : discordIconPurple
+                : discordIcon
+            }
+            alt="discord-round_logo"
+          />
         </Link>
         <Link href="https://x.com/DeltaPrimeDefi" target="_blank">
-          <Image src={xIcon} alt="x-round_logo" />
+          <Image
+            width={30}
+            height={30}
+            src={isOnMenu ? (isDarkTheme ? xIcon : xIconPurple) : xIcon}
+            alt="x-round_logo"
+          />
         </Link>
         <Link href="https://medium.com/@Delta_Prime" target="_blank">
-          <Image src={vectorIcon} alt="vector-round_logo" />
+          <Image
+            width={30}
+            height={30}
+            src={
+              isOnMenu
+                ? isDarkTheme
+                  ? vectorIcon
+                  : vectorIconPurple
+                : vectorIcon
+            }
+            alt="vector-round_logo"
+          />
         </Link>
         <Link href="https://github.com/DeltaPrimeLabs" target="_blank">
-          <Image src={githubIcon} alt="github-round_logo" />
+          <Image
+            width={30}
+            height={30}
+            src={
+              isOnMenu
+                ? isDarkTheme
+                  ? githubIcon
+                  : githubIconPurple
+                : githubIcon
+            }
+            alt="github-round_logo"
+          />
         </Link>
       </div>
     </div>
@@ -198,9 +258,9 @@ export function Footer() {
 
   return (
     <>
-      <div>
+      <div className="overflow-hidden">
         <div className="w-full h-1 bg-gradient-to-b from-[#FFBB9B] from-10% via-[#FF8FB8] via-60% to-[#AFAFFF] to-80%" />
-        <div className="pt-10 pb-4  dark:from-[#1b153c] dark:to-[#1b153c] bg-gradient-to-r from-[#504EC2] to-[#5A4EB5] relative z-[100] overflow-hidden sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
+        <div className="pt-10 pb-3 dark:from-[#1b153c] dark:to-[#1b153c] bg-gradient-to-r from-[#504EC2] to-[#5A4EB5] relative z-[100] overflow-hidden sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
           <div className="flex justify-between flex-wrap md:flex-row flex-col">
             <LogoButton />
             <FooterTextLinks />
