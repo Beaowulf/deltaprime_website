@@ -322,7 +322,7 @@ const NewsLetter = ({ blog }) => {
             <div className="my-12 md:my-desktop-spacing flex lg:flex-row flex-col justify-between items-center w-full md:gap-5 gap-2">
               <div className="rounded-[25px] ">
                 <Image
-                  className={`rounded-[20px] mr-2 md:mr-10 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
+                  className={`rounded-[27px] mr-2 md:mr-10 w-full xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover hidden md:block ${
                     resolvedTheme === "dark"
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
@@ -331,12 +331,12 @@ const NewsLetter = ({ blog }) => {
                   alt="newsLetter-Preview-Image"
                 />{" "}
                 <Image
-                  className={`rounded-[25px] mr-2 md:mr-10 w-auto h-[350px] object-cover block md:hidden mb-4 ${
+                  className={`rounded-[27px] mr-2 md:mr-10 w-auto h-[350px] object-cover block md:hidden mb-4 ${
                     resolvedTheme === "dark"
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
                   }`}
-                  src={partnerSpotlightMobileImage}
+                  src={partnerSpotlightDesktopImage}
                   alt="newsLetter-Preview-Image-Mobile"
                 />
               </div>
@@ -429,7 +429,7 @@ const NewsLetter = ({ blog }) => {
                     Avalanche. With ACP-77 looming, they are priming themselves
                     to supercharge the Avalanche ecosystem. They have been
                     ‘quietly’ building and are soon coming out with improved
-                    support for validators and projects, their teased
+                    support for validators and projects, they teased their
                     l1marketplace, and on top: their{" "}
                     <a
                       href="https://www.gogopool.com/launcher"
