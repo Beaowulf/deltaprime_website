@@ -9,14 +9,15 @@ export async function generateMetadata({ params }) {
 
   if (!video) {
     return {
-      title: "Video Not Found | Delta Prime",
-      description: "This video could not be found on Delta Prime.",
+      title: "Video Not Found | DeltaPrime",
+      description: "This video could not be found on DeltaPrime.",
     };
   }
 
   return {
-    title: `${video.howToVideoTitle} | Delta Prime`,
-    description: video.howToVideoDescription || "Learn more with our how-to videos.",
+    title: `${video.howToVideoTitle} | DeltaPrime`,
+    description:
+      video.howToVideoDescription || "Learn more with our how-to videos.",
   };
 }
 

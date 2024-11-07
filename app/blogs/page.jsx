@@ -6,7 +6,7 @@ import BlogHomePage from "./blogHomePage";
 
 // Define dynamic metadata for the Blogs page
 export const metadata = {
-  title: "Blogs | Delta Prime",
+  title: "Blogs | DeltaPrime",
   description:
     "Stay updated with DeltaPrime’s latest blog posts on DeFi, including news, guides, infographics, and more. Deepen your knowledge in the world of decentralized finance.",
 };

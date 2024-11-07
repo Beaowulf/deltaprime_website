@@ -21,7 +21,7 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: "DeltaPrime",
-  description: "Delta Prime Web App",
+  description: "DeltaPrime Web App",
   name: "robots",
 };
 

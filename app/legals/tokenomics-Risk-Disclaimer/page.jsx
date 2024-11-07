@@ -6,7 +6,8 @@ import DynamicPurpleBar from "@/app/components/dynamicPurpleBar/dynamicPurpleBar
 export async function generateMetadata() {
   return {
     title: "Tokenomics Risk Disclaimer | DeltaPrime",
-    description: "Read the full risk disclaimer for PRIME and sPRIME tokens. Ensure you understand the risks associated with tokenomics in the DeltaPrime ecosystem before proceeding.",
+    description:
+      "Read the full risk disclaimer for PRIME and sPRIME tokens. Ensure you understand the risks associated with tokenomics in the DeltaPrime ecosystem before proceeding.",
   };
 }
 
@@ -25,7 +26,7 @@ function TokenomicsRiskDisclaimer() {
             RISK DISCLOSURE STATEMENT (Tokens)
           </p>
           <p className="aboutTypographyparagraphWhite font-normal leading-6 md:px-0 px-1 pb-1 mb-10 dark:text-white text-[#565AC2]">
-            Before participating in the Delta Prime Ecosystem through PRIME and
+            Before participating in the DeltaPrime Ecosystem through PRIME and
             sPRIME tokens, you need to understand the nature of the tokens and
             the associated risks. Please read this disclosure statement
             carefully.

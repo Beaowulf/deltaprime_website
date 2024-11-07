@@ -21,7 +21,7 @@ import {
 const strategies = await fetchStrategies();
 
 export const metadata = {
-  title: "Strategies | Delta Prime",
+  title: "Strategies | DeltaPrime",
   description:
     "Explore DeltaPrime's unique strategies, each accompanied by practical examples, offering insights into the risk and rewards of various strategic approaches.",
 };

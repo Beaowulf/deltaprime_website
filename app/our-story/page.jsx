@@ -12,18 +12,18 @@ export async function generateMetadata() {
   // If no data, set fallback metadata
   if (!storyData) {
     return {
-      title: "Our Story | Delta Prime",
-      description: "Learn more about the history and mission of Delta Prime.",
+      title: "Our Story | DeltaPrime",
+      description: "Learn more about the history and mission of DeltaPrime.",
     };
   }
 
   // Convert the rich text introText to plain text for the meta description
   const description = storyData.introText
     ? documentToPlainTextString(storyData.introText.json).slice(0, 160) // Limit to 160 characters for SEO
-    : "Discover Delta Prime's story, mission, and vision.";
+    : "Discover DeltaPrime's story, mission, and vision.";
 
   return {
-    title: `${storyData.title} | Delta Prime`,
+    title: `${storyData.title} | DeltaPrime`,
     description: description,
   };
 }

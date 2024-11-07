@@ -11,22 +11,22 @@ export async function generateMetadata({ params }) {
 
   if (!blog) {
     return {
-      title: "Blog Not Found | Delta Prime",
-      description: "The requested blog post could not be found on Delta Prime.",
+      title: "Blog Not Found | DeltaPrime",
+      description: "The requested blog post could not be found on DeltaPrime.",
     };
   }
 
-  const blogTitle = blog.blogTitle || "Blog | Delta Prime";
+  const blogTitle = blog.blogTitle || "Blog | DeltaPrime";
   const blogDescription =
     blog.blogDescription ||
-    "Read this blog on Delta Prime to explore more about DeFi, strategies, and the latest updates.";
+    "Read this blog on DeltaPrime to explore more about DeFi, strategies, and the latest updates.";
 
   const blogImage = blog.previewImageBlog
     ? `https:${blog.previewImageBlog.fields.file.url}`
     : null;
 
   return {
-    title: `${blogTitle} | Delta Prime`,
+    title: `${blogTitle} | DeltaPrime`,
     description: blogDescription,
     openGraph: {
       title: blogTitle,

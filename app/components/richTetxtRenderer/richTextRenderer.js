@@ -200,7 +200,7 @@ const RichTextRenderer = ({
           return (
             <div className="flex justify-center flex-col items-center dark:text-white text-[#6B70ED]">
               <p className="mb-8 featureSubtitle md:text-[30px] text-[22px] text-center">
-                Delta Prime
+                DeltaPrime
               </p>
               <p className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-center">
                 Terms of Use
@@ -216,7 +216,7 @@ const RichTextRenderer = ({
           return (
             <div className="flex justify-center flex-col items-center dark:text-white text-[#6B70ED]">
               <p className="mb-8 featureSubtitle md:text-[30px] text-[22px] text-center">
-                Delta Prime
+                DeltaPrime
               </p>
               <p className="mb-8 featureSubtitle md:text-[34px] text-[24px] text-center">
                 Risk Disclosure

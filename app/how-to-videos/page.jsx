@@ -8,8 +8,9 @@ import {
 
 // Define the metadata for the page
 export const metadata = {
-  title: "How To Videos - Learn Strategies | Delta Prime",
-  description: "Explore our collection of how-to videos and learn various strategies to enhance your knowledge.",
+  title: "How To Videos - Learn Strategies | DeltaPrime",
+  description:
+    "Explore our collection of how-to videos and learn various strategies to enhance your knowledge.",
 };
 
 // Your component logic remains the same

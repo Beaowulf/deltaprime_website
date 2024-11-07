@@ -1,6 +1,6 @@
-import { notFound } from 'next/navigation'; // For handling 404 if the job is not found
-import { getJobDescriptionBySlug, getJobDescriptions } from '@/lib/jobData'; // Function to fetch job description by slug
-import JobDescriptionClient from './JobDescriptionClient'; // Placeholder for the client component
+import { notFound } from "next/navigation"; // For handling 404 if the job is not found
+import { getJobDescriptionBySlug, getJobDescriptions } from "@/lib/jobData"; // Function to fetch job description by slug
+import JobDescriptionClient from "./JobDescriptionClient"; // Placeholder for the client component
 
 // Fetch job description by slug
 export async function generateStaticParams() {
@@ -17,14 +17,14 @@ export async function generateMetadata({ params }) {
 
   if (!job) {
     return {
-      title: 'Job Not Found | Delta Prime',
-      description: 'The job you are looking for does not exist.',
+      title: "Job Not Found | DeltaPrime",
+      description: "The job you are looking for does not exist.",
     };
   }
 
   return {
-    title: `${job.jobTitle} | Delta Prime`,
-    description: `${job.jobTitle} position at Delta Prime. Location: ${job.workLocation}, Employment: ${job.employmentType}`,
+    title: `${job.jobTitle} | DeltaPrime`,
+    description: `${job.jobTitle} position at DeltaPrime. Location: ${job.workLocation}, Employment: ${job.employmentType}`,
   };
 }
 

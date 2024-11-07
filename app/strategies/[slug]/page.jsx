@@ -7,19 +7,19 @@ export async function generateMetadata({ params }) {
 
   if (!strategy) {
     return {
-      title: "Strategy Not Found | Delta Prime",
-      description: "The requested strategy could not be found on Delta Prime.",
+      title: "Strategy Not Found | DeltaPrime",
+      description: "The requested strategy could not be found on DeltaPrime.",
     };
   }
 
   // Extract title and description directly from the strategy
-  const title = strategy.strategyTitle || "Strategy | Delta Prime";
+  const title = strategy.strategyTitle || "Strategy | DeltaPrime";
   const description = strategy.strategyDescription
     ? strategy.strategyDescription.slice(0, 160) // Limit to 160 chars for SEO purposes
-    : "Explore a detailed strategy on Delta Prime, including its risks and rewards.";
+    : "Explore a detailed strategy on DeltaPrime, including its risks and rewards.";
 
   return {
-    title: `${title} | Delta Prime`,
+    title: `${title} | DeltaPrime`,
     description: description,
   };
 }
