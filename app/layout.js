@@ -1,13 +1,14 @@
 import { Montserrat } from "next/font/google";
 import { Providers } from "./providers";
 
+import dynamic from "next/dynamic";
 
-import dynamic from 'next/dynamic';
-
-const Header = dynamic(() => import('@/app/ui/header/navbar'), { ssr: false });
-const Footer = dynamic(() => import('@/app/ui/footer/footer'), { ssr: false });
-const LaunchAppModal = dynamic(() => import('@/app/components/modals/launchAppModal'), { ssr: false });
-
+const Header = dynamic(() => import("@/app/ui/header/navbar"), { ssr: false });
+const Footer = dynamic(() => import("@/app/ui/footer/footer"), { ssr: false });
+const LaunchAppModal = dynamic(
+  () => import("@/app/components/modals/launchAppModal"),
+  { ssr: false }
+);
 
 import Script from "next/script";
 import "./globals.css";
@@ -19,7 +20,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Delta Prime",
+  title: "DeltaPrime",
   description: "Delta Prime Web App",
   name: "robots",
 };
