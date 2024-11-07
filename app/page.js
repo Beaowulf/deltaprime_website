@@ -2,7 +2,7 @@ import HomePage from "@/app/landingPage/index";
 // Add metadata dynamically
 export async function generateMetadata() {
   return {
-    title: "Delta Prime",
+    title: "DeltaPrime",
     description:
       "Join DeltaPrime and explore innovative, secure, and high-performance DeFi solutions. Gain access to dynamic decentralized finance strategies and ensure the safety of your capital.",
   };
