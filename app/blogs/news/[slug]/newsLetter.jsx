@@ -184,12 +184,12 @@ const NewsLetter = ({ blog }) => {
                   alt="newsLetter-Preview-Image"
                 />
                 <Image
-                  className={`rounded-[20px] mr-2 md:mr-10 w-auto h-[350px] xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover block md:hidden ${
+                  className={`rounded-[20px] mr-2 md:mr-10 w-auto px-2 h-[350px] xl:h-auto md:h-[600px] md:w-[500px] xl:max-w-[550px] object-cover block md:hidden ${
                     resolvedTheme === "dark"
                       ? "shadow-custom-dark"
                       : "shadow-custom-light"
                   }`}
-                  src={summmitMobileImage}
+                  src={summmitDesktopImage}
                   alt="newsLetter-Preview-Image"
                 />
               </div>
@@ -240,7 +240,7 @@ const NewsLetter = ({ blog }) => {
                 <div className="flex flex-col w-full justify-between items-center lg:items-start h-fit lg:w-fit">
                   <div className="whiteMainText pl-3 md:pl-0 text-[15px] md:text-[17px] md:leading-[25.5px] leading-[150%]  max-w-[40rem] dark:text-white text-white ">
                     <p>
-                      To close it, a{" "}
+                      A{" "}
                       <a
                         href="https://www.youtube.com/watch?v=EJoY_AH_p2Q"
                         className="underline cursor-pointer"
