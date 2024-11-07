@@ -15,7 +15,10 @@ const CheckOrientation = () => {
   // Check if the screen is mobile and in landscape
   const checkOrientation = () => {
     const isLandscape = window.innerWidth > window.innerHeight;
-    const isMobile = window.innerWidth <= 950 && window.innerWidth >= 450;
+    const isMobile =
+      window.innerWidth <= 920 &&
+      window.innerWidth >= 300 &&
+      window.innerHeight <= 450;
 
     setIsLandscape(isLandscape);
     setIsMobile(isMobile);
