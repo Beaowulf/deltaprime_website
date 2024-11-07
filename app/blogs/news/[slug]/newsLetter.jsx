@@ -504,10 +504,10 @@ const NewsLetter = ({ blog }) => {
                   </p>
                 </div>
                 <div className="flex lg:flex-row flex-col w-full justify-around lg:items-start md:items-center gap-4 md:gap-10 md:px-0 px-5">
-                  <div className="flex flex-col gap-4 md:justify-start justify-center md:items-start items-center">
+                  <div className="flex flex-col gap-4 md:justify-start justify-center md:items-start items-center h-auto 2xl:max-w-[600px] lg:max-w-[450px]">
                     <div className="rounded-[25px] w-fit mx-auto">
                       <Image
-                        className={`rounded-[20px] h-auto 2xl:max-w-[650px] md:max-w-[350px] object-cover hidden md:block ${
+                        className={`rounded-[25px] h-auto max-w-full object-cover hidden md:block ${
                           resolvedTheme === "dark"
                             ? "shadow-custom-dark"
                             : "shadow-custom-light"
@@ -534,10 +534,10 @@ const NewsLetter = ({ blog }) => {
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-4 md:justify-start justify-center md:items-start items-center">
+                  <div className="flex flex-col gap-4 md:justify-start justify-center md:items-start items-center h-auto 2xl:max-w-[600px] lg:max-w-[450px]">
                     <div className="rounded-[25px] w-fit mx-auto">
                       <Image
-                        className={`rounded-[20px] h-auto 2xl:max-w-[650px] md:max-w-[350px] object-cover hidden md:block ${
+                        className={`rounded-[25px] h-auto max-w-full object-cover hidden md:block ${
                           resolvedTheme === "dark"
                             ? "shadow-custom-dark"
                             : "shadow-custom-light"
