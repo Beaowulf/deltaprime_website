@@ -19,11 +19,11 @@ const Custom404 = () => {
           <Image
             src={mobile_map_image}
             alt="mobile_map_image"
-            className="h-full w-auto my-10"
+            className="h-[650px] w-auto my-10"
             height={650}
             width={200}
           />
-          <div className="h-fit absolute bottom-[-1.5rem] z-50 left-[12.5rem] w-full text-center text-white py-2">
+          <div className="h-fit absolute bottom-[-1.55rem] z-50 left-[14rem] w-full text-center text-white py-2">
             <Image
               src={mobile_hand_image}
               alt="mobile_hand_image"
