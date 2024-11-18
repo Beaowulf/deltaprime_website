@@ -12,7 +12,7 @@ export const metadata = {
 
 const Custom404 = () => {
   return (
-    <div className="px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
+    <div className="px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%] overflow-x-hidden">
       <div className="flex justify-center items-center my-10 ">
         {/* Mobile View for 404 */}
         <div className="lg:hidden inline-block overflow-hidden relative">
@@ -43,20 +43,23 @@ const Custom404 = () => {
               Feeling Lost?
             </p>
             <button className="border-[2px] rounded-full border-white px-[10px]">
-              <p className="font-bold leading-[2.5rem] uppercase text-[17px]">
+              <a
+                href="/"
+                className="font-bold leading-[2.5rem] uppercase text-[17px]"
+              >
                 Go back home
-              </p>
+              </a>
             </button>
           </div>
         </div>
         {/* Desktop View for 404 */}
-        <div className="lg:block hidden  relative">
+        <div className="lg:block hidden relative">
           <Image
             width={1250}
             height={100}
             src={desktop_map_image}
             alt="desktop_map_image"
-            className="h-auto max-w-[1550px]"
+            className="h-auto max-w-[1450px]"
           />
           <div className="h-fit absolute bottom-[1.5rem] z-50 right-[5rem] w-fit text-center text-white py-2">
             <Image
@@ -67,20 +70,23 @@ const Custom404 = () => {
               width={150}
             />
           </div>
-          <div className="h-fit absolute bottom-[23rem] right-[-13rem] w-full text-center text-white py-2">
-            <p className="font-bold leading-[4rem] uppercase text-[65px]">
+          <div className="h-fit absolute bottom-[23rem] right-[20.5rem] text-center text-white py-2 w-fit">
+            <p className="font-bold leading-[4rem] uppercase text-[65px] w-fit">
               404
             </p>
-            <p className="font-bold text-[30px]">Not found</p>
+            <p className="font-bold text-[30px] w-fit">Not found</p>
           </div>
-          <div className="h-fit absolute bottom-[12rem] right-[-13rem] w-full text-center text-white py-2">
-            <p className="font-bold leading-[4rem] uppercase text-[30px]">
+          <div className="h-fit absolute bottom-[12rem] right-[19rem] text-center text-white py-2 w-fit">
+            <p className="font-bold leading-[4rem] uppercase text-[30px] w-fit">
               Feeling Lost?
             </p>
             <button className="border-[2px] rounded-full border-white px-[10px]">
-              <p className="font-bold leading-[2.5rem] uppercase text-[20px]">
+              <a
+                href="/"
+                className="font-bold leading-[2.5rem] uppercase text-[20px]"
+              >
                 Go back home
-              </p>
+              </a>
             </button>
           </div>
         </div>

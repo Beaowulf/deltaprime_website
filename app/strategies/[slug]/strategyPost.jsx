@@ -300,7 +300,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
                   hasArrowRight={true}
                   customClass="w-full"
                   hasWhiteArrowRight={true}
-                  label={"LEARN MORE"}
+                  label={"GET PRIME"}
                 />
               </div>
             </div>
