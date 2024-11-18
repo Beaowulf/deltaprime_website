@@ -6,7 +6,10 @@ import Link from "next/link";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 import RichTextRenderer from "@/app/components/richTetxtRenderer/richTextRenderer";
 import strategiesIntroImg from "@/public/assets/img/images/strategieHeroImage.jpg";
-import { DeltaPurpleButton } from "@/app/components/buttons/mainButton";
+import {
+  DeltaPurpleButton,
+  AboutButtonDarkBG,
+} from "@/app/components/buttons/mainButton";
 import Header from "@/app/components/header/header";
 import CryptoPreviewTables from "@/app/components/cryptoTables/cryptoTables";
 import {
@@ -15,6 +18,7 @@ import {
 } from "@/app/strategies/strategyFlipCards";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
+import MintModal from "@/app/components/modals/mintModal";
 
 const sanitizeId = (text) => {
   return text
@@ -49,6 +53,15 @@ const StrategyDetail = ({ strategy, strategies }) => {
 
   const [headings, setHeadings] = useState([]);
   const [activeHeading, setActiveHeading] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     const collectedHeadings = [];
@@ -118,6 +131,7 @@ const StrategyDetail = ({ strategy, strategies }) => {
     // Top page
     <div className="px-4 sm:px-0">
       {/* Desktop View */}
+      {isModalOpen && <MintModal onClose={closeModal} />}
       <div className="pagePaddingMedium hidden md:block">
         <div className="my-mobile-spacing md:my-desktop-spacing flex md:flex-row flex-col justify-center items-center w-full gap-20 mb-2">
           {/* Text Wrapper */}
@@ -275,6 +289,21 @@ const StrategyDetail = ({ strategy, strategies }) => {
             </div>{" "}
             {/* Sticky class added */}
             <CryptoPreviewTables />
+            <div className="flex flex-col justify-center items-center gap-4 px-5 rounded-[20px] cta_background">
+              <h3 className="text-[32px] text-white text-center max-w-[17rem] leading-7 font-normal block">
+                <span className="block">Be A Part</span>
+                Of The Journey
+              </h3>
+              <div className="sm:w-fit w-full featureBorderWrapLightTheme rounded-[20px]">
+                <AboutButtonDarkBG
+                  onClick={openModal}
+                  hasArrowRight={true}
+                  customClass="w-full"
+                  hasWhiteArrowRight={true}
+                  label={"LEARN MORE"}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
