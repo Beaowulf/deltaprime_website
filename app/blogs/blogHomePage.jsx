@@ -40,6 +40,13 @@ const BlogHomePage = ({ categories, blogs: initialBlogs }) => {
     setSelectedCategory(category);
     setCurrentPage(1);
     filterBlogs(category, searchTerm);
+
+    if (window.innerWidth <= 768) {
+      const blogsElement = document.getElementById("blogs");
+      if (blogsElement) {
+        blogsElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   const handleSearch = (term) => {
@@ -98,7 +105,7 @@ const BlogHomePage = ({ categories, blogs: initialBlogs }) => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-2 justify-center mb-8">
+      <div id="blogs" className="flex flex-wrap gap-2 justify-center mb-8">
         {categories.map((category) => (
           <BlogButton
             className="!w-fit"
