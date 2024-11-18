@@ -13,17 +13,17 @@ export const metadata = {
 const Custom404 = () => {
   return (
     <div className="px-4 sm:px-[5%] md:px-[8%] lg:px-[10%] xl:px-[16%] 2xl:px-[20%]">
-      <div className="flex justify-center items-center my-10 overflow-x-hidden">
+      <div className="flex justify-center items-center my-10 ">
         {/* Mobile View for 404 */}
-        <div className="lg:hidden inline-block relative">
+        <div className="lg:hidden inline-block overflow-hidden relative">
           <Image
             src={mobile_map_image}
             alt="mobile_map_image"
             className="h-full w-auto my-10"
             height={650}
-            width={300}
+            width={200}
           />
-          <div className="h-fit absolute bottom-[0rem] z-50 left-[15rem] w-full text-center text-white py-2">
+          <div className="h-fit absolute bottom-[-1.5rem] z-50 left-[12.5rem] w-full text-center text-white py-2">
             <Image
               src={mobile_hand_image}
               alt="mobile_hand_image"
@@ -32,13 +32,13 @@ const Custom404 = () => {
               width={120}
             />
           </div>
-          <div className="h-fit absolute bottom-[15rem] left-[-16px] w-full text-center text-white py-2">
+          <div className="h-fit absolute bottom-[13.5rem] left-[-12px] w-full text-center text-white py-2">
             <p className="font-bold leading-[4rem] uppercase text-[65px]">
               404
             </p>
             <p className="font-bold text-[25px]">Not found</p>
           </div>
-          <div className="h-fit absolute bottom-[7.5rem] left-[-16px] w-full text-center text-white py-2">
+          <div className="h-fit absolute bottom-[6rem] left-[-12px] w-full text-center text-white py-2">
             <p className="font-bold leading-[2rem] uppercase text-[25px]">
               Feeling Lost?
             </p>
