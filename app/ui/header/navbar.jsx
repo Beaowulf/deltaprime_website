@@ -139,7 +139,7 @@ function Nav() {
                       ? "bg-transparent z-[1000] transition-all duration-300"
                       : "bg-white dark:bg-[#252948] shadow-md z-[1000] transition-all duration-300"
                     : "pagePaddingMedium"
-                }`}
+                } ${isBannerVisible ? "pt-16 md:pt-10" : "pt-0"}`}
               >
                 <nav
                   className={`pt-[2px] transition-all duration-300 ${
